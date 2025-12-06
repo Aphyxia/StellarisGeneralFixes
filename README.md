@@ -10,7 +10,7 @@ It is not achievement compatible.
 A small portion of this mod has been incorporated into vanilla (see Paradox announcement) — see the changelog for details.
 
 ## Downloads
-- [Steam Workshop]:(https://steamcommunity.com/sharedfiles/filedetails/3615026960)
+- Other downloads [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/3615026960)
 
 ## Compatibility & Usage
 - Load order: this mod goes at the top of your load order. If you are also using [Vanilla fixes by Ariphaos](https://steamcommunity.com/sharedfiles/filedetails/1995601384), that should go first.
