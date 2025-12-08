@@ -739,18 +739,20 @@ planet_event = {
 
 	trigger = {
 		NOR = {
-			is_planet_class = pc_habitat
-			from = { is_ship_size = guided_sapience_colonizer }
-		}
-		owner = {
-			NOR = {
-				has_origin = origin_remnants
-				has_origin = origin_broken_shackles
-				has_origin = origin_legendary_leader_dictatorial
-				has_origin = origin_legendary_leader_imperial
-				has_origin = origin_wilderness
-				has_country_flag = first_colony
-				num_owned_planets >= 3
+			OR = {
+				is_planet_class = pc_habitat
+				from = { is_ship_size = guided_sapience_colonizer }
+			}
+			owner = {
+				OR = {
+					has_origin = origin_remnants
+					has_origin = origin_broken_shackles
+					has_origin = origin_legendary_leader_dictatorial
+					has_origin = origin_legendary_leader_imperial
+					has_origin = origin_wilderness
+					has_country_flag = first_colony
+					num_owned_planets >= 3
+				}
 			}
 		}
 	}
@@ -1061,20 +1063,22 @@ country_event = {
 
 	trigger = {
 		NOR = {
-			is_ai = yes
-			has_country_flag = first_contact_event
-			has_origin = origin_payback
-			has_origin = origin_broken_shackles
-		}
-		event_target:contact_empire = {
-			NOR = {
-				is_fallen_empire = yes
-				# is_country_type = tiyanki
-				is_amoeba_country_type = yes
-				is_country_type = cloud
-				is_drone_country_type = yes
-				is_crystal_country_type = yes
-				is_primitive = yes
+			OR = {
+				is_ai = yes
+				has_country_flag = first_contact_event
+				has_origin = origin_payback
+				has_origin = origin_broken_shackles
+			}
+			event_target:contact_empire = {
+				OR = {
+					is_fallen_empire = yes
+					# is_country_type = tiyanki
+					is_amoeba_country_type = yes
+					is_country_type = cloud
+					is_drone_country_type = yes
+					is_crystal_country_type = yes
+					is_primitive = yes
+				}
 			}
 		}
 	}

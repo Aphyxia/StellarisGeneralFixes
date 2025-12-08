@@ -34,8 +34,10 @@ pop_group_event = {
 			event_target:RefugeeEscapedFrom = {
 				root = {
 					has_citizenship_type = { type = citizenship_purge country = prev }
-					NOT = { has_purge_type = { type = purge_displacement country = prev } }
-					prev = { is_gestalt = no }
+					NOR = {
+						has_purge_type = { type = purge_displacement country = prev }
+						prev = { is_gestalt = yes }
+					}
 				}
 			}
 		}

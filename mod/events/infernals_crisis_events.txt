@@ -35,8 +35,10 @@ country_event = {
 	option = {
 		name = EXCELLENT
 		trigger = {
-			owner = { is_gestalt = no }
-			NOT = { has_country_flag = red_giant_discovered_crystallized_entropy }
+			NOR = {
+				owner = { is_gestalt = yes }
+				has_country_flag = red_giant_discovered_crystallized_entropy
+			}
 		}
 		enable_special_project = {
 			name = INF_CRISIS_ENTROPY

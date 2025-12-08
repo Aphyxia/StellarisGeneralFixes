@@ -3568,11 +3568,13 @@ country_event = {
 		OR = {
 			AND = {
 				has_valid_civic = civic_galactic_curators
-				NOT = { has_communications = event_target:curator_enclave_country }
-				from = {
-					NOR = {
-						is_same_value = event_target:curator_enclave_country
-						is_capturable_space_critter_country_type = yes
+				NOR = {
+					has_communications = event_target:curator_enclave_country
+					from = {
+						OR = {
+							is_same_value = event_target:curator_enclave_country
+							is_capturable_space_critter_country_type = yes
+						}
 					}
 				}
 			}

@@ -294,12 +294,14 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_country_flag = fired_cracker }
-		from = {
-			NOR = {
-				is_planet_class = pc_habitat
-				is_planet_class = pc_ringworld_habitable
-				is_planet_class = pc_shattered_ring_habitable
+		NOR = {
+			has_country_flag = fired_cracker
+			from = {
+				OR = {
+					is_planet_class = pc_habitat
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_shattered_ring_habitable
+				}
 			}
 		}
 	}
@@ -1406,11 +1408,13 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_country_flag = fired_nanobots }
-		from = {
-			NOR = {
-				is_planet_class = pc_habitat
-				is_planet_class = pc_ringworld_habitable
+		NOR = {
+			has_country_flag = fired_nanobots
+			from = {
+				OR = {
+					is_planet_class = pc_habitat
+					is_planet_class = pc_ringworld_habitable
+				}
 			}
 		}
 	}
@@ -2218,11 +2222,13 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_country_flag = fired_toxifier }
-		from = {
-			NOR = {
-				is_planet_class = pc_habitat
-				is_planet_class = pc_ringworld_habitable
+		NOR = {
+			has_country_flag = fired_toxifier
+			from = {
+				OR = {
+					is_planet_class = pc_habitat
+					is_planet_class = pc_ringworld_habitable
+				}
 			}
 		}
 	}
@@ -2635,14 +2641,16 @@ country_event = {
 	}
 	desc = {
 		trigger = {
-			NOT = { is_same_empire = fromfrom.owner }
-			from = {
-				NOR = {
-					is_planet_class = pc_shattered
-					is_planet_class = pc_shattered_2
-					is_planet_class = pc_shielded
-					is_planet_class = pc_ringworld_shielded
-					is_planet_class = pc_habitat_shielded
+			NOR = {
+				is_same_empire = fromfrom.owner
+				from = {
+					OR = {
+						is_planet_class = pc_shattered
+						is_planet_class = pc_shattered_2
+						is_planet_class = pc_shielded
+						is_planet_class = pc_ringworld_shielded
+						is_planet_class = pc_habitat_shielded
+					}
 				}
 			}
 		}

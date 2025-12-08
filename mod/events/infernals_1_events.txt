@@ -4094,11 +4094,11 @@ ship_event = {
 					has_origin = origin_necrophage
 				}
 			}
-			OR = {
-				NOT = { exists = event_target:lusus_miner_station@owner }
+			NAND = {
+				exists = event_target:lusus_miner_station@owner
 				event_target:lusus_miner_station@owner = {
 					owner_species = {
-						NOR = {
+						OR = {
 							has_trait = trait_lithoid
 							is_robotic = yes
 						}
@@ -4565,11 +4565,11 @@ ship_event = {
 		name = infernals.2115.g	# Eat -> Must be hive or necrophage, lusus miners must be edible
 		trigger = {
 			owner = { is_hive_empire = yes has_origin = origin_necrophage }
-			OR = {
-				NOT = { exists = event_target:lusus_miner_station@owner }
+			NAND = {
+				exists = event_target:lusus_miner_station@owner
 				event_target:lusus_miner_station@owner = {
 					owner_species = {
-						NOR = {
+						OR = {
 							has_trait = trait_lithoid
 							is_robotic = yes
 						}

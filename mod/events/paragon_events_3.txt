@@ -2979,12 +2979,9 @@ fleet_event = {
 
 	trigger = {
 		exists = owner # Vfix log
-		NOT = { owner = { has_country_flag = sharpbeak_known } }
-		owner = {
-			NAND = {
-				is_ai = yes
-				is_gestalt = yes
-			}
+		NOR = {
+			owner = { has_country_flag = sharpbeak_known }
+			owner = { is_ai = yes is_gestalt = yes }
 		}
 		solar_system = { has_star_flag = sharpbeak_starsystem }
 		has_global_flag = sharpbeak_recruit_phase

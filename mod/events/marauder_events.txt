@@ -6342,13 +6342,15 @@ event = {
 		any_playable_country = {
 			is_ai = yes
 			NOR = {
-				is_homicidal = yes
-				is_genocidal_infernal = yes
-			}
-			any_rival_country = {
-				NOR = {
-					has_country_flag = under_marauder_attack
-					has_country_flag = target_of_hired_ai_raid
+				OR = {
+					is_homicidal = yes
+					is_genocidal_infernal = yes
+				}
+				any_rival_country = {
+					OR = {
+						has_country_flag = under_marauder_attack
+						has_country_flag = target_of_hired_ai_raid
+					}
 				}
 			}
 			resource_stockpile_compare = { resource = energy value >= 5000 }
@@ -6370,15 +6372,17 @@ event = {
 			limit = {
 				is_ai = yes
 				NOR = {
-					is_homicidal = yes
-					is_genocidal_infernal = yes
-					has_ai_personality = honorbound_warriors
-					has_ai_personality = xenophobic_isolationists
-				}
-				any_rival_country = {
-					NOR = {
-						has_country_flag = under_marauder_attack
-						has_country_flag = target_of_hired_ai_raid
+					OR = {
+						is_homicidal = yes
+						is_genocidal_infernal = yes
+						has_ai_personality = honorbound_warriors
+						has_ai_personality = xenophobic_isolationists
+					}
+					any_rival_country = {
+						OR = {
+							has_country_flag = under_marauder_attack
+							has_country_flag = target_of_hired_ai_raid
+						}
 					}
 				}
 				resource_stockpile_compare = { resource = energy value >= 5000 }
@@ -6480,13 +6484,15 @@ event = {
 				is_country_type = dormant_marauders
 				has_communications = prev
 				NOR = {
-					has_country_flag = raid_ongoing
-					has_country_flag = raid_cooldown
-				}
-				NAND = {
-					has_country_flag = merc_fleet_1_hired
-					has_country_flag = merc_fleet_2_hired
-					has_country_flag = merc_fleet_3_hired
+					OR = {
+						has_country_flag = raid_ongoing
+						has_country_flag = raid_cooldown
+					}
+					AND = {
+						has_country_flag = merc_fleet_1_hired
+						has_country_flag = merc_fleet_2_hired
+						has_country_flag = merc_fleet_3_hired
+					}
 				}
 				OR = {
 					AND = {
@@ -7437,13 +7443,16 @@ country_event = {
 			prev = {
 				create_1st_khan_fleet = yes
 				while = {
-					count = 3
+					count = 4
 					create_marauder_fleet = yes
 					create_marauder_armies = yes
 					create_marauder_constructors = yes
 				}
-				create_marauder_armies = yes
-				create_marauder_constructors = yes
+				while = {
+					count = 2
+					create_marauder_armies = yes
+					create_marauder_constructors = yes
+				}
 			}
 		}
 		## Reinforcement cycle
@@ -8353,16 +8362,18 @@ country_event = {
 			has_country_flag = great_khan_defeated_once
 			has_country_flag = khan_dead_event_fine
 		}
-		NAND = {
-			exists = event_target:great_khan
-			exists = event_target:great_khan.fleet
-		}
 		NOR = {
-			has_country_flag = khan_dead_age
-			has_country_flag = khan_dead_poison
-			has_country_flag = khan_dead_disease
-			has_country_flag = khan_dead_assassin
-			has_country_flag = khan_dead_concubine
+			AND = {
+				exists = event_target:great_khan
+				exists = event_target:great_khan.fleet
+			}
+			OR = {
+				has_country_flag = khan_dead_age
+				has_country_flag = khan_dead_poison
+				has_country_flag = khan_dead_disease
+				has_country_flag = khan_dead_assassin
+				has_country_flag = khan_dead_concubine
+			}
 		}
 	}
 
@@ -9529,17 +9540,17 @@ country_event = {
 			every_subject = {
 				limit = {
 					is_subject_of_khan = yes
-					NAND = {
-						exists = capital_scope
-						capital_scope.solar_system = {
-							any_fleet_in_system = {
-								is_mobile = no
-								has_fleet_flag = satrapy_garrison
-								any_owned_ship = { is_ship_size = marauder_void_dwelling }
+					NOR = {
+						AND = {
+							exists = capital_scope
+							capital_scope.solar_system = {
+								any_fleet_in_system = {
+									is_mobile = no
+									has_fleet_flag = satrapy_garrison
+									any_owned_ship = { is_ship_size = marauder_void_dwelling }
+								}
 							}
 						}
-					}
-					NOT = {
 						event_target:raider_khanate = {
 							any_owned_fleet = {
 								is_mobile = no
@@ -9803,8 +9814,10 @@ starbase_event = {
 				is_country_type = awakened_marauders
 				AND = { # Khan Subject
 					is_subject_of_khan = yes
-					NOT = { has_country_flag = rebellion_cooldown }
-					root.owner = { is_subject_of_khan = no }
+					NOR = {
+						has_country_flag = rebellion_cooldown
+						root.owner = { is_subject_of_khan = yes }
+					}
 				}
 			}
 		}
@@ -11141,6 +11154,17 @@ country_event = {
 		set_timed_global_flag = { flag = CmtFlagKillDoubleBookingKhan years = 2 }
 		set_country_flag = marauder600_happened
 		set_country_flag = khan_dead_event_fine
+		if = {
+			limit = { is_at_war = yes }
+			every_war = {
+				limit = {
+					any_war_participant = { is_same_empire = root }
+					is_scope_type = war # If not the error.log tells: Invalid Scope
+				}
+				# prev = { set_truce = { target = prev type = war } }
+				end_war_effect = yes
+			}
+		}
 		if = { # If Horde owns no planet.
 			limit = {
 				OR = {
@@ -11431,12 +11455,14 @@ country_event = {
 							# ordered_owned_sector = {
 							random_owned_sector = {
 								limit = {
-									NOT = { has_sector_flag = counted_sector }
-									prev = {
-										any_owned_sector = {
-											NOR = {
-												is_same_value = prevprev
-												has_sector_flag = counted_sector
+									NOR = {
+										has_sector_flag = counted_sector
+										prev = {
+											any_owned_sector = {
+												OR = {
+													is_same_value = prevprev
+													has_sector_flag = counted_sector
+												}
 											}
 										}
 									}
@@ -11519,7 +11545,10 @@ country_event = {
 								species = event_target:marauder_species
 								type = default
 								authority = auth_imperial
-								civics = { civic = random civic = random }
+								civics = {
+									civic = random
+									civic = random
+								}
 								origin = origin_khan_successor
 								ethos = { ethic = ethic_militarist ethic = ethic_authoritarian }
 								ignore_initial_colony_error = yes
@@ -11534,7 +11563,10 @@ country_event = {
 								species = event_target:marauder_species
 								type = default
 								authority = auth_dictatorial
-								civics = { civic = random civic = random }
+								civics = {
+									civic = random
+									civic = random
+								}
 								origin = origin_khan_successor
 								ethos = { ethic = ethic_militarist ethic = ethic_xenophobe }
 								ignore_initial_colony_error = yes
@@ -11729,7 +11761,10 @@ country_event = {
 			species = event_target:marauder_species
 			type = default
 			authority = auth_imperial
-			civics = { civic = civic_great_khans_legacy civic = random }
+			civics = {
+				civic = civic_great_khans_legacy
+				civic = random
+			}
 			origin = origin_khan_successor
 			# flag = {
 			# 	icon = { category = "pirate" file = }
@@ -12570,19 +12605,21 @@ country_event = {
 							limit = {
 								is_pirate_system = yes
 								# is_valid_crystal_splitter_system = yes
-								NOR = { # is_star_class = sc_black_hole
-									# has_star_flag = crystal_splitter_starting_system
-									# has_star_flag = crystal_splitter_destination_system
-									# has_star_flag = hostile_system
-									# has_star_flag = guardian
-									has_star_flag = tiyanki_home_system
-									has_star_flag = amoeba_home_system
-									has_star_flag = lcluster
-									has_star_flag = sealed_system
-									has_star_flag = enclave
-									has_star_flag = primitive_system
+								NOR = {
+									OR = {
+										# has_star_flag = crystal_splitter_starting_system
+										# has_star_flag = crystal_splitter_destination_system
+										# has_star_flag = hostile_system
+										# has_star_flag = guardian
+										has_star_flag = tiyanki_home_system
+										has_star_flag = amoeba_home_system
+										has_star_flag = lcluster
+										has_star_flag = sealed_system
+										has_star_flag = enclave
+										has_star_flag = primitive_system
+									}
+									any_system_planet = { is_star = yes }
 								}
-								any_system_planet = { is_star = no }
 							}
 							weights = {
 								base = 1
@@ -13918,11 +13955,13 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NAND = {
-			is_ai = yes
-			is_robot_empire = yes
+		NOR = {
+			AND = {
+				is_ai = yes
+				is_robot_empire = yes
+			}
+			has_relic = r_khans_throne
 		}
-		NOT = { has_relic = r_khans_throne }
 	}
 
 	# immediate = {}

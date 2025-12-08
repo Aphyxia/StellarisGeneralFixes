@@ -1497,11 +1497,13 @@ country_event = {
 			event_target:contact_empire = {
 				is_country_type = default
 				has_valid_civic = civic_fanatic_purifiers
-				NAND = {
-					has_valid_civic = civic_fanatic_purifiers
-					species_portrait = mam3
+				NOR = {
+					AND = {
+						has_valid_civic = civic_fanatic_purifiers
+						species_portrait = mam3
+					}
+					has_country_flag = special_intro_for@root
 				}
-				NOT = { has_country_flag = special_intro_for@root }
 			}
 		}
 	}
@@ -2687,19 +2689,21 @@ country_event = {
 					}
 				}
 			}
-			NAND = {
-				has_valid_civic = civic_selective_kinship
-				NOT = { event_target:contact_empire = { is_same_species_class = root } }
-			}
-			NOT = { has_valid_civic = civic_inwards_perfection }
-			NAND = {
-				is_fanatic_spiritualist = yes
-				event_target:contact_empire = {
-					OR = {
-						is_machine_empire = yes
-						AND = {
-							is_individual_machine = yes
-							is_spiritualist = no
+			NOR = {
+				AND = {
+					has_valid_civic = civic_selective_kinship
+					NOT = { event_target:contact_empire = { is_same_species_class = root } }
+				}
+				has_valid_civic = civic_inwards_perfection
+				AND = {
+					is_fanatic_spiritualist = yes
+					event_target:contact_empire = {
+						OR = {
+							is_machine_empire = yes
+							AND = {
+								is_individual_machine = yes
+								is_spiritualist = no
+							}
 						}
 					}
 				}
@@ -3465,13 +3469,15 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_ai = no
-		NAND = {
-			has_origin = origin_broken_shackles
-			event_target:primitive_civ = {
-				OR = {
-					has_country_flag = broken_shackles_parent_country
-					has_country_flag = broken_shackles_abductees_country
+		NOR = {
+			is_ai = yes
+			AND = {
+				has_origin = origin_broken_shackles
+				event_target:primitive_civ = {
+					OR = {
+						has_country_flag = broken_shackles_parent_country
+						has_country_flag = broken_shackles_abductees_country
+					}
 				}
 			}
 		}
@@ -3561,13 +3567,15 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_ai = no
-		NAND = {
-			has_origin = origin_broken_shackles
-			event_target:primitive_civ = {
-				OR = {
-					has_country_flag = broken_shackles_parent_country
-					has_country_flag = broken_shackles_abductees_country
+		NOR = {
+			is_ai = yes
+			AND = {
+				has_origin = origin_broken_shackles
+				event_target:primitive_civ = {
+					OR = {
+						has_country_flag = broken_shackles_parent_country
+						has_country_flag = broken_shackles_abductees_country
+					}
 				}
 			}
 		}
@@ -3998,6 +4006,7 @@ country_event = {
 			OR = {
 				is_country_type = default
 				is_country_type = enclave
+				is_mercenary = yes # Vfix
 			}
 		}
 	}
@@ -4399,18 +4408,18 @@ planet_event = {
 		fromfrom = {
 			is_sapient = yes
 			NOR = {
-				is_robot_pop_group = yes
-				has_trait = "trait_hive_mind"
-			}
-			NAND = {
-				has_citizenship_type = { country = from type = citizenship_purge }
-				has_purge_type = { country = from type = purge_neutering }
-			}
-			NOR = {
-				has_purge_type = { country = from type = purge_necrophage }
+				OR = {
+					is_robot_pop_group = yes
+					has_trait = "trait_hive_mind"
+					has_purge_type = { country = from type = purge_necrophage }
+					AND = {
+						has_purge_type = { country = from type = purge_cosmogenesis_lathe_resettle }
+						NOT = { planet = { has_designation = col_cosmogenesis_world } }
+					}
+				}
 				AND = {
-					has_purge_type = { country = from type = purge_cosmogenesis_lathe_resettle }
-					NOT = { planet = { has_designation = col_cosmogenesis_world } }
+					has_citizenship_type = { country = from type = citizenship_purge }
+					has_purge_type = { country = from type = purge_neutering }
 				}
 			}
 		}
@@ -7034,10 +7043,12 @@ event = {
 				NOT = { exists = starbase }
 				any_system_colony = {
 					has_owner = yes
-					has_ground_combat = no
-					NAND = {
-						has_shroud_dlc = yes
-						has_planet_flag = exile_planet
+					NOR = {
+						has_ground_combat = yes
+						AND = {
+							has_shroud_dlc = yes
+							has_planet_flag = exile_planet
+						}
 					}
 					owner = { is_default_or_fallen = yes }
 					solar_system = {
@@ -7120,10 +7131,12 @@ event = {
 			random_system_colony = {
 				limit = {
 					has_owner = yes
-					has_ground_combat = no
-					NAND = {
-						has_shroud_dlc = yes
-						has_planet_flag = exile_planet
+					NOR = {
+						has_ground_combat = yes
+						AND = {
+							has_shroud_dlc = yes
+							has_planet_flag = exile_planet
+						}
 					}
 					owner = { is_default_or_fallen = yes }
 					solar_system = {

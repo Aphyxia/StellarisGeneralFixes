@@ -4993,7 +4993,10 @@ ship_event = {
 							create_country = {
 								name = "NAME_Habinte_Unified_Worlds"
 								authority = random
-								civics = { civic = civic_life_seeded civic = civic_environmentalist }
+								civics = {
+									civic = civic_life_seeded
+									civic = civic_environmentalist
+								}
 								species = last_created_species
 								ethos = { ethic = ethic_fanatic_egalitarian ethic = ethic_pacifist }
 								flag = random
@@ -5406,7 +5409,10 @@ country_event = {
 		change_government = {
 			authority = auth_democratic
 			remove_invalid_civics = yes
-			civics = { civic = civic_distinguished_admiralty civic = civic_idealistic_foundation }
+			civics = {
+				civic = civic_distinguished_admiralty
+				civic = civic_idealistic_foundation
+			}
 		}
 		copy_techs_from = {
 			target = from
@@ -5661,14 +5667,16 @@ country_event = {
 	trigger = {
 		has_first_contact_dlc = yes
 		NOR = {
-			has_global_flag = fircon_6000_fired
-			has_country_flag = recent_preftl_diplomatic_event
-		}
-		any_observed_pre_ftl_within_border = {
-			NOR = {
-				is_subterranean_empire = yes
-				has_civic = civic_flat_world_theory
-				is_broken_shackles_pre_ftl_to_scope = { SCOPE = root }
+			OR = {
+				has_global_flag = fircon_6000_fired
+				has_country_flag = recent_preftl_diplomatic_event
+			}
+			any_observed_pre_ftl_within_border = {
+				OR = {
+					is_subterranean_empire = yes
+					has_civic = civic_flat_world_theory
+					is_broken_shackles_pre_ftl_to_scope = { SCOPE = root }
+				}
 			}
 		}
 	}
@@ -6830,11 +6838,13 @@ country_event = {
 		has_first_contact_dlc = yes
 		has_pre_ftl_trade_agreement = yes
 		NOR = {
-			has_country_flag = fircon_8030_fired
-			has_country_flag = recent_preftl_diplomatic_event
-		}
-		any_observed_pre_ftl_within_border = {
-			NOT = { is_broken_shackles_pre_ftl_to_scope = { SCOPE = root } }
+			OR = {
+				has_country_flag = fircon_8030_fired
+				has_country_flag = recent_preftl_diplomatic_event
+			}
+			any_observed_pre_ftl_within_border = {
+				is_broken_shackles_pre_ftl_to_scope = { SCOPE = root }
+			}
 		}
 	}
 
@@ -7054,11 +7064,13 @@ country_event = {
 		has_first_contact_dlc = yes
 		has_pre_ftl_trade_agreement = yes
 		NOR = {
-			has_country_flag = fircon.8050_fired
-			has_country_flag = recent_preftl_diplomatic_event
-		}
-		any_observed_pre_ftl_within_border = {
-			NOT = { is_broken_shackles_pre_ftl_to_scope = { SCOPE = root } }
+			OR = {
+				has_country_flag = fircon.8050_fired
+				has_country_flag = recent_preftl_diplomatic_event
+			}
+			any_observed_pre_ftl_within_border = {
+				is_broken_shackles_pre_ftl_to_scope = { SCOPE = root }
+			}
 		}
 	}
 
@@ -7696,13 +7708,15 @@ country_event = {
 		has_first_contact_dlc = yes
 		has_pre_ftl_societal_enlightenment_agreement = yes
 		NOR = {
-			has_country_flag = fircon.8530_fired
-			has_country_flag = recent_preftl_diplomatic_event
-			is_megacorp = yes
-			is_gestalt = yes
-		}
-		any_observed_pre_ftl_within_border = {
-			NOT = { is_broken_shackles_pre_ftl_to_scope = { SCOPE = root } }
+			OR = {
+				has_country_flag = fircon.8530_fired
+				has_country_flag = recent_preftl_diplomatic_event
+				is_megacorp = yes
+				is_gestalt = yes
+			}
+			any_observed_pre_ftl_within_border = {
+				is_broken_shackles_pre_ftl_to_scope = { SCOPE = root }
+			}
 		}
 	}
 

@@ -144,11 +144,9 @@ country_event = {
 											modifier = {
 												factor = 0
 												event_target:pre_ftl_planet = {
-													OR = {
-														has_observation_outpost = no
-														observation_outpost_owner = {
-															NOT = { is_same_value = root }
-														}
+													NAND = {
+														has_observation_outpost = yes
+														observation_outpost_owner = { is_same_value = root }
 													}
 												}
 											}
@@ -614,7 +612,10 @@ country_event = {
 				owner = {
 					remove_pre_ftl_flags = yes
 					change_government = {
-						civics = { civic = civic_increasing_urbanization civic = civic_atmospheric_pollution }
+						civics = {
+							civic = civic_increasing_urbanization
+							civic = civic_atmospheric_pollution
+						}
 					}
 					set_pre_ftl_age_effect = {
 						PRE_FTL_AGE = industrial_age
@@ -3072,8 +3073,10 @@ situation_event = {
 				owner.capital_scope = { has_observation_outpost = yes }
 				NOT = { has_global_flag = nuclear_war_pre_ftl_global }
 			}
-			capital_scope = { is_artificial = no }
-			NOT = { capital_scope.solar_system = { has_star_flag = empire_home_system } }
+			NOR = {
+				capital_scope = { is_artificial = yes }
+				capital_scope.solar_system = { has_star_flag = empire_home_system }
+			}
 		}
 	}
 

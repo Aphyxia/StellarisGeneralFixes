@@ -850,7 +850,10 @@ country_event = {
 			create_country = {
 				name = random
 				authority = random
-				civics = { civic = civic_secret_of_fire civic = civic_the_wheel }
+				civics = {
+					civic = civic_secret_of_fire
+					civic = civic_the_wheel
+				}
 				species = last_created_species
 				ethos = random
 				origin = origin_default_pre_ftl
@@ -1044,7 +1047,10 @@ country_event = {
 			name = "NAME_mardak_vol_haters"
 			type = vol
 			authority = auth_democratic
-			civics = { civic = civic_fanatic_purifiers civic = civic_cutthroat_politics }
+			civics = {
+				civic = civic_fanatic_purifiers
+				civic = civic_cutthroat_politics
+			}
 			ethos = { ethic = ethic_fanatic_xenophobe ethic = ethic_militarist }
 			flag = {
 				icon = { category = "domination" file = "domination_14.dds" }
@@ -2336,14 +2342,16 @@ ship_event = {
 					max_steps = 20
 					limit = {
 						NOR = {
-							exists = space_owner
-							has_star_flag = hostile_system
-						}
-						star = {
-							NOR = {
-								is_star_class = sc_black_hole
-								has_deposit_for = shipclass_mining_station
-								has_deposit_for = shipclass_research_station
+							OR = {
+								exists = space_owner
+								has_star_flag = hostile_system
+							}
+							star = {
+								OR = {
+									is_star_class = sc_black_hole
+									has_deposit_for = shipclass_mining_station
+									has_deposit_for = shipclass_research_station
+								}
 							}
 						}
 					}
@@ -3608,7 +3616,10 @@ country_event = {
 				name = "NAME_Prikkiki_Ti"
 				adjective = "NAME_Prikki"
 				authority = random
-				civics = { civic = civic_fanatic_purifiers civic = civic_cutthroat_politics }
+				civics = {
+					civic = civic_fanatic_purifiers
+					civic = civic_cutthroat_politics
+				}
 				# origin = origin_prison_escapees TODO
 				species = last_created_species
 				ethos = { ethic = ethic_fanatic_xenophobe ethic = ethic_militarist }
@@ -4070,7 +4081,10 @@ country_event = {
 			create_country = {
 				name = "NAME_Prikkiki_Ti"
 				authority = random
-				civics = { civic = civic_fanatic_purifiers civic = civic_cutthroat_politics }
+				civics = {
+					civic = civic_fanatic_purifiers
+					civic = civic_cutthroat_politics
+				}
 				species = last_created_species
 				ethos = { ethic = ethic_fanatic_xenophobe ethic = ethic_militarist }
 				flag = {
@@ -4736,13 +4750,13 @@ country_event = {
 			limit = {
 				any_playable_country = {
 					NOR = {
-						is_ai = yes
-						is_at_war = yes
-						is_hostile = root
-						root = { is_hostile = prev }
-					}
-					any_owned_planet = {
-						NOT = { has_planet_flag = has_been_scanned }
+						OR = {
+							is_ai = yes
+							is_at_war = yes
+							is_hostile = root
+							root = { is_hostile = prev }
+						}
+						any_owned_planet = { has_planet_flag = has_been_scanned }
 					}
 				}
 			}
@@ -4793,12 +4807,12 @@ country_event = {
 			limit = {
 				any_playable_country = {
 					NOR = {
-						is_at_war = yes
-						is_hostile = root
-						root = { is_hostile = prev }
-					}
-					any_owned_planet = {
-						NOT = { has_planet_flag = has_been_scanned }
+						OR = {
+							is_at_war = yes
+							is_hostile = root
+							root = { is_hostile = prev }
+						}
+						any_owned_planet = { has_planet_flag = has_been_scanned }
 					}
 				}
 			}
@@ -5028,9 +5042,9 @@ ship_event = {
 						is_hostile = root.owner
 					}
 					any_owned_planet = {
-						NOT = { has_planet_flag = has_been_scanned }
-						solar_system = {
-							NOT = { is_same_value = event_target:cache_current_location }
+						NOR = {
+							has_planet_flag = has_been_scanned
+							solar_system = { is_same_value = event_target:cache_current_location }
 						}
 					}
 				}
@@ -5052,9 +5066,9 @@ ship_event = {
 				random_system_colony = {
 					limit = {
 						has_owner = yes
-						NOT = { has_planet_flag = has_been_scanned }
-						solar_system = {
-							NOT = { is_same_value = event_target:cache_current_location }
+						NOR = {
+							has_planet_flag = has_been_scanned
+							solar_system = { is_same_value = event_target:cache_current_location }
 						}
 					}
 					save_event_target_as = new_location
@@ -5160,12 +5174,12 @@ country_event = {
 			limit = {
 				any_playable_country = {
 					NOR = {
-						is_ai = yes
-						is_at_war = yes
-						is_hostile = root.owner
-					}
-					any_owned_planet = {
-						NOT = { has_planet_flag = has_been_scanned }
+						OR = {
+							is_ai = yes
+							is_at_war = yes
+							is_hostile = root.owner
+						}
+						any_owned_planet = { has_planet_flag = has_been_scanned }
 					}
 				}
 			}

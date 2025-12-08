@@ -1172,7 +1172,10 @@ overlord_system_init = {
 				}
 				authority = auth_imperial
 				species = last_created_species
-				civics = { civic = civic_byzantine_bureaucracy civic = civic_feudal_realm }
+				civics = {
+					civic = civic_byzantine_bureaucracy
+					civic = civic_feudal_realm
+				}
 				ethos = {
 					ethic = ethic_xenophile
 					ethic = ethic_militarist
@@ -1809,7 +1812,10 @@ overlord_system_4_init = {
 				}
 				authority = auth_dictatorial
 				species = last_created_species
-				civics = { civic = civic_technocracy civic = civic_slaver_guilds }
+				civics = {
+					civic = civic_technocracy
+					civic = civic_slaver_guilds
+				}
 				ethos = { ethic = ethic_fanatic_materialist ethic = ethic_authoritarian }
 				origin = "origin_imperial_vassal"
 				effect = {
@@ -2035,7 +2041,10 @@ overlord_system_5_init = {
 				}
 				authority = auth_dictatorial
 				species = last_created_species
-				civics = { civic = civic_warrior_culture civic = civic_distinguished_admiralty }
+				civics = {
+					civic = civic_warrior_culture
+					civic = civic_distinguished_admiralty
+				}
 				ethos = { ethic = ethic_fanatic_militarist ethic = ethic_spiritualist }
 				origin = "origin_imperial_vassal"
 				effect = {
@@ -2262,7 +2271,10 @@ overlord_system_6_init = {
 				}
 				authority = auth_dictatorial
 				species = last_created_species
-				civics = { civic = civic_philosopher_king civic = civic_exalted_priesthood }
+				civics = {
+					civic = civic_philosopher_king
+					civic = civic_exalted_priesthood
+				}
 				ethos = { ethic = ethic_fanatic_spiritualist ethic = ethic_xenophobe }
 				origin = "origin_imperial_vassal"
 				effect = {
@@ -2492,7 +2504,10 @@ overlord_system_7_init = {
 					}
 					authority = auth_corporate
 					species = last_created_species
-					civics = { civic = civic_free_traders civic = civic_ruthless_competition }
+					civics = {
+						civic = civic_free_traders
+						civic = civic_ruthless_competition
+					}
 					ethos = { ethic = ethic_fanatic_materialist ethic = ethic_xenophile }
 					origin = "origin_imperial_vassal"
 					effect = {
@@ -2508,7 +2523,10 @@ overlord_system_7_init = {
 					}
 					authority = auth_oligarchic
 					species = last_created_species
-					civics = { civic = civic_meritocracy civic = civic_corporate_dominion }
+					civics = {
+						civic = civic_meritocracy
+						civic = civic_corporate_dominion
+					}
 					ethos = { ethic = ethic_fanatic_materialist ethic = ethic_xenophile }
 					origin = "origin_imperial_vassal"
 					effect = {

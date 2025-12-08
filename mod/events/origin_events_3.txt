@@ -3905,7 +3905,10 @@ country_event = {
 						create_country = {
 							name = "NAME_fotd_Hunters"
 							authority = random
-							civics = { civic = civic_atmospheric_pollution civic = civic_increasing_urbanization }
+							civics = {
+								civic = civic_atmospheric_pollution
+								civic = civic_increasing_urbanization
+							}
 							species = last_created_species
 							ethos = { ethic = ethic_militarist ethic = ethic_fanatic_xenophobe }
 							flag = random

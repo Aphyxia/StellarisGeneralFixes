@@ -1469,8 +1469,10 @@ situation_event = {
 	desc = {
 		trigger = {
 			owner = { is_hive_empire = yes }
-			NOT = { exists = event_target:new_owner_empire }
-			event_target:rebel_empire = { is_hive_empire = no }
+			NOR = {
+				exists = event_target:new_owner_empire
+				event_target:rebel_empire = { is_hive_empire = yes }
+			}
 		}
 		text = unrest.4200.desc.hive_no_join_regular
 	}
@@ -1492,8 +1494,10 @@ situation_event = {
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = yes }
-			NOT = { exists = event_target:new_owner_empire }
-			event_target:rebel_empire = { is_machine_empire = no }
+			NOR = {
+				exists = event_target:new_owner_empire
+				event_target:rebel_empire = { is_machine_empire = yes }
+			}
 		}
 		text = unrest.4200.desc.machine_no_join_regular
 	}
@@ -1591,7 +1595,10 @@ situation_event = {
 					name = random
 					ethos = { ethic = "ethic_fanatic_egalitarian" ethic = "ethic_militarist" }
 					authority = auth_democratic
-					civics = { civic = civic_free_republic civic = civic_broken_shackles }
+					civics = {
+						civic = civic_free_republic
+						civic = civic_broken_shackles
+					}
 					species = event_target:rebellion_species
 					flag = random
 					name_list = "CCSLAVE1"

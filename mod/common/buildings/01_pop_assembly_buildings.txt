@@ -13,8 +13,10 @@ building_robot_assembly_plant = {
 	potential = {
 		has_owner = yes
 		OR = {
-			owner = { is_ai = no }
-			NOT = { exists = assembling_species }
+			NAND = {
+				owner = { is_ai = yes }
+				exists = assembling_species
+			}
 			assembling_species = { is_robotic = yes }
 		}
 		owner = {
@@ -161,8 +163,10 @@ building_robot_assembly_complex = {
 	potential = {
 		has_owner = yes
 		OR = {
-			owner = { is_ai = no }
-			NOT = { exists = assembling_species }
+			NAND = {
+				owner = { is_ai = yes }
+				exists = assembling_species
+			}
 			assembling_species = { is_robotic = yes }
 		}
 		owner = {
@@ -841,8 +845,10 @@ building_clone_vats = {
 		has_owner = yes
 		NOT = { has_modifier = resort_colony }
 		OR = {
-			owner = { is_ai = no }
-			NOT = { exists = assembling_species }
+			NAND = {
+				owner = { is_ai = yes }
+				exists = assembling_species
+			}
 			assembling_species = { is_organic_species = yes }
 		}
 		NAND = {
@@ -1207,8 +1213,10 @@ building_posthumous_employment_center = {
 	potential = {
 		has_owner = yes
 		OR = {
-			owner = { is_ai = no }
-			NOT = { exists = assembling_species }
+			NAND = {
+				owner = { is_ai = yes }
+				exists = assembling_species
+			}
 			assembling_species = { is_organic_species = yes }
 		}
 		NAND = {

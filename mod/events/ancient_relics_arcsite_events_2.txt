@@ -7424,7 +7424,10 @@ fleet_event = {
 					species = event_target:new_machines
 					ethos = { ethic = ethic_gestalt_consciousness }
 					authority = auth_machine_intelligence
-					civics = { civic = civic_machine_built_to_last civic = civic_machine_builder }
+					civics = {
+						civic = civic_machine_built_to_last
+						civic = civic_machine_builder
+					}
 					effect = {
 						prev.starbase = { set_owner = prev }
 						give_starting_resources_effect = yes

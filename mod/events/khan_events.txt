@@ -105,12 +105,14 @@ system_event = {
 		if = {
 			limit = {
 				NOR = {
-					has_star_flag = marauder_starbase_destroyed
-					has_star_flag = starbase_destroyed
-				}
-				NAND = {
-					exists = starbase
-					starbase = { has_starbase_size > starbase_starfortress }
+					OR = {
+						has_star_flag = marauder_starbase_destroyed
+						has_star_flag = starbase_destroyed
+					}
+					AND = {
+						exists = starbase
+						starbase = { has_starbase_size > starbase_starfortress }
+					}
 				}
 			}
 			set_timed_star_flag = { flag = marauder_starbase_destroyed months = 2 }
@@ -522,20 +524,24 @@ ship_event = {
 						limit = {
 							any_system_colony = {
 								has_owner = yes
-								NOT = { is_owned_by = root.owner }
-								NAND = {
-									exists = controller
-									controller = { is_same_empire = root.owner }
+								NOR = {
+									is_owned_by = root.owner
+									AND = {
+										exists = controller
+										controller = { is_same_empire = root.owner }
+									}
 								}
 							}
 						}
 						random_system_colony = {
 							limit = {
 								has_owner = yes
-								NOT = { is_owned_by = root.owner }
-								NAND = {
-									exists = controller
-									controller = { is_same_empire = root.owner }
+								NOR = {
+									is_owned_by = root.owner
+									AND = {
+										exists = controller
+										controller = { is_same_empire = root.owner }
+									}
 								}
 							}
 							root.fleet = { set_owner = prev.owner }
@@ -816,10 +822,12 @@ country_event = {
 
 	trigger = {
 		exists = from
-		NOT = { is_same_empire = from }
-		NAND = {
-			from = { has_country_flag = attacking_fleets_stopped }
-			has_country_flag = attacking_fleets_stopped
+		NOR = {
+			is_same_empire = from
+			AND = {
+				from = { has_country_flag = attacking_fleets_stopped }
+				has_country_flag = attacking_fleets_stopped
+			}
 		}
 	}
 

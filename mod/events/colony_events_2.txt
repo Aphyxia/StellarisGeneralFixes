@@ -30,18 +30,20 @@ planet_event = {
 
 	trigger = {
 		has_owner = yes
-		owner = {
-			NOR = {
-				is_ai = yes
-				has_country_flag = FLDrone_country
-				is_wilderness_empire = yes
-			}
-		}
 		NOR = {
-			pop_amount <= 0
-			is_planet_class = pc_habitat
-			has_planet_flag = colony_event
-			has_planet_flag = FLDrone_event
+			owner = {
+				OR = {
+					is_ai = yes
+					has_country_flag = FLDrone_country
+					is_wilderness_empire = yes
+				}
+			}
+			OR = {
+				pop_amount <= 0
+				is_planet_class = pc_habitat
+				has_planet_flag = colony_event
+				has_planet_flag = FLDrone_event
+			}
 		}
 		has_moon = yes
 		any_moon = { habitable_planet = no }
@@ -551,28 +553,30 @@ planet_event = {
 
 	trigger = {
 		has_owner = yes
-		owner = {
-			NOR = {
-				is_ai = yes
-				has_country_flag = pheromone_country
-				is_gestalt = yes
-				is_individual_machine = yes
-			}
-		}
 		NOR = {
-			has_global_flag = pheromonefrenzy_global
-			has_global_flag = pheromonefrenzy_done_global
-			has_planet_flag = colony_event
-			has_planet_flag = pheromone_planet
-			is_planet_class = pc_ringworld_habitable
-			is_planet_class = pc_shattered_ring_habitable
-			is_planet_class = pc_habitat
-			is_planet_class = pc_arid
-			is_planet_class = pc_desert
-			is_planet_class = pc_savannah
-			is_urban_planet = yes
-			is_planet_class = pc_volcanic
-			pop_amount <= 0
+			owner = {
+				OR = {
+					is_ai = yes
+					has_country_flag = pheromone_country
+					is_gestalt = yes
+					is_individual_machine = yes
+				}
+			}
+			OR = {
+				has_global_flag = pheromonefrenzy_global
+				has_global_flag = pheromonefrenzy_done_global
+				has_planet_flag = colony_event
+				has_planet_flag = pheromone_planet
+				is_planet_class = pc_ringworld_habitable
+				is_planet_class = pc_shattered_ring_habitable
+				is_planet_class = pc_habitat
+				is_planet_class = pc_arid
+				is_planet_class = pc_desert
+				is_planet_class = pc_savannah
+				is_urban_planet = yes
+				is_planet_class = pc_volcanic
+				pop_amount <= 0
+			}
 		}
 	}
 
@@ -2182,21 +2186,23 @@ planet_event = {
 
 	trigger = {
 		has_owner = yes
-		owner = {
-			NOR = {
-				is_ai = yes
-				has_country_flag = colony_odd_factory
-				is_machine_empire = yes
-				is_wilderness_empire = yes
-			}
-		}
 		NOR = {
-			pop_amount <= 0
-			has_planet_flag = colony_event
-			is_planet_class = pc_ringworld_habitable
-			is_planet_class = pc_shattered_ring_habitable
-			is_planet_class = pc_habitat
-			is_urban_planet = yes
+			owner = {
+				OR = {
+					is_ai = yes
+					has_country_flag = colony_odd_factory
+					is_machine_empire = yes
+					is_wilderness_empire = yes
+				}
+			}
+			OR = {
+				pop_amount <= 0
+				has_planet_flag = colony_event
+				is_planet_class = pc_ringworld_habitable
+				is_planet_class = pc_shattered_ring_habitable
+				is_planet_class = pc_habitat
+				is_urban_planet = yes
+			}
 		}
 	}
 

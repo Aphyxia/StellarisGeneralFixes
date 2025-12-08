@@ -272,7 +272,10 @@ une_deneb_system = {
 					name = "NAME_Commonwealth_of_Man"
 					adjective = "PRESCRIPTED_adjective_humans2"
 					authority = "auth_dictatorial"
-					civics = { civic = civic_nationalistic_zeal civic = civic_distinguished_admiralty }
+					civics = {
+						civic = civic_nationalistic_zeal
+						civic = civic_distinguished_admiralty
+					}
 					species = event_target:human_species
 					name_list = "HUMAN2"
 					ship_prefix = "CNS"
@@ -1373,7 +1376,10 @@ ai_titawin_init = {
 					name = "EMPIRE_DESIGN_lithoid_humans"
 					adjective = "PRESCRIPTED_adjective_lithoid_humans"
 					authority = "auth_oligarchic"
-					civics = { civic = civic_mining_guilds civic = civic_meritocracy }
+					civics = {
+						civic = civic_mining_guilds
+						civic = civic_meritocracy
+					}
 					species = event_target:lith_human
 					name_list = "LITHOID4"
 					ship_prefix = "TPC"

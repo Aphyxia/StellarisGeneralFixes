@@ -42,20 +42,22 @@ country_event = {
 			has_country_flag = holy_world_killed
 			# Original trigger
 			AND = {
-				NOT = { has_global_flag = sleepers_awake_happened }
-				# Sleepers cannot awake if a Guardian lives.
-				NAND = {
-					has_global_flag = guardians_of_the_galaxy_happened
-					any_country = { has_country_flag = guardians_of_the_galaxy }
-					any_country = { is_crisis_faction = yes }
-				}
 				NOR = {
-					end_game_years_passed < 0
-					is_machine_empire = yes
-					is_at_war = yes
-					fleet_power <= 60000
+					has_global_flag = sleepers_awake_happened
+					# Sleepers cannot awake if a Guardian lives.
+					AND = {
+						has_global_flag = guardians_of_the_galaxy_happened
+						any_country = { has_country_flag = guardians_of_the_galaxy }
+						any_country = { is_crisis_faction = yes }
+					}
+					OR = {
+						end_game_years_passed < 0
+						is_machine_empire = yes
+						is_at_war = yes
+						fleet_power <= 60000
+					}
+					# Wake up if regular empire is growing too strong or has started to conquer other fallen empires
 				}
-				# Wake up if regular empire is growing too strong or has started to conquer other fallen empires
 				any_playable_country = {
 					OR = {
 						fleet_power > 70000
@@ -324,7 +326,10 @@ country_event = {
 		set_country_flag = sleepers_awake_first_sleeper
 		set_country_type = awakened_fallen_empire
 		change_government = {
-			civics = { civic = civic_revanchist_fervor civic = civic_ancient_caches_of_technology }
+			civics = {
+				civic = civic_revanchist_fervor
+				civic = civic_ancient_caches_of_technology
+			}
 		}
 		if = {
 			limit = { has_paragon_dlc = yes }
@@ -533,7 +538,10 @@ country_event = {
 			trigger = has_country_flag
 			fallen_empire_hive_war = {
 				change_government = {
-					civics = { civic = civic_restored_mind civic = civic_ancient_memories_of_war }
+					civics = {
+						civic = civic_restored_mind
+						civic = civic_ancient_memories_of_war
+					}
 				}
 			}
 			fallen_empire_hive_growth = {
@@ -547,7 +555,10 @@ country_event = {
 			}
 			fallen_empire_hive_control = {
 				change_government = {
-					civics = { civic = civic_restored_mind civic = civic_ancient_memories_of_control }
+					civics = {
+						civic = civic_restored_mind
+						civic = civic_ancient_memories_of_control
+					}
 				}
 				if = {
 					limit = { is_galactic_community_formed = yes }

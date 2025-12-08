@@ -734,14 +734,16 @@ event = {
 				limit = { # Vfix opt
 					colonizable_planet = yes
 					NOR = {
-						has_owner = yes
-						has_planet_flag = prescripted_ideal
-						has_planet_flag = ratling_planet
-						has_planet_flag = pre_sapients_forbidden
-					}
-					NAND = {
-						exists = event_target:sol_system_earth
-						is_same_value = event_target:sol_system_earth
+						OR = {
+							has_owner = yes
+							has_planet_flag = prescripted_ideal
+							has_planet_flag = ratling_planet
+							has_planet_flag = pre_sapients_forbidden
+						}
+						AND = {
+							exists = event_target:sol_system_earth
+							is_same_value = event_target:sol_system_earth
+						}
 					}
 				}
 				save_event_target_as = pre_sapient_planet

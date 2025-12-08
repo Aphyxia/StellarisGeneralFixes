@@ -168,16 +168,18 @@ country_event = {
 
 	trigger = {
 		NOR = {
-			has_country_flag = gateway_reactivated
-			has_country_flag = gateway_built
-		}
-		NAND = {
-			has_origin = origin_galactic_doorstep
-			NOR = {
-				has_technology = tech_gateway_construction
-				has_tech_option = tech_gateway_construction
+			OR = {
+				has_country_flag = gateway_reactivated
+				has_country_flag = gateway_built
 			}
-			fromfromfrom = { has_megastructure_flag = doorstep_gateway@root }
+			AND = {
+				has_origin = origin_galactic_doorstep
+				NOR = {
+					has_technology = tech_gateway_construction
+					has_tech_option = tech_gateway_construction
+				}
+				fromfromfrom = { has_megastructure_flag = doorstep_gateway@root }
+			}
 		}
 	}
 
@@ -431,9 +433,9 @@ country_event = {
 		trigger = {
 			is_pacifist = no
 			# Available to spiritualists if Divine Enforcer is locked out
-			OR = {
-				is_spiritualist = no
-				NOR = {
+			NAND = {
+				is_spiritualist = yes
+				OR = {
 					AND = {
 						has_utopia = no
 						has_shroud_dlc = no

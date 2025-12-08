@@ -20,13 +20,19 @@ country_event = {
 		if = {
 			limit = { has_country_flag = fallen_machine_empire_awaken_1 }
 			change_government = {
-				civics = { civic = civic_awakened_machine civic = civic_final_defense_protocols }
+				civics = {
+					civic = civic_awakened_machine
+					civic = civic_final_defense_protocols
+				}
 			}
 		}
 		if = {
 			limit = { has_country_flag = fallen_machine_empire_awaken_2 }
 			change_government = {
-				civics = { civic = civic_awakened_machine civic = civic_malfunctioning_custodian }
+				civics = {
+					civic = civic_awakened_machine
+					civic = civic_malfunctioning_custodian
+				}
 			}
 		}
 		# Changing country type resets resources, so give them full stores
@@ -164,7 +170,10 @@ country_event = {
 			has_communications = root
 			NOR = {
 				has_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
-				has_opinion_modifier = { who = root modifier = opinion_accepted_fallen_empire_request }
+				has_opinion_modifier = {
+					who = root
+					modifier = opinion_accepted_fallen_empire_request
+				}
 			}
 		}
 	}

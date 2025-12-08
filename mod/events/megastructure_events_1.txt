@@ -3162,13 +3162,15 @@ country_event = {
 	}
 	option = { # has no Ring World
 		trigger = {
-			any_owned_megastructure = {
-				NOR = {
-					is_megastructure_type = ring_world_1
-					is_megastructure_type = ring_world_2
+			NOR = {
+				any_owned_megastructure = {
+					OR = {
+						is_megastructure_type = ring_world_1
+						is_megastructure_type = ring_world_2
+					}
 				}
+				has_country_flag = finished_ringworld
 			}
-			NOT = { has_country_flag = finished_ringworld }
 		}
 		name = "utopia.2005.b"
 	}
@@ -4557,10 +4559,12 @@ country_event = {
 	}
 	picture = {
 		trigger = {
-			is_machine_empire = no
-			NAND = {
-				is_gestalt = yes
-				from = { is_gestalt = yes }
+			NOR = {
+				is_machine_empire = yes
+				AND = {
+					is_gestalt = yes
+					from = { is_gestalt = yes }
+				}
 			}
 		}
 		picture = GFX_evt_hyper_relay_conjunction

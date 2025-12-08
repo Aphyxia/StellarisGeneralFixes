@@ -76,8 +76,10 @@ dyson_sphere_0 = {
 		custom_tooltip = {
 			fail_text = "requires_no_arc_furnace_construction"
 			if = {
-				limit = { system_has_arc_furnace = no }
-				NOT = { solar_system = { has_star_flag = arc_furnace_construction } }
+				NOR = {
+					limit = { system_has_arc_furnace = yes }
+					solar_system = { has_star_flag = arc_furnace_construction }
+				}
 			}
 		}
 		custom_tooltip = {
@@ -225,8 +227,10 @@ dyson_sphere_1 = {
 		custom_tooltip = {
 			fail_text = "requires_no_arc_furnace_construction"
 			if = {
-				limit = { system_has_arc_furnace = no }
-				NOT = { solar_system = { has_star_flag = arc_furnace_construction } }
+				NOR = {
+					limit = { system_has_arc_furnace = yes }
+					solar_system = { has_star_flag = arc_furnace_construction }
+				}
 			}
 		}
 		custom_tooltip = {
@@ -296,8 +300,10 @@ dyson_sphere_2 = {
 		custom_tooltip = {
 			fail_text = "requires_no_arc_furnace_construction"
 			if = {
-				limit = { system_has_arc_furnace = no }
-				NOT = { solar_system = { has_star_flag = arc_furnace_construction } }
+				NOR = {
+					limit = { system_has_arc_furnace = yes }
+					solar_system = { has_star_flag = arc_furnace_construction }
+				}
 			}
 		}
 		custom_tooltip = {
@@ -437,8 +443,10 @@ dyson_sphere_3 = {
 		custom_tooltip = {
 			fail_text = "requires_no_arc_furnace_construction"
 			if = {
-				limit = { system_has_arc_furnace = no }
-				NOT = { solar_system = { has_star_flag = arc_furnace_construction } }
+				NOR = {
+					limit = { system_has_arc_furnace = yes }
+					solar_system = { has_star_flag = arc_furnace_construction }
+				}
 			}
 		}
 		custom_tooltip = {
@@ -524,8 +532,10 @@ dyson_sphere_4 = {
 		custom_tooltip = {
 			fail_text = "requires_no_arc_furnace_construction"
 			if = {
-				limit = { system_has_arc_furnace = no }
-				NOT = { solar_system = { has_star_flag = arc_furnace_construction } }
+				NOR = {
+					limit = { system_has_arc_furnace = yes }
+					solar_system = { has_star_flag = arc_furnace_construction }
+				}
 			}
 		}
 		custom_tooltip = {
@@ -611,8 +621,10 @@ dyson_sphere_5 = {
 		custom_tooltip = {
 			fail_text = "requires_no_arc_furnace_construction"
 			if = {
-				limit = { system_has_arc_furnace = no }
-				NOT = { solar_system = { has_star_flag = arc_furnace_construction } }
+				NOR = {
+					limit = { system_has_arc_furnace = yes }
+					solar_system = { has_star_flag = arc_furnace_construction }
+				}
 			}
 		}
 		custom_tooltip = {
@@ -739,8 +751,10 @@ dyson_sphere_restored = {
 		custom_tooltip = {
 			fail_text = "requires_no_arc_furnace_construction"
 			if = {
-				limit = { system_has_arc_furnace = no }
-				NOT = { solar_system = { has_star_flag = arc_furnace_construction } }
+				NOR = {
+					limit = { system_has_arc_furnace = yes }
+					solar_system = { has_star_flag = arc_furnace_construction }
+				}
 			}
 		}
 		custom_tooltip = {
@@ -939,8 +953,10 @@ dyson_sphere_disco_restored = {
 		custom_tooltip = {
 			fail_text = "requires_no_arc_furnace_construction"
 			if = {
-				limit = { system_has_arc_furnace = no }
-				NOT = { solar_system = { has_star_flag = arc_furnace_construction } }
+				NOR = {
+					limit = { system_has_arc_furnace = yes }
+					solar_system = { has_star_flag = arc_furnace_construction }
+				}
 			}
 		}
 		custom_tooltip = {

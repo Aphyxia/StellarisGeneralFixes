@@ -1925,16 +1925,18 @@ country_event = {
 
 	trigger = {
 		from = { has_country_flag = abandoned_hatchery_country_flag }
-		fromfromfrom = {
-			fleet = {
-				NOR = {
-					has_fleet_flag = abandoned_hatchery_fleet
-					has_fleet_flag = first_starlit_attackers
-					has_fleet_flag = starlit_attackers
+		NOR = {
+			fromfromfrom = {
+				fleet = {
+					OR = {
+						has_fleet_flag = abandoned_hatchery_fleet
+						has_fleet_flag = first_starlit_attackers
+						has_fleet_flag = starlit_attackers
+					}
 				}
 			}
+			has_country_flag = destroyed_abandoned_hatchery
 		}
-		NOT = { has_country_flag = destroyed_abandoned_hatchery }
 	}
 
 	immediate = {

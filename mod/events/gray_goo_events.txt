@@ -484,10 +484,12 @@ country_event = {
 		}
 		every_playable_country = {
 			limit = {
-				is_ai = no
-				NAND = { # Vfix
-					exists = event_target:goo_slayer
-					is_same_empire = event_target:goo_slayer
+				NOR = {
+					is_ai = yes
+					AND = {
+						exists = event_target:goo_slayer
+						is_same_empire = event_target:goo_slayer
+					}
 				}
 			}
 			country_event = { id = graygoo.16 }
@@ -832,7 +834,10 @@ country_event = {
 				type = "gate_builders"
 				ignore_initial_colony_error = yes
 				authority = "auth_democratic"
-				civics = { civic = civic_meritocracy civic = civic_environmentalist }
+				civics = {
+					civic = civic_meritocracy
+					civic = civic_environmentalist
+				}
 				species = last_created_species
 				ethos = { ethic = "ethic_fanatic_xenophile" ethic = "ethic_egalitarian" }
 				effect = {

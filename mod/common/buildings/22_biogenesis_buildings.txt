@@ -91,8 +91,8 @@ building_citadel_uplink = {
 		trigger = {
 			has_owner = yes
 			exists = solar_system
-			owner = { is_gestalt = no }
-			NOT = {
+			NOR = {
+				owner = { is_gestalt = yes }
 				solar_system = {
 					any_ship_in_system = { is_ship_size = starbase_deep_space_citadel_3 }
 				}

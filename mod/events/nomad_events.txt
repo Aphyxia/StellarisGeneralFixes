@@ -486,13 +486,15 @@ fleet_event = {
 	trigger = {
 		exists = owner
 		owner = { is_country_type = nomad }
-		NOT = { has_fleet_flag = nomad_on_mission }
-		solar_system = {
-			NOR = {
-				exists = space_owner
-				has_star_flag = hostile_system
-				has_star_flag = nomad_mid_point
-				has_star_flag = nomad_end_point
+		NOR = {
+			has_fleet_flag = nomad_on_mission
+			solar_system = {
+				OR = {
+					exists = space_owner
+					has_star_flag = hostile_system
+					has_star_flag = nomad_mid_point
+					has_star_flag = nomad_end_point
+				}
 			}
 		}
 	}
@@ -953,14 +955,16 @@ country_event = {
 					event_target:contact_empire = { is_machine_empire = yes }
 				}
 			}
-			NOT = { has_valid_civic = civic_inwards_perfection }
-			NAND = {
-				has_valid_civic = civic_selective_kinship
-				NOT = { event_target:contact_empire = { is_same_species_class = root } }
-			}
-			NAND = {
-				is_fanatic_spiritualist = yes
-				event_target:contact_empire = { is_machine_empire = yes }
+			NOR = {
+				has_valid_civic = civic_inwards_perfection
+				AND = {
+					has_valid_civic = civic_selective_kinship
+					NOT = { event_target:contact_empire = { is_same_species_class = root } }
+				}
+				AND = {
+					is_fanatic_spiritualist = yes
+					event_target:contact_empire = { is_machine_empire = yes }
+				}
 			}
 			OR = {
 				is_fanatic_xenophobe = no

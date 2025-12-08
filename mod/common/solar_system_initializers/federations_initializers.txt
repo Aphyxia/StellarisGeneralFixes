@@ -1136,7 +1136,10 @@ scion_fallen_1 = {
 				type = fallen_empire
 				ignore_initial_colony_error = yes
 				authority = auth_imperial
-				civics = { civic = civic_lethargic_leadership civic = civic_empire_in_decline }
+				civics = {
+					civic = civic_lethargic_leadership
+					civic = civic_empire_in_decline
+				}
 				species = last_created_species
 				ethos = { ethic = ethic_fanatic_materialist }
 				flag = random
@@ -1349,7 +1352,10 @@ scion_fallen_2 = {
 				type = fallen_empire
 				ignore_initial_colony_error = yes
 				authority = auth_imperial
-				civics = { civic = civic_lethargic_leadership civic = civic_empire_in_decline }
+				civics = {
+					civic = civic_lethargic_leadership
+					civic = civic_empire_in_decline
+				}
 				species = last_created_species
 				ethos = { ethic = ethic_fanatic_spiritualist }
 				flag = random
@@ -1755,10 +1761,12 @@ planet_with_too_many_moons_system = {
 		modifier = { # spawns nearby the xenophobe FE
 			add = @spawn_system_verycommon
 			any_country = { has_country_flag = fallen_empire_4 }
-			NOT = { has_star_flag = empire_cluster }
-			NAND = {
-				exists = owner
-				owner = { has_country_flag = fallen_empire_4 }
+			NOR = {
+				has_star_flag = empire_cluster
+				AND = {
+					exists = owner
+					owner = { has_country_flag = fallen_empire_4 }
+				}
 			}
 			count_neighbor_system = {
 				count = 0

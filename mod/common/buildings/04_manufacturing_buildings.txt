@@ -747,10 +747,12 @@ building_coordinated_fulfillment_center_1 = {
 		potential = {
 			has_owner = yes
 			owner = {
-				is_synthetic_empire = no
-				NAND = {
-					has_policy_flag = relentless_industrialists_study
-					has_country_flag = relentless_industrialists_study_completed
+				NOR = {
+					is_synthetic_empire = yes
+					AND = {
+						has_policy_flag = relentless_industrialists_study
+						has_country_flag = relentless_industrialists_study_completed
+					}
 				}
 			}
 		}
@@ -860,10 +862,12 @@ building_coordinated_fulfillment_center_2 = {
 		potential = {
 			has_owner = yes
 			owner = {
-				is_synthetic_empire = no
-				NAND = {
-					has_policy_flag = relentless_industrialists_study
-					has_country_flag = relentless_industrialists_study_completed
+				NOR = {
+					is_synthetic_empire = yes
+					AND = {
+						has_policy_flag = relentless_industrialists_study
+						has_country_flag = relentless_industrialists_study_completed
+					}
 				}
 			}
 		}
@@ -994,8 +998,10 @@ building_foundry_upkeep_1 = {
 	}
 	potential = {
 		has_owner = yes
-		owner = { is_wilderness_empire = no } # see 'building_natural_furnace_2'
-		NOT = { has_modifier = resort_colony }
+		NOR = {
+			owner = { is_wilderness_empire = yes } # see 'building_natural_furnace_2'
+			has_modifier = resort_colony
+		}
 	}
 	destroy_trigger = {
 		has_owner = yes
@@ -1056,11 +1062,13 @@ building_foundry_efficiency_1 = {
 	}
 	potential = {
 		has_owner = yes
-		owner = { is_wilderness_empire = no } # see 'building_natural_furnace_3'
 		NOR = {
-			has_modifier = resort_colony
-			has_modifier = slave_colony
-			owner = { is_wilderness_empire = yes }
+			owner = { is_wilderness_empire = yes } # see 'building_natural_furnace_3'
+			OR = {
+				has_modifier = resort_colony
+				has_modifier = slave_colony
+				owner = { is_wilderness_empire = yes }
+			}
 		}
 	}
 	destroy_trigger = {

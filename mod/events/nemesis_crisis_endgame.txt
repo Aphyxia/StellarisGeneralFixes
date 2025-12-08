@@ -560,8 +560,10 @@ country_event = {
 	title = "crisis.6005.name"
 	desc = {
 		trigger = {
-			owner_species = { is_psionic_species = no }
-			NOT = { has_country_flag = crisis_general_alert }
+			NOR = {
+				owner_species = { is_psionic_species = yes }
+				has_country_flag = crisis_general_alert
+			}
 		}
 		text = "crisis.6015.a.desc"
 	}

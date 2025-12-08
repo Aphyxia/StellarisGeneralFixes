@@ -862,13 +862,15 @@ DISTAR_MEDGAS_CAT = {
 		modifier = { # Will not spawn if the player has neither completed nor currently has the ongoing chain
 			factor = 0
 			NOR = {
-				has_distar = yes
-				has_global_flag = l_cluster_opened
-			}
-			from.owner = {
-				NOR = {
-					has_event_chain = "l_cluster_chain"
-					has_completed_event_chain_counter = { event_chain = l_cluster_chain counter = clues }
+				OR = {
+					has_distar = yes
+					has_global_flag = l_cluster_opened
+				}
+				from.owner = {
+					OR = {
+						has_event_chain = "l_cluster_chain"
+						has_completed_event_chain_counter = { event_chain = l_cluster_chain counter = clues }
+					}
 				}
 			}
 		}

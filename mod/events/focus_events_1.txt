@@ -536,15 +536,17 @@ country_event = {
 
 	trigger = {
 		is_country_type = default
-		NAND = {
-			has_country_flag = energy_storage_1000
-			has_country_flag = mineral_storage_1000
-			has_country_flag = food_storage_1000
-			has_country_flag = alloys_storage_1000
-		}
-		NAND = { # Vfix opt
-			country_uses_consumer_goods = yes
-			has_country_flag = consumer_goods_storage_1000
+		NOR = {
+			AND = {
+				has_country_flag = energy_storage_1000
+				has_country_flag = mineral_storage_1000
+				has_country_flag = food_storage_1000
+				has_country_flag = alloys_storage_1000
+			}
+			AND = {
+				country_uses_consumer_goods = yes
+				has_country_flag = consumer_goods_storage_1000
+			}
 		}
 	}
 
@@ -602,12 +604,14 @@ planet_event = {
 		has_owner = yes
 		owner = {
 			if = {
-				limit = { is_gestalt = no }
-				NAND = {
-					has_country_flag = built_city_district
-					has_country_flag = built_generator_district
-					has_country_flag = built_mining_district
-					has_country_flag = built_farming_district
+				NOR = {
+					limit = { is_gestalt = yes }
+					AND = {
+						has_country_flag = built_city_district
+						has_country_flag = built_generator_district
+						has_country_flag = built_mining_district
+						has_country_flag = built_farming_district
+					}
 				}
 			}
 			else_if = {

@@ -106,7 +106,10 @@ country_event = {
 		if = {
 			limit = { is_hive_empire = no }
 			change_government = {
-				civics = { civic = civic_revanchist_fervor civic = civic_ancient_caches_of_technology }
+				civics = {
+					civic = civic_revanchist_fervor
+					civic = civic_ancient_caches_of_technology
+				}
 			}
 			if = {
 				limit = { has_paragon_dlc = yes }
@@ -129,17 +132,26 @@ country_event = {
 				trigger = has_country_flag
 				fallen_empire_hive_war = {
 					change_government = {
-						civics = { civic = civic_restored_mind civic = civic_ancient_memories_of_war }
+						civics = {
+							civic = civic_restored_mind
+							civic = civic_ancient_memories_of_war
+						}
 					}
 				}
 				fallen_empire_hive_growth = {
 					change_government = {
-						civics = { civic = civic_restored_mind civic = civic_ancient_memories_of_growth }
+						civics = {
+							civic = civic_restored_mind
+							civic = civic_ancient_memories_of_growth
+						}
 					}
 				}
 				fallen_empire_hive_control = {
 					change_government = {
-						civics = { civic = civic_restored_mind civic = civic_ancient_memories_of_control }
+						civics = {
+							civic = civic_restored_mind
+							civic = civic_ancient_memories_of_control
+						}
 					}
 					add_to_galactic_community = yes
 					set_global_flag = control_awoke
@@ -1222,10 +1234,12 @@ country_event = {
 	desc = {
 		text = war_in_heaven.13.desc
 		trigger = {
-			is_galactic_custodian = no
-			NAND = {
-				has_federation = yes
-				is_federation_leader = yes
+			NOR = {
+				is_galactic_custodian = yes
+				AND = {
+					has_federation = yes
+					is_federation_leader = yes
+				}
 			}
 		}
 	}

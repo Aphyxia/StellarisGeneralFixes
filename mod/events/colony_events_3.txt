@@ -911,17 +911,19 @@ planet_event = {
 
 	trigger = {
 		has_owner = yes
-		owner = {
-			NOR = {
-				is_ai = yes
-				has_country_flag = roguemoon_country
-				is_wilderness_empire = yes
-			}
-		}
 		NOR = {
-			pop_amount <= 0
-			is_artificial = yes
-			has_planet_flag = colony_event
+			owner = {
+				OR = {
+					is_ai = yes
+					has_country_flag = roguemoon_country
+					is_wilderness_empire = yes
+				}
+			}
+			OR = {
+				pop_amount <= 0
+				is_artificial = yes
+				has_planet_flag = colony_event
+			}
 		}
 		has_moon = yes
 		any_moon = {
@@ -1029,17 +1031,19 @@ planet_event = {
 
 	trigger = {
 		has_owner = yes
-		owner = {
-			NOR = {
-				is_ai = yes
-				is_wilderness_empire = yes
-				has_country_flag = dportal_country
-			}
-		}
 		NOR = {
-			pop_amount <= 0
-			is_artificial = yes
-			has_planet_flag = colony_event
+			owner = {
+				OR = {
+					is_ai = yes
+					is_wilderness_empire = yes
+					has_country_flag = dportal_country
+				}
+			}
+			OR = {
+				pop_amount <= 0
+				is_artificial = yes
+				has_planet_flag = colony_event
+			}
 		}
 	}
 
@@ -2208,7 +2212,10 @@ country_event = {
 			adjective = "NAME_Demon_Refugees"
 			authority = auth_dictatorial
 			ignore_initial_colony_error = yes
-			civics = { civic = civic_fanatic_purifiers civic = civic_scavengers }
+			civics = {
+				civic = civic_fanatic_purifiers
+				civic = civic_scavengers
+			}
 			species = last_created_species
 			ethos = { ethic = ethic_fanatic_xenophobe ethic = ethic_militarist }
 			flag = {
@@ -2728,14 +2735,16 @@ planet_event = {
 
 	trigger = {
 		has_owner = yes
-		owner = {
-			NOR = {
-				is_ai = yes
-				is_gestalt = yes
-				has_country_flag = feral_overload_flag
+		NOR = {
+			owner = {
+				OR = {
+					is_ai = yes
+					is_gestalt = yes
+					has_country_flag = feral_overload_flag
+				}
 			}
+			has_planet_flag = colony_event
 		}
-		NOT = { has_planet_flag = colony_event }
 		OR = {
 			is_planet_class = pc_arid
 			is_planet_class = pc_alpine
@@ -2937,14 +2946,16 @@ planet_event = {
 
 	trigger = {
 		NOR = {
-			owner = { is_ai = yes }
-			has_planet_flag = colony_event
-			is_artificial = yes
-		}
-		owner = {
-			NOR = {
-				has_country_flag = bluelotus
-				is_wilderness_empire = yes
+			OR = {
+				owner = { is_ai = yes }
+				has_planet_flag = colony_event
+				is_artificial = yes
+			}
+			owner = {
+				OR = {
+					has_country_flag = bluelotus
+					is_wilderness_empire = yes
+				}
 			}
 		}
 		pop_amount > 0
@@ -5832,16 +5843,18 @@ planet_event = {
 
 	trigger = {
 		has_owner = yes
-		owner = {
-			NOR = {
-				has_country_flag = colony_junkyard_orbit
-				is_wilderness_empire = yes
-			}
-		}
 		NOR = {
-			pop_amount <= 0
-			has_planet_flag = colony_event
-			is_artificial = yes
+			owner = {
+				OR = {
+					has_country_flag = colony_junkyard_orbit
+					is_wilderness_empire = yes
+				}
+			}
+			OR = {
+				pop_amount <= 0
+				has_planet_flag = colony_event
+				is_artificial = yes
+			}
 		}
 	}
 
@@ -7765,10 +7778,12 @@ planet_event = {
 		is_moon = no
 		has_moon = yes
 		NOR = {
-			is_artificial = yes
-			has_global_flag = dimensional_prison_colony
+			OR = {
+				is_artificial = yes
+				has_global_flag = dimensional_prison_colony
+			}
+			owner = { is_wilderness_empire = yes }
 		}
-		owner = { is_wilderness_empire = no }
 	}
 
 	is_triggered_only = yes

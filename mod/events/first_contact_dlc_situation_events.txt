@@ -1049,11 +1049,13 @@ situation_event = {
 		}
 		owner = {
 			has_country_flag = early_space_age
-			capital_scope = { is_artificial = no }
 			NOR = {
-				has_origin = origin_mechanists
-				has_country_flag = had_pre_ftl_uprising
-				has_country_flag = unplugged_pre_ftl_empire_flag
+				capital_scope = { is_artificial = yes }
+				OR = {
+					has_origin = origin_mechanists
+					has_country_flag = had_pre_ftl_uprising
+					has_country_flag = unplugged_pre_ftl_empire_flag
+				}
 			}
 		}
 	}
@@ -1095,12 +1097,19 @@ country_event = {
 					}
 				}
 			}
-			random_list = {
-				20 = { set_variable = { which = num_robot_uprising_armies value = 1 } }
-				20 = { set_variable = { which = num_robot_uprising_armies value = 2 } }
-				20 = { set_variable = { which = num_robot_uprising_armies value = 3 } }
-				20 = { set_variable = { which = num_robot_uprising_armies value = 4 } }
-				20 = { set_variable = { which = num_robot_uprising_armies value = 5 } }
+			# random_list = {
+			# 	20 = { set_variable = { which = num_robot_uprising_armies value = 1 } }
+			# 	20 = { set_variable = { which = num_robot_uprising_armies value = 2 } }
+			# 	20 = { set_variable = { which = num_robot_uprising_armies value = 3 } }
+			# 	20 = { set_variable = { which = num_robot_uprising_armies value = 4 } }
+			# 	20 = { set_variable = { which = num_robot_uprising_armies value = 5 } }
+			# }
+			# Vfix opt
+			set_variable_to_random_value = {
+				which = num_robot_uprising_armies
+				min = 1
+				max = 5
+				rounded = yes
 			}
 			while = {
 				count = num_robot_uprising_armies
@@ -2454,9 +2463,12 @@ situation_event = {
 	trigger = {
 		has_first_contact_dlc = yes
 		owner = {
-			is_gestalt = no
-			current_awareness_level < full
-			has_blocked_random_devastating_pre_ftl_events = no
+			NOR = {
+				is_gestalt = yes
+				current_awareness_level = full
+				has_blocked_random_devastating_pre_ftl_events = yes
+			}
+			exists = capital_scope
 		}
 	}
 
@@ -2505,12 +2517,14 @@ country_event = {
 
 	trigger = {
 		NOR = {
-			has_country_flag = preftl_2000_fired
-			has_country_flag = had_observation_situation
-		}
-		NAND = { # Vfix
-			exists = from.owner
-			from.owner = { current_awareness_level = full }
+			OR = {
+				has_country_flag = preftl_2000_fired
+				has_country_flag = had_observation_situation
+			}
+			AND = {
+				exists = from.owner
+				from.owner = { current_awareness_level = full }
+			}
 		}
 	}
 

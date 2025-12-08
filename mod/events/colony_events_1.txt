@@ -549,17 +549,19 @@ planet_event = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no }
 		pop_amount > 0
-		is_artificial = no
-		owner = { is_ai = no }
 		NOR = {
-			has_global_flag = seismic_disturbance_global
-			has_planet_flag = colony_event
-			is_planet_class = pc_nuked
-			is_planet_class = pc_ringworld_habitable
-			is_planet_class = pc_shattered_ring_habitable
-			is_planet_class = pc_habitat
-			is_urban_planet = yes
-			is_planet_class = pc_volcanic
+			is_artificial = yes
+			owner = { is_ai = yes }
+			OR = {
+				has_global_flag = seismic_disturbance_global
+				has_planet_flag = colony_event
+				is_planet_class = pc_nuked
+				is_planet_class = pc_ringworld_habitable
+				is_planet_class = pc_shattered_ring_habitable
+				is_planet_class = pc_habitat
+				is_urban_planet = yes
+				is_planet_class = pc_volcanic
+			}
 		}
 	}
 
@@ -2934,19 +2936,23 @@ planet_event = {
 
 	trigger = {
 		has_owner = yes
-		owner = { is_ai = no }
 		NOR = {
-			has_global_flag = underground_vault_global
-			has_planet_flag = armageddon_nuked
-			has_planet_flag = colony_event
+			owner = { is_ai = yes }
+			OR = {
+				has_global_flag = underground_vault_global
+				has_planet_flag = armageddon_nuked
+				has_planet_flag = colony_event
+			}
 		}
 		is_planet_class = pc_nuked
 		NOR = {
-			has_planet_flag = nuked_planet_anomalies_disabled
-			has_planet_flag = pre_ftls_nuked_themselves
-			solar_system = { is_capital_system = yes }
+			OR = {
+				has_planet_flag = nuked_planet_anomalies_disabled
+				has_planet_flag = pre_ftls_nuked_themselves
+				solar_system = { is_capital_system = yes }
+			}
+			owner = { is_gestalt = yes }
 		}
-		owner = { is_gestalt = no }
 		pop_amount > 0
 	}
 
@@ -3241,10 +3247,12 @@ planet_event = {
 
 	trigger = {
 		has_owner = yes
-		owner = { is_ai = no }
 		NOR = {
-			has_planet_flag = armageddon_nuked
-			has_planet_flag = colony_event
+			owner = { is_ai = yes }
+			OR = {
+				has_planet_flag = armageddon_nuked
+				has_planet_flag = colony_event
+			}
 		}
 		is_planet_class = pc_nuked
 		OR = {
@@ -3331,10 +3339,12 @@ planet_event = {
 
 	trigger = {
 		has_owner = yes
-		owner = { is_ai = no }
 		NOR = {
-			has_planet_flag = armageddon_nuked
-			has_planet_flag = colony_event
+			owner = { is_ai = yes }
+			OR = {
+				has_planet_flag = armageddon_nuked
+				has_planet_flag = colony_event
+			}
 		}
 		is_planet_class = pc_nuked
 		OR = {
@@ -3382,10 +3392,12 @@ planet_event = {
 
 	trigger = {
 		has_owner = yes
-		owner = { is_ai = no }
 		NOR = {
-			has_planet_flag = armageddon_nuked
-			has_planet_flag = colony_event
+			owner = { is_ai = yes }
+			OR = {
+				has_planet_flag = armageddon_nuked
+				has_planet_flag = colony_event
+			}
 		}
 		is_planet_class = pc_nuked
 		OR = {
@@ -3435,10 +3447,12 @@ planet_event = {
 
 	trigger = {
 		has_owner = yes
-		owner = { is_ai = no }
 		NOR = {
-			has_planet_flag = armageddon_nuked
-			has_planet_flag = colony_event
+			owner = { is_ai = yes }
+			OR = {
+				has_planet_flag = armageddon_nuked
+				has_planet_flag = colony_event
+			}
 		}
 		is_planet_class = pc_nuked
 		NOR = {
@@ -3567,11 +3581,13 @@ planet_event = {
 			has_planet_flag = armageddon_nuked
 		}
 		NOR = {
-			has_planet_flag = colony_event
-			has_planet_flag = wasteland_pacifist_movement
-			solar_system = { is_capital_system = yes }
+			OR = {
+				has_planet_flag = colony_event
+				has_planet_flag = wasteland_pacifist_movement
+				solar_system = { is_capital_system = yes }
+			}
+			owner = { is_gestalt = yes }
 		}
-		owner = { is_gestalt = no }
 		pop_amount > 0
 		any_owned_pop_group = {
 			NOR = {
@@ -3642,10 +3658,12 @@ planet_event = {
 
 	trigger = {
 		has_owner = yes
-		owner = { is_ai = no }
 		NOR = {
-			has_planet_flag = armageddon_nuked
-			has_planet_flag = colony_event
+			owner = { is_ai = yes }
+			OR = {
+				has_planet_flag = armageddon_nuked
+				has_planet_flag = colony_event
+			}
 		}
 		is_planet_class = pc_nuked
 		NOR = {
@@ -3837,18 +3855,20 @@ planet_event = {
 
 	trigger = {
 		has_owner = yes
-		owner = { is_ai = no }
 		NOR = {
-			pop_amount <= 0
-			years_passed >= 50
-			is_planet_class = pc_habitat
-			is_planet_class = pc_ringworld_habitable
-			is_planet_class = pc_shattered_ring_habitable
-			has_planet_flag = asteroid_sighted
-			has_planet_flag = asteroid_collision
-			has_global_flag = asteroid_sighted_global
-			owner = { has_country_flag = asteroid_sighted_country }
-			owner = { is_wilderness_empire = yes }
+			owner = { is_ai = yes }
+			OR = {
+				pop_amount <= 0
+				years_passed >= 50
+				is_planet_class = pc_habitat
+				is_planet_class = pc_ringworld_habitable
+				is_planet_class = pc_shattered_ring_habitable
+				has_planet_flag = asteroid_sighted
+				has_planet_flag = asteroid_collision
+				has_global_flag = asteroid_sighted_global
+				owner = { has_country_flag = asteroid_sighted_country }
+				owner = { is_wilderness_empire = yes }
+			}
 		}
 	}
 

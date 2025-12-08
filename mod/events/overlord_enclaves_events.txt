@@ -8450,13 +8450,15 @@ situation_event = {
 
 	trigger = {
 		NOR = {
-			has_situation_flag = divination_occurring
-			situation_progress < 15
-		}
-		owner = {
-			NOR = {
-				has_country_flag = lightshow_divination_flag
-				has_shroudwalker_divination_event = yes
+			OR = {
+				has_situation_flag = divination_occurring
+				situation_progress < 15
+			}
+			owner = {
+				OR = {
+					has_country_flag = lightshow_divination_flag
+					has_shroudwalker_divination_event = yes
+				}
 			}
 		}
 	}
@@ -8641,13 +8643,15 @@ situation_event = {
 
 	trigger = {
 		NOR = {
-			has_situation_flag = divination_occurring
-			situation_progress < 10
-		}
-		owner = {
-			NOR = {
-				has_country_flag = dportal_country
-				is_wilderness_empire = yes
+			OR = {
+				has_situation_flag = divination_occurring
+				situation_progress < 10
+			}
+			owner = {
+				OR = {
+					has_country_flag = dportal_country
+					is_wilderness_empire = yes
+				}
 			}
 		}
 	}
@@ -8793,12 +8797,14 @@ situation_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_situation_flag = divination_occurring }
-		owner = {
-			NOR = {
-				has_country_flag = redivivus_flag
-				is_gestalt = yes
-				is_machine_empire = yes
+		NOR = {
+			has_situation_flag = divination_occurring
+			owner = {
+				OR = {
+					has_country_flag = redivivus_flag
+					is_gestalt = yes
+					is_machine_empire = yes
+				}
 			}
 		}
 	}
@@ -10195,11 +10201,13 @@ situation_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_situation_flag = divination_occurring }
-		owner = {
-			NOR = {
-				has_country_flag = wayward_pilgrims_flag
-				has_country_flag = active_divination_event
+		NOR = {
+			has_situation_flag = divination_occurring
+			owner = {
+				OR = {
+					has_country_flag = wayward_pilgrims_flag
+					has_country_flag = active_divination_event
+				}
 			}
 		}
 	}

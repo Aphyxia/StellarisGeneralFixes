@@ -606,7 +606,10 @@ broken_shackles_parent_system = {
 						}
 					}
 				}
-				civics = { civic = civic_increasing_urbanization civic = civic_atmospheric_pollution }
+				civics = {
+					civic = civic_increasing_urbanization
+					civic = civic_atmospheric_pollution
+				}
 				flag = {
 					icon = { category = "spherical" file = "flag_spherical_22.dds" }
 					background = { category = "backgrounds" file = "new_dawn.dds" }

@@ -1406,8 +1406,10 @@ building_research_upkeep_1 = {
 	}
 	potential = {
 		has_owner = yes
-		owner = { is_wilderness_empire = no }
-		NOT = { has_modifier = resort_colony }
+		NOR = {
+			owner = { is_wilderness_empire = yes }
+			has_modifier = resort_colony
+		}
 	}
 	allow = {
 		is_occupied_flag = no
@@ -1474,8 +1476,10 @@ building_research_efficiency_1 = {
 	}
 	potential = {
 		has_owner = yes
-		owner = { is_wilderness_empire = no }
-		NOT = { has_modifier = resort_colony }
+		NOR = {
+			owner = { is_wilderness_empire = yes }
+			has_modifier = resort_colony
+		}
 	}
 	allow = {
 		is_occupied_flag = no

@@ -150,11 +150,13 @@ country_event = {
 			limit = {
 				is_purity_authority = yes
 				NOR = {
-					is_imperial_authority = yes
-					is_hive_empire = yes
-					is_megacorp = yes
+					OR = {
+						is_imperial_authority = yes
+						is_hive_empire = yes
+						is_megacorp = yes
+					}
+					from = { is_robotic_species = yes }
 				}
-				from = { is_robotic_species = no }
 			}
 			from = {
 				add_trait = { trait = trait_leader_genetic_purist }

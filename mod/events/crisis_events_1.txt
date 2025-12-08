@@ -1230,10 +1230,10 @@ country_event = {
 		random_system = {
 			limit = {
 				has_owner = yes
-				space_owner = {
-					NOT = { is_same_value = event_target:swarm }
+				NOR = {
+					space_owner = { is_same_value = event_target:swarm }
+					has_star_flag = crisis_spawn_exclude
 				}
-				NOT = { has_star_flag = crisis_spawn_exclude }
 			}
 			spawn_system = {
 				min_distance >= 10

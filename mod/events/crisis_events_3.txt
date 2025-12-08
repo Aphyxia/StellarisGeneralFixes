@@ -847,7 +847,10 @@ planet_event = {
 			# species = ROBOT_POP_SPECIES_3
 			authority = auth_ancient_machine_intelligence
 			ethos = { ethic = ethic_gestalt_consciousness }
-			civics = { civic = civic_machine_terminator civic = civic_machine_warbots }
+			civics = {
+				civic = civic_machine_terminator
+				civic = civic_machine_warbots
+			}
 			type = "ai_empire"
 			name_list = "AI"
 			flag = {

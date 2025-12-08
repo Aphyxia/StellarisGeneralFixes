@@ -1136,10 +1136,12 @@ decision_market_nomination = {
 		exists = from
 		from = {
 			has_country_flag = market_nomination_eligible
-			NOT = { has_valid_civic = civic_inwards_perfection }
-			NAND = {
-				is_ai = yes
-				is_fanatic_xenophobe = yes
+			NOR = {
+				has_valid_civic = civic_inwards_perfection
+				AND = {
+					is_ai = yes
+					is_fanatic_xenophobe = yes
+				}
 			}
 		}
 		NOT = { has_designation = col_nanotech_world }

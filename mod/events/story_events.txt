@@ -1913,17 +1913,19 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_country_flag = Story7 }
-		from = {
-			NOR = {
-				has_country_flag = radical_cult
-				is_fallen_empire = yes
-				is_primitive = yes
-				is_guardian_country = yes
-				has_relation_flag = { flag = no_coms who = root }
-				# has_relation_flag = { flag = AbandonedRefugees who = root } # Vfix removed in v2.2
-				has_relation_flag = { flag = scientist_pirate_relation who = root } # Vfix
-				has_country_flag = day_0
+		NOR = {
+			has_country_flag = Story7
+			from = {
+				OR = {
+					has_country_flag = radical_cult
+					is_fallen_empire = yes
+					is_primitive = yes
+					is_guardian_country = yes
+					has_relation_flag = { flag = no_coms who = root }
+					# has_relation_flag = { flag = AbandonedRefugees who = root } # Vfix removed in v2.2
+					has_relation_flag = { flag = scientist_pirate_relation who = root } # Vfix
+					has_country_flag = day_0
+				}
 			}
 		}
 	}

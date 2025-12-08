@@ -905,10 +905,12 @@ pop_group_event = {
 					space_owner = {
 						if = {
 							limit = {
-								NOT = { is_same_value = event_target:abductor }
-								NAND = {
-									exists = event_target:obsv_post_owner
-									is_same_empire = event_target:obsv_post_owner
+								NOR = {
+									is_same_value = event_target:abductor
+									AND = {
+										exists = event_target:obsv_post_owner
+										is_same_empire = event_target:obsv_post_owner
+									}
 								}
 							}
 							country_event = { id = action.123 }

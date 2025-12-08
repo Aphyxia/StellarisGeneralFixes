@@ -1137,15 +1137,17 @@ situation_event = {
 
 	trigger = {
 		exists = owner
-		owner = {
-			NOR = {
-				has_origin = origin_legendary_leader
-				has_origin = origin_clone_army
-			}
-		}
 		NOR = {
-			has_situation_flag = biogenesis_70_fire
-			situation_progress < 20
+			owner = {
+				OR = {
+					has_origin = origin_legendary_leader
+					has_origin = origin_clone_army
+				}
+			}
+			OR = {
+				has_situation_flag = biogenesis_70_fire
+				situation_progress < 20
+			}
 		}
 		has_situation_flag = cloning_approach_selected
 	}

@@ -3319,8 +3319,10 @@ building_fe_assembly_1 = {
 		OR = {
 			AND = {
 				OR = {
-					owner = { is_ai = no }
-					NOT = { exists = assembling_species }
+					NAND = {
+						owner = { is_ai = yes }
+						exists = assembling_species
+					}
 					assembling_species = { is_robotic = yes }
 				}
 				owner = {
@@ -3488,8 +3490,10 @@ building_fe_assembly_2 = {
 		OR = {
 			AND = {
 				OR = {
-					owner = { is_ai = no }
-					NOT = { exists = assembling_species }
+					NAND = {
+						owner = { is_ai = yes }
+						exists = assembling_species
+					}
 					assembling_species = { is_robotic = yes }
 				}
 				owner = {

@@ -11614,10 +11614,12 @@ resolution_galactic_focus_war_in_heaven_support_side_1 = {
 		exists = event_target:SecondSleeper
 	}
 	breach = {
-		NOT = { has_country_flag = constitutional_immunity }
-		NAND = {
-			exists = overlord
-			has_overlord = event_target:FirstSleeper
+		NOR = {
+			has_country_flag = constitutional_immunity
+			AND = {
+				exists = overlord
+				has_overlord = event_target:FirstSleeper
+			}
 		}
 	}
 	ai_weight = {
@@ -11699,10 +11701,12 @@ resolution_galactic_focus_war_in_heaven_support_side_2 = {
 		exists = event_target:SecondSleeper
 	}
 	breach = {
-		NOT = { has_country_flag = constitutional_immunity }
-		NAND = {
-			exists = overlord
-			has_overlord = event_target:SecondSleeper
+		NOR = {
+			has_country_flag = constitutional_immunity
+			AND = {
+				exists = overlord
+				has_overlord = event_target:SecondSleeper
+			}
 		}
 	}
 	ai_weight = {
@@ -11751,10 +11755,10 @@ resolution_galactic_focus_war_in_heaven_denounce_both = {
 	triggered_modifier = {
 		potential = {
 			has_global_flag = war_in_heaven_ongoing
-			OR = {
-				NOT = { exists = overlord }
+			NAND = {
+				exists = overlord
 				overlord = {
-					NOR = {
+					OR = {
 						is_same_empire = event_target:FirstSleeper
 						is_same_value = event_target:SecondSleeper
 					}

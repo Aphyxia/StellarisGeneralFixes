@@ -1206,10 +1206,12 @@ country_event = {
 			}
 		}
 		trigger = {
-			species = { is_psionic_species = no }
 			NOR = {
-				is_materialist = yes
-				is_at_war_with = from
+				species = { is_psionic_species = yes }
+				OR = {
+					is_materialist = yes
+					is_at_war_with = from
+				}
 			}
 		}
 	}
@@ -1217,8 +1219,10 @@ country_event = {
 		name = "utopia.2602.b"
 		trigger = {
 			is_materialist = yes
-			species = { is_psionic_species = no }
-			NOT = { is_at_war_with = from }
+			NOR = {
+				species = { is_psionic_species = yes }
+				is_at_war_with = from
+			}
 		}
 	}
 	option = {
@@ -2654,17 +2658,19 @@ country_event = {
 			limit = {
 				suitable_for_chosen = yes
 				# Vfix
-				NAND = {
-					exists = event_target:leader_1
-					is_same_value = event_target:leader_1
-				}
-				NAND = {
-					exists = event_target:leader_2
-					is_same_value = event_target:leader_2
-				}
-				NAND = {
-					exists = event_target:leader_3
-					is_same_value = event_target:leader_3
+				NOR = {
+					AND = {
+						exists = event_target:leader_1
+						is_same_value = event_target:leader_1
+					}
+					AND = {
+						exists = event_target:leader_2
+						is_same_value = event_target:leader_2
+					}
+					AND = {
+						exists = event_target:leader_3
+						is_same_value = event_target:leader_3
+					}
 				}
 				OR = {
 					AND = {

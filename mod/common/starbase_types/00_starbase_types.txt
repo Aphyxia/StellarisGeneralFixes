@@ -145,8 +145,10 @@ sbeastport = {
 		OR = {
 			AND = {
 				is_orbital_ring = yes
-				owner = { is_ai = no }
-				NOT = { has_starbase_module = orbital_ring_shipyard }
+				NOR = {
+					owner = { is_ai = yes }
+					has_starbase_module = orbital_ring_shipyard
+				}
 			}
 			AND = {
 				has_starbase_size > starbase_outpost
@@ -1016,8 +1018,10 @@ sorbital_ring_beastport = {
 		OR = {
 			AND = {
 				is_orbital_ring = yes
-				owner = { is_ai = no }
-				NOT = { has_starbase_module = orbital_ring_shipyard }
+				NOR = {
+					owner = { is_ai = yes }
+					has_starbase_module = orbital_ring_shipyard
+				}
 			}
 			AND = {
 				has_starbase_size > starbase_outpost

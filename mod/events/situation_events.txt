@@ -875,12 +875,14 @@ situation_event = {
 
 	trigger = {
 		exists = owner
-		owner = { # no mutiny for hiveminds
-			is_gestalt = no
-		}
 		NOR = {
-			has_situation_flag = mutiny
-			current_situation_approach = approach_advance
+			owner = { # no mutiny for hiveminds
+				is_gestalt = yes
+			}
+			OR = {
+				has_situation_flag = mutiny
+				current_situation_approach = approach_advance
+			}
 		}
 	}
 	weight_multiplier = {
@@ -946,12 +948,14 @@ situation_event = {
 
 	trigger = {
 		exists = owner
-		owner = { # no mutiny for hiveminds
-			is_gestalt = no
-		}
 		NOR = {
-			has_situation_flag = mutiny
-			current_situation_approach = approach_retreat
+			owner = { # no mutiny for hiveminds
+				is_gestalt = yes
+			}
+			OR = {
+				has_situation_flag = mutiny
+				current_situation_approach = approach_retreat
+			}
 		}
 	}
 
@@ -3124,10 +3128,12 @@ situation_event = {
 	trigger = {
 		current_situation_approach = approach_no_food
 		NOR = {
-			has_situation_flag = kaleidoscope_random_events
-			has_situation_flag = kaleidoscope_unnerving_patterns
+			OR = {
+				has_situation_flag = kaleidoscope_random_events
+				has_situation_flag = kaleidoscope_unnerving_patterns
+			}
+			owner = { is_machine_empire = yes }
 		}
-		owner = { is_machine_empire = no }
 	}
 	weight_multiplier = {
 		factor = 1

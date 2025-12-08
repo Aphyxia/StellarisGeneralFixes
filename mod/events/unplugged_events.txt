@@ -669,9 +669,9 @@ country_event = {
 	trigger = {
 		has_origin = origin_unplugged
 		has_country_flag = machine_legacy_makers_arc_site_complete
-		NOT = { has_country_flag = origin_unplugged_maker_fleet_defeated }
-		event_target:origin_unplugged_taken_planet = {
-			NOT = {
+		NOR = {
+			has_country_flag = origin_unplugged_maker_fleet_defeated
+			event_target:origin_unplugged_taken_planet = {
 				is_point_of_interest = {
 					id = unplugged_machine_legacy_taken_poi
 					event_chain = unplugged_origin_machine_legacy_chain

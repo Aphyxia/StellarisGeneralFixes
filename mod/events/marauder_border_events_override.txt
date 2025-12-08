@@ -86,11 +86,13 @@ country_event = {
 		if = {
 			limit = {
 				OR = {
-					NOT = { exists = event_target:new_khanate }
-					event_target:new_khanate = {
-						NOR = {
-							is_scope_valid = yes
-							is_scope_type = country
+					NAND = {
+						exists = event_target:new_khanate
+						event_target:new_khanate = {
+							OR = {
+								is_scope_valid = yes
+								is_scope_type = country
+							}
 						}
 					}
 					is_same_empire = event_target:new_khanate
@@ -692,7 +694,27 @@ country_event = {
 					exists = planet
 					is_defensive_army = no
 				}
-				remove_army = yes
+				planet = {
+					if = {
+						limit = {
+							has_owner = yes
+							NOR = {
+								is_owned_by = root
+								is_owned_by = event_target:new_khanate
+							}
+						}
+						prev = {
+							set_owner = prev.owner
+							if = {
+								limit = { exists = leader }
+								leader = { set_owner = prevprev.owner }
+							}
+						}
+					}
+					else = {
+						prev = { remove_army = yes }
+					}
+				}
 			}
 		}
 	}

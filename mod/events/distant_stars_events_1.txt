@@ -815,11 +815,13 @@ planet_event = {
 
 	trigger = {
 		has_owner = yes
-		NOT = { owner = { has_country_flag = cured_rage_virus } }
-		any_owned_pop_group = {
-			NOR = {
-				is_robot_pop_group = yes
-				has_modifier = erratic_behavior
+		NOR = {
+			owner = { has_country_flag = cured_rage_virus }
+			any_owned_pop_group = {
+				OR = {
+					is_robot_pop_group = yes
+					has_modifier = erratic_behavior
+				}
 			}
 		}
 	}
@@ -4750,18 +4752,20 @@ ship_event = {
 				random_owned_leader = {
 					limit = {
 						leader_class = official
-						species = {
-							NOR = {
-								has_trait = trait_cybernetic
-								is_robotic = yes
-								is_species_class = ROBOT
-								is_species_class = AI
-							}
-						}
 						NOR = {
-							has_leader_flag = beholder
-							has_leader_flag = gray_leader
-							has_trait = leader_trait_governor_oracle
+							species = {
+								OR = {
+									has_trait = trait_cybernetic
+									is_robotic = yes
+									is_species_class = ROBOT
+									is_species_class = AI
+								}
+							}
+							OR = {
+								has_leader_flag = beholder
+								has_leader_flag = gray_leader
+								has_trait = leader_trait_governor_oracle
+							}
 						}
 					}
 					add_trait = { trait = leader_trait_brainslug }
@@ -4776,8 +4780,10 @@ ship_event = {
 			hidden_trigger = {
 				owner = {
 					is_xenophobe = yes
-					any_owned_pop_group = { is_xenophobe = no }
-					NOT = { has_origin = origin_evolutionary_predators }
+					NOR = {
+						any_owned_pop_group = { is_xenophobe = yes }
+						has_origin = origin_evolutionary_predators
+					}
 				}
 			}
 		}
@@ -4854,17 +4860,19 @@ country_event = {
 		has_country_flag = finished_brainslug_chain
 		from = {
 			NOR = {
-				has_leader_flag = beholder
-				has_leader_flag = gray_leader
-				has_trait = leader_trait_governor_oracle
-				leader_class = envoy
-			}
-			species = {
-				NOR = {
-					has_trait = trait_cybernetic
-					is_robotic = yes
-					is_species_class = ROBOT
-					is_species_class = AI
+				OR = {
+					has_leader_flag = beholder
+					has_leader_flag = gray_leader
+					has_trait = leader_trait_governor_oracle
+					leader_class = envoy
+				}
+				species = {
+					OR = {
+						has_trait = trait_cybernetic
+						is_robotic = yes
+						is_species_class = ROBOT
+						is_species_class = AI
+					}
 				}
 			}
 		}
@@ -6460,7 +6468,10 @@ country_event = {
 				ethic = ethic_pacifist
 			}
 			authority = auth_oligarchic
-			civics = { civic = civic_functional_architecture civic = civic_mining_guilds }
+			civics = {
+				civic = civic_functional_architecture
+				civic = civic_mining_guilds
+			}
 			origin = origin_default
 			flag = {
 				icon = { category = "zoological" file = "flag_zoological_12.dds" }
@@ -7091,7 +7102,10 @@ country_event = {
 				ethic = ethic_pacifist
 			}
 			authority = auth_oligarchic
-			civics = { civic = civic_functional_architecture civic = civic_mining_guilds }
+			civics = {
+				civic = civic_functional_architecture
+				civic = civic_mining_guilds
+			}
 			# origin = origin_star_pack TODO
 			flag = {
 				icon = { category = "zoological" file = "flag_zoological_12.dds" }

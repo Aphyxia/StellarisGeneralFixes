@@ -566,19 +566,21 @@ planet_event = {
 
 	trigger = {
 		has_owner = yes
-		owner = {
-			NOR = {
-				is_ai = yes
-				is_guided_sapience_empire = yes
-				is_wilderness_empire = yes
-				resource_stockpile_compare = { resource = energy value < 300 }
+		NOR = {
+			owner = {
+				OR = {
+					is_ai = yes
+					is_guided_sapience_empire = yes
+					is_wilderness_empire = yes
+					resource_stockpile_compare = { resource = energy value < 300 }
+				}
 			}
-		}
-		NOT = { has_planet_flag = chainblocked }
-		any_owned_pop_group = {
-			NOR = {
-				is_sapient = yes
-				has_trait = trait_nascent_stage
+			has_planet_flag = chainblocked
+			any_owned_pop_group = {
+				OR = {
+					is_sapient = yes
+					has_trait = trait_nascent_stage
+				}
 			}
 		}
 	}
@@ -622,18 +624,20 @@ planet_event = {
 
 	trigger = {
 		has_owner = yes
-		owner = {
-			NOR = {
-				is_ai = yes
-				is_guided_sapience_empire = yes
-				is_wilderness_empire = yes
+		NOR = {
+			owner = {
+				OR = {
+					is_ai = yes
+					is_guided_sapience_empire = yes
+					is_wilderness_empire = yes
+				}
 			}
-		}
-		NOT = { has_planet_flag = unethical_presapient_experiments }
-		any_owned_pop_group = {
-			NOR = {
-				is_sapient = yes
-				has_trait = trait_nascent_stage
+			has_planet_flag = unethical_presapient_experiments
+			any_owned_pop_group = {
+				OR = {
+					is_sapient = yes
+					has_trait = trait_nascent_stage
+				}
 			}
 		}
 	}
