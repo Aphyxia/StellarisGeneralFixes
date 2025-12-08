@@ -11,17 +11,14 @@ leader_trait_shroud_age = {
 		COUNCIL = no
 		TIER = none
 	}
-
 	self_modifier = {
 		leader_lifespan_add = 40
 	}
-
 	leader_class = {
 		commander
 		scientist
 		official
 	}
-
 	leader_potential_add = {
 		has_chosen_one_leader_trait = no
 		has_trait = leader_trait_psionic
@@ -40,7 +37,6 @@ leader_trait_erudite = {
 		COUNCIL = triggered
 		TIER = none
 	}
-
 	leader_potential_add = {
 		trait_is_wilderness_check = no
 	}
@@ -97,14 +93,12 @@ leader_trait_erudite = {
 		planet_pops_upkeep_mult = -0.05
 		pop_amenities_usage_mult = -0.05
 	}
-
 	leader_class = {
 		commander
 		scientist
 		official
 		envoy
 	}
-
 	opposites = {
 		leader_trait_cyborg
 		leader_trait_limited_cyborg
@@ -199,14 +193,12 @@ leader_trait_cyborg = {
 		}
 		leaders_upkeep_mult = -0.25
 	}
-
 	leader_class = {
 		commander
 		scientist
 		official
 		envoy
 	}
-
 	opposites = {
 		leader_trait_erudite
 		leader_trait_chosen
@@ -261,7 +253,6 @@ leader_trait_synthetic = {
 		ship_anomaly_research_speed_mult = 0.10
 		ship_archaeological_site_excavation_speed_mult = 0.10
 	}
-
 	triggered_modifier = {
 		potential = {
 			has_astral_planes_dlc = yes
@@ -304,14 +295,12 @@ leader_trait_synthetic = {
 		leader_lifespan_add = 20
 		species_leader_exp_gain = 0.10
 	}
-
 	leader_class = {
 		commander
 		scientist
 		official
 		envoy
 	}
-
 	opposites = {
 		leader_trait_erudite
 		leader_trait_chosen
@@ -460,7 +449,6 @@ leader_trait_psionic = {
 		planet_jobs_unity_produces_mult = 0.05
 		mult = value:transcended_psionic_multiplier
 	}
-
 	triggered_councilor_modifier = {
 		potential = {
 			exists = owner
@@ -468,7 +456,6 @@ leader_trait_psionic = {
 		}
 		council_agenda_progress_speed = @transcendent_psionic_leader_speed_mult
 	}
-
 	triggered_self_modifier = {
 		potential = {
 			exists = owner
@@ -476,14 +463,12 @@ leader_trait_psionic = {
 		}
 		leader_lifespan_add = 60
 	}
-
 	leader_class = {
 		commander
 		scientist
 		official
 		envoy
 	}
-
 	opposites = {
 		leader_trait_cyborg
 		leader_trait_limited_cyborg
@@ -497,7 +482,6 @@ leader_trait_psionic = {
 
 leader_trait_chosen = {
 	immortal_leaders = yes
-
 	inline_script = {
 		script = trait/icon_psionic
 		CLASS = leader
@@ -627,13 +611,11 @@ leader_trait_chosen = {
 		planet_jobs_unity_produces_mult = 0.10
 		mult = value:transcended_psionic_multiplier
 	}
-
 	leader_class = {
 		commander
 		scientist
 		official
 	}
-
 	opposites = {
 		leader_trait_cyborg
 		leader_trait_limited_cyborg
@@ -646,7 +628,6 @@ leader_trait_chosen = {
 
 leader_trait_composer_chosen = {
 	immortal_leaders = yes
-
 	inline_script = {
 		script = trait/icon_psionic
 		CLASS = leader
@@ -730,19 +711,16 @@ leader_trait_composer_chosen = {
 		planet_jobs_produces_mult = 0.025
 		mult = value:transcended_psionic_multiplier
 	}
-
 	triggered_councilor_modifier = {
 		potential = { is_ruler = yes }
 		country_ruler_influence_produces_add = 0.5
 		mult = value:transcended_psionic_multiplier
 	}
-
 	leader_class = {
 		commander
 		scientist
 		official
 	}
-
 	opposites = {
 		leader_trait_cyborg
 		leader_trait_limited_cyborg
@@ -755,7 +733,6 @@ leader_trait_composer_chosen = {
 
 leader_trait_instrument_chosen = {
 	immortal_leaders = yes
-
 	inline_script = {
 		script = trait/icon_psionic
 		CLASS = leader
@@ -856,19 +833,16 @@ leader_trait_instrument_chosen = {
 		pop_slave_bonus_workforce_mult = 0.10
 		planet_stability_add = 2.5
 	}
-
 	triggered_councilor_modifier = {
 		potential = { is_ruler = yes }
 		country_ruler_influence_produces_add = 0.5
 		mult = value:transcended_psionic_multiplier
 	}
-
 	leader_class = {
 		commander
 		scientist
 		official
 	}
-
 	opposites = {
 		leader_trait_cyborg
 		leader_trait_limited_cyborg
@@ -881,7 +855,6 @@ leader_trait_instrument_chosen = {
 
 leader_trait_eater_chosen = {
 	immortal_leaders = yes
-
 	inline_script = {
 		script = trait/icon_psionic
 		CLASS = leader
@@ -924,7 +897,6 @@ leader_trait_eater_chosen = {
 		ship_archaeological_site_clues_add = 1
 		mult = value:transcended_psionic_multiplier
 	}
-
 	triggered_modifier = {
 		potential = {
 			has_astral_planes_dlc = yes
@@ -964,19 +936,16 @@ leader_trait_eater_chosen = {
 		job_soldier_per_pop = 0.05
 		mult = value:transcended_psionic_multiplier
 	}
-
 	triggered_councilor_modifier = {
 		potential = { is_ruler = yes }
 		country_ruler_influence_produces_add = 0.5
 		mult = value:transcended_psionic_multiplier
 	}
-
 	leader_class = {
 		commander
 		scientist
 		official
 	}
-
 	opposites = {
 		leader_trait_cyborg
 		leader_trait_limited_cyborg
@@ -989,7 +958,6 @@ leader_trait_eater_chosen = {
 
 leader_trait_cradle_chosen = {
 	immortal_leaders = yes
-
 	inline_script = {
 		script = trait/icon_psionic
 		CLASS = leader
@@ -1052,13 +1020,11 @@ leader_trait_cradle_chosen = {
 		pop_political_power = 0.3
 		mult = value:transcended_psionic_multiplier
 	}
-
 	triggered_planet_modifier = {
 		potential = { is_ruler = no is_gestalt = no }
 		pop_happiness = 0.15
 		mult = value:transcended_psionic_multiplier
 	}
-
 	triggered_planet_modifier = {
 		potential = { is_ruler = no is_gestalt = yes }
 		planet_crime_no_happiness_mult = -0.2
@@ -1071,31 +1037,26 @@ leader_trait_cradle_chosen = {
 		pop_political_power = 0.15
 		mult = value:transcended_psionic_multiplier
 	}
-
 	triggered_sector_modifier = {
 		potential = { is_ruler = no is_gestalt = no }
 		pop_happiness = 0.075
 		mult = value:transcended_psionic_multiplier
 	}
-
 	triggered_sector_modifier = {
 		potential = { is_ruler = no is_gestalt = yes }
 		planet_crime_no_happiness_mult = -0.1
 		mult = value:transcended_psionic_multiplier
 	}
-
 	triggered_councilor_modifier = {
 		potential = { is_ruler = yes }
 		country_ruler_influence_produces_add = 0.5
 		mult = value:transcended_psionic_multiplier
 	}
-
 	leader_class = {
 		commander
 		scientist
 		official
 	}
-
 	opposites = {
 		leader_trait_cyborg
 		leader_trait_synthetic
@@ -1107,7 +1068,6 @@ leader_trait_cradle_chosen = {
 
 leader_trait_whisperers_chosen = {
 	immortal_leaders = yes
-
 	inline_script = {
 		script = trait/icon_psionic
 		CLASS = leader
@@ -1149,7 +1109,6 @@ leader_trait_whisperers_chosen = {
 		ship_archaeological_site_clues_add = 3
 		mult = value:transcended_psionic_multiplier
 	}
-
 	triggered_modifier = {
 		potential = {
 			has_astral_planes_dlc = yes
@@ -1193,13 +1152,11 @@ leader_trait_whisperers_chosen = {
 		planet_jobs_engineering_research_produces_mult = 0.05
 		mult = value:transcended_psionic_multiplier
 	}
-
 	leader_class = {
 		commander
 		scientist
 		official
 	}
-
 	opposites = {
 		leader_trait_cyborg
 		leader_trait_limited_cyborg
@@ -1219,16 +1176,13 @@ leader_trait_mercenary_warrior = {
 		COUNCIL = triggered
 		TIER = none
 	}
-
 	fleet_modifier = {
 		ship_evasion_mult = 0.1
 		ship_fire_rate_mult = 0.1
 	}
-
 	army_modifier = {
 		army_damage_mult = 0.10
 	}
-
 	leader_class = {
 		commander
 	}
@@ -1240,7 +1194,6 @@ leader_trait_mercenary_warrior = {
 leader_trait_ruler_hive_mind = {
 	force_councilor_trait = yes
 	immortal_leaders = yes
-
 	inline_script = {
 		script = trait/icon
 		CLASS = leader
@@ -1251,7 +1204,6 @@ leader_trait_ruler_hive_mind = {
 	}
 
 	custom_tooltip_with_modifiers = leader_trait_ignore_leader_cap_tt
-
 	leader_class = {
 		scientist
 		official
@@ -1265,7 +1217,6 @@ leader_trait_ruler_hive_mind = {
 
 leader_trait_ruler_great_khan = {
 	immortal_leaders = yes
-
 	inline_script = {
 		script = trait/icon
 		CLASS = leader
@@ -1274,12 +1225,10 @@ leader_trait_ruler_great_khan = {
 		COUNCIL = yes
 		TIER = none
 	}
-
 	councilor_modifier = {
 		army_morale = 0.25
 		ship_weapon_damage = 0.05
 	}
-
 	leader_class = {
 		scientist
 		official
@@ -1293,7 +1242,6 @@ leader_trait_ruler_great_khan = {
 leader_trait_ruler_machine_intelligence = {
 	force_councilor_trait = yes
 	immortal_leaders = yes
-
 	inline_script = {
 		script = trait/icon
 		CLASS = leader
@@ -1304,7 +1252,6 @@ leader_trait_ruler_machine_intelligence = {
 	}
 
 	custom_tooltip_with_modifiers = leader_trait_ignore_leader_cap_tt
-
 	leader_class = {
 		scientist
 		official
@@ -1325,7 +1272,6 @@ leader_trait_ancient_knowledge = {
 		COUNCIL = no
 		TIER = none
 	}
-
 	triggered_fleet_modifier = {
 		potential = { leader_class = commander }
 		ship_evasion_mult = 0.1
@@ -1333,47 +1279,40 @@ leader_trait_ancient_knowledge = {
 		ship_armor_regen_add_perc = 0.1
 		ship_orbital_bombardment_mult = 0.1
 	}
-
 	triggered_army_modifier = {
 		potential = { leader_class = commander }
 		army_morale = 0.1
 		armies_upkeep_mult = -0.15
 	}
-
 	triggered_planet_modifier = {
 		potential = { leader_class = official }
 		planet_jobs_produces_mult = 0.05
 		pop_amenities_usage_mult = -0.05
 		pop_slave_bonus_workforce_mult = 0.1
 	}
-
 	triggered_sector_modifier = {
 		potential = { leader_class = official }
 		planet_jobs_produces_mult = 0.025
 		pop_amenities_usage_mult = -0.025
 		pop_slave_bonus_workforce_mult = 0.05
 	}
-
 	triggered_modifier = {
 		potential = { leader_class = scientist }
 		ship_anomaly_research_speed_mult = 0.15
 		ship_archaeological_site_excavation_speed_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = { leader_class = scientist }
 		planet_jobs_physics_research_produces_mult = 0.10
 		planet_jobs_society_research_produces_mult = 0.10
 		planet_jobs_engineering_research_produces_mult = 0.10
 	}
-
 	triggered_sector_modifier = {
 		potential = { leader_class = scientist }
 		planet_jobs_physics_research_produces_mult = 0.05
 		planet_jobs_society_research_produces_mult = 0.05
 		planet_jobs_engineering_research_produces_mult = 0.05
 	}
-
 	leader_class = {
 		commander
 		official
@@ -1387,20 +1326,17 @@ leader_trait_ancient_knowledge = {
 leader_trait_hacked = {
 	leader_trait_type = negative
 	randomized = no
-
 	inline_script = {
 		script = trait/icon_negative
 		ICON = "GFX_leader_trait_cyber_puppet"
 		COUNCIL = no
 		TIER = none
 	}
-
 	self_modifier = {
 		leaders_upkeep_mult = 0.20
 		species_leader_exp_gain = -0.20
 		negative_traits_leader = 2
 	}
-
 	leader_class = {
 		commander
 		scientist
@@ -1410,7 +1346,6 @@ leader_trait_hacked = {
 
 leader_trait_firewalled = {
 	randomized = no
-
 	inline_script = {
 		script = trait/icon
 		ICON = "GFX_leader_trait_firewalled"
@@ -1418,24 +1353,20 @@ leader_trait_firewalled = {
 		COUNCIL = no
 		TIER = none
 	}
-
 	inline_script = {
 		script = paragon/leader_resource_produces
 		RESOURCE = unity
 		AMOUNT = 2
 	}
-
 	inline_script = {
 		script = paragon/leader_resource_upkeep
 		RESOURCE = energy
 		AMOUNT = 2
 	}
-
 	self_modifier = {
 		species_leader_exp_gain = -0.10
 		negative_traits_leader = -1
 	}
-
 	leader_class = {
 		commander
 		scientist
@@ -1445,7 +1376,6 @@ leader_trait_firewalled = {
 
 leader_trait_virtual = {
 	immortal_leaders = yes
-
 	inline_script = {
 		script = trait/icon
 		CLASS = leader
@@ -1482,7 +1412,6 @@ leader_trait_virtual = {
 		ship_anomaly_research_speed_mult = 0.10
 		ship_archaeological_site_excavation_speed_mult = 0.10
 	}
-
 	triggered_modifier = {
 		potential = {
 			has_astral_planes_dlc = yes
@@ -1519,7 +1448,6 @@ leader_trait_virtual = {
 		planet_jobs_society_research_produces_mult = 0.05
 		planet_jobs_engineering_research_produces_mult = 0.05
 	}
-
 	leader_class = {
 		commander
 		scientist

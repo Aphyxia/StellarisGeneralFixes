@@ -11,7 +11,6 @@ country_event = {
 	hide_window = yes
 	location = from
 	is_triggered_only = yes
-
 	after = {
 		fromfromfrom = {
 			solar_system = {
@@ -40,7 +39,6 @@ country_event = {
 	hide_window = yes
 	location = from
 	is_triggered_only = yes
-
 	after = {
 		fromfromfrom = {
 			solar_system = {
@@ -71,7 +69,6 @@ country_event = {
 	hide_window = yes
 	location = from
 	is_triggered_only = yes
-
 	after = {
 		fromfromfrom = {
 			solar_system = {
@@ -102,7 +99,6 @@ country_event = {
 	hide_window = yes
 	location = from
 	is_triggered_only = yes
-
 	after = {
 		fromfromfrom = {
 			solar_system = {
@@ -133,7 +129,6 @@ country_event = {
 	hide_window = yes
 	location = from
 	is_triggered_only = yes
-
 	after = {
 		fromfromfrom = {
 			solar_system = {
@@ -209,7 +204,6 @@ country_event = {
 	hide_window = yes
 	location = from
 	is_triggered_only = yes
-
 	after = {
 		from = {
 			star = {
@@ -225,7 +219,6 @@ country_event = {
 	hide_window = yes
 	location = from
 	is_triggered_only = yes
-
 	after = {
 		from = {
 			star = {
@@ -242,7 +235,6 @@ country_event = {
 	hide_window = yes
 	location = from
 	is_triggered_only = yes
-
 	after = {
 		from = {
 			star = {
@@ -296,10 +288,7 @@ country_event = {
 						set_variable = { which = paperclips_once_again value = @paperclip_quota_admiral }
 					}
 					6 = { # Grand Admiral
-						set_variable = {
-							which = paperclips_once_again
-							value = @paperclip_quota_grand_admiral
-						}
+						set_variable = { which = paperclips_once_again value = @paperclip_quota_grand_admiral }
 					}
 				}
 			}
@@ -309,13 +298,9 @@ country_event = {
 				value = 15000 # max of consumer_goods in 00_strategic_resources.txt
 			}
 			set_variable = { which = paperclips_current_income value = 0 }
-			export_resource_stockpile_to_variable = {
-				resource = consumer_goods
-				variable = paperclips_current_amount
-			}
+			export_resource_stockpile_to_variable = { resource = consumer_goods variable = paperclips_current_amount }
 		}
 	}
-
 	after = {
 		start_situation = { type = situation_paperclips target = root }
 	}
@@ -331,10 +316,7 @@ country_event = {
 		if = {
 			limit = {
 				owner = {
-					resource_stockpile_compare = {
-						resource = consumer_goods
-						value > paperclips_once_again
-					}
+					resource_stockpile_compare = { resource = consumer_goods value > paperclips_once_again }
 				}
 			}
 			country_event = { id = cyber.5005 }
@@ -343,10 +325,7 @@ country_event = {
 		if = {
 			limit = {
 				owner = {
-					resource_stockpile_compare = {
-						resource = consumer_goods
-						value < paperclips_once_again
-					}
+					resource_stockpile_compare = { resource = consumer_goods value < paperclips_once_again }
 				}
 			}
 			country_event = { id = cyber.5006 }
@@ -365,12 +344,8 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		export_resource_stockpile_to_variable = {
-			resource = consumer_goods
-			variable = paperclips_current_amount
-		}
+		export_resource_stockpile_to_variable = { resource = consumer_goods variable = paperclips_current_amount }
 	}
-
 	option = {
 		name = cyber.5005.a
 		custom_tooltip = cyber.5005.a.tooltip
@@ -405,7 +380,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = cyber.5005.b
 		custom_tooltip = cyber.5005.b.tooltip
@@ -422,7 +396,6 @@ country_event = {
 			mult = paperclips_current_amount
 		}
 	}
-
 	option = {
 		name = cyber.5005.c
 		custom_tooltip = cyber.5005.c.tooltip
@@ -439,7 +412,6 @@ country_event = {
 			mult = value:paperclips_reward|DIVISOR|50|
 		}
 	}
-
 	option = {
 		name = cyber.5005.d
 		custom_tooltip = cyber.5005.d.tooltip
@@ -472,7 +444,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = cyber.5005.e
 		custom_tooltip = cyber.5005.e.tooltip
@@ -489,7 +460,6 @@ country_event = {
 			score = value:paperclips_reward|DIVISOR|30|
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			set_variable = { which = paperclips_current_amount value = 0 }
@@ -511,12 +481,8 @@ country_event = {
 
 	immediate = {
 		set_country_flag = failed_paperclip_quota
-		export_resource_stockpile_to_variable = {
-			resource = consumer_goods
-			variable = paperclips_current_amount
-		}
+		export_resource_stockpile_to_variable = { resource = consumer_goods variable = paperclips_current_amount }
 	}
-
 	option = {
 		name = cyber.5006.a
 		add_modifier = { modifier = paperclip_failure days = -1 }
@@ -534,14 +500,10 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			country_event = { id = cyber.5000 days = 30 }
-			divide_variable = {
-				which = paperclips_once_again
-				value = @paperclip_scaling_factor
-			}
+			divide_variable = { which = paperclips_once_again value = @paperclip_scaling_factor }
 			set_saved_date = {
 				key = situation_paperclips_timer
 				days_from_present = 3600
@@ -577,20 +539,14 @@ situation_event = {
 
 	immediate = {
 		owner = {
-			export_resource_stockpile_to_variable = {
-				resource = consumer_goods
-				variable = paperclips_current_amount
-			}
+			export_resource_stockpile_to_variable = { resource = consumer_goods variable = paperclips_current_amount }
 			floor_variable = paperclips_current_amount
 			export_trigger_value_to_variable = {
 				trigger = resource_income_compare
 				parameters = { resource = consumer_goods }
 				variable = paperclips_current_income
 			}
-			set_variable = {
-				which = paperclips_max_capacity
-				value = value:max_paperclip_capacity
-			}
+			set_variable = { which = paperclips_max_capacity value = value:max_paperclip_capacity }
 		}
 	}
 }
@@ -609,10 +565,7 @@ country_event = {
 				days_from_present = 3600
 				expires = 3601
 			}
-			multiply_variable = {
-				which = paperclips_once_again
-				value = @paperclip_scaling_factor
-			}
+			multiply_variable = { which = paperclips_once_again value = @paperclip_scaling_factor }
 			floor_variable = paperclips_once_again
 		}
 	}
@@ -622,6 +575,7 @@ country_event = {
 ### Create the Unemployed
 ### Country scope gatekeeper
 ### on_monthly_pulse_country
+
 country_event = {
 	id = cybernetics.5025
 	hide_window = yes
@@ -662,6 +616,7 @@ country_event = {
 ### on_building_complete, on_building_upgraded, on_building_demolished,
 ### on_building_downgraded, on_building_replaced
 ### on_district_complete, on_district_demolished
+
 planet_event = {
 	id = cybernetics.2026
 	hide_window = yes
@@ -749,6 +704,7 @@ planet_event = {
 ### Kill the unemployed
 ### Country scope
 ### on_monthly_pulse_country
+
 country_event = {
 	id = cybernetics.5030
 	hide_window = yes
@@ -827,6 +783,7 @@ country_event = {
 ### on_building_complete, on_building_upgraded, on_building_demolished,
 ### on_building_downgraded, on_building_replaced
 ### on_district_complete, on_district_demolished
+
 planet_event = {
 	id = cybernetics.2031
 	hide_window = yes
@@ -872,6 +829,7 @@ planet_event = {
 }
 
 ### Digitize
+
 country_event = {
 	id = cybernetics.5035
 	hide_window = yes
@@ -886,7 +844,6 @@ country_event = {
 		modify_species = { species = owner_species add_trait = trait_robot_digital_1 }
 		change_dominant_species = { species = last_created_species change_all = yes }
 	}
-
 	after = {
 		hidden_effect = {
 			random_owned_planet = {
@@ -1010,6 +967,7 @@ country_event = {
 }
 
 ##### Nanite Ascension Events
+
 system_event = {
 	id = cybernetics.5050
 	hide_window = yes
@@ -1254,6 +1212,7 @@ system_event = {
 }
 
 ### Set variables for Dyson Swarm and Arc Furnace
+
 country_event = {
 	id = cybernetics.5065
 	hide_window = yes
@@ -1312,6 +1271,7 @@ country_event = {
 }
 
 ### Turn presapient pops into hivemind pops
+
 planet_event = {
 	id = cybernetics.5085
 	hide_window = yes
@@ -1333,6 +1293,7 @@ planet_event = {
 }
 
 ### Turn presapient pops into hivemind pops
+
 planet_event = {
 	id = cybernetics.5086
 	hide_window = yes
@@ -1405,7 +1366,6 @@ planet_event = {
 			kill_all_pop = yes
 		}
 	}
-
 	option = {
 		name = cybernetics.5048.a
 	}
@@ -1475,10 +1435,7 @@ planet_event = {
 	trigger = {
 		has_owner = yes
 		owner = { is_virtual_empire = yes }
-		any_owned_pop_group = {
-			is_same_species = owner_species
-			has_virtual_species_trait = no
-		}
+		any_owned_pop_group = { is_same_species = owner_species has_virtual_species_trait = no }
 	}
 
 	immediate = {
@@ -1521,4 +1478,3 @@ country_event = {
 		set_timed_country_flag = { flag = no_murdering_tactical_leaders years = 10 }
 	}
 }
-

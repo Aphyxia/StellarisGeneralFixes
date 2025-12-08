@@ -1,5 +1,4 @@
 ################################
-
 #
 # Federation Succession Events
 # Written by Henrik Thyrwall, Douglas Furén & Gemma Thomson
@@ -42,7 +41,6 @@ country_event = {
 country_event = {
 	id = fedel.2
 	title = fedel.2.name
-
 	desc = {
 		trigger = {
 			is_gestalt = no
@@ -51,7 +49,6 @@ country_event = {
 		}
 		text = "fedel.2.desc"
 	}
-
 	desc = {
 		trigger = {
 			NOR = {
@@ -62,12 +59,10 @@ country_event = {
 		}
 		text = "fedel.2.noleader.desc"
 	}
-
 	desc = {
 		trigger = { is_subject = yes is_gestalt = no }
 		text = "fedel.2.vassal.desc"
 	}
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = "fedel.2.gestalt.desc"
@@ -89,13 +84,11 @@ country_event = {
 			set_country_flag = arena_combat_not_participating
 		}
 	}
-
 	option = {
 		name = fedel.2.a
 		trigger = { is_gestalt = no }
 		custom_tooltip = arena_combat_begin
 	}
-
 	option = {
 		name = fedel.2.b
 		trigger = { is_gestalt = yes }
@@ -538,7 +531,6 @@ country_event = {
 country_event = {
 	id = fedel.10
 	title = fedel.10.name
-
 	desc = {
 		trigger = {
 			leader = {
@@ -553,7 +545,6 @@ country_event = {
 		}
 		text = "fedel.10.1.desc"
 	}
-
 	desc = {
 		trigger = {
 			leader = {
@@ -568,7 +559,6 @@ country_event = {
 		}
 		text = "fedel.10.2.desc"
 	}
-
 	desc = {
 		trigger = {
 			leader = {
@@ -584,7 +574,6 @@ country_event = {
 		}
 		text = "fedel.10.3.desc"
 	}
-
 	desc = {
 		trigger = {
 			leader = {
@@ -599,7 +588,6 @@ country_event = {
 		}
 		text = "fedel.10.5.desc"
 	}
-
 	desc = {
 		trigger = {
 			leader = { has_any_chosen_one_leader_trait = yes }
@@ -614,7 +602,6 @@ country_event = {
 		}
 		text = "fedel.10.6.desc"
 	}
-
 	desc = {
 		trigger = {
 			leader = { has_any_chosen_one_leader_trait = yes }
@@ -643,7 +630,6 @@ country_event = {
 		}
 		text = "fedel.10.7.desc"
 	}
-
 	desc = {
 		trigger = {
 			leader = { has_any_chosen_one_leader_trait = yes }
@@ -669,27 +655,21 @@ country_event = {
 		}
 		text = "fedel.10.8.desc"
 	}
-
 	desc = {
 		trigger = {
 			leader = { has_trait = leader_trait_psionic has_any_chosen_one_leader_trait = no }
 		}
 		text = "fedel.10.9.desc"
 	}
-
 	desc = {
 		trigger = {
 			leader = { has_trait = leader_trait_cyborg has_any_chosen_one_leader_trait = no }
 		}
 		text = "fedel.10.10.desc"
 	}
-
 	desc = {
 		trigger = {
-			leader = {
-				has_trait = leader_trait_synthetic
-				has_any_chosen_one_leader_trait = no
-			}
+			leader = { has_trait = leader_trait_synthetic has_any_chosen_one_leader_trait = no }
 		}
 		text = "fedel.10.11.desc"
 	}
@@ -737,7 +717,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = fedel.10.a
 		custom_tooltip = tooltip_arena_won
@@ -752,7 +731,6 @@ country_event = {
 country_event = {
 	id = fedel.15
 	title = fedel.15.name
-
 	desc = {
 		trigger = {
 			leader = {
@@ -766,7 +744,6 @@ country_event = {
 		}
 		text = "fedel.15.1.desc"
 	}
-
 	desc = {
 		trigger = {
 			leader = {
@@ -780,7 +757,6 @@ country_event = {
 		}
 		text = "fedel.15.2.desc"
 	}
-
 	desc = {
 		trigger = {
 			leader = {
@@ -795,7 +771,6 @@ country_event = {
 		}
 		text = "fedel.15.3.desc"
 	}
-
 	desc = {
 		trigger = {
 			leader = {
@@ -809,14 +784,12 @@ country_event = {
 		}
 		text = "fedel.15.4.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = { has_any_chosen_one_leader_trait = yes }
 		}
 		text = "fedel.15.5.desc"
 	}
-
 	desc = {
 		trigger = {
 			leader = { has_any_chosen_one_leader_trait = no }
@@ -832,7 +805,6 @@ country_event = {
 		}
 		text = "fedel.15.6.desc"
 	}
-
 	desc = {
 		trigger = {
 			leader = { has_any_chosen_one_leader_trait = yes }
@@ -840,7 +812,6 @@ country_event = {
 		}
 		text = "fedel.15.7.desc"
 	}
-
 	desc = {
 		trigger = {
 			leader = { has_any_chosen_one_leader_trait = yes }
@@ -859,7 +830,6 @@ country_event = {
 		}
 		text = "fedel.15.8.desc"
 	}
-
 	desc = {
 		trigger = {
 			leader = { has_trait = leader_trait_synthetic }
@@ -867,7 +837,6 @@ country_event = {
 		}
 		text = "fedel.15.9.desc"
 	}
-
 	desc = {
 		trigger = {
 			leader = { has_trait = leader_trait_psionic }
@@ -878,7 +847,6 @@ country_event = {
 		}
 		text = "fedel.15.10.desc.organic"
 	}
-
 	desc = {
 		trigger = {
 			leader = { has_trait = leader_trait_psionic }
@@ -898,7 +866,6 @@ country_event = {
 			kill_leader = { show_notification = no }
 		}
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -923,7 +890,6 @@ country_event = {
 	id = fedel.16
 	title = fedel.16.name
 	diplomatic_title = BLANK_STRING
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -938,7 +904,6 @@ country_event = {
 		}
 		text = "fedel.16.1.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -953,7 +918,6 @@ country_event = {
 		}
 		text = "fedel.16.2.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -968,7 +932,6 @@ country_event = {
 		}
 		text = "fedel.16.3.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -983,7 +946,6 @@ country_event = {
 		}
 		text = "fedel.16.4.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -998,7 +960,6 @@ country_event = {
 		}
 		text = "fedel.16.5.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -1013,7 +974,6 @@ country_event = {
 		}
 		text = "fedel.16.6.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -1028,7 +988,6 @@ country_event = {
 		}
 		text = "fedel.16.7.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -1043,7 +1002,6 @@ country_event = {
 		}
 		text = "fedel.16.8.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -1059,7 +1017,6 @@ country_event = {
 		}
 		text = "fedel.16.9.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -1075,7 +1032,6 @@ country_event = {
 		}
 		text = "fedel.16.10.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -1091,7 +1047,6 @@ country_event = {
 		}
 		text = "fedel.16.11.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -1107,7 +1062,6 @@ country_event = {
 		}
 		text = "fedel.16.12.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -1123,7 +1077,6 @@ country_event = {
 		}
 		text = "fedel.16.13.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -1139,7 +1092,6 @@ country_event = {
 		}
 		text = "fedel.16.14.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -1155,7 +1107,6 @@ country_event = {
 		}
 		text = "fedel.16.15.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -1171,7 +1122,6 @@ country_event = {
 		}
 		text = "fedel.16.16.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -1180,7 +1130,6 @@ country_event = {
 		}
 		text = "fedel.16.17.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -1196,7 +1145,6 @@ country_event = {
 		}
 		text = "fedel.16.18.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -1212,7 +1160,6 @@ country_event = {
 		}
 		text = "fedel.16.19.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -1228,7 +1175,6 @@ country_event = {
 		}
 		text = "fedel.16.20.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -1243,7 +1189,6 @@ country_event = {
 		}
 		text = "fedel.16.21.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -1258,7 +1203,6 @@ country_event = {
 		}
 		text = "fedel.16.22.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -1273,7 +1217,6 @@ country_event = {
 		}
 		text = "fedel.16.23.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -1288,7 +1231,6 @@ country_event = {
 		}
 		text = "fedel.16.24.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -1303,7 +1245,6 @@ country_event = {
 		}
 		text = "fedel.16.25.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -1318,7 +1259,6 @@ country_event = {
 		}
 		text = "fedel.16.26.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -1333,7 +1273,6 @@ country_event = {
 		}
 		text = "fedel.16.27.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -1348,7 +1287,6 @@ country_event = {
 		}
 		text = "fedel.16.28.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = {
@@ -1363,14 +1301,12 @@ country_event = {
 		}
 		text = "fedel.16.29.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = { has_trait = leader_trait_psionic }
 		}
 		text = "fedel.16.30.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = { has_trait = leader_trait_psionic }
@@ -1378,7 +1314,6 @@ country_event = {
 		}
 		text = "fedel.16.31.desc.organic"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = { has_trait = leader_trait_psionic }
@@ -1386,7 +1321,6 @@ country_event = {
 		}
 		text = "fedel.16.31.desc.machine"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = { has_trait = leader_trait_psionic }
@@ -1394,7 +1328,6 @@ country_event = {
 		}
 		text = "fedel.16.32.desc.organic"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = { has_trait = leader_trait_psionic }
@@ -1402,63 +1335,54 @@ country_event = {
 		}
 		text = "fedel.16.32.desc.machine"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = { has_trait = leader_trait_cyborg }
 		}
 		text = "fedel.16.33.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = { has_trait = leader_trait_cyborg }
 		}
 		text = "fedel.16.34.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = { has_trait = leader_trait_cyborg }
 		}
 		text = "fedel.16.35.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = { has_trait = leader_trait_synthetic }
 		}
 		text = "fedel.16.36.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = { has_trait = leader_trait_synthetic }
 		}
 		text = "fedel.16.37.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = { has_trait = leader_trait_synthetic }
 		}
 		text = "fedel.16.38.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = { has_any_chosen_one_leader_trait = yes }
 		}
 		text = "fedel.16.39.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = { has_any_chosen_one_leader_trait = yes }
 		}
 		text = "fedel.16.40.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_leader = { has_any_chosen_one_leader_trait = yes }
@@ -1468,7 +1392,6 @@ country_event = {
 
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:winning_country
 		planet_background = event_target:winning_country
@@ -1476,7 +1399,6 @@ country_event = {
 		city_level = event_target:winning_country
 		room = event_target:winning_country
 	}
-
 	option = {
 		name = fedel.16.a
 	}
@@ -1513,19 +1435,16 @@ country_event = {
 country_event = {
 	id = fedel.501
 	title = fedel.501.name
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = no_psi_battle }
 		}
 		text = "fedel.501.1.desc"
 	}
-
 	desc = {
 		trigger = { has_country_flag = no_psi_battle is_subject = no }
 		text = "fedel.501.2.desc"
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = no_psi_battle }
@@ -1533,7 +1452,6 @@ country_event = {
 		}
 		text = "fedel.501.3.desc"
 	}
-
 	desc = {
 		trigger = { has_country_flag = no_psi_battle is_subject = yes }
 		text = "fedel.501.4.desc"
@@ -1542,11 +1460,9 @@ country_event = {
 	picture = GFX_evt_conclave
 	show_sound = event_whispering
 	is_triggered_only = yes
-
 	abort_trigger = { # incidentally, abort_effect also exists
 		has_country_flag = psi_battle_timer_over
 	}
-
 	immediate = {
 		if = {
 			limit = {
@@ -1567,7 +1483,6 @@ country_event = {
 			set_country_flag = psi_battle
 		}
 	}
-
 	option = {
 		name = fedel.501.a
 		trigger = {
@@ -1580,7 +1495,6 @@ country_event = {
 		}
 		custom_tooltip = psionic_battle_begin
 	}
-
 	option = {
 		name = fedel.501.b
 		trigger = {
@@ -1593,7 +1507,6 @@ country_event = {
 		}
 		custom_tooltip = psionic_battle_begin
 	}
-
 	option = {
 		name = fedel.501.c
 		trigger = {
@@ -1606,7 +1519,6 @@ country_event = {
 		}
 		custom_tooltip = psionic_battle_begin
 	}
-
 	option = {
 		name = fedel.501.d
 		trigger = {
@@ -1614,7 +1526,6 @@ country_event = {
 		}
 		custom_tooltip = psionic_battle_begin
 	}
-
 	option = {
 		name = fedel.501.e
 		trigger = { has_country_flag = no_psi_battle }
@@ -1780,7 +1691,6 @@ country_event = {
 country_event = {
 	id = fedel.510
 	title = fedel.510.name
-
 	desc = {
 		trigger = {
 			check_variable = { which = psionic_ability value <= 300 }
@@ -1794,7 +1704,6 @@ country_event = {
 		}
 		text = "fedel.510.1.desc.organic"
 	}
-
 	desc = {
 		trigger = {
 			check_variable = { which = psionic_ability value <= 300 }
@@ -1808,7 +1717,6 @@ country_event = {
 		}
 		text = "fedel.510.1.desc.machine"
 	}
-
 	desc = {
 		trigger = {
 			check_variable = { which = psionic_ability value >= 301 }
@@ -1822,7 +1730,6 @@ country_event = {
 		}
 		text = "fedel.510.2.desc.organic"
 	}
-
 	desc = {
 		trigger = {
 			check_variable = { which = psionic_ability value >= 301 }
@@ -1836,7 +1743,6 @@ country_event = {
 		}
 		text = "fedel.510.2.desc.machine"
 	}
-
 	desc = {
 		trigger = {
 			NOT = {
@@ -1854,7 +1760,6 @@ country_event = {
 	picture = GFX_evt_psionic_battle
 	show_sound = event_cityscape
 	is_triggered_only = yes
-
 	option = {
 		name = fedel.510.a
 		set_federation_leader = root
@@ -1866,7 +1771,6 @@ country_event = {
 country_event = {
 	id = fedel.515
 	title = fedel.515.name
-
 	desc = {
 		trigger = {
 			has_country_flag = psi_battle
@@ -1875,7 +1779,6 @@ country_event = {
 		}
 		text = "fedel.515.1.desc.organic"
 	}
-
 	desc = {
 		trigger = {
 			has_country_flag = psi_battle
@@ -1884,7 +1787,6 @@ country_event = {
 		}
 		text = "fedel.515.1.desc.machine"
 	}
-
 	desc = {
 		trigger = {
 			check_variable = { which = psionic_ability value >= 101 }
@@ -1892,7 +1794,6 @@ country_event = {
 		}
 		text = "fedel.515.2.desc.organic"
 	}
-
 	desc = {
 		trigger = {
 			check_variable = { which = psionic_ability value >= 101 }
@@ -1900,7 +1801,6 @@ country_event = {
 		}
 		text = "fedel.515.2.desc.machine"
 	}
-
 	desc = {
 		trigger = {
 			has_country_flag = no_psi_battle
@@ -1914,7 +1814,6 @@ country_event = {
 		}
 		text = "fedel.515.3.desc.organic"
 	}
-
 	desc = {
 		trigger = {
 			has_country_flag = no_psi_battle
@@ -1928,7 +1827,6 @@ country_event = {
 		}
 		text = "fedel.515.3.desc.machine"
 	}
-
 	desc = {
 		trigger = {
 			has_country_flag = no_psi_battle
@@ -1947,7 +1845,6 @@ country_event = {
 	picture = GFX_evt_psionic_battle
 	show_sound = event_screams
 	is_triggered_only = yes
-
 	after = {
 		hidden_effect = {
 			if = {
@@ -1960,7 +1857,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = fedel.515.a
 		custom_tooltip = psionic_battle_outcome
@@ -2007,12 +1903,10 @@ country_event = {
 country_event = {
 	id = fedel.1501
 	title = fedel.1501.name
-
 	desc = {
 		trigger = { is_subject = no }
 		text = fedel.1501.desc
 	}
-
 	desc = {
 		trigger = { is_subject = yes }
 		text = fedel.1501.desc.subject
@@ -2021,7 +1915,6 @@ country_event = {
 	picture = GFX_evt_arguing_senate
 	show_sound = event_factions
 	is_triggered_only = yes
-
 	option = {
 		name = "fedel.1501.a"
 		custom_tooltip = "tooltip_thesis_begin"
@@ -2091,10 +1984,7 @@ country_event = {
 					}
 					modifier = { # Curator
 						add = 10
-						any_owned_leader = {
-							has_leader_flag = thesis_team
-							has_trait = leader_trait_curator
-						}
+						any_owned_leader = { has_leader_flag = thesis_team has_trait = leader_trait_curator }
 					}
 					modifier = { # Custom AI Assistant
 						add = 10
@@ -2181,46 +2071,28 @@ country_event = {
 					}
 					modifier = { # Chosen
 						add = 15
-						any_owned_leader = {
-							has_leader_flag = thesis_team
-							has_any_chosen_one_leader_trait = yes
-						}
+						any_owned_leader = { has_leader_flag = thesis_team has_any_chosen_one_leader_trait = yes }
 					}
 					modifier = { # Cyborg
 						add = 10
-						any_owned_leader = {
-							has_leader_flag = thesis_team
-							has_trait = leader_trait_cyborg
-						}
+						any_owned_leader = { has_leader_flag = thesis_team has_trait = leader_trait_cyborg }
 					}
 					modifier = { # Erudite
 						add = 15
-						any_owned_leader = {
-							has_leader_flag = thesis_team
-							has_trait = leader_trait_erudite
-						}
+						any_owned_leader = { has_leader_flag = thesis_team has_trait = leader_trait_erudite }
 					}
 					modifier = { # Psionic
 						add = 10
-						any_owned_leader = {
-							has_leader_flag = thesis_team
-							has_trait = leader_trait_psionic
-						}
+						any_owned_leader = { has_leader_flag = thesis_team has_trait = leader_trait_psionic }
 					}
 					modifier = { # Synthetic
 						add = 5
-						any_owned_leader = {
-							has_leader_flag = thesis_team
-							has_trait = leader_trait_synthetic
-						}
+						any_owned_leader = { has_leader_flag = thesis_team has_trait = leader_trait_synthetic }
 					}
 					# Scientist traits
 					modifier = { # Adaptable
 						add = 10
-						any_owned_leader = {
-							has_leader_flag = thesis_team
-							has_trait = leader_trait_adaptable
-						}
+						any_owned_leader = { has_leader_flag = thesis_team has_trait = leader_trait_adaptable }
 					}
 					modifier = { # Eager
 						add = 5
@@ -2447,7 +2319,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		country_event = { id = fedel.1510 days = 1 } # Tidy up
 	}
@@ -2457,17 +2328,13 @@ country_event = {
 country_event = {
 	id = fedel.1506
 	title = "fedel.1506.name"
-
 	desc = { # For those empires with insufficient researchers
 		trigger = {
-			NOT = {
-				event_target:winning_thesis = { is_same_value = root }
-			}
+			NOT = { event_target:winning_thesis = { is_same_value = root } }
 			check_variable = { which = thesis_assemble value < 3 }
 		}
 		text = "fedel.1506.insufficient.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_thesis = { is_same_value = root }
@@ -2476,7 +2343,6 @@ country_event = {
 		}
 		text = "fedel.1506.win.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_thesis = { is_same_value = root }
@@ -2485,7 +2351,6 @@ country_event = {
 		}
 		text = "fedel.1506.win.autocracy.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:winning_thesis = { is_same_value = root }
@@ -2494,7 +2359,6 @@ country_event = {
 		}
 		text = "fedel.1506.win.gestalt.desc"
 	}
-
 	desc = {
 		trigger = {
 			NOR = {
@@ -2505,12 +2369,9 @@ country_event = {
 		}
 		text = "fedel.1506.fail.desc"
 	}
-
 	desc = {
 		trigger = {
-			NOT = {
-				event_target:winning_thesis = { is_same_value = root }
-			}
+			NOT = { event_target:winning_thesis = { is_same_value = root } }
 			is_gestalt = yes
 			check_variable = { which = thesis_assemble value > 2 }
 		}
@@ -2520,7 +2381,6 @@ country_event = {
 	picture = GFX_evt_announcement
 	show_sound = event_announcement
 	is_triggered_only = yes
-
 	option = {
 		trigger = {
 			event_target:winning_thesis = { is_same_value = root }
@@ -2528,12 +2388,9 @@ country_event = {
 		name = EXCELLENT
 		custom_tooltip = "tooltip_thesis_won"
 	}
-
 	option = {
 		trigger = {
-			NOT = {
-				event_target:winning_thesis = { is_same_value = root }
-			}
+			NOT = { event_target:winning_thesis = { is_same_value = root } }
 		}
 		name = CURSES
 		custom_tooltip = "tooltip_thesis_lost"
@@ -2621,6 +2478,7 @@ country_event = {
 #################################################
 # BIDDING WAR EVENT (SETUP, federation leader)
 #################################################
+
 country_event = {
 	id = fedel.900
 	hide_window = yes
@@ -2644,10 +2502,7 @@ country_event = {
 			remove_federation_flag = winner_decision_invest
 			remove_federation_flag = winner_decision_distribute
 			remove_federation_flag = winner_decision_appropriate
-			every_member = {
-				remove_country_flag = bid_contender
-				remove_country_flag = has_abstained
-			}
+			every_member = { remove_country_flag = bid_contender remove_country_flag = has_abstained }
 			# Setup
 			set_federation_flag = bidding_war_underway
 			every_member = {
@@ -2661,15 +2516,14 @@ country_event = {
 ####################################################
 ### BIDDING WAR EVENT - INTRODUCTION (every member)
 ####################################################
+
 country_event = {
 	id = fedel.899
 	title = fedel.899.name
-
 	desc = {
 		trigger = { is_subject = no }
 		text = fedel.899.desc
 	}
-
 	desc = {
 		trigger = { is_subject = yes }
 		text = fedel.899.desc.subject
@@ -2685,7 +2539,6 @@ country_event = {
 			set_timed_country_flag = { flag = bid_contender days = @goldenrule_flagtimer }
 		}
 	}
-
 	option = {
 		name = fedel.899.a
 	}
@@ -2714,10 +2567,7 @@ country_event = {
 				}
 			}
 			save_event_target_as = federation_bidding_winner
-			set_timed_country_flag = {
-				flag = the_golden_rule_challenge_winner
-				days = @goldenrule_flagtimer
-			}
+			set_timed_country_flag = { flag = the_golden_rule_challenge_winner days = @goldenrule_flagtimer }
 			country_event = { id = fedel.904 days = 2 } # Decide on winnings
 			set_federation_leader = root
 			federation = {
@@ -2842,7 +2692,6 @@ country_event = {
 			set_timed_country_flag = { flag = has_abstained days = @goldenrule_flagtimer }
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			federation = {
@@ -2861,6 +2710,7 @@ country_event = {
 ######################################################
 ### BIDDING WAR EVENT - DECLARE WINNER (every member)
 ######################################################
+
 country_event = {
 	id = fedel.903
 	title = fedel.903.name
@@ -2873,7 +2723,6 @@ country_event = {
 		remove_country_flag = bid_contender
 		remove_country_flag = has_abstained
 	}
-
 	option = {
 		name = fedel.903.a
 	}
@@ -2882,6 +2731,7 @@ country_event = {
 #############################################################
 ### BIDDING WAR EVENT - WINNER'S DECISION (challenge winner)
 #############################################################
+
 country_event = {
 	id = fedel.904
 	title = fedel.904.name
@@ -2971,7 +2821,6 @@ country_event = {
 			modifier = { factor = 5 has_civic = civic_ruthless_competition }
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			country_event = { id = fedel.905 days = @goldenrule_flagtimer }
@@ -2992,6 +2841,7 @@ country_event = {
 ##################################################################
 ### BIDDING WAR EVENT - CLEAN-UP EVENT (HIDDEN, challenge winner)
 ##################################################################
+
 country_event = {
 	id = fedel.905
 	hide_window = yes
@@ -3013,24 +2863,22 @@ country_event = {
 #################################################
 ### BIDDING WAR EVENT - DECISION BROADCAST
 #################################################
+
 country_event = {
 	id = fedel.906
 	title = fedel.906.name
-
 	desc = {
 		trigger = {
 			federation = { has_federation_flag = winner_decision_invest }
 		}
 		text = "fedel.906.desc.a"
 	}
-
 	desc = {
 		trigger = {
 			federation = { has_federation_flag = winner_decision_distribute }
 		}
 		text = "fedel.906.desc.b"
 	}
-
 	desc = {
 		trigger = {
 			federation = { has_federation_flag = winner_decision_appropriate }
@@ -3041,27 +2889,23 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:federation_bidding_winner
 		room = event_target:federation_bidding_winner
 		planet_background = event_target:federation_bidding_winner
 	}
-
 	option = {
 		name = MARVELOUS
 		trigger = {
 			federation = { has_federation_flag = winner_decision_invest }
 		}
 	}
-
 	option = {
 		name = DEAL
 		trigger = {
 			federation = { has_federation_flag = winner_decision_distribute }
 		}
 	}
-
 	option = {
 		name = CURSES
 		trigger = {
@@ -3117,12 +2961,10 @@ country_event = {
 country_event = {
 	id = fedel.1805
 	title = fedel.1805.name
-
 	desc = {
 		text = fedel.1805.desc
 		trigger = { is_subject = no }
 	}
-
 	desc = {
 		text = fedel.1805.desc.subject
 		trigger = { is_subject = yes }
@@ -3131,7 +2973,6 @@ country_event = {
 	picture = GFX_evt_three_sided_deal
 	show_sound = event_default
 	is_triggered_only = yes
-
 	abort_trigger = {
 		has_active_event = { fedel.1815 }
 	}
@@ -3169,14 +3010,12 @@ country_event = {
 country_event = {
 	id = fedel.1815
 	title = fedel.1815.name
-
 	desc = {
 		text = fedel.1815.desc
 		trigger = {
 			NOT = { is_same_value = event_target:conclave_frontrunner }
 		}
 	}
-
 	desc = {
 		text = fedel.1815.desc.frontrunner
 		trigger = { is_same_value = event_target:conclave_frontrunner }
@@ -3185,13 +3024,11 @@ country_event = {
 	picture = GFX_evt_three_sided_deal
 	show_sound = event_default
 	is_triggered_only = yes
-
 	abort_trigger = {
 		has_active_event = { fedel.1825 }
 	}
 
 	inline_script = conclave_federation_challenge_options
-
 	option = {
 		name = fedel.1815.E
 		allow = {
@@ -3273,12 +3110,10 @@ country_event = {
 	picture = GFX_evt_grand_speech
 	show_sound = event_mystic_reveal
 	is_triggered_only = yes
-
 	option = {
 		name = fedel.1825.A
 		trigger = { is_same_value = event_target:conclave_winner }
 	}
-
 	option = {
 		name = fedel.1825.B
 		trigger = {

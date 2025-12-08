@@ -16,7 +16,6 @@ country_event = {
 	immediate = {
 		set_country_flag = triggered_mineralized_lava_tubes
 	}
-
 	option = {
 		name = EXCELLENT
 		from = { add_deposit = d_lava_tubes }
@@ -35,12 +34,10 @@ country_event = {
 	immediate = {
 		set_country_flag = triggered_hydroactive_eggs
 	}
-
 	option = {
 		name = GOOD
 		from = { add_deposit = d_hydroactive_eggs }
 	}
-
 	option = {
 		exclusive_trigger = { has_origin = origin_evolutionary_predators }
 		name = strange_worlds.1005.evopred
@@ -52,7 +49,6 @@ country_event = {
 country_event = {
 	id = strange_worlds.1010
 	title = strange_worlds.1010.name
-
 	desc = {
 		trigger = {
 			if = {
@@ -119,7 +115,6 @@ country_event = {
 		set_country_flag = triggered_suspended_in_ice
 		from = { save_event_target_as = hibernator_planet }
 	}
-
 	option = {
 		trigger = {
 			OR = {
@@ -142,7 +137,6 @@ country_event = {
 			give_evolutionary_predator_situation_progress_and_dna = { AMOUNT = small }
 		}
 	}
-
 	option = {
 		trigger = {
 			OR = {
@@ -164,7 +158,6 @@ country_event = {
 			country_event = { id = strange_worlds.1035 days = 3600 }
 		}
 	}
-
 	option = {
 		trigger = {
 			OR = {
@@ -194,7 +187,6 @@ country_event = {
 			country_event = { id = strange_worlds.1035 days = 3600 }
 		}
 	}
-
 	option = {
 		trigger = {
 			OR = {
@@ -219,7 +211,6 @@ country_event = {
 			max = @tier3materialmax
 		}
 	}
-
 	option = {
 		trigger = {
 			OR = {
@@ -255,7 +246,6 @@ country_event = {
 	immediate = {
 		set_country_flag = triggered_mountains_of_steel
 	}
-
 	option = {
 		name = strange_worlds.1015.a
 		add_monthly_resource_mult = {
@@ -271,7 +261,6 @@ country_event = {
 			max = @tier3materialmax
 		}
 	}
-
 	option = {
 		name = strange_worlds.1015.b
 		from = { add_deposit = d_mountains_of_steel }
@@ -282,63 +271,54 @@ country_event = {
 	id = strange_worlds.1020
 	title = strange_worlds.1020.name
 	desc = strange_worlds.1020.desc
-
 	picture = {
 		trigger = {
 			from = { is_planet_class = pc_desert }
 		}
 		picture = GFX_evt_desert
 	}
-
 	picture = {
 		trigger = {
 			from = { is_planet_class = pc_tropical }
 		}
 		picture = GFX_evt_tropical
 	}
-
 	picture = {
 		trigger = {
 			from = { is_planet_class = pc_arid }
 		}
 		picture = GFX_evt_arid
 	}
-
 	picture = {
 		trigger = {
 			from = { is_planet_class = pc_continental }
 		}
 		picture = GFX_evt_continental
 	}
-
 	picture = {
 		trigger = {
 			from = { is_planet_class = pc_alpine }
 		}
 		picture = GFX_evt_alpine_city
 	}
-
 	picture = {
 		trigger = {
 			from = { is_planet_class = pc_savannah }
 		}
 		picture = GFX_evt_savannah
 	}
-
 	picture = {
 		trigger = {
 			from = { is_planet_class = pc_ocean }
 		}
 		picture = GFX_evt_ocean
 	}
-
 	picture = {
 		trigger = {
 			from = { is_planet_class = pc_tundra }
 		}
 		picture = GFX_evt_tundra
 	}
-
 	picture = {
 		trigger = {
 			from = { is_planet_class = pc_arctic }
@@ -357,7 +337,6 @@ country_event = {
 	immediate = {
 		set_country_flag = triggered_combustible_atmosphere
 	}
-
 	option = {
 		name = FASCINATING
 		from = { add_deposit = d_volatile_motes_1 add_deposit = d_explosive_atmosphere }
@@ -377,7 +356,6 @@ country_event = {
 	immediate = {
 		set_country_flag = triggered_blue_lava
 	}
-
 	option = {
 		name = FASCINATING
 		from = { add_deposit = d_blue_lava }
@@ -396,14 +374,12 @@ country_event = {
 	immediate = {
 		set_country_flag = triggered_perpetual_lightning
 	}
-
 	option = {
 		name = strange_worlds.1030.a
 		from = {
 			add_modifier = { modifier = pm_perpetual_lightning }
 		}
 	}
-
 	option = {
 		name = strange_worlds.1030.b
 		from = { add_deposit = d_crystaline_growths }
@@ -428,7 +404,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		owner = {
@@ -455,7 +430,6 @@ country_event = {
 	immediate = {
 		set_country_flag = triggered_sky_burials
 	}
-
 	option = {
 		name = strange_worlds.1040.a
 		owner = {
@@ -476,7 +450,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = strange_worlds.1040.b
 		owner = {
@@ -533,11 +506,7 @@ planet_event = {
 		save_global_event_target_as = junk_moon_planet@space_owner
 		space_owner = {
 			set_country_flag = triggered_junk_moon
-			country_event = {
-				id = strange_worlds.1050
-				days = 30
-				random = 150
-			}
+			country_event = { id = strange_worlds.1050 days = 30 random = 150 }
 		}
 	}
 }
@@ -554,7 +523,6 @@ country_event = {
 	immediate = {
 		event_target:junk_moon_planet@root = { save_event_target_as = junk_moon_planet }
 	}
-
 	option = {
 		name = strange_worlds.1050.a
 		add_monthly_resource_mult = {
@@ -568,7 +536,6 @@ country_event = {
 			set_planet_flag = spawn_junk_moon
 		}
 	}
-
 	option = {
 		name = strange_worlds.1050.b
 		add_monthly_resource_mult = {
@@ -615,7 +582,6 @@ country_event = {
 	immediate = {
 		event_target:junk_moon_planet@root = { save_event_target_as = junk_moon_planet }
 	}
-
 	option = {
 		name = EXCELLENT
 		add_monthly_resource_mult = {

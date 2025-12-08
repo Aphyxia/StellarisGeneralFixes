@@ -9,7 +9,6 @@ tech_galactic_archivism = {
 	cost = @tier2cost1
 	area = society
 	tier = 2
-
 	category = {
 		statecraft
 	}
@@ -34,19 +33,17 @@ tech_galactic_archivism = {
 #################
 # Gravity Wells #
 #################
+
 tech_gravity_wells = {
 	cost = @tier2cost1
 	area = physics
 	tier = 2
-
 	category = {
 		field_manipulation
 	}
 
 	weight = @tier2weight1
-
 	feature_flags = { unlock_gravity_snares }
-
 	potential = {
 		has_grand_archive_dlc = yes
 		OR = {
@@ -69,7 +66,6 @@ tech_gravity_wells = {
 
 tech_gravity_snare_capacity_1 = {
 	area = physics
-
 	category = {
 		field_manipulation
 	}
@@ -77,11 +73,9 @@ tech_gravity_snare_capacity_1 = {
 	tier = 2
 	cost = @tier2cost1
 	weight = @tier2weight1
-
 	prerequisites = {
 		"tech_gravity_wells"
 	}
-
 	modifier = {
 		country_capture_amount_add = 1
 		country_capture_chance_add = 0.05
@@ -96,7 +90,6 @@ tech_gravity_snare_capacity_1 = {
 
 tech_gravity_snare_capacity_2 = {
 	area = physics
-
 	category = {
 		field_manipulation
 	}
@@ -105,11 +98,9 @@ tech_gravity_snare_capacity_2 = {
 	cost = @tier3cost1
 	weight = @tier3weight1
 	is_rare = yes
-
 	prerequisites = {
 		"tech_gravity_snare_capacity_1"
 	}
-
 	modifier = {
 		country_capture_amount_add = 1
 		country_capture_chance_add = 0.05
@@ -135,7 +126,6 @@ tech_gravity_snare_capacity_2 = {
 
 tech_gravity_snare_capacity_3 = {
 	area = physics
-
 	category = {
 		field_manipulation
 	}
@@ -144,11 +134,9 @@ tech_gravity_snare_capacity_3 = {
 	cost = @tier4cost1
 	weight = @tier4weight1
 	is_rare = yes
-
 	prerequisites = {
 		"tech_gravity_snare_capacity_2"
 	}
-
 	modifier = {
 		country_capture_amount_add = 1
 		country_capture_chance_add = 0.05
@@ -174,7 +162,6 @@ tech_gravity_snare_capacity_3 = {
 
 tech_containment_vessel = {
 	area = physics
-
 	category = {
 		field_manipulation
 	}
@@ -184,23 +171,19 @@ tech_containment_vessel = {
 	is_reverse_engineerable = no
 	is_rare = yes
 	weight = 0
-
 	prerequisites = {
 		"tech_gravity_wells"
 	}
-
 	modifier = {
 		country_capture_amount_mult = 1
 		country_capture_chance_add = 0.1
 	}
-
 	prereqfor_desc = {
 		component = {
 			title = "TECH_UNLOCK_CONTAINMENT_VESSEL_TITLE"
 			desc = "TECH_UNLOCK_CONTAINMENT_VESSEL_DESC"
 		}
 	}
-
 	potential = {
 		has_grand_archive_dlc = yes
 	}
@@ -221,7 +204,6 @@ tech_voidworm_immunity = {
 	cost = @tier3cost1
 	area = society
 	tier = 3
-
 	category = {
 		biology
 	}
@@ -239,7 +221,6 @@ tech_voidworm_immunity = {
 		damage_vs_country_type_voidworms_treasure_hunters_mult = @vaccine_damage_vs_country_type_voidworms_mult
 		damage_vs_country_type_frenzied_voidworms_mult = @vaccine_damage_vs_country_type_voidworms_mult
 	}
-
 	technology_swap = {
 		name = tech_voidworm_immunity
 		trigger = {
@@ -260,7 +241,6 @@ tech_asteroidal_carapace = {
 	cost = 0
 	area = engineering
 	tier = 3
-
 	category = {
 		materials
 	}
@@ -275,17 +255,16 @@ tech_asteroidal_carapace = {
 ############
 # Vivarium #
 ############
+
 tech_alien_cloning = {
 	cost = @tier2cost1
 	area = society
 	tier = 2
-
 	category = {
 		biology
 	}
 
 	weight = @tier2weight1
-
 	prerequisites = {
 		tech_gravity_wells
 	}
@@ -299,16 +278,13 @@ tech_alien_cloning = {
 			can_research_technology = tech_genome_mapping
 		}
 	}
-
 	feature_flags = { alien_cloning_unlocked }
-
 	technology_swap = {
 		name = tech_alien_cloning_beastmasters
 		inherit_effects = yes
 		trigger = { is_beastmasters_empire = yes }
 		weight = { factor = 1 }
 	}
-
 	weight_modifier = {
 		modifier = {
 			factor = @federation_perk_factor
@@ -317,7 +293,6 @@ tech_alien_cloning = {
 			any_federation_ally = { has_technology = tech_alien_cloning }
 		}
 	}
-
 	prereqfor_desc = {
 		custom = { title = tech_alien_cloning_tt }
 	}
@@ -327,13 +302,11 @@ tech_improved_incubators = {
 	cost = @tier2cost1
 	area = society
 	tier = 2
-
 	category = {
 		biology
 	}
 
 	weight = @tier3weight1
-
 	prerequisites = {
 		"tech_alien_cloning"
 	}
@@ -343,14 +316,12 @@ tech_improved_incubators = {
 	potential = {
 		has_grand_archive_dlc = yes
 	}
-
 	technology_swap = {
 		name = tech_improved_incubators_beastmasters
 		inherit_effects = yes
 		trigger = { is_beastmasters_empire = yes }
 		weight = { factor = 1 }
 	}
-
 	prereqfor_desc = {
 		hide_prereq_for_desc = ship
 		custom = {
@@ -358,7 +329,6 @@ tech_improved_incubators = {
 			desc = tech_improved_incubators_tt_desc
 		}
 	}
-
 	weight_modifier = {
 		modifier = { factor = 0.1 years_passed <= 10 }
 		modifier = {
@@ -380,13 +350,11 @@ tech_metabolic_gases = {
 	cost = @tier3cost1
 	area = society
 	tier = 3
-
 	category = {
 		biology
 	}
 
 	weight = @tier4weight1
-
 	prerequisites = {
 		"tech_improved_incubators"
 	}
@@ -396,19 +364,16 @@ tech_metabolic_gases = {
 	potential = {
 		has_grand_archive_dlc = yes
 	}
-
 	technology_swap = {
 		name = tech_metabolic_gases_beastmasters
 		inherit_effects = yes
 		trigger = { is_beastmasters_empire = yes }
 		weight = { factor = 1 }
 	}
-
 	prereqfor_desc = {
 		hide_prereq_for_desc = ship
 		custom = { title = tech_metabolic_gases_tt desc = tech_metabolic_gases_tt_desc }
 	}
-
 	weight_modifier = {
 		modifier = { factor = 0.1 years_passed <= 20 }
 		modifier = {
@@ -429,11 +394,11 @@ tech_metabolic_gases = {
 ###########
 # Pirates #
 ###########
+
 tech_boarding_cables = {
 	cost = @tier3cost1
 	area = engineering
 	tier = 1
-
 	category = {
 		propulsion
 	}
@@ -448,34 +413,29 @@ tech_boarding_cables = {
 #############
 # Mutations #
 #############
+
 tech_controlled_mutations = {
 	cost = @tier2cost2
 	area = society
 	tier = 2
-
 	category = {
 		biology
 	}
 
 	weight = @tier2cost2
-
 	prerequisites = {
 		tech_alien_cloning
 	}
-
 	potential = {
 		OR = {
 			is_beastmasters_empire = yes
 			has_any_dna = yes
 		}
 	}
-
 	feature_flags = { mutations }
-
 	modifier = {
 		mutation_slots_add = 3
 	}
-
 	technology_swap = {
 		name = tech_controlled_mutations
 		trigger = { is_reanimator = yes }
@@ -492,21 +452,17 @@ tech_controlled_mutations_2 = {
 	cost = @tier4cost2
 	area = society
 	tier = 4
-
 	category = {
 		biology
 	}
 
 	weight = @tier4cost2
-
 	prerequisites = {
 		tech_controlled_mutations
 	}
-
 	modifier = {
 		mutation_slots_add = 3
 	}
-
 	prereqfor_desc = {
 		hide_prereq_for_desc = component
 		custom = {
@@ -514,7 +470,6 @@ tech_controlled_mutations_2 = {
 			desc = tech_controlled_mutations_2_tooltip
 		}
 	}
-
 	technology_swap = {
 		name = tech_controlled_mutations_2
 		trigger = { is_reanimator = yes }
@@ -531,13 +486,11 @@ tech_unique_mutation_space_amoeba = {
 	cost = @tier3cost1
 	area = society
 	tier = 3
-
 	category = {
 		biology
 	}
 
 	weight = 0
-
 	prerequisites = {
 		tech_controlled_mutations_2
 	}
@@ -547,13 +500,11 @@ tech_unique_mutation_tiyanki = {
 	cost = @tier3cost1
 	area = society
 	tier = 3
-
 	category = {
 		biology
 	}
 
 	weight = 0
-
 	prerequisites = {
 		tech_controlled_mutations_2
 	}
@@ -563,13 +514,11 @@ tech_unique_mutation_voidworm = {
 	cost = @tier3cost1
 	area = society
 	tier = 3
-
 	category = {
 		biology
 	}
 
 	weight = 0
-
 	prerequisites = {
 		tech_controlled_mutations_2
 	}
@@ -579,13 +528,11 @@ tech_unique_mutation_cutholoid = {
 	cost = @tier3cost1
 	area = society
 	tier = 3
-
 	category = {
 		biology
 	}
 
 	weight = 0
-
 	prerequisites = {
 		tech_controlled_mutations_2
 	}
@@ -595,13 +542,11 @@ tech_unique_mutation_crystalline_entity = {
 	cost = @tier3cost1
 	area = society
 	tier = 3
-
 	category = {
 		biology
 	}
 
 	weight = 0
-
 	prerequisites = {
 		tech_controlled_mutations_2
 	}
@@ -611,13 +556,11 @@ tech_unique_mutation_restorative_enzymes = {
 	cost = @tier4cost1
 	area = society
 	tier = 4
-
 	category = {
 		biology
 	}
 
 	weight = 0
-
 	prerequisites = {
 		tech_controlled_mutations_2
 	}
@@ -627,13 +570,11 @@ tech_unique_mutation_starborne_biology = {
 	cost = @tier4cost1
 	area = society
 	tier = 4
-
 	category = {
 		biology
 	}
 
 	weight = 0
-
 	prerequisites = {
 		tech_controlled_mutations_2
 	}
@@ -642,21 +583,19 @@ tech_unique_mutation_starborne_biology = {
 #########################
 # Fauna Core Components #
 #########################
+
 tech_thrusters_bio_integration = {
 	cost = @tier2cost1
 	area = engineering
 	tier = 2
-
 	category = {
 		propulsion
 	}
 
 	weight = 0
-
 	prerequisites = {
 		tech_controlled_mutations
 	}
-
 	prereqfor_desc = {
 		hide_prereq_for_desc = component
 		custom = { title = tech_thrusters_bio_integration_effect }
@@ -667,17 +606,14 @@ tech_hyper_drive_bio_integration = {
 	cost = @tier2cost1
 	area = physics
 	tier = 2
-
 	category = {
 		particles
 	}
 
 	weight = 0
-
 	prerequisites = {
 		tech_controlled_mutations
 	}
-
 	prereqfor_desc = {
 		hide_prereq_for_desc = component
 		custom = { title = tech_hyper_drive_bio_integration_effect }
@@ -688,17 +624,14 @@ tech_sensors_bio_integration = {
 	cost = @tier2cost1
 	area = physics
 	tier = 2
-
 	category = {
 		computing
 	}
 
 	weight = 0
-
 	prerequisites = {
 		tech_controlled_mutations
 	}
-
 	prereqfor_desc = {
 		hide_prereq_for_desc = component
 		custom = { title = tech_sensors_bio_integration_effect }
@@ -709,17 +642,14 @@ tech_combat_computers_bio_integration = {
 	cost = @tier2cost1
 	area = physics
 	tier = 2
-
 	category = {
 		computing
 	}
 
 	weight = 0
-
 	prerequisites = {
 		tech_controlled_mutations
 	}
-
 	prereqfor_desc = {
 		hide_prereq_for_desc = component
 		custom = { title = tech_combat_computers_bio_integration_effect }

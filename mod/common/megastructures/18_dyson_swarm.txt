@@ -3,7 +3,6 @@ dyson_swarm_1 = {
 	entity = "dyson_swarm_phase_1_entity"
 	construction_entity = "dyson_swarm_phase_1_entity"
 	portrait = "GFX_megastructure_dyson_swarm_background"
-
 	entity_offset = { x = 0.1 y = 0.1 }
 
 	rotate_to_center = no
@@ -12,7 +11,6 @@ dyson_swarm_1 = {
 	# show_in_outliner = no
 	use_planet_resource = yes
 	build_time = 1080 # 3 years
-
 	resources = {
 		category = megastructures
 		cost = {
@@ -39,7 +37,6 @@ dyson_swarm_1 = {
 
 	construction_blocks_and_blocked_by = none
 	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_DYSON_SWARM"
-
 	dismantle_cost = {
 		category = megastructures
 		cost = {
@@ -48,15 +45,12 @@ dyson_swarm_1 = {
 	}
 
 	dismantle_time = 360
-
 	dismantle_potential = {
 		always = yes
 	}
-
 	dismantle_possible = {
 		can_dismantle_megastructure = { TECH = tech_dyson_swarm }
 	}
-
 	on_dismantle_complete = {
 		random_system_planet = {
 			limit = { has_modifier = dyson_swarm_1_mod }
@@ -76,15 +70,12 @@ dyson_swarm_1 = {
 			}
 		}
 	}
-
 	prerequisites = {
 		"tech_dyson_swarm"
 	}
-
 	potential = {
 		has_machine_age_dlc = yes
 	}
-
 	possible = {
 		hidden_trigger = { exists = starbase }
 		custom_tooltip = { fail_text = "requires_inside_border" is_inside_border = from }
@@ -131,7 +122,6 @@ dyson_swarm_1 = {
 			}
 		}
 	}
-
 	placement_rules = {
 		planet_possible = {
 			custom_tooltip = { fail_text = "must_build_around_star" is_star = yes }
@@ -152,7 +142,6 @@ dyson_swarm_1 = {
 			}
 		}
 	}
-
 	country_modifier = {
 		custom_tooltip = dyson_swarm_1_mod_tooltip
 	}
@@ -169,9 +158,7 @@ dyson_swarm_1 = {
 		}
 		modifier = {
 			factor = 0.1
-			NOT = {
-				starbase = { has_starbase_size >= starbase_starfortress }
-			}
+			NOT = { starbase = { has_starbase_size >= starbase_starfortress } }
 		}
 		modifier = {
 			factor = 0.1
@@ -181,13 +168,11 @@ dyson_swarm_1 = {
 			}
 		}
 	}
-
 	on_build_start = {
 		from = {
 			change_variable = { which = dyson_swarm_counter value = 1 }
 		}
 	}
-
 	on_build_cancel = {
 		if = {
 			limit = {
@@ -201,7 +186,6 @@ dyson_swarm_1 = {
 			}
 		}
 	}
-
 	on_build_complete = {
 		from = {
 			country_event = { id = cybernetics.1020 }
@@ -221,7 +205,6 @@ dyson_swarm_2 = {
 	entity = "dyson_swarm_phase_2_entity"
 	construction_entity = "dyson_swarm_phase_2_entity"
 	portrait = "GFX_megastructure_dyson_swarm_background"
-
 	entity_offset = { x = -0.1 y = -0.1 }
 
 	rotate_to_center = no
@@ -230,7 +213,6 @@ dyson_swarm_2 = {
 	# show_in_outliner = no
 	use_planet_resource = yes
 	build_time = 1080 # 3 years
-
 	resources = {
 		category = megastructures
 		cost = {
@@ -256,7 +238,6 @@ dyson_swarm_2 = {
 	}
 
 	construction_blocks_and_blocked_by = none
-
 	dismantle_cost = {
 		category = megastructures
 		cost = {
@@ -265,15 +246,12 @@ dyson_swarm_2 = {
 	}
 
 	dismantle_time = 360
-
 	dismantle_potential = {
 		always = yes
 	}
-
 	dismantle_possible = {
 		can_dismantle_megastructure = { TECH = tech_dyson_swarm }
 	}
-
 	on_dismantle_complete = {
 		random_system_planet = {
 			limit = { has_modifier = dyson_swarm_2_mod }
@@ -293,23 +271,18 @@ dyson_swarm_2 = {
 			}
 		}
 	}
-
 	upgrade_from = {
 		dyson_swarm_1
 	}
-
 	prerequisites = {
 		"tech_dyson_swarm"
 	}
-
 	potential = {
 		always = yes
 	}
-
 	country_modifier = {
 		custom_tooltip = dyson_swarm_2_mod_tooltip
 	}
-
 	on_build_complete = {
 		from = {
 			country_event = { id = cybernetics.1025 }
@@ -322,14 +295,12 @@ dyson_swarm_3 = {
 	entity = "dyson_swarm_phase_3_entity"
 	construction_entity = "dyson_swarm_phase_3_entity"
 	portrait = "GFX_megastructure_dyson_swarm_background"
-
 	entity_offset = { x = -0.1 y = -0.1 }
 
 	rotate_to_center = no
 	scale_offset = yes
 	place_entity_on_planet_plane = yes
 	use_planet_resource = yes
-
 	outliner_trigger = {
 		exists = owner
 		NOR = {
@@ -373,7 +344,6 @@ dyson_swarm_3 = {
 	}
 
 	construction_blocks_and_blocked_by = none
-
 	dismantle_cost = {
 		category = megastructures
 		cost = {
@@ -382,15 +352,12 @@ dyson_swarm_3 = {
 	}
 
 	dismantle_time = 360
-
 	dismantle_potential = {
 		always = yes
 	}
-
 	dismantle_possible = {
 		can_dismantle_megastructure = { TECH = tech_dyson_swarm }
 	}
-
 	on_dismantle_complete = {
 		random_system_planet = {
 			limit = { has_modifier = dyson_swarm_3_mod }
@@ -428,7 +395,6 @@ dyson_swarm_3 = {
 	}
 
 	build_time = 1080 # 3 years
-
 	resources = {
 		category = megastructures
 		cost = {
@@ -452,23 +418,18 @@ dyson_swarm_3 = {
 			alloys = 20
 		}
 	}
-
 	upgrade_from = {
 		dyson_swarm_2
 	}
-
 	prerequisites = {
 		"tech_dyson_swarm"
 	}
-
 	potential = {
 		always = yes
 	}
-
 	country_modifier = {
 		custom_tooltip = dyson_swarm_3_mod_tooltip
 	}
-
 	on_build_complete = {
 		from = {
 			country_event = { id = cybernetics.1030 }
@@ -486,4 +447,3 @@ dyson_swarm_3 = {
 		}
 	}
 }
-

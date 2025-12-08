@@ -157,10 +157,7 @@ planet_event = {
 					}
 					if = {
 						limit = { root = { is_colony = no } }
-						add_opinion_modifier = {
-							modifier = opinion_cracked_an_uninhabited_world
-							who = from.owner
-						}
+						add_opinion_modifier = { modifier = opinion_cracked_an_uninhabited_world who = from.owner }
 					}
 					else = {
 						add_opinion_modifier = { modifier = opinion_cracked_a_world who = from.owner }
@@ -174,10 +171,7 @@ planet_event = {
 			owner = {
 				if = {
 					limit = { root = { is_colony = no } }
-					add_opinion_modifier = {
-						modifier = opinion_cracked_my_uninhabited_world
-						who = from.owner
-					}
+					add_opinion_modifier = { modifier = opinion_cracked_my_uninhabited_world who = from.owner }
 				}
 				else = {
 					add_opinion_modifier = { modifier = opinion_cracked_my_world who = from.owner }
@@ -212,10 +206,7 @@ planet_event = {
 							}
 						}
 					}
-					add_opinion_modifier = {
-						modifier = opinion_cracked_a_primitive_world
-						who = from.owner
-					}
+					add_opinion_modifier = { modifier = opinion_cracked_a_primitive_world who = from.owner }
 				}
 				every_country = {
 					limit = {
@@ -316,7 +307,6 @@ country_event = {
 	immediate = {
 		set_country_flag = fired_cracker
 	}
-
 	option = {
 		name = OK
 		trigger = {
@@ -326,7 +316,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = planet_destruction.101.a.purifexter
 		trigger = {
@@ -360,7 +349,6 @@ country_event = {
 	immediate = {
 		set_country_flag = fired_cracker
 	}
-
 	option = {
 		name = OK
 		trigger = {
@@ -370,7 +358,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = planet_destruction.101.a.purifexter
 		trigger = {
@@ -458,7 +445,6 @@ country_event = {
 			link_wormholes = event_target:sol_sys
 		}
 	}
-
 	option = {
 		name = planet_destruction.111.a
 		custom_tooltip = planet_destruction.111.a.tooltip
@@ -630,15 +616,10 @@ planet_event = {
 country_event = {
 	id = planet_destruction.210
 	title = planet_destruction.210.name
-
 	desc = {
 		text = planet_destruction.210.desc
-		trigger = {
-			is_pacifist = no
-			is_egalitarian = no
-		}
+		trigger = { is_pacifist = no is_egalitarian = no }
 	}
-
 	desc = {
 		text = planet_destruction.210.desc.alt
 		trigger = {
@@ -648,16 +629,12 @@ country_event = {
 			}
 		}
 	}
-
 	picture = {
 		trigger = {
-			NOT = {
-				from = { is_planet_class = pc_habitat_shielded }
-			}
+			NOT = { from = { is_planet_class = pc_habitat_shielded } }
 		}
 		picture = GFX_evt_shielded_planet
 	}
-
 	picture = {
 		trigger = {
 			from = { is_planet_class = pc_habitat_shielded }
@@ -676,15 +653,10 @@ country_event = {
 	immediate = {
 		set_country_flag = fired_pacifier
 	}
-
 	option = {
 		name = planet_destruction.210.a
-		trigger = {
-			is_pacifist = no
-			is_egalitarian = no
-		}
+		trigger = { is_pacifist = no is_egalitarian = no }
 	}
-
 	option = {
 		name = planet_destruction.210.b
 		trigger = {
@@ -832,10 +804,7 @@ planet_event = {
 						is_xenophile = yes
 					}
 				}
-				add_opinion_modifier = {
-					modifier = opinion_swept_a_primitive_world
-					who = from.owner
-				}
+				add_opinion_modifier = { modifier = opinion_swept_a_primitive_world who = from.owner }
 			}
 			every_country = {
 				limit = {
@@ -852,10 +821,7 @@ planet_event = {
 						}
 					}
 				}
-				add_opinion_modifier = {
-					modifier = opinion_swept_a_primitive_world_phile
-					who = from.owner
-				}
+				add_opinion_modifier = { modifier = opinion_swept_a_primitive_world_phile who = from.owner }
 			}
 		}
 		# Add war exhaustion to planet owner
@@ -917,7 +883,6 @@ planet_event = {
 country_event = {
 	id = planet_destruction.301
 	title = planet_destruction.301.name
-
 	desc = {
 		text = planet_destruction.301.nobots.desc
 		trigger = {
@@ -931,7 +896,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = planet_destruction.301.bots.desc
 		trigger = {
@@ -940,7 +904,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = planet_destruction.301.infested.desc
 		trigger = {
@@ -966,7 +929,6 @@ country_event = {
 	immediate = {
 		set_country_flag = fired_neutron
 	}
-
 	option = {
 		name = OK
 		trigger = {
@@ -976,7 +938,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = planet_destruction.101.a.purifexter
 		trigger = {
@@ -1233,7 +1194,6 @@ country_event = {
 	immediate = {
 		set_country_flag = fired_godray
 	}
-
 	option = {
 		name = OK
 		from = { custom_tooltip = planet_destruction.401.tooltip }
@@ -1269,10 +1229,7 @@ planet_event = {
 				}
 			}
 			from.owner = {
-				set_timed_country_flag = {
-					flag = resolution_breached_fired_assimilator
-					years = 10
-				}
+				set_timed_country_flag = { flag = resolution_breached_fired_assimilator years = 10 }
 			}
 		}
 		if = {
@@ -1345,10 +1302,7 @@ planet_event = {
 						has_communications = root.owner
 					}
 				}
-				add_opinion_modifier = {
-					modifier = opinion_assimilated_a_primitive_world
-					who = from.owner
-				}
+				add_opinion_modifier = { modifier = opinion_assimilated_a_primitive_world who = from.owner }
 			}
 			every_country = {
 				limit = {
@@ -1464,7 +1418,6 @@ country_event = {
 	immediate = {
 		set_country_flag = fired_nanobots
 	}
-
 	option = {
 		name = OK
 		from = { custom_tooltip = planet_destruction.501.tooltip }
@@ -1567,7 +1520,6 @@ country_event = {
 	location = event_target:outraged_FE.capital_scope
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:outraged_FE
 		planet_background = event_target:outraged_FE
@@ -1575,7 +1527,6 @@ country_event = {
 		city_level = event_target:outraged_FE
 		room = event_target:outraged_FE.ruler
 	}
-
 	after = {
 		hidden_effect = {	# wake up FE and make it start a war
 			event_target:outraged_FE = {
@@ -1584,62 +1535,50 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = planet_destruction.610.spiri
 		trigger = { is_spiritualist = yes }
 	}
-
 	option = {
 		name = planet_destruction.610.mater
 		trigger = { is_materialist = yes }
 	}
-
 	option = {
 		name = planet_destruction.610.milit
 		trigger = { is_militarist = yes }
 	}
-
 	option = {
 		name = planet_destruction.610.pacif
 		trigger = { is_pacifist = yes }
 	}
-
 	option = {
 		name = planet_destruction.610.autho
 		trigger = { is_authoritarian = yes }
 	}
-
 	option = {
 		name = planet_destruction.610.egali
 		trigger = { is_egalitarian = yes }
 	}
-
 	option = {
 		name = planet_destruction.610.phile
 		trigger = { is_xenophile = yes }
 	}
-
 	option = {
 		name = planet_destruction.610.phobe
 		trigger = { is_xenophobe = yes }
 	}
-
 	option = {
 		name = planet_destruction.610.gesta # What is a single planet?
 		trigger = { is_gestalt = yes }
 	}
-
 	option = {
 		name = planet_destruction.610.devou # HAK
 		trigger = { has_valid_civic = civic_hive_devouring_swarm }
 	}
-
 	option = {
 		name = planet_destruction.610.termi
 		trigger = { has_valid_civic = civic_machine_terminator }
 	}
-
 	option = {
 		name = planet_destruction.610.purif
 		trigger = { has_valid_civic = civic_fanatic_purifiers }
@@ -1654,10 +1593,7 @@ country_event = {
 	immediate = {
 		declare_war = {
 			target = event_target:FE_outrager
-			name = {
-				key = "NAME_Holy_World_War"
-				variable_string = "[This.MainAttacker.GetAdj]"
-			}
+			name = { key = "NAME_Holy_World_War" variable_string = "[This.MainAttacker.GetAdj]" }
 			# __STR_32__
 			attacker_war_goal = wg_subjugation
 		}
@@ -1668,7 +1604,6 @@ country_event = {
 	id = planet_destruction.615
 	base = planet_destruction.610
 	option_clear = yes
-
 	option = {
 		name = planet_destruction.615.A
 		name = {
@@ -1864,10 +1799,7 @@ planet_event = {
 						is_xenophile = yes
 					}
 				}
-				add_opinion_modifier = {
-					modifier = opinion_drenched_a_primitive_world
-					who = from.owner
-				}
+				add_opinion_modifier = { modifier = opinion_drenched_a_primitive_world who = from.owner }
 			}
 			every_country = {
 				limit = {
@@ -1981,7 +1913,6 @@ country_event = {
 	immediate = {
 		set_country_flag = fired_deluge
 	}
-
 	option = {
 		name = EXCELLENT
 		from = { custom_tooltip = planet_destruction.701.tooltip }
@@ -2168,10 +2099,7 @@ planet_event = {
 					}
 					if = {
 						limit = { root = { is_colony = no } }
-						add_opinion_modifier = {
-							modifier = opinion_toxified_an_uninhabited_world
-							who = from.owner
-						}
+						add_opinion_modifier = { modifier = opinion_toxified_an_uninhabited_world who = from.owner }
 					}
 					else = {
 						add_opinion_modifier = { modifier = opinion_toxified_a_world who = from.owner }
@@ -2185,10 +2113,7 @@ planet_event = {
 			owner = {
 				if = {
 					limit = { root = { is_colony = no } }
-					add_opinion_modifier = {
-						modifier = opinion_toxified_my_uninhabited_world
-						who = from.owner
-					}
+					add_opinion_modifier = { modifier = opinion_toxified_my_uninhabited_world who = from.owner }
 				}
 				else = {
 					add_opinion_modifier = { modifier = opinion_toxified_my_world who = from.owner }
@@ -2223,10 +2148,7 @@ planet_event = {
 							}
 						}
 					}
-					add_opinion_modifier = {
-						modifier = opinion_toxified_a_primitive_world
-						who = from.owner
-					}
+					add_opinion_modifier = { modifier = opinion_toxified_a_primitive_world who = from.owner }
 				}
 				every_country = {
 					limit = {
@@ -2308,7 +2230,6 @@ country_event = {
 	immediate = {
 		set_country_flag = fired_toxifier
 	}
-
 	option = {
 		name = OK
 		trigger = {
@@ -2318,7 +2239,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = planet_destruction.101.a.purifexter
 		trigger = {
@@ -2439,10 +2359,7 @@ planet_event = {
 				}
 			}
 			from.owner = {
-				set_timed_country_flag = {
-					flag = resolution_breached_fired_devolution_beam
-					years = 10
-				}
+				set_timed_country_flag = { flag = resolution_breached_fired_devolution_beam years = 10 }
 			}
 		}
 		if = {
@@ -2678,7 +2595,6 @@ country_event = {
 	immediate = {
 		set_country_flag = fired_devolving_beam
 	}
-
 	option = {
 		name = OK
 	}
@@ -2688,12 +2604,10 @@ country_event = {
 country_event = {
 	id = planet_destruction.1000
 	title = planet_destruction.1000.name
-
 	desc = {
 		trigger = { is_same_empire = fromfrom.owner }
 		text = planet_destruction.1000.desc.self
 	}
-
 	desc = {
 		trigger = {
 			NOT = { is_same_empire = fromfrom.owner }
@@ -2706,7 +2620,6 @@ country_event = {
 		}
 		text = planet_destruction.1000.desc.shatter
 	}
-
 	desc = {
 		trigger = {
 			NOT = { is_same_empire = fromfrom.owner }
@@ -2720,7 +2633,6 @@ country_event = {
 		}
 		text = planet_destruction.1000.desc.shield
 	}
-
 	desc = {
 		trigger = {
 			NOT = { is_same_empire = fromfrom.owner }
@@ -2736,14 +2648,12 @@ country_event = {
 		}
 		text = planet_destruction.1000.desc.neutron
 	}
-
 	picture = {
 		trigger = {
 			from = { is_planet_class = pc_shielded }
 		}
 		picture = GFX_evt_shielded_planet
 	}
-
 	picture = {
 		trigger = {
 			from = {
@@ -2756,35 +2666,20 @@ country_event = {
 		}
 		picture = GFX_evt_exploding_planet
 	}
-
 	trigger = {
 		from = { has_observation_outpost = yes }
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = planet_destruction.1000.A
-		trigger = {
-			NOR = {
-				is_homicidal = yes
-				is_xenophobe = yes
-				from = {
-					OR = {
-						is_planet_class = pc_shattered
-						is_planet_class = pc_shattered_2
-					}
-				}
-			}
-		}
 		from = {
 			observation_outpost = { dismantle = yes }
 		}
 	}
-
 	option = {
 		name = planet_destruction.1000.B
-		trigger = {
+		exclusive_trigger = {
 			OR = {
 				is_homicidal = yes
 				is_xenophobe = yes
@@ -2921,10 +2816,7 @@ planet_event = {
 					}
 					if = {
 						limit = { root = { is_colony = no } }
-						add_opinion_modifier = {
-							modifier = opinion_cracked_an_uninhabited_world
-							who = from.owner
-						}
+						add_opinion_modifier = { modifier = opinion_cracked_an_uninhabited_world who = from.owner }
 					}
 					else = {
 						add_opinion_modifier = { modifier = opinion_cracked_a_world who = from.owner }
@@ -2938,10 +2830,7 @@ planet_event = {
 			owner = {
 				if = {
 					limit = { root = { is_colony = no } }
-					add_opinion_modifier = {
-						modifier = opinion_cracked_my_uninhabited_world
-						who = from.owner
-					}
+					add_opinion_modifier = { modifier = opinion_cracked_my_uninhabited_world who = from.owner }
 				}
 				else = {
 					add_opinion_modifier = { modifier = opinion_cracked_my_world who = from.owner }
@@ -2976,10 +2865,7 @@ planet_event = {
 							}
 						}
 					}
-					add_opinion_modifier = {
-						modifier = opinion_cracked_a_primitive_world
-						who = from.owner
-					}
+					add_opinion_modifier = { modifier = opinion_cracked_a_primitive_world who = from.owner }
 				}
 				every_country = {
 					limit = {
@@ -3030,4 +2916,3 @@ planet_event = {
 		remove_planet = yes
 	}
 }
-

@@ -92,10 +92,7 @@ event = {
 							}
 						}
 						prev = {
-							country_event = {
-								id = grand_archive.8052
-								scopes = { from = prev }
-							}
+							country_event = { id = grand_archive.8052 scopes = { from = prev } }
 						}
 					}
 				}
@@ -136,10 +133,7 @@ event = {
 							}
 						}
 						prev = {
-							country_event = {
-								id = grand_archive.8102
-								scopes = { from = prev }
-							}
+							country_event = { id = grand_archive.8102 scopes = { from = prev } }
 						}
 					}
 				}
@@ -180,10 +174,7 @@ event = {
 							}
 						}
 						prev = {
-							country_event = {
-								id = grand_archive.8202
-								scopes = { from = prev }
-							}
+							country_event = { id = grand_archive.8202 scopes = { from = prev } }
 						}
 					}
 				}
@@ -196,9 +187,7 @@ event = {
 						has_country_flag = black_needle_base_stolen_tech
 						# has_country_flag = smeegibb_arc_site_spawned
 					}
-					NOT = {
-						has_point_of_interest = { poi = black_needle_base_system_poi }
-					}
+					NOT = { has_point_of_interest = { poi = black_needle_base_system_poi } }
 					any_system_within_border = {
 						has_star_flag = hidden_treasure_system
 						any_system_planet = {
@@ -333,9 +322,7 @@ event = {
 				# Species
 				every_owned_leader = {
 					limit = {
-						NOT = {
-							species = { has_trait = trait_cybernetic }
-						}
+						NOT = { species = { has_trait = trait_cybernetic } }
 						has_trait = leader_trait_cyborg
 						is_leader_tier = leader_tier_default
 					}
@@ -352,9 +339,7 @@ event = {
 				# Species limited
 				every_owned_leader = {
 					limit = {
-						NOT = {
-							species = { has_trait = trait_limited_cybernetic }
-						}
+						NOT = { species = { has_trait = trait_limited_cybernetic } }
 						has_trait = leader_trait_limited_cyborg
 						is_leader_tier = leader_tier_default
 					}
@@ -390,9 +375,7 @@ event = {
 				# Species
 				every_owned_leader = {
 					limit = {
-						NOT = {
-							species = { has_trait = trait_erudite }
-						}
+						NOT = { species = { has_trait = trait_erudite } }
 						has_trait = leader_trait_erudite
 						is_leader_tier = leader_tier_default
 						is_gestalt_node = no
@@ -415,11 +398,11 @@ event = {
 		event_target:global_event_country = {
 			switch = {
 				trigger = galaxy_size
-				tiny	= { set_variable = { which = alive_cutholoids value = 1 } set_variable = { which = general_patch_systems_critters value = 1 } } # 200 stars
-				small	= { set_variable = { which = alive_cutholoids value = 2 } set_variable = { which = general_patch_systems_critters value = 2 } } # 400 stars
-				medium	= { set_variable = { which = alive_cutholoids value = 3 } set_variable = { which = general_patch_systems_critters value = 4 } } # 600 stars
-				large	= { set_variable = { which = alive_cutholoids value = 4 } set_variable = { which = general_patch_systems_critters value = 6 } } # 800 stars
-				huge	= { set_variable = { which = alive_cutholoids value = 5 } set_variable = { which = general_patch_systems_critters value = 8 } } # 1000 stars
+				tiny = { set_variable = { which = alive_cutholoids value = 1 } set_variable = { which = general_patch_systems_critters value = 1 } } # 200 stars
+				small = { set_variable = { which = alive_cutholoids value = 2 } set_variable = { which = general_patch_systems_critters value = 2 } } # 400 stars
+				medium = { set_variable = { which = alive_cutholoids value = 3 } set_variable = { which = general_patch_systems_critters value = 4 } } # 600 stars
+				large = { set_variable = { which = alive_cutholoids value = 4 } set_variable = { which = general_patch_systems_critters value = 6 } } # 800 stars
+				huge = { set_variable = { which = alive_cutholoids value = 5 } set_variable = { which = general_patch_systems_critters value = 8 } } # 1000 stars
 			}
 		}
 	}

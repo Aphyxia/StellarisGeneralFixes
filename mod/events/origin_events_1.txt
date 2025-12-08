@@ -75,11 +75,7 @@ country_event = {
 				set_country_flag = scion_master
 				save_event_target_as = scion_master
 				add_opinion_modifier = { who = root modifier = opinion_scion }
-				country_event = {
-					id = origin.20
-					days = @scionRewardTimer
-					random = @scionRewardTimerDelay
-				}
+				country_event = { id = origin.20 days = @scionRewardTimer random = @scionRewardTimerDelay }
 				root = {
 					establish_communications_no_message = event_target:scion_master
 					set_subject_of = { who = event_target:scion_master preset = preset_scion }
@@ -98,11 +94,7 @@ country_event = {
 				set_country_flag = scion_master
 				save_event_target_as = scion_master
 				add_opinion_modifier = { who = root modifier = opinion_scion }
-				country_event = {
-					id = origin.20
-					days = @scionRewardTimer
-					random = @scionRewardTimerDelay
-				}
+				country_event = { id = origin.20 days = @scionRewardTimer random = @scionRewardTimerDelay }
 				root = {
 					establish_communications_no_message = event_target:scion_master
 					set_subject_of = { who = event_target:scion_master preset = preset_scion }
@@ -122,11 +114,7 @@ country_event = {
 				set_country_flag = scion_master
 				save_event_target_as = scion_master
 				add_opinion_modifier = { who = root modifier = opinion_scion }
-				country_event = {
-					id = origin.20
-					days = @scionRewardTimer
-					random = @scionRewardTimerDelay
-				}
+				country_event = { id = origin.20 days = @scionRewardTimer random = @scionRewardTimerDelay }
 				root = {
 					establish_communications_no_message = event_target:scion_master
 					set_subject_of = { who = event_target:scion_master preset = preset_scion }
@@ -171,14 +159,12 @@ country_event = {
 country_event = {
 	id = origin.10
 	title = TRANSMISSION
-
 	desc = {
 		trigger = {
 			event_target:scion_master = { has_country_flag = fallen_empire_2 }
 		}
 		text = "origin.10.a.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:scion_master = { has_country_flag = fallen_empire_1 }
@@ -188,7 +174,6 @@ country_event = {
 
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:scion_master
 		planet_background = event_target:scion_master
@@ -196,18 +181,15 @@ country_event = {
 		city_level = event_target:scion_master
 		room = event_target:scion_master
 	}
-
 	immediate = {
 		overlord = { save_event_target_as = scion_master }
 	}
-
 	option = {
 		name = origin.10.a
 		trigger = {
 			event_target:scion_master = { has_country_flag = fallen_empire_2 }
 		}
 	}
-
 	option = {
 		name = origin.10.b
 		trigger = {
@@ -265,7 +247,6 @@ country_event = {
 	id = origin.12
 	title = fallen_empires.100.name
 	desc = origin.12.desc
-
 	inline_script = {
 		script = events/biogenesis_event_art
 		OWNER = owner
@@ -276,13 +257,11 @@ country_event = {
 	show_sound = event_mystic_reveal_light
 	location = fromfrom
 	is_triggered_only = yes
-
 	option = { # Suspicious (Influence + Xenophobia)
 		name = origin.12.a
 		add_resource = { influence = 25 }
 		add_modifier = { modifier = scion_suspicious_holy_world years = 10 }
 	}
-
 	option = { # They know best (Unity + Spiritualism)
 		name = origin.12.b
 		add_monthly_resource_mult = {
@@ -300,19 +279,16 @@ country_event = {
 country_event = {
 	id = origin.13
 	title = fallen_empires.100.name
-
 	desc = {
 		trigger = { has_communications = event_target:spi_fallen_empire }
 		text = origin.13.hasmet.desc
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_communications = event_target:spi_fallen_empire }
 		}
 		text = origin.13.notmet.desc
 	}
-
 	inline_script = {
 		script = events/biogenesis_event_art
 		OWNER = owner
@@ -333,7 +309,6 @@ country_event = {
 			save_event_target_as = spi_fallen_empire
 		}
 	}
-
 	option = {
 		name = CURIOUS # (Unity + Research)
 		add_monthly_resource_mult = {
@@ -349,7 +324,6 @@ country_event = {
 			max = @tier1researchmax
 		}
 	}
-
 	option = {
 		name = origin.13.a # Dismissive attitude (Influence + Research)
 		add_resource = { influence = 25 }
@@ -386,11 +360,7 @@ country_event = {
 			}
 		}
 		# Repeat
-		country_event = {
-			id = origin.20
-			days = @scionRewardTimer
-			random = @scionRewardTimerDelay
-		}
+		country_event = { id = origin.20 days = @scionRewardTimer random = @scionRewardTimerDelay }
 	}
 }
 
@@ -398,14 +368,12 @@ country_event = {
 country_event = {
 	id = origin.21
 	title = TRANSMISSION
-
 	desc = {
 		trigger = {
 			event_target:scion_master = { has_country_flag = fallen_empire_2 }
 		}
 		text = "origin.21.a.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:scion_master = { has_country_flag = fallen_empire_1 }
@@ -415,7 +383,6 @@ country_event = {
 
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:scion_master
 		planet_background = event_target:scion_master
@@ -423,11 +390,9 @@ country_event = {
 		city_level = event_target:scion_master
 		room = event_target:scion_master
 	}
-
 	immediate = {
 		overlord = { save_event_target_as = scion_master }
 	}
-
 	option = {
 		name = origin.21.a
 		locked_random_list = {
@@ -514,7 +479,6 @@ country_event = {
 	id = origin.24
 	base = origin.21
 	option_clear = yes
-
 	option = {
 		name = origin.21.a
 		locked_random_list = {
@@ -600,7 +564,7 @@ event = {
 					event_target:global_event_country = {
 						change_variable = { which = scion_intervention value = 1 }
 					}
-									}
+				}
 				10 = { # FE gives ships
 					modifier = { factor = 0 has_country_flag = scion_gave_ships }
 					country_event = { id = origin.215 }
@@ -665,7 +629,6 @@ country_event = {
 	desc = origin.205.desc
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:scion_master
 		planet_background = event_target:scion_master
@@ -673,7 +636,6 @@ country_event = {
 		city_level = event_target:scion_master
 		room = event_target:scion_master
 	}
-
 	immediate = {
 		overlord = { save_event_target_as = scion_master }
 		ordered_owned_leader = {
@@ -690,7 +652,6 @@ country_event = {
 		}
 		set_country_flag = scion_requested_leader
 	}
-
 	option = {
 		name = origin.205.a
 		response_text = origin.205.a.response
@@ -704,7 +665,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = origin.205.b
 		response_text = origin.205.b.response
@@ -718,7 +678,6 @@ country_event = {
 	desc = origin.210.desc
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:scion_master
 		planet_background = event_target:scion_master
@@ -726,7 +685,6 @@ country_event = {
 		city_level = event_target:scion_master
 		room = event_target:scion_master
 	}
-
 	immediate = {
 		overlord = {
 			save_event_target_as = scion_master
@@ -734,7 +692,6 @@ country_event = {
 		}
 		set_country_flag = scion_gave_leader
 	}
-
 	option = {
 		name = origin.210.a
 		response_text = origin.210.a.response
@@ -766,7 +723,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = origin.210.b
 		response_text = origin.210.b.response
@@ -783,7 +739,6 @@ country_event = {
 	desc = "origin.215.desc"
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:scion_master
 		planet_background = event_target:scion_master
@@ -791,12 +746,10 @@ country_event = {
 		city_level = event_target:scion_master
 		room = event_target:scion_master
 	}
-
 	immediate = {
 		overlord = { save_event_target_as = scion_master }
 		set_country_flag = scion_gave_ships
 	}
-
 	option = {
 		name = origin.215.a
 		custom_tooltip = origin.215.tooltip
@@ -831,7 +784,6 @@ country_event = {
 	desc = origin.220.desc
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:scion_master
 		planet_background = event_target:scion_master
@@ -839,12 +791,10 @@ country_event = {
 		city_level = event_target:scion_master
 		room = event_target:scion_master
 	}
-
 	immediate = {
 		overlord = { save_event_target_as = scion_master }
 		set_country_flag = scion_gave_propulsion_tech
 	}
-
 	option = {
 		name = origin.220.a
 		if = {
@@ -878,7 +828,6 @@ country_event = {
 	desc = origin.225.desc
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:scion_master
 		planet_background = event_target:scion_master
@@ -886,12 +835,10 @@ country_event = {
 		city_level = event_target:scion_master
 		room = event_target:scion_master
 	}
-
 	immediate = {
 		overlord = { save_event_target_as = scion_master }
 		set_country_flag = scion_gave_colonization_supplies
 	}
-
 	option = { # Accept (note: need not take Frontier Spirit into account. Values should match the cost of a 'colonizer'/'shipclass_colonizer'.)
 		name = origin.205.a
 		if = {
@@ -912,7 +859,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Hesitate or refuse
 		name = origin.225.b
 		trigger = {
@@ -931,14 +877,12 @@ country_event = {
 	id = origin.226
 	base = origin.225
 	desc_clear = yes
-
 	desc = {
 		trigger = {
 			check_variable = { which = scion_refusals value < @scionRefusalsCap }
 		}
 		text = origin.226.desc.A
 	}
-
 	desc = {
 		trigger = {
 			check_variable = { which = scion_refusals value < @scionRefusalsCap }
@@ -964,7 +908,7 @@ event = {
 			NOT = { has_country_flag = scion_war_help }
 			OR = {
 				any_war = {
-					any_defender = { is_same_value = prevprev }
+					any_defender = { is_same_empire = prevprev }
 					any_attacker = {
 						OR = {
 							relative_power = {
@@ -983,7 +927,7 @@ event = {
 					attacker_war_exhaustion < 0.6
 				}
 				any_war = {
-					any_attacker = { is_same_value = prevprev }
+					any_attacker = { is_same_empire = prevprev }
 					any_defender = {
 						OR = {
 							relative_power = {
@@ -1016,7 +960,7 @@ event = {
 				NOT = { has_country_flag = scion_war_help }
 				OR = {
 					any_war = {
-						any_defender = { is_same_value = prevprev }
+						any_defender = { is_same_empire = prevprev }
 						any_attacker = {
 							OR = {
 								relative_power = {
@@ -1035,7 +979,7 @@ event = {
 						attacker_war_exhaustion < 0.6
 					}
 					any_war = {
-						any_attacker = { is_same_value = prevprev }
+						any_attacker = { is_same_empire = prevprev }
 						any_defender = {
 							OR = {
 								relative_power = {
@@ -1067,7 +1011,6 @@ country_event = {
 	desc = "origin.51.desc"
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:scion_master
 		planet_background = event_target:scion_master
@@ -1075,7 +1018,6 @@ country_event = {
 		city_level = event_target:scion_master
 		room = event_target:scion_master
 	}
-
 	immediate = {
 		overlord = {
 			save_event_target_as = scion_master
@@ -1083,7 +1025,6 @@ country_event = {
 		}
 		set_timed_country_flag = { flag = scion_war_help years = 20 } # 20 year cooldown
 	}
-
 	option = {
 		name = origin.51.a
 		hidden_effect = {
@@ -1163,7 +1104,6 @@ country_event = {
 		}
 		remove_country_flag = borrowed_fleet_from@event_target:scion_master
 	}
-
 	option = {
 		name = DISCONCERTING
 		hidden_effect = {
@@ -1179,7 +1119,6 @@ country_event = {
 	desc = "origin.53.desc"
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:scion_master
 		planet_background = event_target:scion_master
@@ -1187,11 +1126,9 @@ country_event = {
 		city_level = event_target:scion_master
 		room = event_target:scion_master
 	}
-
 	immediate = {
 		overlord = { save_event_target_as = scion_master }
 	}
-
 	option = {
 		name = origin.53.a
 	}
@@ -1205,7 +1142,6 @@ country_event = {
 	desc = "origin.29.desc"
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:scion_master
 		planet_background = event_target:scion_master
@@ -1213,12 +1149,11 @@ country_event = {
 		city_level = event_target:scion_master
 		room = event_target:scion_master
 	}
-
 	trigger = {
 		from = {
 			using_war_goal = { type = wg_independence owner = attacker }
 			# Fire only for the attacker, i.e. a subject or Scion
-			any_attacker = { is_same_value = root }
+			any_attacker = { is_same_empire = root }
 			any_defender = { is_fallen_empire = yes }
 		}
 		# Fire only if root controls a fleet gifted by the FE via the "Scion" Origin
@@ -1250,7 +1185,6 @@ country_event = {
 		}
 		remove_country_flag = borrowed_fleet_from@event_target:scion_master
 	}
-
 	option = {
 		name = origin.29.a
 	}
@@ -1289,7 +1223,6 @@ country_event = {
 	desc = "origin.54.desc"
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:scion_master
 		planet_background = event_target:scion_master
@@ -1297,15 +1230,12 @@ country_event = {
 		city_level = event_target:scion_master
 		room = event_target:scion_master
 	}
-
 	immediate = {
 		overlord = { save_event_target_as = scion_master }
 		random_controlled_fleet = {
 			limit = {
 				has_fleet_flag = scion_borrowed_fleet
-				NOT = {
-					leader = { has_leader_flag = leader_death_events_blocked }
-				}
+				NOT = { leader = { has_leader_flag = leader_death_events_blocked } }
 			}
 			leader = {
 				kill_leader = { show_notification = no }
@@ -1314,7 +1244,6 @@ country_event = {
 		}
 		remove_country_flag = borrowed_fleet_from@event_target:scion_master
 	}
-
 	option = {
 		name = origin.54.a
 	}
@@ -1424,9 +1353,7 @@ country_event = {
 			solar_system = { generate_home_system_resources = yes }
 			if = {
 				limit = {
-					NOT = {
-						root = { has_valid_civic = civic_selective_kinship }
-					}
+					NOT = { root = { has_valid_civic = civic_selective_kinship } }
 				}
 				create_fed_planet_1_species = { CLASS = random }
 			}
@@ -1560,9 +1487,7 @@ country_event = {
 			solar_system = { generate_home_system_resources = yes }
 			if = {
 				limit = {
-					NOT = {
-						root = { has_valid_civic = civic_selective_kinship }
-					}
+					NOT = { root = { has_valid_civic = civic_selective_kinship } }
 				}
 				create_fed_planet_2_species = { CLASS = random }
 			}
@@ -1725,14 +1650,8 @@ country_event = {
 				add_intel = { amount = 60 who = root }
 				add_intel = { amount = 60 who = event_target:fed_member_1 }
 			}
-			add_opinion_modifier = {
-				who = event_target:fed_member_1
-				modifier = opinion_common_ground
-			}
-			add_opinion_modifier = {
-				who = event_target:fed_member_2
-				modifier = opinion_common_ground
-			}
+			add_opinion_modifier = { who = event_target:fed_member_1 modifier = opinion_common_ground }
+			add_opinion_modifier = { who = event_target:fed_member_2 modifier = opinion_common_ground }
 			add_trust = { amount = 50 who = event_target:fed_member_1 }
 			add_trust = { amount = 50 who = event_target:fed_member_2 }
 			add_intel = { amount = 60 who = event_target:fed_member_1 }
@@ -1777,7 +1696,6 @@ country_event = {
 	picture = GFX_evt_galactic_senate
 	show_sound = event_administrative_work
 	is_triggered_only = yes
-
 	option = {
 		name = origin.57.A
 		icon = { icon = GFX_default_federation text = origin.57.A.icon_tooltip }
@@ -1786,7 +1704,6 @@ country_event = {
 		}
 		ai_chance = { factor = 1 }
 	}
-
 	option = {
 		name = origin.57.B
 		icon = { icon = GFX_military_federation text = origin.57.B.icon_tooltip }
@@ -1800,7 +1717,6 @@ country_event = {
 		federation = { set_federation_type = military_federation set_name = random }
 		ai_chance = { factor = 10 }
 	}
-
 	option = {
 		name = origin.57.C
 		icon = { icon = GFX_research_federation text = origin.57.C.icon_tooltip }
@@ -1814,7 +1730,6 @@ country_event = {
 		federation = { set_federation_type = research_federation set_name = random }
 		ai_chance = { factor = 10 }
 	}
-
 	option = {
 		name = origin.57.D
 		trigger = { is_gestalt = no }
@@ -1825,7 +1740,6 @@ country_event = {
 		federation = { set_federation_type = spiritualist_federation set_name = random }
 		ai_chance = { factor = 10 }
 	}
-
 	option = {
 		name = origin.57.E
 		trigger = { is_gestalt = no }
@@ -1840,7 +1754,6 @@ country_event = {
 		federation = { set_federation_type = trade_federation set_name = random }
 		ai_chance = { factor = 10 }
 	}
-
 	after = {
 		federation = { add_federation_experience = 600 add_cohesion = 100 }
 	}
@@ -1889,13 +1802,8 @@ planet_event = {
 		remove_modifier = doomsday_1
 		add_modifier = { modifier = doomsday_2 }
 		add_planet_devastation = 10
-		planet_event = {
-			id = origin.65
-			days = 3150
-			random = 900
-		}
+		planet_event = { id = origin.65 days = 3150 random = 900 }
 	}
-
 	option = {
 		name = origin_61.a
 		tooltip = {
@@ -1909,16 +1817,12 @@ planet_event = {
 planet_event = {
 	id = origin.65
 	title = "origin.65.name"
-
 	desc = {
 		trigger = { owner = { is_gestalt = no } }
 		text = "origin.65.desc"
 	}
-
 	desc = {
-		trigger = {
-			owner = { is_gestalt = yes }
-		}
+		trigger = { owner = { is_gestalt = yes } }
 		text = "origin.65.2.desc"
 	}
 
@@ -1931,13 +1835,8 @@ planet_event = {
 		remove_modifier = doomsday_2
 		add_modifier = { modifier = doomsday_3 }
 		add_planet_devastation = 15
-		planet_event = {
-			id = origin.70
-			days = 3150
-			random = 900
-		}
+		planet_event = { id = origin.70 days = 3150 random = 900 }
 	}
-
 	option = {
 		name = origin_65.a
 		tooltip = {
@@ -1951,16 +1850,12 @@ planet_event = {
 planet_event = {
 	id = origin.70
 	title = "origin.70.name"
-
 	desc = {
 		trigger = { owner = { is_gestalt = no } }
 		text = "origin.70.desc"
 	}
-
 	desc = {
-		trigger = {
-			owner = { is_gestalt = yes }
-		}
+		trigger = { owner = { is_gestalt = yes } }
 		text = "origin.70.2.desc"
 	}
 
@@ -1973,13 +1868,8 @@ planet_event = {
 		remove_modifier = doomsday_3
 		add_modifier = { modifier = doomsday_4 }
 		add_planet_devastation = 20
-		planet_event = {
-			id = origin.75
-			days = 3150
-			random = 900
-		}
+		planet_event = { id = origin.75 days = 3150 random = 900 }
 	}
-
 	option = {
 		name = origin_70.a
 		trigger = {
@@ -1990,7 +1880,6 @@ planet_event = {
 			add_modifier = { modifier = doomsday_4 }
 		}
 	}
-
 	option = {
 		name = origin_70.b
 		trigger = {
@@ -2007,16 +1896,12 @@ planet_event = {
 planet_event = {
 	id = origin.75
 	title = "origin.75.name"
-
 	desc = {
 		trigger = { owner = { is_gestalt = no } }
 		text = "origin.75.desc"
 	}
-
 	desc = {
-		trigger = {
-			owner = { is_gestalt = yes }
-		}
+		trigger = { owner = { is_gestalt = yes } }
 		text = "origin.75.2.desc"
 	}
 
@@ -2029,13 +1914,8 @@ planet_event = {
 		remove_modifier = doomsday_4
 		add_modifier = { modifier = doomsday_5 }
 		add_planet_devastation = 25
-		planet_event = {
-			id = origin.76
-			days = 3150
-			random = 900
-		}
+		planet_event = { id = origin.76 days = 3150 random = 900 }
 	}
-
 	option = {
 		name = origin_75.a
 		tooltip = {
@@ -2049,16 +1929,12 @@ planet_event = {
 planet_event = {
 	id = origin.76
 	title = "origin.76.name"
-
 	desc = {
 		trigger = { owner = { is_gestalt = no } }
 		text = "origin.76.desc"
 	}
-
 	desc = {
-		trigger = {
-			owner = { is_gestalt = yes }
-		}
+		trigger = { owner = { is_gestalt = yes } }
 		text = "origin.76.2.desc"
 	}
 
@@ -2068,13 +1944,8 @@ planet_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		planet_event = {
-			id = origin.80
-			days = 260
-			random = 80
-		}
+		planet_event = { id = origin.80 days = 260 random = 80 }
 	}
-
 	option = {
 		name = origin_76.a
 	}
@@ -2084,7 +1955,6 @@ planet_event = {
 planet_event = {
 	id = origin.80
 	title = "origin.80.name"
-
 	desc = {
 		trigger = {
 			has_planet_flag = doomsday_lost_some_pops
@@ -2093,7 +1963,6 @@ planet_event = {
 		}
 		text = "origin.80.1.desc"
 	}
-
 	desc = {
 		trigger = {
 			has_planet_flag = doomsday_lost_some_pops
@@ -2102,7 +1971,6 @@ planet_event = {
 		}
 		text = "origin.80.1.gestalt.desc"
 	}
-
 	desc = {
 		trigger = {
 			has_planet_flag = doomsday_lost_many_pops
@@ -2111,7 +1979,6 @@ planet_event = {
 		}
 		text = "origin.80.2.desc"
 	}
-
 	desc = {
 		trigger = {
 			has_planet_flag = doomsday_lost_many_pops
@@ -2120,7 +1987,6 @@ planet_event = {
 		}
 		text = "origin.80.2.gestalt.desc"
 	}
-
 	desc = {
 		trigger = {
 			has_planet_flag = doomsday_lost_everything
@@ -2129,7 +1995,6 @@ planet_event = {
 		}
 		text = "origin.80.4.desc"
 	}
-
 	desc = {
 		trigger = {
 			has_planet_flag = doomsday_lost_everything
@@ -2138,7 +2003,6 @@ planet_event = {
 		}
 		text = "origin.80.4.gestalt.desc"
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_planet_flag = doomsday_still_original_owner }
@@ -2238,22 +2102,18 @@ planet_event = {
 			1 = { add_deposit = d_minerals_4 }
 		}
 	}
-
 	option = {
 		name = origin_80.a
 		trigger = { has_planet_flag = doomsday_lost_everything }
 	}
-
 	option = {
 		name = origin_80.b
 		trigger = { has_planet_flag = doomsday_lost_many_pops }
 	}
-
 	option = {
 		name = origin_80.c
 		trigger = { has_planet_flag = doomsday_lost_some_pops }
 	}
-
 	option = {
 		name = UNFORTUNATE
 		trigger = {
@@ -2264,7 +2124,6 @@ planet_event = {
 			}
 		}
 	}
-
 	after = {
 		if = {
 			limit = {
@@ -2291,7 +2150,6 @@ country_event = {
 	location = from
 	is_triggered_only = yes
 	specimen = memorial_to_homeworld
-
 	option = {
 		name = origin_81.a
 	}
@@ -2325,7 +2183,6 @@ planet_event = {
 planet_event = {
 	id = origin.85
 	title = "origin.85.name"
-
 	desc = {
 		trigger = {
 			owner = { is_gestalt = no }
@@ -2333,7 +2190,6 @@ planet_event = {
 		}
 		text = "origin.85.1.desc"
 	}
-
 	desc = {
 		trigger = {
 			owner = { is_gestalt = no }
@@ -2341,14 +2197,10 @@ planet_event = {
 		}
 		text = "origin.85.2.desc"
 	}
-
 	desc = {
-		trigger = {
-			owner = { is_gestalt = yes }
-		}
+		trigger = { owner = { is_gestalt = yes } }
 		text = "origin.85.3.desc"
 	}
-
 	inline_script = {
 		script = events/biogenesis_event_art
 		OWNER = owner
@@ -2359,7 +2211,6 @@ planet_event = {
 	show_sound = event_ship_thrusters
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = origin_85.a
 		owner = {
@@ -2378,7 +2229,6 @@ planet_event = {
 country_event = {
 	id = origin.90
 	title = "origin.90.name"
-
 	desc = {
 		trigger = {
 			from = { has_planet_flag = doomsday_lost_some_pops }
@@ -2386,7 +2236,6 @@ country_event = {
 		}
 		text = "origin.90.1.desc"
 	}
-
 	desc = {
 		trigger = {
 			from = { has_planet_flag = doomsday_lost_some_pops }
@@ -2394,7 +2243,6 @@ country_event = {
 		}
 		text = "origin.90.1.gestalt.desc"
 	}
-
 	desc = {
 		trigger = {
 			from = { has_planet_flag = doomsday_lost_many_pops }
@@ -2402,7 +2250,6 @@ country_event = {
 		}
 		text = "origin.90.2.desc"
 	}
-
 	desc = {
 		trigger = {
 			from = { has_planet_flag = doomsday_lost_many_pops }
@@ -2410,7 +2257,6 @@ country_event = {
 		}
 		text = "origin.90.2.gestalt.desc"
 	}
-
 	desc = {
 		trigger = {
 			from = { has_planet_flag = doomsday_lost_everything }
@@ -2422,11 +2268,9 @@ country_event = {
 	show_sound = event_super_explosion
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = origin_90.a
 	}
-
 	after = {
 		save_event_target_as = this_country
 		add_timeline_event = {
@@ -2450,7 +2294,6 @@ country_event = {
 	show_sound = event_super_explosion
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = origin_91.a
 	}
@@ -2597,7 +2440,9 @@ country_event = {
 			class = scientist
 			name = random
 			species = event_target:researcher_species
-			effect = { set_council_position = councilor_research }
+			effect = {
+				set_council_position = councilor_research
+			}
 		}
 		weighted_random_owned_pop_group = {
 			species = { save_event_target_as = defense_species }
@@ -2605,9 +2450,7 @@ country_event = {
 				base = 1
 				modifier = {
 					add = 100
-					NOT = {
-						species = { is_same_species = event_target:researcher_species }
-					}
+					NOT = { species = { is_same_species = event_target:researcher_species } }
 				}
 			}
 		}
@@ -2615,7 +2458,9 @@ country_event = {
 			class = commander
 			name = random
 			species = event_target:defense_species
-			effect = { set_council_position = councilor_defense }
+			effect = {
+				set_council_position = councilor_defense
+			}
 		}
 		weighted_random_owned_pop_group = {
 			species = { save_event_target_as = state_species }
@@ -2718,14 +2563,12 @@ country_event = {
 country_event = {
 	id = origin.111
 	title = "origin.111.name"
-
 	desc = {
 		trigger = {
 			any_owned_planet = { has_deposit = d_crashed_slaver_ship }
 		}
 		text = "origin.111.1.desc"
 	}
-
 	desc = {
 		trigger = {
 			count_owned_planet = {
@@ -2741,7 +2584,6 @@ country_event = {
 	location = root
 	is_triggered_only = yes
 	specimen = spirit_of_the_unshackled
-
 	option = {
 		name = origin_111.a
 		custom_tooltip = origin_111.tooltip
@@ -2818,7 +2660,9 @@ country_event = {
 			}
 		}
 		else = {
-			uplift_pre_ftl_with_origin_effect = { ORIGIN = origin_broken_shackles }
+			uplift_pre_ftl_with_origin_effect = {
+				ORIGIN = origin_broken_shackles
+			}
 			set_country_flag = victims_of_@event_target:MSI_country
 		}
 	}
@@ -2839,7 +2683,9 @@ country_event = {
 					limit = { has_origin = origin_payback }
 				}
 			}
-			uplift_pre_ftl_with_origin_effect = { ORIGIN = origin_payback }
+			uplift_pre_ftl_with_origin_effect = {
+				ORIGIN = origin_payback
+			}
 			set_country_flag = victims_of_@event_target:MSI_country
 		}
 	}

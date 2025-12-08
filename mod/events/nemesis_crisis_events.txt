@@ -124,14 +124,12 @@ country_event = {
 country_event = {
 	id = crisis.4100
 	title = "crisis.4100.name"
-
 	desc = {
 		trigger = {
 			any_playable_country = { is_galactic_custodian = yes }
 		}
 		text = "crisis.4100.desc.a"
 	}
-
 	desc = {
 		trigger = {
 			count_playable_country = {
@@ -145,7 +143,6 @@ country_event = {
 	picture = GFX_evt_crisis_declared
 	show_sound = event_announcement
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.4100.a
 	}
@@ -159,7 +156,6 @@ country_event = {
 	picture = GFX_evt_crisis_declared
 	show_sound = event_announcement
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.4100.a
 	}
@@ -169,7 +165,6 @@ country_event = {
 country_event = {
 	id = crisis.4105
 	title = "crisis.4105.name"
-
 	desc = {
 		trigger = {
 			OR = {
@@ -181,7 +176,6 @@ country_event = {
 		}
 		text = "crisis.4105.desc.a"
 	}
-
 	desc = {
 		trigger = {
 			OR = {
@@ -196,7 +190,6 @@ country_event = {
 		}
 		text = "crisis.4105.desc.b"
 	}
-
 	desc = {
 		trigger = {
 			NOR = {
@@ -223,7 +216,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = crisis.4105.a
 		trigger = {
@@ -234,7 +226,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = crisis.4105.b
 		trigger = {
@@ -251,7 +242,6 @@ country_event = {
 country_event = {
 	id = crisis.4106
 	title = "crisis.4106.name"
-
 	desc = {
 		trigger = {
 			OR = {
@@ -261,7 +251,6 @@ country_event = {
 		}
 		text = "crisis.4106.desc.a"
 	}
-
 	desc = {
 		trigger = {
 			NOR = {
@@ -275,7 +264,6 @@ country_event = {
 	picture = GFX_evt_crisis_declared
 	show_sound = event_announcement
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.4105.a
 		trigger = {
@@ -285,7 +273,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = crisis.4105.b
 		trigger = {
@@ -305,7 +292,6 @@ country_event = {
 	picture = GFX_evt_diplomatic_visit
 	show_sound = event_announcement
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.4110.a
 	}
@@ -315,7 +301,6 @@ country_event = {
 country_event = {
 	id = crisis.4111
 	title = "crisis.4110.name"
-
 	desc = {
 		trigger = {
 			NOR = {
@@ -325,7 +310,6 @@ country_event = {
 		}
 		text = crisis.4111.intro
 	}
-
 	desc = {
 		trigger = {
 			OR = {
@@ -339,12 +323,10 @@ country_event = {
 	picture = GFX_evt_diplomatic_visit
 	show_sound = event_announcement
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.4111.a
 		trigger = { is_homicidal = no }
 	}
-
 	option = {
 		name = crisis.4111.b
 		trigger = { is_homicidal = yes }
@@ -359,7 +341,6 @@ country_event = {
 	picture = GFX_evt_diplomatic_visit
 	show_sound = event_announcement
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.4110.a
 	}
@@ -373,7 +354,6 @@ country_event = {
 	picture = GFX_evt_diplomatic_visit
 	show_sound = event_announcement
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.4111.a
 		trigger = {
@@ -383,7 +363,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = crisis.4111.b
 		trigger = {
@@ -446,10 +425,7 @@ country_event = {
 			save_event_target_as = community_war_leader
 			random_war = {
 				limit = {
-					using_war_goal = {
-						type = wg_declared_crisis
-						owner = event_target:community_war_leader
-					}
+					using_war_goal = { type = wg_declared_crisis owner = event_target:community_war_leader }
 				}
 				save_event_target_as = crisis_war
 			}
@@ -580,17 +556,9 @@ planet_event = {
 		every_playable_country = {
 			limit = {
 				has_communications = event_target:crisis_country
-				NOT = {
-					has_opinion_modifier = {
-						who = event_target:crisis_country
-						modifier = opinion_destroying_systems
-					}
-				}
+				NOT = { has_opinion_modifier = { who = event_target:crisis_country modifier = opinion_destroying_systems } }
 			}
-			add_opinion_modifier = {
-				who = event_target:crisis_country
-				modifier = opinion_destroying_systems
-			}
+			add_opinion_modifier = { who = event_target:crisis_country modifier = opinion_destroying_systems }
 		}
 		solar_system = {
 			random_system_planet = {
@@ -606,7 +574,6 @@ planet_event = {
 country_event = {
 	id = crisis.4120
 	title = "crisis.4120.name"
-
 	desc = {
 		trigger = {
 			if = {
@@ -654,7 +621,6 @@ country_event = {
 	show_sound = event_necrophage
 	event_chain = become_the_crisis_chain
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.4120.a
 		trigger = {
@@ -664,7 +630,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = crisis.4120.mach.a
 		trigger = {
@@ -672,12 +637,10 @@ country_event = {
 			NOT = { has_origin = origin_shroud_forged }
 		}
 	}
-
 	option = {
 		name = crisis.4120.shroud_forged.a
 		trigger = { is_machine_empire = yes has_origin = origin_shroud_forged }
 	}
-
 	after = {
 		custom_tooltip = can_advance_crisis_progression
 	}
@@ -687,7 +650,6 @@ country_event = {
 country_event = {
 	id = crisis.4125
 	title = "crisis.4125.name"
-
 	desc = {
 		trigger = {
 			if = {
@@ -729,12 +691,10 @@ country_event = {
 	show_sound = event_necrophage
 	event_chain = become_the_crisis_chain
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.4125.a
 		trigger = { is_gestalt = no }
 	}
-
 	option = {
 		name = crisis.4125.mach.a
 		trigger = {
@@ -742,7 +702,6 @@ country_event = {
 			NOT = { has_origin = origin_shroud_forged }
 		}
 	}
-
 	option = {
 		name = CONTINUE_PROMPT
 		trigger = {
@@ -750,12 +709,10 @@ country_event = {
 			has_origin = origin_shroud_forged
 		}
 	}
-
 	option = {
 		name = crisis.4125.hive.a
 		trigger = { is_hive_empire = yes }
 	}
-
 	after = {
 		custom_tooltip = can_advance_crisis_progression
 	}
@@ -765,7 +722,6 @@ country_event = {
 country_event = {
 	id = crisis.4130
 	title = "crisis.4130.name"
-
 	desc = {
 		trigger = {
 			if = {
@@ -813,12 +769,10 @@ country_event = {
 	show_sound = event_necrophage
 	event_chain = become_the_crisis_chain
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.4130.a
 		trigger = { is_gestalt = no }
 	}
-
 	option = {
 		name = crisis.4130.mach.a
 		trigger = {
@@ -826,17 +780,14 @@ country_event = {
 			NOT = { has_origin = origin_shroud_forged }
 		}
 	}
-
 	option = {
 		name = crisis.4130.shroud_forged.a
 		trigger = { is_machine_empire = yes has_origin = origin_shroud_forged }
 	}
-
 	option = {
 		name = crisis.4130.hive.a
 		trigger = { is_hive_empire = yes }
 	}
-
 	after = {
 		custom_tooltip = can_advance_crisis_progression
 	}
@@ -846,12 +797,10 @@ country_event = {
 country_event = {
 	id = crisis.4135
 	title = "crisis.4135.name"
-
 	desc = {
 		text = crisis.4135.desc
 		trigger = { is_gestalt = no }
 	}
-
 	desc = {
 		text = crisis.4135.mach.desc
 		trigger = {
@@ -859,12 +808,10 @@ country_event = {
 			NOT = { has_origin = origin_shroud_forged }
 		}
 	}
-
 	desc = {
 		text = crisis.4135.shroud_forged.desc
 		trigger = { is_machine_empire = yes has_origin = origin_shroud_forged }
 	}
-
 	desc = {
 		text = crisis.4135.hive.desc
 		trigger = { is_hive_empire = yes }
@@ -874,12 +821,10 @@ country_event = {
 	show_sound = event_necrophage
 	event_chain = become_the_crisis_chain
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.4135.a
 		trigger = { is_gestalt = no }
 	}
-
 	option = {
 		name = crisis.4135.mach.a
 		trigger = {
@@ -887,17 +832,14 @@ country_event = {
 			NOT = { has_origin = origin_shroud_forged }
 		}
 	}
-
 	option = {
 		name = PROCEED
 		trigger = { is_machine_empire = yes has_origin = origin_shroud_forged }
 	}
-
 	option = {
 		name = crisis.4135.hive.a
 		trigger = { is_hive_empire = yes }
 	}
-
 	after = {
 		custom_tooltip = can_advance_crisis_progression_final
 	}
@@ -907,7 +849,6 @@ country_event = {
 country_event = {
 	id = crisis.4140
 	title = "crisis.4140.name"
-
 	desc = {
 		trigger = {
 			if = {
@@ -969,7 +910,6 @@ country_event = {
 	immediate = {
 		begin_event_chain = { event_chain = become_the_crisis_chain target = root }
 	}
-
 	option = {
 		name = crisis.4140.a
 		tooltip = {
@@ -982,7 +922,7 @@ country_event = {
 		}
 		if = {
 			limit = { is_psionic = yes }
-			enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_PSIONIC_1" owner = ROOT }
+			enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_PSIONIC_1" owner = root }
 		}
 		else = {
 			if = {
@@ -991,7 +931,7 @@ country_event = {
 					is_gestalt = yes
 					NOT = { has_origin = origin_shroud_forged }
 				}
-				enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_MACH_1" owner = ROOT }
+				enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_MACH_1" owner = root }
 			}
 			else_if = {
 				limit = {
@@ -999,17 +939,17 @@ country_event = {
 					is_gestalt = yes
 					has_origin = origin_shroud_forged
 				}
-				enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_SH_1" owner = ROOT }
+				enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_SH_1" owner = root }
 			}
 			else_if = {
 				limit = {
 					is_robot_empire = no
 					is_gestalt = yes
 				}
-				enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_HIVE_1" owner = ROOT }
+				enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_HIVE_1" owner = root }
 			}
 			else = {
-				enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_1" owner = ROOT }
+				enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_1" owner = root }
 			}
 		}
 		custom_tooltip = new_crisis_perks_tt
@@ -1020,7 +960,6 @@ country_event = {
 country_event = {
 	id = crisis.4145
 	title = "crisis.4145.name"
-
 	desc = {
 		trigger = {
 			if = {
@@ -1071,13 +1010,12 @@ country_event = {
 	show_sound = event_death_cult
 	event_chain = become_the_crisis_chain
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.4145.a
 		root = {
 			if = {
 				limit = { is_psionic = yes }
-				enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_PSIONIC_2" owner = ROOT }
+				enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_PSIONIC_2" owner = root }
 			}
 			else = {
 				if = {
@@ -1086,7 +1024,7 @@ country_event = {
 						is_gestalt = yes
 						NOT = { has_origin = origin_shroud_forged }
 					}
-					enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_MACH_2" owner = ROOT }
+					enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_MACH_2" owner = root }
 				}
 				else_if = {
 					limit = {
@@ -1094,17 +1032,17 @@ country_event = {
 						is_gestalt = yes
 						has_origin = origin_shroud_forged
 					}
-					enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_SH_2" owner = ROOT }
+					enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_SH_2" owner = root }
 				}
 				else_if = {
 					limit = {
 						is_robot_empire = no
 						is_gestalt = yes
 					}
-					enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_HIVE_2" owner = ROOT }
+					enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_HIVE_2" owner = root }
 				}
 				else = {
-					enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_2" owner = ROOT }
+					enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_2" owner = root }
 				}
 			}
 		}
@@ -1117,12 +1055,10 @@ country_event = {
 country_event = {
 	id = crisis.4150
 	title = "crisis.4150.name"
-
 	desc = {
 		trigger = { is_gestalt = no }
 		text = crisis.4150.desc
 	}
-
 	desc = {
 		trigger = {
 			is_machine_empire = yes
@@ -1130,12 +1066,10 @@ country_event = {
 		}
 		text = crisis.4150.mach.desc
 	}
-
 	desc = {
 		trigger = { is_machine_empire = yes has_origin = origin_shroud_forged }
 		text = crisis.4150.shroud_forged.desc
 	}
-
 	desc = {
 		trigger = { is_hive_empire = yes }
 		text = crisis.4150.hive.desc
@@ -1145,13 +1079,12 @@ country_event = {
 	show_sound = event_death_cult
 	event_chain = become_the_crisis_chain
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.4150.a
 		root = {
 			if = {
 				limit = { is_psionic = yes }
-				enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_PSIONIC_3" owner = ROOT }
+				enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_PSIONIC_3" owner = root }
 			}
 			else = {
 				if = {
@@ -1160,7 +1093,7 @@ country_event = {
 						is_gestalt = yes
 						NOT = { has_origin = origin_shroud_forged }
 					}
-					enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_MACH_3" owner = ROOT }
+					enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_MACH_3" owner = root }
 				}
 				else_if = {
 					limit = {
@@ -1168,17 +1101,17 @@ country_event = {
 						is_gestalt = yes
 						has_origin = origin_shroud_forged
 					}
-					enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_SH_3" owner = ROOT }
+					enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_SH_3" owner = root }
 				}
 				else_if = {
 					limit = {
 						is_robot_empire = no
 						is_gestalt = yes
 					}
-					enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_HIVE_3" owner = ROOT }
+					enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_HIVE_3" owner = root }
 				}
 				else = {
-					enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_3" owner = ROOT }
+					enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_3" owner = root }
 				}
 			}
 		}
@@ -1191,12 +1124,10 @@ country_event = {
 country_event = {
 	id = crisis.4155
 	title = "crisis.4155.name"
-
 	desc = {
 		trigger = { is_gestalt = no }
 		text = crisis.4155.desc
 	}
-
 	desc = {
 		trigger = {
 			is_machine_empire = yes
@@ -1204,12 +1135,10 @@ country_event = {
 		}
 		text = crisis.4155.mach.desc
 	}
-
 	desc = {
 		trigger = { is_machine_empire = yes has_origin = origin_shroud_forged }
 		text = crisis.4155.shroud_forged.desc
 	}
-
 	desc = {
 		trigger = { is_hive_empire = yes }
 		text = crisis.4155.hive.desc
@@ -1219,35 +1148,33 @@ country_event = {
 	show_sound = event_death_cult
 	event_chain = become_the_crisis_chain
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.4155.a
 		root = {
 			if = {
 				limit = { is_gestalt = no }
-				enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_4" owner = ROOT }
+				enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_4" owner = root }
 			}
 			else_if = {
 				limit = {
 					is_machine_empire = yes
 					NOT = { has_origin = origin_shroud_forged }
 				}
-				enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_MACH_4" owner = ROOT }
+				enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_MACH_4" owner = root }
 			}
 			else_if = {
 				limit = {
 					is_machine_empire = yes
 					has_origin = origin_shroud_forged
 				}
-				enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_SH_4" owner = ROOT }
+				enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_SH_4" owner = root }
 			}
 			else_if = {
 				limit = { is_hive_empire = yes }
-				enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_HIVE_4" owner = ROOT }
+				enable_special_project = { name = "CRISIS_SPECIAL_PROJECT_HIVE_4" owner = root }
 			}
 		}
 		custom_tooltip = new_crisis_perks_tt
 		custom_tooltip = unlock_crisis_cruiser
 	}
 }
-

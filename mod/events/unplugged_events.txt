@@ -107,9 +107,7 @@ ship_event = {
 			}
 			AND = {
 				exists = event_target:origin_unplugged_machine_legacy_core_planet
-				from = {
-					is_same_value = event_target:origin_unplugged_machine_legacy_core_planet
-				}
+				from = { is_same_value = event_target:origin_unplugged_machine_legacy_core_planet }
 			}
 		}
 	}
@@ -126,10 +124,7 @@ ship_event = {
 					limit = {
 						root.controller = { has_origin = origin_unplugged }
 					}
-					add_anomaly = {
-						category = MACHINE_LEGACY_MAKERS_UNPLUGGED_CAT
-						target = root.controller
-					}
+					add_anomaly = { category = MACHINE_LEGACY_MAKERS_UNPLUGGED_CAT target = root.controller }
 				}
 				else = {
 					add_anomaly = { category = MACHINE_LEGACY_MAKERS_CAT target = root.controller }
@@ -230,16 +225,13 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = unplugged.100.a
 	}
-
 	option = {
 		name = unplugged.100.b
 		exclusive_trigger = { has_civic = civic_barbaric_despoilers }
 	}
-
 	option = {
 		name = unplugged.100.c
 		exclusive_trigger = {
@@ -250,23 +242,15 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = unplugged.100.d
 		exclusive_trigger = { is_spiritualist = yes }
 	}
-
 	after = {
 		hidden_effect = {
-			event_target:origin_unplugged_pre_ftl_planet = {
-				create_archaeological_site = pre_ftl_remains_site
-			}
+			event_target:origin_unplugged_pre_ftl_planet = { create_archaeological_site = pre_ftl_remains_site }
 			owner = {
-				country_event = {
-					days = 100
-					random = 20
-					id = unplugged.2000
-				}
+				country_event = { days = 100 random = 20 id = unplugged.2000 }
 			}
 		}
 	}
@@ -314,7 +298,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = unplugged.2000.a
 		tooltip = {
@@ -344,7 +327,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = unplugged.2005.a
 		hidden_effect = {
@@ -362,7 +344,6 @@ ship_event = {
 	event_chain = unplugged_origin_machine_legacy_chain
 	title = unplugged.2006.name
 	desc = unplugged.2006.desc
-
 	option = {
 		name = CURIOUS
 	}
@@ -382,20 +363,17 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
 
 	desc = unplugged.2010.desc.unplugged
-
 	option = {
 		trigger = {
 			controller = { has_origin = origin_unplugged }
 		}
 		name = unplugged.2010.a
 	}
-
 	option = {
 		trigger = {
 			controller = {
@@ -410,12 +388,9 @@ fleet_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
-			NOT = {
-				controller = { has_origin = origin_unplugged }
-			}
+			NOT = { controller = { has_origin = origin_unplugged } }
 		}
 		name = DIG
 	}
@@ -435,18 +410,15 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
 
 	desc = unplugged.2015.desc.unplugged
-
 	option = {
 		name = unplugged.2015.a
 		controller = { set_country_flag = machine_legacy_makers_tech }
 	}
-
 	option = {
 		name = unplugged.2015.b
 	}
@@ -464,19 +436,12 @@ fleet_event = {
 			limit = {
 				controller = { has_country_flag = machine_legacy_makers_tech }
 			}
-			fleet_event = {
-				id = unplugged.2021
-				scopes = { from = from }
-			}
+			fleet_event = { id = unplugged.2021 scopes = { from = from } }
 		}
 		else = {
-			fleet_event = {
-				id = unplugged.2022
-				scopes = { from = from }
-			}
+			fleet_event = { id = unplugged.2022 scopes = { from = from } }
 		}
 	}
-
 	after = {
 		from = { expire_site_event = unplugged.2020 }
 		controller = {
@@ -500,13 +465,11 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
 
 	desc = unplugged.2021.desc
-
 	option = {
 		name = EXCELLENT
 		controller = {
@@ -568,7 +531,6 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	option = {
 		name = UNFORTUNATE
 		controller = {
@@ -580,7 +542,6 @@ fleet_event = {
 			}
 		}
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
@@ -610,7 +571,6 @@ country_event = {
 		# Fire a 'hostile fleet still extant' epilogue, as a failsafe for progress
 		country_event = { id = unplugged.2038 years = 4 }
 	}
-
 	option = {
 		name = BATTLESTATIONS
 	}
@@ -674,7 +634,6 @@ country_event = {
 			location = event_target:origin_unplugged_taken_planet
 		}
 	}
-
 	option = {
 		name = unplugged.2036.a
 		tooltip = {
@@ -732,7 +691,6 @@ country_event = {
 			location = event_target:origin_unplugged_taken_planet
 		}
 	}
-
 	option = {
 		name = UNDERSTOOD
 		tooltip = {
@@ -763,12 +721,9 @@ ship_event = {
 			set_country_flag = unplugged_visible_site_@event_target:origin_unplugged_taken_planet
 		}
 	}
-
 	option = {
 		name = unplugged.2100.a
-		event_target:origin_unplugged_taken_planet = {
-			create_archaeological_site = machine_legacy_taken_site
-		}
+		event_target:origin_unplugged_taken_planet = { create_archaeological_site = machine_legacy_taken_site }
 	}
 }
 
@@ -792,7 +747,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = INTERESTING
 		from = { add_deposit = d_society_4 }
@@ -818,11 +772,9 @@ fleet_event = {
 			country_event = { id = unplugged.3206 days = 30 }
 		}
 	}
-
 	option = {
 		name = unplugged.2110.a
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
@@ -843,11 +795,9 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = unplugged.2115.a
 		controller = {
@@ -865,7 +815,6 @@ fleet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = unplugged.2115.b
 		controller = {
@@ -897,19 +846,12 @@ fleet_event = {
 			limit = {
 				controller = { has_country_flag = machine_legacy_taken_regret }
 			}
-			fleet_event = {
-				id = unplugged.2125
-				scopes = { from = from }
-			}
+			fleet_event = { id = unplugged.2125 scopes = { from = from } }
 		}
 		else = {
-			fleet_event = {
-				id = unplugged.2121
-				scopes = { from = from }
-			}
+			fleet_event = { id = unplugged.2121 scopes = { from = from } }
 		}
 	}
-
 	after = {
 		from = { expire_site_event = unplugged.2120 }
 	}
@@ -930,11 +872,9 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = EXCELLENT
 		controller = {
@@ -978,11 +918,9 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = INTERESTING
 		controller = {
@@ -1010,7 +948,6 @@ fleet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = unplugged.2125.a
 		custom_tooltip = unplugged.2125.a.tt
@@ -1065,7 +1002,6 @@ fleet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = unplugged.2205.a
 		tooltip = {
@@ -1092,7 +1028,6 @@ fleet_event = {
 			from = { set_site_progress_locked = no }
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			controller = { remove_point_of_interest = unplugged_machine_legacy_taken_poi }
@@ -1106,18 +1041,14 @@ ship_event = {
 	id = unplugged.2200
 	title = unplugged.2200.name
 	desc = unplugged.2200.desc.others # standard
-
 	desc = { # Unplugged, with the Monitor intact
 		text = unplugged.2200.desc
 		exclusive_trigger = {
 			exists = controller
 			controller = { has_origin = origin_unplugged }
-			NOT = {
-				fromfrom = { has_planet_flag = creators_planet_monitor_scrapped }
-			}
+			NOT = { fromfrom = { has_planet_flag = creators_planet_monitor_scrapped } }
 		}
 	}
-
 	desc = { # Unplugged, with the Monitor scrapped
 		text = unplugged.2200.desc.scrapped
 		exclusive_trigger = {
@@ -1141,30 +1072,23 @@ ship_event = {
 			}
 		}
 	}
-
 	option = { # Unplugged, with the Monitor intact: proceed
 		name = unplugged.2200.a
 		trigger = {
 			exists = controller
 			controller = { has_origin = origin_unplugged }
-			NOT = {
-				fromfrom = { has_planet_flag = creators_planet_monitor_scrapped }
-			}
+			NOT = { fromfrom = { has_planet_flag = creators_planet_monitor_scrapped } }
 		}
 		fromfrom = { create_archaeological_site = machine_legacy_creators_site }
 	}
-
 	option = { # Unplugged, with the Monitor intact: don't bother digging
 		name = unplugged.2200.b
 		trigger = {
 			exists = controller
 			controller = { has_origin = origin_unplugged }
-			NOT = {
-				fromfrom = { has_planet_flag = creators_planet_monitor_scrapped }
-			}
+			NOT = { fromfrom = { has_planet_flag = creators_planet_monitor_scrapped } }
 		}
 	}
-
 	option = { # Unplugged, with the Monitor scrapped
 		name = CURSES
 		trigger = {
@@ -1173,14 +1097,11 @@ ship_event = {
 			fromfrom = { has_planet_flag = creators_planet_monitor_scrapped }
 		}
 	}
-
 	option = { # non-Unplugged
 		name = CURIOUS
 		trigger = {
 			exists = controller
-			NOT = {
-				controller = { has_origin = origin_unplugged }
-			}
+			NOT = { controller = { has_origin = origin_unplugged } }
 		}
 		controller = {
 			add_monthly_resource_mult = {
@@ -1191,7 +1112,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = { # non-Unplugged: scrap the monitor
 		name = unplugged.2200.c
 		trigger = {
@@ -1211,7 +1131,6 @@ ship_event = {
 			}
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			controller = { remove_point_of_interest = unplugged_machine_legacy_creators_poi }
@@ -1232,9 +1151,7 @@ ship_event = {
 		}
 		from = {
 			has_star_flag = unplugged_machine_legacy_flag
-			any_system_planet = {
-				is_same_value = event_target:origin_unplugged_creators_planet
-			}
+			any_system_planet = { is_same_value = event_target:origin_unplugged_creators_planet }
 		}
 		exists = event_target:origin_unplugged_unplugged_planet_@fromfrom
 	}
@@ -1271,7 +1188,6 @@ country_event = {
 			location = event_target:origin_unplugged_unplugged_planet_@root
 		}
 	}
-
 	option = {
 		name = unplugged.2205.a
 		tooltip = {
@@ -1301,11 +1217,9 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = DIG
 		controller = {
@@ -1334,11 +1248,9 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = DISTURBING
 		controller = {
@@ -1362,12 +1274,10 @@ fleet_event = {
 	picture = GFX_evt_ancient_databank
 	title = unplugged.2300.name
 	desc = unplugged.2300.desc
-
 	option = {
 		name = unplugged.2300.a
 		custom_tooltip = unplugged.2300.a.tt
 	}
-
 	trigger = {
 		controller = { has_origin = origin_unplugged }
 		from = {
@@ -1445,7 +1355,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = BATTLESTATIONS
 	}
@@ -1461,35 +1370,30 @@ fleet_event = {
 	event_chain = unplugged_origin_machine_legacy_chain
 	title = unplugged.2310.name
 	show_sound = archeology_log_entry_neutral
-
 	desc = {
 		text = unplugged.2310.desc.lith
 		exclusive_trigger = {
 			owner_species = { is_species_class = LITHOID }
 		}
 	}
-
 	desc = {
 		text = unplugged.2310.desc.omni
 		trigger = {
 			controller = { has_country_flag = unplugged2310_omni }
 		}
 	}
-
 	desc = {
 		text = unplugged.2310.desc.carn
 		trigger = {
 			controller = { has_country_flag = unplugged2310_carn }
 		}
 	}
-
 	desc = {
 		text = unplugged.2310.desc.herb
 		trigger = {
 			controller = { has_country_flag = unplugged2310_herb }
 		}
 	}
-
 	immediate = {
 		from = { set_site_progress_locked = yes }
 		controller = {
@@ -1500,18 +1404,15 @@ fleet_event = {
 			}
 		}
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = OK
 		controller = {
 			add_modifier = { modifier = unplugged_home_cooking }
 		}
 	}
-
 	option = {
 		name = OK
 		exclusive_trigger = {
@@ -1538,19 +1439,16 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 		controller = {
 			add_modifier = { modifier = unplugged_historical_record }
 		}
 	}
-
 	option = {
 		name = unplugged.2315.a
 		controller = { set_country_flag = unplugged2315_a_picked }
 	}
-
 	option = {
 		name = unplugged.2315.b
 	}
@@ -1567,19 +1465,12 @@ fleet_event = {
 			limit = {
 				controller = { has_country_flag = unplugged2315_a_picked }
 			}
-			fleet_event = {
-				id = unplugged.2321
-				scopes = { from = from }
-			}
+			fleet_event = { id = unplugged.2321 scopes = { from = from } }
 		}
 		else = {
-			fleet_event = {
-				id = unplugged.2325
-				scopes = { from = from }
-			}
+			fleet_event = { id = unplugged.2325 scopes = { from = from } }
 		}
 	}
-
 	after = {
 		from = { expire_site_event = unplugged.2320 }
 	}
@@ -1600,18 +1491,15 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = unplugged.2321.a
 		controller = {
 			add_modifier = { modifier = unplugged_cultural_reconstruction }
 		}
 	}
-
 	option = {
 		name = unplugged.2321.b
 		controller = {
@@ -1635,18 +1523,15 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 		controller = {
 			add_modifier = { modifier = unplugged_cultural_maturity }
 		}
 	}
-
 	option = {
 		name = DISTURBING
 	}
-
 	option = {
 		name = CURIOUS
 	}
@@ -1667,11 +1552,9 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = DOTDOTDOT
 		controller = {
@@ -1709,7 +1592,6 @@ country_event = {
 			location = event_target:origin_unplugged_machine_legacy_core
 		}
 	}
-
 	option = {
 		name = ACKNOWLEDGED
 		tooltip = {
@@ -1766,7 +1648,6 @@ country_event = {
 	immediate = {
 		remove_point_of_interest = unplugged_machine_legacy_core_poi
 	}
-
 	option = {
 		name = ONSCREEN
 		hidden_effect = {
@@ -1787,7 +1668,6 @@ country_event = {
 	immediate = {
 		remove_point_of_interest = unplugged_machine_legacy_core_poi
 	}
-
 	option = {
 		name = ONSCREEN
 		hidden_effect = {
@@ -1808,7 +1688,6 @@ country_event = {
 	immediate = {
 		remove_point_of_interest = unplugged_machine_legacy_core_poi
 	}
-
 	option = {
 		name = ONSCREEN
 		hidden_effect = {
@@ -1824,11 +1703,9 @@ country_event = {
 	event_chain = unplugged_origin_machine_legacy_chain
 	title = TRANSMISSION
 	diplomatic = yes
-
 	picture_event_data = {
 		room = no_video_feed_room
 	}
-
 	desc = {
 		text = unplugged.2405.desc.unplugged
 		trigger = {
@@ -1837,7 +1714,6 @@ country_event = {
 			has_country_flag = machine_legacy_destroyed_boss
 		}
 	}
-
 	desc = {
 		text = unplugged.2405.desc.unplugged_remote
 		trigger = {
@@ -1848,19 +1724,16 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = unplugged.2405.desc.unplugged_synth
 		trigger = { has_origin = origin_unplugged is_synthetic_empire = yes }
 	}
-
 	desc = {
 		text = unplugged.2405.desc.other
 		trigger = {
 			NOT = { has_origin = origin_unplugged }
 		}
 	}
-
 	option = {
 		name = ACKNOWLEDGED
 		hidden_effect = {
@@ -1873,7 +1746,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = unplugged.2405.a
 		trigger = {
@@ -1883,24 +1755,18 @@ country_event = {
 		is_dialog_only = yes
 		response_text = unplugged.2405.response_text.unplugged1
 	}
-
 	option = {
 		name = unplugged.2405.b
-		trigger = {
-			has_origin = origin_unplugged
-			has_ascension_perk = ap_synthetic_evolution
-		}
+		trigger = { has_origin = origin_unplugged has_ascension_perk = ap_synthetic_evolution }
 		is_dialog_only = yes
 		response_text = unplugged.2405.response_text.unplugged1
 	}
-
 	option = {
 		name = unplugged.2405.c
 		trigger = { has_origin = origin_unplugged }
 		is_dialog_only = yes
 		response_text = unplugged.2405.response_text.unplugged2
 	}
-
 	option = {
 		name = unplugged.2405.d
 		trigger = {
@@ -1918,19 +1784,16 @@ country_event = {
 	event_chain = unplugged_origin_machine_legacy_chain
 	title = TRANSMISSION
 	diplomatic = yes
-
 	picture_event_data = {
 		room = no_video_feed_room
 	}
 
 	desc = unplugged.2410.desc
-
 	option = {
 		name = unplugged.2410.a
 		set_country_flag = unplugged2410_a_picked
 		country_event = { id = unplugged.2415 }
 	}
-
 	option = {
 		name = unplugged.2410.b
 		country_event = { id = unplugged.2415 }
@@ -1944,7 +1807,6 @@ country_event = {
 	event_chain = unplugged_origin_machine_legacy_chain
 	title = TRANSMISSION
 	diplomatic = yes
-
 	picture_event_data = {
 		room = no_video_feed_room
 	}
@@ -1963,16 +1825,12 @@ country_event = {
 			}
 		}
 		else = { # target the Opus as an even more delusional fallback
-			event_target:origin_unplugged_assimilator_empire = {
-				save_event_target_as = unplugged_empire
-			}
+			event_target:origin_unplugged_assimilator_empire = { save_event_target_as = unplugged_empire }
 		}
 	}
-
 	option = {
 		name = unplugged.2411.a
 	}
-
 	option = {
 		name = unplugged.2411.b
 		add_opinion_modifier = {
@@ -1985,7 +1843,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		event_target:origin_unplugged_machine_legacy_core_planet = {
 			if = {
@@ -2005,26 +1862,21 @@ country_event = {
 	event_chain = unplugged_origin_machine_legacy_chain
 	title = TRANSMISSION
 	diplomatic = yes
-
 	picture_event_data = {
 		room = no_video_feed_room
 	}
 
 	desc = unplugged.2415.desc.combat
-
 	desc = {
 		text = unplugged.2415.desc.memory
 		exclusive_trigger = { has_country_flag = unplugged2410_a_picked }
 	}
-
 	option = {
 		name = unplugged.2415.a
 	}
-
 	option = {
 		name = unplugged.2415.b
 	}
-
 	after = {
 		country_event = { id = unplugged.2420 }
 	}
@@ -2038,7 +1890,6 @@ country_event = {
 	picture = GFX_evt_sapient_AI
 	event_chain = unplugged_origin_machine_legacy_chain
 	is_triggered_only = yes
-
 	option = {
 		name = unplugged.2420.a
 		enable_special_project = {
@@ -2070,7 +1921,6 @@ ship_event = {
 	trigger = {
 		controller = { has_country_flag = machine_legacy_makers_arc_site_complete }
 	}
-
 	option = {
 		name = unplugged.2425.a
 	}
@@ -2089,11 +1939,9 @@ ship_event = {
 	trigger = {
 		controller = { has_country_flag = machine_legacy_taken_arc_site_complete }
 	}
-
 	option = {
 		name = INTERESTING
 	}
-
 	option = {
 		name = DISTURBING
 	}
@@ -2112,7 +1960,6 @@ ship_event = {
 	trigger = {
 		controller = { has_country_flag = machine_legacy_creators_arc_site_complete }
 	}
-
 	option = {
 		name = DOTDOTDOT
 	}
@@ -2135,10 +1982,11 @@ ship_event = {
 			class = random_non_machine
 			portrait = random
 			namelist = random_class # Vfix
-			effect = { save_event_target_as = creator_species }
+			effect = {
+				save_event_target_as = creator_species
+			}
 		}
 	}
-
 	option = {
 		name = ONSCREEN
 		hidden_effect = {
@@ -2154,7 +2002,6 @@ country_event = {
 	id = unplugged.2445
 	title = unplugged.2445.name
 	desc = unplugged.2445.desc
-
 	picture_event_data = {
 		room = no_video_feed_room
 	}
@@ -2162,13 +2009,11 @@ country_event = {
 	diplomatic = yes
 	event_chain = unplugged_origin_machine_legacy_chain
 	is_triggered_only = yes
-
 	option = {
 		name = unplugged.2445.a
 		is_dialog_only = yes
 		response_text = unplugged.2445.response_text.notmachine
 	}
-
 	option = {
 		name = unplugged.2445.b
 		trigger = {
@@ -2182,12 +2027,10 @@ country_event = {
 		}
 		country_event = { id = unplugged.2446 }
 	}
-
 	option = {
 		name = unplugged.2445.c
 		country_event = { id = unplugged.2446 }
 	}
-
 	option = {
 		name = unplugged.2445.d
 		country_event = { id = unplugged.2455 }
@@ -2201,7 +2044,6 @@ country_event = {
 	desc_clear = yes
 	option_clear = yes
 	desc = unplugged.2446.desc
-
 	option = {
 		name = unplugged.2446.a
 		country_event = { id = unplugged.2450 }
@@ -2220,7 +2062,6 @@ country_event = {
 	immediate = {
 		end_event_chain = unplugged_origin_machine_legacy_chain
 	}
-
 	option = {
 		name = EXCELLENT
 	}
@@ -2238,7 +2079,6 @@ country_event = {
 	immediate = {
 		end_event_chain = unplugged_origin_machine_legacy_chain
 	}
-
 	option = {
 		name = EXCELLENT
 		event_target:origin_unplugged_machine_legacy_core_planet = {
@@ -2316,16 +2156,12 @@ country_event = {
 fleet_event = {
 	id = unplugged.2495
 	title = unplugged.2495.name
-
 	desc = {
 		text = unplugged.2495.desc.other
 		trigger = {
-			NOT = {
-				controller = { has_origin = origin_unplugged }
-			}
+			NOT = { controller = { has_origin = origin_unplugged } }
 		}
 	}
-
 	desc = {
 		text = unplugged.2495.desc.unplugged
 		trigger = {
@@ -2352,7 +2188,6 @@ fleet_event = {
 	immediate = {
 		controller = { set_country_flag = opus_sentinel_encounter }
 	}
-
 	option = {
 		name = unplugged.2495.a
 	}
@@ -2381,7 +2216,6 @@ country_event = {
 			set_country_flag = unplugged_has_started_identity_situation_flag
 		}
 	}
-
 	option = { # Status Quo
 		name = unplugged.3000.a
 		random_situation = {
@@ -2389,7 +2223,6 @@ country_event = {
 			set_situation_approach = situation_unplugged_identity_discourage_change
 		}
 	}
-
 	option = { # Embrace Opinion
 		name = unplugged.3000.b
 		random_situation = {
@@ -2397,7 +2230,6 @@ country_event = {
 			set_situation_approach = situation_unplugged_identity_embrace_opinion
 		}
 	}
-
 	option = { # Allow Debate
 		name = unplugged.3000.c
 		random_situation = {
@@ -2405,7 +2237,6 @@ country_event = {
 			set_situation_approach = situation_unplugged_identity_open_conversations
 		}
 	}
-
 	after = {
 		tooltip = {
 			start_situation = { type = situation_unplugged_identity target = root }
@@ -2470,7 +2301,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = unplugged.3005.c
 		allow = {
@@ -2513,7 +2343,6 @@ situation_event = {
 	option = {
 		name = WORRYING
 	}
-
 	option = {
 		name = GOOD
 	}
@@ -2549,7 +2378,6 @@ situation_event = {
 			target = { set_country_flag = unplugged_no_they_fear_us }
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		destroy_situation = this
@@ -2586,7 +2414,6 @@ country_event = {
 			country_event = { id = unplugged.3000 days = 90 }
 		}
 	}
-
 	option = { # attempt to block De-Cyberization
 		name = unplugged.3100.a
 		if = {
@@ -2602,7 +2429,6 @@ country_event = {
 			max = @tier1influencemax
 		}
 	}
-
 	option = { # champion De-Cyberization
 		name = unplugged.3100.b
 		if = {
@@ -2618,7 +2444,6 @@ country_event = {
 			max = @tier1unitymax
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			country_event = { id = unplugged.4005 } # Pop Factions nudge (includes relevant trigger checks)
@@ -2634,7 +2459,6 @@ situation_event = {
 	picture = GFX_evt_unplugged_decyberization
 	is_triggered_only = yes
 	situation = this
-
 	option = {
 		name = EXCELLENT
 		custom_tooltip = situation_unplugged_decyberize_tt
@@ -2647,7 +2471,6 @@ situation_event = {
 			unplugged_identity_situation_spawn_decyberization_notification_effect = yes
 		}
 	}
-
 	option = {
 		name = unplugged.3105.a
 		custom_tooltip = situation_unplugged_change_trend_tt
@@ -2660,7 +2483,6 @@ situation_event = {
 			add_resource = { influence = -25 }
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			unplugged_origin_queue_identity_situation_event_effect = yes
@@ -2675,7 +2497,6 @@ situation_event = {
 	picture = GFX_evt_unplugged_decyberization
 	is_triggered_only = yes
 	situation = this
-
 	option = {
 		name = EXCELLENT
 		custom_tooltip = situation_unplugged_decyberize_tt
@@ -2688,7 +2509,6 @@ situation_event = {
 			unplugged_identity_situation_spawn_decyberization_notification_effect = yes
 		}
 	}
-
 	option = {
 		name = unplugged.3106.a
 		custom_tooltip = situation_unplugged_change_trend_tt
@@ -2701,7 +2521,6 @@ situation_event = {
 			add_resource = { influence = -25 }
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			unplugged_origin_queue_identity_situation_event_effect = yes
@@ -2716,7 +2535,6 @@ situation_event = {
 	picture = GFX_evt_unplugged_decyberization
 	is_triggered_only = yes
 	situation = this
-
 	option = {
 		name = EXCELLENT
 		custom_tooltip = situation_unplugged_decyberize_tt
@@ -2731,7 +2549,6 @@ situation_event = {
 		}
 		situation_event = { id = unplugged.3090 }
 	}
-
 	option = {
 		name = unplugged.3107.a
 		custom_tooltip = situation_unplugged_change_trend_tt
@@ -2757,7 +2574,6 @@ situation_event = {
 	picture = GFX_evt_unplugged
 	is_triggered_only = yes
 	situation = this
-
 	option = {
 		name = EXCELLENT
 		custom_tooltip = situation_unplugged_cyberize_tt
@@ -2769,7 +2585,6 @@ situation_event = {
 			unplugged_identity_situation_spawn_cyberization_notification_effect = yes
 		}
 	}
-
 	option = {
 		name = unplugged.3110.a
 		custom_tooltip = situation_unplugged_change_trend_tt
@@ -2782,7 +2597,6 @@ situation_event = {
 			add_resource = { influence = -25 }
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			unplugged_origin_queue_identity_situation_event_effect = yes
@@ -2797,7 +2611,6 @@ situation_event = {
 	picture = GFX_evt_unplugged
 	is_triggered_only = yes
 	situation = this
-
 	option = {
 		name = EXCELLENT
 		custom_tooltip = situation_unplugged_cyberize_tt
@@ -2809,7 +2622,6 @@ situation_event = {
 			unplugged_identity_situation_spawn_cyberization_notification_effect = yes
 		}
 	}
-
 	option = {
 		name = unplugged.3111.a
 		custom_tooltip = situation_unplugged_change_trend_tt
@@ -2822,7 +2634,6 @@ situation_event = {
 			add_resource = { influence = -25 }
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			unplugged_origin_queue_identity_situation_event_effect = yes
@@ -2837,7 +2648,6 @@ situation_event = {
 	picture = GFX_evt_unplugged
 	is_triggered_only = yes
 	situation = this
-
 	option = {
 		name = EXCELLENT
 		custom_tooltip = situation_unplugged_cyberize_tt
@@ -2851,7 +2661,6 @@ situation_event = {
 		}
 		situation_event = { id = unplugged.3090 }
 	}
-
 	option = {
 		name = unplugged.3112.a
 		custom_tooltip = situation_unplugged_change_trend_tt
@@ -2877,12 +2686,10 @@ situation_event = {
 	picture = GFX_evt_unplugged
 	is_triggered_only = yes
 	situation = this
-
 	option = {
 		name = unplugged.3115.a
 		custom_tooltip = situation_unplugged_change_trend_tt
 	}
-
 	after = {
 		hidden_effect = {
 			unplugged_origin_queue_identity_situation_event_effect = yes
@@ -2897,12 +2704,10 @@ situation_event = {
 	picture = GFX_evt_unplugged
 	is_triggered_only = yes
 	situation = this
-
 	option = {
 		name = unplugged.3116.a
 		custom_tooltip = situation_unplugged_change_trend_tt
 	}
-
 	after = {
 		hidden_effect = {
 			unplugged_origin_queue_identity_situation_event_effect = yes
@@ -2917,7 +2722,6 @@ situation_event = {
 	picture = GFX_evt_unplugged
 	is_triggered_only = yes
 	situation = this
-
 	option = {
 		name = unplugged.3117.a
 		owner = {
@@ -2937,16 +2741,11 @@ situation_event = {
 							has_unplugged_negative_trait = yes
 						}
 					}
-					country_event = {
-						id = unplugged.5005
-						days = 365
-						random = 100
-					}
+					country_event = { id = unplugged.5005 days = 365 random = 100 }
 				}
 			}
 		}
 	}
-
 	after = {
 		situation_event = { id = unplugged.3090 }
 	}
@@ -2994,7 +2793,6 @@ country_event = {
 	immediate = {
 		set_country_flag = unplugged_legacyofterror
 	}
-
 	option = { # good that they fear us
 		name = unplugged.3205.a
 		add_monthly_resource_mult = {
@@ -3005,7 +2803,6 @@ country_event = {
 		}
 		# leave formation of Pop Factions to chance
 	}
-
 	option = { # bad that they fear us
 		name = unplugged.3205.b
 		add_monthly_resource_mult = {
@@ -3018,7 +2815,6 @@ country_event = {
 			country_event = { id = unplugged.4000 } # nudge to see if we can form Pop Factions
 		}
 	}
-
 	after = {
 		add_modifier = { modifier = unplugged_they_fear_us }
 	}
@@ -3071,7 +2867,6 @@ country_event = {
 	immediate = {
 		set_country_flag = unplugged_fearofthemachine
 	}
-
 	option = {
 		name = WORRYING
 	}
@@ -3094,7 +2889,6 @@ country_event = {
 	immediate = {
 		owner = { set_country_flag = unplugged_fearofthepast }
 	}
-
 	option = {
 		name = WORRYING
 	}
@@ -3114,13 +2908,11 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
 
 	desc = unplugged.3300.desc.unplugged
-
 	option = {
 		name = unplugged.3300.a
 		owner = {
@@ -3148,13 +2940,11 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
 
 	desc = unplugged.3305.desc.unplugged
-
 	option = {
 		name = unplugged.3305.a
 		owner = {
@@ -3182,13 +2972,11 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
 
 	desc = unplugged.3310.desc.unplugged
-
 	option = {
 		name = unplugged.3310.a
 		owner = {
@@ -3216,13 +3004,11 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
 
 	desc = unplugged.3315.desc.unplugged
-
 	option = {
 		name = unplugged.3315.a
 		owner = {
@@ -3250,13 +3036,11 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
 
 	desc = unplugged.3320.desc.unplugged
-
 	option = {
 		name = unplugged.3320.a
 		owner = {
@@ -3281,7 +3065,6 @@ fleet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = unplugged.3320.b
 		owner = {
@@ -3363,14 +3146,8 @@ situation_event = {
 	hide_window = yes
 
 	immediate = {
-		create_variable_if_not_exists = {
-			VARIABLE = times_selected_neutral
-			VALUE_IF_CREATED = 0
-		}
-		create_variable_if_not_exists = {
-			VARIABLE = times_selected_extreme
-			VALUE_IF_CREATED = 0
-		}
+		create_variable_if_not_exists = { VARIABLE = times_selected_neutral VALUE_IF_CREATED = 0 }
+		create_variable_if_not_exists = { VARIABLE = times_selected_extreme VALUE_IF_CREATED = 0 }
 		switch = {
 			trigger = current_stage
 			unplugged_identity_stage_1 = {
@@ -3559,7 +3336,6 @@ country_event = {
 	immediate = {
 		set_country_flag = unplugged_faction_allowed # see 'is_faction_allowed'
 	}
-
 	option = { # not the time!
 		name = unplugged.4005.a
 		custom_tooltip = "unplugged.4005.tt"
@@ -3584,7 +3360,6 @@ country_event = {
 	immediate = {
 		set_country_flag = unplugged_5001_triggered
 	}
-
 	option = { # Attempt to remove the failsafes
 		name = unplugged.5001.a
 		add_modifier = { modifier = unplugged_rerouted_medical_resources years = 3 }
@@ -3599,7 +3374,6 @@ country_event = {
 			2 = { custom_tooltip = "unplugged.5001.a.tt2" }
 		}
 	}
-
 	option = { # Stabilize and provide palliative care
 		name = unplugged.5001.b
 		allow = {
@@ -3612,7 +3386,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Pull the plug
 		name = unplugged.5001.c
 		custom_tooltip = "unplugged.5001.c.tt"
@@ -3643,7 +3416,6 @@ country_event = {
 	immediate = {
 		set_country_flag = unplugged_5002_triggered
 	}
-
 	option = { # They must be incarcerated
 		name = unplugged.5002.a
 		allow = {
@@ -3656,7 +3428,6 @@ country_event = {
 		}
 		custom_tooltip = "unplugged.5002.a.tt"
 	}
-
 	option = { # Force must be met by force
 		name = unplugged.5002.b
 		owner.home_planet = { add_planet_devastation = 25 }
@@ -3676,7 +3447,6 @@ country_event = {
 		}
 		custom_tooltip = "unplugged.5002.b.tt"
 	}
-
 	option = { # A minor disturbance
 		name = unplugged.5002.c
 		owner.home_planet = {
@@ -3701,7 +3471,6 @@ country_event = {
 	immediate = {
 		set_country_flag = unplugged_5003_triggered
 	}
-
 	option = { # Create a new interface
 		name = unplugged.5003.a
 		owner.home_planet = {
@@ -3712,7 +3481,6 @@ country_event = {
 		}
 		custom_tooltip = "unplugged.5003.a.tt"
 	}
-
 	option = { # Attempt to hack the affected systems
 		name = unplugged.5003.b
 		allow = {
@@ -3721,7 +3489,6 @@ country_event = {
 		add_resource = { energy = -2500 }
 		custom_tooltip = "unplugged.5003.b.tt"
 	}
-
 	option = { # Initiate a reboot
 		name = unplugged.5003.c
 		trigger = {
@@ -3749,7 +3516,6 @@ country_event = {
 		add_resource = { influence = -50 }
 		custom_tooltip = "unplugged.5003.c.tt"
 	}
-
 	option = { # Leave it be
 		name = unplugged.5003.d
 		add_modifier = { modifier = unplugged_partial_system_access years = 5 }
@@ -3788,7 +3554,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Fund an intensive campaign
 		name = unplugged.5004.a
 		allow = {
@@ -3813,7 +3578,6 @@ country_event = {
 		}
 		custom_tooltip = "unplugged.5004.a.tt"
 	}
-
 	option = { # Intern and persuade faction leaders
 		name = unplugged.5004.b
 		hidden_effect = {
@@ -3834,7 +3598,6 @@ country_event = {
 		}
 		custom_tooltip = "unplugged.5004.b.tt"
 	}
-
 	option = { # Stay out of it. Free speech prevails
 		name = unplugged.5004.c
 		add_modifier = { modifier = unplugged_free_speech_encouraged years = 5 }
@@ -3849,7 +3612,6 @@ country_event = {
 	desc = unplugged.5005.desc
 	picture = GFX_evt_unplugged
 	is_triggered_only = yes
-
 	option = { # Neuroxene. We want less crime
 		name = unplugged.5005.a
 		every_owned_species = {
@@ -3861,7 +3623,6 @@ country_event = {
 		}
 		custom_tooltip = "unplugged.5005.a.tt"
 	}
-
 	option = { # Regenol-X. Less time spent regenerating
 		name = unplugged.5005.b
 		every_owned_species = {
@@ -3873,7 +3634,6 @@ country_event = {
 		}
 		custom_tooltip = "unplugged.5005.b.tt"
 	}
-
 	option = { # Cognivex. For sharper wits
 		name = unplugged.5005.c
 		every_owned_species = {
@@ -3886,4 +3646,3 @@ country_event = {
 		custom_tooltip = "unplugged.5005.c.tt"
 	}
 }
-

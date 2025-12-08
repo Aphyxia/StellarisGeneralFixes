@@ -2688,7 +2688,7 @@ create_captain_ness_leader = {
 
 create_primal_leader = {
 	create_country = {
-		name = "NAME_leader_country"
+		name = "leaders" # Vfix
 		type = nice_faction
 		auto_delete = yes
 		flag = {

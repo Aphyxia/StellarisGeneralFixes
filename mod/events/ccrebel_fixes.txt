@@ -1129,25 +1129,17 @@ country_event = {
 					count_owned_planet = { count > 0 }
 				}
 				if = {
-					limit = {
-						NOT = { exists = capital_scope }
-					}
+					limit = { NOT = { exists = capital_scope } }
 					ordered_owned_planet = {
 						order_by = trigger:sapient_pop_amount
 						position = 0
 						root = {
-							country_event = {
-								id = rebellionfix.35
-								scopes = { from = prev }
-							}
+							country_event = { id = rebellionfix.35 scopes = { from = prev } }
 						}
 					}
 				}
 				else = {
-					country_event = {
-						id = rebellionfix.35
-						scopes = { from = capital_scope }
-					}
+					country_event = { id = rebellionfix.35 scopes = { from = capital_scope } }
 				}
 			}
 			else = {
@@ -1933,7 +1925,6 @@ country_event = {
 		}
 		fire_on_action = { on_action = empire_init_create_ships }
 	}
-
 	after = { # set_name = random # Because sometimes native didn't work?
 	}
 }

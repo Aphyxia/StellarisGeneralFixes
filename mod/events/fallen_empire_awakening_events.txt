@@ -76,7 +76,6 @@ country_event = {
 			}
 		}
 	}
-
 	mean_time_to_happen = {
 		years = 50
 		modifier = {
@@ -109,7 +108,6 @@ country_event = {
 			event_target:fallen_empire_hive_forgotten = { num_fleets = 0 }
 		}
 	}
-
 	immediate = {
 		set_country_code_flags = { colonizer = yes }
 		set_global_flag = sleepers_awake_happened
@@ -295,24 +293,18 @@ country_event = {
 	id = fallen_empires_awakening.2
 	title = fallen_empires_awakening.2.name
 	desc = fallen_empires_awakening.2.desc
-
 	picture = {
-		trigger = {
-			from = { is_hive_empire = no }
-		}
+		trigger = { from = { is_hive_empire = no } }
 		picture = GFX_evt_fallen_empire
 	}
 	picture = {
-		trigger = {
-			from = { is_hive_empire = yes }
-		}
+		trigger = { from = { is_hive_empire = yes } }
 		picture = GFX_evt_hive_mind_fallen_empire
 	}
 
 	show_sound = event_alien_signal
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_empires_awakening.2.a
 	}
@@ -332,10 +324,7 @@ country_event = {
 		set_country_flag = sleepers_awake_first_sleeper
 		set_country_type = awakened_fallen_empire
 		change_government = {
-			civics = {
-				civic = civic_revanchist_fervor
-				civic = civic_ancient_caches_of_technology
-			}
+			civics = { civic = civic_revanchist_fervor civic = civic_ancient_caches_of_technology }
 		}
 		if = {
 			limit = { has_paragon_dlc = yes }
@@ -414,7 +403,6 @@ country_event = {
 		# NOT = { has_global_flag = guardians_of_the_galaxy_happened }   # We want to be able to have multiple.
 		NOT = { has_country_flag = timed_guardians_of_the_galaxy }
 	}
-
 	mean_time_to_happen = {
 		years = 5
 		modifier = {
@@ -422,13 +410,9 @@ country_event = {
 			NOT = { has_country_flag = timed_guardians_of_the_galaxy_2 }
 		}
 	}
-
 	immediate = {
 		# set_global_flag = guardians_of_the_galaxy_happened
-		set_timed_global_flag = {
-			flag = guardians_of_the_galaxy_happened_recently
-			years = 12
-		}
+		set_timed_global_flag = { flag = guardians_of_the_galaxy_happened_recently years = 12 }
 		if = {
 			limit = { is_hive_empire = no }
 			country_event = { id = fallen_empires_awakening.3 }
@@ -515,24 +499,18 @@ country_event = {
 	id = fallen_empires_awakening.5
 	title = fallen_empires_awakening.5.name
 	desc = fallen_empires_awakening.5.desc
-
 	picture = {
-		trigger = {
-			from = { is_hive_empire = no }
-		}
+		trigger = { from = { is_hive_empire = no } }
 		picture = GFX_evt_fallen_empire
 	}
 	picture = {
-		trigger = {
-			from = { is_hive_empire = yes }
-		}
+		trigger = { from = { is_hive_empire = yes } }
 		picture = GFX_evt_hive_mind_fallen_empire
 	}
 
 	show_sound = event_alien_signal
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_empires_awakening.5.a
 	}
@@ -603,7 +581,9 @@ country_event = {
 				}
 				country_event = { id = fallen_empires_awakening.11 }
 			}
-			integrate_country_effect = { OWNER = root }
+			integrate_country_effect = {
+				OWNER = root
+			}
 		}
 		random_system = {
 			limit = { has_star_flag = last_thought_system }
@@ -643,9 +623,7 @@ country_event = {
 	show_sound = event_default
 	picture = "GFX_evt_city_ruins"
 	is_triggered_only = yes
-
 	option = {
 		name = OK
 	}
 }
-

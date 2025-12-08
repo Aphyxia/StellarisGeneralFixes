@@ -349,19 +349,14 @@ planet_event = {
 	show_sound = event_mystic_reveal
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		trigger = { owner = { is_gestalt = no } }
 	}
-
 	option = {
 		name = ACKNOWLEDGED
-		trigger = {
-			owner = { is_gestalt = yes }
-		}
+		trigger = { owner = { is_gestalt = yes } }
 	}
-
 	after = {
 		hidden_effect = {
 			owner = {
@@ -549,10 +544,7 @@ planet_event = {
 						is_xenophile = yes
 					}
 				}
-				add_opinion_modifier = {
-					modifier = opinion_burned_a_primitive_world
-					who = from.owner
-				}
+				add_opinion_modifier = { modifier = opinion_burned_a_primitive_world who = from.owner }
 			}
 			every_country = {
 				limit = {
@@ -645,28 +637,24 @@ country_event = {
 	picture = GFX_evt_inf_red_giant_growth
 	show_sound = event_mystic_reveal
 	is_triggered_only = yes
-
 	desc = {
 		text = infernals.45.desc
 		trigger = { owner = { is_gestalt = no } }
 	}
-
 	desc = {
 		text = infernals.45.desc.gestalt
-		trigger = {
-			owner = { is_gestalt = yes }
-		}
+		trigger = { owner = { is_gestalt = yes } }
 	}
-
 	immediate = {
 		set_country_flag = situation_red_giant_expansion_approach1
 		start_situation = {
 			type = situation_red_giant_expansion
 			target = root.capital_star
-			effect = { save_global_event_target_as = situation_red_giant_expansion@root }
+			effect = {
+				save_global_event_target_as = situation_red_giant_expansion@root
+			}
 		}
 	}
-
 	option = {
 		name = infernals.45.a
 		trigger = { owner = { is_gestalt = no } }
@@ -680,12 +668,9 @@ country_event = {
 		}
 		custom_tooltip = infernals.45.public.tt
 		hidden_effect = {
-			event_target:situation_red_giant_expansion@root = {
-				set_situation_approach = approach_reassure_public
-			}
+			event_target:situation_red_giant_expansion@root = { set_situation_approach = approach_reassure_public }
 		}
 	}
-
 	option = {
 		name = infernals.45.b
 		owner = {
@@ -698,17 +683,12 @@ country_event = {
 		}
 		custom_tooltip = infernals.45.cause.tt
 		hidden_effect = {
-			event_target:situation_red_giant_expansion@root = {
-				set_situation_approach = approach_find_the_cause
-			}
+			event_target:situation_red_giant_expansion@root = { set_situation_approach = approach_find_the_cause }
 		}
 	}
-
 	option = {
 		name = infernals.45.c
-		trigger = {
-			owner = { is_gestalt = yes }
-		}
+		trigger = { owner = { is_gestalt = yes } }
 		owner = {
 			add_monthly_resource_mult = {
 				resource = unity
@@ -719,17 +699,12 @@ country_event = {
 		}
 		custom_tooltip = infernals.45.public.tt
 		hidden_effect = {
-			event_target:situation_red_giant_expansion@root = {
-				set_situation_approach = approach_reassure_public
-			}
+			event_target:situation_red_giant_expansion@root = { set_situation_approach = approach_reassure_public }
 		}
 	}
-
 	option = {
 		name = infernals.45.d
-		trigger = {
-			owner = { is_megacorp = yes }
-		}
+		trigger = { owner = { is_megacorp = yes } }
 		allow = {
 			owner = {
 				resource_stockpile_compare = { resource = energy value >= 200 }
@@ -746,12 +721,9 @@ country_event = {
 		}
 		custom_tooltip = infernals.45.public.tt
 		hidden_effect = {
-			event_target:situation_red_giant_expansion@root = {
-				set_situation_approach = approach_reassure_public
-			}
+			event_target:situation_red_giant_expansion@root = { set_situation_approach = approach_reassure_public }
 		}
 	}
-
 	after = {
 		begin_event_chain = { event_chain = red_giant_event_chain target = this }
 	}
@@ -768,9 +740,7 @@ situation_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = {
-			owner = { has_country_flag = situation_red_giant_ended }
-		}
+		NOT = { owner = { has_country_flag = situation_red_giant_ended } }
 	}
 
 	immediate = {
@@ -931,7 +901,6 @@ situation_event = {
 			remove_point_of_interest = red_giant_lusus_event_poi
 		}
 	}
-
 	option = {
 		name = ACKNOWLEDGED
 		hidden_effect = {
@@ -942,7 +911,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.50.a
 		allow = {
@@ -961,7 +929,6 @@ situation_event = {
 			}
 		}
 	}
-
 	after = {
 		clear_global_event_target = red_giant_homeworld_tmp
 		destroy_situation = this
@@ -986,11 +953,9 @@ planet_event = {
 	show_sound = event_ship_explosion
 	location = this
 	is_triggered_only = yes
-
 	option = {
 		name = ACKNOWLEDGED
 	}
-
 	after = {
 		remove_modifier = red_giant_exploded
 		add_modifier = { modifier = "red_giant_exploded_mitigated" days = -1 }
@@ -1036,13 +1001,10 @@ situation_event = {
 			remove_planet_flag = has_megastructure # allow placing megastructures again
 		}
 	}
-
 	option = {
 		name = infernals.60.a # dismantle
 		trigger = {
-			NOT = {
-				owner = { has_country_flag = lusus_station_destroyed }
-			}
+			NOT = { owner = { has_country_flag = lusus_station_destroyed } }
 		}
 		# station go boom
 		if = {
@@ -1063,13 +1025,10 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.60.b # Study the station
 		trigger = {
-			NOT = {
-				owner = { has_country_flag = lusus_station_destroyed }
-			}
+			NOT = { owner = { has_country_flag = lusus_station_destroyed } }
 		}
 		target = {
 			set_planet_entity = { entity = m_star_class_star_entity } # remove subspace portal
@@ -1090,13 +1049,10 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.60.c # monument to our victory
 		trigger = {
-			NOT = {
-				owner = { has_country_flag = lusus_station_destroyed }
-			}
+			NOT = { owner = { has_country_flag = lusus_station_destroyed } }
 		}
 		target = {
 			set_planet_entity = { entity = m_star_class_star_entity } # remove subspace portal
@@ -1111,7 +1067,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.60.d # station gone
 		trigger = {
@@ -1130,7 +1085,6 @@ situation_event = {
 			}
 		}
 	}
-
 	after = {
 		# trigger relaxation
 		target.solar_system = {
@@ -1248,7 +1202,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.65.a
 		enable_special_project = {
@@ -1257,7 +1210,6 @@ situation_event = {
 			owner = this
 		}
 	}
-
 	option = {
 		name = infernals.65.b
 		enable_special_project = {
@@ -1317,7 +1269,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = WORRYING
 		owner = {
@@ -1380,7 +1331,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = DISCONCERTING
 		owner = {
@@ -1427,10 +1377,7 @@ situation_event = {
 	immediate = {
 		# Update progress to keep track of status
 		owner = {
-			set_variable = {
-				which = red_giant_progress
-				value = root.trigger:situation_progress
-			}
+			set_variable = { which = red_giant_progress value = root.trigger:situation_progress }
 			divide_variable = {
 				which = red_giant_progress
 				value = 15		# 1500 is max situation progress -> 100 max extra size, portal+red giant entity is also 1.25x scale so it doesnt get pushed down below the plane at high scale
@@ -1507,7 +1454,6 @@ country_event = {
 		remove_country_flag = situation_red_giant_expansion_approach1
 		from = { set_situation_approach = approach_suppress_unrest2 }
 	}
-
 	option = {
 		name = infernals.95.a
 		custom_tooltip = infernals.95.a.tt
@@ -1668,7 +1614,6 @@ ship_event = {
 	show_sound = event_ship_bridge
 	is_triggered_only = yes
 	event_chain = red_giant_event_chain
-
 	option = {
 		name = infernals.105.a
 		owner = {
@@ -1694,7 +1639,6 @@ ship_event = {
 	show_sound = event_ship_bridge
 	is_triggered_only = yes
 	event_chain = red_giant_event_chain
-
 	option = {
 		name = UNDERSTOOD
 		FromFromFromFrom.Target = { add_deposit = d_energy_5 }
@@ -1707,12 +1651,9 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.110.a
-		trigger = {
-			owner = { is_megacorp = yes }
-		}
+		trigger = { owner = { is_megacorp = yes } }
 		FromFromFromFrom.Target = { add_deposit = d_energy_5 }
 		owner = {
 			add_monthly_resource_mult = {
@@ -1805,7 +1746,6 @@ ship_event = {
 			}
 		}
 	}
-
 	after = {
 		custom_tooltip = red_giant_lusus_triangulated_tt
 		root.owner = {
@@ -1821,7 +1761,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.115.a
 		owner = {
@@ -1833,14 +1772,12 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.115.b
 		owner = {
 			add_modifier = { modifier = red_giant_fire_rate months = 3 }
 		}
 	}
-
 	option = {
 		name = infernals.115.c
 		trigger = {
@@ -1855,7 +1792,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.115.c
 		trigger = {
@@ -1888,12 +1824,10 @@ ship_event = {
 	trigger = {
 		has_infernals = yes
 	}
-
 	option = {
 		name = EXCELLENT
 		fromfromfrom = { add_rare_crystals = yes }
 	}
-
 	option = {
 		name = infernals.500.a
 		trigger = {
@@ -1901,7 +1835,6 @@ ship_event = {
 		}
 		from = { add_deposit = d_vast_unity_deposit }
 	}
-
 	option = {
 		name = infernals.500.b
 		trigger = {
@@ -1921,7 +1854,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.500.c
 		trigger = {
@@ -1947,13 +1879,12 @@ ship_event = {
 	desc = "infernals.1001.desc"
 	picture = GFX_evt_gas_giant_station
 	show_sound = event_space_cloud
-	location = FROM
+	location = from
 	is_triggered_only = yes
 
 	trigger = {
 		has_infernals = yes
 	}
-
 	option = {
 		name = "infernals.1001.a"
 		from = { add_deposit = d_exotic_gases_1 }
@@ -1961,18 +1892,18 @@ ship_event = {
 }
 
 ### Anomaly: Crystal Lava Lakes
+
 ship_event = {
 	id = infernals.1002
 	title = "infernals.1002.name"
 	desc = "infernals.1002.desc"
 	picture = GFX_evt_crystal_mining
-	location = FROM
+	location = from
 	is_triggered_only = yes
 
 	trigger = {
 		has_infernals = yes
 	}
-
 	option = {
 		name = "infernals.1002.a"
 		trigger = { owner = { is_gestalt = no } }
@@ -1980,7 +1911,6 @@ ship_event = {
 			add_modifier = { modifier = crystal_lava_resort }
 		}
 	}
-
 	option = {
 		name = "infernals.1002.b"
 		from = { add_deposit = d_energy_4 }
@@ -1988,18 +1918,18 @@ ship_event = {
 }
 
 ### Anomaly: Bioadaptive Flora
+
 ship_event = {
 	id = infernals.1003
 	title = "infernals.1003.name"
 	desc = "infernals.1003.desc"
 	picture = GFX_evt_aggressive_flora
-	location = FROM
+	location = from
 	is_triggered_only = yes
 
 	trigger = {
 		has_infernals = yes
 	}
-
 	option = {
 		name = "infernals.1003.a"
 		from = {
@@ -2010,19 +1940,19 @@ ship_event = {
 }
 
 ### Anomaly: Tectonic Icebreaker
+
 ship_event = {
 	id = infernals.1004
 	title = "infernals.1004.name"
 	desc = "infernals.1004.desc"
 	picture = GFX_evt_molten
 	show_sound = event_mystic_reveal
-	location = FROM
+	location = from
 	is_triggered_only = yes
 
 	trigger = {
 		has_infernals = yes
 	}
-
 	option = {
 		name = "infernals.1004.a"
 		from = {
@@ -2034,7 +1964,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "infernals.1004.b"
 		from = { start_terraform_process = pc_arid }
@@ -2042,6 +1971,7 @@ ship_event = {
 }
 
 ### Anomaly: Infernal Oasis
+
 ship_event = {
 	id = infernals.505
 	title = infernals.505.name
@@ -2054,7 +1984,6 @@ ship_event = {
 	trigger = {
 		has_infernals = yes
 	}
-
 	option = {
 		name = infernals.505.a
 		trigger = { owner = { is_gestalt = no } }
@@ -2062,12 +1991,9 @@ ship_event = {
 			add_modifier = { modifier = volcanic_oasis }
 		}
 	}
-
 	option = {
 		name = FASCINATING
-		trigger = {
-			owner = { is_gestalt = yes }
-		}
+		trigger = { owner = { is_gestalt = yes } }
 		from = {
 			add_modifier = { modifier = volcanic_oasis }
 		}
@@ -2081,13 +2007,12 @@ ship_event = {
 	title = infernals.56.name
 	desc = infernals.56.desc
 	picture = GFX_evt_molten
-	location = ROOT
+	location = root
 	is_triggered_only = yes
 
 	trigger = {
 		has_infernals = yes
 	}
-
 	option = {
 		name = infernals.56.a
 		from = { add_deposit = d_living_metal_deposit }
@@ -2107,7 +2032,6 @@ ship_event = {
 	trigger = {
 		has_infernals = yes
 	}
-
 	option = {
 		name = infernals.3205.a
 		from = { add_deposit = d_physics_3 }
@@ -2115,18 +2039,18 @@ ship_event = {
 }
 
 ## Mysterious Ringing anomaly
+
 ship_event = {
 	id = infernals.3210
 	title = infernals.3210.name
 	desc = infernals.3210.desc
 	picture = GFX_evt_molten
-	location = ROOT
+	location = root
 	is_triggered_only = yes
 
 	trigger = {
 		has_infernals = yes
 	}
-
 	option = {
 		name = infernals.3210.a
 		owner = {
@@ -2138,12 +2062,9 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.3210.b
-		trigger = {
-			owner = { is_homicidal = no }
-		}
+		trigger = { owner = { is_homicidal = no } }
 		owner = {
 			create_species = {
 				name = random
@@ -2156,13 +2077,14 @@ ship_event = {
 				species = last_created_species
 				name = random
 				skill = 4
-				traits = { trait = leader_trait_hibernating }
+				traits = {
+					trait = leader_trait_hibernating
+				}
 				event_leader = yes
 			}
 		}
 		custom_tooltip = infernals.3210.btt
 	}
-
 	option = {
 		name = infernals.3210.c
 		trigger = {
@@ -2202,7 +2124,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.2500.a
 		enable_special_project = {
@@ -2217,12 +2138,10 @@ country_event = {
 country_event = {
 	id = infernals.2505
 	title = infernals.2505.name
-
 	desc = {
 		trigger = { is_gestalt = no }
 		text = infernals.2505.desc.a
 	}
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = infernals.2505.desc.b
@@ -2231,7 +2150,6 @@ country_event = {
 	picture = GFX_evt_inf_underground_cavern
 	show_sound = event_ancient_drone
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.2505.a
 		start_situation = { type = situation_cosmic_dawn target = root.capital }
@@ -2242,7 +2160,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.2505.b
 		start_situation = { type = situation_cosmic_dawn target = root.capital }
@@ -2253,7 +2170,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.2505.c
 		trigger = { is_megacorp = yes }
@@ -2265,7 +2181,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		capital_scope = {
 			create_pop_group = { species = owner }
@@ -2277,16 +2192,12 @@ country_event = {
 situation_event = {
 	id = infernals.2510
 	title = infernals.2510.name
-
 	desc = {
 		trigger = { owner = { is_gestalt = no } }
 		text = infernals.2510.desc.a
 	}
-
 	desc = {
-		trigger = {
-			owner = { is_gestalt = yes }
-		}
+		trigger = { owner = { is_gestalt = yes } }
 		text = infernals.2510.desc.b
 	}
 
@@ -2294,7 +2205,6 @@ situation_event = {
 	show_sound = event_activating_unknown_technology
 	situation = this
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.2510.a
 		owner = {
@@ -2306,7 +2216,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.2510.b
 		owner = {
@@ -2318,7 +2227,6 @@ situation_event = {
 			}
 		}
 	}
-
 	after = {
 		if = {
 			limit = {
@@ -2377,7 +2285,6 @@ situation_event = {
 			owner.capital_scope = { save_event_target_as = homeworld }
 		}
 	}
-
 	option = {
 		name = infernals.2515.a
 		custom_tooltip = infernals.2515.a.tt
@@ -2395,7 +2302,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.2515.b
 		custom_tooltip = infernals.2515.b.tt
@@ -2412,7 +2318,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.2515.c
 		custom_tooltip = infernals.2515.c.tt
@@ -2423,7 +2328,6 @@ situation_event = {
 			custom_tooltip = cosmic_dawn_districtsize
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			owner = {
@@ -2501,12 +2405,8 @@ country_event = {
 				save_event_target_as = leader
 			}
 		}
-		begin_event_chain = {
-			event_chain = cosmic_dawn_anomalies_event_chain
-			target = this
-		}
+		begin_event_chain = { event_chain = cosmic_dawn_anomalies_event_chain target = this }
 	}
-
 	option = {
 		name = infernals.2520.a
 		# grants Carefree to a random scientist
@@ -2518,14 +2418,15 @@ country_event = {
 				class = scientist
 				species = owner_species
 				name = random
-				effect = { save_event_target_as = leader }
+				effect = {
+					save_event_target_as = leader
+				}
 			}
 		}
 		event_target:leader = {
 			add_trait = { trait = leader_trait_carefree show_message = yes }
 		}
 	}
-
 	option = {
 		name = infernals.2520.b
 		# extra unity
@@ -2536,7 +2437,6 @@ country_event = {
 			max = @tier2unitymax
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			capital_scope.solar_system = {
@@ -2638,7 +2538,6 @@ ship_event = {
 	show_sound = event_dig_site
 	is_triggered_only = yes
 	event_chain = cosmic_dawn_anomalies_event_chain
-
 	option = {
 		name = infernals.2525.a
 		trigger = { owner = { is_gestalt = no } }
@@ -2654,7 +2553,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.2525.b
 		trigger = { owner = { is_gestalt = no } }
@@ -2667,12 +2565,9 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.2525.c
-		trigger = {
-			owner = { is_gestalt = yes }
-		}
+		trigger = { owner = { is_gestalt = yes } }
 		owner = {
 			capital_scope = {
 				create_pop_group = { species = owner size = 200 }
@@ -2685,7 +2580,6 @@ ship_event = {
 			}
 		}
 	}
-
 	after = {
 		owner = {
 			hidden_effect = {
@@ -2790,7 +2684,6 @@ ship_event = {
 	show_sound = event_dig_site
 	is_triggered_only = yes
 	event_chain = cosmic_dawn_anomalies_event_chain
-
 	option = {
 		name = infernals.2530.a
 		allow = {
@@ -2803,7 +2696,6 @@ ship_event = {
 			country_event = { id = infernals.2531 years = 2 }
 		}
 	}
-
 	option = {
 		name = infernals.2530.b
 		custom_tooltip = infernals.2530.b.tt
@@ -2816,13 +2708,10 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.2530.c
 		custom_tooltip = infernals.2530.b.tt
-		trigger = {
-			owner = { is_gestalt = yes }
-		}
+		trigger = { owner = { is_gestalt = yes } }
 		owner = {
 			hidden_effect = {
 				capital_scope = {
@@ -2831,7 +2720,6 @@ ship_event = {
 			}
 		}
 	}
-
 	after = {
 		owner = {
 			hidden_effect = {
@@ -2933,7 +2821,6 @@ country_event = {
 	picture = GFX_evt_big_landing_ship
 	show_sound = event_ship_bridge
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.2531.a
 		custom_tooltip = infernals.2531.a.tt
@@ -2951,7 +2838,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.2531.b
 		custom_tooltip = infernals.2531.b.tt
@@ -2970,7 +2856,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.2531.c
 		custom_tooltip = infernals.2531.c.tt
@@ -2994,7 +2879,6 @@ ship_event = {
 	show_sound = event_door_opening
 	is_triggered_only = yes
 	event_chain = cosmic_dawn_anomalies_event_chain
-
 	option = {
 		name = infernals.2535.a
 		owner = {
@@ -3007,7 +2891,6 @@ ship_event = {
 			give_specimen = { key = infernal_stasispod }
 		}
 	}
-
 	option = {
 		name = infernals.2535.b
 		trigger = {
@@ -3022,7 +2905,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.2535.c
 		owner = {
@@ -3034,7 +2916,6 @@ ship_event = {
 			}
 		}
 	}
-
 	after = {
 		owner = {
 			end_event_chain = cosmic_dawn_anomalies_event_chain
@@ -3071,7 +2952,6 @@ situation_event = {
 		# The other flags stop it too but are needed for the tooltips
 		owner = { set_country_flag = CD_situation_trigger }
 	}
-
 	option = {
 		name = infernals.2540.a
 		owner = {
@@ -3085,7 +2965,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.2540.b
 		owner = {
@@ -3105,7 +2984,6 @@ country_event = {
 	picture = GFX_evt_archaeologists_escaping
 	show_sound = event_planetary_riot
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.2545.a
 		custom_tooltip = infernals.2545.a.tt
@@ -3143,7 +3021,6 @@ country_event = {
 			capital_scope = { change_planet_size = 1 }
 		}
 	}
-
 	option = {
 		name = infernals.2545.b
 		custom_tooltip = infernals.2545.b.tt
@@ -3172,7 +3049,6 @@ country_event = {
 	picture = GFX_evt_discovered_hidden_door
 	show_sound = event_mystic_reveal
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.2550.a
 		custom_tooltip = infernals.2550.a.tt
@@ -3190,7 +3066,6 @@ country_event = {
 			remove_country_flag = has_cd_bribe_project
 		}
 	}
-
 	after = {
 		if = {
 			limit = {
@@ -3214,16 +3089,12 @@ country_event = {
 situation_event = {
 	id = infernals.2555
 	title = infernals.2555.name
-
 	desc = {
 		trigger = {
-			NOT = {
-				owner = { has_country_flag = has_infernals_2545 }
-			}
+			NOT = { owner = { has_country_flag = has_infernals_2545 } }
 		}
 		text = infernals.2555.desc.a
 	}
-
 	desc = {
 		trigger = {
 			owner = { has_country_flag = has_infernals_2545 }
@@ -3235,7 +3106,6 @@ situation_event = {
 	show_sound = event_yellow_alert
 	situation = this
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.2555.a
 		trigger = {
@@ -3259,7 +3129,6 @@ situation_event = {
 			country_event = { id = infernals.2560 days = 7 }
 		}
 	}
-
 	option = {
 		name = infernals.2555.b
 		trigger = {
@@ -3283,7 +3152,6 @@ situation_event = {
 			country_event = { id = infernals.2565 days = 7 }
 		}
 	}
-
 	option = {
 		name = infernals.2555.c
 		allow = {
@@ -3303,7 +3171,6 @@ situation_event = {
 			country_event = { id = infernals.2570 days = 7 }
 		}
 	}
-
 	option = {
 		name = infernals.2555.d
 		allow = {
@@ -3323,7 +3190,6 @@ situation_event = {
 			country_event = { id = infernals.2575 days = 7 }
 		}
 	}
-
 	after = {
 		if = {
 			limit = {
@@ -3355,7 +3221,6 @@ country_event = {
 	picture = GFX_evt_laser_grid
 	show_sound = event_collapsing_ruins
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.2560.a
 		add_monthly_resource_mult = {
@@ -3375,7 +3240,6 @@ country_event = {
 	picture = GFX_evt_scanning_remains
 	show_sound = event_assembly_fight
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.2565.a
 		add_monthly_resource_mult = {
@@ -3391,14 +3255,12 @@ country_event = {
 country_event = {
 	id = infernals.2570
 	title = infernals.2570.name
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = has_infernals_2545 }
 		}
 		text = infernals.2570.desc.a
 	}
-
 	desc = {
 		trigger = { has_country_flag = has_infernals_2545 }
 		text = infernals.2570.desc.b
@@ -3407,7 +3269,6 @@ country_event = {
 	picture = GFX_evt_society_research
 	show_sound = event_celebration
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.2570.a
 		custom_tooltip = infernals.2570.a.tt
@@ -3422,7 +3283,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.2570.b
 		custom_tooltip = infernals.2570.b.tt
@@ -3439,7 +3299,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.2570.c
 		custom_tooltip = infernals.2570.c.tt
@@ -3460,7 +3319,6 @@ country_event = {
 	picture = GFX_evt_scanning_remains
 	show_sound = event_mystic_reveal
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.2575.a
 		trigger = { is_gestalt = no }
@@ -3471,7 +3329,6 @@ country_event = {
 			max = @tier2unitymax
 		}
 	}
-
 	option = {
 		name = infernals.2575.b
 		trigger = { is_gestalt = yes }
@@ -3529,7 +3386,6 @@ situation_event = {
 			add_deposit = d_volcanic_weak_crust
 		}
 	}
-
 	option = {
 		name = infernals.2580.a
 		owner = {
@@ -3553,7 +3409,6 @@ situation_event = {
 		}
 		custom_tooltip = cosmic_dawn_tunnel_foundry
 	}
-
 	option = {
 		name = infernals.2580.b
 		custom_tooltip = infernals.2580.b.tt
@@ -3578,7 +3433,6 @@ situation_event = {
 		}
 		custom_tooltip = cosmic_dawn_tunnel_bureaucrat
 	}
-
 	option = {
 		name = infernals.2580.c
 		owner = {
@@ -3608,7 +3462,6 @@ situation_event = {
 		}
 		custom_tooltip = cosmic_dawn_tunnel_researcher
 	}
-
 	option = {
 		name = infernals.2580.d
 		owner = {
@@ -3624,7 +3477,6 @@ situation_event = {
 		}
 		custom_tooltip = cosmic_dawn_tunnel_worker
 	}
-
 	after = {
 		owner = { add_relic = r_pyroglyphic_codex }
 		event_target:homeworld = {
@@ -3661,6 +3513,7 @@ planet_event = {
 ######## Volcanic Colony Events
 # on_colony_1_year_old + on_monthly_pulse_pre_ftl_observation
 ### Imminent Eruption
+
 planet_event = {
 	id = infernals.3000
 	title = infernals.3000.name
@@ -3683,7 +3536,6 @@ planet_event = {
 	immediate = {
 		owner = { set_country_flag = triggered_imminent_erruption }
 	}
-
 	option = {
 		name = infernals.3000.a
 		allow = {
@@ -3694,14 +3546,11 @@ planet_event = {
 				}
 			}
 		}
-		owner = {
-			add_resource = { energy = -500 }
-		}
+		owner = { add_resource = { energy = -500 } }
 		hidden_effect = {
 			planet_event = { id = infernals.3005 days = 5 }
 		}
 	}
-
 	option = {
 		name = infernals.3000.b
 		hidden_effect = {
@@ -3711,14 +3560,12 @@ planet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.3000.c
 		hidden_effect = {
 			planet_event = { id = infernals.3020 days = 5 }
 		}
 	}
-
 	option = {
 		name = infernals.3000.d
 		hidden_effect = {
@@ -3736,7 +3583,6 @@ planet_event = {
 	show_sound = event_celebration
 	location = this
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 	}
@@ -3751,7 +3597,6 @@ planet_event = {
 	show_sound = event_burning_city
 	location = this
 	is_triggered_only = yes
-
 	option = {
 		name = UNFORTUNATE
 		random_owned_pop_group = {
@@ -3769,7 +3614,6 @@ planet_event = {
 	show_sound = event_mystic_reveal
 	location = this
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.3015.a
 		owner = {
@@ -3792,7 +3636,6 @@ planet_event = {
 	show_sound = event_mystic_reveal
 	location = this
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		owner = {
@@ -3815,7 +3658,6 @@ planet_event = {
 	show_sound = event_dig_site
 	location = this
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		owner = {
@@ -3830,6 +3672,7 @@ planet_event = {
 }
 
 ### Lava Sports
+
 planet_event = {
 	id = infernals.3030
 	title = infernals.3030.name
@@ -3855,7 +3698,6 @@ planet_event = {
 	immediate = {
 		owner = { set_country_flag = triggered_lava_sports }
 	}
-
 	option = {
 		name = infernals.3030.a
 		hidden_effect = {
@@ -3866,7 +3708,6 @@ planet_event = {
 			give_specimen = { key = lava_surfboard }
 		}
 	}
-
 	option = {
 		name = infernals.3030.b
 		hidden_effect = {
@@ -3876,7 +3717,6 @@ planet_event = {
 			give_specimen = { key = lava_surfboard }
 		}
 	}
-
 	option = {
 		name = infernals.3030.c
 		hidden_effect = {
@@ -3894,7 +3734,6 @@ planet_event = {
 	show_sound = event_celebration
 	location = this
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.3035.a
 		add_modifier = { modifier = lava_sports_flow years = 5 }
@@ -3910,7 +3749,6 @@ planet_event = {
 	show_sound = event_announcement
 	location = this
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.3040.a
 		add_modifier = { modifier = lava_sports_regulated years = 5 }
@@ -3926,7 +3764,6 @@ planet_event = {
 	show_sound = event_public_unrest
 	location = this
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.3045.a
 		add_modifier = { modifier = lava_sports_banned years = 5 }
@@ -3992,14 +3829,12 @@ country_event = {
 	immediate = {
 		set_observation_events_locked = yes
 	}
-
 	option = {
 		name = infernals.3055.a
 		hidden_effect = {
 			country_event = { id = infernals.3060 days = 5 }
 		}
 	}
-
 	option = {
 		name = infernals.3055.b
 		hidden_effect = {
@@ -4009,7 +3844,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -4024,7 +3858,6 @@ country_event = {
 	show_sound = event_pre_ftl_civilization
 	location = event_target:pre_ftl_planet
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.3060.a
 		add_monthly_resource_mult = {
@@ -4045,7 +3878,6 @@ country_event = {
 	show_sound = event_public_unrest
 	location = event_target:pre_ftl_planet
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.3065.a
 		add_resource = { energy = -450 }
@@ -4068,7 +3900,6 @@ country_event = {
 	show_sound = event_pre_ftl_civilization
 	location = event_target:pre_ftl_planet
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.3070.a
 		add_monthly_resource_mult = {
@@ -4137,7 +3968,6 @@ ship_event = {
 	title = infernals.2115.name
 	desc = infernals.2115.desc
 	picture = GFX_evt_salute
-
 	option = {
 		name = infernals.2115.a # blow it up
 		if = {
@@ -4168,7 +3998,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.2115.b # Interrogate
 		trigger = {
@@ -4181,7 +4010,6 @@ ship_event = {
 		}
 		ship_event = { id = infernals.2125 days = 20 }
 	}
-
 	option = {
 		name = infernals.2115.c # Enslave
 		trigger = {
@@ -4208,7 +4036,6 @@ ship_event = {
 		}
 		ship_event = { id = infernals.2130 days = 30 }
 	}
-
 	option = {
 		name = infernals.2115.d	# Eliminate
 		trigger = {
@@ -4232,7 +4059,6 @@ ship_event = {
 		}
 		ship_event = { id = infernals.2130 days = 30 }
 	}
-
 	option = {
 		name = infernals.2115.e # Speak, same as interrogate
 		trigger = {
@@ -4246,12 +4072,9 @@ ship_event = {
 		}
 		ship_event = { id = infernals.2125 days = 15 }
 	}
-
 	option = {
 		name = infernals.2115.f	# Purge
-		trigger = {
-			owner = { is_homicidal = yes }
-		}
+		trigger = { owner = { is_homicidal = yes } }
 		owner = {
 			add_monthly_resource_mult = {
 				resource = unity
@@ -4262,7 +4085,6 @@ ship_event = {
 		}
 		ship_event = { id = infernals.2130 days = 30 }
 	}
-
 	option = {
 		name = infernals.2115.g	# Eat -> Must be hive or necrophage, lusus miners must be edible
 		trigger = {
@@ -4399,7 +4221,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.2121.a
 		event_target:situation_red_giant_expansion@root = {
@@ -4451,7 +4272,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = ACKNOWLEDGED
 	}
@@ -4464,11 +4284,8 @@ ship_event = {
 	title = infernals.2125.name
 	desc = infernals.2125.desc
 	picture = GFX_evt_astral_rift_desert_ruins_third_chamber
-
 	option = {
-		trigger = {
-			owner = { is_homicidal = no }
-		}
+		trigger = { owner = { is_homicidal = no } }
 		name = infernals.2125.a
 		owner = {
 			add_monthly_resource_mult = {
@@ -4487,13 +4304,14 @@ ship_event = {
 				create_pop_group = {
 					size = 400
 					species = event_target:lusus_species
-					effect = { save_event_target_as = last_created_pop_group }
+					effect = {
+						save_event_target_as = last_created_pop_group
+					}
 				}
 			}
 		}
 		ship_event = { id = infernals.2131 days = 30 }
 	}
-
 	option = {
 		name = infernals.2125.b # send them off
 		owner = {
@@ -4513,7 +4331,6 @@ ship_event = {
 		}
 		ship_event = { id = infernals.2131 days = 30 }
 	}
-
 	option = {
 		name = infernals.2115.c # Enslave (same as 2115)
 		trigger = {
@@ -4540,12 +4357,9 @@ ship_event = {
 		}
 		ship_event = { id = infernals.2130 days = 30 }
 	}
-
 	option = {
 		name = infernals.2125.c # Vent them
-		trigger = {
-			owner = { allows_purge = yes }
-		}
+		trigger = { owner = { allows_purge = yes } }
 		owner = {
 			if = {
 				limit = { is_gestalt = no }
@@ -4559,12 +4373,9 @@ ship_event = {
 		}
 		ship_event = { id = infernals.2130 days = 30 }
 	}
-
 	option = {
 		name = infernals.2125.d
-		trigger = {
-			owner = { is_pacifist = yes }
-		}
+		trigger = { owner = { is_pacifist = yes } }
 		ship_event = { id = infernals.2135 days = 30 }
 	}
 }
@@ -4592,7 +4403,6 @@ ship_event = {
 			set_situation_approach = approach_stabilize_the_star4 # so theres always an approach selected even if players dont accept the option
 		}
 	}
-
 	option = {
 		name = infernals.2130.a
 		event_target:situation_red_giant_expansion@owner = {
@@ -4621,7 +4431,6 @@ ship_event = {
 			country_event = { id = infernals.2140 months = 24 }
 		}
 	}
-
 	option = {
 		name = infernals.2130.a
 		event_target:situation_red_giant_expansion@owner = {
@@ -4643,7 +4452,6 @@ ship_event = {
 			target = { save_event_target_as = situation_red_giant_target_shortterm }
 		}
 	}
-
 	option = {
 		name = infernals.2135.a
 		trigger = {
@@ -4683,7 +4491,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.2135.b
 		owner = {
@@ -4701,7 +4508,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.2135.c
 		trigger = {
@@ -4742,12 +4548,9 @@ ship_event = {
 		}
 		ship_event = { id = infernals.2130 days = 30 }
 	}
-
 	option = {
 		name = infernals.2115.f	# Purge
-		trigger = {
-			owner = { is_homicidal = yes }
-		}
+		trigger = { owner = { is_homicidal = yes } }
 		owner = {
 			add_monthly_resource_mult = {
 				resource = unity
@@ -4758,7 +4561,6 @@ ship_event = {
 		}
 		ship_event = { id = infernals.2130 days = 30 }
 	}
-
 	option = {
 		name = infernals.2115.g	# Eat -> Must be hive or necrophage, lusus miners must be edible
 		trigger = {
@@ -4785,7 +4587,6 @@ ship_event = {
 		}
 		ship_event = { id = infernals.2130 days = 30 }
 	}
-
 	after = {
 		if = {
 			limit = { exists = event_target:lusus_miner_station@owner }
@@ -4846,7 +4647,6 @@ country_event = {
 			set_situation_locked = yes
 		}
 	}
-
 	option = {
 		name = infernals.2140.a
 		hidden_effect = {
@@ -4857,7 +4657,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.2140.b
 		custom_tooltip = infernals.2140.bdesc
@@ -4870,7 +4669,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.2140.c
 		custom_tooltip = infernals.2140.cdesc
@@ -4932,11 +4730,9 @@ situation_event = {
 			remove_point_of_interest = red_giant_lusus_event_poi
 		}
 	}
-
 	option = {
 		name = infernals.2145.a
 	}
-
 	after = {
 		if = {
 			limit = { current_stage = stage_1 }
@@ -5208,7 +5004,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.2151.a
 		event_target:lusus_miner_station@root = {
@@ -5226,7 +5021,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.2151.b
 		event_target:lusus_miner_station@root = {
@@ -5250,7 +5044,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.2151.c
 		event_target:lusus_miner_station@root = {
@@ -5262,7 +5055,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		event_target:lusus_miner_station@root = { set_event_locked = no }
 	}
@@ -5302,7 +5094,6 @@ country_event = {
 	immediate = {
 		country_event = { id = infernals.2155 months = 12 } # clean up any leftovers once the origin is for sure done
 	}
-
 	option = {
 		name = infernals.2160.a
 		custom_tooltip = infernals.2160.a.tt
@@ -5322,7 +5113,6 @@ country_event = {
 			key = infernal_burning_gem
 		}
 	}
-
 	option = {
 		name = infernals.2160.b
 		add_monthly_resource_mult = {
@@ -5332,7 +5122,6 @@ country_event = {
 			max = @tier3unitymax
 		}
 	}
-
 	option = {
 		name = infernals.2160.c
 		trigger = { has_country_flag = red_giant_discovered_crystallized_entropy }
@@ -5347,6 +5136,7 @@ country_event = {
 
 # Archaeological Sites - 2700 and beyond
 ## From the Ashes
+
 fleet_event = {
 	id = infernals.2700
 	title = infernals.2700.name
@@ -5359,12 +5149,10 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	option = {
 		name = FASCINATING
 		small_artifact_reward = yes
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
@@ -5382,12 +5170,10 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	option = {
 		name = KEEP_SEARCHING
 		small_artifact_reward = yes
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
@@ -5405,12 +5191,10 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	option = {
 		name = DIG
 		medium_artifact_reward = yes
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
@@ -5428,7 +5212,6 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	option = {
 		name = infernals.2715.a
 		trigger = {
@@ -5439,7 +5222,6 @@ fleet_event = {
 			give_specimen = { key = infernal_figurine }
 		}
 	}
-
 	option = {
 		name = infernals.2715.b
 		trigger = {
@@ -5450,13 +5232,13 @@ fleet_event = {
 			give_specimen = { key = infernal_figurine }
 		}
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
 }
 
 ## Inferno Temple
+
 fleet_event = {
 	id = infernals.2720
 	title = infernals.2720.name
@@ -5469,12 +5251,10 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	option = {
 		name = INTERESTING
 		small_artifact_reward = yes
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
@@ -5492,21 +5272,16 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	option = {
 		name = infernals.2725.a
 		trigger = { owner = { is_gestalt = no } }
 		small_artifact_reward = yes
 	}
-
 	option = {
 		name = infernals.2725.b
-		trigger = {
-			owner = { is_gestalt = yes }
-		}
+		trigger = { owner = { is_gestalt = yes } }
 		small_artifact_reward = yes
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
@@ -5524,12 +5299,10 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	option = {
 		name = INCREDIBLE
 		medium_artifact_reward = yes
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
@@ -5547,7 +5320,6 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	option = {
 		name = infernals.2735.a
 		custom_tooltip = infernals.2735.a.tt
@@ -5560,9 +5332,7 @@ fleet_event = {
 		allow = {
 			custom_tooltip = {
 				fail_text = "infernals.2735.a.fail"
-				NOT = {
-					owner = { has_policy_flag = interference_not_allowed }
-				}
+				NOT = { owner = { has_policy_flag = interference_not_allowed } }
 			}
 		}
 		large_artifact_reward = yes
@@ -5572,7 +5342,6 @@ fleet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.2735.b
 		trigger = {
@@ -5595,7 +5364,6 @@ fleet_event = {
 		}
 		large_artifact_reward = yes
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
@@ -5625,7 +5393,6 @@ planet_event = {
 	immediate = {
 		owner = { set_country_flag = triggered_molten_core }
 	}
-
 	option = {
 		name = infernals.3200.a
 		custom_tooltip = infernals.3200.a.accept
@@ -5633,7 +5400,6 @@ planet_event = {
 			give_specimen = { key = infernal_molten_core }
 		}
 	}
-
 	option = {
 		name = infernals.3200.b
 		custom_tooltip = infernals.3200.b.deny
@@ -5715,10 +5481,7 @@ planet_event = {
 			owner = { set_country_flag = INF_A_burning_heaven }
 		}
 		owner = {
-			create_variable_if_not_exists = {
-				VARIABLE = INF_A_10_volcanics_var
-				VALUE_IF_CREATED = 0
-			}
+			create_variable_if_not_exists = { VARIABLE = INF_A_10_volcanics_var VALUE_IF_CREATED = 0 }
 			change_variable = { which = INF_A_10_volcanics_var value = 1 }
 			if = {
 				limit = {
@@ -5729,4 +5492,3 @@ planet_event = {
 		}
 	}
 }
-

@@ -29,50 +29,26 @@ country_event = {
 			limit = {
 				species = { is_same_species = from.target.species }
 			}
-			country_event = {
-				id = espionage.18
-				days = 5
-				scopes = { from = from }
-			}
+			country_event = { id = espionage.18 days = 5 scopes = { from = from } }
 		}
 		else_if = {
 			limit = { is_hive_empire = yes }
-			country_event = {
-				id = espionage.10
-				days = 5
-				scopes = { from = from }
-			}
+			country_event = { id = espionage.10 days = 5 scopes = { from = from } }
 		}
 		else_if = {
 			limit = { is_machine_empire = yes }
-			country_event = {
-				id = espionage.11
-				days = 5
-				scopes = { from = from }
-			}
+			country_event = { id = espionage.11 days = 5 scopes = { from = from } }
 		}
 		else_if = {
 			limit = { is_xenophobe = yes }
-			country_event = {
-				id = espionage.16
-				days = 5
-				scopes = { from = from }
-			}
+			country_event = { id = espionage.16 days = 5 scopes = { from = from } }
 		}
 		else_if = {
 			limit = { is_authoritarian = yes }
-			country_event = {
-				id = espionage.17
-				days = 5
-				scopes = { from = from }
-			}
+			country_event = { id = espionage.17 days = 5 scopes = { from = from } }
 		}
 		else = {
-			country_event = {
-				id = espionage.15
-				days = 5
-				scopes = { from = from }
-			}
+			country_event = { id = espionage.15 days = 5 scopes = { from = from } }
 		}
 		set_country_flag = first_spynetwork
 	}
@@ -90,7 +66,6 @@ country_event = {
 	trigger = {
 		exists = from.target
 	}
-
 	option = {
 		name = INTERESTING
 	}
@@ -108,7 +83,6 @@ country_event = {
 	trigger = {
 		exists = from.target
 	}
-
 	option = {
 		name = INTERESTING
 	}
@@ -126,7 +100,6 @@ country_event = {
 	trigger = {
 		exists = from.target
 	}
-
 	option = {
 		name = OK
 	}
@@ -145,7 +118,6 @@ country_event = {
 		exists = from.target
 		is_xenophobe = yes
 	}
-
 	option = {
 		name = SCUM
 	}
@@ -163,7 +135,6 @@ country_event = {
 	trigger = {
 		exists = from.target
 	}
-
 	option = {
 		name = EXCELLENT
 	}
@@ -181,7 +152,6 @@ country_event = {
 	trigger = {
 		exists = from.target
 	}
-
 	option = {
 		name = EXCELLENT
 	}
@@ -210,50 +180,26 @@ country_event = {
 			limit = {
 				species = { is_same_species = from.target.species }
 			}
-			country_event = {
-				id = espionage.21
-				days = 5
-				scopes = { from = from }
-			}
+			country_event = { id = espionage.21 days = 5 scopes = { from = from } }
 		}
 		else_if = {
 			limit = { is_hive_empire = yes }
-			country_event = {
-				id = espionage.22
-				days = 5
-				scopes = { from = from }
-			}
+			country_event = { id = espionage.22 days = 5 scopes = { from = from } }
 		}
 		else_if = {
 			limit = { is_machine_empire = yes }
-			country_event = {
-				id = espionage.23
-				days = 5
-				scopes = { from = from }
-			}
+			country_event = { id = espionage.23 days = 5 scopes = { from = from } }
 		}
 		else_if = {
 			limit = { is_xenophobe = yes }
-			country_event = {
-				id = espionage.24
-				days = 5
-				scopes = { from = from }
-			}
+			country_event = { id = espionage.24 days = 5 scopes = { from = from } }
 		}
 		else_if = {
 			limit = { is_xenophile = yes }
-			country_event = {
-				id = espionage.25
-				days = 5
-				scopes = { from = from }
-			}
+			country_event = { id = espionage.25 days = 5 scopes = { from = from } }
 		}
 		else = {
-			country_event = {
-				id = espionage.26
-				days = 5
-				scopes = { from = from }
-			}
+			country_event = { id = espionage.26 days = 5 scopes = { from = from } }
 		}
 		set_country_flag = first_preftl_spynetwork
 	}
@@ -263,14 +209,12 @@ country_event = {
 country_event = {
 	id = espionage.21
 	title = "espionage.21.name"
-
 	desc = {
 		trigger = {
 			from.target = { current_awareness_level < high }
 		}
 		text = "espionage.21.desc"
 	}
-
 	desc = {
 		trigger = {
 			from.target = { current_awareness_level >= high }
@@ -286,7 +230,6 @@ country_event = {
 	trigger = {
 		exists = from.target
 	}
-
 	option = {
 		name = EXCELLENT
 	}
@@ -305,7 +248,6 @@ country_event = {
 	trigger = {
 		exists = from.target
 	}
-
 	option = {
 		name = INTERESTING
 	}
@@ -315,14 +257,12 @@ country_event = {
 country_event = {
 	id = espionage.23
 	title = "espionage.23.name"
-
 	desc = {
 		trigger = {
 			from.target = { current_awareness_level < high }
 		}
 		text = "espionage.23.desc"
 	}
-
 	desc = {
 		trigger = {
 			from.target = { current_awareness_level >= high }
@@ -338,7 +278,6 @@ country_event = {
 	trigger = {
 		exists = from.target
 	}
-
 	option = {
 		name = INTERESTING
 	}
@@ -348,14 +287,12 @@ country_event = {
 country_event = {
 	id = espionage.24
 	title = "espionage.21.name"
-
 	desc = {
 		trigger = {
 			from.target = { current_awareness_level < high }
 		}
 		text = "espionage.24.desc"
 	}
-
 	desc = {
 		trigger = {
 			from.target = { current_awareness_level >= high }
@@ -371,7 +308,6 @@ country_event = {
 	trigger = {
 		exists = from.target
 	}
-
 	option = {
 		name = SCUM
 	}
@@ -381,14 +317,12 @@ country_event = {
 country_event = {
 	id = espionage.25
 	title = "espionage.21.name"
-
 	desc = {
 		trigger = {
 			from.target = { current_awareness_level < high }
 		}
 		text = "espionage.25.desc"
 	}
-
 	desc = {
 		trigger = {
 			from.target = { current_awareness_level >= high }
@@ -404,7 +338,6 @@ country_event = {
 	trigger = {
 		exists = from.target
 	}
-
 	option = {
 		name = GOOD
 	}
@@ -414,14 +347,12 @@ country_event = {
 country_event = {
 	id = espionage.26
 	title = "espionage.21.name"
-
 	desc = {
 		trigger = {
 			from.target = { current_awareness_level < high }
 		}
 		text = "espionage.26.desc"
 	}
-
 	desc = {
 		trigger = {
 			from.target = { current_awareness_level >= high }
@@ -437,7 +368,6 @@ country_event = {
 	trigger = {
 		exists = from.target
 	}
-
 	option = {
 		name = OK
 	}
@@ -536,12 +466,10 @@ country_event = {
 country_event = {
 	id = espionage.1001
 	title = espionage.1001.name
-
 	desc = {
 		text = espionage.1001.desc.network
 		trigger = { has_active_spynetwork = yes }
 	}
-
 	desc = {
 		text = espionage.1001.desc.nonetwork
 		trigger = { has_active_spynetwork = no }
@@ -554,18 +482,12 @@ country_event = {
 	trigger = {
 		exists = event_target:disavowed_agent_country
 	}
-
 	option = { # Ignore
 		name = espionage.1001.a
 		hidden_effect = {
-			country_event = {
-				id = espionage.1005
-				days = 20
-				random = 5
-			}
+			country_event = { id = espionage.1005 days = 20 random = 5 }
 		}
 	}
-
 	option = { # Extract the operative
 		name = espionage.1001.b
 		trigger = {
@@ -583,14 +505,9 @@ country_event = {
 			add_spy_network_level = -10
 		}
 		hidden_effect = {
-			country_event = {
-				id = espionage.1020
-				days = 30
-				random = 5
-			}
+			country_event = { id = espionage.1020 days = 30 random = 5 }
 		}
 	}
-
 	after = {
 		begin_event_chain = { event_chain = operative_resurfaces_chain target = root }
 		hidden_effect = {
@@ -613,14 +530,12 @@ country_event = {
 		exists = event_target:disavowed_agent_country
 		has_event_chain = operative_resurfaces_chain
 	}
-
 	option = { # Ignore
 		name = espionage.1005.a
 		hidden_effect = {
 			country_event = { id = espionage.1010 days = 80 }
 		}
 	}
-
 	option = { # Extract the operative
 		name = espionage.1005.b
 		trigger = {
@@ -637,13 +552,10 @@ country_event = {
 			country_event = { id = espionage.1020 days = 90 }
 		}
 	}
-
 	option = { # Attempt to kill the 'operative'
 		name = espionage.1005.c
 		trigger = {
-			NOT = {
-				event_target:disavowed_agent_country = { has_closed_borders = root }
-			}
+			NOT = { event_target:disavowed_agent_country = { has_closed_borders = root } }
 		}
 		hidden_effect = {
 			country_event = { id = espionage.1015 days = 80 }
@@ -677,10 +589,7 @@ country_event = {
 							event_target:disavowed_agent_country = { is_authoritarian = no }
 						}
 						root = {
-							relative_encryption_decryption = {
-								target = event_target:disavowed_agent_country
-								value < 0.75
-							}
+							relative_encryption_decryption = { target = event_target:disavowed_agent_country value < 0.75 }
 						}
 					}
 				}
@@ -727,7 +636,6 @@ country_event = {
 		exists = event_target:disavowed_agent_country
 		has_event_chain = operative_resurfaces_chain
 	}
-
 	option = {
 		name = GOOD
 		end_event_chain = operative_resurfaces_chain
@@ -738,12 +646,10 @@ country_event = {
 country_event = {
 	id = espionage.1012
 	title = espionage.1012.name
-
 	desc = {
 		text = espionage.1012.desc.official
 		trigger = { exists = event_target:disavowed_agent_official }
 	}
-
 	desc = {
 		text = espionage.1012.desc
 		trigger = {
@@ -775,21 +681,18 @@ country_event = {
 			add_opinion_modifier = { who = root modifier = opinion_disavowed_agent_caught }
 		}
 	}
-
 	option = {
 		name = UNFORTUNATE
 		event_target:disavowed_agent_country = {
 			add_opinion_modifier = { who = root modifier = opinion_disavowed_agent_caught }
 		}
 	}
-
 	option = {
 		name = ACKNOWLEDGED
 		event_target:disavowed_agent_country = {
 			add_opinion_modifier = { who = root modifier = opinion_disavowed_agent_caught }
 		}
 	}
-
 	after = {
 		end_event_chain = operative_resurfaces_chain
 	}
@@ -809,7 +712,6 @@ country_event = {
 		exists = event_target:disavowed_agent_country
 		has_event_chain = operative_resurfaces_chain
 	}
-
 	option = {
 		name = UNDERSTOOD
 		event_target:disavowed_agent_country = {
@@ -865,10 +767,7 @@ country_event = {
 				modifier = {
 					factor = 2
 					root = {
-						relative_encryption_decryption = {
-							target = event_target:disavowed_agent_country
-							value < 0.75
-						}
+						relative_encryption_decryption = { target = event_target:disavowed_agent_country value < 0.75 }
 					}
 				}
 				country_event = { id = espionage.1017 } # "The Phantom Operative"
@@ -881,12 +780,10 @@ country_event = {
 country_event = {
 	id = espionage.1016
 	title = espionage.1016.name
-
 	desc = {
 		text = espionage.1016.desc.network
 		trigger = { has_active_spynetwork = yes }
 	}
-
 	desc = {
 		text = espionage.1016.desc.nonetwork
 		trigger = { has_active_spynetwork = no }
@@ -901,7 +798,6 @@ country_event = {
 		exists = event_target:disavowed_agent_country
 		has_event_chain = operative_resurfaces_chain
 	}
-
 	option = {
 		name = ACKNOWLEDGED
 		end_event_chain = operative_resurfaces_chain
@@ -922,7 +818,6 @@ country_event = {
 		exists = event_target:disavowed_agent_country
 		has_event_chain = operative_resurfaces_chain
 	}
-
 	option = {
 		name = espionage.1017.a
 		if = {
@@ -966,10 +861,7 @@ country_event = {
 				modifier = {
 					factor = 2
 					root = {
-						relative_encryption_decryption = {
-							target = event_target:disavowed_agent_country
-							value > 1.1
-						}
+						relative_encryption_decryption = { target = event_target:disavowed_agent_country value > 1.1 }
 					}
 				}
 				country_event = { id = espionage.1017 } # "The Phantom Operative"
@@ -978,10 +870,7 @@ country_event = {
 				modifier = {
 					factor = 2
 					root = {
-						relative_encryption_decryption = {
-							target = event_target:disavowed_agent_country
-							value < 0.8
-						}
+						relative_encryption_decryption = { target = event_target:disavowed_agent_country value < 0.8 }
 					}
 				}
 				country_event = { id = espionage.1022 } # "It's a Ploy!"
@@ -1042,7 +931,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = GOOD
 		switch = {
@@ -1102,7 +990,6 @@ country_event = {
 		exists = event_target:disavowed_agent_country
 		has_event_chain = operative_resurfaces_chain
 	}
-
 	option = {
 		name = espionage.1022.a
 		random_spynetwork = {
@@ -1183,7 +1070,6 @@ country_event = {
 			2 = { set_country_flag = vividsight_4yr } # Redundant flag as far as event script is concerned, but useful for debugging
 		}
 	}
-
 	option = { # Embrace notoriety
 		name = espionage.1030.a
 		random_spynetwork = {
@@ -1219,7 +1105,6 @@ country_event = {
 		}
 		ai_chance = { factor = 1 }
 	}
-
 	option = { # Make adjustments to the operatives
 		allow = {
 			resource_stockpile_compare = { resource = energy value >= 600 }
@@ -1232,9 +1117,7 @@ country_event = {
 			text = espionage.1030.b.machine
 			trigger = { is_machine_empire = yes }
 		}
-		root = {
-			add_resource = { energy = -600 }
-		}
+		root = { add_resource = { energy = -600 } }
 		ai_chance = { factor = 3 }
 	}
 }
@@ -1246,7 +1129,6 @@ country_event = {
 country_event = {
 	id = espionage.1040
 	title = espionage.1040.name
-
 	desc = {
 		text = espionage.1040.desc.regular
 		trigger = {
@@ -1257,7 +1139,6 @@ country_event = {
 			event_target:luckycatch_country = { is_gestalt = no }
 		}
 	}
-
 	desc = {
 		text = espionage.1040.desc.gestalt
 		trigger = {
@@ -1268,12 +1149,10 @@ country_event = {
 			event_target:luckycatch_country = { is_gestalt = yes }
 		}
 	}
-
 	desc = {
 		text = espionage.1040.desc.caughtspies
 		trigger = { has_country_flag = espionage_caught_spies }
 	}
-
 	desc = {
 		text = espionage.1040.desc.caught
 		trigger = { has_country_flag = espionage_caught_saboteurs }
@@ -1336,7 +1215,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # as random event
 		name = EXCELLENT
 		trigger = {
@@ -1372,7 +1250,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # as triggered elsewhere
 		name = GOOD
 		trigger = {
@@ -1409,20 +1286,17 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		remove_country_flag = espionage_caught_spies
 		remove_country_flag = espionage_caught_saboteurs
-		set_timed_country_flag = {
-			flag = recently_received_espionage_asset
-			days = @AssetReceivedTimer
-		}
+		set_timed_country_flag = { flag = recently_received_espionage_asset days = @AssetReceivedTimer }
 	}
 }
 
 ####################################
 # FINDERS KEEPERS (decryption boon)
 ####################################
+
 country_event = {
 	id = espionage.1050
 	title = espionage.1050.name
@@ -1468,7 +1342,6 @@ country_event = {
 		}
 		set_timed_country_flag = { flag = recently_received_finderskeepers years = 7 }
 	}
-
 	option = {
 		name = EXCELLENT
 		root = {
@@ -1480,15 +1353,14 @@ country_event = {
 #######################################
 # STRAY COMMUNIQUÉ (encryption debuff)
 #######################################
+
 country_event = {
 	id = espionage.1060
 	title = espionage.1060.name
-
 	desc = {
 		trigger = { is_megacorp = no }
 		text = espionage.1060.desc
 	}
-
 	desc = {
 		trigger = { is_megacorp = yes }
 		text = espionage.1060.desc.corp
@@ -1536,7 +1408,6 @@ country_event = {
 		}
 		set_timed_country_flag = { flag = recently_dropped_finderskeepers years = 22 }
 	}
-
 	option = { # Accept the loss
 		name = {
 			trigger = {
@@ -1563,7 +1434,6 @@ country_event = {
 		}
 		ai_chance = { factor = 10 }
 	}
-
 	option = { # Sack a politician
 		name = espionage.1060.a
 		trigger = {
@@ -1585,7 +1455,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Sack an Executive or Steward (Corporates)
 		name = espionage.1060.b
 		trigger = {
@@ -1638,7 +1507,6 @@ country_event = {
 country_event = {
 	id = espionage.1070
 	title = espionage.1070.name
-
 	desc = {
 		text = espionage.1070.desc.identified
 		trigger = {
@@ -1650,7 +1518,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = espionage.1070.desc.identified.hostile
 		trigger = {
@@ -1662,7 +1529,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = espionage.1070.desc.unknown
 		trigger = {
@@ -1674,7 +1540,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = espionage.1070.desc.unknown.hostile
 		trigger = {
@@ -1735,7 +1600,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Keep quiet (known infiltrator)
 		name = espionage.1070.a
 		trigger = { has_country_flag = hostile_infiltrator_identified@from }
@@ -1786,16 +1650,12 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Protest (known infiltrator)
 		name = espionage.1070.b
 		trigger = { has_country_flag = hostile_infiltrator_identified@from }
 		add_resource = { influence = 20 }
 		root = {
-			add_opinion_modifier = {
-				who = event_target:hostile_infiltration_country
-				modifier = opinion_smear_campaign_espionage
-			}
+			add_opinion_modifier = { who = event_target:hostile_infiltration_country modifier = opinion_smear_campaign_espionage }
 		}
 		if = {
 			limit = {
@@ -1853,7 +1713,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Extort favours (known infiltrator)
 		name = espionage.1070.e
 		trigger = {
@@ -1895,7 +1754,6 @@ country_event = {
 		}
 		ai_chance = { factor = 1 }
 	}
-
 	option = { # Keep quiet (assumed infiltrator OR Smear Campaign)
 		name = espionage.1070.c
 		trigger = {
@@ -1918,7 +1776,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Protest (assumed infiltrator OR Smear Campaign)
 		name = espionage.1070.d
 		trigger = {
@@ -1926,10 +1783,7 @@ country_event = {
 		}
 		add_resource = { influence = 10 }
 		root = {
-			add_opinion_modifier = {
-				who = event_target:hostile_infiltration_country
-				modifier = opinion_smear_campaign_espionage
-			}
+			add_opinion_modifier = { who = event_target:hostile_infiltration_country modifier = opinion_smear_campaign_espionage }
 		}
 		if = {
 			limit = {
@@ -1997,7 +1851,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		remove_country_flag = hostile_infiltrator_identified@from
 	}
@@ -2007,7 +1860,6 @@ country_event = {
 country_event = {
 	id = espionage.1071
 	title = espionage.1071.name
-
 	desc = {
 		text = espionage.1071.desc
 		trigger = {
@@ -2018,7 +1870,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = espionage.1071.desc.hostile
 		trigger = {
@@ -2036,7 +1887,6 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = {
 			text = CURSES
@@ -2060,7 +1910,6 @@ country_event = {
 		}
 		ai_chance = { factor = 3 }
 	}
-
 	option = { # Take public offence in return (if your empire bothers with such matters)
 		name = espionage.1071.b
 		trigger = {
@@ -2098,7 +1947,6 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = {
 			text = UNFORTUNATE
@@ -2142,9 +1990,7 @@ country_event = {
 			}
 		}
 		if = {
-			limit = {
-				root = { is_overlord_to = from }
-			}
+			limit = { root = { is_overlord_to = from } }
 			tooltip = {
 				random_agreement = {
 					limit = {
@@ -2156,9 +2002,7 @@ country_event = {
 			}
 		}
 		if = {
-			limit = {
-				from = { is_overlord_to = root }
-			}
+			limit = { from = { is_overlord_to = root } }
 			tooltip = {
 				random_agreement = {
 					limit = {
@@ -2187,7 +2031,6 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = CURSES
 		tooltip = {
@@ -2360,9 +2203,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					event_target:insidious_plot_country = {
-						is_same_value = event_target:insidious_plot_spynetwork
-					}
+					event_target:insidious_plot_country = { is_same_empire = event_target:insidious_plot_spynetwork }
 				}
 				set_country_flag = insidious_plot_samecountry
 			}
@@ -2391,25 +2232,16 @@ country_event = {
 				modifier = {
 					factor = 9
 					root = {
-						relative_encryption_decryption = {
-							target = event_target:insidious_plot_spynetwork
-							value > 1.3
-						}
+						relative_encryption_decryption = { target = event_target:insidious_plot_spynetwork value > 1.3 }
 					}
 					root = {
-						relative_encryption_decryption = {
-							target = event_target:insidious_plot_spynetwork
-							value < 1.5
-						}
+						relative_encryption_decryption = { target = event_target:insidious_plot_spynetwork value < 1.5 }
 					}
 				}
 				modifier = {
 					factor = 18
 					root = {
-						relative_encryption_decryption = {
-							target = event_target:insidious_plot_spynetwork
-							value >= 1.5
-						}
+						relative_encryption_decryption = { target = event_target:insidious_plot_spynetwork value >= 1.5 }
 					}
 				}
 				country_event = { id = espionage.1082 }
@@ -2422,7 +2254,6 @@ country_event = {
 country_event = {
 	id = espionage.1081
 	title = espionage.1081.name
-
 	desc = {
 		text = espionage.1081.desc
 		trigger = {
@@ -2433,7 +2264,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = espionage.1081.desc.hostile
 		trigger = {
@@ -2444,7 +2274,6 @@ country_event = {
 			NOT = { has_country_flag = insidious_plot_samecountry }
 		}
 	}
-
 	desc = {
 		text = espionage.1081.desc.samecountry
 		trigger = { has_country_flag = insidious_plot_samecountry }
@@ -2461,7 +2290,6 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = { # Indignation, including IF the plotter is an ally
 		name = {
 			text = espionage.1081.a
@@ -2515,10 +2343,7 @@ country_event = {
 				add_loyalty = -30
 			}
 		}
-		add_opinion_modifier = {
-			who = event_target:insidious_plot_country
-			modifier = opinion_smear_campaign_deceived
-		}
+		add_opinion_modifier = { who = event_target:insidious_plot_country modifier = opinion_smear_campaign_deceived }
 		add_monthly_resource_mult = {
 			resource = unity
 			value = @tier1unityreward
@@ -2548,7 +2373,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Quieter option IF the plotter is an ally
 		name = DISCONCERTING
 		trigger = {
@@ -2570,14 +2394,10 @@ country_event = {
 		}
 		root = {
 			add_resource = { influence = -10 }
-			add_opinion_modifier = {
-				who = event_target:insidious_plot_country
-				modifier = opinion_smear_campaign_deceived
-			}
+			add_opinion_modifier = { who = event_target:insidious_plot_country modifier = opinion_smear_campaign_deceived }
 		}
 		ai_chance = { factor = 2 }
 	}
-
 	after = {
 		remove_country_flag = insidious_plot_samecountry
 		event_target:insidious_plot_country = {
@@ -2590,14 +2410,12 @@ country_event = {
 country_event = {
 	id = espionage.1082
 	title = espionage.1082.name
-
 	desc = {
 		text = espionage.1082.desc
 		trigger = {
 			NOT = { has_country_flag = insidious_plot_samecountry }
 		}
 	}
-
 	desc = {
 		text = espionage.1082.desc.samecountry
 		trigger = { has_country_flag = insidious_plot_samecountry }
@@ -2621,7 +2439,6 @@ country_event = {
 			leader = { save_event_target_as = insidious_plot_spymaster }
 		}
 	}
-
 	option = { # Cautious indignation
 		name = espionage.1082.a
 		if = {
@@ -2659,10 +2476,7 @@ country_event = {
 			}
 		}
 		root = {
-			add_opinion_modifier = {
-				who = event_target:insidious_plot_country
-				modifier = opinion_smear_campaign_deceived
-			}
+			add_opinion_modifier = { who = event_target:insidious_plot_country modifier = opinion_smear_campaign_deceived }
 			add_monthly_resource_mult = {
 				resource = unity
 				value = @tier1unityreward
@@ -2697,12 +2511,10 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Ignore this
 		name = espionage.1082.b
 		ai_chance = { factor = 2 }
 	}
-
 	after = {
 		remove_country_flag = insidious_plot_samecountry
 	}
@@ -2712,14 +2524,12 @@ country_event = {
 country_event = {
 	id = espionage.1085
 	title = espionage.1085.name
-
 	desc = {
 		text = espionage.1085.desc
 		trigger = {
 			NOT = { has_country_flag = first_spynetwork }
 		}
 	}
-
 	desc = {
 		text = espionage.1085.desc.neverspied
 		trigger = { has_country_flag = insidious_plot_samecountry }
@@ -2735,7 +2545,6 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = { # Non-Federation ally response
 		name = CURIOUS
 		trigger = {
@@ -2751,9 +2560,7 @@ country_event = {
 			}
 		}
 		if = {
-			limit = {
-				root = { is_overlord_to = from }
-			}
+			limit = { root = { is_overlord_to = from } }
 			tooltip = {
 				random_agreement = {
 					limit = {
@@ -2765,9 +2572,7 @@ country_event = {
 			}
 		}
 		if = {
-			limit = {
-				from = { is_overlord_to = root }
-			}
+			limit = { from = { is_overlord_to = root } }
 			tooltip = {
 				random_agreement = {
 					limit = {
@@ -2779,7 +2584,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Federation ally response
 		name = UNFORTUNATE
 		trigger = {
@@ -2794,9 +2598,7 @@ country_event = {
 			}
 		}
 		if = {
-			limit = {
-				root = { is_overlord_to = from }
-			}
+			limit = { root = { is_overlord_to = from } }
 			tooltip = {
 				random_agreement = {
 					limit = {
@@ -2808,9 +2610,7 @@ country_event = {
 			}
 		}
 		if = {
-			limit = {
-				from = { is_overlord_to = root }
-			}
+			limit = { from = { is_overlord_to = root } }
 			tooltip = {
 				random_agreement = {
 					limit = {
@@ -2823,4 +2623,3 @@ country_event = {
 		}
 	}
 }
-

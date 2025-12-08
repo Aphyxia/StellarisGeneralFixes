@@ -5,14 +5,12 @@ special_init_01 = {
 	class = sc_black_hole
 	usage = misc_system_init
 	usage_odds = 2
-
 	planet = {
 		class = star
 		orbit_distance = 0
 	}
 
 	change_orbit = 60
-
 	planet = {
 		count = { min = 0 max = 1 }
 		class = "pc_broken"
@@ -23,7 +21,6 @@ special_init_01 = {
 	}
 
 	change_orbit = 30
-
 	planet = {
 		count = { min = 0 max = 1 }
 		class = "pc_barren_cold"
@@ -34,14 +31,12 @@ special_init_01 = {
 # Guardians of Zanaam
 special_init_06 = {
 	class = "rl_standard_stars"
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 150
 	}
 
 	usage = misc_system_init
-
 	usage_odds = {
 		base = @spawn_system_slightlycommon
 		modifier = { factor = 0 is_bottleneck_system = yes }
@@ -49,9 +44,7 @@ special_init_06 = {
 
 	max_instances = 1
 	scaled_spawn_chance = 3	# scales by galaxy size (1000 stars = 10x base)
-
 	flags = { guardians_of_zanaam hostile_system }
-
 	planet = {
 		count = 1
 		class = star
@@ -62,7 +55,6 @@ special_init_06 = {
 	}
 
 	change_orbit = 45
-
 	planet = {
 		count = 1
 		class = "pc_broken"
@@ -72,7 +64,6 @@ special_init_06 = {
 			prevent_anomaly = yes
 		}
 	}
-
 	planet = {
 		name = NAME_Zanaam
 		count = 1
@@ -91,7 +82,7 @@ special_init_06 = {
 					create_fleet = {
 						name = "NAME_Guardians_of_Zanaam"
 						effect = {
-							set_owner = PREV
+							set_owner = prev
 							set_fleet_flag = zanaam_fleet
 							create_ship = { name = "NAME_Defensive_Alpha" design = "NAME_Guardian" }
 							create_ship = { name = "NAME_Defensive_Beta" design = "NAME_Guardian" }
@@ -130,7 +121,6 @@ special_init_06 = {
 	}
 
 	change_orbit = 10
-
 	planet = {
 		count = 1
 		orbit_distance = 20
@@ -141,7 +131,6 @@ special_init_06 = {
 			prevent_anomaly = yes
 		}
 	}
-
 	planet = {
 		count = 1
 		orbit_distance = 20
@@ -152,14 +141,10 @@ special_init_06 = {
 			prevent_anomaly = yes
 		}
 	}
-
 	init_effect = {
 		while = {
 			count = 6
-			create_ambient_object = {
-				type = "abandoned_ship_2_object"
-				location = solar_system
-			}
+			create_ambient_object = { type = "abandoned_ship_2_object" location = solar_system }
 		}
 	}
 }
@@ -167,14 +152,12 @@ special_init_06 = {
 # Crystal Lair
 special_init_07 = {
 	class = "rl_standard_stars"
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 150
 	}
 
 	usage = misc_system_init
-
 	usage_odds = {
 		base = @spawn_system_common
 		modifier = {
@@ -188,9 +171,7 @@ special_init_07 = {
 	}
 
 	max_instances = 1
-
 	flags = { hostile_system }
-
 	planet = {
 		count = 1
 		class = star
@@ -204,7 +185,7 @@ special_init_07 = {
 				create_fleet = {
 					name = "NAME_Shards_of_Obsidian"
 					effect = {
-						set_owner = PREV
+						set_owner = prev
 						while = {
 							count = 10
 							create_ship = { name = "NAME_Shardling" design = "NAME_Small_Crystal_Entity_Blue" }
@@ -219,7 +200,7 @@ special_init_07 = {
 				create_fleet = {
 					name = "NAME_Shards_of_Diamond"
 					effect = {
-						set_owner = PREV
+						set_owner = prev
 						while = {
 							count = 10
 							create_ship = { name = "NAME_Shardling" design = "NAME_Small_Crystal_Entity_Blue" }
@@ -234,7 +215,7 @@ special_init_07 = {
 				create_fleet = {
 					name = "NAME_Shards_of_Onyx"
 					effect = {
-						set_owner = PREV
+						set_owner = prev
 						while = {
 							count = 10
 							create_ship = { name = "NAME_Shardling" design = "NAME_Small_Crystal_Entity_Blue" }
@@ -249,7 +230,7 @@ special_init_07 = {
 				create_fleet = {
 					name = "NAME_Shards_of_Sapphire"
 					effect = {
-						set_owner = PREV
+						set_owner = prev
 						while = {
 							count = 10
 							create_ship = { name = "NAME_Shardling" design = "NAME_Small_Crystal_Entity_Blue" }
@@ -266,7 +247,6 @@ special_init_07 = {
 	}
 
 	change_orbit = 150
-
 	planet = {
 		name = "NAME_Yormak's_Tusk"
 		count = 1
@@ -277,7 +257,6 @@ special_init_07 = {
 			set_deposit = d_minerals_3
 		}
 	}
-
 	planet = {
 		name = "NAME_Yormak's_Eye"
 		count = 1
@@ -288,7 +267,6 @@ special_init_07 = {
 			set_deposit = d_minerals_3
 		}
 	}
-
 	planet = {
 		name = "NAME_Yormak's_Tongue"
 		count = 1
@@ -299,7 +277,6 @@ special_init_07 = {
 			set_deposit = d_minerals_2
 		}
 	}
-
 	planet = {
 		name = "NAME_Yormak's_Tail"
 		count = 1
@@ -310,7 +287,6 @@ special_init_07 = {
 			set_deposit = d_minerals_2
 		}
 	}
-
 	planet = {
 		name = "NAME_Yormak's_Heart"
 		count = 1
@@ -321,7 +297,6 @@ special_init_07 = {
 			set_deposit = d_rare_crystals_3
 		}
 	}
-
 	planet = {
 		name = "NAME_Yormak's_Belly"
 		count = 1
@@ -332,7 +307,6 @@ special_init_07 = {
 			set_deposit = d_minerals_3
 		}
 	}
-
 	planet = {
 		name = "NAME_Yormak's_Snout"
 		count = 1
@@ -343,7 +317,6 @@ special_init_07 = {
 			set_deposit = d_minerals_2
 		}
 	}
-
 	planet = {
 		name = "NAME_Yormak's_Fist"
 		count = 1
@@ -361,14 +334,12 @@ special_init_08 = {
 	class = sc_neutron_star
 	usage = misc_system_init
 	usage_odds = 2
-
 	planet = {
 		class = star
 		orbit_distance = 0
 	}
 
 	change_orbit = 45
-
 	planet = {
 		count = { min = 1 max = 6 }
 		orbit_distance = 20
@@ -387,14 +358,12 @@ special_init_09 = {
 	class = sc_pulsar
 	usage = misc_system_init
 	usage_odds = 2
-
 	planet = {
 		class = star
 		orbit_distance = 0
 	}
 
 	change_orbit = 45
-
 	planet = {
 		count = { min = 1 max = 6 }
 		orbit_distance = 20
@@ -410,9 +379,7 @@ special_init_09 = {
 
 hyacinth_system = {
 	class = "rl_standard_stars"
-
 	flags = { hyacinth_system }
-
 	planet = {
 		count = 1
 		class = star
@@ -423,7 +390,6 @@ hyacinth_system = {
 	}
 
 	change_orbit = 45
-
 	planet = {
 		count = { min = 1 max = 2 }
 		orbit_distance = 20
@@ -439,7 +405,6 @@ hyacinth_system = {
 	}
 
 	change_orbit = 45
-
 	planet = {
 		orbit_angle = { min = 90 max = 270 }
 		class = pc_barren
@@ -447,7 +412,6 @@ hyacinth_system = {
 	}
 
 	change_orbit = 45
-
 	planet = {
 		orbit_angle = { min = 90 max = 270 }
 		class = pc_gas_giant
@@ -464,14 +428,11 @@ hyacinth_system = {
 # AI Revolt System
 ai_system_1 = {
 	class = "rl_standard_stars"
-
 	flags = { ai_system }
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 100
 	}
-
 	planet = {
 		count = 1
 		class = star
@@ -485,7 +446,6 @@ ai_system_1 = {
 	}
 
 	change_orbit = 40
-
 	planet = {
 		orbit_distance = 20
 		class = random_non_colonizable
@@ -496,7 +456,6 @@ ai_system_1 = {
 	}
 
 	change_orbit = 20
-
 	planet = {
 		count = 5
 		class = pc_asteroid
@@ -508,7 +467,6 @@ ai_system_1 = {
 	}
 
 	change_orbit = 20
-
 	planet = {
 		orbit_distance = 20
 		class = random_non_colonizable
@@ -529,7 +487,6 @@ ai_system_1 = {
 	}
 
 	change_orbit = 20
-
 	planet = {
 		count = 1
 		orbit_distance = 0
@@ -541,7 +498,6 @@ ai_system_1 = {
 			prevent_anomaly = yes
 		}
 	}
-
 	planet = {
 		orbit_distance = 20
 		count = { min = 0 max = 3 }
@@ -564,9 +520,7 @@ ai_system_1 = {
 # Crystal Manufactory version of Basic 4
 crystal_manufactory_system = {
 	class = "rl_standard_stars"
-
 	flags = { manufactory_system }
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 120
@@ -576,7 +530,6 @@ crystal_manufactory_system = {
 	usage_odds = 5
 	max_instances = 1
 	spawn_chance = 25
-
 	planet = {
 		count = 1
 		class = star
@@ -587,7 +540,6 @@ crystal_manufactory_system = {
 	}
 
 	change_orbit = 120
-
 	planet = {
 		count = { min = 3 max = 6 }
 		class = pc_asteroid
@@ -596,7 +548,6 @@ crystal_manufactory_system = {
 	}
 
 	change_orbit = -80
-
 	planet = {
 		count = { min = 0 max = 2 }
 		orbit_distance = 20
@@ -604,20 +555,16 @@ crystal_manufactory_system = {
 	}
 
 	change_orbit = 80
-
 	planet = {
 		count = { min = 0 max = 2 }
 		orbit_distance = 40
 		orbit_angle = { min = 90 max = 270 }
 	}
-
 	init_effect = {
 		random_system_planet = {
 			limit = {
-				NOR = {
-					is_star = yes
-					habitable_planet = yes
-				}
+				is_star = no
+				habitable_planet = no
 				has_deposit_for = shipclass_mining_station
 				# reduces spawn rate of manufactory, but not system
 			}
@@ -633,7 +580,6 @@ trappist_initializer = {
 	name = "NAME_Trappist"
 	class = "sc_m"
 	usage = misc_system_init
-
 	usage_odds = {
 		base = @spawn_system_common
 		inline_script = {
@@ -644,7 +590,6 @@ trappist_initializer = {
 
 	max_instances = 1
 	scaled_spawn_chance = 10
-
 	planet = {
 		class = "pc_m_star"
 		orbit_distance = 0
@@ -726,14 +671,12 @@ trappist_initializer = {
 parvus_system = {
 	name = "NAME_Parvus"
 	class = "sc_k"
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 170
 	}
 
 	usage = misc_system_init
-
 	usage_odds = {
 		base = @spawn_system_common
 		modifier = { factor = 0 is_bottleneck_system = yes }
@@ -745,7 +688,6 @@ parvus_system = {
 
 	max_instances = 1
 	scaled_spawn_chance = 3	# scales by galaxy size (1000 stars = 10x base)
-
 	planet = {
 		count = 1
 		class = star
@@ -756,7 +698,6 @@ parvus_system = {
 	}
 
 	change_orbit = 45
-
 	planet = {
 		count = 1
 		class = "pc_molten"
@@ -765,14 +706,12 @@ parvus_system = {
 	}
 
 	change_orbit = 10
-
 	planet = {
 		count = 1
 		class = "pc_barren"
 		size = 13
 		orbit_angle = { min = 90 max = 270 }
 	}
-
 	planet = {
 		count = 1
 		orbit_distance = 30
@@ -788,7 +727,6 @@ parvus_system = {
 	}
 
 	change_orbit = 50
-
 	planet = {
 		count = { min = 3 max = 6 }
 		class = pc_asteroid
@@ -797,7 +735,6 @@ parvus_system = {
 	}
 
 	change_orbit = 40
-
 	planet = {
 		count = 1
 		class = "pc_gas_giant"
@@ -808,7 +745,6 @@ parvus_system = {
 	}
 
 	change_orbit = 10
-
 	planet = {
 		count = 1
 		class = "pc_gas_giant"
@@ -831,14 +767,12 @@ parvus_system = {
 polaris_civilization = {
 	name = "NAME_Polaris"
 	class = "sc_trinary_3"
-
 	asteroid_belt = {
 		type = icy_asteroid_belt
 		radius = 120
 	}
 
 	usage = misc_system_init
-
 	usage_odds = {
 		base = @spawn_system_extreme
 		modifier = { factor = 0 is_bottleneck_system = yes }
@@ -850,7 +784,6 @@ polaris_civilization = {
 
 	max_instances = 1
 	scaled_spawn_chance = 5
-
 	planet = {
 		name = "NAME_PolarisAa"
 		count = 1
@@ -863,7 +796,6 @@ polaris_civilization = {
 	}
 
 	change_orbit = 20
-
 	planet = {
 		name = "NAME_PolarisAb"
 		count = 1
@@ -875,7 +807,6 @@ polaris_civilization = {
 	}
 
 	change_orbit = 65
-
 	planet = {
 		name = "NAME_PolarisB"
 		count = 1
@@ -887,7 +818,6 @@ polaris_civilization = {
 	}
 
 	change_orbit = 33
-
 	planet = {
 		count = { min = 1 max = 4 }
 		class = pc_ice_asteroid
@@ -896,7 +826,6 @@ polaris_civilization = {
 	}
 
 	change_orbit = 80
-
 	planet = {
 		count = 1
 		class = "pc_molten"
@@ -907,7 +836,6 @@ polaris_civilization = {
 		}
 		flags = { polaris_patrol_2 }
 	}
-
 	planet = {
 		count = 1
 		orbit_distance = 30
@@ -928,7 +856,7 @@ polaris_civilization = {
 					create_fleet = {
 						name = "NAME_Polaris_space_name"
 						effect = {
-							set_owner = PREV
+							set_owner = prev
 							set_fleet_flag = polaris_fleet
 							create_ship = { name = "NAME_Polaris_A" design = "NAME_Polaris_ship" }
 							create_ship = { name = "NAME_Polaris_B" design = "NAME_Polaris_ship" }
@@ -980,7 +908,6 @@ polaris_civilization = {
 	}
 
 	change_orbit = 40
-
 	planet = {
 		count = { min = 1 max = 3 }
 		orbit_distance = 20
@@ -992,19 +919,12 @@ polaris_civilization = {
 			orbit_angle = { min = 90 max = 270 }
 		}
 	}
-
 	init_effect = {
 		while = {
 			count = 2
-			create_ambient_object = {
-				type = "abandoned_ship_2_object"
-				location = solar_system
-			}
+			create_ambient_object = { type = "abandoned_ship_2_object" location = solar_system }
 			create_ambient_object = { type = "small_debris_object" location = solar_system }
-			create_ambient_object = {
-				type = "medium_debris_01_object"
-				location = solar_system
-			}
+			create_ambient_object = { type = "medium_debris_01_object" location = solar_system }
 		}
 	}
 }
@@ -1014,19 +934,16 @@ fumongus_init_01 = {
 	name = "NAME_Fumongus_System"
 	class = "rl_standard_stars"
 	usage = misc_system_init
-
 	usage_odds = {
 		base = @spawn_system_common
 		inline_script = "solar_system_initializers/initializer_modifiers_habitable_world_systems"
 	}
 
 	max_instances = 1
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 110
 	}
-
 	flags = { fumongus_system hostile_system }
 
 	# create nebula
@@ -1096,25 +1013,16 @@ fumongus_init_01 = {
 					queue_actions = {
 						repeat = {
 							find_closest_planet = {
-								trigger = {
-									id = "fumongusC.1.trigger.1"
-									is_planet = event_target:fumongus_trigger_1
-								}
-								found_planet = { move_to = this orbit_planet = THIS }
+								trigger = { id = "fumongusC.1.trigger.1" is_planet = event_target:fumongus_trigger_1 }
+								found_planet = { move_to = this orbit_planet = this }
 							}
 							find_closest_planet = {
-								trigger = {
-									id = "fumongusC.1.trigger.2"
-									is_planet = event_target:fumongus_trigger_2
-								}
-								found_planet = { move_to = this orbit_planet = THIS }
+								trigger = { id = "fumongusC.1.trigger.2" is_planet = event_target:fumongus_trigger_2 }
+								found_planet = { move_to = this orbit_planet = this }
 							}
 							find_closest_planet = {
-								trigger = {
-									id = "fumongusC.1.trigger.3"
-									is_planet = event_target:fumongus_trigger_3
-								}
-								found_planet = { move_to = this orbit_planet = THIS }
+								trigger = { id = "fumongusC.1.trigger.3" is_planet = event_target:fumongus_trigger_3 }
+								found_planet = { move_to = this orbit_planet = this }
 							}
 						}
 					}
@@ -1122,7 +1030,6 @@ fumongus_init_01 = {
 			}
 		}
 	}
-
 	planet = {
 		count = 1
 		class = star
@@ -1134,7 +1041,6 @@ fumongus_init_01 = {
 	}
 
 	change_orbit = 40
-
 	planet = {
 		count = 1
 		name = "NAME_Fumongus_Planet01"
@@ -1144,7 +1050,6 @@ fumongus_init_01 = {
 	}
 
 	change_orbit = 10
-
 	planet = {
 		count = 1
 		name = "NAME_Fumongus_Planet02"
@@ -1160,7 +1065,6 @@ fumongus_init_01 = {
 	}
 
 	change_orbit = 20
-
 	planet = {
 		count = 1
 		orbit_distance = 20
@@ -1181,7 +1085,6 @@ fumongus_init_01 = {
 	}
 
 	change_orbit = 30
-
 	planet = {
 		count = 1
 		name = "NAME_Fumongus_Planet03"
@@ -1201,14 +1104,12 @@ fumongus_init_01 = {
 ghost_ship_system_initializer_01 = {
 	name = "NAME_Hillos"
 	class = "rl_standard_stars"
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 150
 	}
 
 	usage = misc_system_init
-
 	usage_odds = {
 		base = @spawn_system_verycommon
 		complex_trigger_modifier = {
@@ -1221,7 +1122,6 @@ ghost_ship_system_initializer_01 = {
 	}
 
 	max_instances = 1
-
 	planet = {
 		name = "NAME_Hillos_Star"
 		count = 1
@@ -1233,7 +1133,6 @@ ghost_ship_system_initializer_01 = {
 	}
 
 	change_orbit = 45
-
 	planet = {
 		count = 1
 		name = "NAME_HillosA"
@@ -1251,7 +1150,6 @@ ghost_ship_system_initializer_01 = {
 	}
 
 	change_orbit = 60
-
 	planet = {
 		count = 1
 		class = pc_barren
@@ -1264,7 +1162,6 @@ ghost_ship_system_initializer_01 = {
 	}
 
 	change_orbit = 65
-
 	planet = {
 		count = 1
 		name = "NAME_HillosC"
@@ -1281,7 +1178,6 @@ ghost_ship_system_initializer_01 = {
 	}
 
 	change_orbit = 33
-
 	planet = {
 		count = 1
 		class = pc_asteroid
@@ -1293,14 +1189,16 @@ ghost_ship_system_initializer_01 = {
 			create_country = {
 				name = "NAME_Hillos_fleet"
 				type = neutral_faction
-				effect = { save_global_event_target_as = hillos_country }
+				effect = {
+					save_global_event_target_as = hillos_country
+				}
 			}
 			event_target:hillos_country = {
 				set_country_flag = hillos_country
 				create_fleet = {
 					name = "NAME_Hillos_fleet"
 					effect = {
-						set_owner = PREV
+						set_owner = prev
 						set_fleet_flag = hillos_fleet
 						create_ship = { name = "NAME_Hillos_ship" design = "NAME_Hillos_ship" }
 						set_location = event_target:hillos_asteroid
@@ -1355,12 +1253,10 @@ ghost_ship_system_initializer_01 = {
 surveillance_supercomputer_system = {
 	class = "sc_neutron_star"
 	name = "NAME_Ultima_Vigilis"
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 185
 	}
-
 	asteroid_belt = {
 		type = icy_asteroid_belt
 		radius = 335
@@ -1368,14 +1264,7 @@ surveillance_supercomputer_system = {
 
 	usage = misc_system_init
 	usage_odds = 0
-
-	flags = {
-		surveillance_supercomputer_system
-		hostile_system
-		crisis_spawn_exclude
-		sealed_system
-	}
-
+	flags = { surveillance_supercomputer_system hostile_system crisis_spawn_exclude sealed_system }
 	planet = {
 		class = star
 		orbit_distance = 0
@@ -1458,7 +1347,6 @@ surveillance_supercomputer_system = {
 			}
 		}
 	}
-
 	planet = {
 		orbit_distance = 135
 		class = pc_machine_broken
@@ -1474,7 +1362,6 @@ surveillance_supercomputer_system = {
 	}
 
 	change_orbit = 50
-
 	planet = {
 		class = pc_asteroid
 		orbit_distance = 0
@@ -1485,7 +1372,6 @@ surveillance_supercomputer_system = {
 			set_deposit = d_volatile_motes_1
 		}
 	}
-
 	planet = {
 		count = 3
 		class = pc_asteroid
@@ -1502,7 +1388,6 @@ surveillance_supercomputer_system = {
 			}
 		}
 	}
-
 	planet = {
 		class = pc_gas_giant
 		orbit_distance = 75
@@ -1524,7 +1409,6 @@ surveillance_supercomputer_system = {
 	}
 
 	change_orbit = 75
-
 	planet = {
 		class = pc_ice_asteroid
 		orbit_distance = 0
@@ -1535,7 +1419,6 @@ surveillance_supercomputer_system = {
 			set_deposit = d_rare_crystals_1
 		}
 	}
-
 	planet = {
 		count = 4
 		class = pc_ice_asteroid
@@ -1549,7 +1432,6 @@ surveillance_supercomputer_system = {
 			}
 		}
 	}
-
 	init_effect = {
 		create_country = {
 			name = "NAME_Eternal_Watchers"
@@ -1607,7 +1489,7 @@ surveillance_supercomputer_system = {
 									find_random_planet = {
 										found_planet = {
 											move_to = this
-											orbit_planet = THIS
+											orbit_planet = this
 											wait = 15
 										}
 									}
@@ -1628,16 +1510,13 @@ surveillance_supercomputer_system = {
 locust_system_initializer_01 = {
 	name = "NAME_Lost_Swarm_System"
 	class = "rl_standard_stars"
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 85
 	}
-
 	flags = { lost_swarm_system hostile_system }
 
 	usage = misc_system_init
-
 	usage_odds = {
 		base = @spawn_system_common
 		inline_script = {
@@ -1647,7 +1526,6 @@ locust_system_initializer_01 = {
 	}
 
 	max_instances = 1
-
 	planet = {
 		name = "NAME_Ubogleelt"
 		count = 1
@@ -1662,7 +1540,6 @@ locust_system_initializer_01 = {
 	}
 
 	change_orbit = 35
-
 	planet = {
 		count = 1
 		name = "NAME_UbogleeltA"
@@ -1685,7 +1562,6 @@ locust_system_initializer_01 = {
 	}
 
 	change_orbit = 20
-
 	planet = {
 		count = 1
 		name = "NAME_UbogleeltB"
@@ -1698,7 +1574,6 @@ locust_system_initializer_01 = {
 	}
 
 	change_orbit = 20
-
 	planet = {
 		count = 1
 		name = "NAME_UbogleeltC"
@@ -1721,7 +1596,6 @@ locust_system_initializer_01 = {
 	}
 
 	change_orbit = 33
-
 	planet = {
 		count = 1
 		name = "NAME_UbogleeltD"
@@ -1779,7 +1653,6 @@ locust_system_initializer_01 = {
 	}
 
 	change_orbit = 30
-
 	planet = {
 		count = 1
 		name = "NAME_UbogleeltE"
@@ -1790,7 +1663,6 @@ locust_system_initializer_01 = {
 			prevent_anomaly = yes
 		}
 	}
-
 	init_effect = {
 		create_country = {
 			name = "NAME_Lost_Swarm"
@@ -1853,7 +1725,6 @@ holibrae_initializer = {
 	name = "NAME_Holibrae"
 	class = "sc_m"
 	usage = misc_system_init
-
 	usage_odds = {
 		base = @spawn_system_base
 		inline_script = {
@@ -1864,7 +1735,6 @@ holibrae_initializer = {
 
 	max_instances = 1
 	scaled_spawn_chance = 10
-
 	flags = { holibrae_system hostile_system }
 
 	# create nebula
@@ -1927,25 +1797,16 @@ holibrae_initializer = {
 					queue_actions = {
 						repeat = {
 							find_closest_planet = {
-								trigger = {
-									id = "holibraeC.1.trigger.1"
-									is_planet = event_target:holibrae_trigger_1
-								}
-								found_planet = { move_to = this orbit_planet = THIS }
+								trigger = { id = "holibraeC.1.trigger.1" is_planet = event_target:holibrae_trigger_1 }
+								found_planet = { move_to = this orbit_planet = this }
 							}
 							find_closest_planet = {
-								trigger = {
-									id = "holibraeC.1.trigger.2"
-									is_planet = event_target:holibrae_trigger_2
-								}
-								found_planet = { move_to = this orbit_planet = THIS }
+								trigger = { id = "holibraeC.1.trigger.2" is_planet = event_target:holibrae_trigger_2 }
+								found_planet = { move_to = this orbit_planet = this }
 							}
 							find_closest_planet = {
-								trigger = {
-									id = "holibraeC.1.trigger.3"
-									is_planet = event_target:holibrae_trigger_3
-								}
-								found_planet = { move_to = this orbit_planet = THIS }
+								trigger = { id = "holibraeC.1.trigger.3" is_planet = event_target:holibrae_trigger_3 }
+								found_planet = { move_to = this orbit_planet = this }
 							}
 						}
 					}
@@ -1953,7 +1814,6 @@ holibrae_initializer = {
 			}
 		}
 	}
-
 	planet = {
 		class = "pc_m_star"
 		orbit_distance = 0
@@ -2015,12 +1875,10 @@ debris_belt_initializer = {
 	usage_odds = 8
 	max_instances = 1
 	scaled_spawn_chance = 10
-
 	asteroid_belt = {
 		type = debris_asteroid_belt
 		radius = 158
 	}
-
 	planet = {
 		class = pc_m_star
 		orbit_distance = 0
@@ -2030,7 +1888,6 @@ debris_belt_initializer = {
 	}
 
 	change_orbit = 60
-
 	planet = {
 		class = pc_molten
 		orbit_angle = 15
@@ -2039,7 +1896,6 @@ debris_belt_initializer = {
 	}
 
 	change_orbit = 86
-
 	planet = {
 		class = pc_asteroid
 		size = 1
@@ -2054,7 +1910,6 @@ debris_belt_initializer = {
 	}
 
 	change_orbit = 10
-
 	planet = {
 		count = { min = 2 max = 3 }
 		orbit_distance = 60
@@ -2075,13 +1930,11 @@ debris_belt_initializer = {
 the_chosen_home_initializer = {
 	class = sc_g
 	name = NAME_Aspharelle
-
 	flags = { chosen_system crisis_spawn_exclude }
 
 	usage = misc_system_init
 	usage_odds = 0
 	prevent_anomalies = yes
-
 	planet = {
 		class = star
 		orbit_distance = 0
@@ -2095,7 +1948,6 @@ the_chosen_home_initializer = {
 		size = 10
 		has_ring = no
 	}
-
 	planet = {
 		class = pc_toxic
 		orbit_distance = 25
@@ -2103,7 +1955,6 @@ the_chosen_home_initializer = {
 		size = 18
 		has_ring = no
 	}
-
 	planet = {
 		class = pc_gaia
 		orbit_distance = 32
@@ -2121,13 +1972,18 @@ the_chosen_home_initializer = {
 			create_species = {
 				name = NAME_Charynoi
 				class = random_non_machine
-				traits = { ideal_planet_class = pc_gaia trait = random_traits }
+				traits = {
+					ideal_planet_class = pc_gaia
+					trait = random_traits
+				}
 				effect = {
 					modify_species = {
 						base = this
 						remove_trait = trait_pc_gaia_preference
 						add_trait = trait_pc_gaia_preference_terraforming
-						effect = { save_event_target_as = chosen_species }
+						effect = {
+							save_event_target_as = chosen_species
+						}
 					}
 				}
 			}
@@ -2175,7 +2031,6 @@ the_chosen_home_initializer = {
 			}
 		}
 	}
-
 	planet = {
 		class = pc_gaia
 		orbit_distance = 32
@@ -2187,7 +2042,6 @@ the_chosen_home_initializer = {
 			fire_on_action = { on_action = on_initialize_advanced_colony }
 		}
 	}
-
 	planet = {
 		class = pc_gas_giant
 		orbit_distance = 49
@@ -2206,7 +2060,6 @@ the_chosen_home_initializer = {
 			}
 		}
 	}
-
 	planet = {
 		class = pc_barren_cold
 		orbit_distance = 87
@@ -2221,7 +2074,6 @@ the_chosen_home_initializer = {
 			has_ring = no
 		}
 	}
-
 	init_effect = {
 		set_spawn_system_batch = begin
 		spawn_system = {
@@ -2274,30 +2126,25 @@ the_chosen_home_initializer = {
 the_chosen_resources_initializer = {
 	class = rl_standard_stars
 	name = NAME_Taremes
-
 	flags = { chosen_system crisis_spawn_exclude }
 
 	usage = misc_system_init
 	usage_odds = 0
 	prevent_anomalies = yes
-
 	planet = {
 		class = star
 		orbit_distance = 0
 	}
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 125
 	}
-
 	asteroid_belt = {
 		type = icy_asteroid_belt
 		radius = 250
 	}
 
 	change_orbit = 125
-
 	planet = {
 		count = 5
 		class = pc_asteroid
@@ -2316,7 +2163,6 @@ the_chosen_resources_initializer = {
 	}
 
 	change_orbit = 125
-
 	planet = {
 		count = 5
 		class = pc_ice_asteroid
@@ -2333,7 +2179,6 @@ the_chosen_resources_initializer = {
 			}
 		}
 	}
-
 	init_effect = {
 		spawn_system = {
 			min_distance >= 15
@@ -2351,13 +2196,11 @@ the_chosen_resources_initializer = {
 the_chosen_resources_initializer2 = {
 	class = rl_standard_stars
 	name = NAME_Ereba
-
 	flags = { chosen_system crisis_spawn_exclude }
 
 	usage = misc_system_init
 	usage_odds = 0
 	prevent_anomalies = yes
-
 	planet = {
 		count = 1
 		class = star
@@ -2368,13 +2211,11 @@ the_chosen_resources_initializer2 = {
 	}
 
 	change_orbit = 45
-
 	planet = {
 		count = { min = 0 max = 1 }
 		orbit_distance = 10
 		orbit_angle = { min = 90 max = 270 }
 	}
-
 	planet = {
 		count = { min = 1 max = 2 }
 		orbit_distance = 60
@@ -2395,13 +2236,11 @@ the_chosen_resources_initializer2 = {
 	}
 
 	change_orbit = 20
-
 	planet = {
 		count = { min = 0 max = 2 }
 		orbit_distance = 20
 		orbit_angle = { min = 90 max = 270 }
 	}
-
 	init_effect = {
 		spawn_system = {
 			min_distance >= 15
@@ -2435,17 +2274,11 @@ the_chosen_resources_initializer2 = {
 the_chosen_gate_initializer = {
 	class = sc_black_hole
 	name = NAME_Ithomes_Gate
-
-	flags = {
-		chosen_system
-		crisis_spawn_exclude
-		ithomes_gate
-	}
+	flags = { chosen_system crisis_spawn_exclude ithomes_gate }
 
 	usage = misc_system_init
 	usage_odds = 0
 	prevent_anomalies = yes
-
 	planet = {
 		class = star
 		orbit_distance = 0
@@ -2456,7 +2289,6 @@ the_chosen_gate_initializer = {
 	}
 
 	change_orbit = 225
-
 	planet = {
 		class = pc_gas_giant
 		count = 3
@@ -2483,9 +2315,7 @@ the_chosen_gate_initializer = {
 						}
 						if = {
 							limit = {
-								NOT = {
-									prev = { has_star_flag = research_habitat_spawned }
-								}
+								NOT = { prev = { has_star_flag = research_habitat_spawned } }
 							}
 							prev = { set_star_flag = research_habitat_spawned }
 							add_deposit = d_hab_crystal_2
@@ -2494,9 +2324,7 @@ the_chosen_gate_initializer = {
 						}
 						else_if = {
 							limit = {
-								NOT = {
-									prev = { has_star_flag = mining_habitat_spawned }
-								}
+								NOT = { prev = { has_star_flag = mining_habitat_spawned } }
 							}
 							prev = { set_star_flag = mining_habitat_spawned }
 							add_deposit = d_hab_alloy_4
@@ -2506,9 +2334,7 @@ the_chosen_gate_initializer = {
 						}
 						else_if = {
 							limit = {
-								NOT = {
-									prev = { has_star_flag = energy_habitat_spawned }
-								}
+								NOT = { prev = { has_star_flag = energy_habitat_spawned } }
 							}
 							prev = { set_star_flag = energy_habitat_spawned }
 							add_deposit = d_hab_alloy_4
@@ -2524,13 +2350,11 @@ the_chosen_gate_initializer = {
 	}
 
 	change_orbit = 100
-
 	planet = {
 		class = pc_barren_cold
 		size = 5
 		orbit_angle = { min = 45 max = 270 }
 	}
-
 	init_effect = {
 		random_system = {
 			limit = {
@@ -2562,30 +2386,25 @@ the_chosen_gate_initializer = {
 the_chosen_escapee_initializer = {
 	class = sc_g
 	name = NAME_Ophala
-
 	flags = { chosen_system crisis_spawn_exclude }
 
 	usage = misc_system_init
 	usage_odds = 0
 	prevent_anomalies = yes
-
 	planet = {
 		class = star
 		orbit_distance = 0
 	}
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 145
 	}
-
 	asteroid_belt = {
 		type = icy_asteroid_belt
 		radius = 290
 	}
 
 	change_orbit = 145
-
 	planet = {
 		count = 4
 		class = pc_asteroid
@@ -2594,7 +2413,6 @@ the_chosen_escapee_initializer = {
 		size = 5
 		has_ring = no
 	}
-
 	planet = {
 		class = pc_gaia
 		orbit_distance = 70
@@ -2623,7 +2441,6 @@ the_chosen_escapee_initializer = {
 	}
 
 	change_orbit = 75
-
 	planet = {
 		count = 4
 		class = pc_ice_asteroid
@@ -2638,10 +2455,8 @@ the_chosen_escapee_initializer = {
 the_star_mall_initializer = {
 	class = "sc_g"
 	usage = misc_system_init
-
 	usage_odds = {
 		base = 0
-		modifier = { factor = 0 is_bottleneck_system = yes }
 		modifier = {
 			OR = {
 				has_utopia = yes
@@ -2653,13 +2468,12 @@ the_star_mall_initializer = {
 			script = solar_system_initializers/initializer_modifiers_habitable_world_systems_mult
 			VALUE = 0.4
 		}
+		modifier = { factor = 0 is_bottleneck_system = yes }
 	}
 
 	max_instances = 1
 	scaled_spawn_chance = 3	# scales by galaxy size (1000 stars = 10x base)
-
 	flags = { star_mall hostile_system }
-
 	planet = {
 		count = 1
 		class = "pc_g_star"
@@ -2670,7 +2484,6 @@ the_star_mall_initializer = {
 	}
 
 	change_orbit = 30
-
 	planet = {
 		count = 1
 		class = "pc_asteroid"
@@ -2697,7 +2510,6 @@ the_star_mall_initializer = {
 	}
 
 	change_orbit = 15
-
 	planet = {
 		count = 1
 		class = "pc_asteroid"
@@ -2724,7 +2536,6 @@ the_star_mall_initializer = {
 	}
 
 	change_orbit = 20
-
 	planet = {
 		count = 1
 		class = pc_gas_giant
@@ -2746,10 +2557,7 @@ the_star_mall_initializer = {
 				set_planet_flag = star_mall_habitat
 				set_planet_flag = pre_sapients_forbidden
 				clear_blockers = yes
-				set_planet_entity = {
-					entity = habitat_phase_03_entity
-					graphical_culture = avian_01
-				}
+				set_planet_entity = { entity = habitat_phase_03_entity graphical_culture = avian_01 }
 				add_deposit = d_star_mall_promenade_blocker
 				while = {
 					count = 8
@@ -2761,7 +2569,6 @@ the_star_mall_initializer = {
 	}
 
 	change_orbit = 15
-
 	planet = {
 		count = 1
 		class = "pc_asteroid"
@@ -2788,7 +2595,6 @@ the_star_mall_initializer = {
 	}
 
 	change_orbit = 15
-
 	planet = {
 		count = 1
 		class = "pc_asteroid"
@@ -2815,7 +2621,6 @@ the_star_mall_initializer = {
 	}
 
 	change_orbit = 15
-
 	planet = {
 		count = 1
 		class = "pc_asteroid"
@@ -2842,7 +2647,6 @@ the_star_mall_initializer = {
 	}
 
 	change_orbit = 15
-
 	planet = {
 		count = 1
 		class = "pc_asteroid"
@@ -2872,14 +2676,12 @@ the_star_mall_initializer = {
 breachsealer_system = {
 	class = "sc_g"
 	name = NAME_Seddom
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 120
 	}
 
 	usage = misc_system_init
-
 	usage_odds = {
 		base = @spawn_system_extreme
 		inline_script = {
@@ -2890,7 +2692,6 @@ breachsealer_system = {
 
 	max_instances = 1
 	scaled_spawn_chance = 4	# scales by galaxy size (1000 stars = 10x base)
-
 	planet = {
 		name = "NAME_Seddom"
 		class = "pc_g_star"
@@ -2913,7 +2714,6 @@ breachsealer_system = {
 			last_created_ambient_object = { set_ambient_object_flag = breachsealer_breach }
 		}
 	}
-
 	planet = {
 		name = "NAME_Ariph"
 		class = "pc_shrouded"
@@ -2927,7 +2727,6 @@ breachsealer_system = {
 		}
 		flags = { planet_Ariph suppress_archaeological_sites }
 	}
-
 	planet = {
 		name = "NAME_Hari_XXIV"
 		class = "pc_shrouded"
@@ -2941,7 +2740,6 @@ breachsealer_system = {
 		}
 		flags = { planet_Hari_XXIV suppress_archaeological_sites }
 	}
-
 	planet = {
 		name = "NAME_Risasi"
 		class = "pc_shrouded"
@@ -2955,7 +2753,6 @@ breachsealer_system = {
 		}
 		flags = { planet_Risasi suppress_archaeological_sites }
 	}
-
 	planet = {
 		name = "NAME_Aridder"
 		class = "pc_shrouded"
@@ -2969,7 +2766,6 @@ breachsealer_system = {
 		}
 		flags = { planet_Aridder suppress_archaeological_sites }
 	}
-
 	planet = {
 		name = "NAME_E'cho"
 		class = "pc_shrouded"
@@ -2983,7 +2779,6 @@ breachsealer_system = {
 		}
 		flags = { planet_Echo suppress_archaeological_sites }
 	}
-
 	planet = {
 		name = "NAME_Rover"
 		class = "pc_shrouded"
@@ -2997,7 +2792,6 @@ breachsealer_system = {
 		}
 		flags = { planet_Rover suppress_archaeological_sites }
 	}
-
 	planet = {
 		name = "NAME_Jasepe"
 		class = "pc_shrouded"
@@ -3011,7 +2805,6 @@ breachsealer_system = {
 		}
 		flags = { planet_Jasepe suppress_archaeological_sites }
 	}
-
 	planet = {
 		name = "NAME_Blaxe"
 		class = "pc_shrouded"
@@ -3025,7 +2818,6 @@ breachsealer_system = {
 		}
 		flags = { planet_Blaxe suppress_archaeological_sites }
 	}
-
 	planet = {
 		name = "NAME_Glavi"
 		class = "pc_shrouded"
@@ -3039,7 +2831,6 @@ breachsealer_system = {
 		}
 		flags = { planet_Glavi suppress_archaeological_sites }
 	}
-
 	planet = {
 		name = "NAME_Salvold"
 		class = "pc_shrouded"
@@ -3053,7 +2844,6 @@ breachsealer_system = {
 		}
 		flags = { planet_Salvold suppress_archaeological_sites }
 	}
-
 	planet = {
 		name = "NAME_Frince"
 		class = "pc_shrouded"
@@ -3073,7 +2863,6 @@ breachsealer_system = {
 metal_planet_system_initializer = {
 	class = "sc_g"
 	usage = misc_system_init
-
 	usage_odds = {
 		base = @spawn_system_slightlycommon
 		modifier = { factor = 0 has_cosmic_storms_dlc = no }
@@ -3082,19 +2871,16 @@ metal_planet_system_initializer = {
 
 	max_instances = 1
 	scaled_spawn_chance = 3
-
 	asteroid_belt = {
 		type = debris_asteroid_belt
 		radius = 158
 	}
-
 	planet = {
 		class = pc_g_star
 		orbit_distance = 0
 	}
 
 	change_orbit = 75
-
 	planet = {
 		class = "pc_desert"
 		orbit_distance = 45
@@ -3108,7 +2894,6 @@ metal_planet_system_initializer = {
 	}
 
 	change_orbit = 45
-
 	planet = {
 		count = { min = 1 max = 3 }
 		orbit_distance = 20
@@ -3128,7 +2913,6 @@ metal_planet_system_initializer = {
 previously_terraformed_planet_system_initializer = {
 	class = "rl_standard_stars"
 	usage = misc_system_init
-
 	usage_odds = {
 		base = @spawn_system_common
 		modifier = { factor = 0 has_cosmic_storms_dlc = no }
@@ -3137,17 +2921,14 @@ previously_terraformed_planet_system_initializer = {
 
 	max_instances = 1
 	scaled_spawn_chance = 3
-
 	asteroid_belt = {
 		type = debris_asteroid_belt
 		radius = 158
 	}
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 100
 	}
-
 	planet = {
 		class = star
 		count = { min = 1 max = 2 }
@@ -3156,7 +2937,6 @@ previously_terraformed_planet_system_initializer = {
 	}
 
 	change_orbit = 60
-
 	planet = {
 		class = "pc_continental"
 		orbit_distance = 60
@@ -3170,7 +2950,6 @@ previously_terraformed_planet_system_initializer = {
 	}
 
 	change_orbit = 45
-
 	planet = {
 		count = { min = 0 max = 4 }
 		orbit_distance = 20
@@ -3190,7 +2969,6 @@ previously_terraformed_planet_system_initializer = {
 collided_planet_system_initializer = {
 	class = "sc_m_giant"
 	usage = misc_system_init
-
 	usage_odds = {
 		base = @spawn_system_base
 		modifier = { factor = 0 has_cosmic_storms_dlc = no }
@@ -3199,14 +2977,12 @@ collided_planet_system_initializer = {
 
 	max_instances = 1
 	scaled_spawn_chance = 3
-
 	planet = {
 		class = pc_m_star
 		orbit_distance = 0
 	}
 
 	change_orbit = 75
-
 	planet = {
 		class = "pc_continental"
 		orbit_distance = 45
@@ -3236,7 +3012,6 @@ collided_planet_system_initializer = {
 	}
 
 	change_orbit = 75
-
 	planet = {
 		count = { min = 1 max = 4 }
 		orbit_distance = 30
@@ -3250,7 +3025,6 @@ collided_planet_system_initializer = {
 			orbit_distance = 5
 		}
 	}
-
 	planet = {
 		count = { min = 1 max = 2 }
 		class = pc_asteroid
@@ -3266,7 +3040,6 @@ collided_planet_system_initializer = {
 wooden_planet_system_initializer = {
 	class = "sc_g"
 	usage = misc_system_init
-
 	usage_odds = {
 		base = @spawn_system_common
 		modifier = { factor = 0 has_cosmic_storms_dlc = no }
@@ -3275,14 +3048,12 @@ wooden_planet_system_initializer = {
 
 	max_instances = 1
 	scaled_spawn_chance = 3
-
 	planet = {
 		class = star
 		orbit_distance = 0
 	}
 
 	change_orbit = 75
-
 	planet = {
 		class = "pc_tropical"
 		orbit_distance = 45
@@ -3296,7 +3067,6 @@ wooden_planet_system_initializer = {
 	}
 
 	change_orbit = 45
-
 	planet = {
 		count = { min = 0 max = 2 }
 		orbit_distance = 20
@@ -3306,7 +3076,6 @@ wooden_planet_system_initializer = {
 	}
 
 	change_orbit = 60
-
 	planet = {
 		count = { min = 0 max = 1 }
 		orbit_distance = 45

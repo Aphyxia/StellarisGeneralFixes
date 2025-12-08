@@ -14,18 +14,15 @@ building_paragon_memory_vaults = {
 	can_be_disabled = yes
 	is_essential = yes
 	empire_limit = 1
-
 	building_sets = {
 		government
 		urban
 		unity
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_memory_vault_empire = no }
 	}
-
 	desc = {
 		trigger = {
 			has_owner = yes
@@ -38,7 +35,6 @@ building_paragon_memory_vaults = {
 		}
 		text = building_paragon_memory_vaults_desc
 	}
-
 	desc = {
 		trigger = {
 			has_owner = yes
@@ -46,7 +42,6 @@ building_paragon_memory_vaults = {
 		}
 		text = building_paragon_memory_vaults_machine_desc
 	}
-
 	desc = {
 		trigger = {
 			has_owner = yes
@@ -54,11 +49,9 @@ building_paragon_memory_vaults = {
 		}
 		text = building_paragon_memory_vaults_hive_desc
 	}
-
 	triggered_desc = {
 		text = memory_vault_tooltip
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_upgraded_capital = yes
@@ -71,7 +64,6 @@ building_paragon_memory_vaults = {
 			}
 		}
 	}
-
 	potential = {
 		custom_tooltip = {
 			text = EMPIRE_UNIQUE_BUILDING
@@ -79,7 +71,6 @@ building_paragon_memory_vaults = {
 		}
 		exists = planet
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -125,7 +116,6 @@ building_paragon_memory_vaults = {
 			energy = @b2_upkeep
 		}
 	}
-
 	triggered_country_modifier = {
 		potential = {
 			has_owner = yes
@@ -139,7 +129,6 @@ building_paragon_memory_vaults = {
 		}
 		species_leader_exp_gain = 0.01
 	}
-
 	triggered_country_modifier = {
 		potential = {
 			has_owner = yes
@@ -155,25 +144,23 @@ building_paragon_memory_vaults = {
 		species_leader_exp_gain = 0.01
 		mult = owner.paragon_memory_vault
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
 }
 
 ### THE BEHOLDER
+
 building_the_beholder = {
 	icon = building_temple_of_whispers
 	empire_limit = 1
 	can_build = no
 	can_demolish = no
 	category = manufacturing
-
 	building_sets = {
 		government
 		unity
 	}
-
 	destroy_trigger = {
 		OR = {
 			has_owner = no
@@ -191,12 +178,10 @@ building_the_beholder = {
 			}
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = { exists = event_target:beholder_leader }
 		psionic_pop_bonus_workforce_mult = 0.10
 	}
-
 	resources = {
 		category = planet_buildings
 		upkeep = {
@@ -223,30 +208,27 @@ building_the_beholder = {
 			sr_zro = 1
 		}
 	}
-
 	triggered_desc = {
 		trigger = {
 			NOT = { exists = event_target:beholder_leader }
 		}
 		text = building_the_beholder_unknown_desc
 	}
-
 	triggered_desc = {
 		trigger = { exists = event_target:beholder_leader }
 		text = building_the_beholder_known_desc
 	}
-
 	triggered_desc = {
 		text = beholder_psi_pops_timer_tooltip
 		trigger = { has_planet_flag = beholder_psi_pops_timer }
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
 }
 
 ### ASTROCREATOR AZARYN
+
 building_contained_ecosphere = {
 	icon = building_contained_ecosphere
 	empire_limit = 1
@@ -254,18 +236,15 @@ building_contained_ecosphere = {
 	can_demolish = yes
 	position_priority = 1
 	category = resource
-
 	building_sets = {
 		government
 		research
 		society
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { has_country_flag = azaryn_dead }
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -279,15 +258,12 @@ building_contained_ecosphere = {
 			food = 40
 		}
 	}
-
 	on_built = {
 		add_modifier = { modifier = contained_ecosphere_pheromones }
 	}
-
 	on_destroy = {
 		remove_modifier = contained_ecosphere_pheromones
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}

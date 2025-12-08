@@ -68,10 +68,7 @@ event = {
 						use_bypasses = no
 						min_steps = 1
 						max_steps = 6
-						set_timed_star_flag = {
-							flag = mining_drone_expansion_destination_system
-							years = 9
-						}
+						set_timed_star_flag = { flag = mining_drone_expansion_destination_system years = 9 }
 						save_event_target_as = mining_drone_expansion_destination_system
 					}
 				}
@@ -82,17 +79,12 @@ event = {
 						NOT = { exists = starbase }
 						is_valid_drone_expansion_destination_system = yes
 					}
-					set_timed_star_flag = {
-						flag = mining_drone_expansion_destination_system
-						years = 9
-					}
+					set_timed_star_flag = { flag = mining_drone_expansion_destination_system years = 9 }
 					save_event_target_as = mining_drone_expansion_destination_system
 				}
 			}
 			# Send out a fleet
-			event_target:mining_drone_expansion_starting_system = {
-				create_mining_drone_expansion_fleet = yes
-			}
+			event_target:mining_drone_expansion_starting_system = { create_mining_drone_expansion_fleet = yes }
 		}
 	}
 }
@@ -116,9 +108,7 @@ fleet_event = {
 			# If the system is unoccupied, prepare to swap the Expansion Fleet for generic Mining Drones
 			if = {
 				limit = { NOT = { exists = starbase } }
-				event_target:mining_drone_expansion_country = {
-					set_country_flag = queued_to_destroy
-				}
+				event_target:mining_drone_expansion_country = { set_country_flag = queued_to_destroy }
 				random_system_planet = {
 					limit = {
 						NOR = {
@@ -152,10 +142,7 @@ fleet_event = {
 						NOT = { exists = starbase }
 						is_valid_drone_expansion_destination_system = yes
 					}
-					set_timed_star_flag = {
-						flag = mining_drone_expansion_destination_system
-						years = 9
-					}
+					set_timed_star_flag = { flag = mining_drone_expansion_destination_system years = 9 }
 					save_event_target_as = mining_drone_expansion_destination_system
 				}
 				root = {
@@ -309,9 +296,7 @@ event = {
 				}
 			}
 			# Send out a fleet
-			event_target:aggressive_drone_expansion_starting_system = {
-				create_aggressive_drone_expansion_fleet = yes
-			}
+			event_target:aggressive_drone_expansion_starting_system = { create_aggressive_drone_expansion_fleet = yes }
 		}
 	}
 }
@@ -336,9 +321,7 @@ fleet_event = {
 			# If the system is unoccupied, prepare to swap the Aggressive Expansion Fleet for generic Mining Drones
 			if = {
 				limit = { NOT = { exists = starbase } }
-				event_target:aggressive_drone_expansion_country = {
-					set_country_flag = queued_to_destroy
-				}
+				event_target:aggressive_drone_expansion_country = { set_country_flag = queued_to_destroy }
 				random_system_planet = {
 					limit = {
 						NOR = {
@@ -467,9 +450,7 @@ country_event = {
 
 	trigger = {
 		is_country_type = drone
-		NOT = {
-			fromfrom = { is_ship_class = shipclass_mining_station }
-		}
+		NOT = { fromfrom = { is_ship_class = shipclass_mining_station } }
 	}
 
 	immediate = {
@@ -716,4 +697,3 @@ country_event = {
 		}
 	}
 }
-

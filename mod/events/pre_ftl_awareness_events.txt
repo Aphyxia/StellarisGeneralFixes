@@ -64,7 +64,9 @@ fleet_event = {
 					}
 				}
 				owner = {
-					add_age_based_awareness_effect = { AWARENESS = 1 }
+					add_age_based_awareness_effect = {
+						AWARENESS = 1
+					}
 					set_timed_country_flag = {
 						# This can only trigger once every six months
 						flag = recent_awareness_gain
@@ -100,7 +102,9 @@ country_event = {
 					owner = { is_primitive = yes has_awareness < 100 }
 				}
 				owner = {
-					add_age_based_awareness_effect = { AWARENESS = 5 }
+					add_age_based_awareness_effect = {
+						AWARENESS = 5
+					}
 				}
 			}
 		}
@@ -135,7 +139,9 @@ event = {
 					observation_outpost = { is_cloaked = no }
 				}
 			}
-			add_age_based_awareness_effect = { AWARENESS = 2 }
+			add_age_based_awareness_effect = {
+				AWARENESS = 2
+			}
 		}
 	}
 }
@@ -158,7 +164,9 @@ ship_event = {
 
 	immediate = {
 		from.owner = {
-			add_age_based_awareness_effect = { AWARENESS = 2 }
+			add_age_based_awareness_effect = {
+				AWARENESS = 2
+			}
 		}
 	}
 }
@@ -189,7 +197,9 @@ ship_event = {
 						owner = { is_primitive = yes has_awareness < 100 }
 					}
 					owner = {
-						add_age_based_awareness_effect = { AWARENESS = 1 }
+						add_age_based_awareness_effect = {
+							AWARENESS = 1
+						}
 					}
 				}
 			}
@@ -209,9 +219,7 @@ planet_event = {
 		has_owner = yes
 		owner = { is_primitive = yes has_awareness < 100 }
 		# The robot uprising doesn't increase awareness, as they're not aliens
-		NOT = {
-			from = { has_country_flag = pre_ftl_robot_uprising }
-		}
+		NOT = { from = { has_country_flag = pre_ftl_robot_uprising } }
 	}
 
 	immediate = {
@@ -253,7 +261,9 @@ fleet_event = {
 					owner = { is_primitive = yes has_awareness < 100 }
 				}
 				owner = {
-					add_age_based_awareness_effect = { AWARENESS = 2 }
+					add_age_based_awareness_effect = {
+						AWARENESS = 2
+					}
 				}
 			}
 		}
@@ -283,7 +293,9 @@ planet_event = {
 					owner = { is_primitive = yes has_awareness < 100 }
 				}
 				owner = {
-					add_age_based_awareness_effect = { AWARENESS = 5 }
+					add_age_based_awareness_effect = {
+						AWARENESS = 5
+					}
 				}
 			}
 		}
@@ -313,7 +325,9 @@ planet_event = {
 					owner = { is_primitive = yes has_awareness < 100 }
 				}
 				owner = {
-					add_age_based_awareness_effect = { AWARENESS = 1 }
+					add_age_based_awareness_effect = {
+						AWARENESS = 1
+					}
 				}
 			}
 		}
@@ -343,7 +357,9 @@ country_event = {
 					owner = { is_primitive = yes has_awareness < 100 }
 				}
 				owner = {
-					add_age_based_awareness_effect = { AWARENESS = 5 }
+					add_age_based_awareness_effect = {
+						AWARENESS = 5
+					}
 				}
 			}
 		}
@@ -373,7 +389,9 @@ planet_event = {
 					owner = { is_primitive = yes has_awareness < 100 }
 				}
 				owner = {
-					add_age_based_awareness_effect = { AWARENESS = 20 }
+					add_age_based_awareness_effect = {
+						AWARENESS = 20
+					}
 				}
 			}
 		}
@@ -404,7 +422,9 @@ system_event = {
 					owner = { is_primitive = yes has_awareness < 100 }
 				}
 				owner = {
-					add_age_based_awareness_effect = { AWARENESS = 20 }
+					add_age_based_awareness_effect = {
+						AWARENESS = 20
+					}
 				}
 			}
 		}
@@ -418,18 +438,12 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		capital_scope = {
-			has_observation_outpost = yes
-			exists = observation_outpost_owner
-		}
+		capital_scope = { has_observation_outpost = yes exists = observation_outpost_owner }
 	}
 
 	immediate = {
 		from = {
-			create_pre_ftl_awareness_increased_message = {
-				SYSTEM = root.capital_scope.solar_system
-				COUNTRY = root
-			}
+			create_pre_ftl_awareness_increased_message = { SYSTEM = root.capital_scope.solar_system COUNTRY = root }
 		}
 	}
 }
@@ -441,18 +455,12 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		capital_scope = {
-			has_observation_outpost = yes
-			exists = observation_outpost_owner
-		}
+		capital_scope = { has_observation_outpost = yes exists = observation_outpost_owner }
 	}
 
 	immediate = {
 		from = {
-			create_pre_ftl_awareness_decreased_message = {
-				SYSTEM = root.capital_scope.solar_system
-				COUNTRY = root
-			}
+			create_pre_ftl_awareness_decreased_message = { SYSTEM = root.capital_scope.solar_system COUNTRY = root }
 		}
 	}
 }
@@ -499,7 +507,9 @@ event = {
 				has_awareness < 100
 				capital_scope = { has_branch_office = yes }
 			}
-			add_age_based_awareness_effect = { AWARENESS = 2 }
+			add_age_based_awareness_effect = {
+				AWARENESS = 2
+			}
 		}
 	}
 }
@@ -524,7 +534,9 @@ situation_event = {
 
 	immediate = {
 		owner = {
-			subtract_age_based_awareness_effect = { AWARENESS = 1 }
+			subtract_age_based_awareness_effect = {
+				AWARENESS = 1
+			}
 		}
 	}
 }
@@ -583,7 +595,6 @@ country_event = {
 		}
 		set_country_flag = first_contact_completed@event_target:contact_empire
 	}
-
 	option = {
 		name = UNFORTUNATE
 		hidden_effect = {
@@ -614,7 +625,6 @@ country_event = {
 		set_country_flag = first_contact_completed@event_target:contact_empire
 		event_target:contact_empire = { set_country_flag = pre_ftl_initiating_contact }
 	}
-
 	option = {
 		name = ACKNOWLEDGED
 		hidden_effect = {
@@ -622,4 +632,3 @@ country_event = {
 		}
 	}
 }
-

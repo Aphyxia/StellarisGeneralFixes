@@ -5,16 +5,12 @@ namespace = apoc
 ship_event = {
 	id = apoc.1
 	title = "apoc.1.name"
-
 	desc = {
 		text = apoc.1.desc
 		trigger = {
-			NOT = {
-				owner = { has_country_flag = encountered_first_lgate }
-			}
+			NOT = { owner = { has_country_flag = encountered_first_lgate } }
 		}
 	}
-
 	desc = {
 		text = apoc.1.b.desc
 		trigger = {
@@ -24,13 +20,11 @@ ship_event = {
 
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_radio_chatter
-	location = FROM
+	location = from
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = {
-			owner = { has_country_flag = encountered_first_gateway }
-		}
+		NOT = { owner = { has_country_flag = encountered_first_gateway } }
 		from = {
 			has_star_flag = abandoned_gateway
 			any_system_megastructure = { is_megastructure_type = gateway_ruined }
@@ -44,7 +38,6 @@ ship_event = {
 			add_seen_bypass_type = gateway
 		}
 	}
-
 	option = {
 		name = INTRIGUING
 	}
@@ -54,16 +47,12 @@ ship_event = {
 ship_event = {
 	id = apoc.3
 	title = "apoc.1.name"
-
 	desc = {
 		text = apoc.3.desc
 		trigger = {
-			NOT = {
-				owner = { has_country_flag = encountered_first_gateway }
-			}
+			NOT = { owner = { has_country_flag = encountered_first_gateway } }
 		}
 	}
-
 	desc = {
 		text = apoc.3.b.desc
 		trigger = {
@@ -73,7 +62,7 @@ ship_event = {
 
 	picture = GFX_evt_l-gateway
 	show_sound = event_radio_chatter
-	location = FROM
+	location = from
 	is_triggered_only = yes
 
 	trigger = {
@@ -95,7 +84,6 @@ ship_event = {
 		from = { save_event_target_as = gateway_system }
 		owner = { set_country_flag = encountered_first_lgate }
 	}
-
 	option = {
 		name = INTRIGUING
 		owner = { start_lcluster_chain = yes }
@@ -110,13 +98,11 @@ ship_event = {
 	desc = "apoc.5.desc"
 	picture = GFX_evt_wormhole
 	show_sound = event_radio_chatter
-	location = FROM
+	location = from
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = {
-			owner = { has_country_flag = encountered_first_wormhole }
-		}
+		NOT = { owner = { has_country_flag = encountered_first_wormhole } }
 		from = {
 			has_natural_wormhole = yes
 			NOR = {
@@ -135,7 +121,6 @@ ship_event = {
 			add_seen_bypass_type = wormhole
 		}
 	}
-
 	option = {
 		name = apoc.5.a
 	}
@@ -145,7 +130,6 @@ ship_event = {
 country_event = {
 	id = apoc.10
 	title = "apoc.10.name"
-
 	desc = {
 		text = apoc.10.desc.1
 		trigger = {
@@ -153,7 +137,6 @@ country_event = {
 			NOT = { has_country_flag = did_not_repair_gateway }
 		}
 	}
-
 	desc = {
 		text = apoc.10.desc.2
 		trigger = {
@@ -163,7 +146,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = apoc.10.desc.3
 		trigger = {
@@ -171,7 +153,6 @@ country_event = {
 			has_technology = "tech_gateway_activation"
 		}
 	}
-
 	desc = {
 		text = apoc.10.desc.4
 		trigger = {
@@ -212,7 +193,6 @@ country_event = {
 			NOT = { has_country_flag = did_not_repair_gateway }
 		}
 	}
-
 	option = {
 		name = INTERESTING
 		trigger = {
@@ -220,7 +200,6 @@ country_event = {
 			has_technology = "tech_gateway_activation"
 		}
 	}
-
 	option = {
 		name = apoc.10.a
 		trigger = {
@@ -258,7 +237,6 @@ country_event = {
 		from = { save_event_target_as = gateway_system }
 		set_country_flag = gateway_built
 	}
-
 	option = {
 		name = EXCELLENT
 	}
@@ -290,7 +268,6 @@ country_event = {
 	immediate = {
 		from = { save_event_target_as = gateway_system }
 	}
-
 	option = {
 		name = EXCELLENT
 	}
@@ -316,7 +293,6 @@ country_event = {
 	immediate = {
 		from = { save_event_target_as = gateway_system }
 	}
-
 	option = {
 		name = EXCELLENT
 	}
@@ -335,7 +311,6 @@ country_event = {
 	immediate = {
 		from = { save_event_target_as = gateway_system }
 	}
-
 	option = {
 		name = GOOD
 	}
@@ -362,32 +337,26 @@ country_event = {
 country_event = {
 	id = apoc.100
 	title = "apoc.100.name"
-
 	desc = {
 		text = apoc.100.desc.purif
 		trigger = { has_valid_civic = civic_fanatic_purifiers }
 	}
-
 	desc = {
 		text = apoc.100.desc.termi
 		trigger = { has_valid_civic = civic_machine_terminator }
 	}
-
 	desc = {
 		text = apoc.100.desc.pacif
 		trigger = { is_pacifist = yes }
 	}
-
 	desc = {
 		text = apoc.100.desc.milit
 		trigger = { is_militarist = yes }
 	}
-
 	desc = {
 		text = apoc.100.desc.phobe
 		trigger = { is_xenophobe = yes }
 	}
-
 	desc = {
 		text = apoc.100.desc
 		trigger = {
@@ -405,7 +374,6 @@ country_event = {
 	show_sound = event_radio_chatter
 	location = capital_scope
 	is_triggered_only = yes
-
 	option = {
 		name = apoc.100.a
 		# planet/owner project, best start in country scope, instead of location scope
@@ -421,17 +389,14 @@ country_event = {
 country_event = {
 	id = apoc.110
 	title = apoc.110.name
-
 	desc = {
 		text = apoc.110.desc
 		trigger = { is_gestalt = no }
 	}
-
 	desc = {
 		text = apoc.110.desc.machine
 		trigger = { is_machine_empire = yes }
 	}
-
 	desc = {
 		text = apoc.110.desc.hive
 		trigger = { is_hive_empire = yes }
@@ -441,7 +406,6 @@ country_event = {
 	show_sound = event_radio_chatter
 	location = capital_scope
 	is_triggered_only = yes
-
 	option = {
 		name = PLANET_KILLER_CRACKER
 		custom_tooltip = apoc.110.cracker.tooltip
@@ -450,7 +414,6 @@ country_event = {
 		}
 		trigger = { is_pacifist = no }
 	}
-
 	option = {
 		name = PLANET_KILLER_SHIELDER
 		custom_tooltip = apoc.110.shielder.tooltip
@@ -459,7 +422,6 @@ country_event = {
 		}
 		trigger = { is_pacifist = yes }
 	}
-
 	option = {
 		name = PLANET_KILLER_NEUTRON
 		custom_tooltip = apoc.110.neutron.tooltip
@@ -467,28 +429,27 @@ country_event = {
 			set_country_flag = pk_neutron
 		}
 		trigger = {
-			NOR = {
-				is_pacifist = yes
-				# Available to spiritualists if Divine Enforcer is locked out
-				is_spiritualist = yes
-				AND = {
-					NOR = {
-						has_utopia = yes
-						has_shroud_dlc = yes
+			is_pacifist = no
+			# Available to spiritualists if Divine Enforcer is locked out
+			OR = {
+				is_spiritualist = no
+				NOR = {
+					AND = {
+						has_utopia = no
+						has_shroud_dlc = no
+						has_technology = tech_telepathy
 					}
-					has_technology = tech_telepathy
-				}
-				AND = {
-					OR = {
-						has_utopia = yes
-						has_shroud_dlc = yes
+					AND = {
+						OR = {
+							has_utopia = yes
+							has_shroud_dlc = yes
+						}
+						has_psionic_ascension = yes
 					}
-					has_psionic_ascension = yes
 				}
 			}
 		}
 	}
-
 	option = {
 		name = PLANET_KILLER_GODRAY
 		custom_tooltip = apoc.110.godray.tooltip
@@ -515,7 +476,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = PLANET_KILLER_NANOBOTS
 		custom_tooltip = apoc.110.nanobots.tooltip
@@ -527,7 +487,6 @@ country_event = {
 			has_valid_civic = civic_machine_assimilator
 		}
 	}
-
 	option = {
 		name = PLANET_KILLER_DEVOLUTION
 		custom_tooltip = apoc.110.devolution.tooltip
@@ -541,7 +500,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = PLANET_KILLER_SMELTER
 		custom_tooltip = apoc.110.smelter.tooltip
@@ -556,17 +514,14 @@ country_event = {
 country_event = {
 	id = apoc.120
 	title = apoc.120.name
-
 	desc = {
 		text = apoc.120.desc
 		trigger = { is_gestalt = no }
 	}
-
 	desc = {
 		text = apoc.120.desc.machine
 		trigger = { is_machine_empire = yes }
 	}
-
 	desc = {
 		text = apoc.120.desc.hive
 		trigger = { is_hive_empire = yes }
@@ -580,7 +535,6 @@ country_event = {
 	immediate = {
 		set_country_flag = colossus_project
 	}
-
 	option = {
 		name = OK
 		give_technology = { tech = tech_colossus message = no }
@@ -680,7 +634,6 @@ country_event = {
 	show_sound = event_radio_chatter
 	location = from.capital_scope
 	is_triggered_only = yes
-
 	option = {
 		name = apoc.130.a.weaker
 		trigger = {
@@ -692,7 +645,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = apoc.130.a.stronger
 		trigger = {
@@ -704,7 +656,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = apoc.130.a.pacif
 		trigger = { is_pacifist = yes }
@@ -749,4 +700,3 @@ event = {
 		}
 	}
 }
-

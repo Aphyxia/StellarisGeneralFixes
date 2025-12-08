@@ -1,5 +1,4 @@
 #########################################
-
 #
 # Assimilation Events
 # Reviewed by FirePrince # Vfix for https://forum.paradoxplaza.com/forum/threads/stellaris-maximising-purge-does-not-create-cyborg-zombies-with-mechromancy-3-12-2-d9d4.1676737/
@@ -48,9 +47,7 @@ planet_event = {
 		set_variable = { which = var_local_pop_amount value = local_pop_amount }
 		if = { # IDK, this var seems out of order, special global in the event scope
 			limit = {
-				NOT = {
-					check_variable = { which = var_local_pop_amount value > 0 }
-				}
+				NOT = { check_variable = { which = var_local_pop_amount value > 0 } }
 			}
 			set_variable = { which = var_local_pop_amount value = 1 }
 		}
@@ -111,9 +108,7 @@ planet_event = {
 		set_variable = { which = var_local_pop_amount value = local_pop_amount }
 		if = { # IDK, this var seems out of order, special global in the event scope
 			limit = {
-				NOT = {
-					check_variable = { which = var_local_pop_amount value > 0 }
-				}
+				NOT = { check_variable = { which = var_local_pop_amount value > 0 } }
 			}
 			set_variable = { which = var_local_pop_amount value = 1 }
 		}
@@ -409,7 +404,9 @@ planet_event = {
 						homeworld = this
 						namelist = this
 						gender = this
-						traits = { trait = trait_cybernetic }
+						traits = {
+							trait = trait_cybernetic
+						}
 						effect = {
 							modify_species = {
 								species = this
@@ -535,7 +532,10 @@ planet_event = {
 						homeworld = this
 						namelist = this
 						gender = this
-						traits = { trait = trait_hive_mind trait = trait_cybernetic }
+						traits = {
+							trait = trait_hive_mind
+							trait = trait_cybernetic
+						}
 						effect = {
 							modify_species = {
 								species = this
@@ -660,7 +660,9 @@ planet_event = {
 						homeworld = this
 						namelist = this
 						gender = this
-						traits = { trait = trait_psionic }
+						traits = {
+							trait = trait_psionic
+						}
 						effect = {
 							modify_species = {
 								species = this
@@ -787,7 +789,10 @@ planet_event = {
 						homeworld = this
 						namelist = this
 						gender = this
-						traits = { trait = trait_hive_mind trait = trait_psionic }
+						traits = {
+							trait = trait_hive_mind
+							trait = trait_psionic
+						}
 						effect = {
 							modify_species = {
 								species = this
@@ -1040,7 +1045,9 @@ planet_event = {
 							effect = {
 								modify_species = {
 									add_trait = trait_robot_synthetic_dawn
-									effect = { save_event_target_as = target_species }
+									effect = {
+										save_event_target_as = target_species
+									}
 								}
 							}
 						}
@@ -1262,7 +1269,9 @@ planet_event = {
 						homeworld = this
 						namelist = this
 						gender = this
-						traits = { trait = trait_hive_mind }
+						traits = {
+							trait = trait_hive_mind
+						}
 						effect = {
 							modify_species = {
 								species = this
@@ -1387,7 +1396,10 @@ planet_event = {
 						homeworld = this
 						namelist = this
 						gender = this
-						traits = { trait = trait_hive_mind trait = trait_wilderness }
+						traits = {
+							trait = trait_hive_mind
+							trait = trait_wilderness
+						}
 						effect = {
 							modify_species = {
 								species = this
@@ -1471,4 +1483,3 @@ planet_event = {
 		clear_assimilation_variables = yes			# Clears variables
 	}
 }
-

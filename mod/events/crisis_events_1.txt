@@ -24,7 +24,7 @@ country_event = {
 		set_global_flag = prethoryn_invasion_happened
 		set_global_flag = prethoryn_transmission
 		set_global_flag = galactic_crisis_happened
-		begin_event_chain = { event_chain = "coming_storm_chain" target = ROOT }
+		begin_event_chain = { event_chain = "coming_storm_chain" target = root }
 		random_rim_system = {
 			set_star_flag = swarm_invasion_target_1
 			save_event_target_as = prethoryn_invasion_system
@@ -68,10 +68,9 @@ country_event = {
 	picture = GFX_evt_physics_research
 	show_sound = event_alien_nature
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.11.a
-		begin_event_chain = { event_chain = "coming_storm_chain" target = ROOT }
+		begin_event_chain = { event_chain = "coming_storm_chain" target = root }
 	}
 }
 
@@ -80,11 +79,9 @@ country_event = {
 	id = crisis.12
 	hide_window = yes
 	fire_only_once = yes
-
 	mean_time_to_happen = {
 		years = 50
 	}
-
 	trigger = {
 		is_country_type = default
 		has_global_flag = prethoryn_subspace_echoes
@@ -186,7 +183,6 @@ country_event = {
 	picture = GFX_evt_physics_research
 	show_sound = event_alien_nature
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.13.a
 		create_point_of_interest = {
@@ -237,11 +233,9 @@ country_event = {
 	id = crisis.14
 	hide_window = yes
 	fire_only_once = yes
-
 	mean_time_to_happen = {
 		years = 10
 	}
-
 	trigger = {
 		has_global_flag = prethoryn_approaching_rim
 	}
@@ -263,7 +257,6 @@ country_event = {
 	picture = GFX_evt_physics_research
 	show_sound = event_alien_nature
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.15.a
 		hidden_effect = {
@@ -281,14 +274,12 @@ country_event = {
 		text = "crisis.16.desc"
 		trigger = { can_talk_to_prethoryn = no }
 	}
-
 	desc = {
 		text = "crisis.16.b.desc"
 		trigger = {
 			owner_species = { is_psionic_species = yes }
 		}
 	}
-
 	desc = {
 		text = "crisis.16.c.desc"
 		trigger = {
@@ -297,21 +288,18 @@ country_event = {
 	}
 
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = swarm1
 		room = "swarm_room"
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.16.a
 		trigger = {
 			owner_species = { is_hive_species = no }
 		}
 	}
-
 	option = {
 		name = crisis.16.b
 		trigger = {
@@ -325,11 +313,9 @@ country_event = {
 	id = crisis.17
 	hide_window = yes
 	fire_only_once = yes
-
 	mean_time_to_happen = {
 		months = 30
 	}
-
 	trigger = {
 		has_global_flag = prethoryn_transmission
 	}
@@ -354,7 +340,9 @@ country_event = {
 					portrait = random
 					traits = random
 					immortal = yes
-					effect = { save_event_target_as = prethoryn_species }
+					effect = {
+						save_event_target_as = prethoryn_species
+					}
 				}
 				create_country = {
 					name = "NAME_Prethoryn_Scourge"
@@ -414,7 +402,7 @@ country_event = {
 					establish_communications_no_message = event_target:prethoryn
 					add_opinion_modifier = { who = event_target:prethoryn modifier = opinion_swarm }
 					event_target:prethoryn = {
-						add_opinion_modifier = { who = PREV modifier = opinion_prey }
+						add_opinion_modifier = { who = prev modifier = opinion_prey }
 					}
 					if = {
 						limit = { has_technology = tech_gravity_wells }
@@ -430,7 +418,7 @@ country_event = {
 					create_fleet = {
 						name = "NAME_Prethoryn_Constructor"
 						effect = {
-							set_owner = PREV
+							set_owner = prev
 							create_ship = {
 								name = random
 								design = "NAME_Swarm_Constructor"
@@ -450,7 +438,7 @@ country_event = {
 			random_system = {
 				limit = {
 					distance = {
-						source = PREV
+						source = prev
 						max_distance <= 60
 						min_distance >= 5
 					}
@@ -465,7 +453,7 @@ country_event = {
 						create_fleet = {
 							name = "NAME_Prethoryn_Constructor"
 							effect = {
-								set_owner = PREV
+								set_owner = prev
 								create_ship = {
 									name = random
 									design = "NAME_Swarm_Constructor"
@@ -486,7 +474,7 @@ country_event = {
 			random_system = {
 				limit = {
 					distance = {
-						source = PREV
+						source = prev
 						max_distance <= 60
 						min_distance >= 5
 					}
@@ -505,7 +493,7 @@ country_event = {
 						create_fleet = {
 							name = "NAME_Prethoryn_Constructor"
 							effect = {
-								set_owner = PREV
+								set_owner = prev
 								create_ship = {
 									name = random
 									design = "NAME_Swarm_Constructor"
@@ -526,7 +514,7 @@ country_event = {
 			random_system = {
 				limit = {
 					distance = {
-						source = PREV
+						source = prev
 						max_distance <= 60
 						min_distance >= 5
 					}
@@ -546,7 +534,7 @@ country_event = {
 						create_fleet = {
 							name = "NAME_Prethoryn_Constructor"
 							effect = {
-								set_owner = PREV
+								set_owner = prev
 								create_ship = {
 									name = random
 									design = "NAME_Swarm_Constructor"
@@ -565,14 +553,9 @@ country_event = {
 			}
 		}
 		event_target:global_event_country = {
-			country_event = {
-				id = crisis.19
-				days = 400
-				random = 200
-			}
+			country_event = { id = crisis.19 days = 400 random = 200 }
 		}
 	}
-
 	after = {
 		every_playable_country = {
 			country_event = { id = timeline.70 } # Timeline Prethoryn Scourge
@@ -584,14 +567,12 @@ country_event = {
 country_event = {
 	id = crisis.18
 	title = "crisis.18.name"
-
 	desc = {
 		trigger = {
 			owner = { country_uses_bio_ships = no }
 		}
 		text = "crisis.18.desc"
 	}
-
 	desc = {
 		trigger = {
 			owner = { country_uses_bio_ships = yes }
@@ -616,14 +597,9 @@ country_event = {
 					owner = { has_country_flag = fotd_seperatist_country@root }
 				}
 			}
-			country_event = {
-				id = origin.6125
-				days = 5
-				random = 2
-			}
+			country_event = { id = origin.6125 days = 5 random = 2 }
 		}
 	}
-
 	option = {
 		name = crisis.18.a
 		trigger = {
@@ -637,7 +613,6 @@ country_event = {
 		}
 		# Risa fix: support alternate government types.
 	}
-
 	option = {
 		name = crisis.18.b
 		trigger = {
@@ -650,7 +625,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = crisis.18.c
 		trigger = {
@@ -663,7 +637,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = crisis.18.d
 		trigger = {
@@ -676,7 +649,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = crisis.18.e
 		trigger = {
@@ -693,7 +665,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = crisis.18.f
 		trigger = {
@@ -712,22 +683,18 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = crisis.18.g
 		trigger = { has_ethic = "ethic_fanatic_xenophobe" }
 	}
-
 	option = {
 		name = crisis.18.h
 		trigger = { has_ethic = "ethic_fanatic_xenophile" }
 	}
-
 	option = {
 		name = crisis.18.i
 		trigger = { has_ethic = "ethic_fanatic_authoritarian" }
 	}
-
 	option = {
 		name = crisis.18.j
 		trigger = { has_ethic = "ethic_fanatic_egalitarian" }
@@ -736,7 +703,7 @@ country_event = {
 	# Risa fix: support alternate government types.
 	after = {
 		end_event_chain = "coming_storm_chain"
-		begin_event_chain = { event_chain = "prethoryn_scourge_chain" target = ROOT }
+		begin_event_chain = { event_chain = "prethoryn_scourge_chain" target = root }
 	}
 }
 
@@ -783,7 +750,9 @@ country_event = {
 				portrait = random
 				traits = random
 				immortal = yes
-				effect = { save_event_target_as = prethoryn_species }
+				effect = {
+					save_event_target_as = prethoryn_species
+				}
 			}
 			create_country = {
 				name = "NAME_Prethoryn_Scourge"
@@ -818,7 +787,7 @@ country_event = {
 				establish_communications_no_message = event_target:prethoryn
 				add_opinion_modifier = { who = event_target:prethoryn modifier = opinion_swarm }
 				event_target:prethoryn = {
-					add_opinion_modifier = { who = PREV modifier = opinion_prey }
+					add_opinion_modifier = { who = prev modifier = opinion_prey }
 				}
 				if = {
 					limit = { has_technology = tech_gravity_wells }
@@ -1127,7 +1096,6 @@ country_event = {
 			save_event_target_as = prethoryn_invasion_system
 		}
 	}
-
 	option = {
 		name = crisis.20.a
 	}
@@ -1137,39 +1105,32 @@ country_event = {
 country_event = {
 	id = crisis.30
 	title = "TRANSMISSION"
-
 	desc = {
 		text = crisis.30.desc_01
 		trigger = { can_talk_to_prethoryn = no }
 	}
-
 	desc = {
 		text = crisis.30.desc_02
 		trigger = { can_talk_to_prethoryn = no }
 	}
-
 	desc = {
 		text = crisis.30.desc_03
 		trigger = { can_talk_to_prethoryn = no }
 	}
-
 	desc = {
 		text = crisis.30.desc_07
 		trigger = { can_talk_to_prethoryn = yes }
 	}
-
 	desc = {
 		text = crisis.30.desc_08
 		trigger = { can_talk_to_prethoryn = yes }
 	}
-
 	desc = {
 		text = crisis.30.desc_09
 		trigger = { can_talk_to_prethoryn = yes }
 	}
 
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = swarm1
 		room = "swarm_room"
@@ -1180,50 +1141,42 @@ country_event = {
 	trigger = {
 		from = { is_country_type = swarm }
 	}
-
 	option = {
 		name = crisis.30.a
 		trigger = { can_talk_to_prethoryn = no }
 		response_text = crisis.30.a.response
 	}
-
 	option = {
 		name = crisis.30.b
 		trigger = { is_pacifist = yes can_talk_to_prethoryn = no }
 		response_text = crisis.30.b.response
 	}
-
 	option = {
 		name = crisis.30.c
 		trigger = { is_militarist = yes can_talk_to_prethoryn = no }
 		response_text = crisis.30.c.response
 	}
-
 	option = {
 		name = crisis.30.d
 		trigger = { is_xenophobe = yes can_talk_to_prethoryn = no }
 		response_text = crisis.30.d.response
 	}
-
 	option = {
 		name = crisis.30.e
 		trigger = { is_xenophile = yes can_talk_to_prethoryn = no }
 		response_text = crisis.30.e.response
 	}
-
 	option = {
 		name = crisis.30.f
 		trigger = { is_spiritualist = yes can_talk_to_prethoryn = no }
 		response_text = crisis.30.f.response
 	}
-
 	option = {
 		name = crisis.30.g
 		trigger = { can_talk_to_prethoryn = yes }
 		response_text = crisis.30.g.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = crisis.30.h
 		trigger = { can_talk_to_prethoryn = yes }
@@ -1233,14 +1186,12 @@ country_event = {
 			set_country_flag = learned_about_redacted
 		}
 	}
-
 	option = {
 		name = crisis.30.i
 		trigger = { can_talk_to_prethoryn = yes }
 		response_text = crisis.30.i.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = crisis.30.j
 		trigger = { can_talk_to_prethoryn = yes }
@@ -1250,7 +1201,6 @@ country_event = {
 			set_country_flag = learned_about_redacted
 		}
 	}
-
 	option = {
 		name = crisis.30.a
 		trigger = { can_talk_to_prethoryn = yes }
@@ -1269,11 +1219,9 @@ country_event = {
 		is_country_type = swarm
 		endgame_crisis_large_size_trigger = yes
 	}
-
 	mean_time_to_happen = {
 		years = 1
 	}
-
 	immediate = {
 		set_crisis_sound = swarm_crisis_ambient_stage_3
 		set_crisis_stage_3 = yes
@@ -1302,9 +1250,7 @@ country_event = {
 				limit = { is_fallen_empire = yes }
 				save_global_event_target_as = sentinel_fallen_empire
 			}
-			every_playable_country = {
-				establish_communications = event_target:sentinel_fallen_empire
-			}
+			every_playable_country = { establish_communications = event_target:sentinel_fallen_empire }
 		}
 		observer_event = { id = observer.31 }
 		every_playable_country = {
@@ -1326,7 +1272,6 @@ country_event = {
 	show_sound = event_radio_chatter
 	location = event_target:sentinel_system
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.51.a
 		hidden_effect = {
@@ -1341,21 +1286,18 @@ country_event = {
 	title = "sentinel_title"
 	desc = "crisis.52.desc"
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:crisis_sentinels
 		room = "ethic_spaceship_room"
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.52.a
 		trigger = { exists = event_target:sentinel_fallen_empire }
 		response_text = crisis.52.a.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = crisis.52.a
 		trigger = {
@@ -1364,14 +1306,12 @@ country_event = {
 		response_text = crisis.52.2.a.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = crisis.52.b
 		trigger = { exists = event_target:sentinel_fallen_empire }
 		response_text = crisis.52.new.b.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = crisis.52.b
 		trigger = {
@@ -1380,7 +1320,6 @@ country_event = {
 		response_text = crisis.52.2.new.b.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = crisis.52.c
 		response_text = crisis.52.c.response
@@ -1391,27 +1330,22 @@ country_event = {
 country_event = {
 	id = crisis.55
 	title = "sentinel_title"
-
 	desc = {
 		text = crisis.55.desc_01
 	}
-
 	desc = {
 		text = crisis.55.desc_02
 	}
-
 	desc = {
 		text = crisis.55.desc_03
 	}
-
 	desc = {
 		text = crisis.55.desc_04
 	}
 
 	diplomatic = yes
-
 	picture_event_data = {
-		portrait = FROM
+		portrait = from
 		room = "ethic_spaceship_room"
 	}
 
@@ -1420,13 +1354,11 @@ country_event = {
 	trigger = {
 		from = { is_country_type = sentinels }
 	}
-
 	option = {
 		name = crisis.55.a
 		response_text = crisis.55.a.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = crisis.55.d
 		response_text = crisis.55.d.response
@@ -1446,11 +1378,9 @@ fleet_event = {
 		is_same_value = event_target:sentinel_alpha
 		count_playable_country = { count > 0 }
 	}
-
 	mean_time_to_happen = {
 		months = 100
 	}
-
 	immediate = {
 		random_playable_country = {
 			owner_species = { save_event_target_as = random_species }
@@ -1461,7 +1391,9 @@ fleet_event = {
 				species = event_target:random_species
 				name = random
 				skill = 3
-				traits = { 0 = leader_trait_sentinel }
+				traits = {
+					0 = leader_trait_sentinel
+				}
 			}
 			create_fleet = {
 				name = "NAME_Sentinel_Battle_Fleet"
@@ -1559,12 +1491,10 @@ country_event = {
 	title = "sentinel_title"
 	desc = "crisis.71.desc"
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:crisis_sentinels
 		room = "ethic_spaceship_room"
 	}
-
 	trigger = {
 		has_global_flag = sentinels_founded
 		is_country_type = default
@@ -1573,20 +1503,15 @@ country_event = {
 		any_country = {
 			is_country_type = sentinels
 			count_controlled_ship = { count > 30 }
-			NOT = {
-				root = { is_at_war_with = PREV }
-			}
+			NOT = { root = { is_at_war_with = prev } }
 		}
 	}
-
 	mean_time_to_happen = {
 		months = 100
 	}
-
 	immediate = {
 		set_country_flag = sentinel_donation
 	}
-
 	option = {
 		name = crisis.71.a
 		response_text = crisis.71.a.response
@@ -1647,7 +1572,7 @@ country_event = {
 						}
 						set_owner = root
 						set_location = {
-							target = PREV
+							target = prev
 							distance = 45
 							angle = random
 						}
@@ -1661,7 +1586,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = crisis.71.b
 		response_text = crisis.71.b.response
@@ -1690,14 +1614,12 @@ country_event = {
 	title = "sentinel_title"
 	desc = "crisis.76.desc"
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:crisis_sentinels
 		room = "ethic_spaceship_room"
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.76.c
 	}
@@ -1715,11 +1637,9 @@ country_event = {
 		exists = event_target:sentinel_alpha
 		any_country = { is_country_type = swarm galaxy_percentage > 0.50 }
 	}
-
 	mean_time_to_happen = {
 		years = 1
 	}
-
 	immediate = {
 		set_country_flag = sentinel_anatomy_files
 		every_country = {
@@ -1735,14 +1655,12 @@ country_event = {
 	title = "sentinel_title"
 	desc = "crisis.78.desc"
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:crisis_sentinels
 		room = "ethic_spaceship_room"
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.78.c
 		add_modifier = { modifier = "sentinel_data" days = -1 }
@@ -1779,7 +1697,6 @@ country_event = {
 	show_sound = event_radio_chatter
 	location = event_target:sentinel_system
 	is_triggered_only = yes
-
 	option = {
 		name = ONSCREEN
 		hidden_effect = {
@@ -1794,13 +1711,11 @@ country_event = {
 	title = "sentinel_title"
 	desc = "crisis.82.desc"
 	diplomatic = yes
-
 	picture_event_data = {
 		room = no_video_feed_room
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.76.c
 	}
@@ -1821,11 +1736,9 @@ country_event = {
 			owner = { is_country_type = swarm }
 		}
 	}
-
 	mean_time_to_happen = {
 		months = 820
 	}
-
 	immediate = {
 		set_country_flag = injured_swarm_queen
 		random_system = {
@@ -1917,14 +1830,13 @@ country_event = {
 	show_sound = event_radio_chatter
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.101.a
 		event_target:injured_queen = {
 			enable_special_project = {
 				name = "CAPTURE_QUEEN"
 				location = this
-				owner = ROOT
+				owner = root
 			}
 		}
 	}
@@ -1956,7 +1868,6 @@ ship_event = {
 		}
 		destroy_ambient_object = fromfrom
 	}
-
 	option = {
 		name = crisis.105.a
 		hidden_effect = {
@@ -1968,7 +1879,9 @@ ship_event = {
 					skill = 8
 					event_leader = yes	# prevents this leader from leading factions and winning elections
 					immortal = yes	# can't be killed (not even in battle, unless fleet is destroyed)
-					effect = { set_leader_flag = captured_queen }
+					effect = {
+						set_leader_flag = captured_queen
+					}
 				}
 			}
 			create_fleet = {
@@ -2018,11 +1931,9 @@ fleet_event = {
 		num_ships < 30
 		is_ship_size = queen_swarm
 	}
-
 	mean_time_to_happen = {
 		months = 2
 	}
-
 	immediate = {
 		random_list = {
 			33 = {
@@ -2057,7 +1968,6 @@ country_event = {
 	immediate = {
 		set_country_flag = queen_snatched
 	}
-
 	option = {
 		name = crisis.107.a
 	}
@@ -2141,7 +2051,9 @@ event = {
 							portrait = random
 							traits = random
 							immortal = yes
-							effect = { save_event_target_as = feral_prethoryn_species }
+							effect = {
+								save_event_target_as = feral_prethoryn_species
+							}
 						}
 						create_country = {
 							name = "NAME_Feral_Prethoryn"
@@ -2168,9 +2080,7 @@ event = {
 						random_system_planet = { feral_prethoryn_garrison_1 = yes }
 						random_system_planet = { feral_prethoryn_garrison_1 = yes }
 						random_system_planet = { feral_prethoryn_garrison_2 = yes }
-						every_country = {
-							establish_communications_no_message = event_target:feral_prethoryn
-						}
+						every_country = { establish_communications_no_message = event_target:feral_prethoryn }
 						if = {
 							limit = {
 								NOT = { has_global_flag = feral_prethoryn_appeared }
@@ -2216,7 +2126,6 @@ country_event = {
 	show_sound = event_radio_chatter
 	location = event_target:feral_prethoryn_system
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.121.a
 	}
@@ -2324,7 +2233,9 @@ country_event = {
 						"null"
 					}
 				}
-				effect = { save_event_target_as = feral_prethoryn_infighting }
+				effect = {
+					save_event_target_as = feral_prethoryn_infighting
+				}
 			}
 			create_fleet = {
 				name = "NAME_Feral_Prethoryn"
@@ -2348,16 +2259,10 @@ country_event = {
 			last_created_fleet = {
 				save_event_target_as = infighting_target_2
 				set_fleet_flag = infighting_prethoryn
-				auto_follow_fleet = {
-					target = event_target:infighting_target_1
-					attack_fleet = yes
-				}
+				auto_follow_fleet = { target = event_target:infighting_target_1 attack_fleet = yes }
 			}
 			event_target:infighting_target_1 = {
-				auto_follow_fleet = {
-					target = event_target:infighting_target_2
-					attack_fleet = yes
-				}
+				auto_follow_fleet = { target = event_target:infighting_target_2 attack_fleet = yes }
 			}
 		}
 		establish_communications_no_message = event_target:feral_prethoryn_infighting
@@ -2873,11 +2778,7 @@ country_event = {
 		if = {
 			limit = { exists = event_target:crisis_sentinels }
 			event_target:crisis_sentinels = {
-				country_event = {
-					id = crisis.75
-					days = 15
-					random = 10
-				}
+				country_event = { id = crisis.75 days = 15 random = 10 }
 			}
 		}
 	}
@@ -2891,7 +2792,6 @@ country_event = {
 	picture = GFX_evt_crisis_defeated
 	show_sound = event_celebration
 	is_triggered_only = yes
-
 	option = { # Spiritualist Response
 		name = crisis.211.a
 		trigger = {
@@ -2902,7 +2802,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Militarist Response
 		name = crisis.211.b
 		trigger = {
@@ -2913,7 +2812,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Materialist Response
 		name = crisis.211.c
 		trigger = {
@@ -2924,7 +2822,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Pacifist Response
 		name = crisis.211.d
 		trigger = {
@@ -2935,7 +2832,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Corporate Response
 		name = crisis.211.e
 		trigger = {
@@ -2950,7 +2846,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Default Response
 		name = crisis.211.f
 		trigger = {
@@ -2967,12 +2862,10 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Xenophobe Response
 		name = crisis.211.g
 		trigger = { has_ethic = "ethic_fanatic_xenophobe" }
 	}
-
 	option = { # Xenophile Response
 		name = crisis.211.h
 		trigger = { has_ethic = "ethic_fanatic_xenophile" }
@@ -3070,7 +2963,7 @@ country_event = {
 		every_playable_country = {
 			limit = {
 				has_event_chain = "prethoryn_scourge_chain"
-				NOT = { is_same_value = FROM }
+				NOT = { is_same_value = from }
 			}
 			add_event_chain_counter = {
 				event_chain = "prethoryn_scourge_chain"
@@ -3164,11 +3057,9 @@ country_event = {
 		has_crisis_stage_3 = yes
 		galaxy_percentage < 0.10
 	}
-
 	mean_time_to_happen = {
 		months = 1
 	}
-
 	immediate = {
 		set_crisis_sound = swarm_crisis_ambient_stage_2
 		set_crisis_stage_2 = yes
@@ -3184,11 +3075,9 @@ country_event = {
 		has_crisis_stage_2 = yes
 		galaxy_percentage > 0.20
 	}
-
 	mean_time_to_happen = {
 		months = 1
 	}
-
 	immediate = {
 		set_crisis_sound = swarm_crisis_ambient_stage_3
 		set_crisis_stage_3 = yes
@@ -3204,11 +3093,9 @@ country_event = {
 		has_crisis_stage_4 = yes
 		galaxy_percentage < 0.30
 	}
-
 	mean_time_to_happen = {
 		months = 1
 	}
-
 	immediate = {
 		set_crisis_sound = swarm_crisis_ambient_stage_3
 		set_crisis_stage_3 = yes
@@ -3224,11 +3111,9 @@ country_event = {
 		has_crisis_stage_3 = yes
 		galaxy_percentage > 0.40
 	}
-
 	mean_time_to_happen = {
 		months = 1
 	}
-
 	immediate = {
 		set_crisis_sound = swarm_crisis_ambient_stage_final
 		set_crisis_stage_4 = yes
@@ -3238,12 +3123,10 @@ country_event = {
 country_event = {
 	id = crisis.234
 	title = "crisis.234.name"
-
 	desc = {
 		trigger = { is_robot_empire = no is_gestalt = no }
 		text = crisis.234.desc.organic_non_gestalt
 	}
-
 	desc = {
 		trigger = {
 			OR = {
@@ -3265,11 +3148,9 @@ country_event = {
 		any_owned_leader = { has_leader_flag = captured_queen }
 		NOT = { has_country_flag = crisis.234 }
 	}
-
 	mean_time_to_happen = {
 		years = 100
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -3331,7 +3212,7 @@ event = {
 							}
 						}
 						set_location = {
-							target = PREV
+							target = prev
 							distance = 10
 							angle = random
 						}
@@ -3350,7 +3231,6 @@ country_event = {
 	picture = GFX_evt_unidentified_monster
 	show_sound = event_mystic_reveal
 	is_triggered_only = yes
-
 	option = {
 		name = GOOD
 		hidden_effect = {
@@ -3455,7 +3335,6 @@ country_event = {
 	immediate = {
 		set_country_flag = queen_captured
 	}
-
 	option = {
 		name = EXCELLENT
 		add_relic = "r_prethoryn_queen"
@@ -3625,4 +3504,3 @@ planet_event = {
 		}
 	}
 }
-

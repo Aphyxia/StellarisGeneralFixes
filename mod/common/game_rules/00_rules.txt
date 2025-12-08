@@ -49,8 +49,8 @@ can_add_claim = {
 				exists = owner
 				owner = {
 					any_war = {
-						any_attacker = { is_same_value = prevprev }
-						any_defender = { is_same_value = root }
+						any_attacker = { is_same_empire = prevprev }
+						any_defender = { is_same_empire = root }
 					}
 				}
 			}

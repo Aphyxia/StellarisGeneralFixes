@@ -1,9 +1,9 @@
 ############################
-
 #
 # Leader Events
 #
 ############################
+
 namespace = leader
 # Fired by on_added_to_leader_pool
 # A leader is added to the leader pool, available for recruitment
@@ -72,9 +72,7 @@ country_event = {
 				from = { leader_class = commander }
 			}
 			from = {
-				give_trait_no_notify_ignore_autocracy_restriction = {
-					TRAIT = leader_trait_crusader
-				}
+				give_trait_no_notify_ignore_autocracy_restriction = { TRAIT = leader_trait_crusader }
 			}
 		}
 		# Letters of Marque
@@ -85,9 +83,7 @@ country_event = {
 				from = { leader_class = commander }
 			}
 			from = {
-				give_trait_no_notify_ignore_autocracy_restriction = {
-					TRAIT = leader_trait_corsair
-				}
+				give_trait_no_notify_ignore_autocracy_restriction = { TRAIT = leader_trait_corsair }
 			}
 		}
 		# Tactical Algorithms
@@ -125,9 +121,7 @@ country_event = {
 		if = {
 			limit = { has_origin = origin_treasure_hunters }
 			from = {
-				give_trait_no_notify_ignore_autocracy_restriction = {
-					TRAIT = leader_trait_adventurous_spirit_3
-				}
+				give_trait_no_notify_ignore_autocracy_restriction = { TRAIT = leader_trait_adventurous_spirit_3 }
 			}
 		}
 		# Biochemical Composure/Cloning Authorities
@@ -323,9 +317,7 @@ country_event = {
 			limit = { has_valid_civic = civic_crusader_spirit }
 			every_owned_leader = {
 				limit = { leader_class = commander }
-				give_trait_no_notify_ignore_autocracy_restriction = {
-					TRAIT = leader_trait_crusader
-				}
+				give_trait_no_notify_ignore_autocracy_restriction = { TRAIT = leader_trait_crusader }
 			}
 		}
 		# Letters of Marque
@@ -334,9 +326,7 @@ country_event = {
 			limit = { has_civic = civic_crusader_spirit_corporate }
 			every_owned_leader = {
 				limit = { leader_class = commander }
-				give_trait_no_notify_ignore_autocracy_restriction = {
-					TRAIT = leader_trait_corsair
-				}
+				give_trait_no_notify_ignore_autocracy_restriction = { TRAIT = leader_trait_corsair }
 			}
 		}
 		# Tactical Algorithms
@@ -372,9 +362,7 @@ country_event = {
 		if = {
 			limit = { has_origin = origin_treasure_hunters }
 			every_owned_leader = {
-				give_trait_no_notify_ignore_autocracy_restriction = {
-					TRAIT = leader_trait_adventurous_spirit_3
-				}
+				give_trait_no_notify_ignore_autocracy_restriction = { TRAIT = leader_trait_adventurous_spirit_3 }
 			}
 		}
 		# Entropy Drinkers
@@ -529,9 +517,7 @@ leader_event = {
 				owner = { has_valid_civic = civic_crusader_spirit }
 				leader_class = commander
 			}
-			give_trait_no_notify_ignore_autocracy_restriction = {
-				TRAIT = leader_trait_crusader
-			}
+			give_trait_no_notify_ignore_autocracy_restriction = { TRAIT = leader_trait_crusader }
 		}
 		# Letters of Marque
 		if = {
@@ -539,9 +525,7 @@ leader_event = {
 				owner = { has_valid_civic = civic_crusader_spirit_corporate }
 				leader_class = commander
 			}
-			give_trait_no_notify_ignore_autocracy_restriction = {
-				TRAIT = leader_trait_corsair
-			}
+			give_trait_no_notify_ignore_autocracy_restriction = { TRAIT = leader_trait_corsair }
 		}
 		# Storm Chasers
 		# Adds the Storm Rider trait
@@ -567,18 +551,14 @@ leader_event = {
 			limit = {
 				owner = { has_origin = origin_treasure_hunters }
 			}
-			give_trait_no_notify_ignore_autocracy_restriction = {
-				TRAIT = leader_trait_adventurous_spirit_3
-			}
+			give_trait_no_notify_ignore_autocracy_restriction = { TRAIT = leader_trait_adventurous_spirit_3 }
 		}
 		# Entropy Drinkers
 		if = {
 			limit = {
 				owner = { is_entropy_drinkers_empire = yes }
 			}
-			give_trait_no_notify_ignore_autocracy_restriction = {
-				TRAIT = leader_trait_psionic
-			}
+			give_trait_no_notify_ignore_autocracy_restriction = { TRAIT = leader_trait_psionic }
 		}
 		# Biochemical Composure/Cloning Authorities
 		if = {
@@ -754,10 +734,7 @@ country_event = {
 		every_galcom_member = {
 			limit = {
 				position_on_last_resolution = support
-				any_owned_leader = {
-					has_trait = leader_trait_supporting_voter
-					is_assigned_to_galcom = yes
-				}
+				any_owned_leader = { has_trait = leader_trait_supporting_voter is_assigned_to_galcom = yes }
 				NOT = { is_same_value = root }
 			}
 			random_owned_leader = {
@@ -815,14 +792,20 @@ country_event = {
 				save_event_target_as = galcom_delegate
 				if = {
 					limit = { has_matching_resolution_category_focus_trait_tier_1 = yes }
-					delegate_focus_effect = { CHANCE = @resolution_focus_amt_1 }
+					delegate_focus_effect = {
+						CHANCE = @resolution_focus_amt_1
+					}
 				}
 				else_if = {
 					limit = { has_matching_resolution_category_focus_trait_tier_2 = yes }
-					delegate_focus_effect = { CHANCE = @resolution_focus_amt_2 }
+					delegate_focus_effect = {
+						CHANCE = @resolution_focus_amt_2
+					}
 				}
 				else = {
-					delegate_focus_effect = { CHANCE = @resolution_focus_amt_3 }
+					delegate_focus_effect = {
+						CHANCE = @resolution_focus_amt_3
+					}
 				}
 			}
 		}
@@ -846,4 +829,3 @@ country_event = {
 		force_remove_civic = civic_psionic_sovereign
 	}
 }
-

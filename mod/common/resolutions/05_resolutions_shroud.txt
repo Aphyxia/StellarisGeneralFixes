@@ -1,7 +1,6 @@
 
 resolution_galactic_focus_crisis_malevolent_aura = {
 	icon = "GFX_resolution_emergency_measure"
-
 	resources = {
 		category = resolutions
 		cost = {
@@ -11,12 +10,10 @@ resolution_galactic_focus_crisis_malevolent_aura = {
 
 	target = yes
 	harmful = yes
-
 	valid_target = {
 		has_covenant_with_end_of_the_cycle = yes
 		NOT = { is_same_empire = from }
 	}
-
 	effect = {
 		custom_tooltip = resolution_galactic_focus_crisis_malevolent_aura_effect_success
 		hidden_effect = {
@@ -69,7 +66,6 @@ resolution_galactic_focus_crisis_malevolent_aura = {
 			declare_malevolent_aura_focus = yes
 		}
 	}
-
 	fail_effects = {
 		hidden_effect = {
 			set_timed_country_flag = {
@@ -79,7 +75,6 @@ resolution_galactic_focus_crisis_malevolent_aura = {
 			add_modifier = { modifier = resolution_failed_diplomatic_weight years = 6 }
 		}
 	}
-
 	potential = {
 		has_shroud_dlc = yes
 		NOT = { has_global_flag = galactic_focus_crisis_malevolent_aura }
@@ -114,7 +109,6 @@ resolution_galactic_focus_crisis_malevolent_aura = {
 
 resolution_galactic_focus_repeal_crisis_malevolent_aura = {
 	icon = "GFX_resolution_repeal_red"
-
 	resources = {
 		category = resolutions
 		cost = {
@@ -124,22 +118,17 @@ resolution_galactic_focus_repeal_crisis_malevolent_aura = {
 
 	target = yes
 	harmful = no
-
 	valid_target = {
 		has_origin = origin_endbringers
 		has_country_flag = malevolent_aura_empire
 	}
-
 	effect = {
 		hidden_effect = {
 			remove_country_flag = malevolent_aura_empire
 			save_event_target_as = former_malevolent_aura
 			random_war = {
 				limit = {
-					using_war_goal = {
-						type = wg_declared_crisis
-						owner = event_target:former_malevolent_aura
-					}
+					using_war_goal = { type = wg_declared_crisis owner = event_target:former_malevolent_aura }
 				}
 				every_war_participant = {
 					limit = {
@@ -154,7 +143,6 @@ resolution_galactic_focus_repeal_crisis_malevolent_aura = {
 			country_event = { id = shroud.8481 }
 		}
 	}
-
 	potential = {
 		has_galactic_emperor = no
 		has_shroud_dlc = yes

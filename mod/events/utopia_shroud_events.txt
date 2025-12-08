@@ -11,132 +11,106 @@ namespace = utopia
 country_event = {
 	id = utopia.3000
 	title = "utopia.3000.name"
-
 	desc = {
 		text = utopia.3000.intro.desc
 		exclusive_trigger = { has_country_flag = shroud_intro } # Vfix opt
 	}
-
 	desc = {
 		text = utopia.3000.1.desc
 		# trigger = { normal_shroud_message = yes }
 	}
-
 	desc = {
 		text = utopia.3000.2.desc
 		# trigger = { normal_shroud_message = yes }
 	}
-
 	desc = {
 		text = utopia.3000.3.desc
 		# trigger = { normal_shroud_message = yes }
 	}
-
 	desc = {
 		text = utopia.3000.4.desc
 		# trigger = { normal_shroud_message = yes }
 	}
-
 	desc = {
 		text = utopia.3000.5.desc
 		# trigger = { normal_shroud_message = yes }
 	}
-
 	desc = {
 		text = utopia.3000.6.desc
 		# trigger = { normal_shroud_message = yes }
 	}
-
 	desc = {
 		text = utopia.3000.7.desc
 		# trigger = { normal_shroud_message = yes }
 	}
-
 	desc = {
 		text = utopia.3000.8.desc
 		# trigger = { normal_shroud_message = yes }
 	}
-
 	desc = {
 		text = utopia.3000.9.desc
 		# trigger = { normal_shroud_message = yes }
 	}
-
 	desc = {
 		text = utopia.3000.10.desc
 		# trigger = { normal_shroud_message = yes }
 	}
-
 	desc = {
 		text = utopia.3000.11.desc
 		# trigger = { normal_shroud_message = yes }
 	}
-
 	desc = {
 		text = utopia.3000.12.desc
 		# trigger = { normal_shroud_message = yes }
 	}
-
 	desc = {
 		text = utopia.3000.13.desc
 		# trigger = { normal_shroud_message = yes }
 	}
-
 	desc = {
 		text = utopia.3000.14.desc
 		# trigger = { normal_shroud_message = yes }
 	}
-
 	desc = {
 		text = utopia.3000.15.desc
 		# trigger = { normal_shroud_message = yes }
 	}
-
 	desc = {
 		text = utopia.3000.16.desc
 		# trigger = { normal_shroud_message = yes }
 	}
-
 	desc = {
 		text = utopia.3000.17.desc
 		# trigger = { normal_shroud_message = yes }
 	}
-
 	desc = {
 		text = utopia.3000.18.desc
 		# trigger = { normal_shroud_message = yes }
 	}
-
 	desc = {
 		text = utopia.3000.19.desc
 		# trigger = { normal_shroud_message = yes }
 	}
-
 	desc = {
 		text = utopia.3000.20.desc
 		trigger = { crisis_shroud_message = yes }
 	}
-
 	desc = {
 		text = utopia.3000.21.desc
 		trigger = { crisis_shroud_message = yes }
 	}
-
 	desc = {
 		text = utopia.3000.22.desc
 		trigger = { crisis_shroud_message = yes }
 	}
-
 	desc = {
 		text = utopia.3000.23.desc
 		trigger = { crisis_shroud_message = yes }
 	}
-
 	desc = {
 		text = utopia.3000.24.desc
 		trigger = { crisis_shroud_message = yes }
 	}
-
 	desc = {
 		text = utopia.3000.25.desc
 		trigger = { crisis_shroud_message = yes }
@@ -145,7 +119,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -170,13 +143,11 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 		}
 	}
-
 	option = {
 		name = "utopia.3000.a"
 		# custom_tooltip = "venture.shroud.tooltip"
@@ -198,7 +169,6 @@ country_event = {
 			country_event = { id = utopia.3002 }
 		}
 	}
-
 	option = { # First time trying to breach
 		name = "utopia.3000.a"
 		trigger = { has_country_flag = shroud_intro }
@@ -219,7 +189,6 @@ country_event = {
 			remove_country_flag = shroud_intro
 		}
 	}
-
 	option = { # Try to contact a specific patron
 		name = "utopia.3000.b"
 		trigger = {
@@ -251,7 +220,6 @@ country_event = {
 			add_shroud_cooldown_modifier = { DAYS = 2160 }
 		}
 	}
-
 	option = { # Try to contact the Animator
 		name = "animator.shroud"
 		trigger = {
@@ -283,7 +251,6 @@ country_event = {
 			add_shroud_cooldown_modifier = { DAYS = 2160 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		custom_tooltip = "exit.shroud.tooltip"
@@ -564,7 +531,6 @@ country_event = {
 	diplomatic_title = utopia.3000.name
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -575,13 +541,11 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 		}
 	}
-
 	option = {
 		name = "utopia.3005.a"
 		set_country_flag = contact_composer
@@ -589,7 +553,6 @@ country_event = {
 			country_event = { id = utopia.3300 }
 		}
 	}
-
 	option = {
 		name = "utopia.3005.b"
 		set_country_flag = contact_eater
@@ -597,7 +560,6 @@ country_event = {
 			country_event = { id = utopia.3300 }
 		}
 	}
-
 	option = {
 		name = "utopia.3005.c"
 		set_country_flag = contact_instrument
@@ -605,7 +567,6 @@ country_event = {
 			country_event = { id = utopia.3300 }
 		}
 	}
-
 	option = {
 		name = "utopia.3005.d"
 		set_country_flag = contact_whisperers
@@ -613,7 +574,6 @@ country_event = {
 			country_event = { id = utopia.3300 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		custom_tooltip = "exit.shroud.tooltip"
@@ -629,7 +589,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -653,13 +612,11 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		custom_tooltip = "exit.shroud.tooltip"
@@ -676,7 +633,6 @@ country_event = {
 	diplomatic_title = utopia.3000.name
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -687,14 +643,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = positive_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		create_fleet = {
@@ -729,7 +683,6 @@ country_event = {
 	diplomatic_title = utopia.3000.name
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -740,14 +693,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = positive_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		capital_scope = {
@@ -770,7 +721,6 @@ country_event = {
 	diplomatic_title = utopia.3000.name
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -781,14 +731,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = negative_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		default_hide_option = yes
@@ -803,7 +751,6 @@ country_event = {
 	diplomatic_title = utopia.3000.name
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -814,14 +761,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = negative_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		hidden_effect = {
@@ -837,12 +782,10 @@ country_event = {
 	title = "utopia.3024.name"
 	desc = "utopia.3024.desc"
 	picture = GFX_evt_psionics
-
 	show_sound = {
 		trigger = { is_robot_empire = yes }
 		sound = event_psionic_robot
 	}
-
 	show_sound = {
 		trigger = { is_robot_empire = no }
 		sound = event_psionic
@@ -899,7 +842,6 @@ country_event = {
 			fleet_event = { id = utopia.3025 days = 3600 }
 		}
 	}
-
 	option = {
 		name = "utopia.3024.a"
 	}
@@ -925,12 +867,10 @@ country_event = {
 	title = "utopia.3026.name"
 	desc = "utopia.3026.desc"
 	picture = GFX_evt_psionics
-
 	show_sound = {
 		trigger = { is_robot_empire = yes }
 		sound = event_psionic_robot
 	}
-
 	show_sound = {
 		trigger = { is_robot_empire = no }
 		sound = event_psionic
@@ -938,7 +878,6 @@ country_event = {
 
 	location = event_target:shroud_spawn_system
 	is_triggered_only = yes
-
 	option = {
 		name = {
 			trigger = {
@@ -964,17 +903,14 @@ country_event = {
 country_event = {
 	id = utopia.3030
 	title = "boon.bestowed"
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = "utopia.3030.desc.gestalt"
 	}
-
 	desc = {
 		trigger = { is_gestalt = no is_robot_empire = yes }
 		text = "utopia.3030.desc.machine_non_gestalt"
 	}
-
 	desc = {
 		trigger = { is_gestalt = no is_robot_empire = no }
 		text = "utopia.3030.desc.organic_non_gestalt"
@@ -983,7 +919,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -994,21 +929,18 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = positive_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		trigger = { is_gestalt = no }
 		add_modifier = { modifier = "shroud_happiness" years = 5 }
 		default_hide_option = yes
 	}
-
 	option = {
 		name = "exit.shroud"
 		trigger = { is_gestalt = yes }
@@ -1025,7 +957,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -1036,14 +967,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = positive_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		add_modifier = { modifier = "shroud_ship_upkeep" years = 5 }
@@ -1055,17 +984,14 @@ country_event = {
 country_event = {
 	id = utopia.3032
 	title = "boon.bestowed"
-
 	desc = {
 		trigger = { is_gestalt = no }
 		text = "utopia.3032.desc.non_gestalt"
 	}
-
 	desc = {
 		trigger = { is_gestalt = yes is_robot_empire = yes }
 		text = "utopia.3032.desc.machine_gestalt"
 	}
-
 	desc = {
 		trigger = { is_gestalt = yes is_robot_empire = no }
 		text = "utopia.3032.desc.organic_gestalt"
@@ -1074,7 +1000,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -1085,14 +1010,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = positive_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		add_modifier = { modifier = "shroud_research_speed" years = 5 }
@@ -1108,7 +1031,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -1119,14 +1041,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = positive_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		add_modifier = { modifier = "shroud_shield_boost" years = 5 }
@@ -1142,7 +1062,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -1153,14 +1072,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = positive_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		add_modifier = { modifier = "shroud_weapon_boost" years = 5 }
@@ -1176,7 +1093,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -1187,14 +1103,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = positive_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		add_modifier = { modifier = "shroud_firing_rate" years = 5 }
@@ -1206,17 +1120,14 @@ country_event = {
 country_event = {
 	id = utopia.3036
 	title = "boon.bestowed"
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = "utopia.3036.desc.gestalt"
 	}
-
 	desc = {
 		trigger = { is_gestalt = no is_robot_empire = yes }
 		text = "utopia.3036.desc.machine_non_gestalt"
 	}
-
 	desc = {
 		trigger = { is_gestalt = no is_robot_empire = no }
 		text = "utopia.3036.desc.organic_non_gestalt"
@@ -1225,7 +1136,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -1236,21 +1146,18 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = positive_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		trigger = { is_gestalt = no }
 		add_modifier = { modifier = "shroud_ethic_boost" years = 5 }
 		default_hide_option = yes
 	}
-
 	option = {
 		name = "exit.shroud"
 		trigger = { is_gestalt = yes }
@@ -1263,17 +1170,14 @@ country_event = {
 country_event = {
 	id = utopia.3037
 	title = "boon.bestowed"
-
 	desc = {
 		trigger = { is_homicidal = yes }
 		text = "utopia.3037.desc.genocidal"
 	}
-
 	desc = {
 		trigger = { is_homicidal = no is_robot_empire = yes }
 		text = "utopia.3037.desc.machine_non_genocidal"
 	}
-
 	desc = {
 		trigger = { is_homicidal = no is_robot_empire = no }
 		text = "utopia.3037.desc.organic_non_genocidal"
@@ -1282,7 +1186,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -1293,14 +1196,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = positive_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		add_modifier = { modifier = "shroud_influence_boost" years = 5 }
@@ -1312,12 +1213,10 @@ country_event = {
 country_event = {
 	id = utopia.3038
 	title = "boon.bestowed"
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = "utopia.3038.desc.gestalt"
 	}
-
 	desc = {
 		trigger = { is_gestalt = no }
 		text = "utopia.3038.desc.non_gestalt"
@@ -1326,7 +1225,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -1337,14 +1235,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = positive_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		add_modifier = { modifier = "shroud_unity_boost" years = 5 }
@@ -1360,7 +1256,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -1371,14 +1266,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = positive_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		add_modifier = { modifier = "shroud_evasion" years = 5 }
@@ -1390,12 +1283,10 @@ country_event = {
 country_event = {
 	id = utopia.3040
 	title = "boon.bestowed"
-
 	desc = {
 		trigger = { is_robot_empire = yes }
 		text = "utopia.3040.desc.machine"
 	}
-
 	desc = {
 		trigger = { is_robot_empire = no }
 		text = "utopia.3040.desc.organic"
@@ -1404,7 +1295,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -1415,14 +1305,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = positive_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		add_modifier = { modifier = "shroud_repair" years = 5 }
@@ -1434,17 +1322,14 @@ country_event = {
 country_event = {
 	id = utopia.3041
 	title = "boon.bestowed"
-
 	desc = {
 		trigger = { is_robot_empire = yes }
 		text = "utopia.3041.desc.machine"
 	}
-
 	desc = {
 		trigger = { is_robot_empire = no is_gestalt = yes }
 		text = "utopia.3041.desc.organic_gestalt"
 	}
-
 	desc = {
 		trigger = { is_robot_empire = no is_gestalt = no }
 		text = "utopia.3041.desc.organic_non_gestalt"
@@ -1453,7 +1338,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -1464,14 +1348,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = positive_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		custom_tooltip = utopia.3041.tooltip
@@ -1497,7 +1379,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -1508,14 +1389,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = positive_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		add_modifier = { modifier = "shroud_speed" years = 5 }
@@ -1527,12 +1406,10 @@ country_event = {
 country_event = {
 	id = utopia.3043
 	title = "boon.bestowed"
-
 	desc = {
 		trigger = { is_robot_empire = no is_gestalt = no }
 		text = "utopia.3043.desc.organic"
 	}
-
 	desc = {
 		trigger = {
 			OR = {
@@ -1546,7 +1423,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -1557,14 +1433,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = positive_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		add_modifier = { modifier = "shroud_morale" years = 5 }
@@ -1580,7 +1454,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = BLANK_STRING
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -1591,14 +1464,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = positive_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		add_modifier = { modifier = "shroud_sensors" years = 5 }
@@ -1610,20 +1481,16 @@ country_event = {
 country_event = {
 	id = utopia.3045
 	title = "utopia.3045.name"
-
 	desc = {
 		text = utopia.3045.1.desc
 	}
-
 	desc = {
 		text = utopia.3045.2.desc
 	}
-
 	desc = {
 		trigger = { is_robot_empire = yes }
 		text = utopia.3045.3.desc_machine
 	}
-
 	desc = {
 		trigger = { is_robot_empire = no }
 		text = utopia.3045.3.desc_organic
@@ -1632,7 +1499,6 @@ country_event = {
 	diplomatic_title = utopia.3000.name
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -1643,14 +1509,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = negative_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		custom_tooltip = "exit.shroud.tooltip"
@@ -1662,12 +1526,10 @@ country_event = {
 country_event = {
 	id = utopia.3050
 	title = "curse.bestowed"
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = utopia.3050.desc.gestalt
 	}
-
 	desc = {
 		trigger = { is_gestalt = no }
 		text = utopia.3050.desc.non_gestalt
@@ -1676,7 +1538,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -1687,21 +1548,18 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = negative_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		trigger = { is_gestalt = no }
 		add_modifier = { modifier = "shroud_neg_happiness" years = 5 }
 		default_hide_option = yes
 	}
-
 	option = {
 		name = "exit.shroud"
 		trigger = { is_gestalt = yes }
@@ -1714,12 +1572,10 @@ country_event = {
 country_event = {
 	id = utopia.3051
 	title = "curse.bestowed"
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = utopia.3051.desc.gestalt
 	}
-
 	desc = {
 		trigger = { is_gestalt = no }
 		text = utopia.3051.desc.non_gestalt
@@ -1728,7 +1584,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -1739,21 +1594,18 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = negative_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		trigger = { is_gestalt = no }
 		add_modifier = { modifier = "shroud_neg_ethic" years = 5 }
 		default_hide_option = yes
 	}
-
 	option = {
 		name = "exit.shroud"
 		trigger = { is_gestalt = yes }
@@ -1770,7 +1622,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -1781,14 +1632,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = negative_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		add_modifier = { modifier = "shroud_neg_armor" years = 5 }
@@ -1800,17 +1649,14 @@ country_event = {
 country_event = {
 	id = utopia.3053
 	title = "curse.bestowed"
-
 	desc = {
 		trigger = { is_robot_empire = yes }
 		text = utopia.3053.desc.machine
 	}
-
 	desc = {
 		trigger = { is_robot_empire = no is_gestalt = yes }
 		text = utopia.3053.desc.organic_gestalt
 	}
-
 	desc = {
 		trigger = { is_robot_empire = no is_gestalt = no }
 		text = utopia.3053.desc.organic_non_gestalt
@@ -1819,7 +1665,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -1830,14 +1675,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = negative_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		add_modifier = { modifier = "shroud_neg_growth" years = 5 }
@@ -1849,22 +1692,18 @@ country_event = {
 country_event = {
 	id = utopia.3054
 	title = "curse.bestowed"
-
 	desc = {
 		trigger = { is_robot_empire = yes is_gestalt = yes }
 		text = utopia.3054.desc.machine_gestalt
 	}
-
 	desc = {
 		trigger = { is_robot_empire = yes is_gestalt = no }
 		text = utopia.3054.desc.machine_non_gestalt
 	}
-
 	desc = {
 		trigger = { is_robot_empire = no is_gestalt = yes }
 		text = utopia.3054.desc.organic_gestalt
 	}
-
 	desc = {
 		trigger = { is_robot_empire = no is_gestalt = no }
 		text = utopia.3054.desc.organic_non_gestalt
@@ -1873,7 +1712,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -1884,14 +1722,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = negative_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		add_modifier = { modifier = "shroud_neg_research" years = 5 }
@@ -1907,7 +1743,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -1918,14 +1753,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = negative_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		add_modifier = { modifier = "shroud_neg_influence" years = 5 }
@@ -1937,12 +1770,10 @@ country_event = {
 country_event = {
 	id = utopia.3056
 	title = "curse.bestowed"
-
 	desc = {
 		trigger = { is_robot_empire = no is_gestalt = no }
 		text = utopia.3056.desc.organic_non_gestalt
 	}
-
 	desc = {
 		trigger = {
 			OR = {
@@ -1956,7 +1787,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -1967,14 +1797,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = negative_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		add_modifier = { modifier = "shroud_neg_unity" years = 5 }
@@ -1990,7 +1818,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -2001,14 +1828,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = negative_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		add_modifier = { modifier = "shroud_neg_speed" years = 5 }
@@ -2020,12 +1845,10 @@ country_event = {
 country_event = {
 	id = utopia.3058
 	title = "curse.bestowed"
-
 	desc = {
 		trigger = { is_robot_empire = no is_gestalt = no }
 		text = utopia.3058.desc.organic_non_gestalt
 	}
-
 	desc = {
 		trigger = {
 			OR = {
@@ -2039,7 +1862,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = BLANK_STRING
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -2050,14 +1872,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = negative_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		add_modifier = { modifier = "shroud_neg_morale" years = 5 }
@@ -2073,7 +1893,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = BLANK_STRING
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -2084,14 +1903,12 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = { flag = negative_shroud_outcome years = 5 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		add_modifier = { modifier = "shroud_neg_sensors" years = 5 }
@@ -2104,17 +1921,14 @@ country_event = {
 country_event = {
 	id = utopia.3100
 	title = "utopia.3100.name"
-
 	desc = {
 		trigger = { is_machine_species = yes }
 		text = utopia.3100.desc_machine
 	}
-
 	desc = {
 		trigger = { is_hive_empire = yes }
 		text = utopia.3100.desc_hive
 	}
-
 	desc = {
 		trigger = { is_machine_species = no is_hive_empire = no }
 		text = utopia.3100.desc_default
@@ -2122,7 +1936,6 @@ country_event = {
 
 	diplomatic = yes
 	diplomatic_title = utopia.3000.name
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -2135,7 +1948,6 @@ country_event = {
 		set_country_flag = shroud_vision_1
 		randomize_shroud_flags = yes
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
@@ -2179,98 +1991,84 @@ country_event = {
 		custom_tooltip = "shroud.boon.chances.medium"
 		happiness_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.upkeep.medium"
 		trigger = { has_country_flag = medium.2 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		upkeep_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.research.medium"
 		trigger = { has_country_flag = medium.3 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		research_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.shields.medium"
 		trigger = { has_country_flag = medium.4 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		shields_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.weapons.medium"
 		trigger = { has_country_flag = medium.5 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		weapons_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.firing.medium"
 		trigger = { has_country_flag = medium.6 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		firingrate_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.ethics.medium"
 		trigger = { has_country_flag = medium.7 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		ethics_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.influence.medium"
 		trigger = { has_country_flag = medium.8 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		influence_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.unity.medium"
 		trigger = { has_country_flag = medium.9 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		unity_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.evasion.medium"
 		trigger = { has_country_flag = medium.10 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		evasion_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.repair.medium"
 		trigger = { has_country_flag = medium.11 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		repair_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.lifespans.medium"
 		trigger = { has_country_flag = medium.12 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		lifespan_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.speed.medium"
 		trigger = { has_country_flag = medium.13 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		speed_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.morale.medium"
 		trigger = { has_country_flag = medium.14 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		morale_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.sensors.medium"
 		trigger = { has_country_flag = medium.15 }
@@ -2285,98 +2083,84 @@ country_event = {
 		custom_tooltip = "shroud.boon.chances.low"
 		happiness_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.upkeep.low"
 		trigger = { has_country_flag = low.2 }
 		custom_tooltip = "shroud.boon.chances.low"
 		upkeep_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.research.low"
 		trigger = { has_country_flag = low.3 }
 		custom_tooltip = "shroud.boon.chances.low"
 		research_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.shields.low"
 		trigger = { has_country_flag = low.4 }
 		custom_tooltip = "shroud.boon.chances.low"
 		shields_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.weapons.low"
 		trigger = { has_country_flag = low.5 }
 		custom_tooltip = "shroud.boon.chances.low"
 		weapons_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.firing.low"
 		trigger = { has_country_flag = low.6 }
 		custom_tooltip = "shroud.boon.chances.low"
 		firingrate_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.ethics.low"
 		trigger = { has_country_flag = low.7 }
 		custom_tooltip = "shroud.boon.chances.low"
 		ethics_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.influence.low"
 		trigger = { has_country_flag = low.8 }
 		custom_tooltip = "shroud.boon.chances.low"
 		influence_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.unity.low"
 		trigger = { has_country_flag = low.9 }
 		custom_tooltip = "shroud.boon.chances.low"
 		unity_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.evasion.low"
 		trigger = { has_country_flag = low.10 }
 		custom_tooltip = "shroud.boon.chances.low"
 		evasion_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.repair.low"
 		trigger = { has_country_flag = low.11 }
 		custom_tooltip = "shroud.boon.chances.low"
 		repair_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.lifespans.low"
 		trigger = { has_country_flag = low.12 }
 		custom_tooltip = "shroud.boon.chances.low"
 		lifespan_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.speed.low"
 		trigger = { has_country_flag = low.13 }
 		custom_tooltip = "shroud.boon.chances.low"
 		speed_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.morale.low"
 		trigger = { has_country_flag = low.14 }
 		custom_tooltip = "shroud.boon.chances.low"
 		morale_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.sensors.low"
 		trigger = { has_country_flag = low.15 }
@@ -2399,7 +2183,6 @@ country_event = {
 	desc = "utopia.3110.desc"
 	diplomatic = yes
 	diplomatic_title = utopia.3000.name
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -2412,7 +2195,6 @@ country_event = {
 		set_country_flag = shroud_vision_2
 		randomize_shroud_flags = yes
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
@@ -2456,98 +2238,84 @@ country_event = {
 		custom_tooltip = "shroud.boon.chances.medium"
 		happiness_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.upkeep.medium"
 		trigger = { has_country_flag = medium.2 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		upkeep_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.research.medium"
 		trigger = { has_country_flag = medium.3 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		research_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.shields.medium"
 		trigger = { has_country_flag = medium.4 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		shields_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.weapons.medium"
 		trigger = { has_country_flag = medium.5 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		weapons_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.firing.medium"
 		trigger = { has_country_flag = medium.6 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		firingrate_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.ethics.medium"
 		trigger = { has_country_flag = medium.7 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		ethics_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.influence.medium"
 		trigger = { has_country_flag = medium.8 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		influence_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.unity.medium"
 		trigger = { has_country_flag = medium.9 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		unity_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.evasion.medium"
 		trigger = { has_country_flag = medium.10 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		evasion_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.repair.medium"
 		trigger = { has_country_flag = medium.11 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		repair_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.lifespans.medium"
 		trigger = { has_country_flag = medium.12 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		lifespan_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.speed.medium"
 		trigger = { has_country_flag = medium.13 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		speed_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.morale.medium"
 		trigger = { has_country_flag = medium.14 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		morale_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.sensors.medium"
 		trigger = { has_country_flag = medium.15 }
@@ -2562,105 +2330,90 @@ country_event = {
 		custom_tooltip = "shroud.boon.chances.low"
 		happiness_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.upkeep.low"
 		trigger = { has_country_flag = low.2 }
 		custom_tooltip = "shroud.boon.chances.low"
 		upkeep_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.research.low"
 		trigger = { has_country_flag = low.3 }
 		custom_tooltip = "shroud.boon.chances.low"
 		research_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.shields.low"
 		trigger = { has_country_flag = low.4 }
 		custom_tooltip = "shroud.boon.chances.low"
 		shields_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.weapons.low"
 		trigger = { has_country_flag = low.5 }
 		custom_tooltip = "shroud.boon.chances.low"
 		weapons_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.firing.low"
 		trigger = { has_country_flag = low.6 }
 		custom_tooltip = "shroud.boon.chances.low"
 		firingrate_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.ethics.low"
 		trigger = { has_country_flag = low.7 }
 		custom_tooltip = "shroud.boon.chances.low"
 		ethics_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.influence.low"
 		trigger = { has_country_flag = low.8 }
 		custom_tooltip = "shroud.boon.chances.low"
 		influence_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.unity.low"
 		trigger = { has_country_flag = low.9 }
 		custom_tooltip = "shroud.boon.chances.low"
 		unity_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.evasion.low"
 		trigger = { has_country_flag = low.10 }
 		custom_tooltip = "shroud.boon.chances.low"
 		evasion_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.repair.low"
 		trigger = { has_country_flag = low.11 }
 		custom_tooltip = "shroud.boon.chances.low"
 		repair_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.lifespans.low"
 		trigger = { has_country_flag = low.12 }
 		custom_tooltip = "shroud.boon.chances.low"
 		lifespan_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.speed.low"
 		trigger = { has_country_flag = low.13 }
 		custom_tooltip = "shroud.boon.chances.low"
 		speed_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.morale.low"
 		trigger = { has_country_flag = low.14 }
 		custom_tooltip = "shroud.boon.chances.low"
 		morale_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.sensors.low"
 		trigger = { has_country_flag = low.15 }
 		custom_tooltip = "shroud.boon.chances.low"
 		sensor_shroud_low = yes
 	}
-
 	option = {
 		name = "exit.shroud"
 		custom_tooltip = "exit.shroud.tooltip"
@@ -2672,12 +2425,10 @@ country_event = {
 country_event = {
 	id = utopia.3120
 	title = "utopia.3120.name"
-
 	desc = {
 		trigger = { is_machine_species = yes }
 		text = utopia.3120.desc_machine
 	}
-
 	desc = {
 		trigger = { is_machine_species = no }
 		text = utopia.3120.desc_default
@@ -2685,7 +2436,6 @@ country_event = {
 
 	diplomatic = yes
 	diplomatic_title = utopia.3000.name
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -2698,7 +2448,6 @@ country_event = {
 		set_country_flag = shroud_vision_3
 		randomize_shroud_flags = yes
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
@@ -2713,105 +2462,90 @@ country_event = {
 		custom_tooltip = "shroud.boon.chances.high"
 		happiness_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.upkeep.high"
 		trigger = { has_country_flag = high.2 }
 		custom_tooltip = "shroud.boon.chances.high"
 		upkeep_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.research.high"
 		trigger = { has_country_flag = high.3 }
 		custom_tooltip = "shroud.boon.chances.high"
 		research_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.shields.high"
 		trigger = { has_country_flag = high.4 }
 		custom_tooltip = "shroud.boon.chances.high"
 		shields_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.weapons.high"
 		trigger = { has_country_flag = high.5 }
 		custom_tooltip = "shroud.boon.chances.high"
 		weapons_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.firing.high"
 		trigger = { has_country_flag = high.6 }
 		custom_tooltip = "shroud.boon.chances.high"
 		firingrate_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.ethics.high"
 		trigger = { has_country_flag = high.7 }
 		custom_tooltip = "shroud.boon.chances.high"
 		ethics_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.influence.high"
 		trigger = { has_country_flag = high.8 }
 		custom_tooltip = "shroud.boon.chances.high"
 		influence_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.unity.high"
 		trigger = { has_country_flag = high.9 }
 		custom_tooltip = "shroud.boon.chances.high"
 		unity_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.evasion.high"
 		trigger = { has_country_flag = high.10 }
 		custom_tooltip = "shroud.boon.chances.high"
 		evasion_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.repair.high"
 		trigger = { has_country_flag = high.11 }
 		custom_tooltip = "shroud.boon.chances.high"
 		repair_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.lifespans.high"
 		trigger = { has_country_flag = high.12 }
 		custom_tooltip = "shroud.boon.chances.high"
 		lifespan_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.speed.high"
 		trigger = { has_country_flag = high.13 }
 		custom_tooltip = "shroud.boon.chances.high"
 		speed_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.morale.high"
 		trigger = { has_country_flag = high.14 }
 		custom_tooltip = "shroud.boon.chances.high"
 		morale_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.sensors.high"
 		trigger = { has_country_flag = high.15 }
 		custom_tooltip = "shroud.boon.chances.high"
 		sensor_shroud_high = yes
 	}
-
 	option = {
 		name = "shroud.avatar.high"
 		trigger = { has_country_flag = high.16 }
@@ -2826,105 +2560,90 @@ country_event = {
 		custom_tooltip = "shroud.boon.chances.medium"
 		happiness_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.upkeep.medium"
 		trigger = { has_country_flag = medium.2 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		upkeep_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.research.medium"
 		trigger = { has_country_flag = medium.3 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		research_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.shields.medium"
 		trigger = { has_country_flag = medium.4 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		shields_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.weapons.medium"
 		trigger = { has_country_flag = medium.5 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		weapons_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.firing.medium"
 		trigger = { has_country_flag = medium.6 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		firingrate_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.ethics.medium"
 		trigger = { has_country_flag = medium.7 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		ethics_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.influence.medium"
 		trigger = { has_country_flag = medium.8 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		influence_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.unity.medium"
 		trigger = { has_country_flag = medium.9 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		unity_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.evasion.medium"
 		trigger = { has_country_flag = medium.10 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		evasion_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.repair.medium"
 		trigger = { has_country_flag = medium.11 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		repair_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.lifespans.medium"
 		trigger = { has_country_flag = medium.12 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		lifespan_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.speed.medium"
 		trigger = { has_country_flag = medium.13 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		speed_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.morale.medium"
 		trigger = { has_country_flag = medium.14 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		morale_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.sensors.medium"
 		trigger = { has_country_flag = medium.15 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		sensor_shroud_medium = yes
 	}
-
 	option = {
 		name = "shroud.avatar.medium"
 		trigger = { has_country_flag = medium.16 }
@@ -2939,105 +2658,90 @@ country_event = {
 		custom_tooltip = "shroud.boon.chances.low"
 		happiness_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.upkeep.low"
 		trigger = { has_country_flag = low.2 }
 		custom_tooltip = "shroud.boon.chances.low"
 		upkeep_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.research.low"
 		trigger = { has_country_flag = low.3 }
 		custom_tooltip = "shroud.boon.chances.low"
 		research_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.shields.low"
 		trigger = { has_country_flag = low.4 }
 		custom_tooltip = "shroud.boon.chances.low"
 		shields_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.weapons.low"
 		trigger = { has_country_flag = low.5 }
 		custom_tooltip = "shroud.boon.chances.low"
 		weapons_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.firing.low"
 		trigger = { has_country_flag = low.6 }
 		custom_tooltip = "shroud.boon.chances.low"
 		firingrate_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.ethics.low"
 		trigger = { has_country_flag = low.7 }
 		custom_tooltip = "shroud.boon.chances.low"
 		ethics_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.influence.low"
 		trigger = { has_country_flag = low.8 }
 		custom_tooltip = "shroud.boon.chances.low"
 		influence_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.unity.low"
 		trigger = { has_country_flag = low.9 }
 		custom_tooltip = "shroud.boon.chances.low"
 		unity_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.evasion.low"
 		trigger = { has_country_flag = low.10 }
 		custom_tooltip = "shroud.boon.chances.low"
 		evasion_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.repair.low"
 		trigger = { has_country_flag = low.11 }
 		custom_tooltip = "shroud.boon.chances.low"
 		repair_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.lifespans.low"
 		trigger = { has_country_flag = low.12 }
 		custom_tooltip = "shroud.boon.chances.low"
 		lifespan_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.speed.low"
 		trigger = { has_country_flag = low.13 }
 		custom_tooltip = "shroud.boon.chances.low"
 		speed_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.morale.low"
 		trigger = { has_country_flag = low.14 }
 		custom_tooltip = "shroud.boon.chances.low"
 		morale_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.sensors.low"
 		trigger = { has_country_flag = low.15 }
 		custom_tooltip = "shroud.boon.chances.low"
 		sensor_shroud_low = yes
 	}
-
 	option = {
 		name = "shroud.avatar.low"
 		trigger = { has_country_flag = low.16 }
@@ -3061,7 +2765,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = utopia.3000.name
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -3074,7 +2777,6 @@ country_event = {
 		set_country_flag = shroud_vision_4
 		randomize_shroud_flags = yes
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
@@ -3088,91 +2790,76 @@ country_event = {
 		trigger = { has_country_flag = high.1 }
 		happiness_shroud_high = yes
 	}
-
 	option = {
 		name = "utopia.3130.a"
 		trigger = { has_country_flag = high.2 }
 		upkeep_shroud_high = yes
 	}
-
 	option = {
 		name = "utopia.3130.a"
 		trigger = { has_country_flag = high.3 }
 		research_shroud_high = yes
 	}
-
 	option = {
 		name = "utopia.3130.a"
 		trigger = { has_country_flag = high.4 }
 		shields_shroud_high = yes
 	}
-
 	option = {
 		name = "utopia.3130.a"
 		trigger = { has_country_flag = high.5 }
 		weapons_shroud_high = yes
 	}
-
 	option = {
 		name = "utopia.3130.a"
 		trigger = { has_country_flag = high.6 }
 		firingrate_shroud_high = yes
 	}
-
 	option = {
 		name = "utopia.3130.a"
 		trigger = { has_country_flag = high.7 }
 		ethics_shroud_high = yes
 	}
-
 	option = {
 		name = "utopia.3130.a"
 		trigger = { has_country_flag = high.8 }
 		influence_shroud_high = yes
 	}
-
 	option = {
 		name = "utopia.3130.a"
 		trigger = { has_country_flag = high.9 }
 		unity_shroud_high = yes
 	}
-
 	option = {
 		name = "utopia.3130.a"
 		trigger = { has_country_flag = high.10 }
 		evasion_shroud_high = yes
 	}
-
 	option = {
 		name = "utopia.3130.a"
 		trigger = { has_country_flag = high.11 }
 		repair_shroud_high = yes
 	}
-
 	option = {
 		name = "utopia.3130.a"
 		trigger = { has_country_flag = high.12 }
 		lifespan_shroud_high = yes
 	}
-
 	option = {
 		name = "utopia.3130.a"
 		trigger = { has_country_flag = high.13 }
 		speed_shroud_high = yes
 	}
-
 	option = {
 		name = "utopia.3130.a"
 		trigger = { has_country_flag = high.14 }
 		morale_shroud_high = yes
 	}
-
 	option = {
 		name = "utopia.3130.a"
 		trigger = { has_country_flag = high.15 }
 		sensor_shroud_high = yes
 	}
-
 	option = {
 		name = "utopia.3130.a"
 		trigger = { has_country_flag = high.16 }
@@ -3185,91 +2872,76 @@ country_event = {
 		trigger = { has_country_flag = medium.1 }
 		happiness_shroud_medium = yes
 	}
-
 	option = {
 		name = "utopia.3130.b"
 		trigger = { has_country_flag = medium.2 }
 		upkeep_shroud_medium = yes
 	}
-
 	option = {
 		name = "utopia.3130.b"
 		trigger = { has_country_flag = medium.3 }
 		research_shroud_medium = yes
 	}
-
 	option = {
 		name = "utopia.3130.b"
 		trigger = { has_country_flag = medium.4 }
 		shields_shroud_medium = yes
 	}
-
 	option = {
 		name = "utopia.3130.b"
 		trigger = { has_country_flag = medium.5 }
 		weapons_shroud_medium = yes
 	}
-
 	option = {
 		name = "utopia.3130.b"
 		trigger = { has_country_flag = medium.6 }
 		firingrate_shroud_medium = yes
 	}
-
 	option = {
 		name = "utopia.3130.b"
 		trigger = { has_country_flag = medium.7 }
 		ethics_shroud_medium = yes
 	}
-
 	option = {
 		name = "utopia.3130.b"
 		trigger = { has_country_flag = medium.8 }
 		influence_shroud_medium = yes
 	}
-
 	option = {
 		name = "utopia.3130.b"
 		trigger = { has_country_flag = medium.9 }
 		unity_shroud_medium = yes
 	}
-
 	option = {
 		name = "utopia.3130.b"
 		trigger = { has_country_flag = medium.10 }
 		evasion_shroud_medium = yes
 	}
-
 	option = {
 		name = "utopia.3130.b"
 		trigger = { has_country_flag = medium.11 }
 		repair_shroud_medium = yes
 	}
-
 	option = {
 		name = "utopia.3130.b"
 		trigger = { has_country_flag = medium.12 }
 		lifespan_shroud_medium = yes
 	}
-
 	option = {
 		name = "utopia.3130.b"
 		trigger = { has_country_flag = medium.13 }
 		speed_shroud_medium = yes
 	}
-
 	option = {
 		name = "utopia.3130.b"
 		trigger = { has_country_flag = medium.14 }
 		morale_shroud_medium = yes
 	}
-
 	option = {
 		name = "utopia.3130.b"
 		trigger = { has_country_flag = medium.15 }
 		sensor_shroud_medium = yes
 	}
-
 	option = {
 		name = "utopia.3130.b"
 		trigger = { has_country_flag = medium.16 }
@@ -3282,97 +2954,81 @@ country_event = {
 		trigger = { has_country_flag = low.1 }
 		happiness_shroud_low = yes
 	}
-
 	option = {
 		name = "utopia.3130.c"
 		trigger = { has_country_flag = low.2 }
 		upkeep_shroud_low = yes
 	}
-
 	option = {
 		name = "utopia.3130.c"
 		trigger = { has_country_flag = low.3 }
 		research_shroud_low = yes
 	}
-
 	option = {
 		name = "utopia.3130.c"
 		trigger = { has_country_flag = low.4 }
 		shields_shroud_low = yes
 	}
-
 	option = {
 		name = "utopia.3130.c"
 		trigger = { has_country_flag = low.5 }
 		weapons_shroud_low = yes
 	}
-
 	option = {
 		name = "utopia.3130.c"
 		trigger = { has_country_flag = low.6 }
 		firingrate_shroud_low = yes
 	}
-
 	option = {
 		name = "utopia.3130.c"
 		trigger = { has_country_flag = low.7 }
 		ethics_shroud_low = yes
 	}
-
 	option = {
 		name = "utopia.3130.c"
 		trigger = { has_country_flag = low.8 }
 		influence_shroud_low = yes
 	}
-
 	option = {
 		name = "utopia.3130.c"
 		trigger = { has_country_flag = low.9 }
 		unity_shroud_low = yes
 	}
-
 	option = {
 		name = "utopia.3130.c"
 		trigger = { has_country_flag = low.10 }
 		evasion_shroud_low = yes
 	}
-
 	option = {
 		name = "utopia.3130.c"
 		trigger = { has_country_flag = low.11 }
 		repair_shroud_low = yes
 	}
-
 	option = {
 		name = "utopia.3130.c"
 		trigger = { has_country_flag = low.12 }
 		lifespan_shroud_low = yes
 	}
-
 	option = {
 		name = "utopia.3130.c"
 		trigger = { has_country_flag = low.13 }
 		speed_shroud_low = yes
 	}
-
 	option = {
 		name = "utopia.3130.c"
 		trigger = { has_country_flag = low.14 }
 		morale_shroud_low = yes
 	}
-
 	option = {
 		name = "utopia.3130.c"
 		trigger = { has_country_flag = low.15 }
 		sensor_shroud_low = yes
 	}
-
 	option = {
 		name = "utopia.3130.c"
 		trigger = { has_country_flag = low.16 }
 		avatar_shroud_low = yes
 	}
-
 	option = {
 		name = "exit.shroud"
 		custom_tooltip = "exit.shroud.tooltip"
@@ -3384,12 +3040,10 @@ country_event = {
 country_event = {
 	id = utopia.3140
 	title = "utopia.3140.name"
-
 	desc = {
 		trigger = { is_machine_species = yes }
 		text = utopia.3140.desc_machine
 	}
-
 	desc = {
 		trigger = { is_machine_species = no }
 		text = utopia.3140.desc_default
@@ -3398,7 +3052,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = utopia.3000.name
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -3411,7 +3064,6 @@ country_event = {
 		set_country_flag = shroud_vision_5
 		randomize_shroud_flags = yes
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
@@ -3426,105 +3078,90 @@ country_event = {
 		custom_tooltip = "shroud.boon.chances.high"
 		happiness_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.upkeep.high"
 		trigger = { has_country_flag = high.2 }
 		custom_tooltip = "shroud.boon.chances.high"
 		upkeep_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.research.high"
 		trigger = { has_country_flag = high.3 }
 		custom_tooltip = "shroud.boon.chances.high"
 		research_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.shields.high"
 		trigger = { has_country_flag = high.4 }
 		custom_tooltip = "shroud.boon.chances.high"
 		shields_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.weapons.high"
 		trigger = { has_country_flag = high.5 }
 		custom_tooltip = "shroud.boon.chances.high"
 		weapons_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.firing.high"
 		trigger = { has_country_flag = high.6 }
 		custom_tooltip = "shroud.boon.chances.high"
 		firingrate_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.ethics.high"
 		trigger = { has_country_flag = high.7 }
 		custom_tooltip = "shroud.boon.chances.high"
 		ethics_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.influence.high"
 		trigger = { has_country_flag = high.8 }
 		custom_tooltip = "shroud.boon.chances.high"
 		influence_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.unity.high"
 		trigger = { has_country_flag = high.9 }
 		custom_tooltip = "shroud.boon.chances.high"
 		unity_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.evasion.high"
 		trigger = { has_country_flag = high.10 }
 		custom_tooltip = "shroud.boon.chances.high"
 		evasion_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.repair.high"
 		trigger = { has_country_flag = high.11 }
 		custom_tooltip = "shroud.boon.chances.high"
 		repair_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.lifespans.high"
 		trigger = { has_country_flag = high.12 }
 		custom_tooltip = "shroud.boon.chances.high"
 		lifespan_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.speed.high"
 		trigger = { has_country_flag = high.13 }
 		custom_tooltip = "shroud.boon.chances.high"
 		speed_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.morale.high"
 		trigger = { has_country_flag = high.14 }
 		custom_tooltip = "shroud.boon.chances.high"
 		morale_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.sensors.high"
 		trigger = { has_country_flag = high.15 }
 		custom_tooltip = "shroud.boon.chances.high"
 		sensor_shroud_high = yes
 	}
-
 	option = {
 		name = "shroud.avatar.high"
 		trigger = { has_country_flag = high.16 }
@@ -3539,105 +3176,90 @@ country_event = {
 		custom_tooltip = "shroud.boon.chances.medium"
 		happiness_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.upkeep.medium"
 		trigger = { has_country_flag = medium.2 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		upkeep_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.research.medium"
 		trigger = { has_country_flag = medium.3 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		research_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.shields.medium"
 		trigger = { has_country_flag = medium.4 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		shields_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.weapons.medium"
 		trigger = { has_country_flag = medium.5 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		weapons_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.firing.medium"
 		trigger = { has_country_flag = medium.6 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		firingrate_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.ethics.medium"
 		trigger = { has_country_flag = medium.7 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		ethics_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.influence.medium"
 		trigger = { has_country_flag = medium.8 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		influence_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.unity.medium"
 		trigger = { has_country_flag = medium.9 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		unity_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.evasion.medium"
 		trigger = { has_country_flag = medium.10 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		evasion_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.repair.medium"
 		trigger = { has_country_flag = medium.11 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		repair_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.lifespans.medium"
 		trigger = { has_country_flag = medium.12 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		lifespan_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.speed.medium"
 		trigger = { has_country_flag = medium.13 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		speed_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.morale.medium"
 		trigger = { has_country_flag = medium.14 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		morale_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.sensors.medium"
 		trigger = { has_country_flag = medium.15 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		sensor_shroud_medium = yes
 	}
-
 	option = {
 		name = "shroud.avatar.medium"
 		trigger = { has_country_flag = medium.16 }
@@ -3652,112 +3274,96 @@ country_event = {
 		custom_tooltip = "shroud.boon.chances.low"
 		happiness_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.upkeep.low"
 		trigger = { has_country_flag = low.2 }
 		custom_tooltip = "shroud.boon.chances.low"
 		upkeep_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.research.low"
 		trigger = { has_country_flag = low.3 }
 		custom_tooltip = "shroud.boon.chances.low"
 		research_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.shields.low"
 		trigger = { has_country_flag = low.4 }
 		custom_tooltip = "shroud.boon.chances.low"
 		shields_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.weapons.low"
 		trigger = { has_country_flag = low.5 }
 		custom_tooltip = "shroud.boon.chances.low"
 		weapons_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.firing.low"
 		trigger = { has_country_flag = low.6 }
 		custom_tooltip = "shroud.boon.chances.low"
 		firingrate_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.ethics.low"
 		trigger = { has_country_flag = low.7 }
 		custom_tooltip = "shroud.boon.chances.low"
 		ethics_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.influence.low"
 		trigger = { has_country_flag = low.8 }
 		custom_tooltip = "shroud.boon.chances.low"
 		influence_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.unity.low"
 		trigger = { has_country_flag = low.9 }
 		custom_tooltip = "shroud.boon.chances.low"
 		unity_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.evasion.low"
 		trigger = { has_country_flag = low.10 }
 		custom_tooltip = "shroud.boon.chances.low"
 		evasion_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.repair.low"
 		trigger = { has_country_flag = low.11 }
 		custom_tooltip = "shroud.boon.chances.low"
 		repair_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.lifespans.low"
 		trigger = { has_country_flag = low.12 }
 		custom_tooltip = "shroud.boon.chances.low"
 		lifespan_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.speed.low"
 		trigger = { has_country_flag = low.13 }
 		custom_tooltip = "shroud.boon.chances.low"
 		speed_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.morale.low"
 		trigger = { has_country_flag = low.14 }
 		custom_tooltip = "shroud.boon.chances.low"
 		morale_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.sensors.low"
 		trigger = { has_country_flag = low.15 }
 		custom_tooltip = "shroud.boon.chances.low"
 		sensor_shroud_low = yes
 	}
-
 	option = {
 		name = "shroud.avatar.low"
 		trigger = { has_country_flag = low.16 }
 		custom_tooltip = "shroud.boon.chances.low"
 		avatar_shroud_low = yes
 	}
-
 	option = {
 		name = "exit.shroud"
 		custom_tooltip = "exit.shroud.tooltip"
@@ -3773,7 +3379,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = utopia.3000.name
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -3795,13 +3400,11 @@ country_event = {
 			save_event_target_as = fallen_empire
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 		}
 	}
-
 	option = {
 		name = "utopia.3150.a"
 		custom_tooltip = "shroud.unknown.chances.medium"
@@ -3819,7 +3422,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		custom_tooltip = "exit.shroud.tooltip"
@@ -3831,15 +3433,12 @@ country_event = {
 country_event = {
 	id = utopia.3151
 	title = "utopia.3151.name"
-
 	desc = {
 		text = utopia.3151.v1.desc
 	}
-
 	desc = {
 		text = utopia.3151.v2.desc
 	}
-
 	desc = {
 		text = utopia.3151.v3.desc
 	}
@@ -3847,7 +3446,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = utopia.3000.name
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -3859,13 +3457,11 @@ country_event = {
 		set_country_flag = shroud_diplomacy_engaged
 		set_country_flag = shroud_fallen_empire
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		give_fe_tech = yes
@@ -3881,7 +3477,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = utopia.3000.name
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -3893,23 +3488,17 @@ country_event = {
 		set_country_flag = shroud_diplomacy_engaged
 		set_country_flag = shroud_fallen_empire
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		custom_tooltip = "exit.shroud.tooltip"
 		default_hide_option = yes
 		hidden_effect = {
-			country_event = {
-				id = utopia.3153
-				days = 20
-				random = 15
-			}
+			country_event = { id = utopia.3153 days = 20 random = 15 }
 		}
 	}
 }
@@ -3922,7 +3511,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = utopia.3000.name
 	force_open = yes
-
 	picture_event_data = {
 		portrait = event_target:fallen_empire
 		room = event_target:fallen_empire
@@ -3935,7 +3523,6 @@ country_event = {
 			add_opinion_modifier = { who = root modifier = opinion_invaded_mind }
 		}
 	}
-
 	option = {
 		name = "utopia.3153.a"
 		trigger = { is_machine_species = no is_gestalt = no }
@@ -3945,7 +3532,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "utopia.3153.b"
 		trigger = {
@@ -3970,7 +3556,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = utopia.3000.name
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -3981,13 +3566,11 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 		}
 	}
-
 	option = {
 		name = "utopia.3160.a"
 		custom_tooltip = "shroud.unknown.chances.medium"
@@ -4009,7 +3592,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		custom_tooltip = "exit.shroud.tooltip"
@@ -4025,7 +3607,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = utopia.3000.name
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -4037,13 +3618,11 @@ country_event = {
 		set_country_flag = shroud_diplomacy_engaged
 		set_country_flag = shroud_vision_7
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		if = {
@@ -4072,7 +3651,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = utopia.3000.name
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -4087,13 +3665,11 @@ country_event = {
 			days = @delve_retrigger_cooldown # 30 years
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		default_hide_option = yes
@@ -4109,7 +3685,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = utopia.3000.name
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -4120,13 +3695,11 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 		}
 	}
-
 	option = {
 		name = "utopia.3170.a"
 		custom_tooltip = "shroud.unknown.chances.medium"
@@ -4144,7 +3717,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		custom_tooltip = "exit.shroud.tooltip"
@@ -4156,7 +3728,6 @@ country_event = {
 country_event = {
 	id = utopia.3171
 	title = "utopia.3171.name"
-
 	desc = {
 		trigger = {
 			OR = {
@@ -4166,7 +3737,6 @@ country_event = {
 		}
 		text = utopia.3171.desc_machine_gestalt
 	}
-
 	desc = {
 		trigger = { is_machine_species = no is_gestalt = no }
 		text = utopia.3171.desc_organic
@@ -4175,7 +3745,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = utopia.3000.name
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -4187,13 +3756,11 @@ country_event = {
 		set_country_flag = shroud_diplomacy_engaged
 		set_country_flag = shroud_vision_8
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		if = {
@@ -4218,22 +3785,18 @@ country_event = {
 country_event = {
 	id = utopia.3172
 	title = "utopia.3172.name"
-
 	desc = {
 		trigger = { is_machine_species = yes is_gestalt = no }
 		text = utopia.3172.desc_machine_non_gestalt
 	}
-
 	desc = {
 		trigger = { is_machine_species = yes is_gestalt = yes }
 		text = utopia.3172.desc_machine_gestalt
 	}
-
 	desc = {
 		trigger = { is_machine_species = no is_gestalt = yes }
 		text = utopia.3172.desc_organic_gestalt
 	}
-
 	desc = {
 		trigger = { is_machine_species = no is_gestalt = no }
 		text = utopia.3172.desc_organic_non_gestalt
@@ -4242,7 +3805,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = utopia.3000.name
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -4257,13 +3819,11 @@ country_event = {
 			days = @delve_retrigger_cooldown # 30 years
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		custom_tooltip = "exit.shroud.tooltip"
@@ -4278,17 +3838,14 @@ country_event = {
 country_event = {
 	id = utopia.3180
 	title = "utopia.3180.name"
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = utopia.3180.desc_gestalt
 	}
-
 	desc = {
 		trigger = { is_robot_empire = yes is_gestalt = no }
 		text = utopia.3180.desc_machine_non_gestalt
 	}
-
 	desc = {
 		trigger = { is_robot_empire = no is_gestalt = no }
 		text = utopia.3180.desc_organic_non_gestalt
@@ -4297,7 +3854,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = utopia.3000.name
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -4308,13 +3864,11 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 		}
 	}
-
 	option = {
 		name = "utopia.3180.a"
 		custom_tooltip = "shroud.unknown.chances.medium"
@@ -4332,7 +3886,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		custom_tooltip = "exit.shroud.tooltip"
@@ -4344,17 +3897,14 @@ country_event = {
 country_event = {
 	id = utopia.3181
 	title = "utopia.3181.name"
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = utopia.3181.desc_gestalt
 	}
-
 	desc = {
 		trigger = { is_robot_empire = yes is_gestalt = no }
 		text = utopia.3181.desc_machine_non_gestalt
 	}
-
 	desc = {
 		trigger = { is_robot_empire = no is_gestalt = no }
 		text = utopia.3181.desc_organic_non_gestalt
@@ -4363,7 +3913,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = utopia.3000.name
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -4375,13 +3924,11 @@ country_event = {
 		set_country_flag = shroud_diplomacy_engaged
 		set_country_flag = shroud_vision_9
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		if = {
@@ -4406,17 +3953,14 @@ country_event = {
 country_event = {
 	id = utopia.3182
 	title = "utopia.3182.name"
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = utopia.3182.desc_gestalt
 	}
-
 	desc = {
 		trigger = { is_robot_empire = yes is_gestalt = no }
 		text = utopia.3182.desc_machine_non_gestalt
 	}
-
 	desc = {
 		trigger = { is_robot_empire = no is_gestalt = no }
 		text = utopia.3182.desc_organic_non_gestalt
@@ -4425,7 +3969,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = utopia.3000.name
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -4440,13 +3983,11 @@ country_event = {
 			days = @delve_retrigger_cooldown # 30 years
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		default_hide_option = yes
@@ -4467,12 +4008,10 @@ country_event = {
 country_event = {
 	id = utopia.3190
 	title = "utopia.3190.name"
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = utopia.3190.desc_gestalt
 	}
-
 	desc = {
 		trigger = { is_gestalt = no }
 		text = utopia.3190.desc_non_gestalt
@@ -4481,7 +4020,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = utopia.3000.name
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -4601,7 +4139,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
@@ -4627,7 +4164,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = utopia.3190.1.a
 		custom_tooltip = "shroud.unknown.chances.high"
@@ -4649,7 +4185,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = utopia.3190.2.a
 		custom_tooltip = "shroud.unknown.chances.medium"
@@ -4671,7 +4206,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = utopia.3190.3.a
 		custom_tooltip = "shroud.unknown.chances.low"
@@ -4693,7 +4227,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = utopia.3190.1.b
 		custom_tooltip = "shroud.unknown.chances.high"
@@ -4716,7 +4249,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = utopia.3190.2.b
 		custom_tooltip = "shroud.unknown.chances.medium"
@@ -4739,7 +4271,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = utopia.3190.3.b
 		custom_tooltip = "shroud.unknown.chances.low"
@@ -4762,7 +4293,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = utopia.3190.1.c
 		custom_tooltip = "shroud.unknown.chances.high"
@@ -4785,7 +4315,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = utopia.3190.2.c
 		custom_tooltip = "shroud.unknown.chances.medium"
@@ -4808,7 +4337,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = utopia.3190.3.c
 		custom_tooltip = "shroud.unknown.chances.low"
@@ -4831,7 +4359,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = utopia.3190.1.d
 		custom_tooltip = "shroud.unknown.chances.high"
@@ -4854,7 +4381,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = utopia.3190.2.d
 		custom_tooltip = "shroud.unknown.chances.medium"
@@ -4877,7 +4403,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = utopia.3190.3.d
 		custom_tooltip = "shroud.unknown.chances.low"
@@ -4900,7 +4425,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		custom_tooltip = "exit.shroud.tooltip"
@@ -4912,17 +4436,14 @@ country_event = {
 country_event = {
 	id = utopia.3191
 	title = "utopia.3191.name"
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = utopia.3191.desc_gestalt
 	}
-
 	desc = {
 		trigger = { is_robot_empire = yes is_gestalt = no }
 		text = utopia.3191.desc_machine_non_gestalt
 	}
-
 	desc = {
 		trigger = { is_robot_empire = no is_gestalt = no }
 		text = utopia.3191.desc_organic_non_gestalt
@@ -4931,7 +4452,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = utopia.3000.name
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -4943,13 +4463,11 @@ country_event = {
 		set_country_flag = shroud_diplomacy_engaged
 		set_country_flag = shroud_vision_10
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		default_hide_option = yes
@@ -4965,12 +4483,10 @@ country_event = {
 country_event = {
 	id = utopia.3192
 	title = "utopia.3192.name"
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = utopia.3192.desc_gestalt
 	}
-
 	desc = {
 		trigger = { is_gestalt = no }
 		text = utopia.3192.desc_non_gestalt
@@ -4979,7 +4495,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = utopia.3000.name
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -4991,13 +4506,11 @@ country_event = {
 		set_country_flag = shroud_diplomacy_engaged
 		set_timed_country_flag = { flag = shroud_vision_10 years = 30 }
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		event_target:chosen_leader = {
@@ -5011,12 +4524,10 @@ country_event = {
 country_event = {
 	id = utopia.3193
 	title = "utopia.3193.name"
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = utopia.3193.desc_gestalt
 	}
-
 	desc = {
 		trigger = { is_gestalt = no }
 		text = utopia.3193.desc_non_gestalt
@@ -5025,7 +4536,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = utopia.3000.name
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -5037,13 +4547,11 @@ country_event = {
 		set_country_flag = shroud_diplomacy_engaged
 		set_timed_country_flag = { flag = shroud_vision_10 years = 30 }
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		event_target:chosen_leader = {
@@ -5060,7 +4568,6 @@ country_event = {
 country_event = {
 	id = utopia.3200
 	title = "utopia.3200.name"
-
 	desc = {
 		trigger = {
 			if = {
@@ -5172,7 +4679,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = utopia.3000.name
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -5185,7 +4691,6 @@ country_event = {
 		randomize_shroud_flags = yes
 		randomize_shroud_vision_desc = yes
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
@@ -5201,105 +4706,90 @@ country_event = {
 		custom_tooltip = "shroud.boon.chances.high"
 		happiness_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.upkeep.high"
 		trigger = { has_country_flag = high.2 }
 		custom_tooltip = "shroud.boon.chances.high"
 		upkeep_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.research.high"
 		trigger = { has_country_flag = high.3 }
 		custom_tooltip = "shroud.boon.chances.high"
 		research_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.shields.high"
 		trigger = { has_country_flag = high.4 }
 		custom_tooltip = "shroud.boon.chances.high"
 		shields_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.weapons.high"
 		trigger = { has_country_flag = high.5 }
 		custom_tooltip = "shroud.boon.chances.high"
 		weapons_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.firing.high"
 		trigger = { has_country_flag = high.6 }
 		custom_tooltip = "shroud.boon.chances.high"
 		firingrate_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.ethics.high"
 		trigger = { has_country_flag = high.7 }
 		custom_tooltip = "shroud.boon.chances.high"
 		ethics_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.influence.high"
 		trigger = { has_country_flag = high.8 }
 		custom_tooltip = "shroud.boon.chances.high"
 		influence_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.unity.high"
 		trigger = { has_country_flag = high.9 }
 		custom_tooltip = "shroud.boon.chances.high"
 		unity_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.evasion.high"
 		trigger = { has_country_flag = high.10 }
 		custom_tooltip = "shroud.boon.chances.high"
 		evasion_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.repair.high"
 		trigger = { has_country_flag = high.11 }
 		custom_tooltip = "shroud.boon.chances.high"
 		repair_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.lifespans.high"
 		trigger = { has_country_flag = high.12 }
 		custom_tooltip = "shroud.boon.chances.high"
 		lifespan_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.speed.high"
 		trigger = { has_country_flag = high.13 }
 		custom_tooltip = "shroud.boon.chances.high"
 		speed_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.morale.high"
 		trigger = { has_country_flag = high.14 }
 		custom_tooltip = "shroud.boon.chances.high"
 		morale_shroud_high = yes
 	}
-
 	option = {
 		name = "boon.sensors.high"
 		trigger = { has_country_flag = high.15 }
 		custom_tooltip = "shroud.boon.chances.high"
 		sensor_shroud_high = yes
 	}
-
 	option = {
 		name = "shroud.avatar.high"
 		trigger = { has_country_flag = high.16 }
@@ -5314,105 +4804,90 @@ country_event = {
 		custom_tooltip = "shroud.boon.chances.medium"
 		happiness_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.upkeep.medium"
 		trigger = { has_country_flag = medium.2 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		upkeep_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.research.medium"
 		trigger = { has_country_flag = medium.3 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		research_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.shields.medium"
 		trigger = { has_country_flag = medium.4 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		shields_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.weapons.medium"
 		trigger = { has_country_flag = medium.5 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		weapons_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.firing.medium"
 		trigger = { has_country_flag = medium.6 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		firingrate_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.ethics.medium"
 		trigger = { has_country_flag = medium.7 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		ethics_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.influence.medium"
 		trigger = { has_country_flag = medium.8 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		influence_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.unity.medium"
 		trigger = { has_country_flag = medium.9 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		unity_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.evasion.medium"
 		trigger = { has_country_flag = medium.10 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		evasion_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.repair.medium"
 		trigger = { has_country_flag = medium.11 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		repair_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.lifespans.medium"
 		trigger = { has_country_flag = medium.12 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		lifespan_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.speed.medium"
 		trigger = { has_country_flag = medium.13 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		speed_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.morale.medium"
 		trigger = { has_country_flag = medium.14 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		morale_shroud_medium = yes
 	}
-
 	option = {
 		name = "boon.sensors.medium"
 		trigger = { has_country_flag = medium.15 }
 		custom_tooltip = "shroud.boon.chances.medium"
 		sensor_shroud_medium = yes
 	}
-
 	option = {
 		name = "shroud.avatar.medium"
 		trigger = { has_country_flag = medium.16 }
@@ -5427,112 +4902,96 @@ country_event = {
 		custom_tooltip = "shroud.boon.chances.low"
 		happiness_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.upkeep.low"
 		trigger = { has_country_flag = low.2 }
 		custom_tooltip = "shroud.boon.chances.low"
 		upkeep_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.research.low"
 		trigger = { has_country_flag = low.3 }
 		custom_tooltip = "shroud.boon.chances.low"
 		research_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.shields.low"
 		trigger = { has_country_flag = low.4 }
 		custom_tooltip = "shroud.boon.chances.low"
 		shields_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.weapons.low"
 		trigger = { has_country_flag = low.5 }
 		custom_tooltip = "shroud.boon.chances.low"
 		weapons_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.firing.low"
 		trigger = { has_country_flag = low.6 }
 		custom_tooltip = "shroud.boon.chances.low"
 		firingrate_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.ethics.low"
 		trigger = { has_country_flag = low.7 }
 		custom_tooltip = "shroud.boon.chances.low"
 		ethics_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.influence.low"
 		trigger = { has_country_flag = low.8 }
 		custom_tooltip = "shroud.boon.chances.low"
 		influence_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.unity.low"
 		trigger = { has_country_flag = low.9 }
 		custom_tooltip = "shroud.boon.chances.low"
 		unity_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.evasion.low"
 		trigger = { has_country_flag = low.10 }
 		custom_tooltip = "shroud.boon.chances.low"
 		evasion_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.repair.low"
 		trigger = { has_country_flag = low.11 }
 		custom_tooltip = "shroud.boon.chances.low"
 		repair_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.lifespans.low"
 		trigger = { has_country_flag = low.12 }
 		custom_tooltip = "shroud.boon.chances.low"
 		lifespan_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.speed.low"
 		trigger = { has_country_flag = low.13 }
 		custom_tooltip = "shroud.boon.chances.low"
 		speed_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.morale.low"
 		trigger = { has_country_flag = low.14 }
 		custom_tooltip = "shroud.boon.chances.low"
 		morale_shroud_low = yes
 	}
-
 	option = {
 		name = "boon.sensors.low"
 		trigger = { has_country_flag = low.15 }
 		custom_tooltip = "shroud.boon.chances.low"
 		sensor_shroud_low = yes
 	}
-
 	option = {
 		name = "shroud.avatar.low"
 		trigger = { has_country_flag = low.16 }
 		custom_tooltip = "shroud.boon.chances.low"
 		avatar_shroud_low = yes
 	}
-
 	option = {
 		name = "exit.shroud"
 		custom_tooltip = "exit.shroud.tooltip"
@@ -5548,7 +5007,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = "utopia.3000.name"
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -5590,7 +5048,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
@@ -5599,7 +5056,6 @@ country_event = {
 			remove_country_flag = patron_deity_chance_low
 		}
 	}
-
 	option = {
 		name = "utopia.3300.1.a"
 		custom_tooltip = "shroud.unknown.chances.high"
@@ -5612,7 +5068,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "utopia.3300.1.b"
 		custom_tooltip = "shroud.unknown.chances.medium"
@@ -5625,7 +5080,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "utopia.3300.1.c"
 		custom_tooltip = "shroud.unknown.chances.low"
@@ -5638,7 +5092,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "utopia.3300.1.d"
 		custom_tooltip = "shroud.unknown.chances.high"
@@ -5651,7 +5104,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		custom_tooltip = "exit.shroud.tooltip"
@@ -5667,7 +5119,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = "utopia.3000.name"
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -5678,13 +5129,11 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		default_hide_option = yes
@@ -5699,7 +5148,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = "utopia.3000.name"
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -5720,13 +5168,11 @@ country_event = {
 			save_event_target_as = leader_to_kill
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		default_hide_option = yes
@@ -5972,7 +5418,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		remove_country_flag = contact_composer
 		remove_country_flag = contact_eater
@@ -5989,7 +5434,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = "utopia.3000.name"
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -6000,13 +5444,11 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 		}
 	}
-
 	option = {
 		name = "utopia.3304.a"
 		trigger = {
@@ -6030,7 +5472,6 @@ country_event = {
 			set_variable = { which = whisperers_covenant_rank value = 1 }
 		}
 	}
-
 	option = { # Tradition Covenant
 		name = "utopia.3304.a"
 		trigger = { has_country_flag = tradition_covenant }
@@ -6056,7 +5497,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		custom_tooltip = "exit.shroud.tooltip"
@@ -6075,7 +5515,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = "utopia.3000.name"
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -6086,13 +5525,11 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 		}
 	}
-
 	option = {
 		name = "utopia.3305.a"
 		trigger = {
@@ -6109,7 +5546,6 @@ country_event = {
 			set_variable = { which = composer_covenant_rank value = 1 }
 		}
 	}
-
 	option = { # Tradition Covenant
 		name = "utopia.3305.a"
 		trigger = { has_country_flag = tradition_covenant }
@@ -6128,7 +5564,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		custom_tooltip = "exit.shroud.tooltip"
@@ -6147,7 +5582,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = "utopia.3000.name"
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -6158,13 +5592,11 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 		}
 	}
-
 	option = {
 		name = "utopia.3306.a"
 		trigger = {
@@ -6194,7 +5626,6 @@ country_event = {
 			set_variable = { which = eater_covenant_rank value = 1 }
 		}
 	}
-
 	option = { # tradition covenant
 		name = "utopia.3306.a"
 		trigger = { has_country_flag = tradition_covenant }
@@ -6226,7 +5657,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		custom_tooltip = "exit.shroud.tooltip"
@@ -6245,7 +5675,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = "utopia.3000.name"
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -6256,13 +5685,11 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
 		}
 	}
-
 	option = {
 		name = "utopia.3307.a"
 		trigger = {
@@ -6279,7 +5706,6 @@ country_event = {
 			set_variable = { which = instrument_covenant_rank value = 1 }
 		}
 	}
-
 	option = { # Tradition Covenant
 		name = "utopia.3307.a"
 		trigger = { has_country_flag = tradition_covenant }
@@ -6298,7 +5724,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		custom_tooltip = "exit.shroud.tooltip"
@@ -6317,7 +5742,6 @@ country_event = {
 	diplomatic = yes
 	diplomatic_title = "utopia.3000.name"
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -6328,7 +5752,6 @@ country_event = {
 	immediate = {
 		set_country_flag = shroud_diplomacy_engaged
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = shroud_diplomacy_engaged
@@ -6337,7 +5760,6 @@ country_event = {
 		# Vfix (double tag)
 		country_event = { id = timeline.24 } # Milestone First Custodian Appointment
 	}
-
 	option = {
 		name = "utopia.3308.a"
 		custom_tooltip = "covenant.cycle.tooltip"
@@ -6364,7 +5786,6 @@ country_event = {
 			country_event = { id = utopia.3320 days = 18000 }
 		}
 	}
-
 	option = {
 		name = "exit.shroud"
 		custom_tooltip = "exit.shroud.tooltip"
@@ -6383,52 +5804,42 @@ country_event = {
 	show_sound = event_mystic_reveal
 	location = root
 	is_triggered_only = yes
-
 	desc = {
 		text = covenant.whisperers.desc
 		trigger = { has_modifier = covenant_whisperers_in_the_void_0 }
 	}
-
 	desc = {
 		text = covenant.composer.desc
 		trigger = { has_modifier = covenant_composer_of_strands_0 }
 	}
-
 	desc = {
 		text = covenant.eater.desc
 		trigger = { has_modifier = covenant_eater_of_worlds_0 }
 	}
-
 	desc = {
 		text = covenant.instrument.desc
 		trigger = { has_modifier = covenant_instrument_of_desire_0 }
 	}
-
 	desc = {
 		text = covenant.cycle.desc
 		trigger = { has_modifier = covenant_end_of_the_cycle }
 	}
-
 	option = {
 		trigger = { has_modifier = covenant_whisperers_in_the_void_0 }
 		name = covenant.whisperers.option
 	}
-
 	option = {
 		trigger = { has_modifier = covenant_instrument_of_desire_0 }
 		name = covenant.instrument.option
 	}
-
 	option = {
 		trigger = { has_modifier = covenant_eater_of_worlds_0 }
 		name = covenant.eater.option
 	}
-
 	option = {
 		trigger = { has_modifier = covenant_composer_of_strands_0 }
 		name = covenant.composer.option
 	}
-
 	option = {
 		trigger = { has_modifier = covenant_end_of_the_cycle }
 		name = covenant.cycle.option
@@ -6455,22 +5866,18 @@ country_event = {
 country_event = {
 	id = utopia.3320
 	title = "utopia.3320.name"
-
 	picture = {
 		trigger = { has_shroud_dlc = yes }
 		picture = GFX_evt_shroud_end_of_the_cycle
 	}
-
 	picture = {
 		trigger = { has_shroud_dlc = no }
 		picture = GFX_evt_unspeakable_horror
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = yes }
 		sound = event_end_of_the_cycle
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = no }
 		sound = event_red_alert
@@ -6482,28 +5889,23 @@ country_event = {
 	trigger = {
 		NOT = { has_global_flag = no_end_of_cycle }
 	}
-
 	desc = {
 		text = "utopia.3320.desc.a.gestalt"
 		trigger = { has_country_flag = exile_world is_gestalt = yes }
 	}
-
 	desc = {
 		text = "utopia.3320.desc.a.non_gestalt"
 		trigger = { has_country_flag = exile_world is_gestalt = no }
 	}
-
 	desc = {
 		text = "utopia.3320.desc.b"
 		trigger = {
 			NOT = { has_country_flag = exile_world }
 		}
 	}
-
 	immediate = {
 		reckoning_spawn = yes
 	}
-
 	option = {
 		name = "utopia.3320.opt.a"
 		if = {
@@ -6522,19 +5924,16 @@ country_event = {
 	id = utopia.3321
 	title = "utopia.3320.name"
 	picture = GFX_evt_unspeakable_horror
-
 	show_sound = {
 		trigger = { has_shroud_dlc = yes }
 		sound = event_end_of_the_cycle
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = no }
 		sound = event_red_alert
 	}
 
 	location = root
-
 	desc = {
 		trigger = {
 			if = {
@@ -6560,7 +5959,6 @@ country_event = {
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = {
 			trigger = {
@@ -6608,11 +6006,9 @@ planet_event = {
 		}
 		NOT = { has_modifier = covenant_shroud_marked }
 	}
-
 	mean_time_to_happen = {
 		months = 1
 	}
-
 	immediate = {
 		add_modifier = { modifier = covenant_shroud_marked days = -1 }
 	}
@@ -6653,11 +6049,9 @@ fleet_event = {
 			}
 		}
 	}
-
 	mean_time_to_happen = {
 		months = 3
 	}
-
 	immediate = {
 		set_timed_global_flag = { flag = end_of_the_cycle_orders_cooldown months = 1 }
 		closest_system = {
@@ -6756,7 +6150,6 @@ planet_event = {
 			}
 		}
 	}
-
 	after = {
 		if = {
 			limit = { is_planet_class = pc_habitat }
@@ -6770,14 +6163,12 @@ planet_event = {
 planet_event = {
 	id = utopia.3325
 	title = "utopia.3325.name"
-
 	desc = {
 		trigger = {
 			event_target:planet_owner = { is_robot_empire = yes }
 		}
 		text = utopia.3325.desc.machine
 	}
-
 	desc = {
 		trigger = {
 			event_target:planet_owner = { is_robot_empire = no }
@@ -6786,12 +6177,10 @@ planet_event = {
 	}
 
 	picture = GFX_evt_unspeakable_horror
-
 	show_sound = {
 		trigger = { has_shroud_dlc = yes }
 		sound = event_end_of_the_cycle
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = no }
 		sound = event_red_alert
@@ -6807,7 +6196,6 @@ planet_event = {
 	trigger = {
 		has_owner = yes
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -6841,11 +6229,9 @@ country_event = {
 			has_covenant_with_the_cradle_of_souls = yes
 		}
 	}
-
 	mean_time_to_happen = {
 		years = 15
 	}
-
 	immediate = {
 		set_timed_country_flag = { flag = covenant_side_effects years = 10 }
 		if = {
@@ -6925,22 +6311,18 @@ country_event = {
 	id = utopia.3331
 	title = "utopia.3331.name"
 	desc = "utopia.3331.desc"
-
 	picture = {
 		trigger = { has_shroud_dlc = yes }
 		picture = GFX_evt_shroud_whisperers_in_the_void
 	}
-
 	picture = {
 		trigger = { has_shroud_dlc = no }
 		picture = GFX_evt_unspeakable_horror
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = yes }
 		sound = event_whisperers_in_the_void
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = no }
 		sound = event_mystic_reveal
@@ -6952,9 +6334,7 @@ country_event = {
 	trigger = {
 		any_owned_leader = {
 			has_trait = leader_trait_psionic
-			NOT = {
-				has_trait_tier1or2 = { TRAIT = leader_trait_substance_abuser }
-			}
+			NOT = { has_trait_tier1or2 = { TRAIT = leader_trait_substance_abuser } }
 		}
 	}
 
@@ -6962,14 +6342,11 @@ country_event = {
 		random_owned_leader = {
 			limit = {
 				has_trait = leader_trait_psionic
-				NOT = {
-					has_trait_tier1or2 = { TRAIT = leader_trait_substance_abuser }
-				}
+				NOT = { has_trait_tier1or2 = { TRAIT = leader_trait_substance_abuser } }
 			}
 			save_event_target_as = leader_target
 		}
 	}
-
 	option = {
 		name = "utopia.3331.opt.a"
 		event_target:leader_target = {
@@ -6982,37 +6359,30 @@ country_event = {
 country_event = {
 	id = utopia.3332
 	title = "utopia.3332.name"
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = utopia.3332.desc.gestalt
 	}
-
 	desc = {
 		trigger = { is_gestalt = no is_robot_empire = yes }
 		text = utopia.3332.desc.machine_non_gestalt
 	}
-
 	desc = {
 		trigger = { is_gestalt = no is_robot_empire = no }
 		text = utopia.3332.desc.organic_non_gestalt
 	}
-
 	picture = {
 		trigger = { has_shroud_dlc = yes }
 		picture = GFX_evt_shroud_whisperers_in_the_void
 	}
-
 	picture = {
 		trigger = { has_shroud_dlc = no }
 		picture = GFX_evt_unspeakable_horror
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = yes }
 		sound = event_whisperers_in_the_void
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = no }
 		sound = event_mystic_reveal
@@ -7043,7 +6413,6 @@ country_event = {
 			save_event_target_as = leader_target
 		}
 	}
-
 	option = {
 		name = {
 			trigger = { is_gestalt = yes }
@@ -7060,40 +6429,34 @@ country_event = {
 }
 
 ## Whisperers - Dangerous Ideas - Faction drift and Stability
+
 country_event = {
 	id = utopia.3333
 	title = "utopia.3333.name"
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = utopia.3333.desc.gestalt
 	}
-
 	desc = {
 		trigger = { is_gestalt = no is_robot_empire = yes }
 		text = utopia.3333.desc.machine_non_gestalt
 	}
-
 	desc = {
 		trigger = { is_gestalt = no is_robot_empire = no }
 		text = utopia.3333.desc.organic_non_gestalt
 	}
-
 	picture = {
 		trigger = { has_shroud_dlc = yes }
 		picture = GFX_evt_shroud_whisperers_in_the_void
 	}
-
 	picture = {
 		trigger = { has_shroud_dlc = no }
 		picture = GFX_evt_unspeakable_horror
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = yes }
 		sound = event_whisperers_in_the_void
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = no }
 		sound = event_mystic_reveal
@@ -7127,7 +6490,6 @@ country_event = {
 			save_event_target_as = planet_target # Vfix
 		}
 	}
-
 	option = {
 		name = "utopia.3333.opt.a"
 		event_target:planet_target = { # Vfix
@@ -7146,37 +6508,30 @@ country_event = {
 country_event = {
 	id = utopia.3334
 	title = "utopia.3334.name"
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = utopia.3334.desc.gestalt
 	}
-
 	desc = {
 		trigger = { is_gestalt = no is_robot_empire = yes }
 		text = utopia.3334.desc.machine_non_gestalt
 	}
-
 	desc = {
 		trigger = { is_gestalt = no is_robot_empire = no }
 		text = utopia.3334.desc.organic_non_gestalt
 	}
-
 	picture = {
 		trigger = { has_shroud_dlc = yes }
 		picture = GFX_evt_shroud_whisperers_in_the_void
 	}
-
 	picture = {
 		trigger = { has_shroud_dlc = no }
 		picture = GFX_evt_unspeakable_horror
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = yes }
 		sound = event_whisperers_in_the_void
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = no }
 		sound = event_mystic_reveal
@@ -7210,7 +6565,6 @@ country_event = {
 			save_event_target_as = planet_target # Vfix
 		}
 	}
-
 	option = {
 		name = "utopia.3334.opt.a"
 		if = {
@@ -7231,32 +6585,26 @@ country_event = {
 country_event = {
 	id = utopia.3335
 	title = "utopia.3335.name"
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = utopia.3335.desc.gestalt
 	}
-
 	desc = {
 		trigger = { is_gestalt = no }
 		text = utopia.3335.desc.non_gestalt
 	}
-
 	picture = {
 		trigger = { has_shroud_dlc = yes }
 		picture = GFX_evt_shroud_eater_of_worlds
 	}
-
 	picture = {
 		trigger = { has_shroud_dlc = no }
 		picture = GFX_evt_unspeakable_horror
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = yes }
 		sound = event_the_eater_of_worlds
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = no }
 		sound = event_mystic_reveal
@@ -7295,7 +6643,6 @@ country_event = {
 			kill_leader = {  }
 		}
 	}
-
 	option = {
 		name = "utopia.3335.opt.a"
 		tooltip = {
@@ -7308,32 +6655,26 @@ country_event = {
 country_event = {
 	id = utopia.3336
 	title = "utopia.3336.name"
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = utopia.3336.desc.gestalt
 	}
-
 	desc = {
 		trigger = { is_gestalt = no }
 		text = utopia.3336.desc.non_gestalt
 	}
-
 	picture = {
 		trigger = { has_shroud_dlc = yes }
 		picture = GFX_evt_shroud_eater_of_worlds
 	}
-
 	picture = {
 		trigger = { has_shroud_dlc = no }
 		picture = GFX_evt_unspeakable_horror
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = yes }
 		sound = event_the_eater_of_worlds
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = no }
 		sound = event_mystic_reveal
@@ -7358,7 +6699,6 @@ country_event = {
 			random_owned_pop_group = { kill_single_pop = yes }
 		}
 	}
-
 	option = {
 		name = "utopia.3336.opt.a"
 		if = {
@@ -7379,32 +6719,26 @@ country_event = {
 country_event = {
 	id = utopia.3337
 	title = "utopia.3337.name"
-
 	desc = {
 		trigger = { has_shroud_dlc = yes }
 		text = "utopia.3337.desc.shadows"
 	}
-
 	desc = {
 		trigger = { has_shroud_dlc = no }
 		text = "utopia.3337.desc"
 	}
-
 	picture = {
 		trigger = { has_shroud_dlc = yes }
 		picture = GFX_evt_shroud_eater_of_worlds
 	}
-
 	picture = {
 		trigger = { has_shroud_dlc = no }
 		picture = GFX_evt_unspeakable_horror
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = yes }
 		sound = event_the_eater_of_worlds
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = no }
 		sound = event_mystic_reveal
@@ -7452,7 +6786,6 @@ country_event = {
 			save_event_target_as = shrouded_planet
 		}
 	}
-
 	option = {
 		name = "utopia.3337.opt.a"
 		custom_tooltip = "utopia.3337.opt.tt"
@@ -7529,37 +6862,30 @@ country_event = {
 country_event = {
 	id = utopia.3340
 	title = "utopia.3340.name"
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = utopia.3340.desc.gestalt
 	}
-
 	desc = {
 		trigger = { is_gestalt = no is_robot_empire = yes }
 		text = utopia.3340.desc.machine_non_gestalt
 	}
-
 	desc = {
 		trigger = { is_gestalt = no is_robot_empire = no }
 		text = utopia.3340.desc.organic_non_gestalt
 	}
-
 	picture = {
 		trigger = { has_shroud_dlc = yes }
 		picture = GFX_evt_shroud_instrument_of_desire
 	}
-
 	picture = {
 		trigger = { has_shroud_dlc = no }
 		picture = GFX_evt_unspeakable_horror
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = yes }
 		sound = event_the_instrument_of_desire
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = no }
 		sound = event_mystic_reveal
@@ -7628,7 +6954,6 @@ country_event = {
 		}
 		country_event = { id = utopia.3344 days = 720 }
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -7660,37 +6985,30 @@ country_event = {
 country_event = {
 	id = utopia.3341
 	title = "utopia.3341.name"
-
 	desc = {
 		trigger = { is_robot_empire = yes }
 		text = utopia.3341.desc.machine
 	}
-
 	desc = {
 		trigger = { is_robot_empire = no is_gestalt = yes }
 		text = utopia.3341.desc.organic_gestalt
 	}
-
 	desc = {
 		trigger = { is_robot_empire = no is_gestalt = no }
 		text = utopia.3341.desc.organic_non_gestalt
 	}
-
 	picture = {
 		trigger = { has_shroud_dlc = yes }
 		picture = GFX_evt_shroud_composer_of_strands
 	}
-
 	picture = {
 		trigger = { has_shroud_dlc = no }
 		picture = GFX_evt_unspeakable_horror
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = yes }
 		sound = event_the_composer_of_strands
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = no }
 		sound = event_mystic_reveal
@@ -7710,7 +7028,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "utopia.3341.opt.a"
 		event_target:species_target = { mutate_species = yes }
@@ -7721,32 +7038,26 @@ country_event = {
 country_event = {
 	id = utopia.3342
 	title = "utopia.3342.name"
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = utopia.3342.desc.gestalt
 	}
-
 	desc = {
 		trigger = { is_gestalt = no }
 		text = utopia.3342.desc.non_gestalt
 	}
-
 	picture = {
 		trigger = { has_shroud_dlc = yes }
 		picture = GFX_evt_shroud_eater_of_worlds
 	}
-
 	picture = {
 		trigger = { has_shroud_dlc = no }
 		picture = GFX_evt_unspeakable_horror
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = yes }
 		sound = event_the_eater_of_worlds
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = no }
 		sound = event_mystic_reveal
@@ -7773,7 +7084,6 @@ country_event = {
 			add_deposit = d_eater_deposit
 		}
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -7793,37 +7103,30 @@ country_event = {
 country_event = {
 	id = utopia.3343
 	title = "utopia.3343.name"
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = utopia.3343.desc.gestalt
 	}
-
 	desc = {
 		trigger = { is_gestalt = no is_robot_empire = yes }
 		text = utopia.3343.desc.machine_non_gestalt
 	}
-
 	desc = {
 		trigger = { is_gestalt = no is_robot_empire = no }
 		text = utopia.3343.desc.organic_non_gestalt
 	}
-
 	picture = {
 		trigger = { has_shroud_dlc = yes }
 		picture = GFX_evt_shroud_eater_of_worlds
 	}
-
 	picture = {
 		trigger = { has_shroud_dlc = no }
 		picture = GFX_evt_unspeakable_horror
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = yes }
 		sound = event_the_eater_of_worlds
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = no }
 		sound = event_mystic_reveal
@@ -7846,7 +7149,6 @@ country_event = {
 			random_owned_pop_group = { kill_single_pop = yes }
 		}
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -7900,7 +7202,6 @@ country_event = {
 country_event = {
 	id = utopia.3345
 	title = "utopia.3345.name"
-
 	desc = {
 		trigger = {
 			if = {
@@ -7927,9 +7228,7 @@ country_event = {
 				limit = {
 					event_target:leader_target = {
 						is_organic_species = yes
-						NOT = {
-							species = { is_species_class = LITHOID }
-						}
+						NOT = { species = { is_species_class = LITHOID } }
 					}
 					is_hive_empire = no
 				}
@@ -7939,9 +7238,7 @@ country_event = {
 				limit = {
 					event_target:leader_target = {
 						is_organic_species = yes
-						NOT = {
-							species = { is_species_class = LITHOID }
-						}
+						NOT = { species = { is_species_class = LITHOID } }
 					}
 					is_hive_empire = yes
 				}
@@ -7963,22 +7260,18 @@ country_event = {
 			}
 		}
 	}
-
 	picture = {
 		trigger = { has_shroud_dlc = yes }
 		picture = GFX_evt_shroud_composer_of_strands
 	}
-
 	picture = {
 		trigger = { has_shroud_dlc = no }
 		picture = GFX_evt_unspeakable_horror
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = yes }
 		sound = event_the_composer_of_strands
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = no }
 		sound = event_mystic_reveal
@@ -8003,7 +7296,6 @@ country_event = {
 			save_event_target_as = leader_target
 		}
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -8032,22 +7324,18 @@ country_event = {
 	id = utopia.3346
 	title = "utopia.3346.name"
 	desc = "utopia.3346.desc"
-
 	picture = {
 		trigger = { has_shroud_dlc = yes }
 		picture = GFX_evt_shroud_composer_of_strands
 	}
-
 	picture = {
 		trigger = { has_shroud_dlc = no }
 		picture = GFX_evt_unspeakable_horror
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = yes }
 		sound = event_the_composer_of_strands
 	}
-
 	show_sound = {
 		trigger = { has_shroud_dlc = no }
 		sound = event_mystic_reveal
@@ -8109,7 +7397,6 @@ country_event = {
 			check_planet_employment = yes
 		}
 	}
-
 	option = {
 		name = {
 			trigger = { is_gestalt = yes }
@@ -8146,7 +7433,6 @@ country_event = {
 			destroy_fleet_naval_cap = { naval_cap = 12 kill_leader = no }
 		}
 	}
-
 	option = {
 		name = utopia.3347.opt.a
 		custom_tooltip = utopia.3347.opt.a.tt
@@ -8157,12 +7443,10 @@ country_event = {
 country_event = {
 	id = utopia.3348
 	title = "utopia.3348.name"
-
 	desc = {
 		trigger = { is_robot_empire = no is_gestalt = no }
 		text = utopia.3348.desc.organic_non_gestalt
 	}
-
 	desc = {
 		trigger = {
 			OR = {
@@ -8176,7 +7460,6 @@ country_event = {
 	picture = GFX_evt_shroud_cradle_of_souls
 	show_sound = event_the_cradle_of_souls
 	is_triggered_only = yes
-
 	option = {
 		name = utopia.3348.opt.a
 		if = {
@@ -8197,7 +7480,6 @@ country_event = {
 	picture = GFX_evt_shroud_cradle_of_souls
 	show_sound = event_the_cradle_of_souls
 	is_triggered_only = yes
-
 	option = {
 		name = utopia.3349.opt.a
 		add_modifier = { modifier = limit_of_the_cradle years = 10 }
@@ -8208,7 +7490,6 @@ country_event = {
 country_event = {
 	id = utopia.3350
 	title = utopia.3350.name
-
 	desc = {
 		trigger = {
 			if = {
@@ -8235,7 +7516,6 @@ country_event = {
 			save_event_target_as = lavish_leader
 		}
 	}
-
 	option = {
 		name = utopia.3350.opt.a
 		add_resource = { energy = -500 }
@@ -8249,7 +7529,6 @@ country_event = {
 country_event = {
 	id = utopia.3351
 	title = utopia.3351.name
-
 	desc = {
 		trigger = {
 			if = {
@@ -8265,7 +7544,6 @@ country_event = {
 	picture = GFX_evt_shroud_instrument_of_desire
 	show_sound = event_the_instrument_of_desire
 	is_triggered_only = yes
-
 	option = {
 		name = utopia.3351.opt.a
 		random_owned_planet = {
@@ -8302,18 +7580,13 @@ country_event = {
 			# Or you're Imperial and the Chosen One is your current ruler or heir.
 			AND = {
 				is_imperial_authority = yes
-				any_owned_leader = {
-					has_any_chosen_one_leader_trait = yes
-					has_trait = trait_imperial_heir
-				}
+				any_owned_leader = { has_any_chosen_one_leader_trait = yes has_trait = trait_imperial_heir }
 			}
 		}
 	}
-
 	mean_time_to_happen = {
 		years = 10
 	}
-
 	immediate = {
 		set_country_flag = chosen_one_ruler_event
 		if = {
@@ -8342,7 +7615,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "utopia.3400.a"
 		ai_chance = {
@@ -8352,7 +7624,6 @@ country_event = {
 		}
 		custom_tooltip = reject_god_emperor
 	}
-
 	option = {
 		name = "utopia.3400.b"
 		ai_chance = {
@@ -8404,13 +7675,10 @@ country_event = {
 country_event = {
 	id = utopia.3401
 	title = "utopia.3401.name"
-
 	desc = {
 		trigger = {
 			if = {
-				limit = {
-					from = { is_robot_empire = yes }
-				}
+				limit = { from = { is_robot_empire = yes } }
 				text = utopia.3401.desc.machine
 			}
 			else = {
@@ -8422,7 +7690,6 @@ country_event = {
 	picture = GFX_evt_chosen_leader
 	show_sound = event_mystic_reveal
 	is_triggered_only = yes
-
 	option = {
 		name = "utopia.3401.a"
 		trigger = {
@@ -8433,12 +7700,10 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "utopia.3401.b"
 		trigger = { is_materialist = yes }
 	}
-
 	option = {
 		name = "utopia.3401.c"
 		trigger = {
@@ -8468,4 +7733,3 @@ country_event = {
 		set_name = random
 	}
 }
-

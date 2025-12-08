@@ -1,9 +1,9 @@
 ################################
-
 #
 # Origin Events
 #
 ###############################
+
 namespace = origin
 
 #########################
@@ -114,11 +114,7 @@ country_event = {
 			}
 		}
 		# Debt Collectors event chain
-		country_event = {
-			id = origin.4010
-			days = 3600
-			random = 180
-		}
+		country_event = { id = origin.4010 days = 3600 random = 180 }
 		# Arc site
 		country_event = { id = origin.4900 days = 180 }
 	}
@@ -132,7 +128,6 @@ country_event = {
 	picture = GFX_evt_relic_shipyard
 	show_sound = event_alien_nature
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		add_monthly_resource_mult = {
@@ -201,7 +196,6 @@ country_event = {
 	picture = GFX_evt_relic_shipyard
 	show_sound = event_alien_nature
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		add_monthly_resource_mult = {
@@ -228,11 +222,9 @@ first_contact_event = {
 	immediate = {
 		set_site_progress_locked = yes
 	}
-
 	after = {
 		set_site_progress_locked = no
 	}
-
 	option = {
 		name = origin.4200.a.auth
 		trigger = {
@@ -242,7 +234,6 @@ first_contact_event = {
 			set_first_contact_stage = slavers_stage_2
 		}
 	}
-
 	option = {
 		name = origin.4200.a.ega
 		trigger = {
@@ -252,47 +243,34 @@ first_contact_event = {
 			set_first_contact_stage = slavers_stage_2
 		}
 	}
-
 	option = {
 		name = origin.4200.b.mili
-		trigger = {
-			owner = { is_militarist = yes }
-		}
+		trigger = { owner = { is_militarist = yes } }
 		hidden_effect = {
 			set_first_contact_stage = slavers_stage_2
 		}
 	}
-
 	option = {
 		name = origin.4200.b.paci
-		trigger = {
-			owner = { is_pacifist = yes }
-		}
+		trigger = { owner = { is_pacifist = yes } }
 		hidden_effect = {
 			set_first_contact_stage = slavers_stage_2
 		}
 	}
-
 	option = {
 		name = origin.4200.c.phobe
-		trigger = {
-			owner = { is_xenophobe = yes }
-		}
+		trigger = { owner = { is_xenophobe = yes } }
 		hidden_effect = {
 			set_first_contact_stage = slavers_stage_2
 		}
 	}
-
 	option = {
 		name = origin.4200.c.phile
-		trigger = {
-			owner = { is_xenophile = yes }
-		}
+		trigger = { owner = { is_xenophile = yes } }
 		hidden_effect = {
 			set_first_contact_stage = slavers_stage_2
 		}
 	}
-
 	option = {
 		name = origin.4200.d.spiri
 		trigger = {
@@ -302,7 +280,6 @@ first_contact_event = {
 			set_first_contact_stage = slavers_stage_2
 		}
 	}
-
 	option = {
 		name = origin.4200.d.mate
 		trigger = {
@@ -327,11 +304,9 @@ first_contact_event = {
 	immediate = {
 		set_site_progress_locked = yes
 	}
-
 	after = {
 		set_site_progress_locked = no
 	}
-
 	option = {
 		name = origin.4205.a
 		owner = {
@@ -344,7 +319,6 @@ first_contact_event = {
 			set_first_contact_stage = slavers_finish
 		}
 	}
-
 	option = {
 		name = origin.4205.b
 		owner = {
@@ -371,11 +345,9 @@ first_contact_event = {
 	immediate = {
 		set_site_progress_locked = yes
 	}
-
 	after = {
 		set_site_progress_locked = no
 	}
-
 	option = {
 		name = EXCELLENT
 		finish_first_contact_effect = yes
@@ -414,13 +386,11 @@ country_event = {
 		# Number of times you defeated them
 		set_variable = { which = debt_collectors_defeats value = 0 }
 	}
-
 	option = {
 		name = origin.4010.a
 		custom_tooltip = origin.4010.a.tooltip
 		begin_event_chain = { event_chain = "payback_debt_collectors_chain" target = this }
 	}
-
 	after = {
 		hidden_effect = {
 			country_event = { id = origin.4015 days = 1800 }
@@ -435,32 +405,27 @@ country_event = {
 	desc = "origin.4015.desc"
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:debt_collectors_species
 		room = ethic_spaceship_room
 	}
-
 	trigger = {
 		exists = event_target:MSI_country
 		has_origin = origin_payback
 		has_event_chain = "payback_debt_collectors_chain"
 	}
-
 	option = { # Pay
 		name = "origin.4015.a"
 		hidden_effect = {
 			country_event = { id = origin.4016 }
 		}
 	}
-
 	option = { # Don't pay
 		name = "origin.4015.b"
 		hidden_effect = {
 			country_event = { id = origin.4019 }
 		}
 	}
-
 	option = { # Give me the lore dump
 		name = "origin.4015.c"
 		response_text = "origin.4015.c.response"
@@ -475,7 +440,6 @@ country_event = {
 	desc_clear = yes
 	option_clear = yes
 	desc = origin.4016.desc
-
 	option = { # pay the full amount
 		name = "origin.4016.a"
 		allow = {
@@ -485,7 +449,6 @@ country_event = {
 		response_text = "origin.4016.a.response"
 		is_dialog_only = yes
 	}
-
 	option = { # pay energy
 		name = "origin.4016.b"
 		hidden_effect = {
@@ -493,7 +456,6 @@ country_event = {
 			country_event = { id = origin.4017 }
 		}
 	}
-
 	option = { # pay consumer goods
 		name = "origin.4016.c"
 		hidden_effect = {
@@ -501,7 +463,6 @@ country_event = {
 			country_event = { id = origin.4017 }
 		}
 	}
-
 	option = { # pay alloys
 		name = "origin.4016.e"
 		hidden_effect = {
@@ -509,7 +470,6 @@ country_event = {
 			country_event = { id = origin.4017 }
 		}
 	}
-
 	option = { # other ways to pay
 		name = "origin.4016.d"
 		hidden_effect = {
@@ -538,12 +498,10 @@ country_event = {
 			country_event = { id = origin.4029 days = 5400 }
 		}
 	}
-
 	option = { # bye
 		name = EXCELLENT
 		custom_tooltip = origin.4017.a.tooltip
 	}
-
 	after = {
 		hidden_effect = {
 			# If this was your second meeting, fire the follow-up event
@@ -566,14 +524,12 @@ country_event = {
 	desc_clear = yes
 	option_clear = yes
 	desc = origin.4018.desc
-
 	option = { # pay with energy
 		name = "origin.4018.a"
 		hidden_effect = {
 			country_event = { id = origin.4016 }
 		}
 	}
-
 	option = { # pay with slaves
 		name = "origin.4018.b"
 		custom_tooltip = "origin.4018.b.tooltip"
@@ -582,13 +538,11 @@ country_event = {
 			country_event = { id = origin.4017 }
 		}
 	}
-
 	option = { # so you want slaves?
 		name = "origin.4018.c"
 		response_text = origin.4018.c.response
 		is_dialog_only = yes
 	}
-
 	option = { # refuse to pay
 		name = "origin.4018.d"
 		hidden_effect = {
@@ -604,7 +558,6 @@ country_event = {
 	desc_clear = yes
 	option_clear = yes
 	desc = origin.4019.desc
-
 	option = { # fight!
 		name = "origin.4019.a"
 		custom_tooltip = "origin.4019.a.tooltip"
@@ -613,7 +566,6 @@ country_event = {
 		capital_scope = { save_event_target_as = payback_capital }
 		create_payback_debt_collectors_fleet = { NUM_DRONES = 3 }
 	}
-
 	option = { # back
 		name = "origin.4019.b"
 		hidden_effect = {
@@ -630,14 +582,12 @@ country_event = {
 country_event = {
 	id = origin.4020
 	title = "origin.4020.name"
-
 	desc = {
 		trigger = {
 			check_variable = { which = debt_collector_defeats value = 0 }
 		}
 		text = "origin.4020.desc"
 	}
-
 	desc = {
 		trigger = {
 			check_variable = { which = debt_collector_defeats value > 0 }
@@ -653,9 +603,7 @@ country_event = {
 	trigger = {
 		has_origin = origin_payback
 		from = { is_country_type = debt_collectors }
-		NOT = {
-			fromfromfrom = { has_fleet_flag = marked_for_deletion }
-		}
+		NOT = { fromfromfrom = { has_fleet_flag = marked_for_deletion } }
 	}
 
 	immediate = {
@@ -673,12 +621,10 @@ country_event = {
 			country_event = { id = origin.4029 days = 5400 }
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		custom_tooltip = "origin.4017.a.tooltip"
 	}
-
 	after = {
 		hidden_effect = {
 			# If this was your second meeting, fire the follow-up event
@@ -710,12 +656,10 @@ country_event = {
 	desc = "origin.4021.desc"
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:MSI_species
 		room = slaver_room
 	}
-
 	trigger = {
 		exists = event_target:MSI_country
 		has_origin = origin_payback
@@ -730,7 +674,6 @@ country_event = {
 			species = { save_event_target_as = MSI_species }
 		}
 	}
-
 	option = {
 		name = "origin.4021.a"
 		# If you're already their vassal, they impose harsher conditions
@@ -744,10 +687,7 @@ country_event = {
 					is_owned_by = event_target:MSI_country
 					target = { is_same_value = root }
 				}
-				set_agreement_preset = {
-					preset = preset_payback_subsidiary_oppressive
-					apply_terms = yes
-				}
+				set_agreement_preset = { preset = preset_payback_subsidiary_oppressive apply_terms = yes }
 			}
 		}
 		# If not, they try to humiliate you
@@ -772,9 +712,7 @@ country_event = {
 	trigger = {
 		NOT = { has_origin = origin_payback }
 		from = { is_country_type = debt_collectors }
-		NOT = {
-			fromfromfrom = { has_fleet_flag = marked_for_deletion }
-		}
+		NOT = { fromfromfrom = { has_fleet_flag = marked_for_deletion } }
 		any_playable_country = {
 			has_origin = origin_payback
 			has_country_flag = is_fighting_debt_collectors
@@ -857,12 +795,10 @@ planet_event = {
 			add_modifier = { modifier = payback_gave_up_pop years = 5 }
 		}
 	}
-
 	option = {
 		name = "origin.4025.a"
 		custom_tooltip = "origin.4025.a.tooltip"
 	}
-
 	after = {
 		hidden_effect = {
 			# If this was your second meeting, fire the follow-up event
@@ -923,27 +859,22 @@ country_event = {
 country_event = {
 	id = origin.4030
 	title = "origin.4030.name"
-
 	desc = {
 		text = "origin.4030.desc.energy"
 		trigger = { has_country_flag = debt_collectors_pay_energy }
 	}
-
 	desc = {
 		text = "origin.4030.desc.consumer_goods"
 		trigger = { has_country_flag = debt_collectors_pay_consumer_goods }
 	}
-
 	desc = {
 		text = "origin.4030.desc.alloys"
 		trigger = { has_country_flag = debt_collectors_pay_alloys }
 	}
-
 	desc = {
 		text = "origin.4030.desc.pops"
 		trigger = { has_country_flag = debt_collectors_pay_slaves }
 	}
-
 	desc = {
 		text = "origin.4030.desc.defeated"
 		trigger = {
@@ -951,7 +882,6 @@ country_event = {
 			check_variable = { which = debt_collector_defeats value <= 2 }
 		}
 	}
-
 	desc = {
 		text = "origin.4030.desc.furious"
 		trigger = {
@@ -962,17 +892,14 @@ country_event = {
 
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:debt_collectors_species
 		room = ethic_spaceship_room
 	}
-
 	trigger = {
 		has_origin = origin_payback
 		has_event_chain = "payback_debt_collectors_chain"
 	}
-
 	option = { # We are willing to settle this time
 		name = "origin.4030.a"
 		trigger = {
@@ -982,7 +909,6 @@ country_event = {
 			country_event = { id = origin.4016 }
 		}
 	}
-
 	option = { # Pay with energy
 		name = "origin.4030.b"
 		trigger = { has_country_flag = debt_collectors_pay_energy }
@@ -994,7 +920,6 @@ country_event = {
 			country_event = { id = origin.4031 }
 		}
 	}
-
 	option = { # Pay with consumer goods
 		name = "origin.4030.b"
 		trigger = { has_country_flag = debt_collectors_pay_consumer_goods }
@@ -1006,7 +931,6 @@ country_event = {
 			country_event = { id = origin.4031 }
 		}
 	}
-
 	option = { # Pay with alloys
 		name = "origin.4030.b"
 		trigger = { has_country_flag = debt_collectors_pay_alloys }
@@ -1018,7 +942,6 @@ country_event = {
 			country_event = { id = origin.4031 }
 		}
 	}
-
 	option = { # Pay with your own people
 		name = "origin.4030.c"
 		trigger = { has_country_flag = debt_collectors_pay_slaves }
@@ -1045,7 +968,6 @@ country_event = {
 			country_event = { id = origin.4031 }
 		}
 	}
-
 	option = { # Pay with slaves
 		name = "origin.4030.d"
 		trigger = { has_country_flag = debt_collectors_pay_slaves }
@@ -1072,7 +994,6 @@ country_event = {
 			country_event = { id = origin.4031 }
 		}
 	}
-
 	option = { # Can't pay - energy
 		name = "origin.4030.e"
 		trigger = {
@@ -1095,14 +1016,12 @@ country_event = {
 			country_event = { id = origin.4036 }
 		}
 	}
-
 	option = { # Won't pay
 		name = "origin.4030.f"
 		hidden_effect = {
 			country_event = { id = origin.4037 }
 		}
 	}
-
 	option = { # Who are you again?
 		name = "origin.4030.g"
 		response_text = "origin.4015.c.response"
@@ -1156,7 +1075,6 @@ country_event = {
 	desc_clear = yes
 	option_clear = yes
 	desc = origin.4032.desc
-
 	option = { # bye
 		name = origin.4032.a
 		hidden_effect = {
@@ -1172,7 +1090,6 @@ country_event = {
 	desc_clear = yes
 	option_clear = yes
 	desc = origin.4036.desc.energy
-
 	option = { # Pay with your own people
 		name = "origin.4030.c"
 		allow = {
@@ -1197,7 +1114,6 @@ country_event = {
 			country_event = { id = origin.4031 }
 		}
 	}
-
 	option = { # Pay with slaves
 		name = "origin.4030.d"
 		allow = {
@@ -1222,7 +1138,6 @@ country_event = {
 			country_event = { id = origin.4031 }
 		}
 	}
-
 	option = { # fight!
 		name = "origin.4036.desc.a"
 		custom_tooltip = "origin.4036.desc.a.tooltip"
@@ -1231,7 +1146,6 @@ country_event = {
 		capital_scope = { save_event_target_as = payback_capital }
 		create_payback_debt_collectors_fleet = { NUM_DRONES = 3 }
 	}
-
 	option = { # so you want slaves?
 		name = "origin.4018.c"
 		response_text = origin.4018.c.response
@@ -1245,19 +1159,16 @@ country_event = {
 	base = origin.4030
 	desc_clear = yes
 	option_clear = yes
-
 	desc = {
 		text = "origin.4037.desc.base"
 		trigger = {
 			NOT = { has_country_flag = fought_debt_collectors_last_time }
 		}
 	}
-
 	desc = {
 		text = "origin.4037.desc.defeated"
 		trigger = { has_country_flag = fought_debt_collectors_last_time }
 	}
-
 	option = { # fight!
 		name = "origin.4019.a"
 		custom_tooltip = "origin.4019.a.tooltip"
@@ -1266,7 +1177,6 @@ country_event = {
 		capital_scope = { save_event_target_as = payback_capital }
 		create_payback_debt_collectors_fleet = { NUM_DRONES = 3 }
 	}
-
 	option = { # back
 		name = "origin.4019.b"
 		hidden_effect = {
@@ -1287,7 +1197,6 @@ country_event = {
 	trigger = {
 		exists = event_target:MSI_country
 	}
-
 	option = { # weapons
 		name = "origin.4040.a"
 		custom_tooltip = "origin.4040.a.tooltip"
@@ -1295,7 +1204,6 @@ country_event = {
 			country_event = { id = origin.4041 }
 		}
 	}
-
 	option = { # words
 		name = "origin.4040.b"
 		custom_tooltip = "origin.4040.b.tooltip"
@@ -1317,14 +1225,10 @@ country_event = {
 	trigger = {
 		exists = event_target:MSI_country
 	}
-
 	option = { # weapons
 		name = origin.4041.a
 		custom_tooltip = origin.4041.a.tooltip
-		begin_event_chain = {
-			event_chain = payback_make_them_pay_swords_chain
-			target = this
-		}
+		begin_event_chain = { event_chain = payback_make_them_pay_swords_chain target = this }
 	}
 }
 
@@ -1332,17 +1236,14 @@ country_event = {
 country_event = {
 	id = origin.4042
 	title = origin.4042.name
-
 	desc = {
 		text = origin.4042.desc.nogalcom
 		trigger = { is_galactic_community_formed = no }
 	}
-
 	desc = {
 		text = origin.4042.desc.galcom
 		trigger = { is_galactic_community_formed = yes is_galactic_community_member = yes }
 	}
-
 	desc = {
 		text = origin.4042.desc.nogalcommember
 		trigger = { is_galactic_community_formed = yes is_galactic_community_member = no }
@@ -1355,14 +1256,10 @@ country_event = {
 	trigger = {
 		exists = event_target:MSI_country
 	}
-
 	option = { # words
 		name = EXCELLENT
 		set_country_flag = payback_use_words
-		begin_event_chain = {
-			event_chain = payback_make_them_pay_words_chain
-			target = this
-		}
+		begin_event_chain = { event_chain = payback_make_them_pay_words_chain target = this }
 		# If you're already in the galcom, trigger the cool war declaration
 		hidden_effect = {
 			if = {
@@ -1391,7 +1288,6 @@ country_event = {
 	immediate = {
 		set_country_flag = joined_galcom_first_time
 	}
-
 	option = {
 		name = origin.4050.a
 		custom_tooltip = origin.4050.a.tooltip
@@ -1403,7 +1299,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = origin.4050.b
 		custom_tooltip = origin.4050.b.tooltip
@@ -1415,22 +1310,17 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		# Check if relevant resolutions while you weren't in the galcom and update the triggers accordingly
 		## Variant 1 - Equal STanding
 		if = {
 			limit = { has_event_chain = payback_make_them_pay_words_1_chain }
-			payback_words_chain_counters_check_joining_galcom = {
-				CHAIN = payback_make_them_pay_words_1_chain
-			}
+			payback_words_chain_counters_check_joining_galcom = { CHAIN = payback_make_them_pay_words_1_chain }
 		}
 		## Variant 2 - Non-interference
 		if = {
 			limit = { has_event_chain = payback_make_them_pay_words_2_chain }
-			payback_words_chain_counters_check_joining_galcom = {
-				CHAIN = payback_make_them_pay_words_2_chain
-			}
+			payback_words_chain_counters_check_joining_galcom = { CHAIN = payback_make_them_pay_words_2_chain }
 		}
 	}
 }
@@ -1442,10 +1332,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		any_galcom_member = {
-			has_origin = origin_payback
-			has_country_flag = payback_use_words
-		}
+		any_galcom_member = { has_origin = origin_payback has_country_flag = payback_use_words }
 		OR = {
 			last_resolution_changed = resolution_sanctions_tech_1
 			last_resolution_changed = resolution_sanctions_economic_1
@@ -1514,7 +1401,6 @@ country_event = {
 	immediate = {
 		set_country_flag = payback_revenge_words_first_resolution_passed
 	}
-
 	option = {
 		name = EXCELLENT
 		add_monthly_resource_mult = {
@@ -1533,10 +1419,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		any_galcom_member = {
-			has_origin = origin_payback
-			has_country_flag = payback_use_words
-		}
+		any_galcom_member = { has_origin = origin_payback has_country_flag = payback_use_words }
 		OR = {
 			last_resolution_changed = resolution_pre_ftl_stances_equal_standing
 			last_resolution_changed = resolution_pre_ftl_stances_non_interference
@@ -1589,12 +1472,10 @@ country_event = {
 country_event = {
 	id = origin.4055
 	title = origin.4055.name
-
 	desc = {
 		text = origin.4055.desc.msi
 		trigger = { exists = event_target:MSI_country }
 	}
-
 	desc = {
 		text = origin.4055.desc.nomsi
 		trigger = {
@@ -1616,7 +1497,6 @@ country_event = {
 			has_event_chain = payback_make_them_pay_words_2_chain
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		add_monthly_resource_mult = {
@@ -1637,7 +1517,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		remove_country_flag = payback_use_words
 		set_country_flag = payback_revenge_complete
@@ -1659,15 +1538,12 @@ country_event = {
 	desc = "origin.4056.desc"
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		room = slaver_room
 	}
-
 	trigger = {
 		exists = event_target:MSI_country
 	}
-
 	option = {
 		name = "origin.4056.a"
 		event_target:MSI_country = {
@@ -1819,19 +1695,16 @@ country_event = {
 			set_country_flag = pacified_MSI
 		}
 	}
-
 	option = {
 		name = origin.4060.a
 		add_modifier = { modifier = payback_no_revenge }
 	}
-
 	option = {
 		name = origin.4060.b
 		trigger = { allows_slavery = no }
 		custom_tooltip = origin.4060.b.tooltip
 		set_country_flag = payback_punish_slavers
 	}
-
 	after = {
 		end_event_chain = payback_make_them_pay_swords_chain
 		end_event_chain = payback_debt_collectors_chain
@@ -1864,19 +1737,16 @@ country_event = {
 	immediate = {
 		set_country_flag = payback_revenge_complete
 	}
-
 	option = {
 		name = origin.4060.a
 		add_modifier = { modifier = payback_no_revenge }
 	}
-
 	option = {
 		name = origin.4060.b
 		trigger = { allows_slavery = no }
 		custom_tooltip = origin.4060.b.tooltip
 		set_country_flag = payback_punish_slavers
 	}
-
 	after = {
 		end_event_chain = payback_make_them_pay_swords_chain
 		end_event_chain = payback_debt_collectors_chain
@@ -1898,13 +1768,11 @@ country_event = {
 		has_country_flag = payback_stolen_revenge
 		NOT = { has_country_flag = payback_revenge_complete }
 	}
-
 	option = {
 		name = origin.4070.a
 		add_modifier = { modifier = payback_no_revenge_small }
 		set_country_flag = payback_revenge_complete
 	}
-
 	option = {
 		name = origin.4070.b
 		trigger = {
@@ -1916,7 +1784,6 @@ country_event = {
 		}
 		custom_tooltip = origin.4070.b.tooltip
 	}
-
 	option = {
 		name = origin.4070.c
 		trigger = {
@@ -1955,15 +1822,11 @@ country_event = {
 				limit = {
 					NOT = { has_event_chain = payback_make_them_pay_swords_chain }
 				}
-				begin_event_chain = {
-					event_chain = payback_make_them_pay_swords_chain
-					target = root
-				}
+				begin_event_chain = { event_chain = payback_make_them_pay_swords_chain target = root }
 			}
 			custom_tooltip = origin.4070.d.tooltip
 		}
 	}
-
 	after = {
 		remove_country_flag = payback_stolen_revenge
 		end_event_chain = payback_debt_collectors_chain
@@ -1996,18 +1859,15 @@ country_event = {
 	immediate = {
 		set_country_flag = payback_revenge_complete
 	}
-
 	option = {
 		name = origin.4070.a
 		add_modifier = { modifier = payback_no_revenge }
 	}
-
 	option = {
 		name = origin.4071.a
 		custom_tooltip = origin.4060.b.tooltip
 		set_country_flag = payback_punish_slavers
 	}
-
 	after = {
 		end_event_chain = payback_make_them_pay_swords_chain
 	}
@@ -2039,11 +1899,7 @@ country_event = {
 			}
 			save_event_target_as = bsempire
 		}
-		country_event = {
-			id = origin.4110
-			days = 90
-			random = 360
-		}
+		country_event = { id = origin.4110 days = 90 random = 360 }
 	}
 }
 
@@ -2062,11 +1918,8 @@ country_event = {
 
 	immediate = {
 		set_country_flag = payback_recognized_broken_shackles@event_target:bsempire
-		event_target:bsempire = {
-			set_country_flag = broken_shackles_recognized_payback@root
-		}
+		event_target:bsempire = { set_country_flag = broken_shackles_recognized_payback@root }
 	}
-
 	option = {
 		name = {
 			text = origin.4110.a.phile
@@ -2083,12 +1936,8 @@ country_event = {
 			max = @tier2materialmax
 		}
 	}
-
 	after = {
-		add_opinion_modifier = {
-			modifier = opinion_fellow_slaves
-			who = event_target:bsempire
-		}
+		add_opinion_modifier = { modifier = opinion_fellow_slaves who = event_target:bsempire }
 		event_target:bsempire = {
 			add_opinion_modifier = { modifier = opinion_fellow_slaves who = root }
 		}
@@ -2102,7 +1951,6 @@ country_event = {
 	desc = "origin.4120.desc"
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:broken_shackles_empire
 		planet_background = event_target:broken_shackles_empire
@@ -2110,7 +1958,6 @@ country_event = {
 		city_level = event_target:broken_shackles_empire
 		room = event_target:broken_shackles_empire
 	}
-
 	trigger = {
 		exists = event_target:MSI_country
 		has_origin = origin_payback
@@ -2133,7 +1980,6 @@ country_event = {
 			save_event_target_as = broken_shackles_empire
 		}
 	}
-
 	option = {
 		name = "origin.4120.a"
 		add_intel = { who = event_target:MSI_country amount = 50 }
@@ -2141,7 +1987,6 @@ country_event = {
 			add_intel = { who = event_target:MSI_country amount = 50 }
 		}
 	}
-
 	option = {
 		name = "origin.4120.b"
 	}
@@ -2154,7 +1999,6 @@ country_event = {
 	desc = "origin.4130.desc"
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:broken_shackles_empire
 		planet_background = event_target:broken_shackles_empire
@@ -2162,7 +2006,6 @@ country_event = {
 		city_level = event_target:broken_shackles_empire
 		room = event_target:broken_shackles_empire
 	}
-
 	trigger = {
 		has_origin = origin_payback
 		is_galactic_community_member = yes
@@ -2185,7 +2028,6 @@ country_event = {
 			save_event_target_as = broken_shackles_empire
 		}
 	}
-
 	option = {
 		name = "origin.4130.a"
 		event_target:broken_shackles_empire = {
@@ -2193,7 +2035,6 @@ country_event = {
 		}
 		add_favors = { target = event_target:broken_shackles_empire value = 5 }
 	}
-
 	option = {
 		name = "origin.4130.b"
 	}
@@ -2206,7 +2047,6 @@ country_event = {
 	desc = "origin.4140.desc"
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:broken_shackles_empire
 		planet_background = event_target:broken_shackles_empire
@@ -2214,7 +2054,6 @@ country_event = {
 		city_level = event_target:broken_shackles_empire
 		room = event_target:broken_shackles_empire
 	}
-
 	trigger = {
 		exists = event_target:MSI_country
 		has_origin = origin_payback
@@ -2238,12 +2077,9 @@ country_event = {
 			save_event_target_as = broken_shackles_empire
 		}
 	}
-
 	option = {
 		name = "origin.4140.a"
-		event_target:broken_shackles_empire = {
-			set_country_flag = payback_bs_will_join_war
-		}
+		event_target:broken_shackles_empire = { set_country_flag = payback_bs_will_join_war }
 	}
 }
 
@@ -2315,12 +2151,10 @@ country_event = {
 	desc = "origin.4150.desc"
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:MSI_country.species
 		room = slaver_room
 	}
-
 	trigger = {
 		has_origin = origin_payback
 		exists = event_target:MSI_country
@@ -2331,7 +2165,6 @@ country_event = {
 			has_country_flag = payback_revenge_complete
 		}
 	}
-
 	option = {
 		name = "origin.4150.a"
 		add_monthly_resource_mult = {
@@ -2341,7 +2174,6 @@ country_event = {
 			max = @tier3materialmax
 		}
 	}
-
 	option = {
 		name = "origin.4150.b"
 		add_monthly_resource_mult = {
@@ -2360,12 +2192,10 @@ country_event = {
 	desc = "origin.4160.desc"
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:MSI_country.species
 		room = slaver_room
 	}
-
 	trigger = {
 		has_origin = origin_payback
 		exists = event_target:MSI_country
@@ -2381,12 +2211,10 @@ country_event = {
 	immediate = {
 		set_country_flag = origin_4160_fired
 	}
-
 	option = {
 		name = "origin.4160.a"
 		add_modifier = { modifier = payback_student }
 	}
-
 	option = {
 		name = "origin.4160.b"
 		add_monthly_resource_mult = {
@@ -2405,12 +2233,10 @@ situation_event = {
 	desc = "origin.4170.desc"
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:MSI_country.species
 		room = slaver_room
 	}
-
 	trigger = {
 		exists = owner
 		owner = {
@@ -2440,15 +2266,12 @@ situation_event = {
 			set_timed_country_flag = { flag = origin_4170_recently_fired years = 5 }
 		}
 	}
-
 	option = {
 		name = "origin.4170.a"
 		owner = {
 			switch = {
 				trigger = has_deficit
-				energy = {
-					add_resource = { energy = 1000 }
-				}
+				energy = { add_resource = { energy = 1000 } }
 				minerals = {
 					add_resource = { minerals = 1000 }
 				}
@@ -2456,13 +2279,10 @@ situation_event = {
 				consumer_goods = {
 					add_resource = { consumer_goods = 500 }
 				}
-				alloys = {
-					add_resource = { alloys = 500 }
-				}
+				alloys = { add_resource = { alloys = 500 } }
 			}
 		}
 	}
-
 	option = {
 		name = "origin.4170.b"
 		owner = {
@@ -2482,17 +2302,14 @@ situation_event = {
 country_event = {
 	id = origin.4300
 	title = origin.4300.name
-
 	desc = {
 		trigger = { has_country_flag = has_encountered_other_empire is_xenophile = yes }
 		text = origin.4300.aliens.phile.desc
 	}
-
 	desc = {
 		trigger = { has_country_flag = has_encountered_other_empire is_xenophobe = yes }
 		text = origin.4300.aliens.phobe.desc
 	}
-
 	desc = {
 		trigger = {
 			NOR = {
@@ -2522,13 +2339,11 @@ country_event = {
 		set_country_flag = payback_ruined_gene_clinics # prevents origin.4306 from firing upon gaining the tech
 		home_planet = { ruin_building = building_medical_2 }
 	}
-
 	option = { # Attempt to repair the clinics
 		name = origin.4300.a
 		begin_event_chain = { event_chain = payback_out_of_warranty_chain target = this }
 		custom_tooltip = origin.4300.a.tooltip
 	}
-
 	option = { # Repurpose clinics (Autochthon Monument/Sanctuary of Repose)
 		name = origin.4300.b
 		allow = {
@@ -2546,15 +2361,10 @@ country_event = {
 			planet_event = { id = origin.4304 days = 15 }
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			# follow-up where healthcare is getting worse and the population is not happy about it
-			country_event = {
-				id = origin.4305
-				days = 360
-				random = 180
-			}
+			country_event = { id = origin.4305 days = 360 random = 180 }
 		}
 	}
 }
@@ -2563,7 +2373,6 @@ country_event = {
 country_event = {
 	id = origin.4301
 	title = origin.4301.name
-
 	desc = {
 		trigger = {
 			success_text = {
@@ -2587,7 +2396,6 @@ country_event = {
 	immediate = {
 		remove_country_flag = payback_ruined_gene_clinics
 	}
-
 	option = {
 		name = EXCELLENT
 		trigger = {
@@ -2597,7 +2405,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = origin.4301.a
 		trigger = { is_xenophobe = yes num_research_agreements > 1 }
@@ -2613,7 +2420,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		give_technology = { tech = tech_frontier_health message = yes }
 		remove_modifier = payback_declining_healthcare
@@ -2637,12 +2443,10 @@ country_event = {
 	immediate = {
 		home_planet = { ruin_building = building_medical_2 }
 	}
-
 	option = { # Attempt to repair the clinics again
 		name = origin.4302.a
 		custom_tooltip = origin.4302.a.tooltip
 	}
-
 	option = { # Repurpose clinics (Autochthon Monument/Sanctuary of Repose)
 		name = origin.4300.b
 		allow = {
@@ -2671,7 +2475,6 @@ planet_event = {
 	show_sound = event_ship_explosion
 	is_triggered_only = yes
 	location = this
-
 	option = {
 		name = UNFORTUNATE
 		remove_building = building_medical_2
@@ -2706,7 +2509,6 @@ planet_event = {
 			add_building = building_autochthon_monument
 		}
 	}
-
 	option = {
 		name = SPLENDID
 		owner = {
@@ -2737,7 +2539,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # invest
 		name = origin.4305.a
 		allow = {
@@ -2751,7 +2552,6 @@ country_event = {
 			years = 50 # Vfix
 		}
 	}
-
 	option = { # alternative medicine
 		name = origin.4305.b
 		custom_tooltip = origin.4305.b.tooltip
@@ -2760,7 +2560,6 @@ country_event = {
 			years = 50 # Vfix
 		}
 	}
-
 	option = { # not a problem
 		name = origin.4305.c
 		trigger = {
@@ -2786,7 +2585,6 @@ country_event = {
 		has_country_flag = payback_ruined_gene_clinics
 		last_increased_tech = tech_frontier_health
 	}
-
 	option = {
 		name = EXCELLENT
 		end_event_chain = payback_out_of_warranty_chain
@@ -2826,7 +2624,6 @@ country_event = {
 	immediate = {
 		set_country_flag = payback_starting_dig_site
 	}
-
 	option = {
 		name = "origin.4900.a"
 		enable_special_project = {
@@ -2855,7 +2652,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 	}
@@ -2879,7 +2675,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "origin.4900.a"
 		fromfrom = { set_country_flag = payback_unlocked_dig_site }
@@ -2900,11 +2695,9 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = UNDERSTOOD
 		owner = {
@@ -2931,11 +2724,9 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
-
 	option = { # Dissect
 		name = "origin.4910.a"
 		owner = {
@@ -2947,7 +2738,6 @@ fleet_event = {
 			}
 		}
 	}
-
 	option = { # Parade
 		name = "origin.4910.c"
 		trigger = {
@@ -2967,7 +2757,6 @@ fleet_event = {
 			}
 		}
 	}
-
 	option = { # Burial
 		name = "origin.4910.d"
 		trigger = {
@@ -3005,11 +2794,9 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = "origin.4920.a"
 		owner = {
@@ -3042,18 +2829,13 @@ fleet_event = {
 			}
 		}
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
-
 	option = {
 		custom_tooltip = origin.4925.a.tt
 		name = EXCELLENT
-		begin_event_chain = {
-			event_chain = "payback_restore_warship_chain"
-			target = root.owner
-		}
+		begin_event_chain = { event_chain = "payback_restore_warship_chain" target = root.owner }
 		enable_special_project = {
 			name = "RESTORE_WARSHIP_PROJECT"
 			location = event_target:ship_wreck
@@ -3095,7 +2877,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		custom_tooltip = origin.4934.tt
@@ -3131,7 +2912,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		custom_tooltip = origin.4935.tt
@@ -3169,7 +2949,6 @@ country_event = {
 			save_event_target_as = payback_flagship
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		custom_tooltip = origin.4936.tt
@@ -3213,7 +2992,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		custom_tooltip = origin.4937.tt
@@ -3221,7 +2999,6 @@ ship_event = {
 			owner = { create_payback_warship_effect = yes }
 		}
 	}
-
 	after = {
 		delete_ship = event_target:spawn_location
 	}

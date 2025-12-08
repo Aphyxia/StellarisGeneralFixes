@@ -9,7 +9,6 @@ namespace = crime
 planet_event = {
 	id = crime.1
 	title = crime.1.name
-
 	desc = {
 		trigger = {
 			if = {
@@ -24,9 +23,7 @@ planet_event = {
 				}
 			}
 			else_if = {
-				limit = {
-					owner = { is_hive_empire = yes }
-				}
+				limit = { owner = { is_hive_empire = yes } }
 				text = crime.1.b.desc
 				if = {
 					limit = {
@@ -44,7 +41,6 @@ planet_event = {
 			}
 		}
 	}
-
 	picture = {
 		trigger = { owner = { is_gestalt = no } }
 		picture = GFX_evt_dark_alley
@@ -116,9 +112,7 @@ planet_event = {
 					count > 1000
 					limit = {
 						is_unemployed = yes
-						NOT = {
-							has_living_standard = { type = living_standard_organic_trophy }
-						}
+						NOT = { has_living_standard = { type = living_standard_organic_trophy } }
 					}
 				}
 			}
@@ -128,7 +122,6 @@ planet_event = {
 	immediate = {
 		set_planet_flag = criminal_underworld_event_up
 	}
-
 	weight_multiplier = {
 		factor = 1
 		modifier = { factor = 2.0 num_unemployed > 750 }
@@ -200,9 +193,7 @@ planet_event = {
 					text = crime.1.b.experimenters
 				}
 				else_if = {
-					limit = {
-						owner = { is_hive_empire = yes }
-					}
+					limit = { owner = { is_hive_empire = yes } }
 					text = crime.1.b2.experimenters
 				}
 			}
@@ -212,9 +203,7 @@ planet_event = {
 			add_modifier = { modifier = "criminal_underworld_experimenters" days = -1 }
 		}
 		else_if = {
-			limit = {
-				owner = { is_hive_empire = yes }
-			}
+			limit = { owner = { is_hive_empire = yes } }
 			add_modifier = { modifier = "drone_deviancy_experimenters" days = -1 }
 		}
 	}
@@ -239,7 +228,6 @@ planet_event = {
 		name = crime.1.b3
 		add_modifier = { modifier = drone_corruption days = -1 }
 	}
-
 	after = {
 		hidden_effect = {
 			remove_planet_flag = criminal_underworld_event_up
@@ -270,7 +258,6 @@ planet_event = {
 		add_modifier = { modifier = bribed_officials years = 10 }
 		set_timed_planet_flag = { flag = planet_crime_flag years = 10 }
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -295,7 +282,6 @@ planet_event = {
 planet_event = {
 	id = crime.3
 	title = crime.3.name
-
 	desc = {
 		trigger = {
 			text = crime.3.desc
@@ -326,7 +312,6 @@ planet_event = {
 		add_modifier = { modifier = substance_abuse years = 10 }
 		set_timed_planet_flag = { flag = planet_crime_flag years = 10 }
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -351,7 +336,6 @@ planet_event = {
 planet_event = {
 	id = crime.4
 	title = crime.4.name
-
 	desc = {
 		trigger = {
 			text = crime.4.desc
@@ -382,7 +366,6 @@ planet_event = {
 		add_planet_devastation = 15
 		set_timed_planet_flag = { flag = planet_crime_flag years = 10 }
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -405,7 +388,6 @@ planet_event = {
 planet_event = {
 	id = crime.5
 	title = crime.5.name
-
 	desc = {
 		trigger = {
 			text = crime.5.desc
@@ -436,7 +418,6 @@ planet_event = {
 		add_modifier = { modifier = smuggler_activity years = 10 }
 		set_timed_planet_flag = { flag = planet_crime_flag years = 10 }
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -461,7 +442,6 @@ planet_event = {
 planet_event = {
 	id = crime.6
 	title = crime.6.name
-
 	desc = {
 		trigger = {
 			text = crime.6.desc
@@ -492,7 +472,6 @@ planet_event = {
 		add_modifier = { modifier = crime_wave years = 10 }
 		set_timed_planet_flag = { flag = planet_crime_flag years = 10 }
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -517,7 +496,6 @@ planet_event = {
 planet_event = {
 	id = crime.7
 	title = crime.7.name
-
 	desc = {
 		trigger = {
 			text = crime.7.desc
@@ -553,59 +531,46 @@ planet_event = {
 				set_planet_flag = contraband_volatile_motes
 				modifier = {
 					factor = 0
-					NOT = {
-						owner = { has_technology = "tech_mine_volatile_motes" }
-					}
+					NOT = { owner = { has_technology = "tech_mine_volatile_motes" } }
 				}
 			}
 			10 = {
 				set_planet_flag = contraband_exotic_gases
 				modifier = {
 					factor = 0
-					NOT = {
-						owner = { has_technology = "tech_mine_exotic_gases" }
-					}
+					NOT = { owner = { has_technology = "tech_mine_exotic_gases" } }
 				}
 			}
 			10 = {
 				set_planet_flag = contraband_rare_crystals
 				modifier = {
 					factor = 0
-					NOT = {
-						owner = { has_technology = "tech_mine_rare_crystals" }
-					}
+					NOT = { owner = { has_technology = "tech_mine_rare_crystals" } }
 				}
 			}
 			10 = {
 				set_planet_flag = contraband_living_metal
 				modifier = {
 					factor = 0
-					NOT = {
-						owner = { has_technology = "tech_mine_living_metal" }
-					}
+					NOT = { owner = { has_technology = "tech_mine_living_metal" } }
 				}
 			}
 			10 = {
 				set_planet_flag = contraband_zro
 				modifier = {
 					factor = 0
-					NOT = {
-						owner = { has_technology = "tech_mine_zro" }
-					}
+					NOT = { owner = { has_technology = "tech_mine_zro" } }
 				}
 			}
 			10 = {
 				set_planet_flag = contraband_dark_matter
 				modifier = {
 					factor = 0
-					NOT = {
-						owner = { has_technology = "tech_mine_dark_matter" }
-					}
+					NOT = { owner = { has_technology = "tech_mine_dark_matter" } }
 				}
 			}
 		}
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -622,9 +587,7 @@ planet_event = {
 		}
 		if = {
 			limit = { has_planet_flag = contraband_alloys }
-			owner = {
-				add_resource = { alloys = 100 }
-			}
+			owner = { add_resource = { alloys = 100 } }
 			break = yes
 		}
 		if = {
@@ -664,9 +627,7 @@ planet_event = {
 		}
 		if = {
 			limit = { has_planet_flag = contraband_zro }
-			owner = {
-				add_resource = { sr_zro = 10 }
-			}
+			owner = { add_resource = { sr_zro = 10 } }
 			break = yes
 		}
 		if = {
@@ -677,7 +638,6 @@ planet_event = {
 			break = yes
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			remove_planet_flag = contraband_alloys
@@ -696,7 +656,6 @@ planet_event = {
 planet_event = {
 	id = crime.8
 	title = crime.8.name
-
 	desc = {
 		trigger = {
 			text = crime.8.desc
@@ -727,7 +686,6 @@ planet_event = {
 		set_timed_planet_flag = { flag = planet_crime_flag years = 10 }
 		add_modifier = { modifier = crime_boss_arrested years = 10 }
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -752,7 +710,6 @@ planet_event = {
 planet_event = {
 	id = crime.40
 	title = crime.40.name
-
 	desc = {
 		trigger = {
 			if = {
@@ -767,9 +724,7 @@ planet_event = {
 				}
 			}
 			else_if = {
-				limit = {
-					owner = { is_hive_empire = yes }
-				}
+				limit = { owner = { is_hive_empire = yes } }
 				text = crime.40.b.desc
 				if = {
 					limit = {
@@ -787,7 +742,6 @@ planet_event = {
 			}
 		}
 	}
-
 	picture = {
 		trigger = { owner = { is_gestalt = no } }
 		picture = GFX_evt_dark_alley
@@ -833,14 +787,12 @@ planet_event = {
 			has_planet_flag = criminal_underworld_disappeared
 		}
 	}
-
 	weight_multiplier = {
 		factor = 1
 		modifier = { factor = 2.0 planet_crime >= 50 }
 		modifier = { factor = 2.0 planet_crime >= 70 }
 		modifier = { factor = 2.0 planet_crime >= 90 }
 	}
-
 	immediate = {
 		set_planet_flag = criminal_underworld_event_up
 		set_timed_planet_flag = { flag = criminal_underworld_appeared years = 10 }
@@ -858,9 +810,7 @@ planet_event = {
 			break = yes
 		}
 		if = {
-			limit = {
-				owner = { is_hive_empire = yes }
-			}
+			limit = { owner = { is_hive_empire = yes } }
 			if = {
 				limit = {
 					owner = { is_twisted_experimenters_empire = yes }
@@ -879,7 +829,6 @@ planet_event = {
 			add_modifier = { modifier = "drone_corruption" days = -1 }
 		}
 	}
-
 	option = {
 		name = crime.40.a
 		trigger = {
@@ -902,9 +851,7 @@ planet_event = {
 		name = {
 			trigger = {
 				if = {
-					limit = {
-						owner = { is_hive_empire = yes }
-					}
+					limit = { owner = { is_hive_empire = yes } }
 					text = crime.40.b.experimenters
 				}
 				else = {
@@ -917,9 +864,7 @@ planet_event = {
 		}
 		tooltip = {
 			if = {
-				limit = {
-					owner = { is_hive_empire = yes }
-				}
+				limit = { owner = { is_hive_empire = yes } }
 				add_modifier = { modifier = "drone_deviancy_experimenters" days = -1 }
 			}
 			else = {
@@ -936,7 +881,6 @@ planet_event = {
 			add_modifier = { modifier = "drone_corruption" days = -1 }
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			remove_planet_flag = criminal_underworld_event_up
@@ -948,7 +892,6 @@ planet_event = {
 planet_event = {
 	id = crime.41
 	title = crime.41.name
-
 	desc = {
 		trigger = {
 			if = {
@@ -963,9 +906,7 @@ planet_event = {
 				}
 			}
 			else_if = {
-				limit = {
-					owner = { is_hive_empire = yes }
-				}
+				limit = { owner = { is_hive_empire = yes } }
 				text = crime.41.b.desc
 				if = {
 					limit = {
@@ -983,7 +924,6 @@ planet_event = {
 			}
 		}
 	}
-
 	picture = {
 		trigger = { owner = { is_gestalt = no } }
 		picture = GFX_evt_dark_alley
@@ -1033,7 +973,6 @@ planet_event = {
 			planet_crime > 10
 		}
 	}
-
 	weight_multiplier = {
 		factor = 1
 		modifier = {
@@ -1076,11 +1015,9 @@ planet_event = {
 			}
 		}
 	}
-
 	immediate = {
 		owner = { set_country_flag = order_restored }
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -1170,7 +1107,6 @@ planet_event = {
 			set_timed_planet_flag = { flag = criminal_underworld_disappeared years = 10 }
 		}
 	}
-
 	after = {
 		owner = { remove_country_flag = order_restored }
 	}
@@ -1242,59 +1178,31 @@ country_event = {
 				300 = {  }
 				10 = {
 					modifier = { factor = 0 has_criminal_underworld_modifier = no }
-					planet_event = {
-						id = crime.2
-						days = 1
-						random = 300
-					}
+					planet_event = { id = crime.2 days = 1 random = 300 }
 				}
 				10 = {
 					modifier = { factor = 0 has_criminal_underworld_modifier = no }
-					planet_event = {
-						id = crime.3
-						days = 1
-						random = 300
-					}
+					planet_event = { id = crime.3 days = 1 random = 300 }
 				}
 				10 = {
 					modifier = { factor = 0 has_criminal_underworld_modifier = no }
-					planet_event = {
-						id = crime.4
-						days = 1
-						random = 300
-					}
+					planet_event = { id = crime.4 days = 1 random = 300 }
 				}
 				10 = {
 					modifier = { factor = 0 has_criminal_underworld_modifier = no }
-					planet_event = {
-						id = crime.5
-						days = 1
-						random = 300
-					}
+					planet_event = { id = crime.5 days = 1 random = 300 }
 				}
 				10 = {
 					modifier = { factor = 0 has_criminal_underworld_modifier = no }
-					planet_event = {
-						id = crime.6
-						days = 1
-						random = 300
-					}
+					planet_event = { id = crime.6 days = 1 random = 300 }
 				}
 				10 = {
 					modifier = { factor = 0 has_criminal_underworld_modifier = no }
-					planet_event = {
-						id = crime.7
-						days = 1
-						random = 300
-					}
+					planet_event = { id = crime.7 days = 1 random = 300 }
 				}
 				10 = {
 					modifier = { factor = 0 has_criminal_underworld_modifier = no }
-					planet_event = {
-						id = crime.8
-						days = 1
-						random = 300
-					}
+					planet_event = { id = crime.8 days = 1 random = 300 }
 				}
 				10 = { # Gang Wars
 					modifier = {
@@ -1302,11 +1210,7 @@ country_event = {
 						has_criminal_underworld_modifier = no
 						planet_crime < 50
 					}
-					planet_event = {
-						id = crime.100
-						days = 1
-						random = 300
-					}
+					planet_event = { id = crime.100 days = 1 random = 300 }
 				}
 				10 = { # Center of Drug Trade
 					modifier = {
@@ -1314,11 +1218,7 @@ country_event = {
 						has_criminal_underworld_modifier = no
 						planet_crime < 50
 					}
-					planet_event = {
-						id = crime.200
-						days = 1
-						random = 300
-					}
+					planet_event = { id = crime.200 days = 1 random = 300 }
 				}
 				10 = { # Mob Rule
 					modifier = {
@@ -1326,125 +1226,73 @@ country_event = {
 						has_criminal_underworld_modifier = no
 						planet_crime < 50
 					}
-					planet_event = {
-						id = crime.300
-						days = 1
-						random = 300
-					}
+					planet_event = { id = crime.300 days = 1 random = 300 }
 				}
 				10 = {
 					modifier = { factor = 0 has_gang_wars_modifier = no }
-					planet_event = {
-						id = crime.101
-						days = 1
-						random = 300
-					}
+					planet_event = { id = crime.101 days = 1 random = 300 }
 				}
 				10 = {
 					modifier = { factor = 0 has_gang_wars_modifier = no }
-					planet_event = {
-						id = crime.102
-						days = 1
-						random = 300
-					}
+					planet_event = { id = crime.102 days = 1 random = 300 }
 				}
 				10 = {
 					modifier = { factor = 0 has_gang_wars_modifier = no }
-					planet_event = {
-						id = crime.103
-						days = 1
-						random = 300
-					}
+					planet_event = { id = crime.103 days = 1 random = 300 }
 				}
 				10 = {
 					modifier = { factor = 0 has_gang_wars_modifier = no }
-					planet_event = {
-						id = crime.104
-						days = 1
-						random = 300
-					}
+					planet_event = { id = crime.104 days = 1 random = 300 }
 				}
 				10 = {
 					modifier = { factor = 0 has_center_of_drug_trade_modifier = no }
-					planet_event = {
-						id = crime.201
-						days = 1
-						random = 300
-					}
+					planet_event = { id = crime.201 days = 1 random = 300 }
 				}
 				10 = {
 					modifier = { factor = 0 has_center_of_drug_trade_modifier = no }
-					planet_event = {
-						id = crime.202
-						days = 1
-						random = 300
-					}
+					planet_event = { id = crime.202 days = 1 random = 300 }
 				}
 				10 = {
 					modifier = { factor = 0 has_center_of_drug_trade_modifier = no }
-					planet_event = {
-						id = crime.203
-						days = 1
-						random = 300
-					}
+					planet_event = { id = crime.203 days = 1 random = 300 }
 				}
 				10 = {
 					modifier = { factor = 0 has_center_of_drug_trade_modifier = no }
-					planet_event = {
-						id = crime.204
-						days = 1
-						random = 300
-					}
+					planet_event = { id = crime.204 days = 1 random = 300 }
 				}
 				10 = {
 					modifier = { factor = 0 has_mob_rule_modifier = no }
-					planet_event = {
-						id = crime.301
-						days = 1
-						random = 300
-					}
+					planet_event = { id = crime.301 days = 1 random = 300 }
 				}
 				10 = {
 					modifier = { factor = 0 has_mob_rule_modifier = no }
-					planet_event = {
-						id = crime.302
-						days = 1
-						random = 300
-					}
+					planet_event = { id = crime.302 days = 1 random = 300 }
 				}
 				10 = {
 					modifier = {
 						factor = 0
 						OR = {
-							NOR = {
-								has_mob_rule_modifier = yes
+							NAND = {
 								exists = leader
+								has_mob_rule_modifier = yes
 							}
 							owner = { has_country_flag = gangsters_killed_governor }
 							AND = {
 								exists = leader
 								leader = {
 									OR = {
-										has_any_chosen_one_leader_trait = yes
 										is_leader_tier = leader_tier_legendary
+										has_any_chosen_one_leader_trait = yes
 									}
 								}
 							}
 						}
 					}
-					planet_event = {
-						id = crime.303
-						days = 1
-						random = 300
-					}
+					planet_event = { id = crime.303 days = 1 random = 300 }
 				}
 				10 = {
 					modifier = { factor = 0 has_mob_rule_modifier = no }
-					planet_event = {
-						id = crime.304
-						days = 1
-						random = 300
-					}
+					planet_event = { id = crime.304 days = 1 random = 300 }
 				}
 			}
 		}
@@ -1465,27 +1313,9 @@ country_event = {
 			}
 			random_list = {
 				200 = {  }
-				10 = {
-					planet_event = {
-						id = crime.500
-						days = 1
-						random = 300
-					}
-				}
-				10 = {
-					planet_event = {
-						id = crime.501
-						days = 1
-						random = 300
-					}
-				}
-				5 = {
-					planet_event = {
-						id = crime.502
-						days = 1
-						random = 300
-					}
-				}
+				10 = { planet_event = { id = crime.500 days = 1 random = 300 } }
+				10 = { planet_event = { id = crime.501 days = 1 random = 300 } }
+				5 = { planet_event = { id = crime.502 days = 1 random = 300 } }
 			}
 		}
 	}
@@ -1505,27 +1335,9 @@ country_event = {
 			}
 			random_list = {
 				200 = {  }
-				10 = {
-					planet_event = {
-						id = crime.550
-						days = 1
-						random = 300
-					}
-				}
-				10 = {
-					planet_event = {
-						id = crime.551
-						days = 1
-						random = 300
-					}
-				}
-				5 = {
-					planet_event = {
-						id = crime.552
-						days = 1
-						random = 300
-					}
-				}
+				10 = { planet_event = { id = crime.550 days = 1 random = 300 } }
+				10 = { planet_event = { id = crime.551 days = 1 random = 300 } }
+				5 = { planet_event = { id = crime.552 days = 1 random = 300 } }
 			}
 		}
 	}
@@ -1535,7 +1347,6 @@ country_event = {
 planet_event = {
 	id = crime.100
 	title = crime.100.name
-
 	desc = {
 		trigger = {
 			text = crime.100.desc
@@ -1576,7 +1387,6 @@ planet_event = {
 			add_modifier = { modifier = "gang_wars" days = -1 }
 		}
 	}
-
 	option = {
 		name = crime.100.a
 		tooltip = {
@@ -1605,7 +1415,6 @@ planet_event = {
 planet_event = {
 	id = crime.101
 	title = crime.101.name
-
 	desc = {
 		trigger = {
 			text = crime.101.desc
@@ -1639,7 +1448,6 @@ planet_event = {
 			kill_assigned_pop_amount = { percentage = 1 }
 		}
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -1662,7 +1470,6 @@ planet_event = {
 planet_event = {
 	id = crime.102
 	title = crime.102.name
-
 	desc = {
 		trigger = {
 			text = crime.102.desc
@@ -1705,7 +1512,6 @@ planet_event = {
 			create_pirate_fleet = yes
 		}
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -1728,7 +1534,6 @@ planet_event = {
 planet_event = {
 	id = crime.103
 	title = crime.103.name
-
 	desc = {
 		trigger = {
 			text = crime.103.desc
@@ -1762,7 +1567,6 @@ planet_event = {
 		}
 		add_planet_devastation = 15
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -1786,7 +1590,6 @@ planet_event = {
 planet_event = {
 	id = crime.104
 	title = crime.104.name
-
 	desc = {
 		trigger = {
 			text = crime.104.desc
@@ -1817,7 +1620,6 @@ planet_event = {
 		add_modifier = { modifier = "travel_advisory" years = 10 }
 		set_timed_planet_flag = { flag = planet_crime_flag years = 10 }
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -1842,7 +1644,6 @@ planet_event = {
 planet_event = {
 	id = crime.200
 	title = crime.200.name
-
 	desc = {
 		trigger = {
 			text = crime.200.desc
@@ -1883,7 +1684,6 @@ planet_event = {
 			add_modifier = { modifier = "center_of_drug_trade" days = -1 }
 		}
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -1916,7 +1716,6 @@ planet_event = {
 planet_event = {
 	id = crime.201
 	title = crime.201.name
-
 	desc = {
 		trigger = {
 			text = crime.201.desc
@@ -1950,7 +1749,6 @@ planet_event = {
 			random_owned_pop_group = { kill_single_pop = yes }
 		}
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -1973,7 +1771,6 @@ planet_event = {
 planet_event = {
 	id = crime.202
 	title = crime.202.name
-
 	desc = {
 		trigger = {
 			text = crime.202.desc
@@ -2004,7 +1801,6 @@ planet_event = {
 		add_modifier = { modifier = "cartel_war" years = 10 }
 		set_timed_planet_flag = { flag = planet_crime_flag years = 10 }
 	}
-
 	option = {
 		name = crime.203.a
 		tooltip = {
@@ -2017,7 +1813,6 @@ planet_event = {
 planet_event = {
 	id = crime.203
 	title = crime.203.name
-
 	desc = {
 		trigger = {
 			text = crime.203.desc
@@ -2051,7 +1846,6 @@ planet_event = {
 		}
 		add_planet_devastation = 15
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -2075,7 +1869,6 @@ planet_event = {
 planet_event = {
 	id = crime.204
 	title = crime.204.name
-
 	desc = {
 		trigger = {
 			text = crime.204.desc
@@ -2110,7 +1903,6 @@ planet_event = {
 			add_resource = { exotic_gases = -10 }
 		}
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -2137,7 +1929,6 @@ planet_event = {
 planet_event = {
 	id = crime.300
 	title = crime.300.name
-
 	desc = {
 		trigger = {
 			text = crime.300.desc
@@ -2178,7 +1969,6 @@ planet_event = {
 			add_modifier = { modifier = "mob_rule" days = -1 }
 		}
 	}
-
 	option = {
 		name = crime.300.a
 		tooltip = {
@@ -2207,7 +1997,6 @@ planet_event = {
 planet_event = {
 	id = crime.301
 	title = crime.301.name
-
 	desc = {
 		trigger = {
 			text = crime.301.desc
@@ -2238,7 +2027,6 @@ planet_event = {
 		add_modifier = { modifier = "protection_racket" years = 10 }
 		set_timed_planet_flag = { flag = planet_crime_flag years = 10 }
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -2263,7 +2051,6 @@ planet_event = {
 planet_event = {
 	id = crime.302
 	title = crime.302.name
-
 	desc = {
 		trigger = {
 			text = crime.302.desc
@@ -2294,7 +2081,6 @@ planet_event = {
 		add_modifier = { modifier = "corrupt_administration" years = 10 }
 		set_timed_planet_flag = { flag = planet_crime_flag years = 10 }
 	}
-
 	option = {
 		name = crime.302.a
 		tooltip = {
@@ -2381,7 +2167,6 @@ planet_event = {
 		leader = { save_event_target_as = governor_target }
 		owner = { set_country_flag = gangsters_killed_governor }
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -2406,7 +2191,6 @@ planet_event = {
 planet_event = {
 	id = crime.304
 	title = crime.304.name
-
 	desc = {
 		trigger = {
 			text = crime.304.desc
@@ -2437,7 +2221,6 @@ planet_event = {
 		add_modifier = { modifier = "trade_pilfering" years = 10 }
 		set_timed_planet_flag = { flag = planet_crime_flag years = 10 }
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -2481,7 +2264,6 @@ planet_event = {
 		add_planet_devastation = 15
 		set_timed_planet_flag = { flag = planet_crime_flag years = 10 }
 	}
-
 	option = {
 		name = crime.500.a
 		tooltip = { add_planet_devastation = 15 }
@@ -2492,7 +2274,6 @@ planet_event = {
 planet_event = {
 	id = crime.501
 	title = crime.501.name
-
 	desc = {
 		trigger = {
 			text = crime.501.desc
@@ -2523,7 +2304,6 @@ planet_event = {
 		add_modifier = { modifier = "deviant_interference" years = 10 }
 		set_timed_planet_flag = { flag = planet_crime_flag years = 10 }
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -2548,7 +2328,6 @@ planet_event = {
 planet_event = {
 	id = crime.502
 	title = crime.502.name
-
 	desc = {
 		trigger = {
 			text = crime.502.desc
@@ -2579,7 +2358,6 @@ planet_event = {
 		add_modifier = { modifier = "ringleader_killed" years = 10 }
 		set_timed_planet_flag = { flag = planet_crime_flag years = 10 }
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -2623,7 +2401,6 @@ planet_event = {
 		add_planet_devastation = 15
 		set_timed_planet_flag = { flag = planet_crime_flag years = 10 }
 	}
-
 	option = {
 		name = crime.550.a
 		tooltip = { add_planet_devastation = 15 }
@@ -2652,7 +2429,6 @@ planet_event = {
 		add_modifier = { modifier = "drone_signal_interference" years = 10 }
 		set_timed_planet_flag = { flag = planet_crime_flag years = 10 }
 	}
-
 	option = {
 		name = crime.550.a
 		tooltip = {
@@ -2683,7 +2459,6 @@ planet_event = {
 		add_modifier = { modifier = "corrupt_network_terminated" years = 10 }
 		set_timed_planet_flag = { flag = planet_crime_flag years = 10 }
 	}
-
 	option = {
 		name = crime.552.a
 		tooltip = {
@@ -2745,11 +2520,7 @@ event = {
 							planet_crime < 1
 						}
 						branch_office_owner = { save_event_target_as = office_owner }
-						planet_event = {
-							id = crime.1001
-							days = 360
-							random = 40
-						}
+						planet_event = { id = crime.1001 days = 360 random = 40 }
 					}
 				}
 			}
@@ -2782,7 +2553,6 @@ planet_event = {
 			set_timed_country_flag = { flag = criminal_branch_closed_cooldown years = 10 }
 		}
 	}
-
 	option = {
 		name = crime.1001.a
 		close_branch_office = yes
@@ -2807,10 +2577,8 @@ country_event = {
 	show_sound = event_criminal_activity
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = UNFORTUNATE
 		custom_tooltip = crime.1002.tooltip
 	}
 }
-

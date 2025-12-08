@@ -7,12 +7,10 @@ building_noble_estates = {
 	icon = building_palace
 	planet_limit = 1
 	category = government
-
 	building_sets = {
 		government
 		urban
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { has_valid_civic = civic_aristocratic_elite }
@@ -34,23 +32,17 @@ building_noble_estates = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
-		NOT = {
-			owner = { has_civic = civic_aristocratic_elite }
-		}
+		NOT = { owner = { has_civic = civic_aristocratic_elite } }
 	}
-
 	planet_modifier = {
 		planet_housing_add = 100
 	}
-
 	inline_script = {
 		script = "jobs/politician_add"
 		AMOUNT = @building_static_jobs_low
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -66,12 +58,10 @@ building_slave_processing = {
 	base_buildtime = @b1_time
 	planet_limit = 1
 	category = government
-
 	building_sets = {
 		government
 		urban
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -99,7 +89,6 @@ building_slave_processing = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		OR = {
@@ -113,13 +102,11 @@ building_slave_processing = {
 			has_modifier = resort_colony
 		}
 	}
-
 	planet_modifier = {
 		pop_slave_bonus_workforce_mult = 0.05
 		pop_cat_slave_political_power = -0.25
 		planet_resettlement_unemployed_mult = -0.50
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -129,11 +116,9 @@ building_slave_processing = {
 			energy = 2
 		}
 	}
-
 	prerequisites = {
 		"tech_neural_implants"
 	}
-
 	triggered_desc = {
 		text = building_slave_processing_slave_army_effect_desc
 	}
@@ -142,12 +127,10 @@ building_slave_processing = {
 building_precinct_house = {
 	base_buildtime = @b1_time
 	category = government
-
 	building_sets = {
 		government
 		urban
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -156,7 +139,6 @@ building_precinct_house = {
 		}
 		NOT = { has_modifier = slave_colony }
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		OR = {
@@ -169,7 +151,6 @@ building_precinct_house = {
 			has_modifier = slave_colony
 		}
 	}
-
 	convert_to = {
 		building_state_academy
 	}
@@ -185,11 +166,9 @@ building_precinct_house = {
 			}
 		}
 	}
-
 	planet_modifier = {
 		job_enforcer_add = 200
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -199,16 +178,13 @@ building_precinct_house = {
 			energy = 2
 		}
 	}
-
 	prerequisites = {
 		"tech_planetary_government"
 	}
-
 	show_tech_unlock_if = {
 		is_regular_empire = yes
 		NOT = { has_valid_civic = civic_civil_education }
 	}
-
 	upgrades = {
 		building_hall_judgment
 	}
@@ -218,12 +194,10 @@ building_hall_judgment = {
 	base_buildtime = @b2_time
 	category = government
 	can_build = no
-
 	building_sets = {
 		government
 		urban
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -239,7 +213,6 @@ building_hall_judgment = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = {
@@ -249,18 +222,15 @@ building_hall_judgment = {
 			}
 		}
 	}
-
 	convert_to = {
 		building_center_of_guidance
 	}
 	allow = {
 		is_occupied_flag = no
 	}
-
 	planet_modifier = {
 		job_enforcer_add = 500
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -272,11 +242,9 @@ building_hall_judgment = {
 			volatile_motes = @b2_rare_upkeep
 		}
 	}
-
 	prerequisites = {
 		"tech_colonial_centralization"
 	}
-
 	show_tech_unlock_if = {
 		is_regular_empire = yes
 		NOT = { has_valid_civic = civic_civil_education }
@@ -287,32 +255,25 @@ building_state_academy = {
 	base_buildtime = @b1_time
 	planet_limit = 3
 	category = government
-
 	building_sets = {
 		government
 		urban
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { has_valid_civic = civic_civil_education }
 		NOT = { has_modifier = slave_colony }
 	}
-
 	destroy_trigger = {
 		has_owner = yes
-		NOT = {
-			owner = { has_valid_civic = civic_civil_education }
-		}
+		NOT = { owner = { has_valid_civic = civic_civil_education } }
 	}
-
 	convert_to = {
 		building_precinct_house
 	}
 	allow = {
 		is_occupied_flag = no
 	}
-
 	planet_modifier = {
 		job_enforcer_add = 200
 		planet_civilians_physics_research_produces_add = 0.5
@@ -320,7 +281,6 @@ building_state_academy = {
 		planet_civilians_engineering_research_produces_add = 0.5
 		planet_civilians_consumer_goods_upkeep_add = 1
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -330,16 +290,13 @@ building_state_academy = {
 			energy = 2
 		}
 	}
-
 	prerequisites = {
 		"tech_planetary_government"
 	}
-
 	show_tech_unlock_if = {
 		is_regular_empire = yes
 		has_valid_civic = civic_civil_education
 	}
-
 	upgrades = {
 		building_center_of_guidance
 	}
@@ -349,32 +306,25 @@ building_center_of_guidance = {
 	base_buildtime = @b2_time
 	category = government
 	can_build = no
-
 	building_sets = {
 		government
 		urban
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { has_valid_civic = civic_civil_education }
 		NOT = { has_modifier = slave_colony }
 	}
-
 	destroy_trigger = {
 		has_owner = yes
-		NOT = {
-			owner = { has_valid_civic = civic_civil_education }
-		}
+		NOT = { owner = { has_valid_civic = civic_civil_education } }
 	}
-
 	convert_to = {
 		building_hall_judgment
 	}
 	allow = {
 		is_occupied_flag = no
 	}
-
 	planet_modifier = {
 		job_enforcer_add = 500
 		planet_civilians_physics_research_produces_add = 1
@@ -382,7 +332,6 @@ building_center_of_guidance = {
 		planet_civilians_engineering_research_produces_add = 1
 		planet_civilians_consumer_goods_upkeep_add = 2
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -394,11 +343,9 @@ building_center_of_guidance = {
 			volatile_motes = @b2_rare_upkeep
 		}
 	}
-
 	prerequisites = {
 		"tech_colonial_centralization"
 	}
-
 	show_tech_unlock_if = {
 		is_regular_empire = yes
 		has_valid_civic = civic_civil_education
@@ -408,12 +355,10 @@ building_center_of_guidance = {
 building_sentinel_posts = {
 	base_buildtime = @b1_time
 	category = government
-
 	building_sets = {
 		government
 		urban
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_gestalt = yes is_wilderness_empire = no }
@@ -431,16 +376,13 @@ building_sentinel_posts = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_gestalt = no } # Vfix opt
 	}
-
 	planet_modifier = {
 		job_patrol_drone_add = 200
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -450,11 +392,9 @@ building_sentinel_posts = {
 			energy = 2
 		}
 	}
-
 	prerequisites = {
 		"tech_planetary_government"
 	}
-
 	show_tech_unlock_if = {
 		is_gestalt = yes
 	}
@@ -464,41 +404,33 @@ building_order_keep = {
 	base_buildtime = 180
 	can_demolish = no
 	can_be_disabled = no
-
 	empire_limit = {
 		base = 1
 	}
 
 	category = government
-
 	building_sets = {
 		knights
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { has_origin = origin_toxic_knights }
 		has_planet_flag = toxic_knights_habitat
-		NOT = {
-			owner = { has_country_flag = quest_abandoned }
-		}
+		NOT = { owner = { has_country_flag = quest_abandoned } }
 	}
 	allow = {
 		is_occupied_flag = no
 	}
-
 	destroy_trigger = {
 		NOR = {
 			has_owner = yes
 			owner = { has_origin = origin_toxic_knights }
 		}
 	}
-
 	planet_modifier = {
 		job_knight_add = @building_static_jobs
 		planet_resettlement_unemployed_destination_mult = 1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -506,16 +438,12 @@ building_order_keep = {
 		}
 		job_knight_add = @building_static_jobs
 	}
-
 	triggered_planet_modifier = {
 		potential = {
-			NOT = {
-				owner = { has_country_flag = quest_over }
-			}
+			NOT = { owner = { has_country_flag = quest_over } }
 		}
 		job_knight_add = @building_static_jobs
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -523,7 +451,6 @@ building_order_keep = {
 		}
 		planet_stability_add = 15
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -531,7 +458,6 @@ building_order_keep = {
 		}
 		job_knight_add = @building_static_jobs
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -539,7 +465,6 @@ building_order_keep = {
 		}
 		job_knight_add = @building_static_jobs
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -547,7 +472,6 @@ building_order_keep = {
 		}
 		job_knight_add = @building_static_jobs
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -555,7 +479,6 @@ building_order_keep = {
 		}
 		job_knight_add = @building_static_jobs
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -563,14 +486,12 @@ building_order_keep = {
 		}
 		job_knight_add = @building_static_jobs
 	}
-
 	resources = {
 		cost = {
 			minerals = 1000
 		}
 		category = planet_buildings
 	}
-
 	triggered_desc = {
 		text = building_order_keep_effect
 	}
@@ -583,11 +504,9 @@ building_order_castle = {
 	can_be_disabled = no
 	can_build = no
 	category = government
-
 	building_sets = {
 		knights
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
@@ -597,25 +516,19 @@ building_order_castle = {
 			owner = { has_origin = origin_toxic_knights }
 		}
 	}
-
 	planet_modifier = {
 		job_knight_add = @building_static_jobs
 		planet_resettlement_unemployed_destination_mult = 0.2
 	}
-
 	triggered_planet_modifier = {
 		potential = {
-			NOT = {
-				owner = { has_country_flag = quest_over }
-			}
+			NOT = { owner = { has_country_flag = quest_over } }
 		}
 		job_knight_add = @building_static_jobs
 	}
-
 	resources = {
 		category = planet_buildings
 	}
-
 	triggered_desc = {
 		text = building_order_keep_effect
 	}
@@ -628,7 +541,6 @@ building_order_castle = {
 building_psi_corps = {
 	base_buildtime = @b2_time
 	category = government
-
 	building_sets = {
 		government
 		urban
@@ -671,7 +583,6 @@ building_psi_corps = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = {
@@ -681,16 +592,13 @@ building_psi_corps = {
 			}
 		}
 	}
-
 	inline_script = {
 		script = jobs/telepaths_add
 		AMOUNT = 200
 	}
-
 	planet_modifier = {
 		planet_stability_add = 5
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			num_assigned_jobs = { job = telepath value > 0 }
@@ -699,7 +607,6 @@ building_psi_corps = {
 		mult = value:psionic_workforce_from_telepaths
 		# This is on the building instead of the jobs to prevent an infinite workforce loop
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			num_assigned_jobs = { job = telepath_drone value > 0 }
@@ -708,7 +615,6 @@ building_psi_corps = {
 		mult = value:psionic_workforce_from_telepath_drones
 		# This is on the building instead of the jobs to prevent an infinite workforce loop
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -718,7 +624,6 @@ building_psi_corps = {
 			energy = @b2_upkeep
 		}
 	}
-
 	triggered_desc = {
 		trigger = {
 			has_owner = yes
@@ -738,7 +643,6 @@ building_psi_corps = {
 building_embassy = {
 	base_buildtime = @b2_time
 	category = government
-
 	building_sets = {
 		government
 		urban
@@ -772,11 +676,9 @@ building_embassy = {
 			}
 		}
 	}
-
 	upgrades = {
 		"building_grand_embassy"
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		OR = {
@@ -784,16 +686,13 @@ building_embassy = {
 			is_capital = no
 		}
 	}
-
 	country_modifier = {
 		envoys_add = 1
 	}
-
 	inline_script = {
 		script = "jobs/politician_add"
 		AMOUNT = @building_static_jobs_low
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -805,11 +704,9 @@ building_embassy = {
 			rare_crystals = @b2_rare_upkeep
 		}
 	}
-
 	show_tech_unlock_if = {
 		is_regular_empire = yes
 	}
-
 	prerequisites = {
 		"tech_xeno_diplomacy"
 	}
@@ -819,12 +716,10 @@ building_grand_embassy = {
 	base_buildtime = @b3_time
 	can_build = no
 	category = government
-
 	building_sets = {
 		government
 		urban
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_regular_empire = yes }
@@ -850,7 +745,6 @@ building_grand_embassy = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		OR = {
@@ -858,16 +752,13 @@ building_grand_embassy = {
 			is_capital = no
 		}
 	}
-
 	country_modifier = {
 		envoys_add = 2
 	}
-
 	inline_script = {
 		script = "jobs/politician_add"
 		AMOUNT = @building_static_jobs
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -879,11 +770,9 @@ building_grand_embassy = {
 			rare_crystals = @b3_rare_upkeep
 		}
 	}
-
 	prerequisites = {
 		"tech_xeno_relations"
 	}
-
 	show_tech_unlock_if = {
 		is_regular_empire = yes
 	}
@@ -893,18 +782,15 @@ building_gaiaseeders_1 = {
 	base_buildtime = @b2_time
 	planet_limit = 1
 	can_be_disabled = no
-
 	upgrades = {
 		"building_gaiaseeders_2"
 	}
 
 	category = government
-
 	building_sets = {
 		government
 		urban
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_country_type = default is_idyllic_bloom_empire = yes }
@@ -921,7 +807,6 @@ building_gaiaseeders_1 = {
 		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
-
 	destroy_trigger = {
 		OR = {
 			is_planet_class = pc_gaia # No double bonuses if player uses other tools to turn it into a Gaia world.
@@ -933,7 +818,6 @@ building_gaiaseeders_1 = {
 			owner = { is_idyllic_bloom_empire = no }
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -952,11 +836,9 @@ building_gaiaseeders_1 = {
 			multiplier = value:gaiaseeder_upkeep
 		}
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
-
 	planet_modifier = {
 		logistic_growth_mult = 0.1
 	}
@@ -966,18 +848,15 @@ building_gaiaseeders_2 = {
 	base_buildtime = @b2_time
 	can_build = no
 	can_be_disabled = no
-
 	upgrades = {
 		"building_gaiaseeders_3"
 	}
 
 	category = government
-
 	building_sets = {
 		government
 		urban
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -997,7 +876,6 @@ building_gaiaseeders_2 = {
 			multiplier = value:gaiaseeder_upkeep
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		can_build_gaiaseeder = yes
@@ -1012,11 +890,9 @@ building_gaiaseeders_2 = {
 			owner = { is_idyllic_bloom_empire = no }
 		}
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
-
 	planet_modifier = {
 		logistic_growth_mult = 0.05
 		pop_environment_tolerance = 0.1
@@ -1027,18 +903,15 @@ building_gaiaseeders_3 = {
 	base_buildtime = @b2_time
 	can_build = no
 	can_be_disabled = no
-
 	upgrades = {
 		"building_gaiaseeders_4"
 	}
 
 	category = government
-
 	building_sets = {
 		government
 		urban
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1058,7 +931,6 @@ building_gaiaseeders_3 = {
 			multiplier = value:gaiaseeder_upkeep
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		can_build_gaiaseeder = yes
@@ -1073,11 +945,9 @@ building_gaiaseeders_3 = {
 			owner = { is_idyllic_bloom_empire = no }
 		}
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
-
 	planet_modifier = {
 		pop_environment_tolerance = 0.2
 	}
@@ -1091,12 +961,10 @@ building_gaiaseeders_4 = {
 	can_be_disabled = no
 	position_priority = 0
 	category = government
-
 	building_sets = {
 		government
 		urban
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
@@ -1107,7 +975,6 @@ building_gaiaseeders_4 = {
 			owner = { is_idyllic_bloom_empire = yes }
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1127,11 +994,9 @@ building_gaiaseeders_4 = {
 			multiplier = value:gaiaseeder_cost_mult
 		}
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
-
 	triggered_desc = {
 		text = building_gaiaseeders_4_effect_desc
 		trigger = {
@@ -1139,11 +1004,9 @@ building_gaiaseeders_4 = {
 			NOT = { is_planet_class = pc_gaia }
 		}
 	}
-
 	triggered_desc = {
 		text = gaia_seeder_bloomed_pops_effect
 	}
-
 	triggered_desc = {
 		text = gaia_seeder_bloom_timer_tooltip
 		trigger = { has_planet_flag = gaia_seeder_bloom_timer }
@@ -1159,12 +1022,10 @@ building_gaiaseeders_pc_gaia = {
 	position_priority = 0
 	icon = building_gaiaseeders_4
 	category = government
-
 	building_sets = {
 		government
 		urban
 	}
-
 	destroy_trigger = {
 		NAND = {
 			is_planet_class = pc_gaia
@@ -1172,7 +1033,6 @@ building_gaiaseeders_pc_gaia = {
 			owner = { is_idyllic_bloom_empire = yes }
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1192,7 +1052,6 @@ building_gaiaseeders_pc_gaia = {
 			multiplier = value:gaiaseeder_cost_mult
 		}
 	}
-
 	potential = {
 		hidden_trigger = {
 			has_owner = yes
@@ -1211,11 +1070,9 @@ building_gaiaseeders_pc_gaia = {
 		has_upgraded_capital = yes
 		can_build_gaiaseeder = yes
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
-
 	triggered_desc = {
 		text = building_gaiaseeders_4_effect_desc
 		trigger = {
@@ -1223,11 +1080,9 @@ building_gaiaseeders_pc_gaia = {
 			NOT = { is_planet_class = pc_gaia }
 		}
 	}
-
 	triggered_desc = {
 		text = gaia_seeder_bloomed_pops_effect
 	}
-
 	triggered_desc = {
 		text = gaia_seeder_bloom_timer_tooltip
 		trigger = { has_planet_flag = gaia_seeder_bloom_timer }
@@ -1237,16 +1092,15 @@ building_gaiaseeders_pc_gaia = {
 #############
 # Infernals
 #############
+
 building_volcanic_forge_1 = {
 	base_buildtime = @b1_time
 	planet_limit = 1
 	category = government
-
 	building_sets = {
 		government
 		urban
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_world_forger_empire = yes }
@@ -1265,7 +1119,6 @@ building_volcanic_forge_1 = {
 		is_occupied_flag = no
 		num_uncleared_blockers = 0
 	}
-
 	destroy_trigger = {
 		OR = {
 			is_planet_class = pc_city
@@ -1277,7 +1130,6 @@ building_volcanic_forge_1 = {
 			}
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1287,21 +1139,14 @@ building_volcanic_forge_1 = {
 			energy = @b2_upkeep
 		}
 	}
-
 	triggered_planet_modifier = {
-		potential = {
-			owner = { is_gestalt = no }
-		}
+		potential = { owner = { is_gestalt = no } }
 		job_polytechnic_mentor_add = @building_static_jobs
 	}
-
 	triggered_planet_modifier = {
-		potential = {
-			owner = { is_gestalt = yes }
-		}
+		potential = { owner = { is_gestalt = yes } }
 		job_polytechnic_drone_add = @building_static_jobs
 	}
-
 	triggered_desc = {
 		trigger = {
 			has_owner = yes
@@ -1309,7 +1154,6 @@ building_volcanic_forge_1 = {
 		}
 		text = job_polytechnic_mentor_effect
 	}
-
 	triggered_desc = {
 		trigger = {
 			has_owner = yes
@@ -1317,21 +1161,17 @@ building_volcanic_forge_1 = {
 		}
 		text = job_polytechnic_drone_effect
 	}
-
 	triggered_desc = {
 		text = building_volcanic_forge_1_effect
 	}
 
 	auto_generate_description = no
-
 	on_destroy = {
 		planet_event = { id = infernals.32 }
 	}
-
 	prerequisites = {
 		"tech_volcanic_forge"
 	}
-
 	upgrades = {
 		building_volcanic_forge_2
 	}
@@ -1344,12 +1184,10 @@ building_volcanic_forge_2 = {
 	planet_limit = 1
 	can_build = no
 	category = government
-
 	building_sets = {
 		government
 		urban
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_world_forger_empire = yes }
@@ -1365,7 +1203,6 @@ building_volcanic_forge_2 = {
 		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
-
 	destroy_trigger = {
 		OR = {
 			is_planet_class = pc_city
@@ -1377,7 +1214,6 @@ building_volcanic_forge_2 = {
 			}
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1389,21 +1225,14 @@ building_volcanic_forge_2 = {
 			exotic_gases = @b2_rare_upkeep
 		}
 	}
-
 	triggered_planet_modifier = {
-		potential = {
-			owner = { is_gestalt = no }
-		}
+		potential = { owner = { is_gestalt = no } }
 		job_polytechnic_mentor_add = @building_static_jobs_high
 	}
-
 	triggered_planet_modifier = {
-		potential = {
-			owner = { is_gestalt = yes }
-		}
+		potential = { owner = { is_gestalt = yes } }
 		job_polytechnic_drone_add = @building_static_jobs_high
 	}
-
 	triggered_desc = {
 		trigger = {
 			has_owner = yes
@@ -1411,7 +1240,6 @@ building_volcanic_forge_2 = {
 		}
 		text = job_polytechnic_mentor_effect
 	}
-
 	triggered_desc = {
 		trigger = {
 			has_owner = yes
@@ -1419,17 +1247,14 @@ building_volcanic_forge_2 = {
 		}
 		text = job_polytechnic_drone_effect
 	}
-
 	triggered_desc = {
 		text = building_volcanic_forge_2_effect
 	}
 
 	auto_generate_description = no
-
 	on_destroy = {
 		planet_event = { id = infernals.32 }
 	}
-
 	prerequisites = {
 		"tech_volcanic_forge"
 	}

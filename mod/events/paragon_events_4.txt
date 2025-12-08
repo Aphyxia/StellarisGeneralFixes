@@ -34,11 +34,7 @@ country_event = {
 					add = 2
 					any_owned_starbase = { has_starbase_building = recruitment_office }
 				}
-				country_event = {
-					id = paragon.40001
-					days = 1
-					random = 360
-				}
+				country_event = { id = paragon.40001 days = 1 random = 360 }
 			}
 			0 = { modifier = { add = value:ethic_leader_lower_chance } }
 		}
@@ -65,145 +61,97 @@ country_event = {
 				modifier = {
 					add = value:ethic_leader_randomizer|ETHIC|xenophile|LEADER_ID|xenophile_leader_1|
 				}
-				ethic_leader_hire_event = {
-					LEADER_ID = xenophile_leader_1
-					EVENT_ID = paragon.40100
-				}
+				ethic_leader_hire_event = { LEADER_ID = xenophile_leader_1 EVENT_ID = paragon.40100 }
 			}
 			0 = { # xenophile 2
 				modifier = {
 					add = value:ethic_leader_randomizer|ETHIC|xenophile|LEADER_ID|xenophile_leader_2|
 				}
-				ethic_leader_hire_event = {
-					LEADER_ID = xenophile_leader_2
-					EVENT_ID = paragon.40200
-				}
+				ethic_leader_hire_event = { LEADER_ID = xenophile_leader_2 EVENT_ID = paragon.40200 }
 			}
 			0 = { # militarist 1
 				modifier = {
 					add = value:ethic_leader_randomizer|ETHIC|militarist|LEADER_ID|militarist_leader_1|
 				}
-				ethic_leader_hire_event = {
-					LEADER_ID = militarist_leader_1
-					EVENT_ID = paragon.40300
-				}
+				ethic_leader_hire_event = { LEADER_ID = militarist_leader_1 EVENT_ID = paragon.40300 }
 			}
 			0 = { # militarist 2
 				modifier = {
 					add = value:ethic_leader_randomizer|ETHIC|militarist|LEADER_ID|militarist_leader_2|
 				}
-				ethic_leader_hire_event = {
-					LEADER_ID = militarist_leader_2
-					EVENT_ID = paragon.40400
-				}
+				ethic_leader_hire_event = { LEADER_ID = militarist_leader_2 EVENT_ID = paragon.40400 }
 			}
 			0 = { # xenophobe 1
 				modifier = {
 					add = value:ethic_leader_randomizer|ETHIC|xenophobe|LEADER_ID|xenophobe_leader_1|
 				}
-				ethic_leader_hire_event = {
-					LEADER_ID = xenophobe_leader_1
-					EVENT_ID = paragon.40500
-				}
+				ethic_leader_hire_event = { LEADER_ID = xenophobe_leader_1 EVENT_ID = paragon.40500 }
 			}
 			0 = { # xenophobe 2
 				modifier = {
 					add = value:ethic_leader_randomizer|ETHIC|xenophobe|LEADER_ID|xenophobe_leader_2|
 				}
-				ethic_leader_hire_event = {
-					LEADER_ID = xenophobe_leader_2
-					EVENT_ID = paragon.40600
-				}
+				ethic_leader_hire_event = { LEADER_ID = xenophobe_leader_2 EVENT_ID = paragon.40600 }
 			}
 			0 = { # egalitarian 1
 				modifier = {
 					add = value:ethic_leader_randomizer|ETHIC|egalitarian|LEADER_ID|egalitarian_leader_1|
 				}
-				ethic_leader_hire_event = {
-					LEADER_ID = egalitarian_leader_1
-					EVENT_ID = paragon.40700
-				}
+				ethic_leader_hire_event = { LEADER_ID = egalitarian_leader_1 EVENT_ID = paragon.40700 }
 			}
 			0 = { # egalitarian 2
 				modifier = {
 					add = value:ethic_leader_randomizer|ETHIC|egalitarian|LEADER_ID|egalitarian_leader_2|
 				}
-				ethic_leader_hire_event = {
-					LEADER_ID = egalitarian_leader_2
-					EVENT_ID = paragon.40800
-				}
+				ethic_leader_hire_event = { LEADER_ID = egalitarian_leader_2 EVENT_ID = paragon.40800 }
 			}
 			0 = { # materialist 1
 				modifier = {
 					add = value:ethic_leader_randomizer|ETHIC|materialist|LEADER_ID|materialist_leader_1|
 				}
-				ethic_leader_hire_event = {
-					LEADER_ID = materialist_leader_1
-					EVENT_ID = paragon.40900
-				}
+				ethic_leader_hire_event = { LEADER_ID = materialist_leader_1 EVENT_ID = paragon.40900 }
 			}
 			0 = { # materialist 2
 				modifier = {
 					add = value:ethic_leader_randomizer|ETHIC|materialist|LEADER_ID|materialist_leader_2|
 				}
-				ethic_leader_hire_event = {
-					LEADER_ID = materialist_leader_2
-					EVENT_ID = paragon.41000
-				}
+				ethic_leader_hire_event = { LEADER_ID = materialist_leader_2 EVENT_ID = paragon.41000 }
 			}
 			0 = { # pacifist 1
 				modifier = {
 					add = value:ethic_leader_randomizer|ETHIC|pacifist|LEADER_ID|pacifist_leader_1|
 				}
-				ethic_leader_hire_event = {
-					LEADER_ID = pacifist_leader_1
-					EVENT_ID = paragon.41100
-				}
+				ethic_leader_hire_event = { LEADER_ID = pacifist_leader_1 EVENT_ID = paragon.41100 }
 			}
 			0 = { # pacifist 2
 				modifier = {
 					add = value:ethic_leader_randomizer|ETHIC|pacifist|LEADER_ID|pacifist_leader_2|
 				}
-				ethic_leader_hire_event = {
-					LEADER_ID = pacifist_leader_2
-					EVENT_ID = paragon.41200
-				}
+				ethic_leader_hire_event = { LEADER_ID = pacifist_leader_2 EVENT_ID = paragon.41200 }
 			}
 			0 = { # authoritarian 1
 				modifier = {
 					add = value:ethic_leader_randomizer|ETHIC|authoritarian|LEADER_ID|authoritarian_leader_1|
 				}
-				ethic_leader_hire_event = {
-					LEADER_ID = authoritarian_leader_1
-					EVENT_ID = paragon.41300
-				}
+				ethic_leader_hire_event = { LEADER_ID = authoritarian_leader_1 EVENT_ID = paragon.41300 }
 			}
 			0 = { # authoritarian 2
 				modifier = {
 					add = value:ethic_leader_randomizer|ETHIC|authoritarian|LEADER_ID|authoritarian_leader_2|
 				}
-				ethic_leader_hire_event = {
-					LEADER_ID = authoritarian_leader_2
-					EVENT_ID = paragon.41400
-				}
+				ethic_leader_hire_event = { LEADER_ID = authoritarian_leader_2 EVENT_ID = paragon.41400 }
 			}
 			0 = { # spiritualist 1
 				modifier = {
 					add = value:ethic_leader_randomizer|ETHIC|spiritualist|LEADER_ID|spiritualist_leader_1|
 				}
-				ethic_leader_hire_event = {
-					LEADER_ID = spiritualist_leader_1
-					EVENT_ID = paragon.41500
-				}
+				ethic_leader_hire_event = { LEADER_ID = spiritualist_leader_1 EVENT_ID = paragon.41500 }
 			}
 			0 = { # spiritualist 2
 				modifier = {
 					add = value:ethic_leader_randomizer|ETHIC|spiritualist|LEADER_ID|spiritualist_leader_2|
 				}
-				ethic_leader_hire_event = {
-					LEADER_ID = spiritualist_leader_2
-					EVENT_ID = paragon.41600
-				}
+				ethic_leader_hire_event = { LEADER_ID = spiritualist_leader_2 EVENT_ID = paragon.41600 }
 			}
 		}
 	}
@@ -247,12 +195,10 @@ country_event = {
 			set_age = 33
 		}
 	}
-
 	picture_event_data = {
 		portrait = event_target:ethic_leader
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = DISMISS
 		tag = dismiss_leader
@@ -262,37 +208,34 @@ country_event = {
 			set_country_flag = dismissed_xenophile_leader_1
 		}
 	}
-
 	option = {
 		name = paragon.40100.a
 		response_text = paragon.40100.a.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.40100.b
 		response_text = paragon.40100.b.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.40100.c
 		response_text = paragon.40100.c.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.40100.d
 		response_text = paragon.40100.d.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = HIRE
 		tag = hire_leader
 		custom_tooltip = paragon.40100.hire_custom_tooltip
 		hidden_effect = {
-			ethic_leader_hire_effect = { GLOBAL_EVENT_TARGET = renowned_xenophile1 }
+			ethic_leader_hire_effect = {
+				GLOBAL_EVENT_TARGET = renowned_xenophile1
+			}
 		}
 		create_fleet = {
 			name = "LYSANDER_FLEET_NAME"
@@ -363,12 +306,10 @@ country_event = {
 			set_age = 32
 		}
 	}
-
 	picture_event_data = {
 		portrait = event_target:ethic_leader
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = DISMISS
 		tag = dismiss_leader
@@ -378,25 +319,21 @@ country_event = {
 			set_country_flag = dismissed_xenophile_leader_2
 		}
 	}
-
 	option = {
 		name = paragon.40200.a
 		response_text = paragon.40200.a.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.40200.b
 		response_text = paragon.40200.b.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.40200.c
 		response_text = paragon.40200.c.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = HIRE
 		tag = hire_leader
@@ -406,7 +343,9 @@ country_event = {
 			add_resource = { minor_artifacts = 10 }
 		}
 		hidden_effect = {
-			ethic_leader_hire_effect = { GLOBAL_EVENT_TARGET = renowned_xenophile2 }
+			ethic_leader_hire_effect = {
+				GLOBAL_EVENT_TARGET = renowned_xenophile2
+			}
 		}
 	}
 }
@@ -446,12 +385,10 @@ country_event = {
 			set_age = 45
 		}
 	}
-
 	picture_event_data = {
 		portrait = event_target:ethic_leader
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = DISMISS
 		tag = dismiss_leader
@@ -461,31 +398,29 @@ country_event = {
 			set_country_flag = dismissed_militarist_leader_1
 		}
 	}
-
 	option = {
 		name = paragon.40300.a
 		response_text = paragon.40300.a.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.40300.b
 		response_text = paragon.40300.b.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.40300.c
 		response_text = paragon.40300.c.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = HIRE
 		tag = hire_leader
 		custom_tooltip = paragon.40300.hire_custom_tooltip
 		hidden_effect = {
-			ethic_leader_hire_effect = { GLOBAL_EVENT_TARGET = renowned_militarist1 }
+			ethic_leader_hire_effect = {
+				GLOBAL_EVENT_TARGET = renowned_militarist1
+			}
 		}
 	}
 }
@@ -525,12 +460,10 @@ country_event = {
 			set_age = 28
 		}
 	}
-
 	picture_event_data = {
 		portrait = event_target:ethic_leader
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = DISMISS
 		tag = dismiss_leader
@@ -540,31 +473,29 @@ country_event = {
 			set_country_flag = dismissed_militarist_leader_2
 		}
 	}
-
 	option = {
 		name = paragon.40400.a
 		response_text = paragon.40400.a.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.40400.b
 		response_text = paragon.40400.b.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.40400.c
 		response_text = paragon.40400.c.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = HIRE
 		tag = hire_leader
 		custom_tooltip = paragon.40400.hire_custom_tooltip
 		hidden_effect = {
-			ethic_leader_hire_effect = { GLOBAL_EVENT_TARGET = renowned_militarist2 }
+			ethic_leader_hire_effect = {
+				GLOBAL_EVENT_TARGET = renowned_militarist2
+			}
 		}
 	}
 }
@@ -604,12 +535,10 @@ country_event = {
 			set_age = 40
 		}
 	}
-
 	picture_event_data = {
 		portrait = event_target:ethic_leader
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = DISMISS
 		tag = dismiss_leader
@@ -619,31 +548,29 @@ country_event = {
 			set_country_flag = dismissed_xenophobe_leader_1
 		}
 	}
-
 	option = {
 		name = paragon.40500.a
 		response_text = paragon.40500.a.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.40500.b
 		response_text = paragon.40500.b.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.40500.c
 		response_text = paragon.40500.c.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = HIRE
 		tag = hire_leader
 		custom_tooltip = paragon.40500.hire_custom_tooltip
 		hidden_effect = {
-			ethic_leader_hire_effect = { GLOBAL_EVENT_TARGET = renowned_xenophobe1 }
+			ethic_leader_hire_effect = {
+				GLOBAL_EVENT_TARGET = renowned_xenophobe1
+			}
 		}
 	}
 }
@@ -683,12 +610,10 @@ country_event = {
 			add_trait = { trait = leader_trait_synthetic }
 		}
 	}
-
 	picture_event_data = {
 		portrait = event_target:ethic_leader
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = DISMISS
 		tag = dismiss_leader
@@ -698,37 +623,34 @@ country_event = {
 			set_country_flag = dismissed_xenophobe_leader_2
 		}
 	}
-
 	option = {
 		name = paragon.40600.a
 		response_text = paragon.40600.a.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.40600.b
 		response_text = paragon.40600.b.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.40600.c
 		response_text = paragon.40600.c.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.40600.d
 		response_text = paragon.40600.d.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = HIRE
 		tag = hire_leader
 		custom_tooltip = paragon.40600.hire_custom_tooltip
 		hidden_effect = {
-			ethic_leader_hire_effect = { GLOBAL_EVENT_TARGET = renowned_xenophobe2 }
+			ethic_leader_hire_effect = {
+				GLOBAL_EVENT_TARGET = renowned_xenophobe2
+			}
 		}
 	}
 }
@@ -769,12 +691,10 @@ country_event = {
 			set_age = 30
 		}
 	}
-
 	picture_event_data = {
 		portrait = event_target:ethic_leader
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = DISMISS
 		tag = dismiss_leader
@@ -784,31 +704,29 @@ country_event = {
 			set_country_flag = dismissed_egalitarian_leader_1
 		}
 	}
-
 	option = {
 		name = paragon.40700.a
 		response_text = paragon.40700.a.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.40700.b
 		response_text = paragon.40700.b.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.40700.c
 		response_text = paragon.40700.c.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = HIRE
 		tag = hire_leader
 		custom_tooltip = paragon.40700.hire_custom_tooltip
 		hidden_effect = {
-			ethic_leader_hire_effect = { GLOBAL_EVENT_TARGET = renowned_egalitarian1 }
+			ethic_leader_hire_effect = {
+				GLOBAL_EVENT_TARGET = renowned_egalitarian1
+			}
 		}
 	}
 }
@@ -841,22 +759,17 @@ country_event = {
 		}
 		last_created_leader = {
 			add_trait = { trait = subclass_scientist_councilor consume_selection = yes }
-			add_trait = {
-				trait = leader_trait_knowledge_for_the_masses
-				consume_selection = yes
-			}
+			add_trait = { trait = leader_trait_knowledge_for_the_masses consume_selection = yes }
 			add_trait = { trait = leader_trait_gullible consume_selection = yes }
 			add_trait = { trait = leader_trait_spark_of_genius consume_selection = yes }
 			add_trait = { trait = leader_trait_gorky consume_selection = yes }
 			set_age = 22
 		}
 	}
-
 	picture_event_data = {
 		portrait = event_target:ethic_leader
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = DISMISS
 		tag = dismiss_leader
@@ -866,37 +779,34 @@ country_event = {
 			set_country_flag = dismissed_egalitarian_leader_2
 		}
 	}
-
 	option = {
 		name = paragon.40800.a
 		response_text = paragon.40800.a.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.40800.b
 		response_text = paragon.40800.b.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.40800.c
 		response_text = paragon.40800.c.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.40800.d
 		response_text = paragon.40800.d.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = HIRE
 		tag = hire_leader
 		custom_tooltip = paragon.40800.hire_custom_tooltip
 		hidden_effect = {
-			ethic_leader_hire_effect = { GLOBAL_EVENT_TARGET = renowned_egalitarian2 }
+			ethic_leader_hire_effect = {
+				GLOBAL_EVENT_TARGET = renowned_egalitarian2
+			}
 		}
 	}
 }
@@ -931,20 +841,15 @@ country_event = {
 			add_trait = { trait = subclass_commander_admiral consume_selection = yes }
 			add_trait = { trait = leader_trait_destiny_engineer consume_selection = yes }
 			add_trait = { trait = leader_trait_micromanager consume_selection = yes }
-			add_trait = {
-				trait = leader_trait_rocketry_specialization
-				consume_selection = yes
-			}
+			add_trait = { trait = leader_trait_rocketry_specialization consume_selection = yes }
 			add_trait = { trait = leader_trait_scout consume_selection = yes }
 			add_trait = { trait = leader_trait_synthetic }
 		}
 	}
-
 	picture_event_data = {
 		portrait = event_target:ethic_leader
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = DISMISS
 		tag = dismiss_leader
@@ -954,37 +859,34 @@ country_event = {
 			set_country_flag = dismissed_materialist_leader_1
 		}
 	}
-
 	option = {
 		name = paragon.40900.a
 		response_text = paragon.40900.a.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.40900.b
 		response_text = paragon.40900.b.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.40900.c
 		response_text = paragon.40900.c.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.40900.d
 		response_text = paragon.40900.d.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = HIRE
 		tag = hire_leader
 		custom_tooltip = paragon.40900.hire_custom_tooltip
 		hidden_effect = {
-			ethic_leader_hire_effect = { GLOBAL_EVENT_TARGET = renowned_materialist1 }
+			ethic_leader_hire_effect = {
+				GLOBAL_EVENT_TARGET = renowned_materialist1
+			}
 		}
 	}
 }
@@ -1025,12 +927,10 @@ country_event = {
 			set_age = 40
 		}
 	}
-
 	picture_event_data = {
 		portrait = event_target:ethic_leader
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = DISMISS
 		tag = dismiss_leader
@@ -1040,31 +940,29 @@ country_event = {
 			set_country_flag = dismissed_materialist_leader_2
 		}
 	}
-
 	option = {
 		name = paragon.41000.a
 		response_text = paragon.41000.a.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.41000.b
 		response_text = paragon.41000.b.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.41000.c
 		response_text = paragon.41000.c.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = HIRE
 		tag = hire_leader
 		custom_tooltip = paragon.41000.hire_custom_tooltip
 		hidden_effect = {
-			ethic_leader_hire_effect = { GLOBAL_EVENT_TARGET = renowned_materialist2 }
+			ethic_leader_hire_effect = {
+				GLOBAL_EVENT_TARGET = renowned_materialist2
+			}
 		}
 	}
 }
@@ -1105,12 +1003,10 @@ country_event = {
 			save_event_target_as = par_renown_09
 		}
 	}
-
 	picture_event_data = {
 		portrait = event_target:ethic_leader
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = DISMISS
 		tag = dismiss_leader
@@ -1120,31 +1016,29 @@ country_event = {
 			set_country_flag = dismissed_pacifist_leader_1
 		}
 	}
-
 	option = {
 		name = paragon.41100.a
 		response_text = paragon.41100.a.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.41100.b
 		response_text = paragon.41100.b.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.41100.c
 		response_text = paragon.41100.c.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = HIRE
 		tag = hire_leader
 		custom_tooltip = paragon.41100.hire_custom_tooltip
 		hidden_effect = {
-			ethic_leader_hire_effect = { GLOBAL_EVENT_TARGET = renowned_pacifist1 }
+			ethic_leader_hire_effect = {
+				GLOBAL_EVENT_TARGET = renowned_pacifist1
+			}
 		}
 	}
 }
@@ -1176,10 +1070,7 @@ country_event = {
 			CATCH_PHRASE = pacifist2_catch_phrase
 		}
 		last_created_leader = {
-			add_trait = {
-				trait = subclass_official_diplomacy_councilor
-				consume_selection = yes
-			}
+			add_trait = { trait = subclass_official_diplomacy_councilor consume_selection = yes }
 			add_trait = { trait = leader_trait_master_diplomat consume_selection = yes }
 			add_trait = { trait = leader_trait_lavish_lifestyle consume_selection = yes }
 			add_trait = { trait = trait_ruler_deep_connections consume_selection = yes }
@@ -1187,12 +1078,10 @@ country_event = {
 			set_age = 30
 		}
 	}
-
 	picture_event_data = {
 		portrait = event_target:ethic_leader
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = DISMISS
 		tag = dismiss_leader
@@ -1202,31 +1091,29 @@ country_event = {
 			set_country_flag = dismissed_pacifist_leader_2
 		}
 	}
-
 	option = {
 		name = paragon.41200.a
 		response_text = paragon.41200.a.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.41200.b
 		response_text = paragon.41200.b.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.41200.c
 		response_text = paragon.41200.c.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = HIRE
 		tag = hire_leader
 		custom_tooltip = paragon.41200.hire_custom_tooltip
 		hidden_effect = {
-			ethic_leader_hire_effect = { GLOBAL_EVENT_TARGET = renowned_pacifist2 }
+			ethic_leader_hire_effect = {
+				GLOBAL_EVENT_TARGET = renowned_pacifist2
+			}
 		}
 	}
 }
@@ -1258,10 +1145,7 @@ country_event = {
 			CATCH_PHRASE = authoritarian1_catch_phrase
 		}
 		last_created_leader = {
-			add_trait = {
-				trait = subclass_official_diplomacy_councilor
-				consume_selection = yes
-			}
+			add_trait = { trait = subclass_official_diplomacy_councilor consume_selection = yes }
 			add_trait = { trait = leader_trait_spymaster consume_selection = yes }
 			add_trait = { trait = leader_trait_tyrannical consume_selection = yes }
 			add_trait = { trait = leader_trait_spycraft consume_selection = yes }
@@ -1269,12 +1153,10 @@ country_event = {
 			set_age = 36
 		}
 	}
-
 	picture_event_data = {
 		portrait = event_target:ethic_leader
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = DISMISS
 		tag = dismiss_leader
@@ -1284,37 +1166,34 @@ country_event = {
 			set_country_flag = dismissed_authoritarian_leader_1
 		}
 	}
-
 	option = {
 		name = paragon.41300.a
 		response_text = paragon.41300.a.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.41300.b
 		response_text = paragon.41300.b.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.41300.c
 		response_text = paragon.41300.c.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.41300.d
 		response_text = paragon.41300.d.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = HIRE
 		tag = hire_leader
 		custom_tooltip = paragon.41300.hire_custom_tooltip
 		hidden_effect = {
-			ethic_leader_hire_effect = { GLOBAL_EVENT_TARGET = renowned_authoritarian1 }
+			ethic_leader_hire_effect = {
+				GLOBAL_EVENT_TARGET = renowned_authoritarian1
+			}
 		}
 	}
 }
@@ -1354,12 +1233,10 @@ country_event = {
 			set_age = 39
 		}
 	}
-
 	picture_event_data = {
 		portrait = event_target:ethic_leader
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = DISMISS
 		tag = dismiss_leader
@@ -1369,31 +1246,29 @@ country_event = {
 			set_country_flag = dismissed_authoritarian_leader_2
 		}
 	}
-
 	option = {
 		name = paragon.41400.a
 		response_text = paragon.41400.a.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.41400.b
 		response_text = paragon.41400.b.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.41400.c
 		response_text = paragon.41400.c.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = HIRE
 		tag = hire_leader
 		custom_tooltip = paragon.41400.hire_custom_tooltip
 		hidden_effect = {
-			ethic_leader_hire_effect = { GLOBAL_EVENT_TARGET = renowned_authoritarian2 }
+			ethic_leader_hire_effect = {
+				GLOBAL_EVENT_TARGET = renowned_authoritarian2
+			}
 		}
 	}
 }
@@ -1434,12 +1309,10 @@ country_event = {
 			set_age = 48
 		}
 	}
-
 	picture_event_data = {
 		portrait = event_target:ethic_leader
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = DISMISS
 		tag = dismiss_leader
@@ -1449,37 +1322,34 @@ country_event = {
 			set_country_flag = dismissed_spiritualist_leader_1
 		}
 	}
-
 	option = {
 		name = paragon.41500.a
 		response_text = paragon.41500.a.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.41500.b
 		response_text = paragon.41500.b.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.41500.c
 		response_text = paragon.41500.c.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.41500.d
 		response_text = paragon.41500.d.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = HIRE
 		tag = hire_leader
 		custom_tooltip = paragon.41500.hire_custom_tooltip
 		hidden_effect = {
-			ethic_leader_hire_effect = { GLOBAL_EVENT_TARGET = renowned_spiritualist1 }
+			ethic_leader_hire_effect = {
+				GLOBAL_EVENT_TARGET = renowned_spiritualist1
+			}
 		}
 	}
 }
@@ -1515,20 +1385,15 @@ country_event = {
 			add_trait = { trait = leader_trait_midas_touch consume_selection = yes }
 			add_trait = { trait = leader_trait_opinionated consume_selection = yes }
 			add_trait = { trait = leader_trait_archaeologist_2 consume_selection = yes }
-			add_trait = {
-				trait = leader_trait_academic_dig_site_expert
-				consume_selection = yes
-			}
+			add_trait = { trait = leader_trait_academic_dig_site_expert consume_selection = yes }
 			add_trait = { trait = leader_trait_resilient consume_selection = yes }
 			set_age = 80
 		}
 	}
-
 	picture_event_data = {
 		portrait = event_target:ethic_leader
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = DISMISS
 		tag = dismiss_leader
@@ -1538,31 +1403,29 @@ country_event = {
 			set_country_flag = dismissed_spiritualist_leader_2
 		}
 	}
-
 	option = {
 		name = paragon.41600.a
 		response_text = paragon.41600.a.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.41600.b
 		response_text = paragon.41600.b.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.41600.c
 		response_text = paragon.41600.c.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = HIRE
 		tag = hire_leader
 		custom_tooltip = paragon.41600.hire_custom_tooltip
 		hidden_effect = {
-			ethic_leader_hire_effect = { GLOBAL_EVENT_TARGET = renowned_spiritualist2 }
+			ethic_leader_hire_effect = {
+				GLOBAL_EVENT_TARGET = renowned_spiritualist2
+			}
 		}
 	}
 }
@@ -1585,153 +1448,57 @@ country_event = {
 				trigger = has_leader_flag
 				renowned_xenophile1 = { # Lysator Syng
 					random_list = {
-						10 = {
-							leader_event = {
-								id = paragon.40110
-								days = 1
-								random = 1800
-							}
-						} # The Treasure of Zteg-Mayr
-						10 = {
-							leader_event = {
-								id = paragon.40120
-								days = 1
-								random = 1800
-							}
-						} # Safe Haven
+						10 = { leader_event = { id = paragon.40110 days = 1 random = 1800 } } # The Treasure of Zteg-Mayr
+						10 = { leader_event = { id = paragon.40120 days = 1 random = 1800 } } # Safe Haven
 						80 = {  }
 					}
 				}
 				renowned_xenophile2 = { # Nona
 					random_list = {
-						10 = {
-							leader_event = {
-								id = paragon.40210
-								days = 1
-								random = 1800
-							}
-						} # Lost Tribute
-						10 = {
-							leader_event = {
-								id = paragon.40220
-								days = 1
-								random = 1800
-							}
-						} # A Blorg Comes Calling
+						10 = { leader_event = { id = paragon.40210 days = 1 random = 1800 } } # Lost Tribute
+						10 = { leader_event = { id = paragon.40220 days = 1 random = 1800 } } # A Blorg Comes Calling
 						80 = {  }
 					}
 				}
 				renowned_militarist1 = { # Baron Vyctor Jariden
 					random_list = {
-						10 = {
-							leader_event = {
-								id = paragon.40310
-								days = 1
-								random = 1800
-							}
-						} # Free of His Burdens
-						10 = {
-							leader_event = {
-								id = paragon.40320
-								days = 1
-								random = 1800
-							}
-						} # Outspoken Expansionist
+						10 = { leader_event = { id = paragon.40310 days = 1 random = 1800 } } # Free of His Burdens
+						10 = { leader_event = { id = paragon.40320 days = 1 random = 1800 } } # Outspoken Expansionist
 						80 = {  }
 					}
 				}
 				renowned_militarist2 = { # Gia'Zumon
 					random_list = {
-						10 = {
-							leader_event = {
-								id = paragon.40410
-								days = 1
-								random = 1800
-							}
-						} # Drawn by Bloodshed
-						10 = {
-							leader_event = {
-								id = paragon.40420
-								days = 1
-								random = 1800
-							}
-						} # Blood and Sand
+						10 = { leader_event = { id = paragon.40410 days = 1 random = 1800 } } # Drawn by Bloodshed
+						10 = { leader_event = { id = paragon.40420 days = 1 random = 1800 } } # Blood and Sand
 						80 = {  }
 					}
 				}
 				renowned_xenophobe1 = { # Factorator Shuladun
 					random_list = {
-						10 = {
-							leader_event = {
-								id = paragon.40510
-								days = 1
-								random = 1800
-							}
-						} # Optimization Proposal
-						10 = {
-							leader_event = {
-								id = paragon.40520
-								days = 1
-								random = 1800
-							}
-						} # Promising Experiments?
+						10 = { leader_event = { id = paragon.40510 days = 1 random = 1800 } } # Optimization Proposal
+						10 = { leader_event = { id = paragon.40520 days = 1 random = 1800 } } # Promising Experiments?
 						80 = {  }
 					}
 				}
 				renowned_xenophobe2 = { # Aturion
 					random_list = {
-						10 = {
-							leader_event = {
-								id = paragon.40610
-								days = 1
-								random = 1800
-							}
-						} # Population Control Program
-						10 = {
-							leader_event = {
-								id = paragon.40620
-								days = 1
-								random = 1800
-							}
-						} # Criminal Reformation Program
+						10 = { leader_event = { id = paragon.40610 days = 1 random = 1800 } } # Population Control Program
+						10 = { leader_event = { id = paragon.40620 days = 1 random = 1800 } } # Criminal Reformation Program
 						80 = {  }
 					}
 				}
 				renowned_egalitarian1 = { # Jynn
 					random_list = {
-						10 = {
-							leader_event = {
-								id = paragon.40710
-								days = 1
-								random = 1800
-							}
-						} # A Skilled Apprentice
-						10 = {
-							leader_event = {
-								id = paragon.40720
-								days = 1
-								random = 1800
-							}
-						} # Numinous Support
+						10 = { leader_event = { id = paragon.40710 days = 1 random = 1800 } } # A Skilled Apprentice
+						10 = { leader_event = { id = paragon.40720 days = 1 random = 1800 } } # Numinous Support
 						80 = {  }
 					}
 				}
 				renowned_egalitarian2 = { # Zosira K'Tun
 					random_list = {
-						10 = {
-							leader_event = {
-								id = paragon.40810
-								days = 1
-								random = 1800
-							}
-						} # Science is Magic
-						10 = {
-							leader_event = {
-								id = paragon.40820
-								days = 1
-								random = 1800
-							}
-						} # Adopted Alien Pet
+						10 = { leader_event = { id = paragon.40810 days = 1 random = 1800 } } # Science is Magic
+						10 = { leader_event = { id = paragon.40820 days = 1 random = 1800 } } # Adopted Alien Pet
 						80 = {  }
 					}
 				}
@@ -1742,152 +1509,58 @@ country_event = {
 								factor = 0
 								root = { is_synthetic_empire = yes is_individual_machine = no }
 							}
-							leader_event = {
-								id = paragon.40910
-								days = 1
-								random = 1800
-							}
+							leader_event = { id = paragon.40910 days = 1 random = 1800 }
 						} # Xondar 2.0
-						10 = {
-							leader_event = {
-								id = paragon.40920
-								days = 1
-								random = 1800
-							}
-						} # Valuable Alloys
+						10 = { leader_event = { id = paragon.40920 days = 1 random = 1800 } } # Valuable Alloys
 						80 = {  }
 					}
 				}
 				renowned_materialist2 = { # Borin
 					random_list = {
-						10 = {
-							leader_event = {
-								id = paragon.41010
-								days = 1
-								random = 1800
-							}
-						} # I Was Born in the Year of ...
-						10 = {
-							leader_event = {
-								id = paragon.41020
-								days = 1
-								random = 1800
-							}
-						} # Say Hello to Beryllia
+						10 = { leader_event = { id = paragon.41010 days = 1 random = 1800 } } # I Was Born in the Year of ...
+						10 = { leader_event = { id = paragon.41020 days = 1 random = 1800 } } # Say Hello to Beryllia
 						80 = {  }
 					}
 				}
 				renowned_pacifist1 = { # Judge Uld Dagr
 					random_list = {
-						10 = {
-							leader_event = {
-								id = paragon.41110
-								days = 1
-								random = 1800
-							}
-						} # Criminals Exposed
-						10 = {
-							leader_event = {
-								id = paragon.41120
-								days = 1
-								random = 1800
-							}
-						} # On the Nature of Crime
+						10 = { leader_event = { id = paragon.41110 days = 1 random = 1800 } } # Criminals Exposed
+						10 = { leader_event = { id = paragon.41120 days = 1 random = 1800 } } # On the Nature of Crime
 						80 = {  }
 					}
 				}
 				renowned_pacifist2 = { # Vas the Gilded
 					random_list = {
-						10 = {
-							leader_event = {
-								id = paragon.41210
-								days = 1
-								random = 1800
-							}
-						} # Peace and Prosperity
-						10 = {
-							leader_event = {
-								id = paragon.41220
-								days = 1
-								random = 1800
-							}
-						} # In Our Time of Need
+						10 = { leader_event = { id = paragon.41210 days = 1 random = 1800 } } # Peace and Prosperity
+						10 = { leader_event = { id = paragon.41220 days = 1 random = 1800 } } # In Our Time of Need
 						80 = {  }
 					}
 				}
 				renowned_authoritarian1 = { # Kai-Sha
 					random_list = {
-						10 = {
-							leader_event = {
-								id = paragon.41310
-								days = 1
-								random = 1800
-							}
-						} # Gathered Intel
-						10 = {
-							leader_event = {
-								id = paragon.41320
-								days = 1
-								random = 1800
-							}
-						} # Expanded Contact Network
+						10 = { leader_event = { id = paragon.41310 days = 1 random = 1800 } } # Gathered Intel
+						10 = { leader_event = { id = paragon.41320 days = 1 random = 1800 } } # Expanded Contact Network
 						80 = {  }
 					}
 				}
 				renowned_authoritarian2 = { # Q'la-Minder
 					random_list = {
-						10 = {
-							leader_event = {
-								id = paragon.41410
-								days = 1
-								random = 1800
-							}
-						} # Vanity Palace
-						10 = {
-							leader_event = {
-								id = paragon.41420
-								days = 1
-								random = 1800
-							}
-						} # The Embezzler
+						10 = { leader_event = { id = paragon.41410 days = 1 random = 1800 } } # Vanity Palace
+						10 = { leader_event = { id = paragon.41420 days = 1 random = 1800 } } # The Embezzler
 						80 = {  }
 					}
 				}
 				renowned_spiritualist1 = { # Ulastar
 					random_list = {
-						10 = {
-							leader_event = {
-								id = paragon.41510
-								days = 1
-								random = 1800
-							}
-						} # The Great Prophecy
-						10 = {
-							leader_event = {
-								id = paragon.41520
-								days = 1
-								random = 1800
-							}
-						} # Heeding the Call
+						10 = { leader_event = { id = paragon.41510 days = 1 random = 1800 } } # The Great Prophecy
+						10 = { leader_event = { id = paragon.41520 days = 1 random = 1800 } } # Heeding the Call
 						80 = {  }
 					}
 				}
 				renowned_spiritualist2 = { # Nasuz Demetor
 					random_list = {
-						10 = {
-							leader_event = {
-								id = paragon.41610
-								days = 1
-								random = 1800
-							}
-						} # Relics of an Ancient Past
-						10 = {
-							leader_event = {
-								id = paragon.41620
-								days = 1
-								random = 1800
-							}
-						} # Voices in the Void
+						10 = { leader_event = { id = paragon.41610 days = 1 random = 1800 } } # Relics of an Ancient Past
+						10 = { leader_event = { id = paragon.41620 days = 1 random = 1800 } } # Voices in the Void
 						80 = {  }
 					}
 				}
@@ -1913,11 +1586,9 @@ leader_event = {
 
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	option = {
 		name = paragon.40110.a
 		owner = {
@@ -1951,7 +1622,6 @@ ship_event = {
 	trigger = {
 		exists = owner
 	}
-
 	option = {
 		name = paragon.40111.a
 		owner = {
@@ -2001,11 +1671,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	trigger = {
 		exists = owner
 		owner = { exists = capital_scope }
@@ -2021,7 +1689,6 @@ leader_event = {
 		create_random_species = yes
 		last_created_species = { save_event_target_as = random_species_4 }
 	}
-
 	option = {
 		name = paragon.40120.a
 		owner.capital_scope = {
@@ -2047,7 +1714,6 @@ leader_event = {
 			create_pop_group = { species = event_target:random_species_4 }
 		}
 	}
-
 	option = {
 		name = paragon.40120.b
 		add_trait = { trait = leader_trait_stubborn_2 }
@@ -2066,11 +1732,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	option = {
 		name = paragon.40210.a
 		owner = {
@@ -2103,7 +1767,6 @@ ship_event = {
 	trigger = {
 		exists = owner
 	}
-
 	option = {
 		name = paragon.40211.a
 		owner = {
@@ -2135,7 +1798,6 @@ leader_event = {
 	id = paragon.40220
 	title = paragon.40220.name
 	desc = paragon.40220.desc
-
 	inline_script = {
 		script = events/biogenesis_event_art
 		OWNER = owner
@@ -2148,11 +1810,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	option = {
 		name = paragon.40220.a
 		owner = {
@@ -2187,7 +1847,9 @@ leader_event = {
 					skill = 3
 					randomize_traits = yes
 					background_ethic = ethic_xenophile
-					effect = { save_event_target_as = keram_the_blorg }
+					effect = {
+						save_event_target_as = keram_the_blorg
+					}
 				}
 				event_target:keram_the_blorg = {
 					add_trait = {
@@ -2212,7 +1874,6 @@ leader_event = {
 		}
 		custom_tooltip = paragon.40220.a.custom_tooltip
 	}
-
 	option = {
 		name = paragon.40220.b
 	}
@@ -2230,11 +1891,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	option = {
 		name = paragon.40310.a
 		this = { remove_all_negative_traits = yes add_experience = 5000 }
@@ -2253,18 +1912,15 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	option = {
 		name = paragon.40320.a
 		owner = {
 			add_modifier = { modifier = vyctor_aggressive_expansion_plan years = 10 }
 		}
 	}
-
 	option = {
 		name = paragon.40320.b
 		owner = {
@@ -2285,11 +1941,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	option = {
 		name = paragon.40410.a
 		owner = {
@@ -2319,7 +1973,9 @@ leader_event = {
 					skill = 5
 					randomize_traits = yes
 					background_ethic = "ethic_militarist"
-					effect = { save_event_target_as = hask_guttra }
+					effect = {
+						save_event_target_as = hask_guttra
+					}
 				}
 				event_target:hask_guttra = {
 					add_trait = {
@@ -2359,7 +2015,6 @@ leader_event = {
 		}
 		custom_tooltip = paragon.40410.a.custom_tooltip
 	}
-
 	option = {
 		name = paragon.40410.b
 		owner = {
@@ -2383,11 +2038,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	immediate = {
 		owner = {
 			if = {
@@ -2404,7 +2057,6 @@ leader_event = {
 			}
 		}
 	}
-
 	option = {
 		name = paragon.40420.a
 		owner = {
@@ -2430,7 +2082,6 @@ leader_event = {
 		}
 		add_experience = 5000
 	}
-
 	option = {
 		name = paragon.40420.b
 	}
@@ -2448,11 +2099,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	immediate = {
 		if = {
 			limit = { exists = planet }
@@ -2462,14 +2111,12 @@ leader_event = {
 			owner.capital_scope = { save_event_target_as = planet_governed }
 		}
 	}
-
 	option = {
 		name = paragon.40510.a
 		event_target:planet_governed = {
 			add_modifier = { modifier = factorator_industrial_network }
 		}
 	}
-
 	option = {
 		name = paragon.40510.b
 		owner = {
@@ -2495,11 +2142,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	immediate = {
 		if = {
 			limit = { exists = planet }
@@ -2509,7 +2154,6 @@ leader_event = {
 			owner.capital_scope = { save_event_target_as = planet_governed }
 		}
 	}
-
 	option = {
 		name = paragon.40520.a
 		event_target:planet_governed = {
@@ -2525,7 +2169,6 @@ leader_event = {
 			}
 		}
 	}
-
 	option = {
 		name = paragon.40520.b
 		event_target:planet_governed = {
@@ -2549,18 +2192,15 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	option = {
 		name = paragon.40610.a
 		owner = {
 			add_modifier = { modifier = aturion_population_reform years = 10 }
 		}
 	}
-
 	option = {
 		name = paragon.40610.b
 	}
@@ -2572,7 +2212,6 @@ leader_event = {
 	id = paragon.40620
 	title = paragon.40620.name
 	desc = paragon.40620.desc
-
 	inline_script = {
 		script = events/biogenesis_event_art
 		OWNER = owner
@@ -2585,11 +2224,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	option = {
 		name = paragon.40620.a
 		owner = {
@@ -2606,15 +2243,11 @@ leader_event = {
 				switch = {
 					trigger = has_modifier
 					criminal_underworld = { remove_modifier = criminal_underworld }
-					criminal_underworld_experimenters = {
-						remove_modifier = criminal_underworld_experimenters
-					}
+					criminal_underworld_experimenters = { remove_modifier = criminal_underworld_experimenters }
 					gang_wars = { remove_modifier = gang_wars }
 					gang_wars_experimenters = { remove_modifier = gang_wars_experimenters }
 					center_of_drug_trade = { remove_modifier = center_of_drug_trade }
-					center_of_drug_trade_experimenters = {
-						remove_modifier = center_of_drug_trade_experimenters
-					}
+					center_of_drug_trade_experimenters = { remove_modifier = center_of_drug_trade_experimenters }
 					mob_rule = { remove_modifier = mob_rule }
 					mob_rule_experimenters = { remove_modifier = mob_rule_experimenters }
 					crime_wave = { remove_modifier = crime_wave }
@@ -2627,7 +2260,6 @@ leader_event = {
 			}
 		}
 	}
-
 	option = {
 		name = paragon.40620.b
 		owner = {
@@ -2648,11 +2280,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	option = {
 		name = paragon.40710.a
 		owner = {
@@ -2663,7 +2293,9 @@ leader_event = {
 					portrait = humanoid_03
 					gender = random
 					traits = random
-					traits = { ideal_planet_class = capital_scope }
+					traits = {
+						ideal_planet_class = capital_scope
+					}
 				}
 				create_leader = {
 					species = last_created_species
@@ -2674,7 +2306,9 @@ leader_event = {
 					skill = 3
 					randomize_traits = yes
 					background_ethic = "ethic_egalitarian"
-					effect = { save_event_target_as = jynn_apprentice }
+					effect = {
+						save_event_target_as = jynn_apprentice
+					}
 				}
 				event_target:jynn_apprentice = {
 					add_trait = {
@@ -2694,7 +2328,6 @@ leader_event = {
 		}
 		custom_tooltip = paragon.40710.a.custom_tooltip
 	}
-
 	option = {
 		name = paragon.40710.b
 		owner = {
@@ -2715,11 +2348,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	option = {
 		name = paragon.40720.a
 		owner = {
@@ -2745,11 +2376,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	option = {
 		name = paragon.40810.a
 		owner = {
@@ -2817,15 +2446,12 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	trigger = {
 		NOT = { has_trait = leader_trait_emotional_support_pet }
 	}
-
 	option = {
 		name = paragon.40820.a
 		remove_all_negative_traits = yes
@@ -2845,11 +2471,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	option = {
 		name = paragon.40910.a
 		owner = {
@@ -2914,7 +2538,6 @@ leader_event = {
 			}
 		}
 	}
-
 	option = {
 		name = paragon.40910.b
 		if = {
@@ -2938,11 +2561,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	trigger = {
 		exists = owner
 		owner.capital_scope.solar_system = {
@@ -2954,7 +2575,6 @@ leader_event = {
 			}
 		}
 	}
-
 	option = {
 		name = paragon.40920.a
 		owner.capital_scope.solar_system = {
@@ -2989,7 +2609,6 @@ ship_event = {
 		exists = owner
 		owner = { exists = event_target:xondar_alloy_planet }
 	}
-
 	option = {
 		name = paragon.40921.a
 		owner = {
@@ -3010,11 +2629,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	option = {
 		name = paragon.41010.a
 		owner = {
@@ -3082,11 +2699,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	option = {
 		name = paragon.41020.a
 		owner = {
@@ -3098,7 +2713,9 @@ leader_event = {
 					portrait = sd_rep_robot
 					gender = indeterminable
 					traits = random
-					traits = { trait = trait_robot_repurposed_hardware }
+					traits = {
+						trait = trait_robot_repurposed_hardware
+					}
 				}
 				create_leader = {
 					species = last_created_species
@@ -3110,7 +2727,10 @@ leader_event = {
 					skill = 3
 					randomize_traits = yes
 					background_ethic = "ethic_materialist"
-					effect = { save_event_target_as = beryllia change_background_job = none }
+					effect = {
+						save_event_target_as = beryllia
+						change_background_job = none
+					}
 				}
 				event_target:beryllia = {
 					add_trait = {
@@ -3130,7 +2750,6 @@ leader_event = {
 		}
 		custom_tooltip = paragon.41020.a.custom_tooltip
 	}
-
 	option = {
 		name = paragon.41020.b
 		owner = {
@@ -3151,11 +2770,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	option = {
 		name = paragon.41110.a
 		owner = {
@@ -3176,11 +2793,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	option = {
 		name = paragon.41120.a
 		owner = {
@@ -3218,11 +2833,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	option = {
 		name = paragon.41210.a
 		owner = {
@@ -3243,11 +2856,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	option = {
 		name = paragon.41220.a
 		owner = {
@@ -3281,16 +2892,13 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	trigger = {
 		exists = owner
 		owner = { num_communications > 0 }
 	}
-
 	option = {
 		name = paragon.41310.a
 		owner = {
@@ -3335,7 +2943,6 @@ leader_event = {
 			}
 		}
 	}
-
 	option = {
 		name = paragon.41310.b
 		owner = {
@@ -3361,11 +2968,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	trigger = {
 		exists = owner
 		any_playable_country = {
@@ -3373,7 +2978,6 @@ leader_event = {
 			has_communications = root.owner
 		}
 	}
-
 	option = {
 		name = paragon.41320.a
 		if = {
@@ -3415,11 +3019,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	trigger = {
 		exists = planet
 	}
@@ -3427,7 +3029,6 @@ leader_event = {
 	immediate = {
 		planet = { save_event_target_as = planet_governed } # Used in desc
 	}
-
 	option = {
 		name = paragon.41410.a
 		planet = {
@@ -3448,11 +3049,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	option = {
 		name = paragon.41420.a
 		owner = {
@@ -3488,16 +3087,13 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	trigger = {
 		exists = planet
 		planet = { pop_amount <= 6000 }
 	}
-
 	option = {
 		name = paragon.41510.a
 		owner = {
@@ -3518,11 +3114,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	trigger = {
 		exists = planet
 	}
@@ -3530,7 +3124,6 @@ leader_event = {
 	immediate = {
 		planet = { save_event_target_as = planet_governed } # Used in desc
 	}
-
 	option = {
 		name = paragon.41520.a
 		custom_tooltip = paragon.41520.a.custom_tooltip
@@ -3556,7 +3149,6 @@ leader_event = {
 			}
 		}
 	}
-
 	option = {
 		name = paragon.41520.b
 		trigger = { is_xenophobe = yes }
@@ -3583,11 +3175,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	option = {
 		name = paragon.41610.a
 		owner = {
@@ -3617,11 +3207,9 @@ leader_event = {
 	fire_only_once = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_renowned"
-
 	picture_event_data = {
 		portrait = root
 	}
-
 	trigger = {
 		NOT = { has_global_flag = site_ice_trauma_found }
 		owner = {
@@ -3655,7 +3243,6 @@ leader_event = {
 			}
 		}
 	}
-
 	option = {
 		name = paragon.41620.a
 		owner = {
@@ -3667,9 +3254,7 @@ leader_event = {
 			}
 			custom_tooltip = paragon.41620.a.custom_tooltip
 			hidden_effect = {
-				event_target:nasuz_arcsite_planet = {
-					create_archaeological_site = site_ice_trauma
-				}
+				event_target:nasuz_arcsite_planet = { create_archaeological_site = site_ice_trauma }
 			}
 		}
 	}

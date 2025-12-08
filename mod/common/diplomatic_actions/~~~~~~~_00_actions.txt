@@ -6,7 +6,6 @@ action_leave_federation = {
 	show_to_alliance_members = yes
 	should_notify_all_communications = yes
 	action_type = negative
-
 	# We do not want the AI to leave federations because it does not like its subjects
 	should_ai_propose = {
 		weight = 1
@@ -16,23 +15,13 @@ action_leave_federation = {
 			from = { is_subject = yes }
 		}
 	}
-
 	potential = {
 		hidden_trigger = {
+			has_federation = yes
+			is_subject = no
 			OR = {
-				AND = {
-					is_subject = no
-					has_federation = yes
-					NOT = { federation = { has_federation_type = hegemony_federation } }
-				}
-				AND = {
-					is_subject = no
-					has_federation = yes
-					federation = {
-						has_federation_type = hegemony_federation
-					}
-					is_federation_leader = yes
-				}
+				NOT = { federation = { has_federation_type = hegemony_federation } }
+				is_federation_leader = yes
 			}
 		}
 	}
@@ -51,34 +40,29 @@ action_ask_to_leave_federation = {
 	show_to_alliance_members = yes
 	should_notify_all_communications = yes
 	action_type = negative
-
 	# We do not want the AI to leave federations because it does not like its subjects
 	should_ai_propose = {
 		weight = 1
 		modifier = {
 			factor = 0
 			exists = from
-			from = { is_subject = yes }
-		}
-		modifier = {
-			factor = 0
-			exists = from
-			from = { is_federation_leader = no }
+			from = {
+				OR = {
+					is_subject = yes
+					is_federation_leader = no
+				}
+			}
 		}
 	}
-
 	potential = {
 		hidden_trigger = {
 			has_federation = yes
-			federation = {
-				has_federation_type = hegemony_federation
-			}
-			from = {
-				is_federation_leader = yes
+			OR = {
+				federation = { has_federation_type = hegemony_federation }
+				from = { is_federation_leader = yes }
 			}
 		}
 	}
-
 	proposable = {
 		custom_tooltip = {
 			fail_text = requires_federation_leader_exists

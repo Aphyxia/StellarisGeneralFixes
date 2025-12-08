@@ -743,6 +743,7 @@ country_event = {
 # 	is_test_event = yes
 # 	trigger = { always = no }
 # }
+
 ship_event = {
 	id = tutorial.52
 	hide_window = yes
@@ -1082,6 +1083,7 @@ country_event = {
 ###########################################
 # "NEMESIS" / 2.9 TUTORIALS & ADVISOR TIPS
 ###########################################
+
 first_contact_event = {
 	id = tutorial.2000
 	hide_window = yes
@@ -1289,6 +1291,7 @@ country_event = {
 ############################################
 # "First Contact" TUTORIALS & ADVISOR TIPS #
 ############################################
+
 ship_event = {
 	id = tutorial.2140
 	hide_window = yes

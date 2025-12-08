@@ -1,10 +1,10 @@
 ###########################################
-
 #
 # Nemesis Espionage Events
 # Written by Gemma Thomson
 #
 ###########################################
+
 namespace = operation
 # SUBTERFUGE (.1XXX)
 # SABOTAGE (.2XXX)
@@ -37,7 +37,6 @@ espionage_operation_event = {
 	id = operation.1000
 	title = operation.1000.name
 	espionage_operation = yes
-
 	desc = {
 		trigger = {
 			target = {
@@ -50,7 +49,6 @@ espionage_operation_event = {
 		}
 		text = operation.1000.desc.hostile
 	}
-
 	desc = {
 		trigger = {
 			target = {
@@ -70,7 +68,6 @@ espionage_operation_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = ACKNOWLEDGED
 	}
@@ -82,18 +79,12 @@ espionage_operation_event = {
 	title = operation.1001.name
 	desc = operation.1001.desc
 	espionage_operation = yes
-
 	picture = {
-		trigger = {
-			target = { is_gestalt = no }
-		}
+		trigger = { target = { is_gestalt = no } }
 		picture = GFX_evt_acquire_asset
 	}
-
 	picture = {
-		trigger = {
-			target = { is_gestalt = yes }
-		}
+		trigger = { target = { is_gestalt = yes } }
 		picture = GFX_evt_hive_mind
 	}
 
@@ -102,7 +93,6 @@ espionage_operation_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = GOOD
 	}
@@ -145,7 +135,6 @@ espionage_operation_event = {
 			espionage_acquire_asset_regular = yes
 		}
 	}
-
 	option = {
 		name = LAUNCH_OPERATION
 		hidden_effect = {
@@ -157,7 +146,6 @@ espionage_operation_event = {
 			}
 		}
 	}
-
 	after = {
 		if = { # Vfix log for unknow reason
 			limit = { is_scope_valid = yes }
@@ -170,7 +158,6 @@ espionage_operation_event = {
 country_event = {
 	id = operation.1006
 	title = operation.1006.name
-
 	desc = {
 		trigger = {
 			switch = {
@@ -214,21 +201,18 @@ country_event = {
 			}
 		}
 	}
-
 	picture = {
 		trigger = {
 			from.target = { is_gestalt = no }
 		}
 		picture = GFX_evt_acquire_asset
 	}
-
 	picture = {
 		trigger = {
 			from.target = { is_machine_empire = yes }
 		}
 		picture = GFX_evt_sapient_AI
 	}
-
 	picture = {
 		trigger = {
 			from.target = { is_hive_empire = yes }
@@ -243,15 +227,15 @@ country_event = {
 	immediate = {
 		country_event = { id = tutorial.2010 } # Assigning Assets
 	}
-
 	option = {
 		name = EXCELLENT
 		root = { espionage_acquire_asset_create_asset = yes }
 		from.spynetwork = {
-			add_spy_network_level_on_success_effect = { VALUE = -15 }
+			add_spy_network_level_on_success_effect = {
+				VALUE = -15
+			}
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			owner = {
@@ -281,7 +265,6 @@ espionage_operation_event = {
 	id = operation.1020
 	title = operation.1020.name
 	espionage_operation = yes
-
 	desc = {
 		text = operation.1020.desc.conf_external
 		trigger = {
@@ -289,34 +272,28 @@ espionage_operation_event = {
 			target = { is_xenophobe = no }
 		}
 	}
-
 	desc = {
 		text = operation.1020.desc.conf_hosted
 		trigger = { has_espionage_operation_flag = steal_tech_conference }
 	}
-
 	desc = {
 		text = operation.1020.desc.lecture
 		trigger = { has_espionage_operation_flag = steal_tech_lecture }
 	}
-
 	desc = {
 		text = operation.1020.desc.outreach
 		trigger = { has_espionage_operation_flag = steal_tech_outreach }
 	}
-
 	desc = {
 		text = operation.1020.desc.theft
 		trigger = { has_espionage_operation_flag = steal_tech_theft }
 	}
-
 	desc = {
 		text = operation.1020.desc.enigmatic
 		trigger = {
 			owner = { has_country_flag = cannot_steal_enigmatic_tech@root.target }
 		}
 	}
-
 	picture = {
 		trigger = {
 			OR = {
@@ -327,7 +304,6 @@ espionage_operation_event = {
 		}
 		picture = GFX_evt_voting
 	}
-
 	picture = {
 		trigger = { has_espionage_operation_flag = steal_tech_theft }
 		picture = GFX_evt_smugglers_in_bar
@@ -383,7 +359,6 @@ espionage_operation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = CURIOUS
 		trigger = {
@@ -391,7 +366,6 @@ espionage_operation_event = {
 			owner = { has_country_flag = cannot_steal_enigmatic_tech@root.target }
 		}
 	}
-
 	option = {
 		name = ACKNOWLEDGED
 		trigger = {
@@ -408,7 +382,6 @@ espionage_operation_event = {
 	id = operation.1021
 	title = operation.1021.name
 	espionage_operation = yes
-
 	desc = {
 		text = operation.1021.desc.creds
 		trigger = {
@@ -420,7 +393,6 @@ espionage_operation_event = {
 			owner = { is_gestalt = no }
 		}
 	}
-
 	desc = {
 		text = operation.1021.desc.appeal
 		trigger = {
@@ -431,7 +403,6 @@ espionage_operation_event = {
 			}
 		}
 	}
-
 	desc = {
 		trigger = { has_espionage_operation_flag = steal_tech_theft }
 		text = operation.1021.desc.theft
@@ -443,7 +414,6 @@ espionage_operation_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = OK
 	}
@@ -454,7 +424,6 @@ espionage_operation_event = {
 	id = operation.1022
 	title = operation.1022.name
 	espionage_operation = yes
-
 	desc = {
 		trigger = {
 			OR = {
@@ -465,7 +434,6 @@ espionage_operation_event = {
 		}
 		text = operation.1022.desc.invited
 	}
-
 	desc = {
 		trigger = { has_espionage_operation_flag = steal_tech_theft }
 		text = operation.1022.desc.theft
@@ -487,7 +455,6 @@ espionage_operation_event = {
 		}
 		set_espionage_operation_progress_locked = yes
 	}
-
 	option = {
 		name = LAUNCH_OPERATION
 		hidden_effect = {
@@ -499,7 +466,6 @@ espionage_operation_event = {
 			}
 		}
 	}
-
 	after = {
 		set_espionage_operation_progress_locked = no
 	}
@@ -576,7 +542,6 @@ country_event = {
 country_event = {
 	id = operation.1026
 	title = operation.1026.name
-
 	desc = {
 		trigger = {
 			fromfrom = {
@@ -587,7 +552,6 @@ country_event = {
 		text = operation.1026.desc.ducts.smooth
 		text = operation.1026.desc.goods.smooth
 	}
-
 	desc = {
 		trigger = {
 			fromfrom = {
@@ -598,7 +562,6 @@ country_event = {
 		text = operation.1026.desc.ducts.messy
 		text = operation.1026.desc.goods.messy
 	}
-
 	desc = {
 		trigger = {
 			fromfrom = {
@@ -608,7 +571,6 @@ country_event = {
 		}
 		text = operation.1026.desc.invited.smooth
 	}
-
 	desc = {
 		trigger = {
 			fromfrom = {
@@ -659,29 +621,28 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # We're done here (smooth)
 		name = operation.1026.a.smooth
 		trigger = {
 			fromfrom = { has_espionage_operation_flag = smooth_exit }
 		}
 		fromfrom.spynetwork = {
-			add_spy_network_level_on_success_effect = { VALUE = -20 }
+			add_spy_network_level_on_success_effect = {
+				VALUE = -20
+			}
 		}
 	}
-
 	option = { # We're done here (messy)
 		name = operation.1026.a.messy
 		trigger = {
-			NOT = {
-				fromfrom = { has_espionage_operation_flag = smooth_exit }
-			}
+			NOT = { fromfrom = { has_espionage_operation_flag = smooth_exit } }
 		}
 		fromfrom.spynetwork = {
-			add_spy_network_level_on_success_effect = { VALUE = -30 }
+			add_spy_network_level_on_success_effect = {
+				VALUE = -30
+			}
 		}
 	}
-
 	option = { # Sabotage their current research
 		name = {
 			trigger = {
@@ -691,9 +652,7 @@ country_event = {
 		}
 		name = {
 			trigger = {
-				NOT = {
-					fromfrom = { has_espionage_operation_flag = smooth_exit }
-				}
+				NOT = { fromfrom = { has_espionage_operation_flag = smooth_exit } }
 			}
 			text = operation.1026.b.messy
 		}
@@ -728,12 +687,16 @@ country_event = {
 			if = {
 				limit = { has_espionage_operation_flag = smooth_exit }
 				spynetwork = {
-					add_spy_network_level_on_success_effect = { VALUE = -30 }
+					add_spy_network_level_on_success_effect = {
+						VALUE = -30
+					}
 				}
 			}
 			else = {
 				spynetwork = {
-					add_spy_network_level_on_success_effect = { VALUE = -40 }
+					add_spy_network_level_on_success_effect = {
+						VALUE = -40
+					}
 				}
 			}
 			destroy_espionage_asset_sabotage = yes
@@ -745,7 +708,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Research backdoor
 		name = operation.1026.c
 		icon = {
@@ -776,12 +738,16 @@ country_event = {
 			if = {
 				limit = { has_espionage_operation_flag = smooth_exit }
 				spynetwork = {
-					add_spy_network_level_on_success_effect = { VALUE = -20 }
+					add_spy_network_level_on_success_effect = {
+						VALUE = -20
+					}
 				}
 			}
 			else = {
 				spynetwork = {
-					add_spy_network_level_on_success_effect = { VALUE = -30 }
+					add_spy_network_level_on_success_effect = {
+						VALUE = -30
+					}
 				}
 			}
 			if = {
@@ -794,7 +760,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Steal extra technology
 		name = operation.1026.d
 		icon = {
@@ -821,11 +786,12 @@ country_event = {
 				destroy_espionage_asset_subterfuge = yes
 			}
 			spynetwork = {
-				add_spy_network_level_on_success_effect = { VALUE = -30 }
+				add_spy_network_level_on_success_effect = {
+					VALUE = -30
+				}
 			}
 		}
 	}
-
 	after = {
 		custom_tooltip = operation.1026.tooltip.cooldown
 		fromfrom.spynetwork = {
@@ -843,9 +809,7 @@ country_event = {
 				1 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							can_copy_random_tech_from = { who = fromfrom.target area = physics }
-						}
+						NOT = { can_copy_random_tech_from = { who = fromfrom.target area = physics } }
 					}
 					copy_random_tech_from = {
 						who = fromfrom.target
@@ -856,9 +820,7 @@ country_event = {
 				1 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							can_copy_random_tech_from = { who = fromfrom.target area = society }
-						}
+						NOT = { can_copy_random_tech_from = { who = fromfrom.target area = society } }
 					}
 					copy_random_tech_from = {
 						who = fromfrom.target
@@ -869,9 +831,7 @@ country_event = {
 				1 = {
 					modifier = {
 						factor = 0
-						NOT = {
-							can_copy_random_tech_from = { who = fromfrom.target area = engineering }
-						}
+						NOT = { can_copy_random_tech_from = { who = fromfrom.target area = engineering } }
 					}
 					copy_random_tech_from = {
 						who = fromfrom.target
@@ -891,9 +851,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					NOT = {
-						owner = { has_country_flag = operation_complete_steal_technology }
-					}
+					NOT = { owner = { has_country_flag = operation_complete_steal_technology } }
 				}
 				owner = {
 					change_variable = {
@@ -916,11 +874,9 @@ country_event = {
 	picture = GFX_evt_physics_research
 	show_sound = event_default
 	is_triggered_only = yes
-
 	option = {
 		name = INTRIGUING
 	}
-
 	after = {
 		hidden_effect = {
 			from = {
@@ -935,12 +891,10 @@ country_event = {
 country_event = {
 	id = operation.1030
 	title = operation.1030.name
-
 	desc = {
 		trigger = { is_gestalt = no }
 		text = operation.1030.desc.regular
 	}
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = operation.1030.desc.gestalt
@@ -957,7 +911,6 @@ country_event = {
 	immediate = {
 		add_modifier = { modifier = research_stolen_sabotaged years = 1 }
 	}
-
 	option = {
 		name = CURSES
 	}
@@ -972,7 +925,6 @@ espionage_operation_event = {
 	id = operation.2000
 	title = operation.2000.name
 	espionage_operation = yes
-
 	desc = {
 		text = operation.2000.desc.jobseeker
 		text = operation.2000.desc.vendor
@@ -988,7 +940,6 @@ espionage_operation_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = operation.2000.desc.derelict
 		text = operation.2000.desc.cargo
@@ -1006,7 +957,6 @@ espionage_operation_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = operation.2000.desc.invalid
 		trigger = {
@@ -1016,7 +966,6 @@ espionage_operation_event = {
 			}
 		}
 	}
-
 	inline_script = {
 		script = events/biogenesis_event_art
 		OWNER = target.owner
@@ -1041,7 +990,6 @@ espionage_operation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = ACKNOWLEDGED
 	}
@@ -1052,7 +1000,6 @@ espionage_operation_event = {
 	id = operation.2001
 	title = operation.2001.name
 	espionage_operation = yes
-
 	desc = {
 		text = operation.2001.desc.vocation
 		trigger = {
@@ -1069,7 +1016,6 @@ espionage_operation_event = {
 			}
 		}
 	}
-
 	desc = {
 		trigger = {
 			exists = target
@@ -1086,7 +1032,6 @@ espionage_operation_event = {
 		}
 		text = operation.2001.desc.vessel
 	}
-
 	desc = {
 		text = operation.2000.desc.invalid
 		trigger = {
@@ -1096,7 +1041,6 @@ espionage_operation_event = {
 			}
 		}
 	}
-
 	inline_script = {
 		script = events/biogenesis_event_art
 		OWNER = target.owner
@@ -1121,7 +1065,6 @@ espionage_operation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = ACKNOWLEDGED
 	}
@@ -1132,7 +1075,6 @@ espionage_operation_event = {
 	id = operation.2002
 	title = operation.2002.name
 	espionage_operation = yes
-
 	desc = {
 		text = operation.2002.desc.vocation
 		trigger = {
@@ -1149,7 +1091,6 @@ espionage_operation_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = operation.2002.desc.vessel
 		trigger = {
@@ -1166,7 +1107,6 @@ espionage_operation_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = operation.2000.desc.invalid
 		trigger = {
@@ -1176,7 +1116,6 @@ espionage_operation_event = {
 			}
 		}
 	}
-
 	inline_script = {
 		script = events/biogenesis_event_art
 		OWNER = target.owner
@@ -1208,7 +1147,6 @@ espionage_operation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = LAUNCH_OPERATION
 		hidden_effect = {
@@ -1217,7 +1155,6 @@ espionage_operation_event = {
 			}
 		}
 	}
-
 	after = {
 		set_espionage_operation_progress_locked = no
 	}
@@ -1227,7 +1164,6 @@ espionage_operation_event = {
 country_event = {
 	id = operation.2005
 	title = operation.2005.name
-
 	desc = {
 		text = operation.2005.desc.military
 		trigger = {
@@ -1264,7 +1200,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = operation.2005.desc.trade
 		trigger = {
@@ -1280,7 +1215,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = operation.2005.desc.civic
 		trigger = {
@@ -1379,7 +1313,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # We're done here (smooth)
 		name = operation.2005.a
 		trigger = {
@@ -1392,7 +1325,9 @@ country_event = {
 			}
 		}
 		from.spynetwork = {
-			add_spy_network_level_on_success_effect = { VALUE = -30 }
+			add_spy_network_level_on_success_effect = {
+				VALUE = -30
+			}
 		}
 		owner = {
 			if = {
@@ -1401,7 +1336,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # We're done here (messy)
 		name = operation.2005.a
 		trigger = {
@@ -1414,7 +1348,9 @@ country_event = {
 			}
 		}
 		from.spynetwork = {
-			add_spy_network_level_on_success_effect = { VALUE = -45 }
+			add_spy_network_level_on_success_effect = {
+				VALUE = -45
+			}
 		}
 		owner = {
 			if = {
@@ -1423,7 +1359,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Collateral damage (module)
 		name = {
 			trigger = {
@@ -1454,7 +1389,9 @@ country_event = {
 				remove_random_starbase_module = { type != shipyard count = 1 }
 			}
 			spynetwork = {
-				add_spy_network_level_on_success_effect = { VALUE = -45 }
+				add_spy_network_level_on_success_effect = {
+					VALUE = -45
+				}
 			}
 		}
 		owner = {
@@ -1464,7 +1401,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Collateral damage (defense platform)
 		name = operation.2005.c
 		icon = {
@@ -1504,7 +1440,9 @@ country_event = {
 			add_resource = { volatile_motes = -2 }
 		}
 		from.spynetwork = {
-			add_spy_network_level_on_success_effect = { VALUE = -45 }
+			add_spy_network_level_on_success_effect = {
+				VALUE = -45
+			}
 		}
 		owner = {
 			if = {
@@ -1513,14 +1451,11 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			if = {
 				limit = {
-					NOT = {
-						owner = { has_country_flag = operation_complete_sabotage_starbase }
-					}
+					NOT = { owner = { has_country_flag = operation_complete_sabotage_starbase } }
 				}
 				owner = {
 					change_variable = {
@@ -1531,10 +1466,7 @@ country_event = {
 				}
 			}
 			from.target.owner = {
-				set_timed_country_flag = {
-					flag = sabotaged_starbase_alert@root
-					days = @SabotageStarbaseTimer
-				}
+				set_timed_country_flag = { flag = sabotaged_starbase_alert@root days = @SabotageStarbaseTimer }
 				country_event = { id = operation.2010 } # Notification of sabotage
 			}
 		}
@@ -1547,7 +1479,6 @@ country_event = {
 	id = operation.2006
 	title = operation.2006.name
 	desc = operation.2006.desc
-
 	inline_script = {
 		script = events/biogenesis_event_art
 		OWNER = event_target:sabotaged_starbase_owner
@@ -1560,11 +1491,9 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = UNFORTUNATE
 	}
-
 	after = {
 		destroy_espionage_operation = from
 	}
@@ -1574,20 +1503,14 @@ country_event = {
 country_event = {
 	id = operation.2010
 	title = operation.2010.name
-
 	desc = {
 		text = operation.2010.desc.phobe
 		trigger = { is_xenophobe = yes }
 	}
-
 	desc = {
 		text = operation.2010.desc.regular
-		trigger = {
-			is_xenophobe = no
-			is_gestalt = no
-		}
+		trigger = { is_xenophobe = no is_gestalt = no }
 	}
-
 	desc = {
 		text = operation.2010.desc.gestalt
 		trigger = { is_gestalt = yes }
@@ -1648,7 +1571,6 @@ country_event = {
 			9 = {  } # Nothing
 		}
 	}
-
 	option = {
 		name = {
 			text = APPALLING
@@ -1661,13 +1583,9 @@ country_event = {
 		}
 		name = {
 			text = CURSES
-			trigger = {
-				is_xenophobe = no
-				is_gestalt = no
-			}
+			trigger = { is_xenophobe = no is_gestalt = no }
 		}
 	}
-
 	after = {
 		remove_sabotage_starbase_flag = yes
 	}
@@ -1683,15 +1601,10 @@ espionage_operation_event = {
 	id = operation.3000
 	title = operation.3000.name
 	espionage_operation = yes
-
 	desc = {
 		text = operation.3000.desc
-		trigger = {
-			exists = event_target:smear_option_1
-			exists = event_target:smear_option_2
-		}
+		trigger = { exists = event_target:smear_option_1 exists = event_target:smear_option_2 }
 	}
-
 	desc = {
 		text = operation.3000.desc.single
 		trigger = {
@@ -1699,7 +1612,6 @@ espionage_operation_event = {
 			NOT = { exists = event_target:smear_option_2 }
 		}
 	}
-
 	desc = { # No 3rd-party target could be found
 		text = operation.3000.desc.error
 		trigger = {
@@ -1861,7 +1773,6 @@ espionage_operation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = operation.3000.a
 		trigger = {
@@ -1874,7 +1785,6 @@ espionage_operation_event = {
 			set_espionage_operation_progress_locked = no
 		}
 	}
-
 	option = {
 		name = operation.3000.b
 		trigger = { exists = event_target:smear_option_2 }
@@ -1885,7 +1795,6 @@ espionage_operation_event = {
 			set_espionage_operation_progress_locked = no
 		}
 	}
-
 	option = {
 		name = operation.3000.c
 		trigger = { exists = event_target:smear_option_3 }
@@ -1896,7 +1805,6 @@ espionage_operation_event = {
 			set_espionage_operation_progress_locked = no
 		}
 	}
-
 	option = {
 		name = PROCEED
 		trigger = {
@@ -1910,7 +1818,6 @@ espionage_operation_event = {
 			set_espionage_operation_progress_locked = no
 		}
 	}
-
 	option = { # No target found
 		name = operation.3000.d
 		exclusive_trigger = {
@@ -1925,7 +1832,6 @@ espionage_operation_event = {
 	id = operation.3001
 	title = operation.3001.name
 	espionage_operation = yes
-
 	desc = { # Flags set in immediate, below
 		trigger = {
 			hidden:event_target:smear_campaign_recipient = {
@@ -1956,18 +1862,10 @@ espionage_operation_event = {
 					smear_xenophile_slavery@root.target = { text = operation.3001.desc.phile.slavery }
 					smear_xenophile_motives@root.target = { text = operation.3001.desc.phile.motives }
 					smear_xenophile_contact@root.target = { text = operation.3001.desc.phile.contact }
-					smear_authoritarian_mockery@root.target = {
-						text = operation.3001.desc.auth.mockery
-					}
-					smear_authoritarian_discord@root.target = {
-						text = operation.3001.desc.auth.discord
-					}
-					smear_authoritarian_experim@root.target = {
-						text = operation.3001.desc.auth.experim
-					}
-					smear_authoritarian_extorts@root.target = {
-						text = operation.3001.desc.auth.extorts
-					}
+					smear_authoritarian_mockery@root.target = { text = operation.3001.desc.auth.mockery }
+					smear_authoritarian_discord@root.target = { text = operation.3001.desc.auth.discord }
+					smear_authoritarian_experim@root.target = { text = operation.3001.desc.auth.experim }
+					smear_authoritarian_extorts@root.target = { text = operation.3001.desc.auth.extorts }
 					smear_corporate_criment@root.target = { text = operation.3001.desc.corp.criment }
 					smear_corporate_resells@root.target = { text = operation.3001.desc.corp.resells }
 					smear_corporate_machine@root.target = { text = operation.3001.desc.corp.machine }
@@ -2047,7 +1945,6 @@ espionage_operation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = OK
 	}
@@ -2074,7 +1971,6 @@ espionage_operation_event = {
 			save_event_target_as = smear_campaign_recipient # Doesn't carry over from Chapter 2, but will work for the finalés
 		}
 	}
-
 	option = {
 		name = LAUNCH_OPERATION
 		hidden_effect = {
@@ -2083,12 +1979,9 @@ espionage_operation_event = {
 			}
 		}
 	}
-
 	after = {
 		set_espionage_operation_progress_locked = no
-		event_target:smear_campaign_recipient = {
-			remove_country_flag = smear_campaign_recipient@root
-		}
+		event_target:smear_campaign_recipient = { remove_country_flag = smear_campaign_recipient@root }
 	}
 }
 
@@ -2096,37 +1989,27 @@ espionage_operation_event = {
 country_event = {
 	id = operation.3005
 	title = operation.3005.name
-
 	desc = {
 		text = operation.3005.desc.insult
 		trigger = {
 			from.target = { is_gestalt = no }
-			event_target:smear_campaign_recipient = {
-				has_country_flag = smear_campaign_insulted@root
-			}
+			event_target:smear_campaign_recipient = { has_country_flag = smear_campaign_insulted@root }
 		}
 	}
-
 	desc = {
 		text = operation.3005.desc.trust
 		trigger = {
 			from.target = { is_gestalt = no }
-			event_target:smear_campaign_recipient = {
-				has_country_flag = smear_campaign_deceived@root
-			}
+			event_target:smear_campaign_recipient = { has_country_flag = smear_campaign_deceived@root }
 		}
 	}
-
 	desc = {
 		text = operation.3005.desc.espionage
 		trigger = {
 			from.target = { is_gestalt = no }
-			event_target:smear_campaign_recipient = {
-				has_country_flag = smear_campaign_espionage@root
-			}
+			event_target:smear_campaign_recipient = { has_country_flag = smear_campaign_espionage@root }
 		}
 	}
-
 	desc = {
 		text = operation.3005.desc.gestalt
 		trigger = {
@@ -2156,11 +2039,12 @@ country_event = {
 		}
 		from.target = { save_event_target_as = smear_campaign_target }
 	}
-
 	option = {
 		name = EXCELLENT
 		from.spynetwork = {
-			add_spy_network_level_on_success_effect = { VALUE = -20 }
+			add_spy_network_level_on_success_effect = {
+				VALUE = -20
+			}
 		}
 		hidden_effect = {
 			event_target:smear_campaign_recipient = {
@@ -2216,9 +2100,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					NOT = {
-						owner = { has_country_flag = operation_complete_smear_campaign }
-					}
+					NOT = { owner = { has_country_flag = operation_complete_smear_campaign } }
 				}
 				owner = {
 					change_variable = {
@@ -2255,7 +2137,6 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = { # Play along (mirrors espionage.1070)
 		name = operation.3010.a
 		allow = {
@@ -2263,10 +2144,7 @@ country_event = {
 		}
 		add_resource = { influence = -20 }
 		root = {
-			add_opinion_modifier = {
-				who = event_target:smear_campaign_target
-				modifier = opinion_smear_campaign_espionage
-			}
+			add_opinion_modifier = { who = event_target:smear_campaign_target modifier = opinion_smear_campaign_espionage }
 		}
 		if = {
 			limit = {
@@ -2314,14 +2192,10 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Inform victim
 		name = operation.3010.b
 		root = {
-			add_opinion_modifier = {
-				who = event_target:smear_campaign_instigator
-				modifier = opinion_smear_campaign_caught
-			}
+			add_opinion_modifier = { who = event_target:smear_campaign_instigator modifier = opinion_smear_campaign_caught }
 		}
 		event_target:smear_campaign_target = {
 			country_event = { id = operation.3020 } # Smear Campaign Exposed
@@ -2346,7 +2220,6 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = { # Play along (mirrors envoy_events.100)
 		name = operation.3010.a
 		allow = {
@@ -2354,10 +2227,7 @@ country_event = {
 		}
 		add_resource = { influence = -15 }
 		root = {
-			add_opinion_modifier = {
-				who = event_target:smear_campaign_target
-				modifier = opinion_smear_campaign_insulted
-			}
+			add_opinion_modifier = { who = event_target:smear_campaign_target modifier = opinion_smear_campaign_insulted }
 		}
 		if = {
 			limit = {
@@ -2406,14 +2276,10 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Inform victim
 		name = operation.3010.b
 		root = {
-			add_opinion_modifier = {
-				who = event_target:smear_campaign_instigator
-				modifier = opinion_smear_campaign_caught
-			}
+			add_opinion_modifier = { who = event_target:smear_campaign_instigator modifier = opinion_smear_campaign_caught }
 		}
 		event_target:smear_campaign_target = {
 			country_event = { id = operation.3020 } # Smear Campaign Exposed
@@ -2438,7 +2304,6 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = { # Play along (mirrors espionage.1080)
 		name = operation.3010.a
 		allow = {
@@ -2446,10 +2311,7 @@ country_event = {
 		}
 		add_resource = { influence = -15 }
 		root = {
-			add_opinion_modifier = {
-				who = event_target:smear_campaign_target
-				modifier = opinion_smear_campaign_deceived
-			}
+			add_opinion_modifier = { who = event_target:smear_campaign_target modifier = opinion_smear_campaign_deceived }
 		}
 		if = {
 			limit = {
@@ -2498,14 +2360,10 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Inform victim
 		name = operation.3010.b
 		root = {
-			add_opinion_modifier = {
-				who = event_target:smear_campaign_instigator
-				modifier = opinion_smear_campaign_caught
-			}
+			add_opinion_modifier = { who = event_target:smear_campaign_instigator modifier = opinion_smear_campaign_caught }
 		}
 		event_target:smear_campaign_target = {
 			country_event = { id = operation.3020 } # Smear Campaign Exposed
@@ -2518,21 +2376,14 @@ country_event = {
 country_event = {
 	id = operation.3020
 	title = operation.3020.name
-
 	desc = {
 		trigger = {
 			hidden:from = {
 				switch = {
 					trigger = has_country_flag
-					smear_campaign_espionage@event_target:smear_campaign_instigator = {
-						text = operation.3020.desc.espionage
-					}
-					smear_campaign_insulted@event_target:smear_campaign_instigator = {
-						text = operation.3020.desc.insult
-					}
-					smear_campaign_deceived@event_target:smear_campaign_instigator = {
-						text = operation.3020.desc.deception
-					}
+					smear_campaign_espionage@event_target:smear_campaign_instigator = { text = operation.3020.desc.espionage }
+					smear_campaign_insulted@event_target:smear_campaign_instigator = { text = operation.3020.desc.insult }
+					smear_campaign_deceived@event_target:smear_campaign_instigator = { text = operation.3020.desc.deception }
 					default = { text = operation.3020.desc.espionage }
 				}
 			}
@@ -2551,7 +2402,6 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = { # Scepticism
 		name = operation.3020.a
 		ai_chance = {
@@ -2559,7 +2409,6 @@ country_event = {
 			modifier = { factor = 10 has_ai_personality = xenophobic_isolationists }
 		}
 	}
-
 	option = { # Gratitude
 		name = operation.3020.b
 		add_favors = { target = event_target:smear_campaign_recipient value = 2 }
@@ -2603,7 +2452,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		event_target:smear_campaign_recipient = {
 			remove_country_flag = smear_campaign_espionage@event_target:smear_campaign_instigator
@@ -2622,7 +2470,6 @@ espionage_operation_event = {
 	id = operation.4000
 	title = operation.4000.name
 	espionage_operation = yes
-
 	desc = {
 		text = operation.4000.desc
 		trigger = {
@@ -2630,7 +2477,6 @@ espionage_operation_event = {
 			exists = event_target:crisis_beacon_option_2
 		}
 	}
-
 	desc = {
 		text = operation.4000.desc.single
 		trigger = {
@@ -2638,7 +2484,6 @@ espionage_operation_event = {
 			NOT = { exists = event_target:crisis_beacon_option_2 }
 		}
 	}
-
 	desc = { # No crisis target could be found
 		text = operation.4000.desc.error
 		trigger = {
@@ -2745,7 +2590,6 @@ espionage_operation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = operation.4000.a
 		trigger = {
@@ -2754,43 +2598,31 @@ espionage_operation_event = {
 		}
 		hidden_effect = {
 			event_target:crisis_beacon_option_1 = {
-				set_timed_country_flag = {
-					flag = crisis_beacon_from@root.owner
-					days = @CrisisBeaconTimer
-				}
+				set_timed_country_flag = { flag = crisis_beacon_from@root.owner days = @CrisisBeaconTimer }
 			}
 			set_espionage_operation_progress_locked = no
 		}
 	}
-
 	option = {
 		name = operation.4000.b
 		trigger = { exists = event_target:crisis_beacon_option_2 }
 		hidden_effect = {
 			event_target:crisis_beacon_option_2 = {
-				set_timed_country_flag = {
-					flag = crisis_beacon_from@root.owner
-					days = @CrisisBeaconTimer
-				}
+				set_timed_country_flag = { flag = crisis_beacon_from@root.owner days = @CrisisBeaconTimer }
 			}
 			set_espionage_operation_progress_locked = no
 		}
 	}
-
 	option = {
 		name = operation.4000.c
 		trigger = { exists = event_target:crisis_beacon_option_3 }
 		hidden_effect = {
 			event_target:crisis_beacon_option_3 = {
-				set_timed_country_flag = {
-					flag = crisis_beacon_from@root.owner
-					days = @CrisisBeaconTimer
-				}
+				set_timed_country_flag = { flag = crisis_beacon_from@root.owner days = @CrisisBeaconTimer }
 			}
 			set_espionage_operation_progress_locked = no
 		}
 	}
-
 	option = {
 		name = PROCEED
 		exclusive_trigger = {
@@ -2799,15 +2631,11 @@ espionage_operation_event = {
 		}
 		hidden_effect = {
 			event_target:crisis_beacon_option_1 = {
-				set_timed_country_flag = {
-					flag = crisis_beacon_from@root.owner
-					days = @CrisisBeaconTimer
-				}
+				set_timed_country_flag = { flag = crisis_beacon_from@root.owner days = @CrisisBeaconTimer }
 			}
 			set_espionage_operation_progress_locked = no
 		}
 	}
-
 	option = { # No target found
 		name = OK
 		exclusive_trigger = {
@@ -2833,7 +2661,6 @@ espionage_operation_event = {
 			save_event_target_as = crisis_beacon_crisis_country # Only works here, for loc.
 		}
 	}
-
 	option = {
 		name = OK
 	}
@@ -2860,7 +2687,6 @@ espionage_operation_event = {
 			capital_scope = { save_event_target_as = crisis_beacon_target_capital }
 		}
 	}
-
 	option = {
 		name = LAUNCH_OPERATION
 		hidden_effect = {
@@ -2869,7 +2695,6 @@ espionage_operation_event = {
 			}
 		}
 	}
-
 	after = {
 		set_espionage_operation_progress_locked = no
 	}
@@ -2879,7 +2704,6 @@ espionage_operation_event = {
 country_event = {
 	id = operation.4005
 	title = operation.4005.name
-
 	desc = {
 		trigger = {
 			hidden:event_target:crisis_beacon_crisis_country = {
@@ -2948,11 +2772,12 @@ country_event = {
 			country_event = { id = operation.4010 }
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		from.spynetwork = {
-			add_spy_network_level_on_success_effect = { VALUE = -80 }
+			add_spy_network_level_on_success_effect = {
+				VALUE = -80
+			}
 		}
 		from.owner = {
 			if = {
@@ -2961,14 +2786,11 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			if = {
 				limit = {
-					NOT = {
-						owner = { has_country_flag = operation_complete_crisis_beacon }
-					}
+					NOT = { owner = { has_country_flag = operation_complete_crisis_beacon } }
 				}
 				owner = {
 					change_variable = {
@@ -2993,23 +2815,18 @@ country_event = {
 	id = operation.4010
 	title = operation.4010.name
 	desc = operation.4010.desc
-
 	picture = {
 		trigger = {
 			event_target:crisis_beacon_crisis_country = { is_country_type = ai_empire }
 		}
 		picture = GFX_evt_unidentified_ship
 	}
-
 	picture = {
 		trigger = {
-			event_target:crisis_beacon_crisis_country = {
-				is_country_type = awakened_marauders
-			}
+			event_target:crisis_beacon_crisis_country = { is_country_type = awakened_marauders }
 		}
 		picture = GFX_evt_pirate_armada
 	}
-
 	picture = {
 		trigger = {
 			event_target:crisis_beacon_crisis_country = {
@@ -3022,14 +2839,12 @@ country_event = {
 		}
 		picture = GFX_evt_unknown_ships
 	}
-
 	picture = {
 		trigger = {
 			event_target:crisis_beacon_crisis_country = { is_country_type = gray }
 		}
 		picture = GFX_evt_gray_goo_ships
 	}
-
 	picture = {
 		trigger = {
 			event_target:crisis_beacon_crisis_country = { is_country_type = swarm }
@@ -3049,7 +2864,6 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = BATTLESTATIONS
 	}
@@ -3076,12 +2890,8 @@ country_event = {
 
 	immediate = {
 		from = { set_espionage_operation_progress_locked = yes }
-		set_timed_country_flag = {
-			flag = recent_op_contact_lost
-			days = @RandomOperationEventTimer
-		}
+		set_timed_country_flag = { flag = recent_op_contact_lost days = @RandomOperationEventTimer }
 	}
-
 	option = { # Find operatives
 		name = operation.5000.a
 		custom_tooltip = operation.5000.a.tooltip
@@ -3136,7 +2946,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = DISAVOW
 		custom_tooltip = operation.5000.b.tooltip
@@ -3161,7 +2970,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = operation.5000.c
 		icon = {
@@ -3308,7 +3116,6 @@ country_event = {
 		fromfrom.spynetwork = { add_spy_network_level = 10 }
 		fromfrom = { set_espionage_operation_progress_locked = no }
 	}
-
 	option = {
 		name = GOOD
 	}
@@ -3327,12 +3134,10 @@ country_event = {
 	trigger = {
 		exists = fromfrom
 	}
-
 	option = {
 		name = UNFORTUNATE
 		fromfrom.spynetwork = { add_spy_network_level = -5 }
 	}
-
 	after = {
 		fromfrom = { set_espionage_operation_progress_locked = no }
 	}
@@ -3356,12 +3161,8 @@ country_event = {
 
 	immediate = {
 		from = { set_espionage_operation_progress_locked = yes }
-		set_timed_country_flag = {
-			flag = recent_op_operative_spooked
-			days = @RandomOperationEventTimer
-		}
+		set_timed_country_flag = { flag = recent_op_operative_spooked days = @RandomOperationEventTimer }
 	}
-
 	option = { # Deny extra resources
 		name = operation.5005.a
 		hidden_effect = {
@@ -3383,7 +3184,6 @@ country_event = {
 		}
 		ai_chance = { factor = 10 }
 	}
-
 	option = { # Grant resources
 		name = operation.5005.b
 		allow = {
@@ -3415,7 +3215,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Bribery? (High income)
 		name = operation.5005.c
 		trigger = {
@@ -3423,10 +3222,7 @@ country_event = {
 			from.target = { is_fanatic_xenophobe = no is_fanatic_authoritarian = no }
 		}
 		allow = {
-			resource_stockpile_compare = {
-				resource = energy
-				value >= @OperationBribeThreshold3
-			}
+			resource_stockpile_compare = { resource = energy value >= @OperationBribeThreshold3 }
 		}
 		add_resource = { energy = @OperationBribeCost3 }
 		ai_chance = {
@@ -3437,21 +3233,15 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Bribery? (Medium income)
 		name = operation.5005.c
 		trigger = {
 			has_monthly_income = { resource = energy value >= 10 }
-			NOT = {
-				has_monthly_income = { resource = energy value >= 40 }
-			}
+			NOT = { has_monthly_income = { resource = energy value >= 40 } }
 			from.target = { is_fanatic_xenophobe = no is_fanatic_authoritarian = no }
 		}
 		allow = {
-			resource_stockpile_compare = {
-				resource = energy
-				value >= @OperationBribeThreshold2
-			}
+			resource_stockpile_compare = { resource = energy value >= @OperationBribeThreshold2 }
 		}
 		add_resource = { energy = @OperationBribeCost2 }
 		ai_chance = {
@@ -3462,7 +3252,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Bribery? (Low income)
 		name = operation.5005.c
 		trigger = {
@@ -3470,10 +3259,7 @@ country_event = {
 			from.target = { is_fanatic_xenophobe = no is_fanatic_authoritarian = no }
 		}
 		allow = {
-			resource_stockpile_compare = {
-				resource = energy
-				value >= @OperationBribeThreshold1
-			}
+			resource_stockpile_compare = { resource = energy value >= @OperationBribeThreshold1 }
 		}
 		add_resource = { energy = @OperationBribeCost1 }
 		ai_chance = {
@@ -3484,7 +3270,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Asset can handle this
 		name = operation.5005.d
 		custom_tooltip = tooltip_espionage_asset_guaranteed_resume
@@ -3508,7 +3293,6 @@ country_event = {
 		}
 		ai_chance = { factor = 20 }
 	}
-
 	after = {
 		from = { set_espionage_operation_progress_locked = no }
 	}
@@ -3535,10 +3319,7 @@ country_event = {
 			set_espionage_operation_progress_locked = yes
 			target = { set_country_flag = drones_apprehended_operatives@root }
 		}
-		set_timed_country_flag = {
-			flag = recent_op_apprehended_by_drones
-			days = @RandomOperationEventTimer
-		}
+		set_timed_country_flag = { flag = recent_op_apprehended_by_drones days = @RandomOperationEventTimer }
 	}
 
 	# The friendlier the target, the less chance of mishap.
@@ -3556,7 +3337,6 @@ country_event = {
 		}
 		ai_chance = { factor = 1 }
 	}
-
 	option = { # Needs diplomacy (friendly)
 		name = operation.5010.a
 		exclusive_trigger = {
@@ -3568,7 +3348,6 @@ country_event = {
 		}
 		ai_chance = { factor = 1 }
 	}
-
 	option = { # Needs diplomacy (unfriendly)
 		name = operation.5010.a
 		exclusive_trigger = {
@@ -3583,7 +3362,6 @@ country_event = {
 		}
 		ai_chance = { factor = 1 }
 	}
-
 	option = { # Expend an asset
 		name = operation.5010.b
 		custom_tooltip = tooltip_espionage_asset_guaranteed_resume
@@ -3628,7 +3406,6 @@ country_event = {
 		}
 		ai_chance = { factor = 10 }
 	}
-
 	after = {
 		from = { set_espionage_operation_progress_locked = no }
 	}
@@ -3639,22 +3416,18 @@ country_event = {
 country_event = {
 	id = operation.5011
 	title = operation.5011.name
-
 	desc = {
 		trigger = { is_hive_empire = no }
 		text = operation.5011.desc
 	}
-
 	desc = {
 		trigger = { is_hive_empire = yes }
 		text = operation.5011.desc.hive
 	}
-
 	picture = {
 		trigger = { is_hive_empire = no }
 		picture = GFX_evt_spymaster
 	}
-
 	picture = {
 		trigger = { is_hive_empire = yes }
 		picture = GFX_evt_synth_organic_relations
@@ -3669,7 +3442,6 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = GOOD
 	}
@@ -3691,12 +3463,8 @@ country_event = {
 
 	immediate = {
 		from = { set_espionage_operation_progress_locked = yes }
-		set_timed_country_flag = {
-			flag = recent_op_multiphasic_interference
-			days = @RandomOperationEventTimer
-		}
+		set_timed_country_flag = { flag = recent_op_multiphasic_interference days = @RandomOperationEventTimer }
 	}
-
 	option = { # Try to adapt
 		name = operation.5015.a
 		custom_tooltip = operation.5015.a.tooltip
@@ -3741,7 +3509,6 @@ country_event = {
 		}
 		ai_chance = { factor = 1 }
 	}
-
 	option = { # Expend an Asset
 		name = operation.5015.b
 		custom_tooltip = tooltip_espionage_asset_guaranteed_resume
@@ -3800,11 +3567,9 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = UNFORTUNATE
 	}
-
 	after = {
 		fromfrom = { set_espionage_operation_progress_locked = no }
 		hidden_effect = {
@@ -3843,16 +3608,11 @@ country_event = {
 
 	immediate = {
 		from = { set_espionage_operation_progress_locked = yes }
-		set_timed_country_flag = {
-			flag = recent_op_drones_hunted
-			days = @RandomOperationEventTimer
-		}
+		set_timed_country_flag = { flag = recent_op_drones_hunted days = @RandomOperationEventTimer }
 	}
-
 	after = {
 		from = { set_espionage_operation_progress_locked = no }
 	}
-
 	option = { # Drop a lure (food)
 		name = operation.5020.a
 		exclusive_trigger = {
@@ -3862,7 +3622,6 @@ country_event = {
 		add_resource = { food = -200 }
 		ai_chance = { factor = 3 }
 	}
-
 	option = { # Drop a lure (lithoids)
 		name = operation.5020.a
 		exclusive_trigger = {
@@ -3872,7 +3631,6 @@ country_event = {
 		add_resource = { minerals = -200 }
 		ai_chance = { factor = 2 }
 	}
-
 	option = { # Can't/won't afford a lure
 		name = operation.5020.b
 		from.spynetwork = {
@@ -3895,7 +3653,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Expend Warrior Drone asset
 		name = operation.5020.c
 		custom_tooltip = tooltip_espionage_asset_guaranteed_resume
@@ -3930,7 +3687,6 @@ country_event = {
 country_event = {
 	id = operation.5025
 	title = operation.5025.name
-
 	desc = {
 		text = operation.5025.desc
 		trigger = {
@@ -3939,7 +3695,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = operation.5025.desc.repeat
 		trigger = {
@@ -3961,12 +3716,8 @@ country_event = {
 			save_event_target_as = toxic_field_operation
 			target = { save_event_target_as = toxic_field_country }
 		}
-		set_timed_country_flag = {
-			flag = recent_op_toxic_field
-			days = @RandomOperationEventTimerLong
-		}
+		set_timed_country_flag = { flag = recent_op_toxic_field days = @RandomOperationEventTimerLong }
 	}
-
 	option = {
 		name = operation.5025.a
 		enable_special_project = {
@@ -3976,7 +3727,6 @@ country_event = {
 		}
 		ai_chance = { factor = 10 }
 	}
-
 	option = {
 		name = operation.5025.b
 		custom_tooltip = operation.5025.b.tooltip
@@ -4032,14 +3782,9 @@ country_event = {
 	}
 
 	immediate = {
-		event_target:toxic_field_operation = {
-			set_espionage_operation_progress_locked = no
-		}
-		event_target:toxic_field_country = {
-			set_country_flag = toxic_field_studied_by@root
-		}
+		event_target:toxic_field_operation = { set_espionage_operation_progress_locked = no }
+		event_target:toxic_field_country = { set_country_flag = toxic_field_studied_by@root }
 	}
-
 	option = {
 		name = GOOD
 	}
@@ -4058,16 +3803,11 @@ country_event = {
 	trigger = {
 		exists = event_target:toxic_field_operation
 		exists = event_target:toxic_field_country
-		NOT = {
-			event_target:toxic_field_country = {
-				has_country_flag = toxic_field_studied_by@root
-			}
-		}
+		NOT = { event_target:toxic_field_country = { has_country_flag = toxic_field_studied_by@root } }
 	}
 
 	immediate = {
 	}
-
 	option = {
 		name = ACKNOWLEDGED
 		hidden_effect = {
@@ -4090,7 +3830,6 @@ country_event = {
 country_event = {
 	id = operation.5030
 	title = operation.5030.name
-
 	desc = {
 		text = operation.5030.desc
 		trigger = {
@@ -4099,7 +3838,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = operation.5030.desc.repeat
 		trigger = {
@@ -4121,12 +3859,8 @@ country_event = {
 			save_event_target_as = excess_noise_operation
 			target = { save_event_target_as = excess_noise_country }
 		}
-		set_timed_country_flag = {
-			flag = recent_op_excess_noise
-			days = @RandomOperationEventTimerLong
-		}
+		set_timed_country_flag = { flag = recent_op_excess_noise days = @RandomOperationEventTimerLong }
 	}
-
 	option = {
 		name = operation.5030.a
 		enable_special_project = {
@@ -4136,7 +3870,6 @@ country_event = {
 		}
 		ai_chance = { factor = 10 }
 	}
-
 	option = {
 		name = operation.5030.b
 		custom_tooltip = operation.5030.b.tooltip
@@ -4179,14 +3912,9 @@ country_event = {
 	}
 
 	immediate = {
-		event_target:excess_noise_operation = {
-			set_espionage_operation_progress_locked = no
-		}
-		event_target:excess_noise_country = {
-			set_country_flag = excess_noise_studied_by@root
-		}
+		event_target:excess_noise_operation = { set_espionage_operation_progress_locked = no }
+		event_target:excess_noise_country = { set_country_flag = excess_noise_studied_by@root }
 	}
-
 	option = {
 		name = GOOD
 	}
@@ -4209,7 +3937,6 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = ACKNOWLEDGED
 		event_target:excess_noise_operation = {
@@ -4263,12 +3990,8 @@ country_event = {
 			set_espionage_operation_progress_locked = yes
 			target = { save_event_target_as = snuffedout_country } # Used in loc
 		}
-		set_timed_country_flag = {
-			flag = recent_op_snuffed_out
-			days = @RandomOperationEventTimer
-		}
+		set_timed_country_flag = { flag = recent_op_snuffed_out days = @RandomOperationEventTimer }
 	}
-
 	option = { # Try to cover up
 		name = MAKE_IT_SO
 		custom_tooltip = operation.5035.a.tooltip
@@ -4342,7 +4065,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = DISAVOW
 		custom_tooltip = operation.5035.b.tooltip
@@ -4419,7 +4141,6 @@ country_event = {
 	immediate = {
 		fromfrom = { set_espionage_operation_progress_locked = no }
 	}
-
 	option = {
 		name = GOOD
 	}
@@ -4430,16 +4151,12 @@ country_event = {
 country_event = {
 	id = operation.5037
 	title = operation.5037.name
-
 	desc = {
 		text = operation.5037.desc
 		trigger = {
-			NOT = {
-				fromfrom = { has_espionage_category = op_cat_provocation }
-			}
+			NOT = { fromfrom = { has_espionage_category = op_cat_provocation } }
 		}
 	}
-
 	desc = {
 		text = operation.5037.desc.provocation
 		trigger = {
@@ -4458,7 +4175,6 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = CURSES
 		fromfrom = {
@@ -4487,12 +4203,8 @@ country_event = {
 
 	immediate = {
 		from = { set_espionage_operation_progress_locked = yes }
-		set_timed_country_flag = {
-			flag = recent_op_drain_resources
-			days = @RandomOperationEventTimer
-		}
+		set_timed_country_flag = { flag = recent_op_drain_resources days = @RandomOperationEventTimer }
 	}
-
 	option = { # Reprimand
 		name = operation.5040.a
 		hidden_effect = {
@@ -4514,7 +4226,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Kill the operatives
 		name = operation.5040.b
 		trigger = {
@@ -4527,7 +4238,6 @@ country_event = {
 			spynetwork = { add_spy_network_level = -10 }
 		}
 	}
-
 	option = { # Piece of the action
 		name = operation.5040.c
 		allow = {
@@ -4569,7 +4279,6 @@ country_event = {
 	immediate = {
 		fromfrom = { set_espionage_operation_progress_locked = no }
 	}
-
 	option = {
 		name = GOOD
 		fromfrom.spynetwork = { add_spy_network_level = 2 }
@@ -4593,7 +4302,6 @@ country_event = {
 	immediate = {
 		fromfrom = { set_espionage_operation_progress_locked = no }
 	}
-
 	option = {
 		name = CURSES
 		fromfrom.spynetwork = {
@@ -4608,12 +4316,10 @@ country_event = {
 country_event = {
 	id = operation.5045
 	title = operation.5045.name
-
 	desc = {
 		text = operation.5045.desc.culture
 		trigger = { has_country_flag = operative_defects_culture }
 	}
-
 	desc = {
 		text = operation.5045.desc.turned
 		trigger = { has_country_flag = operative_defects_turned }
@@ -4635,10 +4341,7 @@ country_event = {
 			set_espionage_operation_progress_locked = yes
 			operation_choose_operative_role = yes # for scripted loc.
 		}
-		set_timed_country_flag = {
-			flag = recent_op_operative_defects
-			days = @RandomOperationEventTimer
-		}
+		set_timed_country_flag = { flag = recent_op_operative_defects days = @RandomOperationEventTimer }
 		random_list = {
 			1 = {
 				modifier = {
@@ -4671,7 +4374,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Accept the loss
 		name = operation.5045.a
 		from = { set_espionage_operation_progress_locked = no }
@@ -4718,7 +4420,6 @@ country_event = {
 		}
 		ai_chance = { factor = 10 }
 	}
-
 	option = { # Discipline Spymaster
 		name = operation.5045.b
 		trigger = {
@@ -4777,7 +4478,6 @@ country_event = {
 			modifier = { factor = 5 is_authoritarian = yes }
 		}
 	}
-
 	option = { # Cancel the Operation
 		name = DISAVOW
 		hidden_effect = {
@@ -4798,7 +4498,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		remove_country_flag = operative_defects_culture
 		remove_country_flag = operative_defects_turned
@@ -4810,7 +4509,6 @@ country_event = {
 country_event = {
 	id = operation.5050
 	title = operation.5050.name
-
 	desc = {
 		trigger = {
 			is_machine_empire = no
@@ -4818,7 +4516,6 @@ country_event = {
 		}
 		text = operation.5050.desc
 	}
-
 	desc = {
 		trigger = {
 			is_machine_empire = yes
@@ -4826,7 +4523,6 @@ country_event = {
 		}
 		text = operation.5050.desc.machine
 	}
-
 	desc = {
 		trigger = {
 			from.spynetwork.target = { has_hostile_espionage_operation_ethics = yes }
@@ -4840,13 +4536,9 @@ country_event = {
 	location = from.target
 
 	immediate = {
-		set_timed_country_flag = {
-			flag = recent_op_grisly_countermeasures
-			days = @RandomOperationEventTimerLong
-		}
+		set_timed_country_flag = { flag = recent_op_grisly_countermeasures days = @RandomOperationEventTimerLong }
 		from = { set_espionage_operation_progress_locked = yes }
 	}
-
 	option = { # Expend Sabotage asset to arrange an extraction
 		name = operation.5050.a
 		icon = {
@@ -4865,7 +4557,6 @@ country_event = {
 		}
 		from.spynetwork = { add_spy_network_level = -10 }
 	}
-
 	option = { # Proceed without the operative
 		name = operation.5050.b
 		from = {
@@ -4876,7 +4567,6 @@ country_event = {
 			add_modifier = { modifier = spynetwork_grisly_countermeasures years = 1 }
 		}
 	}
-
 	option = { # Attempt a disavowal of the whole operation
 		name = DISAVOW
 		custom_tooltip = operation.5050.c.tooltip
@@ -4936,12 +4626,10 @@ country_event = {
 country_event = {
 	id = operation.5055
 	title = operation.5055.name.regular
-
 	desc = {
 		text = operation.5055.desc.regular
 		trigger = { is_gestalt = no }
 	}
-
 	desc = {
 		text = operation.5055.desc.gestalt
 		trigger = { is_gestalt = yes }
@@ -4964,10 +4652,7 @@ country_event = {
 	}
 
 	immediate = {
-		set_timed_country_flag = {
-			flag = recent_op_confidence_wavers
-			days = @RandomOperationEventTimerLong
-		}
+		set_timed_country_flag = { flag = recent_op_confidence_wavers days = @RandomOperationEventTimerLong }
 		from = {
 			set_espionage_operation_progress_locked = yes
 			# Event targets to facilitate loc. in targeted and non-targed operations alike
@@ -4981,7 +4666,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Cut them loose
 		name = operation.5055.a
 		allow = {
@@ -4997,7 +4681,6 @@ country_event = {
 			add_modifier = { modifier = spynetwork_auxiliaries_lost years = 1 }
 		}
 	}
-
 	option = { # Embrace them; gamble on their being insightful
 		name = operation.5055.b
 		# custom_tooltip = operation.5055.b.tooltip
@@ -5022,7 +4705,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		from = { set_espionage_operation_progress_locked = no }
 	}
@@ -5046,7 +4728,6 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = EXCELLENT
 		fromfrom.spynetwork = {
@@ -5073,7 +4754,6 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = CURSES
 		fromfrom.spynetwork = {
@@ -5680,12 +5360,13 @@ espionage_operation_event = {
 		default_hide_option = yes
 		ai_chance = { factor = 0.1 }
 	}
-
 	after = {
 		if = {
 			limit = { exists = spynetwork } # Vfix log for unknow reason
 			spynetwork = {
-				add_spy_network_level_on_success_effect = { VALUE = -5 }
+				add_spy_network_level_on_success_effect = {
+					VALUE = -5
+				}
 			}
 			# Scope doubled up for tooltip reasons
 			spynetwork = {
@@ -5738,9 +5419,7 @@ espionage_operation_event = {
 				if = {
 					limit = {
 						exists = owner # Vfix log for unknow reason
-						NOT = {
-							owner = { has_country_flag = operation_complete_gather_information }
-						}
+						NOT = { owner = { has_country_flag = operation_complete_gather_information } }
 					}
 					owner = {
 						change_variable = {

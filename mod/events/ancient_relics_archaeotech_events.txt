@@ -1,9 +1,9 @@
 ################################
-
 #
 # Archaeotechnology Events
 #
 ###############################
+
 namespace = ancrel
 # Spawn Zroni Storm (when a Storm Caster starbase building is complete)
 system_event = {
@@ -59,9 +59,7 @@ system_event = {
 
 	trigger = {
 		exists = owner
-		NOT = {
-			owner = { has_modifier = sr_zro_deficit }
-		}
+		NOT = { owner = { has_modifier = sr_zro_deficit } }
 		has_modifier = zroni_storm
 		any_ship_in_system = {
 			is_ship_class = shipclass_starbase

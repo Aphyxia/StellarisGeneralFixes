@@ -9,7 +9,6 @@
 salvager_enclave_init_01 = {
 	class = "rl_standard_stars"
 	usage = misc_system_init
-
 	usage_odds = {
 		base = 0
 		modifier = { has_overlord_dlc = yes add = @spawn_system_extreme }
@@ -24,19 +23,15 @@ salvager_enclave_init_01 = {
 
 	max_instances = 1
 	spawn_chance = 100 # Guaranteed, assuming usage_odds passes
-
 	flags = { salvager_enclave_system enclave }
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 85
 	}
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 195
 	}
-
 	planet = {
 		count = 1
 		class = star
@@ -50,7 +45,6 @@ salvager_enclave_init_01 = {
 	}
 
 	change_orbit = 50
-
 	planet = {
 		count = 1
 		class = pc_barren
@@ -62,7 +56,6 @@ salvager_enclave_init_01 = {
 	}
 
 	change_orbit = 40
-
 	planet = {
 		count = 1
 		class = rl_unhabitable_planets
@@ -84,7 +77,10 @@ salvager_enclave_init_01 = {
 					class = SALVAGER
 					namelist = MAM4
 					portrait = random
-					traits = { ideal_planet_class = pc_habitat trait = random_traits }
+					traits = {
+						ideal_planet_class = pc_habitat
+						trait = random_traits
+					}
 				}
 				last_created_species = { save_event_target_as = salvager_enclave_species }
 				create_salvager_enclave_country = yes
@@ -94,7 +90,6 @@ salvager_enclave_init_01 = {
 	}
 
 	change_orbit = 35
-
 	planet = {
 		count = 2
 		class = pc_asteroid
@@ -105,13 +100,15 @@ salvager_enclave_init_01 = {
 			create_ambient_object = { type = small_debris_object }
 		}
 	}
-
 	init_effect = {
 		if = {
 			limit = { is_inside_nebula = no }
 			create_nebula = {
 				radius = 25
-				effect = { set_star_flag = salvager_nebula nebula_cloaking_effect = yes }
+				effect = {
+					set_star_flag = salvager_nebula
+					nebula_cloaking_effect = yes
+				}
 			}
 		}
 	}
@@ -121,7 +118,6 @@ salvager_enclave_init_01 = {
 salvager_enclave_init_02 = {
 	class = "rl_standard_stars"
 	usage = misc_system_init
-
 	usage_odds = {
 		base = 0
 		modifier = { has_overlord_dlc = yes add = @spawn_system_extreme }
@@ -142,14 +138,11 @@ salvager_enclave_init_02 = {
 
 	max_instances = 1
 	scaled_spawn_chance = 16 # scales by galaxy size (1000 stars = 10x base)
-
 	flags = { salvager_enclave_system enclave }
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 125
 	}
-
 	planet = {
 		count = 1
 		class = star
@@ -163,7 +156,6 @@ salvager_enclave_init_02 = {
 	}
 
 	change_orbit = 45
-
 	planet = {
 		count = 1
 		class = rl_unhabitable_planets
@@ -172,7 +164,6 @@ salvager_enclave_init_02 = {
 	}
 
 	change_orbit = 20
-
 	planet = {
 		count = 3
 		class = pc_asteroid
@@ -180,7 +171,6 @@ salvager_enclave_init_02 = {
 	}
 
 	change_orbit = 15
-
 	planet = {
 		count = 1
 		class = pc_barren
@@ -202,7 +192,10 @@ salvager_enclave_init_02 = {
 					class = SALVAGER
 					namelist = MAM1
 					portrait = random
-					traits = { ideal_planet_class = pc_habitat trait = random_traits }
+					traits = {
+						ideal_planet_class = pc_habitat
+						trait = random_traits
+					}
 				}
 				last_created_species = { save_event_target_as = salvager_enclave_species }
 				create_salvager_enclave_country = yes
@@ -212,7 +205,6 @@ salvager_enclave_init_02 = {
 	}
 
 	change_orbit = 90
-
 	planet = {
 		count = 1
 		class = pc_gas_giant
@@ -241,7 +233,6 @@ salvager_enclave_init_02 = {
 			}
 		}
 	}
-
 	init_effect = {
 	}
 }
@@ -250,7 +241,6 @@ salvager_enclave_init_02 = {
 salvager_enclave_init_03 = {
 	class = "sc_black_hole"
 	usage = misc_system_init
-
 	usage_odds = {
 		base = 0
 		modifier = { has_overlord_dlc = yes add = @spawn_system_extreme }
@@ -271,9 +261,7 @@ salvager_enclave_init_03 = {
 
 	max_instances = 1
 	scaled_spawn_chance = 12 # scales by galaxy size (1000 stars = 10x base)
-
 	flags = { salvager_enclave_system enclave }
-
 	planet = {
 		class = star
 		orbit_distance = 0
@@ -314,19 +302,16 @@ salvager_enclave_init_03 = {
 			}
 		}
 	}
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 55
 	}
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 155
 	}
 
 	change_orbit = 65
-
 	planet = {
 		class = pc_broken
 		size = 14
@@ -345,7 +330,10 @@ salvager_enclave_init_03 = {
 					class = SALVAGER
 					namelist = MAM1
 					portrait = random
-					traits = { ideal_planet_class = pc_habitat trait = random_traits }
+					traits = {
+						ideal_planet_class = pc_habitat
+						trait = random_traits
+					}
 				}
 				last_created_species = { save_event_target_as = salvager_enclave_species }
 				create_salvager_enclave_country = yes
@@ -355,7 +343,6 @@ salvager_enclave_init_03 = {
 	}
 
 	change_orbit = 35
-
 	planet = {
 		count = 3
 		class = pc_asteroid
@@ -366,7 +353,6 @@ salvager_enclave_init_03 = {
 	}
 
 	change_orbit = 35
-
 	planet = {
 		class = pc_broken
 		size = 14
@@ -392,7 +378,6 @@ salvager_enclave_init_03 = {
 	}
 
 	change_orbit = 15
-
 	planet = {
 		class = pc_broken
 		size = 14
@@ -412,7 +397,6 @@ salvager_enclave_init_03 = {
 shroudwalker_enclave_init_01 = {
 	class = "rl_standard_stars"
 	usage = misc_system_init
-
 	usage_odds = {
 		base = 0
 		modifier = { potential_shroudwalker_enclave = yes add = @spawn_system_enclave }
@@ -427,9 +411,7 @@ shroudwalker_enclave_init_01 = {
 
 	max_instances = 1
 	spawn_chance = 100 # Guaranteed, assuming usage_odds passes
-
 	flags = { shroudwalker_enclave_system enclave }
-
 	planet = {
 		count = 1
 		class = star
@@ -452,7 +434,6 @@ shroudwalker_enclave_init_01 = {
 	}
 
 	change_orbit = 45
-
 	planet = {
 		count = 1
 		orbit_distance = 100
@@ -486,14 +467,11 @@ shroudwalker_enclave_init_01 = {
 				solar_system = { save_global_event_target_as = shroudwalker_enclave_system }
 			}
 			else = {
-				event_target:shroudwalker_enclave_country = {
-					create_shroudwalker_enclave_starbase = yes
-				}
+				event_target:shroudwalker_enclave_country = { create_shroudwalker_enclave_starbase = yes }
 			}
 			add_deposit = d_zro_deposit_5
 		}
 	}
-
 	init_effect = {
 		if = {
 			limit = { exists = event_target:shroudwalker_enclave_country }
@@ -513,7 +491,6 @@ shroudwalker_enclave_init_01 = {
 shroudwalker_enclave_init_02 = {
 	class = "rl_standard_stars"
 	usage = misc_system_init
-
 	usage_odds = {
 		base = 0
 		modifier = { potential_shroudwalker_enclave = yes add = @spawn_system_extreme }
@@ -528,14 +505,11 @@ shroudwalker_enclave_init_02 = {
 
 	max_instances = 1
 	scaled_spawn_chance = 16	# scales by galaxy size (1000 stars = 10x base)
-
 	flags = { shroudwalker_enclave_system enclave }
-
 	asteroid_belt = {
 		type = crystal_asteroid_belt
 		radius = 125
 	}
-
 	planet = {
 		count = 1
 		class = star
@@ -546,7 +520,6 @@ shroudwalker_enclave_init_02 = {
 	}
 
 	change_orbit = 30
-
 	planet = {
 		count = 1
 		orbit_distance = 50
@@ -591,14 +564,11 @@ shroudwalker_enclave_init_02 = {
 				}
 			}
 			else = {
-				event_target:shroudwalker_enclave_country = {
-					create_shroudwalker_enclave_starbase = yes
-				}
+				event_target:shroudwalker_enclave_country = { create_shroudwalker_enclave_starbase = yes }
 			}
 			add_deposit = d_zro_deposit_5
 		}
 	}
-
 	init_effect = {
 		if = {
 			limit = {
@@ -629,7 +599,6 @@ shroudwalker_enclave_init_02 = {
 shroudwalker_enclave_init_03 = {
 	class = "sc_a"
 	usage = misc_system_init
-
 	usage_odds = {
 		base = 0
 		modifier = { potential_shroudwalker_enclave = yes add = @spawn_system_extreme }
@@ -644,24 +613,19 @@ shroudwalker_enclave_init_03 = {
 
 	max_instances = 1
 	scaled_spawn_chance = 12	# scales by galaxy size (1000 stars = 10x base)
-
 	flags = { shroudwalker_enclave_system enclave }
-
 	asteroid_belt = {
 		type = crystal_asteroid_belt
 		radius = 30
 	}
-
 	asteroid_belt = {
 		type = crystal_asteroid_belt
 		radius = 80
 	}
-
 	asteroid_belt = {
 		type = crystal_asteroid_belt
 		radius = 155
 	}
-
 	planet = {
 		count = 1
 		class = star
@@ -672,7 +636,6 @@ shroudwalker_enclave_init_03 = {
 	}
 
 	change_orbit = 70
-
 	planet = {
 		count = 5
 		class = pc_rare_crystal_asteroid
@@ -682,7 +645,6 @@ shroudwalker_enclave_init_03 = {
 	}
 
 	change_orbit = 20
-
 	planet = {
 		class = pc_shrouded
 		orbit_angle = { min = 90 max = 270 }
@@ -725,14 +687,11 @@ shroudwalker_enclave_init_03 = {
 				}
 			}
 			else = {
-				event_target:shroudwalker_enclave_country = {
-					create_shroudwalker_enclave_starbase = yes
-				}
+				event_target:shroudwalker_enclave_country = { create_shroudwalker_enclave_starbase = yes }
 			}
 			add_deposit = d_zro_deposit_5
 		}
 	}
-
 	init_effect = {
 		if = {
 			limit = {
@@ -760,7 +719,7 @@ shroudwalker_enclave_init_03 = {
 			create_fleet = {
 				name = "NAME_Psionic_Avatar"
 				effect = {
-					set_owner = PREV
+					set_owner = prev
 					set_fleet_flag = avatar_fleet
 					create_ship = {
 						name = "NAME_Avatar"
@@ -784,7 +743,7 @@ shroudwalker_enclave_init_03 = {
 				queue_actions = {
 					repeat = { # repeating it creates a visual effect of swooping around the planet
 						find_random_planet = {
-							found_planet = { move_to = this orbit_planet = THIS }
+							found_planet = { move_to = this orbit_planet = this }
 						}
 						wait = { duration = 15 }
 					}
@@ -798,7 +757,6 @@ shroudwalker_enclave_init_03 = {
 broken_shroudwalker_init_01 = {
 	class = "sc_trinary_2"
 	usage = misc_system_init
-
 	usage_odds = {
 		base = 0
 		modifier = { potential_shroudwalker_enclave = yes add = @spawn_system_extreme }
@@ -813,9 +771,7 @@ broken_shroudwalker_init_01 = {
 
 	max_instances = 1
 	spawn_chance = 33
-
 	flags = { broken_shroudwalker_enclave }
-
 	planet = {
 		name = "NAME_Mesembria"
 		class = star
@@ -846,32 +802,26 @@ broken_shroudwalker_init_01 = {
 			}
 		}
 	}
-
 	asteroid_belt = {
 		type = crystal_asteroid_belt
 		radius = 20
 	}
-
 	asteroid_belt = {
 		type = crystal_asteroid_belt
 		radius = 30
 	}
-
 	asteroid_belt = {
 		type = crystal_asteroid_belt
 		radius = 40
 	}
-
 	asteroid_belt = {
 		type = crystal_asteroid_belt
 		radius = 50
 	}
-
 	asteroid_belt = {
 		type = crystal_asteroid_belt
 		radius = 65
 	}
-
 	planet = {
 		name = "NAME_Auge"
 		count = 1
@@ -914,7 +864,6 @@ broken_shroudwalker_init_01 = {
 			prevent_anomaly = yes
 		}
 	}
-
 	planet = {
 		name = "NAME_Dysis"
 		count = 1
@@ -966,9 +915,7 @@ broken_shroudwalker_init_01 = {
 quantum_catapult_init_01 = {
 	class = sc_pulsar
 	usage = misc_system_init
-
 	flags = { ruined_catapult_system }
-
 	usage_odds = {
 		base = @spawn_system_extreme
 		modifier = { factor = 0 has_overlord_dlc = no }
@@ -976,7 +923,6 @@ quantum_catapult_init_01 = {
 
 	max_instances = 1
 	scaled_spawn_chance = 4
-
 	planet = {
 		class = star
 		orbit_distance = 0
@@ -987,7 +933,6 @@ quantum_catapult_init_01 = {
 	}
 
 	change_orbit = 45
-
 	planet = {
 		count = { min = 1 max = 6 }
 		orbit_distance = 20
@@ -999,7 +944,6 @@ quantum_catapult_init_01 = {
 			orbit_distance = 5
 		}
 	}
-
 	init_effect = {
 		spawn_megastructure = {
 			type = "quantum_catapult_ruined"
@@ -1045,16 +989,13 @@ quantum_catapult_init_01 = {
 # Ruined Orbital Ring
 orbital_ring_init_01 = {
 	class = "rl_binary_stars"
-
 	asteroid_belt = {
 		type = icy_asteroid_belt
 		radius = 145
 	}
-
 	flags = { ruined_orbital_ring_system }
 
 	usage = misc_system_init
-
 	usage_odds = {
 		base = @spawn_system_extreme
 		modifier = {
@@ -1075,7 +1016,6 @@ orbital_ring_init_01 = {
 
 	max_instances = 1
 	scaled_spawn_chance = 8	# by galaxy size
-
 	planet = {
 		count = 1
 		class = star
@@ -1084,7 +1024,6 @@ orbital_ring_init_01 = {
 		size = { min = 18 max = 30 }
 		has_ring = no
 	}
-
 	planet = {
 		count = 1
 		class = star
@@ -1092,7 +1031,6 @@ orbital_ring_init_01 = {
 		size = { min = 15 max = 25 }
 		has_ring = no
 	}
-
 	planet = {
 		count = 1
 		class = random_non_colonizable
@@ -1101,14 +1039,12 @@ orbital_ring_init_01 = {
 		size = { min = 8 max = 12 }
 		has_ring = no
 	}
-
 	planet = {
 		count = { min = 2 max = 3 }
 		class = pc_asteroid
 		orbit_distance = 15
 		orbit_angle = { min = 90 max = 270 }
 	}
-
 	planet = {
 		count = 1
 		class = random_colonizable
@@ -1122,14 +1058,12 @@ orbital_ring_init_01 = {
 			save_event_target_as = ruined_orbital_ring_planet
 		}
 	}
-
 	planet = {
 		count = { min = 1 max = 2 }
 		class = pc_ice_asteroid
 		orbit_distance = 20
 		orbit_angle = { min = 90 max = 270 }
 	}
-
 	init_effect = {
 		spawn_megastructure = {
 			type = "orbital_ring_ruined"
@@ -1164,15 +1098,12 @@ orbital_ring_init_01 = {
 overlord_system_init = {
 	class = "sc_pulsar"
 	usage = misc_system_init
-
 	usage_odds = {
 		base = 0 # Spawned via imperial_origin_start_effect in 01_start_of_game_effects.txt
 	}
 
 	max_instances = 1
-
 	flags = { overlord_empire_flag overlord_system_1_flag }
-
 	planet = {
 		class = star
 		orbit_distance = 0
@@ -1183,14 +1114,12 @@ overlord_system_init = {
 			clear_deposits = yes
 		}
 	}
-
 	planet = {
 		count = { min = 1 max = 2 }
 		class = pc_asteroid
 		orbit_distance = 30
 		orbit_angle = { min = 40 max = 100 }
 	}
-
 	planet = {
 		count = { min = 1 max = 2 }
 		orbit_distance = 30
@@ -1204,7 +1133,6 @@ overlord_system_init = {
 			orbit_distance = 5
 		}
 	}
-
 	planet = {
 		count = { min = 1 max = 2 }
 		orbit_distance = 30
@@ -1218,7 +1146,6 @@ overlord_system_init = {
 			orbit_distance = 5
 		}
 	}
-
 	planet = { # Colonizeable Planet
 		name = "NAME_Aix"
 		class = "pc_gaia"
@@ -1316,9 +1243,15 @@ overlord_system_init = {
 						}
 					}
 					# Resources
-					add_basic_resources_effect = { VALUE = 3000 }
-					add_manufactured_resources_effect = { VALUE = 1500 }
-					add_advanced_resources_effect = { VALUE = 1000 }
+					add_basic_resources_effect = {
+						VALUE = 3000
+					}
+					add_manufactured_resources_effect = {
+						VALUE = 1500
+					}
+					add_advanced_resources_effect = {
+						VALUE = 1000
+					}
 					# Tech
 					give_physics_tech_tier_1_effect = yes
 					give_physics_tech_tier_2_effect = yes
@@ -1330,9 +1263,7 @@ overlord_system_init = {
 					give_technology = { tech = tech_gateway_activation }
 					# Robots
 					create_built_robot_species = yes
-					last_created_species = {
-						save_global_event_target_as = origin_imperial_species_robot
-					}
+					last_created_species = { save_global_event_target_as = origin_imperial_species_robot }
 					# Policies
 					set_policy = {
 						policy = diplomatic_stance
@@ -1386,10 +1317,18 @@ overlord_system_init = {
 			}
 			while = {
 				count = 6
-				add_district_and_planet_size_if_needed_effect = { district = district_city }
-				add_district_and_planet_size_if_needed_effect = { district = district_mining }
-				add_district_and_planet_size_if_needed_effect = { district = district_farming }
-				add_district_and_planet_size_if_needed_effect = { district = district_generator }
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_city
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_mining
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_farming
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_generator
+				}
 			}
 			remove_all_buildings = yes
 			add_building = building_major_capital
@@ -1405,7 +1344,6 @@ overlord_system_init = {
 			validate_planet_buildings_and_districts = yes
 		}
 	}
-
 	planet = {
 		count = { min = 2 max = 4 }
 		orbit_distance = 30
@@ -1419,14 +1357,12 @@ overlord_system_init = {
 			orbit_distance = 5
 		}
 	}
-
 	planet = {
 		count = { min = 1 max = 2 }
 		class = pc_asteroid
 		orbit_distance = 25
 		orbit_angle = { min = 40 max = 100 }
 	}
-
 	init_effect = {
 		create_starbase = {
 			size = "starbase_starhold"
@@ -1451,9 +1387,7 @@ overlord_system_init = {
 				has_deposit_for = shipclass_research_station
 				has_research_station = no
 			}
-			create_research_station = {
-				owner = event_target:origin_imperial_homeland_country
-			}
+			create_research_station = { owner = event_target:origin_imperial_homeland_country }
 		}
 		spawn_megastructure = {
 			type = "gateway_derelict"
@@ -1463,17 +1397,14 @@ overlord_system_init = {
 			orbit_angle = 360		# range of the randomization
 		}
 	}
-
 	neighbor_system = {
 		hyperlane_jumps = { min = 1 max = 3 }
 		initializer = "overlord_system_2_init"
 	}
-
 	neighbor_system = {
 		hyperlane_jumps = { min = 1 max = 3 }
 		initializer = "overlord_system_3_init"
 	}
-
 	neighbor_system = {
 		trigger = {
 			count_neighbor_system = {
@@ -1483,7 +1414,6 @@ overlord_system_init = {
 		}
 		initializer = "overlord_system_4_init"
 	}
-
 	neighbor_system = {
 		trigger = {
 			NOR = {
@@ -1493,7 +1423,6 @@ overlord_system_init = {
 		}
 		initializer = "overlord_system_5_init"
 	}
-
 	neighbor_system = {
 		trigger = {
 			NOR = {
@@ -1503,7 +1432,6 @@ overlord_system_init = {
 		}
 		initializer = "overlord_system_6_init"
 	}
-
 	neighbor_system = {
 		trigger = {
 			NOR = {
@@ -1518,19 +1446,15 @@ overlord_system_init = {
 # Empire second system
 overlord_system_2_init = {
 	class = "rl_standard_stars"
-
 	flags = { overlord_empire_flag overlord_system_2_flag }
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 40
 	}
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 175
 	}
-
 	planet = {
 		count = 1
 		class = star
@@ -1548,7 +1472,6 @@ overlord_system_2_init = {
 		orbit_distance = 0
 		orbit_angle = { min = 40 max = 100 }
 	}
-
 	planet = { # Colonizeable Planet
 		class = "pc_continental"
 		orbit_distance = 20
@@ -1570,7 +1493,9 @@ overlord_system_2_init = {
 					can_be_modified = this
 					homeworld = this
 					namelist = this
-					traits = { ideal_planet_class = event_target:imperial_homeland_2 }
+					traits = {
+						ideal_planet_class = event_target:imperial_homeland_2
+					}
 				}
 			}
 			last_created_species = { save_event_target_as = local_imperial_species }
@@ -1583,10 +1508,18 @@ overlord_system_2_init = {
 			}
 			while = {
 				count = 3
-				add_district_and_planet_size_if_needed_effect = { district = district_city }
-				add_district_and_planet_size_if_needed_effect = { district = district_mining }
-				add_district_and_planet_size_if_needed_effect = { district = district_farming }
-				add_district_and_planet_size_if_needed_effect = { district = district_generator }
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_city
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_mining
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_farming
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_generator
+				}
 			}
 			remove_all_buildings = yes
 			add_building = building_major_capital
@@ -1599,7 +1532,6 @@ overlord_system_2_init = {
 			validate_planet_buildings_and_districts = yes
 		}
 	}
-
 	planet = {
 		count = { min = 1 max = 2 }
 		orbit_distance = 30
@@ -1613,7 +1545,6 @@ overlord_system_2_init = {
 			orbit_distance = 5
 		}
 	}
-
 	planet = {
 		count = 1
 		orbit_distance = 30
@@ -1627,7 +1558,6 @@ overlord_system_2_init = {
 			orbit_distance = 5
 		}
 	}
-
 	planet = {
 		count = { min = 1 max = 2 }
 		orbit_distance = 30
@@ -1649,7 +1579,6 @@ overlord_system_2_init = {
 		orbit_distance = 25
 		orbit_angle = { min = 40 max = 100 }
 	}
-
 	init_effect = {
 		create_starbase = {
 			size = "starbase_starhold"
@@ -1674,9 +1603,7 @@ overlord_system_2_init = {
 				has_deposit_for = shipclass_research_station
 				has_research_station = no
 			}
-			create_research_station = {
-				owner = event_target:origin_imperial_homeland_country
-			}
+			create_research_station = { owner = event_target:origin_imperial_homeland_country }
 		}
 	}
 }
@@ -1684,14 +1611,11 @@ overlord_system_2_init = {
 # Empire third system
 overlord_system_3_init = {
 	class = "rl_standard_stars"
-
 	flags = { overlord_empire_flag overlord_system_3_flag }
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 35
 	}
-
 	planet = {
 		count = 1
 		class = star
@@ -1702,7 +1626,6 @@ overlord_system_3_init = {
 	}
 
 	change_orbit = 30
-
 	planet = {
 		count = 2
 		class = pc_asteroid
@@ -1710,7 +1633,6 @@ overlord_system_3_init = {
 		orbit_angle = { min = 40 max = 100 }
 		size = 2
 	}
-
 	planet = { # Colonizeable Planet
 		class = "pc_ocean"
 		orbit_distance = 20
@@ -1732,7 +1654,9 @@ overlord_system_3_init = {
 					can_be_modified = this
 					homeworld = this
 					namelist = this
-					traits = { ideal_planet_class = event_target:imperial_homeland_3 }
+					traits = {
+						ideal_planet_class = event_target:imperial_homeland_3
+					}
 				}
 			}
 			last_created_species = { save_event_target_as = local_imperial_species }
@@ -1745,10 +1669,18 @@ overlord_system_3_init = {
 			}
 			while = {
 				count = 2
-				add_district_and_planet_size_if_needed_effect = { district = district_city }
-				add_district_and_planet_size_if_needed_effect = { district = district_mining }
-				add_district_and_planet_size_if_needed_effect = { district = district_farming }
-				add_district_and_planet_size_if_needed_effect = { district = district_generator }
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_city
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_mining
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_farming
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_generator
+				}
 			}
 			remove_all_buildings = yes
 			add_building = building_major_capital
@@ -1760,7 +1692,6 @@ overlord_system_3_init = {
 			validate_planet_buildings_and_districts = yes
 		}
 	}
-
 	planet = {
 		count = { min = 2 max = 3 }
 		orbit_distance = 30
@@ -1774,7 +1705,6 @@ overlord_system_3_init = {
 			orbit_distance = 5
 		}
 	}
-
 	planet = {
 		count = { min = 2 max = 3 }
 		orbit_distance = 30
@@ -1788,14 +1718,12 @@ overlord_system_3_init = {
 			orbit_distance = 5
 		}
 	}
-
 	planet = {
 		count = { min = 2 max = 3 }
 		class = pc_asteroid
 		orbit_distance = 25
 		orbit_angle = { min = 40 max = 100 }
 	}
-
 	init_effect = {
 		create_starbase = {
 			size = "starbase_starhold"
@@ -1820,9 +1748,7 @@ overlord_system_3_init = {
 				has_deposit_for = shipclass_research_station
 				has_research_station = no
 			}
-			create_research_station = {
-				owner = event_target:origin_imperial_homeland_country
-			}
+			create_research_station = { owner = event_target:origin_imperial_homeland_country }
 		}
 	}
 }
@@ -1830,9 +1756,7 @@ overlord_system_3_init = {
 # First vassal
 overlord_system_4_init = {
 	class = "rl_standard_stars"
-
 	flags = { overlord_empire_flag overlord_system_4_flag }
-
 	planet = {
 		count = 1
 		class = star
@@ -1841,7 +1765,6 @@ overlord_system_4_init = {
 		size = { min = 20 max = 30 }
 		has_ring = no
 	}
-
 	planet = {
 		count = 1
 		orbit_distance = 30
@@ -1855,14 +1778,12 @@ overlord_system_4_init = {
 			orbit_distance = 5
 		}
 	}
-
 	planet = {
 		count = { min = 1 max = 2 }
 		class = pc_asteroid
 		orbit_distance = 30
 		orbit_angle = { min = 40 max = 100 }
 	}
-
 	planet = { # Colonizeable Planet
 		class = "pc_arid"
 		orbit_distance = { min = 20 max = 35 }
@@ -1925,9 +1846,15 @@ overlord_system_4_init = {
 						event_target:new_science_ship_target = { assign_leader = last_created_leader }
 					}
 					# Resources
-					add_basic_resources_effect = { VALUE = 1000 }
-					add_manufactured_resources_effect = { VALUE = 500 }
-					add_advanced_resources_effect = { VALUE = 25 }
+					add_basic_resources_effect = {
+						VALUE = 1000
+					}
+					add_manufactured_resources_effect = {
+						VALUE = 500
+					}
+					add_advanced_resources_effect = {
+						VALUE = 25
+					}
 					# Policies
 					set_policy = {
 						policy = diplomatic_stance
@@ -1983,7 +1910,6 @@ overlord_system_4_init = {
 			generate_start_buildings_and_districts = yes
 		}
 	}
-
 	planet = {
 		count = { min = 1 max = 2 }
 		orbit_distance = 30
@@ -1997,7 +1923,6 @@ overlord_system_4_init = {
 			orbit_distance = 5
 		}
 	}
-
 	planet = {
 		count = { min = 2 max = 3 }
 		orbit_distance = 30
@@ -2011,14 +1936,12 @@ overlord_system_4_init = {
 			orbit_distance = 5
 		}
 	}
-
 	planet = {
 		count = { min = 1 max = 2 }
 		class = pc_asteroid
 		orbit_distance = 25
 		orbit_angle = { min = 40 max = 100 }
 	}
-
 	planet = {
 		orbit_distance = 30
 		class = random_non_colonizable
@@ -2030,7 +1953,6 @@ overlord_system_4_init = {
 			orbit_distance = 5
 		}
 	}
-
 	init_effect = {
 		create_starbase = {
 			size = "starbase_starport"
@@ -2045,18 +1967,14 @@ overlord_system_4_init = {
 				has_deposit_for = shipclass_mining_station
 				has_mining_station = no
 			}
-			create_mining_station = {
-				owner = event_target:origin_imperial_homeland_country_2
-			}
+			create_mining_station = { owner = event_target:origin_imperial_homeland_country_2 }
 		}
 		every_system_planet = {
 			limit = {
 				has_deposit_for = shipclass_research_station
 				has_research_station = no
 			}
-			create_research_station = {
-				owner = event_target:origin_imperial_homeland_country_2
-			}
+			create_research_station = { owner = event_target:origin_imperial_homeland_country_2 }
 		}
 	}
 }
@@ -2064,9 +1982,7 @@ overlord_system_4_init = {
 # Second vassal
 overlord_system_5_init = {
 	class = "rl_standard_stars"
-
 	flags = { overlord_empire_flag overlord_system_5_flag }
-
 	planet = {
 		count = 1
 		class = star
@@ -2075,14 +1991,12 @@ overlord_system_5_init = {
 		size = { min = 20 max = 30 }
 		has_ring = no
 	}
-
 	planet = {
 		count = { min = 2 max = 4 }
 		class = pc_asteroid
 		orbit_distance = 15
 		orbit_angle = { min = 40 max = 100 }
 	}
-
 	planet = {
 		count = { min = 1 max = 2 }
 		orbit_distance = 20
@@ -2096,7 +2010,6 @@ overlord_system_5_init = {
 			orbit_distance = 5
 		}
 	}
-
 	planet = { # Colonizeable Planet
 		class = "pc_continental"
 		orbit_distance = { min = 30 max = 45 }
@@ -2196,9 +2109,15 @@ overlord_system_5_init = {
 						}
 					}
 					# Resources
-					add_basic_resources_effect = { VALUE = 1000 }
-					add_manufactured_resources_effect = { VALUE = 500 }
-					add_advanced_resources_effect = { VALUE = 25 }
+					add_basic_resources_effect = {
+						VALUE = 1000
+					}
+					add_manufactured_resources_effect = {
+						VALUE = 500
+					}
+					add_advanced_resources_effect = {
+						VALUE = 25
+					}
 					# Policies
 					set_policy = {
 						policy = diplomatic_stance
@@ -2244,7 +2163,6 @@ overlord_system_5_init = {
 			generate_start_buildings_and_districts = yes
 		}
 	}
-
 	planet = {
 		class = pc_gas_giant
 		orbit_distance = 20
@@ -2256,14 +2174,12 @@ overlord_system_5_init = {
 			orbit_distance = 5
 		}
 	}
-
 	planet = {
 		count = { min = 2 max = 4 }
 		class = pc_asteroid
 		orbit_distance = 15
 		orbit_angle = { min = 40 max = 100 }
 	}
-
 	init_effect = {
 		create_starbase = {
 			size = "starbase_starport"
@@ -2278,18 +2194,14 @@ overlord_system_5_init = {
 				has_deposit_for = shipclass_mining_station
 				has_mining_station = no
 			}
-			create_mining_station = {
-				owner = event_target:origin_imperial_homeland_country_3
-			}
+			create_mining_station = { owner = event_target:origin_imperial_homeland_country_3 }
 		}
 		every_system_planet = {
 			limit = {
 				has_deposit_for = shipclass_research_station
 				has_research_station = no
 			}
-			create_research_station = {
-				owner = event_target:origin_imperial_homeland_country_3
-			}
+			create_research_station = { owner = event_target:origin_imperial_homeland_country_3 }
 		}
 	}
 }
@@ -2297,19 +2209,15 @@ overlord_system_5_init = {
 # Third vassal
 overlord_system_6_init = {
 	class = "rl_standard_stars"
-
 	flags = { overlord_empire_flag overlord_system_6_flag }
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 125
 	}
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 200
 	}
-
 	planet = {
 		count = 1
 		class = star
@@ -2318,7 +2226,6 @@ overlord_system_6_init = {
 		size = { min = 20 max = 30 }
 		has_ring = no
 	}
-
 	planet = {
 		orbit_distance = 40
 		class = random_non_colonizable
@@ -2330,7 +2237,6 @@ overlord_system_6_init = {
 			orbit_distance = 5
 		}
 	}
-
 	planet = { # Colonizeable Planet
 		class = "pc_arctic"
 		orbit_distance = 40
@@ -2393,9 +2299,15 @@ overlord_system_6_init = {
 					}
 					event_target:new_science_ship_target = { assign_leader = last_created_leader }
 					# Resources
-					add_basic_resources_effect = { VALUE = 1000 }
-					add_manufactured_resources_effect = { VALUE = 500 }
-					add_advanced_resources_effect = { VALUE = 25 }
+					add_basic_resources_effect = {
+						VALUE = 1000
+					}
+					add_manufactured_resources_effect = {
+						VALUE = 500
+					}
+					add_advanced_resources_effect = {
+						VALUE = 25
+					}
 					# Policies
 					set_policy = {
 						policy = diplomatic_stance
@@ -2470,7 +2382,6 @@ overlord_system_6_init = {
 		orbit_distance = 2
 		orbit_angle = { min = 40 max = 100 }
 	}
-
 	planet = {
 		count = 2
 		class = pc_gas_giant
@@ -2492,7 +2403,6 @@ overlord_system_6_init = {
 		orbit_distance = { min = 1 max = 3 }
 		orbit_angle = { min = 40 max = 100 }
 	}
-
 	init_effect = {
 		create_starbase = {
 			size = "starbase_starport"
@@ -2507,18 +2417,14 @@ overlord_system_6_init = {
 				has_deposit_for = shipclass_mining_station
 				has_mining_station = no
 			}
-			create_mining_station = {
-				owner = event_target:origin_imperial_homeland_country_4
-			}
+			create_mining_station = { owner = event_target:origin_imperial_homeland_country_4 }
 		}
 		every_system_planet = {
 			limit = {
 				has_deposit_for = shipclass_research_station
 				has_research_station = no
 			}
-			create_research_station = {
-				owner = event_target:origin_imperial_homeland_country_4
-			}
+			create_research_station = { owner = event_target:origin_imperial_homeland_country_4 }
 		}
 	}
 }
@@ -2526,9 +2432,7 @@ overlord_system_6_init = {
 # Fourth vassal
 overlord_system_7_init = {
 	class = "rl_standard_stars"
-
 	flags = { overlord_empire_flag overlord_system_7_flag }
-
 	planet = {
 		count = 1
 		class = star
@@ -2537,12 +2441,10 @@ overlord_system_7_init = {
 		size = { min = 20 max = 30 }
 		has_ring = no
 	}
-
 	asteroid_belt = {
 		type = icy_asteroid_belt
 		radius = 150
 	}
-
 	planet = {
 		count = { min = 0 max = 2 }
 		orbit_distance = 35
@@ -2557,14 +2459,12 @@ overlord_system_7_init = {
 	}
 
 	change_orbit = 10
-
 	planet = {
 		count = { min = 3 max = 4 }
 		class = pc_asteroid
 		orbit_distance = 0
 		orbit_angle = { min = 40 max = 90 }
 	}
-
 	planet = { # Colonizeable Planet
 		class = "pc_ocean"
 		orbit_distance = { min = 20 max = 35 }
@@ -2595,7 +2495,9 @@ overlord_system_7_init = {
 					civics = { civic = civic_free_traders civic = civic_ruthless_competition }
 					ethos = { ethic = ethic_fanatic_materialist ethic = ethic_xenophile }
 					origin = "origin_imperial_vassal"
-					effect = { save_global_event_target_as = origin_imperial_homeland_country_5 }
+					effect = {
+						save_global_event_target_as = origin_imperial_homeland_country_5
+					}
 				}
 			}
 			else = {
@@ -2609,7 +2511,9 @@ overlord_system_7_init = {
 					civics = { civic = civic_meritocracy civic = civic_corporate_dominion }
 					ethos = { ethic = ethic_fanatic_materialist ethic = ethic_xenophile }
 					origin = "origin_imperial_vassal"
-					effect = { save_global_event_target_as = origin_imperial_homeland_country_5 }
+					effect = {
+						save_global_event_target_as = origin_imperial_homeland_country_5
+					}
 				}
 			}
 			event_target:origin_imperial_homeland_country_5 = {
@@ -2669,9 +2573,15 @@ overlord_system_7_init = {
 					}
 				}
 				# Resources
-				add_basic_resources_effect = { VALUE = 1000 }
-				add_manufactured_resources_effect = { VALUE = 500 }
-				add_advanced_resources_effect = { VALUE = 25 }
+				add_basic_resources_effect = {
+					VALUE = 1000
+				}
+				add_manufactured_resources_effect = {
+					VALUE = 500
+				}
+				add_advanced_resources_effect = {
+					VALUE = 25
+				}
 				# Policies
 				set_policy = {
 					policy = diplomatic_stance
@@ -2716,7 +2626,6 @@ overlord_system_7_init = {
 			generate_start_buildings_and_districts = yes
 		}
 	}
-
 	planet = {
 		count = { min = 1 max = 2 }
 		orbit_distance = 30
@@ -2729,7 +2638,6 @@ overlord_system_7_init = {
 			orbit_distance = 5
 		}
 	}
-
 	planet = {
 		count = { min = 1 max = 2 }
 		orbit_distance = 20
@@ -2742,7 +2650,6 @@ overlord_system_7_init = {
 			orbit_distance = 5
 		}
 	}
-
 	init_effect = {
 		create_starbase = {
 			size = "starbase_starport"
@@ -2757,18 +2664,14 @@ overlord_system_7_init = {
 				has_deposit_for = shipclass_mining_station
 				has_mining_station = no
 			}
-			create_mining_station = {
-				owner = event_target:origin_imperial_homeland_country_5
-			}
+			create_mining_station = { owner = event_target:origin_imperial_homeland_country_5 }
 		}
 		every_system_planet = {
 			limit = {
 				has_deposit_for = shipclass_research_station
 				has_research_station = no
 			}
-			create_research_station = {
-				owner = event_target:origin_imperial_homeland_country_5
-			}
+			create_research_station = { owner = event_target:origin_imperial_homeland_country_5 }
 		}
 	}
 }
@@ -2776,9 +2679,7 @@ overlord_system_7_init = {
 # Overlord Colonies
 overlord_system_8_init = {
 	class = "rl_standard_stars"
-
 	flags = { overlord_empire_flag overlord_colony_flag }
-
 	planet = {
 		count = 1
 		class = star
@@ -2787,12 +2688,10 @@ overlord_system_8_init = {
 		size = { min = 20 max = 30 }
 		has_ring = no
 	}
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = { min = 35 max = 55 }
 	}
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = { min = 65 max = 85 }
@@ -2808,7 +2707,6 @@ overlord_system_8_init = {
 	}
 
 	change_orbit = 45
-
 	planet = {
 		count = 1
 		orbit_distance = 25
@@ -2847,7 +2745,9 @@ overlord_system_8_init = {
 						can_be_modified = this
 						homeworld = this
 						namelist = this
-						traits = { ideal_planet_class = event_target:imperial_colony }
+						traits = {
+							ideal_planet_class = event_target:imperial_colony
+						}
 					}
 				}
 				last_created_species = { save_event_target_as = local_imperial_species }
@@ -2858,10 +2758,18 @@ overlord_system_8_init = {
 					species = event_target:origin_imperial_species_robot
 					size = 1000
 				}
-				add_district_and_planet_size_if_needed_effect = { district = district_city }
-				add_district_and_planet_size_if_needed_effect = { district = district_mining }
-				add_district_and_planet_size_if_needed_effect = { district = district_farming }
-				add_district_and_planet_size_if_needed_effect = { district = district_generator }
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_city
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_mining
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_farming
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_generator
+				}
 				remove_all_buildings = yes
 				add_building = building_capital
 				add_building = building_bureaucratic_1
@@ -2873,14 +2781,12 @@ overlord_system_8_init = {
 	}
 
 	change_orbit = 45
-
 	planet = {
 		count = { min = 1 max = 3 }
 		orbit_distance = 25
 		class = random_non_colonizable
 		orbit_angle = { min = 90 max = 270 }
 	}
-
 	init_effect = {
 		create_starbase = {
 			size = "starbase_starhold"

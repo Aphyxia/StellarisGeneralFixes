@@ -5,7 +5,6 @@ holding_garrison = {
 	icon = holding_overlord_garrison
 	planet_limit = 1
 	category = army
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -15,12 +14,10 @@ holding_garrison = {
 			energy = @b1_upkeep
 		}
 	}
-
 	planet_modifier = {
 		planet_crime_add = -10
 		monthly_loyalty = 0.5
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			overlord_has_num_armies_on_planet = { NUM = 1 }
@@ -29,7 +26,6 @@ holding_garrison = {
 		pop_happiness = -0.05
 		monthly_loyalty = 0.5
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			overlord_has_num_armies_on_planet = { NUM = 2 }
@@ -38,7 +34,6 @@ holding_garrison = {
 		pop_happiness = -0.1
 		monthly_loyalty = 1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			overlord_has_more_than_num_armies_on_planet = { NUM = 2 }
@@ -47,11 +42,9 @@ holding_garrison = {
 		pop_happiness = -0.15
 		monthly_loyalty = 1.5
 	}
-
 	triggered_desc = {
 		text = holding_garrison_armies_desc
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
@@ -68,11 +61,9 @@ holding_orbital_assembly_complex = {
 		has_overlord_dlc = yes
 		is_artificial = no
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -83,11 +74,9 @@ holding_orbital_assembly_complex = {
 			alloys = 5
 		}
 	}
-
 	planet_modifier = {
 		planet_building_build_speed_mult = 0.10
 	}
-
 	triggered_desc = {
 		text = holding_orbital_assembly_complex_effect
 	}
@@ -105,13 +94,11 @@ holding_propaganda_office = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no } # presapient lifeforms
 	}
-
 	allow = {
 		is_occupied_flag = no
 		exists = planet
 		is_capital = yes
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -119,7 +106,6 @@ holding_propaganda_office = {
 		}
 		job_overlord_propagandist_add = 200
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -127,7 +113,6 @@ holding_propaganda_office = {
 		}
 		job_overlord_propagandist_drone_add = 200
 	}
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -151,11 +136,9 @@ holding_satellite_campus = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no }
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -163,7 +146,6 @@ holding_satellite_campus = {
 		}
 		job_overlord_academic_add = 200
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -171,7 +153,6 @@ holding_satellite_campus = {
 		}
 		job_overlord_academic_drone_add = 200
 	}
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -198,11 +179,9 @@ holding_emporium = {
 			overlord = { is_machine_empire = no is_hive_empire = no }
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -210,7 +189,6 @@ holding_emporium = {
 		}
 		job_overlord_trader_add = 200
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -218,7 +196,6 @@ holding_emporium = {
 		}
 		job_overlord_trader_drone_add = 200
 	}
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -243,7 +220,6 @@ holding_aid_agency = {
 		owner = { is_wilderness_empire = no }
 		exists = owner.overlord
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -255,7 +231,6 @@ holding_aid_agency = {
 			owner.overlord = { is_xenophobe = no }
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -263,7 +238,6 @@ holding_aid_agency = {
 		}
 		job_aid_worker_add = 200
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -271,11 +245,9 @@ holding_aid_agency = {
 		}
 		job_aid_worker_drone_add = 200
 	}
-
 	planet_modifier = {
 		monthly_loyalty = 0.5
 	}
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -328,7 +300,6 @@ holding_energy_requisitorium = {
 		has_overlord_dlc = yes
 		exists = owner.overlord
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -336,7 +307,6 @@ holding_energy_requisitorium = {
 			owner.overlord = { has_technology = tech_power_hub_2 }
 		}
 	}
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -347,19 +317,15 @@ holding_energy_requisitorium = {
 			exotic_gases = 1
 		}
 	}
-
 	planet_modifier = {
 		monthly_loyalty = -0.25
 	}
-
 	on_built = {
 		set_planet_flag = has_energy_requisitorium
 	}
-
 	on_destroy = {
 		remove_planet_flag = has_energy_requisitorium
 	}
-
 	triggered_desc = {
 		text = job_energy_requisitioned_effect_desc
 	}
@@ -376,7 +342,6 @@ holding_material_requisitorium = {
 		has_overlord_dlc = yes
 		exists = owner.overlord
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -384,7 +349,6 @@ holding_material_requisitorium = {
 			owner.overlord = { has_technology = tech_mineral_purification_2 }
 		}
 	}
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -395,23 +359,18 @@ holding_material_requisitorium = {
 			volatile_motes = 1
 		}
 	}
-
 	planet_modifier = {
 		monthly_loyalty = -0.5
 	}
-
 	on_built = {
 		set_planet_flag = has_material_requisitorium
 	}
-
 	on_destroy = {
 		remove_planet_flag = has_material_requisitorium
 	}
-
 	triggered_desc = {
 		text = job_minerals_requisitioned_effect_desc
 	}
-
 	triggered_desc = {
 		text = job_alloy_requisitioned_effect_desc
 	}
@@ -428,7 +387,6 @@ holding_produce_requisitorium = {
 		has_overlord_dlc = yes
 		exists = owner.overlord
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -436,7 +394,6 @@ holding_produce_requisitorium = {
 			owner.overlord = { has_technology = tech_food_processing_2 }
 		}
 	}
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -447,11 +404,9 @@ holding_produce_requisitorium = {
 			rare_crystals = 1
 		}
 	}
-
 	planet_modifier = {
 		monthly_loyalty = -0.25
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner.overlord
@@ -459,19 +414,15 @@ holding_produce_requisitorium = {
 		}
 		monthly_loyalty = -0.25
 	}
-
 	on_built = {
 		set_planet_flag = has_produce_requisitorium
 	}
-
 	on_destroy = {
 		remove_planet_flag = has_produce_requisitorium
 	}
-
 	triggered_desc = {
 		text = job_food_requisitioned_effect_desc
 	}
-
 	triggered_desc = {
 		trigger = {
 			exists = owner.overlord
@@ -487,7 +438,6 @@ holding_splinter_hive = {
 	icon = holding_splinter_hive
 	planet_limit = 1
 	category = pop_assembly
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -497,7 +447,6 @@ holding_splinter_hive = {
 			energy = @b1_upkeep
 		}
 	}
-
 	potential = {
 		has_overlord_dlc = yes
 		has_owner = yes
@@ -510,7 +459,6 @@ holding_splinter_hive = {
 			}
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -519,11 +467,9 @@ holding_splinter_hive = {
 		}
 		pop_amount >= 2500
 	}
-
 	planet_modifier = {
 		monthly_loyalty = -2
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -531,7 +477,6 @@ holding_splinter_hive = {
 		}
 		job_overlord_breeder_add = 100
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -539,7 +484,6 @@ holding_splinter_hive = {
 		}
 		job_overlord_breeder_drone_add = 100
 	}
-
 	on_built = {
 		add_blocker = { type = d_spawning_complex_blocker }
 		owner.overlord.capital_scope = {
@@ -547,7 +491,6 @@ holding_splinter_hive = {
 			refresh_splinter_hive_modifier = yes
 		}
 	}
-
 	on_destroy = {
 		if = {
 			limit = { has_deposit = d_spawning_complex_blocker }
@@ -579,11 +522,9 @@ holding_distributed_processing = {
 		}
 		has_overlord_dlc = yes
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -593,11 +534,9 @@ holding_distributed_processing = {
 			energy = @b1_upkeep
 		}
 	}
-
 	planet_modifier = {
 		monthly_loyalty = -2
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -605,7 +544,6 @@ holding_distributed_processing = {
 		}
 		job_mind_thrall_add = 400
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -621,7 +559,6 @@ holding_offspring_nest = {
 	icon = building_offspring_nest
 	planet_limit = 1
 	category = government
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -631,7 +568,6 @@ holding_offspring_nest = {
 			energy = @b1_upkeep
 		}
 	}
-
 	potential = {
 		has_owner = yes
 		has_overlord_dlc = yes
@@ -641,14 +577,12 @@ holding_offspring_nest = {
 			overlord = { is_hive_empire = yes has_origin = origin_progenitor_hive }
 		}
 	}
-
 	allow = {
 		NOR = {
 			is_occupied_flag = yes
 			owner = { has_origin = origin_progenitor_hive }
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -656,7 +590,6 @@ holding_offspring_nest = {
 		}
 		job_overlord_offspring_drone_feeder_add = 100
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -678,7 +611,6 @@ holding_offworld_foundry = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no }
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -689,7 +621,6 @@ holding_offworld_foundry = {
 			}
 		}
 	}
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -699,11 +630,9 @@ holding_offworld_foundry = {
 			energy = @b1_upkeep
 		}
 	}
-
 	planet_modifier = {
 		monthly_loyalty = -1.5
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -711,7 +640,6 @@ holding_offworld_foundry = {
 		}
 		job_overlord_metallurgist_add = 200
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -719,7 +647,6 @@ holding_offworld_foundry = {
 		}
 		job_overlord_foundry_drone_add = 200
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -727,7 +654,6 @@ holding_offworld_foundry = {
 		}
 		job_overlord_fabricator_add = 200
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -735,7 +661,6 @@ holding_offworld_foundry = {
 		}
 		job_overlord_catalytic_technician_add = 200
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -743,7 +668,6 @@ holding_offworld_foundry = {
 		}
 		job_overlord_catalytic_drone_add = 200
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		NOT = {
@@ -766,7 +690,6 @@ holding_overlord_vigil_command = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no }
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -782,7 +705,6 @@ holding_overlord_vigil_command = {
 			}
 		}
 	}
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -792,7 +714,6 @@ holding_overlord_vigil_command = {
 			energy = @b1_upkeep
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -800,7 +721,6 @@ holding_overlord_vigil_command = {
 		}
 		job_overlord_beholder_add = 100
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -808,7 +728,6 @@ holding_overlord_vigil_command = {
 		}
 		job_overlord_beholder_drone_add = 100
 	}
-
 	triggered_country_modifier = {
 		potential = {
 			owner = {
@@ -817,7 +736,6 @@ holding_overlord_vigil_command = {
 		}
 		starbase_defense_platform_capacity_add = 1
 	}
-
 	triggered_country_modifier = {
 		potential = {
 			owner = {
@@ -826,7 +744,6 @@ holding_overlord_vigil_command = {
 		}
 		starbase_defense_platform_capacity_add = 2
 	}
-
 	triggered_country_modifier = {
 		potential = {
 			owner = {
@@ -835,7 +752,6 @@ holding_overlord_vigil_command = {
 		}
 		starbase_defense_platform_capacity_add = 4
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		NOT = {
@@ -856,7 +772,6 @@ holding_parasitic_algorithms = {
 	potential = {
 		has_overlord_dlc = yes
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -872,7 +787,6 @@ holding_parasitic_algorithms = {
 			}
 		}
 	}
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -882,24 +796,19 @@ holding_parasitic_algorithms = {
 			energy = @b1_upkeep
 		}
 	}
-
 	country_modifier = {
 		all_technology_research_speed = 0.03
 		planet_researchers_upkeep_mult = 0.03
 	}
-
 	planet_modifier = {
 		monthly_loyalty = -1
 	}
-
 	on_built = {
 		set_planet_flag = has_science_ministry
 	}
-
 	on_destroy = {
 		remove_planet_flag = has_science_ministry
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		NOT = {
@@ -908,7 +817,6 @@ holding_parasitic_algorithms = {
 			}
 		}
 	}
-
 	triggered_desc = {
 		text = holding_parasitic_algorithms_effect_desc
 	}
@@ -920,7 +828,6 @@ holding_noble_vacation_homes = {
 	icon = building_palace
 	planet_limit = 1
 	category = amenity
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -930,21 +837,17 @@ holding_noble_vacation_homes = {
 			energy = @b1_upkeep
 		}
 	}
-
 	potential = {
 		has_owner = yes
 		exists = owner.overlord
 		owner.overlord = { has_valid_civic = civic_aristocratic_elite }
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	planet_modifier = {
 		monthly_loyalty = -1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -952,7 +855,6 @@ holding_noble_vacation_homes = {
 		}
 		planet_amenities_add = -1500
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -960,21 +862,18 @@ holding_noble_vacation_homes = {
 		}
 		planet_amenities_no_happiness_add = -1500
 	}
-
 	on_built = {
 		owner.overlord.capital_scope = {
 			append_noble_vacation_home = yes
 			refresh_noble_vacation_home_modifier = yes
 		}
 	}
-
 	on_destroy = {
 		owner.overlord.capital_scope = {
 			remove_noble_vacation_home = yes
 			refresh_noble_vacation_home_modifier = yes
 		}
 	}
-
 	triggered_desc = {
 		text = holding_noble_vacation_homes_effect
 	}
@@ -986,7 +885,6 @@ holding_dread_outpost = {
 	icon = building_dread_encampment
 	planet_limit = 1
 	category = army
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -996,7 +894,6 @@ holding_dread_outpost = {
 			energy = @b1_upkeep
 		}
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -1005,12 +902,10 @@ holding_dread_outpost = {
 			overlord = { is_reanimator = yes }
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		owner = { is_reanimator = no is_machine_empire = no }
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1018,7 +913,6 @@ holding_dread_outpost = {
 		}
 		job_overlord_necromancer_add = 200
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1026,11 +920,9 @@ holding_dread_outpost = {
 		}
 		job_overlord_necromancer_drone_add = 200
 	}
-
 	on_built = {
 		set_planet_flag = active_dread_outpost
 	}
-
 	on_destroy = {
 		remove_planet_flag = active_dread_outpost
 	}
@@ -1042,7 +934,6 @@ holding_communal_housing_outreach = {
 	icon = building_residence
 	planet_limit = 1
 	category = amenity
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -1052,24 +943,18 @@ holding_communal_housing_outreach = {
 			energy = @b1_upkeep
 		}
 	}
-
 	potential = {
 		has_owner = yes
 		exists = owner.overlord
 		owner.overlord = { has_valid_civic = civic_shared_burden }
-		NOT = {
-			owner = { has_valid_civic = civic_shared_burden }
-		}
+		NOT = { owner = { has_valid_civic = civic_shared_burden } }
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	planet_modifier = {
 		planet_amenities_add = 750
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1077,7 +962,6 @@ holding_communal_housing_outreach = {
 		}
 		planet_housing_add = 1000
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1085,7 +969,6 @@ holding_communal_housing_outreach = {
 		}
 		planet_building_build_speed_mult = 0.15
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1093,7 +976,6 @@ holding_communal_housing_outreach = {
 		}
 		monthly_loyalty = -0.5
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1101,7 +983,6 @@ holding_communal_housing_outreach = {
 		}
 		monthly_loyalty = 1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1117,7 +998,6 @@ holding_idyllic_bloom = {
 	icon = building_gaiaseeders_4
 	planet_limit = 1
 	category = government
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -1130,7 +1010,6 @@ holding_idyllic_bloom = {
 			multiplier = value:overlord_gaiaseeder_upkeep
 		}
 	}
-
 	potential = {
 		has_owner = yes
 		exists = owner.overlord
@@ -1144,16 +1023,13 @@ holding_idyllic_bloom = {
 			is_planet_class = pc_relic
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		can_build_overlord_gaiaseeder = yes
 	}
-
 	planet_modifier = {
 		pop_environment_tolerance = 0.2
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1161,17 +1037,13 @@ holding_idyllic_bloom = {
 		}
 		monthly_loyalty = -0.5
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
-			NOT = {
-				owner = { has_ascension_perk = ap_hydrocentric }
-			}
+			NOT = { owner = { has_ascension_perk = ap_hydrocentric } }
 		}
 		monthly_loyalty = 1
 	}
-
 	on_built = {
 		set_timed_planet_flag = { flag = anti_cheese_idyllic_bloom_flag days = 3599 }
 		set_saved_date = {
@@ -1183,16 +1055,13 @@ holding_idyllic_bloom = {
 			country_event = { id = plant.105 days = 3600 }
 		}
 	}
-
 	on_destroy = {
 		remove_planet_flag = anti_cheese_idyllic_bloom_flag
 	}
-
 	triggered_desc = {
 		trigger = { has_planet_flag = anti_cheese_idyllic_bloom_flag }
 		text = holding_idyllic_bloom_effect_timer
 	}
-
 	triggered_desc = {
 		trigger = {
 			NOT = { has_planet_flag = anti_cheese_idyllic_bloom_flag }
@@ -1207,7 +1076,6 @@ holding_reemployment_center = {
 	icon = building_posthumous_employment_center
 	planet_limit = 1
 	category = pop_assembly
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -1217,21 +1085,16 @@ holding_reemployment_center = {
 			energy = @b1_upkeep
 		}
 	}
-
 	potential = {
 		has_owner = yes
 		exists = owner.overlord
 		owner.overlord = { has_valid_civic = civic_permanent_employment }
-		NOT = {
-			owner = { has_valid_civic = civic_permanent_employment }
-		}
+		NOT = { owner = { has_valid_civic = civic_permanent_employment } }
 		owner = { is_machine_empire = no is_wilderness_empire = no }
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1239,7 +1102,6 @@ holding_reemployment_center = {
 		}
 		job_overlord_reassigner_add = 100
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1247,7 +1109,6 @@ holding_reemployment_center = {
 		}
 		job_overlord_reassigner_drone_add = 100
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1255,7 +1116,6 @@ holding_reemployment_center = {
 		}
 		monthly_loyalty = -0.5
 	}
-
 	triggered_desc = {
 		trigger = { has_planet_flag = reemployment_center_timer }
 		text = holding_reemployment_center_effect
@@ -1268,7 +1128,6 @@ holding_recruitment_office = {
 	icon = holding_recruitment_office
 	planet_limit = 1
 	category = army
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -1278,7 +1137,6 @@ holding_recruitment_office = {
 			energy = @b1_upkeep
 		}
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -1287,11 +1145,9 @@ holding_recruitment_office = {
 			overlord = { has_valid_civic = civic_citizen_service }
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1299,7 +1155,6 @@ holding_recruitment_office = {
 		}
 		job_overlord_recruiter_add = 200
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1307,11 +1162,9 @@ holding_recruitment_office = {
 		}
 		job_overlord_recruiter_drone_add = 200
 	}
-
 	triggered_country_modifier = {
 		country_naval_cap_add = 10
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1319,7 +1172,6 @@ holding_recruitment_office = {
 		}
 		monthly_loyalty = -0.5
 	}
-
 	on_built = {
 		planet_event = { id = subject.5010 days = 1800 }
 	}
@@ -1331,7 +1183,6 @@ holding_park_ranger_lodge = {
 	icon = holding_park_ranger_lodge
 	planet_limit = 1
 	category = amenity
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -1341,7 +1192,6 @@ holding_park_ranger_lodge = {
 			energy = @b1_upkeep
 		}
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -1357,7 +1207,6 @@ holding_park_ranger_lodge = {
 			is_artificial = yes
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -1369,7 +1218,6 @@ holding_park_ranger_lodge = {
 			owner = { is_wilderness_empire = no }
 		}
 	}
-
 	destroy_trigger = {
 		OR = {
 			is_planet_class = pc_city
@@ -1378,7 +1226,6 @@ holding_park_ranger_lodge = {
 			is_planet_class = pc_relic
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1386,7 +1233,6 @@ holding_park_ranger_lodge = {
 		}
 		job_overlord_ranger_add = 100
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1394,11 +1240,9 @@ holding_park_ranger_lodge = {
 		}
 		job_overlord_ranger_drone_add = 100
 	}
-
 	on_built = {
 		add_blocker = { type = d_nature_preserve_blocker }
 	}
-
 	on_destroy = {
 		if = {
 			limit = { has_deposit = d_nature_preserve_blocker }
@@ -1413,14 +1257,12 @@ holding_tree_of_life_sapling = {
 	icon = holding_tree_of_life_sapling
 	planet_limit = 1
 	category = resource
-
 	resources = {
 		category = planet_holdings
 		cost = {
 			food = 1000
 		}
 	}
-
 	potential = {
 		has_owner = yes
 		exists = owner.overlord
@@ -1433,7 +1275,6 @@ holding_tree_of_life_sapling = {
 			is_artificial = yes
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -1441,7 +1282,6 @@ holding_tree_of_life_sapling = {
 			owner = { is_wilderness_empire = no }
 		}
 	}
-
 	destroy_trigger = {
 		OR = {
 			is_planet_class = pc_city
@@ -1449,13 +1289,11 @@ holding_tree_of_life_sapling = {
 			is_planet_class = pc_relic
 		}
 	}
-
 	planet_modifier = {
 		monthly_loyalty = 1
 		pop_environment_tolerance = 0.1
 		planet_farmers_food_produces_add = 1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1463,7 +1301,6 @@ holding_tree_of_life_sapling = {
 		}
 		job_overlord_arborist_add = 100
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1479,7 +1316,6 @@ holding_experimental_crater = {
 	icon = holding_experimental_crater
 	planet_limit = 1
 	category = research
-
 	resources = {
 		category = planet_holdings
 		produces = {
@@ -1487,21 +1323,17 @@ holding_experimental_crater = {
 			physics_research = 4
 		}
 	}
-
 	potential = {
 		has_owner = yes
 		exists = owner.overlord
 		owner.overlord = { has_origin = origin_lithoid }
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	planet_modifier = {
 		monthly_loyalty = -1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1509,7 +1341,6 @@ holding_experimental_crater = {
 		}
 		job_miner_add = 300
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1517,11 +1348,9 @@ holding_experimental_crater = {
 		}
 		job_mining_drone_add = 300
 	}
-
 	on_built = {
 		planet_event = { id = subject.5005 days = 360 }
 	}
-
 	triggered_desc = {
 		text = holding_experimental_crater_effect
 	}
@@ -1533,21 +1362,18 @@ holding_organic_sanctuary = {
 	icon = building_organic_sanctuary
 	planet_limit = 1
 	category = unity
-
 	resources = {
 		category = planet_holdings
 		upkeep = {
 			consumer_goods = 10
 		}
 	}
-
 	potential = {
 		has_owner = yes
 		exists = owner.overlord
 		owner.overlord = { has_valid_civic = civic_machine_servitor }
 		owner = { is_machine_empire = no }
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -1555,7 +1381,6 @@ holding_organic_sanctuary = {
 			owner = { is_wilderness_empire = no }
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1564,7 +1389,6 @@ holding_organic_sanctuary = {
 		job_overlord_bio_trophy_add = 500
 		monthly_loyalty = 0.5
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1589,15 +1413,10 @@ holding_franchise_headquarters = {
 			overlord = { has_civic = civic_franchising }
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
-		custom_tooltip = {
-			fail_text = no_branch_office
-			has_branch_office = owner.overlord
-		}
+		custom_tooltip = { fail_text = no_branch_office has_branch_office = owner.overlord }
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		NAND = {
@@ -1605,7 +1424,6 @@ holding_franchise_headquarters = {
 			has_branch_office = owner.overlord
 		}
 	}
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -1615,42 +1433,35 @@ holding_franchise_headquarters = {
 			energy = @b1_upkeep
 		}
 	}
-
 	on_built = {
 		set_planet_flag = has_franchise_headquarters
 	}
-
 	on_destroy = {
 		remove_planet_flag = has_franchise_headquarters
 	}
-
 	planet_modifier = {
 		monthly_loyalty = -0.5
 		job_overlord_manager_add = 200
 		planet_traders_trade_produces_add = -2
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			owner.overlord = { is_fanatic_spiritualist = yes }
 		}
 		pop_ethic_spiritualist_attraction_mult = 1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			owner.overlord = { is_fanatic_materialist = yes }
 		}
 		pop_ethic_materialist_attraction_mult = 1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			owner.overlord = { is_fanatic_xenophobe = yes }
 		}
 		pop_ethic_xenophobe_attraction_mult = 1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			owner.overlord = { is_fanatic_xenophile = yes }
@@ -1673,11 +1484,9 @@ holding_franchise_headquarters = {
 		}
 		pop_ethic_egalitarian_attraction_mult = 1
 	}
-
 	triggered_desc = {
 		text = holding_franchise_headquarters_effect
 	}
-
 	triggered_desc = {
 		trigger = {
 			exists = owner.overlord
@@ -1693,7 +1502,6 @@ holding_sacrificial_shrine = {
 	icon = building_sacrificial_temple_2
 	planet_limit = 1
 	category = unity
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -1703,23 +1511,19 @@ holding_sacrificial_shrine = {
 			energy = @b1_upkeep
 		}
 	}
-
 	potential = {
 		has_owner = yes
 		exists = owner.overlord
 		owner.overlord = { is_death_cult_empire = yes }
 		owner = { is_machine_empire = no is_wilderness_empire = no }
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_machine_empire = yes }
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1727,7 +1531,6 @@ holding_sacrificial_shrine = {
 		}
 		monthly_loyalty = -0.5
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1735,7 +1538,6 @@ holding_sacrificial_shrine = {
 		}
 		job_overlord_mortal_initiate_add = 200
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1751,7 +1553,6 @@ holding_toxic_bath = {
 	icon = building_toxic_bath
 	planet_limit = 1
 	category = amenity
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -1761,18 +1562,15 @@ holding_toxic_bath = {
 			consumer_goods = @b1_upkeep
 		}
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_gestalt = no }
 		exists = owner.overlord
 		owner.overlord = { has_toxic_baths = yes }
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		NAND = {
@@ -1780,7 +1578,6 @@ holding_toxic_bath = {
 			owner.overlord = { has_toxic_baths = yes }
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1788,7 +1585,6 @@ holding_toxic_bath = {
 		}
 		monthly_loyalty = -0.5
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1804,7 +1600,6 @@ holding_toxic_bath_hive = {
 	icon = building_toxic_bath_hive
 	planet_limit = 1
 	category = amenity
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -1814,18 +1609,15 @@ holding_toxic_bath_hive = {
 			food = @b2_upkeep
 		}
 	}
-
 	potential = {
 		has_owner = yes
 		exists = owner.overlord
 		owner.overlord = { has_toxic_baths = yes }
 		owner = { is_hive_empire = yes is_wilderness_empire = no }
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		NAND = {
@@ -1833,7 +1625,6 @@ holding_toxic_bath_hive = {
 			owner.overlord = { has_toxic_baths = yes }
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1841,7 +1632,6 @@ holding_toxic_bath_hive = {
 		}
 		monthly_loyalty = -0.5
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1849,7 +1639,6 @@ holding_toxic_bath_hive = {
 		}
 		job_overlord_bath_attendant_hive_add = 200
 	}
-
 	triggered_desc = {
 		trigger = {
 			has_owner = yes
@@ -1865,7 +1654,6 @@ holding_toxic_bath_machine = {
 	icon = building_toxic_bath_machine
 	planet_limit = 1
 	category = amenity
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -1875,18 +1663,15 @@ holding_toxic_bath_machine = {
 			minerals = @b2_upkeep
 		}
 	}
-
 	potential = {
 		has_owner = yes
 		exists = owner.overlord
 		owner.overlord = { has_toxic_baths = yes }
 		owner = { is_machine_empire = yes }
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		NAND = {
@@ -1894,7 +1679,6 @@ holding_toxic_bath_machine = {
 			owner.overlord = { has_toxic_baths = yes }
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1902,7 +1686,6 @@ holding_toxic_bath_machine = {
 		}
 		monthly_loyalty = -0.5
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1910,7 +1693,6 @@ holding_toxic_bath_machine = {
 		}
 		job_overlord_bath_attendant_machine_add = 200
 	}
-
 	triggered_desc = {
 		trigger = {
 			has_owner = yes
@@ -1926,7 +1708,6 @@ holding_knight_commandery = {
 	icon = building_order_holding
 	planet_limit = 1
 	category = government
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -1936,7 +1717,6 @@ holding_knight_commandery = {
 			energy = @b1_upkeep
 		}
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -1947,14 +1727,12 @@ holding_knight_commandery = {
 			}
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		exists = planet
 		is_capital = yes
 		pop_amount >= 5000
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		NAND = {
@@ -1962,11 +1740,9 @@ holding_knight_commandery = {
 			owner.overlord = { has_origin = origin_toxic_knights }
 		}
 	}
-
 	planet_modifier = {
 		monthly_loyalty = -0.5
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1974,7 +1750,6 @@ holding_knight_commandery = {
 		}
 		job_overlord_knight_add = 100
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1982,7 +1757,6 @@ holding_knight_commandery = {
 		}
 		job_overlord_knight_drone_add = 100
 	}
-
 	country_modifier = {
 		country_naval_cap_add = 4
 		knight_quest_progress_add = 0.025
@@ -1995,7 +1769,6 @@ holding_transcendental_retreat = {
 	icon = building_transcendental_retreat
 	planet_limit = 1
 	category = amenity
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -2005,7 +1778,6 @@ holding_transcendental_retreat = {
 			minerals = @b2_upkeep
 		}
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -2013,11 +1785,9 @@ holding_transcendental_retreat = {
 			overlord = { is_natural_design_empire = yes }
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		NAND = {
@@ -2025,7 +1795,6 @@ holding_transcendental_retreat = {
 			owner.overlord = { is_natural_design_empire = yes }
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -2033,7 +1802,6 @@ holding_transcendental_retreat = {
 		}
 		monthly_loyalty = -0.5
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -2041,7 +1809,6 @@ holding_transcendental_retreat = {
 		}
 		monthly_loyalty = 0.5
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -2049,7 +1816,6 @@ holding_transcendental_retreat = {
 		}
 		planet_jobs_produces_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -2057,7 +1823,6 @@ holding_transcendental_retreat = {
 		}
 		job_overlord_healthcare_add = 100
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -2065,7 +1830,6 @@ holding_transcendental_retreat = {
 		}
 		job_overlord_spawning_drone_add = 100
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -2082,7 +1846,6 @@ holding_wilderness_glade = {
 	icon = holding_wilderness_glade
 	planet_limit = 1
 	category = pop_assembly
-
 	resources = {
 		category = planet_holdings
 		cost = {
@@ -2092,7 +1855,6 @@ holding_wilderness_glade = {
 			food = @b1_upkeep
 		}
 	}
-
 	potential = {
 		has_overlord_dlc = yes
 		has_owner = yes
@@ -2106,7 +1868,6 @@ holding_wilderness_glade = {
 			}
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -2119,7 +1880,6 @@ holding_wilderness_glade = {
 		}
 		pop_amount >= 2500
 	}
-
 	planet_modifier = {
 		monthly_loyalty = -2
 	}
@@ -2133,7 +1893,6 @@ holding_wilderness_glade = {
 		}
 		planet_jobs_food_produces_mult = -0.10
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -2142,7 +1901,6 @@ holding_wilderness_glade = {
 		}
 		planet_jobs_minerals_produces_mult = -0.10
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -2155,7 +1913,6 @@ holding_wilderness_glade = {
 	planet_modifier = {
 		planet_jobs_productive_upkeep_mult = -0.05
 	}
-
 	on_built = {
 		add_blocker = { type = d_wilderness_glade_blocker }
 		owner.overlord.capital_scope = {
@@ -2163,7 +1920,6 @@ holding_wilderness_glade = {
 			refresh_wilderness_glade_modifier = yes
 		}
 	}
-
 	on_destroy = {
 		if = {
 			limit = { has_deposit = d_wilderness_glade_blocker }
@@ -2174,9 +1930,7 @@ holding_wilderness_glade = {
 			refresh_wilderness_glade_modifier = yes
 		}
 	}
-
 	triggered_desc = {
 		text = holding_wilderness_glade_effect_desc
 	}
 }
-

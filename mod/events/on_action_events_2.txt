@@ -12,12 +12,10 @@
 country_event = {
 	id = action.96
 	title = action.96.name
-
 	desc = {
 		text = action.96.desc
 		trigger = { is_xenophobe = no }
 	}
-
 	desc = {
 		text = action.96.desc.phobe
 		trigger = { is_xenophobe = yes }
@@ -42,17 +40,14 @@ country_event = {
 			country_event = { id = action.97 } # inform all other concerned countries
 		}
 	}
-
 	option = {
 		name = action.96.a
 		trigger = { is_megacorp = yes }
 	}
-
 	option = {
 		name = action.96.b
 		trigger = { is_megacorp = no }
 	}
-
 	after = {
 		custom_tooltip = enable_decision_market_nomination
 		# Notification
@@ -67,17 +62,14 @@ country_event = {
 country_event = {
 	id = action.97
 	title = action.97.name
-
 	desc = {
 		text = action.97.desc
 		trigger = { is_xenophobe = no is_megacorp = no }
 	}
-
 	desc = {
 		text = action.97.desc.phobe
 		trigger = { is_xenophobe = yes }
 	}
-
 	desc = {
 		text = action.97.desc.corp
 		trigger = { is_megacorp = yes }
@@ -91,19 +83,16 @@ country_event = {
 		set_country_flag = market_nomination_eligible
 		begin_event_chain = { event_chain = market_founding_chain target = this }
 	}
-
 	option = {
 		name = action.96.a
 		trigger = { is_megacorp = yes }
 		custom_tooltip = enable_decision_market_nomination
 	}
-
 	option = {
 		name = action.96.b
 		trigger = { is_megacorp = no }
 		custom_tooltip = enable_decision_market_nomination
 	}
-
 	after = {
 		tooltip = {
 			begin_event_chain = { event_chain = market_founding_chain target = this }
@@ -171,7 +160,6 @@ country_event = {
 	immediate = {
 		end_event_chain = market_founding_chain
 	}
-
 	option = {
 		name = action.1000.a
 		tooltip = { end_event_chain = market_founding_chain }
@@ -183,12 +171,10 @@ country_event = {
 country_event = {
 	id = action.1005
 	title = action.1000.name
-
 	desc = {
 		text = action.1005.desc
 		trigger = { is_xenophobe = no }
 	}
-
 	desc = {
 		text = action.1005.desc.phobe
 		trigger = { is_xenophobe = yes }
@@ -201,7 +187,6 @@ country_event = {
 	immediate = {
 		end_event_chain = market_founding_chain
 	}
-
 	option = {
 		name = {
 			text = UNFORTUNATE
@@ -226,7 +211,6 @@ country_event = {
 		set_global_flag = galactic_market_founded # code listens for this flag to create market
 		country_event = { id = action.104 days = 5 }
 	}
-
 	after = {
 		country_event = { id = timeline.73 } # Timeline Galactic Market
 	}
@@ -318,13 +302,10 @@ country_event = {
 			}
 		}
 		every_galcom_member = {
-			limit = {
-				NOT = { is_same_value = root }
-			}
+			limit = { NOT = { is_same_value = root } }
 			country_event = { id = action.101 }
 		}
 	}
-
 	option = {
 		name = OK
 		custom_tooltip = established_galactic_market_station
@@ -339,12 +320,10 @@ country_event = {
 country_event = {
 	id = action.101
 	title = action.101.name
-
 	desc = {
 		text = action.101.desc
 		trigger = { is_xenophobe = no }
 	}
-
 	desc = {
 		text = action.101.desc.phobe
 		trigger = { is_xenophobe = yes }
@@ -364,7 +343,6 @@ country_event = {
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = {
 			trigger = { is_worker_coop_empire = no }
@@ -391,9 +369,7 @@ country_event = {
 	trigger = {
 		exists = event_target:galactic_market_station
 		from = {
-			any_system_ambient_object = {
-				is_same_value = event_target:galactic_market_station
-			}
+			any_system_ambient_object = { is_same_value = event_target:galactic_market_station }
 		}
 	}
 
@@ -537,7 +513,6 @@ country_event = {
 	picture = GFX_evt_financial_instruments
 	location = event_target:galactic_market_station
 	is_triggered_only = yes
-
 	option = {
 		name = OK
 		custom_tooltip = established_galactic_market_station
@@ -569,10 +544,7 @@ event = {
 				is_homicidal = no
 				is_galactic_community_member = yes
 				NOT = { has_country_flag = has_market_access }
-				any_playable_country = {
-					has_communications = prev
-					has_country_flag = has_market_access
-				}
+				any_playable_country = { has_communications = prev has_country_flag = has_market_access }
 			}
 			country_event = { id = action.115 random = 40 }
 		}
@@ -640,12 +612,10 @@ country_event = {
 country_event = {
 	id = action.115
 	title = action.106.name
-
 	desc = {
 		text = action.106.desc
 		trigger = { is_xenophobe = no }
 	}
-
 	desc = {
 		text = action.106.desc.phobe
 		trigger = { is_xenophobe = yes }
@@ -662,7 +632,6 @@ country_event = {
 		enable_galactic_market = yes
 		set_country_flag = has_market_access
 	}
-
 	option = {
 		name = OK
 	}
@@ -960,18 +929,14 @@ country_event = {
 	show_sound = event_screams
 	location = fromfrom
 	is_triggered_only = yes
-
 	option = {
 		trigger = {
 			NOT = { from = { is_owned_by = root } }
 		}
 		name = DISCONCERTING
 	}
-
 	option = {
-		trigger = {
-			from = { is_owned_by = root }
-		}
+		trigger = { from = { is_owned_by = root } }
 		name = action.123.a
 	}
 }
@@ -981,19 +946,16 @@ country_event = {
 	id = action.150
 	title = action.37.name
 	message_desc = action.37.message
-
 	desc = {
 		trigger = { is_gestalt = no }
 		text = action.150.1.desc
 		text = action.150.2.desc
 		text = action.150.3.desc
 	}
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = action.150.gestalt.1.desc
 	}
-
 	picture_event_data = {
 		portrait = from
 		planet_background = from
@@ -1011,7 +973,6 @@ country_event = {
 			using_war_goal = { type = wg_imperial_crusade owner = root }
 		}
 	}
-
 	option = {
 		name = action.37.a
 	}
@@ -1022,13 +983,11 @@ country_event = {
 	id = action.151
 	title = action.38.name
 	message_desc = action.38.message
-
 	desc = {
 		text = action.151.1.desc
 		text = action.151.2.desc
 		text = action.151.3.desc
 	}
-
 	picture_event_data = {
 		portrait = from
 		planet_background = from
@@ -1046,7 +1005,6 @@ country_event = {
 			using_war_goal = { type = wg_imperial_crusade owner = root.from }
 		}
 	}
-
 	option = {
 		name = action.38.a
 	}
@@ -1057,19 +1015,16 @@ country_event = {
 	id = action.152
 	title = action.37.name
 	message_desc = action.37.message
-
 	desc = {
 		trigger = { is_gestalt = no }
 		text = action.152.1.desc
 		text = action.152.2.desc
 		text = action.152.3.desc
 	}
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = action.152.gestalt.1.desc
 	}
-
 	picture_event_data = {
 		portrait = from
 		planet_background = from
@@ -1087,7 +1042,6 @@ country_event = {
 			using_war_goal = { type = wg_galactic_civil_war_loyalists owner = root }
 		}
 	}
-
 	option = {
 		name = action.37.a
 	}
@@ -1098,19 +1052,16 @@ country_event = {
 	id = action.153
 	title = action.38.name
 	message_desc = action.38.message
-
 	desc = {
 		trigger = { is_gestalt = no }
 		text = action.153.1.desc
 		text = action.153.2.desc
 		text = action.153.3.desc
 	}
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = action.153.gestalt.1.desc
 	}
-
 	picture_event_data = {
 		portrait = from
 		planet_background = from
@@ -1128,7 +1079,6 @@ country_event = {
 			using_war_goal = { type = wg_galactic_civil_war_loyalists owner = root.from }
 		}
 	}
-
 	option = {
 		name = action.38.a
 	}
@@ -1139,19 +1089,16 @@ country_event = {
 	id = action.154
 	title = action.37.name
 	message_desc = action.37.message
-
 	desc = {
 		trigger = { is_gestalt = no }
 		text = action.154.1.desc
 		text = action.154.2.desc
 		text = action.154.3.desc
 	}
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = action.154.gestalt.1.desc
 	}
-
 	picture_event_data = {
 		portrait = from
 		planet_background = from
@@ -1169,7 +1116,6 @@ country_event = {
 			using_war_goal = { type = wg_galactic_civil_war_rebels owner = root }
 		}
 	}
-
 	option = {
 		name = action.37.a
 	}
@@ -1180,19 +1126,16 @@ country_event = {
 	id = action.155
 	title = action.38.name
 	message_desc = action.38.message
-
 	desc = {
 		trigger = { is_gestalt = no }
 		text = action.155.1.desc
 		text = action.155.2.desc
 		text = action.155.3.desc
 	}
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = action.155.gestalt.1.desc
 	}
-
 	picture_event_data = {
 		portrait = from
 		planet_background = from
@@ -1213,7 +1156,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = action.38.a
 	}
@@ -1309,19 +1251,16 @@ country_event = {
 	id = action.158
 	title = action.37.name
 	message_desc = action.37.message
-
 	desc = {
 		trigger = { is_gestalt = no }
 		text = action.158.1.desc
 		text = action.158.2.desc
 		text = action.158.3.desc
 	}
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = action.158.gestalt.1.desc
 	}
-
 	picture_event_data = {
 		portrait = from
 		planet_background = from
@@ -1339,7 +1278,6 @@ country_event = {
 			using_war_goal = { type = wg_restore_the_community owner = root }
 		}
 	}
-
 	option = {
 		name = action.37.a
 	}
@@ -1677,9 +1615,7 @@ starbase_event = {
 			limit = {
 				is_orbital_ring = yes
 				exists = planet
-				NOT = {
-					planet = { has_planet_flag = ruined_orbital_ring_planet }
-				}
+				NOT = { planet = { has_planet_flag = ruined_orbital_ring_planet } }
 			}
 			planet = {
 				set_planet_flag = ruined_orbital_ring_planet
@@ -2334,10 +2270,7 @@ agreement_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		has_term_value = {
-			term = subject_diplomacy
-			value = subject_can_do_diplomacy_but_not_vote
-		}
+		has_term_value = { term = subject_diplomacy value = subject_can_do_diplomacy_but_not_vote }
 		owner = { is_galactic_community_member = yes }
 		target = { is_galactic_community_member = no }
 	}
@@ -2360,10 +2293,7 @@ country_event = {
 		this = {
 			is_galactic_community_member = no
 			any_agreement = {
-				has_term_value = {
-					term = subject_diplomacy
-					value = subject_can_do_diplomacy_but_not_vote
-				}
+				has_term_value = { term = subject_diplomacy value = subject_can_do_diplomacy_but_not_vote }
 			}
 		}
 	}
@@ -2383,10 +2313,7 @@ agreement_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		has_term_value = {
-			term = subject_diplomacy
-			value = subject_can_do_diplomacy_but_not_vote
-		}
+		has_term_value = { term = subject_diplomacy value = subject_can_do_diplomacy_but_not_vote }
 		owner = {
 			has_federation = yes
 			federation = { has_federation_law = allow_subjects_to_join_yes }
@@ -2411,10 +2338,7 @@ agreement_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		has_term_value = {
-			term = subject_diplomacy
-			value = subject_can_do_diplomacy_but_not_vote
-		}
+		has_term_value = { term = subject_diplomacy value = subject_can_do_diplomacy_but_not_vote }
 		owner = {
 			has_federation = yes
 			federation = { has_federation_law = allow_subjects_to_join_yes }
@@ -2796,7 +2720,6 @@ planet_event = {
 country_event = {
 	id = action.600
 	title = action.600.name
-
 	desc = {
 		text = action.600.desc
 	}
@@ -2805,7 +2728,6 @@ country_event = {
 	show_sound = event_default
 	hide_window = no
 	is_triggered_only = yes
-
 	option = {
 		name = action.600.A
 		allow = {
@@ -2820,7 +2742,6 @@ country_event = {
 			cooldown = yes
 		}
 	}
-
 	option = {
 		name = action.600.B
 		allow = {
@@ -2964,9 +2885,7 @@ country_event = {
 	}
 
 	immediate = {
-		fire_on_action = {
-			on_action = on_decade_random_pulse_country_payback_broken_shackles
-		}
+		fire_on_action = { on_action = on_decade_random_pulse_country_payback_broken_shackles }
 	}
 }
 
@@ -2989,7 +2908,7 @@ first_contact_event = {
 				is_primitive = yes
 				is_guardian_country = yes
 				has_relation_flag = { flag = no_coms who = owner }
-				has_relation_flag = { flag = AbandonedRefugees who = owner }
+				# has_relation_flag = { flag = AbandonedRefugees who = owner } # Vfix removed in v2.2
 				has_relation_flag = { flag = scientist_pirate_relation who = owner } # Vfix
 				has_country_flag = day_0
 			}
@@ -2999,11 +2918,7 @@ first_contact_event = {
 	immediate = {
 		contact_country = { save_event_target_as = contact_country }
 		owner = {
-			country_event = {
-				id = story.7
-				days = 1
-				scopes = { from = event_target:contact_country }
-			}
+			country_event = { id = story.7 days = 1 scopes = { from = event_target:contact_country } }
 		}
 	}
 }
@@ -3380,4 +3295,3 @@ country_event = {
 		}
 	}
 }
-

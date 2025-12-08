@@ -416,16 +416,8 @@ country_event = {
 					limit = { is_marauder = no }
 					owner_species = { save_event_target_as = marauder_species }
 					add_500_unity_per_year_passed = yes
-					country_event = {
-						id = game_start.6
-						days = 6
-						random = 4
-					} # advanced_empire
-					country_event = {
-						id = game_start.9
-						days = 12
-						random = 8
-					} # empire_init_create_ships civil
+					country_event = { id = game_start.6 days = 6 random = 4 } # advanced_empire
+					country_event = { id = game_start.9 days = 12 random = 8 } # empire_init_create_ships civil
 					### Units
 					create_ship_design = { design = "NAME_Pirate_Transport" }
 					add_ship_design = last_created_design
@@ -452,10 +444,7 @@ country_event = {
 							set_variable = { which = "successor_fleet_power" value = 220000 }
 						}
 						else = {
-							export_trigger_value_to_variable = {
-								trigger = fleet_power
-								variable = "successor_fleet_power"
-							}
+							export_trigger_value_to_variable = { trigger = fleet_power variable = "successor_fleet_power" }
 						}
 					}
 					random_owned_planet = {
@@ -477,10 +466,7 @@ country_event = {
 							limit = {
 								any_playable_country = {
 									is_variable_set = "successor_fleet_power"
-									check_variable = {
-										which = "successor_fleet_power"
-										value > root.successor_fleet_power
-									}
+									check_variable = { which = "successor_fleet_power" value > root.successor_fleet_power }
 								}
 							}
 							root = {
@@ -630,9 +616,7 @@ country_event = {
 				}
 			}
 			if = {
-				limit = {
-					prev = { num_owned_relics > 0 }
-				}
+				limit = { prev = { num_owned_relics > 0 } }
 				steal_relic = { target = prev relic = all }
 			}
 			if = {
@@ -712,7 +696,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		if = {
 			limit = {
@@ -954,7 +937,6 @@ country_event = {
 		}
 		country_event = { id = marauder.609 } # Fully handover + empire init
 	}
-
 	after = {
 		if = {
 			limit = { exists = event_target:raider_khanate }
@@ -970,11 +952,7 @@ country_event = {
 		}
 		else_if = {
 			limit = { is_country_type = default }
-			country_event = {
-				id = khan.605
-				days = 2
-				scopes = { from = event_target:new_khanate }
-			}
+			country_event = { id = khan.605 days = 2 scopes = { from = event_target:new_khanate } }
 		}
 		if = {
 			limit = {
@@ -1015,6 +993,7 @@ country_event = {
 }
 
 ### Check if all sectors are set, can take many months if the Khan has a lot of planets
+
 country_event = {
 	id = marauder_borders.1001
 	hide_window = yes
@@ -1150,10 +1129,7 @@ country_event = {
 				add_intel = { amount = 100 who = prev }
 				add_opinion_modifier = { modifier = opinion_traitor_to_empire who = prev }
 				add_opinion_modifier = { modifier = opinion_flavors_down who = prev }
-				set_variable = {
-					which = var_sapient_pop_amount
-					value = trigger:sapient_pop_amount
-				}
+				set_variable = { which = var_sapient_pop_amount value = trigger:sapient_pop_amount }
 				save_event_target_as = planet_owner_2
 				## Prevent extreme balcanization
 				# Potential system
@@ -1540,10 +1516,7 @@ country_event = {
 									limit = {
 										NOT = { is_variable_set = var_sapient_pop_amount }
 									}
-									set_variable = {
-										which = var_sapient_pop_amount
-										value = trigger:sapient_pop_amount
-									}
+									set_variable = { which = var_sapient_pop_amount value = trigger:sapient_pop_amount }
 								}
 								capital_scope.solar_system = {
 									closest_system = {
@@ -1629,7 +1602,6 @@ country_event = {
 		country_event = { id = khan.610 } # Init more stuff? SET_DIADOCHI_LEADERS_AND_FLEET (First Diadochi)
 		set_update_modifiers_batch = end
 	}
-
 	after = {
 		every_playable_country = {
 			limit = {
@@ -1662,4 +1634,3 @@ country_event = {
 		}
 	}
 }
-

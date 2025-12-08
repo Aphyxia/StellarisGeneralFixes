@@ -8,7 +8,6 @@ megacorp_caravaneer_init = {
 	class = "rl_standard_stars"
 	usage = misc_system_init
 	name = "NAME_Chors_Compass"
-
 	usage_odds = {
 		base = 0
 		modifier = {
@@ -29,19 +28,15 @@ megacorp_caravaneer_init = {
 
 	max_instances = 1
 	spawn_chance = 9999
-
 	flags = { caravaneer_home }
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 40
 	}
-
 	asteroid_belt = {
 		type = icy_asteroid_belt
 		radius = 110
 	}
-
 	planet = {
 		class = star
 		orbit_distance = 0
@@ -143,7 +138,9 @@ megacorp_caravaneer_init = {
 								name = NAME_Tradestation_Tungle
 								design = "NAME_Tradestation_Tungle"
 								graphical_culture = prev
-								effect = { set_ship_flag = cara_home_tradestation }
+								effect = {
+									set_ship_flag = cara_home_tradestation
+								}
 							}
 							set_location = {
 								target = prevprev
@@ -173,7 +170,6 @@ megacorp_caravaneer_init = {
 	}
 
 	change_orbit = 48
-
 	planet = {
 		count = 1
 		orbit_angle = { min = 355 max = 5 }
@@ -181,7 +177,6 @@ megacorp_caravaneer_init = {
 		class = "rl_unhabitable_planets"
 		orbit_distance = 12
 	}
-
 	planet = {
 		count = 1
 		orbit_angle = { min = 175 max = 185 }
@@ -189,7 +184,6 @@ megacorp_caravaneer_init = {
 		class = "rl_unhabitable_planets"
 		orbit_distance = 12
 	}
-
 	planet = {
 		count = 1
 		orbit_angle = { min = 85 max = 95 }
@@ -197,7 +191,6 @@ megacorp_caravaneer_init = {
 		class = "rl_unhabitable_planets"
 		orbit_distance = 12
 	}
-
 	planet = {
 		count = 1
 		orbit_angle = { min = 175 max = 185 }
@@ -205,7 +198,6 @@ megacorp_caravaneer_init = {
 		class = "rl_unhabitable_planets"
 		orbit_distance = 12
 	}
-
 	init_effect = {
 		# Randomize which fleets are spawned
 		random_list = {
@@ -569,9 +561,7 @@ megacorp_caravaneer_init = {
 megacorp_matter_decompressor_init_01 = {
 	class = sc_black_hole
 	usage = misc_system_init
-
 	flags = { ruined_matter_decompressor_system }
-
 	usage_odds = {
 		base = 0
 		modifier = { has_megacorp = yes add = 100 }
@@ -579,7 +569,6 @@ megacorp_matter_decompressor_init_01 = {
 
 	max_instances = 1
 	scaled_spawn_chance = 4
-
 	planet = {
 		class = star
 		orbit_distance = 0
@@ -590,12 +579,10 @@ megacorp_matter_decompressor_init_01 = {
 	}
 
 	change_orbit = 200
-
 	asteroid_belt = {
 		type = icy_asteroid_belt
 		radius = 110
 	}
-
 	init_effect = {
 		spawn_megastructure = {
 			type = "matter_decompressor_ruined"
@@ -642,9 +629,7 @@ megacorp_matter_decompressor_init_01 = {
 megacorp_strategic_coordination_center_init_01 = {
 	class = "rl_standard_stars"
 	usage = misc_system_init
-
 	flags = { ruined_strategic_coordination_center_system }
-
 	usage_odds = {
 		base = 0
 		modifier = { has_megacorp = yes add = 100 }
@@ -652,7 +637,6 @@ megacorp_strategic_coordination_center_init_01 = {
 
 	max_instances = 1
 	scaled_spawn_chance = 4
-
 	planet = {
 		class = star
 		orbit_distance = 0
@@ -662,7 +646,6 @@ megacorp_strategic_coordination_center_init_01 = {
 	}
 
 	change_orbit = 55
-
 	planet = {
 		class = "pc_barren"
 		size = { min = 10 max = 15 }
@@ -673,7 +656,6 @@ megacorp_strategic_coordination_center_init_01 = {
 	}
 
 	change_orbit = 25
-
 	planet = {
 		class = "pc_gas_giant"
 		orbit_angle = { min = 90 max = 270 }
@@ -711,7 +693,6 @@ megacorp_strategic_coordination_center_init_01 = {
 	}
 
 	change_orbit = 25
-
 	planet = {
 		class = "pc_gas_giant"
 		orbit_angle = { min = 90 max = 270 }
@@ -785,7 +766,6 @@ megacorp_strategic_coordination_center_init_01 = {
 	}
 
 	change_orbit = 25
-
 	planet = {
 		class = "pc_gas_giant"
 		orbit_angle = { min = 90 max = 270 }
@@ -869,7 +849,6 @@ megacorp_strategic_coordination_center_init_01 = {
 	}
 
 	change_orbit = 25
-
 	planet = {
 		class = "pc_frozen"
 		size = { min = 10 max = 15 }
@@ -878,7 +857,6 @@ megacorp_strategic_coordination_center_init_01 = {
 			create_ambient_object = { type = "medium_debris_02_object" location = this }
 		}
 	}
-
 	init_effect = {
 		spawn_megastructure = {
 			type = "strategic_coordination_center_ruined"
@@ -887,22 +865,10 @@ megacorp_strategic_coordination_center_init_01 = {
 		create_ambient_object = { type = "large_debris_object" location = solar_system }
 		create_ambient_object = { type = "large_debris_object" location = solar_system }
 		create_ambient_object = { type = "large_debris_object" location = solar_system }
-		create_ambient_object = {
-			type = "medium_debris_01_object"
-			location = solar_system
-		}
-		create_ambient_object = {
-			type = "medium_debris_02_object"
-			location = solar_system
-		}
-		create_ambient_object = {
-			type = "medium_debris_01_object"
-			location = solar_system
-		}
-		create_ambient_object = {
-			type = "medium_debris_02_object"
-			location = solar_system
-		}
+		create_ambient_object = { type = "medium_debris_01_object" location = solar_system }
+		create_ambient_object = { type = "medium_debris_02_object" location = solar_system }
+		create_ambient_object = { type = "medium_debris_01_object" location = solar_system }
+		create_ambient_object = { type = "medium_debris_02_object" location = solar_system }
 		create_ambient_object = { type = "small_debris_object" location = solar_system }
 	}
 }
@@ -911,9 +877,7 @@ megacorp_strategic_coordination_center_init_01 = {
 megacorp_mega_art_installation_init_01 = {
 	class = "rl_trinary_stars"
 	usage = misc_system_init
-
 	flags = { ruined_mega_art_installation_system }
-
 	usage_odds = {
 		base = 0
 		modifier = { has_megacorp = yes add = 100 }
@@ -921,7 +885,6 @@ megacorp_mega_art_installation_init_01 = {
 
 	max_instances = 1
 	scaled_spawn_chance = 4
-
 	planet = {
 		count = 1
 		class = star
@@ -933,7 +896,6 @@ megacorp_mega_art_installation_init_01 = {
 			save_event_target_as = installation_star
 		}
 	}
-
 	planet = {
 		count = 1
 		class = star
@@ -942,7 +904,6 @@ megacorp_mega_art_installation_init_01 = {
 		size = { min = 25 max = 30 }
 		has_ring = no
 	}
-
 	planet = {
 		count = 1
 		class = star
@@ -953,7 +914,6 @@ megacorp_mega_art_installation_init_01 = {
 	}
 
 	change_orbit = 45
-
 	planet = {
 		count = { min = 2 max = 10 }
 		orbit_distance = 20
@@ -965,7 +925,6 @@ megacorp_mega_art_installation_init_01 = {
 			orbit_distance = 5
 		}
 	}
-
 	init_effect = {
 		spawn_megastructure = {
 			type = "mega_art_installation_ruined"
@@ -974,22 +933,10 @@ megacorp_mega_art_installation_init_01 = {
 		create_ambient_object = { type = "large_debris_object" location = solar_system }
 		create_ambient_object = { type = "large_debris_object" location = solar_system }
 		create_ambient_object = { type = "large_debris_object" location = solar_system }
-		create_ambient_object = {
-			type = "medium_debris_01_object"
-			location = solar_system
-		}
-		create_ambient_object = {
-			type = "medium_debris_02_object"
-			location = solar_system
-		}
-		create_ambient_object = {
-			type = "medium_debris_01_object"
-			location = solar_system
-		}
-		create_ambient_object = {
-			type = "medium_debris_02_object"
-			location = solar_system
-		}
+		create_ambient_object = { type = "medium_debris_01_object" location = solar_system }
+		create_ambient_object = { type = "medium_debris_02_object" location = solar_system }
+		create_ambient_object = { type = "medium_debris_01_object" location = solar_system }
+		create_ambient_object = { type = "medium_debris_02_object" location = solar_system }
 		create_ambient_object = { type = "small_debris_object" location = solar_system }
 	}
 }
@@ -998,14 +945,12 @@ megacorp_mega_art_installation_init_01 = {
 # (a former capital system)
 megacorp_interstellar_assembly_init_01 = {
 	class = "rl_starting_stars"
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 50
 	}
 
 	usage = misc_system_init
-
 	usage_odds = {
 		base = 0
 		modifier = { has_megacorp = yes add = 100 }
@@ -1013,9 +958,7 @@ megacorp_interstellar_assembly_init_01 = {
 
 	max_instances = 1
 	scaled_spawn_chance = 4
-
 	flags = { ruined_interstellar_assembly_system }
-
 	planet = {
 		count = 1
 		class = star
@@ -1024,7 +967,6 @@ megacorp_interstellar_assembly_init_01 = {
 		size = { min = 20 max = 30 }
 		has_ring = no
 	}
-
 	init_effect = {
 		generate_home_system_resources = yes
 		spawn_megastructure = {
@@ -1068,14 +1010,12 @@ megacorp_interstellar_assembly_init_01 = {
 	}
 
 	change_orbit = 50
-
 	planet = {
 		count = { min = 1 max = 3 }
 		class = pc_asteroid
 		orbit_distance = 0
 		orbit_angle = { min = 40 max = 100 }
 	}
-
 	planet = {
 		count = { min = 0 max = 2 }
 		orbit_distance = 20
@@ -1089,7 +1029,6 @@ megacorp_interstellar_assembly_init_01 = {
 			orbit_distance = 5
 		}
 	}
-
 	planet = {
 		count = 1
 		orbit_distance = 20
@@ -1110,7 +1049,6 @@ megacorp_interstellar_assembly_init_01 = {
 			orbit_distance = 5
 		}
 	}
-
 	planet = {
 		count = { min = 2 max = 4 }
 		orbit_distance = 20
@@ -1124,7 +1062,6 @@ megacorp_interstellar_assembly_init_01 = {
 			orbit_distance = 5
 		}
 	}
-
 	planet = {
 		count = { min = 1 max = 2 }
 		orbit_distance = 20

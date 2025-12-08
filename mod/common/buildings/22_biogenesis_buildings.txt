@@ -18,17 +18,14 @@ building_citadel_uplink = {
 	category = army
 	planet_limit = 1
 	category = planet_buildings
-
 	building_sets = {
 		government
 		fortress
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { has_origin = origin_starlit_citadel }
 	}
-
 	allow = {
 		is_occupied_flag = no
 		exists = solar_system
@@ -42,14 +39,11 @@ building_citadel_uplink = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		exists = solar_system
 		OR = {
-			NOT = {
-				owner = { has_origin = origin_starlit_citadel }
-			}
+			NOT = { owner = { has_origin = origin_starlit_citadel } }
 			solar_system = {
 				count_ship_in_system = {
 					count = 0
@@ -58,11 +52,9 @@ building_citadel_uplink = {
 			}
 		}
 	}
-
 	convert_to = {
 		building_fortress
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -72,7 +64,6 @@ building_citadel_uplink = {
 			energy = @b3_upkeep
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = solar_system
@@ -87,7 +78,6 @@ building_citadel_uplink = {
 		job_skywatcher_add = @building_static_jobs
 		mult = solar_system.value:skywatcher_dsc_mult
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = solar_system
@@ -97,7 +87,6 @@ building_citadel_uplink = {
 		job_skywatcher_drone_add = @building_static_jobs
 		mult = solar_system.value:skywatcher_dsc_mult
 	}
-
 	triggered_desc = {
 		trigger = {
 			has_owner = yes
@@ -111,7 +100,6 @@ building_citadel_uplink = {
 		}
 		text = job_skywatcher_add_dsc_tt
 	}
-
 	triggered_desc = {
 		trigger = {
 			has_owner = yes
@@ -130,17 +118,16 @@ building_citadel_uplink = {
 ##############################
 # GENETIC ASCENSION SITUATION
 ##############################
+
 building_genomic_facility = {
 	base_buildtime = @b3_time
 	category = amenity
 	planet_limit = 1
-
 	building_sets = {
 		government
 		research
 		society
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -148,14 +135,10 @@ building_genomic_facility = {
 			is_wilderness_empire = no
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
-		NOT = {
-			owner = { has_country_flag = genomic_research_facility_unlocked }
-		}
+		NOT = { owner = { has_country_flag = genomic_research_facility_unlocked } }
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -165,7 +148,6 @@ building_genomic_facility = {
 			energy = @b3_upkeep
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -173,12 +155,10 @@ building_genomic_facility = {
 		}
 		job_healthcare_add = @building_static_jobs
 	}
-
 	inline_script = {
 		script = jobs/spawning_drone_add
 		AMOUNT = @building_static_jobs
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -187,7 +167,6 @@ building_genomic_facility = {
 		}
 		auto_mod_monthly_add = 200
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -196,7 +175,6 @@ building_genomic_facility = {
 		}
 		auto_mod_monthly_add = 200
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -204,7 +182,6 @@ building_genomic_facility = {
 		}
 		pop_environment_tolerance = @genomic_mutation_habitability
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -212,7 +189,6 @@ building_genomic_facility = {
 		}
 		auto_mod_monthly_add = @genomic_mutation_auto_mod
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -223,7 +199,6 @@ building_genomic_facility = {
 		}
 		clone_soldiers_sustained = @clones_sustained_basic
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -237,7 +212,6 @@ building_genomic_facility = {
 		}
 		organic_pop_bonus_workforce_mult = @genomic_workforce_mult
 	}
-
 	triggered_desc = {
 		trigger = {
 			has_owner = yes
@@ -245,7 +219,6 @@ building_genomic_facility = {
 		}
 		text = healthcare_is_genomic_researcher_tt
 	}
-
 	triggered_desc = {
 		trigger = {
 			has_owner = yes
@@ -253,7 +226,6 @@ building_genomic_facility = {
 		}
 		text = spawning_is_genomic_researcher_tt
 	}
-
 	triggered_desc = {
 		trigger = {
 			has_owner = yes
@@ -261,7 +233,6 @@ building_genomic_facility = {
 		}
 		text = job_genomic_researcher_situation_effect_desc
 	}
-
 	triggered_desc = {
 		trigger = {
 			has_owner = yes
@@ -271,7 +242,6 @@ building_genomic_facility = {
 	}
 
 	is_essential = yes
-
 	allow = {
 		is_occupied_flag = no
 	}

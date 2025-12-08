@@ -1,10 +1,10 @@
 ################################
-
 #
 # Random Archaeology Site Events
 # Written by Henrik Thyrwall et al
 #
 ###############################
+
 namespace = ancrel
 
 ########
@@ -24,14 +24,12 @@ fleet_event = {
 		fromfrom = { set_site_progress_locked = yes }
 		leader = { save_event_target_as = dead_scientist exile_leader_as = dead_scientist }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 		event_target:dead_scientist = {
 			kill_leader = { show_notification = no }
 		}
 	}
-
 	option = {
 		name = site_setback
 		fromfrom = { add_stage_clues = -2 }
@@ -51,11 +49,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = site_delay
 		fromfrom = { add_stage_clues = -1 }
@@ -75,11 +71,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = site_success
 		fromfrom = { add_stage_clues = 3 }
@@ -99,11 +93,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = ancrel.8003.a
 		allow = {
@@ -111,12 +103,9 @@ fleet_event = {
 				resource_stockpile_compare = { resource = energy value >= 100 }
 			}
 		}
-		owner = {
-			add_resource = { energy = -100 }
-		}
+		owner = { add_resource = { energy = -100 } }
 		fromfrom = { add_stage_clues = 3 }
 	}
-
 	option = {
 		name = ancrel.8003.b
 		fromfrom = { add_stage_clues = -2 }
@@ -137,14 +126,12 @@ fleet_event = {
 		fromfrom = { set_site_progress_locked = yes }
 		leader = { save_event_target_as = dead_scientist exile_leader_as = dead_scientist }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 		event_target:dead_scientist = {
 			kill_leader = { show_notification = no }
 		}
 	}
-
 	option = {
 		name = site_setback
 		fromfrom = { add_stage_clues = -2 }
@@ -164,11 +151,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = site_delay
 		fromfrom = { add_stage_clues = -1 }
@@ -188,11 +173,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = site_success
 		fromfrom = { add_stage_clues = 3 }
@@ -212,11 +195,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = ancrel.8013.a
 		allow = {
@@ -224,12 +205,9 @@ fleet_event = {
 				resource_stockpile_compare = { resource = energy value >= 100 }
 			}
 		}
-		owner = {
-			add_resource = { energy = -100 }
-		}
+		owner = { add_resource = { energy = -100 } }
 		fromfrom = { add_stage_clues = 3 }
 	}
-
 	option = {
 		name = ancrel.8003.b
 		fromfrom = { add_stage_clues = -2 }
@@ -250,14 +228,12 @@ fleet_event = {
 		fromfrom = { set_site_progress_locked = yes }
 		leader = { save_event_target_as = dead_scientist exile_leader_as = dead_scientist }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 		event_target:dead_scientist = {
 			kill_leader = { show_notification = no }
 		}
 	}
-
 	option = {
 		name = site_setback
 		fromfrom = { add_stage_clues = -2 }
@@ -277,11 +253,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = site_delay
 		fromfrom = { add_stage_clues = -1 }
@@ -301,11 +275,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = site_success
 		fromfrom = { add_stage_clues = 3 }
@@ -325,11 +297,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = ancrel.8023.a
 		allow = {
@@ -337,12 +307,9 @@ fleet_event = {
 				resource_stockpile_compare = { resource = energy value >= 100 }
 			}
 		}
-		owner = {
-			add_resource = { energy = -100 }
-		}
+		owner = { add_resource = { energy = -100 } }
 		fromfrom = { add_stage_clues = 3 }
 	}
-
 	option = {
 		name = ancrel.8003.b
 		fromfrom = { add_stage_clues = -2 }
@@ -363,14 +330,12 @@ fleet_event = {
 		fromfrom = { set_site_progress_locked = yes }
 		leader = { save_event_target_as = dead_scientist exile_leader_as = dead_scientist }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 		event_target:dead_scientist = {
 			kill_leader = { show_notification = no }
 		}
 	}
-
 	option = {
 		name = site_setback
 		fromfrom = { add_stage_clues = -2 }
@@ -390,11 +355,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = site_delay
 		fromfrom = { add_stage_clues = -1 }
@@ -414,11 +377,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = site_success
 		fromfrom = { add_stage_clues = 3 }
@@ -438,11 +399,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = ancrel.8033.a
 		allow = {
@@ -450,12 +409,9 @@ fleet_event = {
 				resource_stockpile_compare = { resource = energy value >= 100 }
 			}
 		}
-		owner = {
-			add_resource = { energy = -100 }
-		}
+		owner = { add_resource = { energy = -100 } }
 		fromfrom = { add_stage_clues = 3 }
 	}
-
 	option = {
 		name = ancrel.8003.b
 		fromfrom = { add_stage_clues = -2 }
@@ -478,11 +434,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = EXCELLENT
 		locked_random_list = {
@@ -491,16 +445,8 @@ fleet_event = {
 					add_resource = { minerals = 1500 }
 				}
 			}
-			10 = {
-				owner = {
-					add_resource = { energy = 1500 }
-				}
-			}
-			10 = {
-				owner = {
-					add_resource = { alloys = 200 }
-				}
-			}
+			10 = { owner = { add_resource = { energy = 1500 } } }
+			10 = { owner = { add_resource = { alloys = 200 } } }
 			10 = {
 				owner = {
 					add_resource = { exotic_gases = 100 }
@@ -533,11 +479,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = EXCELLENT
 		fromfrom = { add_stage_clues = 3 }
@@ -557,11 +501,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = INTERESTING
 		owner = { medium_artifact_reward = yes }
@@ -581,11 +523,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = UNFORTUNATE
 		fromfrom = { add_stage_clues = -3 }
@@ -605,44 +545,18 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = EXCELLENT
 		locked_random_list = {
-			10 = {
-				owner = {
-					add_resource = { energy = 800 }
-				}
-			}
-			10 = {
-				owner = {
-					add_resource = { energy = 1000 }
-				}
-			}
-			10 = {
-				owner = {
-					add_resource = { energy = 1200 }
-				}
-			}
-			10 = {
-				owner = {
-					add_resource = { energy = 1400 }
-				}
-			}
-			10 = {
-				owner = {
-					add_resource = { energy = 1600 }
-				}
-			}
-			10 = {
-				owner = {
-					add_resource = { energy = 1800 }
-				}
-			}
+			10 = { owner = { add_resource = { energy = 800 } } }
+			10 = { owner = { add_resource = { energy = 1000 } } }
+			10 = { owner = { add_resource = { energy = 1200 } } }
+			10 = { owner = { add_resource = { energy = 1400 } } }
+			10 = { owner = { add_resource = { energy = 1600 } } }
+			10 = { owner = { add_resource = { energy = 1800 } } }
 		}
 	}
 }
@@ -660,11 +574,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = UNFORTUNATE
 		fromfrom = { add_stage_clues = -3 }
@@ -684,16 +596,13 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = UNFORTUNATE
 		fromfrom = { add_stage_clues = -3 }
 	}
-
 	option = {
 		name = ancrel.kick_it
 		trigger = {
@@ -723,14 +632,12 @@ fleet_event = {
 		fromfrom = { set_site_progress_locked = yes }
 		leader = { save_event_target_as = dead_scientist exile_leader_as = dead_scientist }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 		event_target:dead_scientist = {
 			kill_leader = { show_notification = no }
 		}
 	}
-
 	option = {
 		name = UNFORTUNATE
 	}
@@ -751,11 +658,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = EXCELLENT
 		small_artifact_reward = yes
@@ -776,14 +681,12 @@ fleet_event = {
 		fromfrom = { set_site_progress_locked = yes }
 		leader = { save_event_target_as = dead_scientist exile_leader_as = dead_scientist }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 		event_target:dead_scientist = {
 			kill_leader = { show_notification = no }
 		}
 	}
-
 	option = {
 		name = site_setback
 		fromfrom = { add_stage_clues = -2 }
@@ -803,11 +706,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = site_delay
 		fromfrom = { add_stage_clues = -1 }
@@ -827,11 +728,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = site_success
 		fromfrom = { add_stage_clues = 3 }
@@ -851,11 +750,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = ancrel.8093.a
 		allow = {
@@ -863,12 +760,9 @@ fleet_event = {
 				resource_stockpile_compare = { resource = energy value >= 100 }
 			}
 		}
-		owner = {
-			add_resource = { energy = -100 }
-		}
+		owner = { add_resource = { energy = -100 } }
 		fromfrom = { add_stage_clues = 3 }
 	}
-
 	option = {
 		name = ancrel.8093.b
 		fromfrom = { add_stage_clues = -2 }
@@ -889,14 +783,12 @@ fleet_event = {
 		fromfrom = { set_site_progress_locked = yes }
 		leader = { save_event_target_as = dead_scientist exile_leader_as = dead_scientist }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 		event_target:dead_scientist = {
 			kill_leader = { show_notification = no }
 		}
 	}
-
 	option = {
 		name = site_setback
 		fromfrom = { add_stage_clues = -2 }
@@ -916,11 +808,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = site_delay
 		fromfrom = { add_stage_clues = -1 }
@@ -940,11 +830,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = site_success
 		fromfrom = { add_stage_clues = 3 }
@@ -964,11 +852,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = ancrel.8103.a
 		allow = {
@@ -976,12 +862,9 @@ fleet_event = {
 				resource_stockpile_compare = { resource = energy value >= 100 }
 			}
 		}
-		owner = {
-			add_resource = { energy = -100 }
-		}
+		owner = { add_resource = { energy = -100 } }
 		fromfrom = { add_stage_clues = 3 }
 	}
-
 	option = {
 		name = ancrel.8103.b
 		fromfrom = { add_stage_clues = -2 }
@@ -1001,11 +884,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = EXCELLENT
 		owner = {
@@ -1052,11 +933,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		trigger = {
 			leader = { has_trait = leader_trait_substance_abuser }
@@ -1065,12 +944,9 @@ fleet_event = {
 		fromfrom = { add_stage_clues = -2 }
 		leader = { remove_trait = leader_trait_substance_abuser }
 	}
-
 	option = {
 		trigger = {
-			NOT = {
-				leader = { has_trait = leader_trait_substance_abuser }
-			}
+			NOT = { leader = { has_trait = leader_trait_substance_abuser } }
 		}
 		name = ancrel.13030.a
 		fromfrom = { add_stage_clues = -2 }
@@ -1096,14 +972,12 @@ fleet_event = {
 		fromfrom = { set_site_progress_locked = yes }
 		leader = { save_event_target_as = dead_scientist exile_leader_as = dead_scientist }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 		event_target:dead_scientist = {
 			kill_leader = { show_notification = no }
 		}
 	}
-
 	option = {
 		name = site_setback
 		fromfrom = { add_stage_clues = -2 }
@@ -1128,11 +1002,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = site_delay
 		fromfrom = { add_stage_clues = -1 }
@@ -1157,11 +1029,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = site_success
 		fromfrom = { add_stage_clues = 3 }
@@ -1186,11 +1056,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = ancrel.8315.a
 		allow = {
@@ -1198,12 +1066,9 @@ fleet_event = {
 				resource_stockpile_compare = { resource = food value >= 100 }
 			}
 		}
-		owner = {
-			add_resource = { food = -100 }
-		}
+		owner = { add_resource = { food = -100 } }
 		fromfrom = { add_stage_clues = 3 }
 	}
-
 	option = {
 		name = ancrel.8315.b
 		fromfrom = { add_stage_clues = -2 }
@@ -1228,11 +1093,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = ancrel.15006.a
 		leader = {
@@ -1256,11 +1119,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = ancrel.15007.a
 		leader = { add_experience = 100 }
@@ -1272,7 +1133,6 @@ fleet_event = {
 fleet_event = {
 	id = ancrel.15008
 	title = "ancrel.15008.name"
-
 	desc = {
 		exclusive_trigger = { # Vfix
 			exists = leader
@@ -1290,11 +1150,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = ancrel.15008.a
 		leader = { add_experience = 100 }
@@ -1319,14 +1177,12 @@ fleet_event = {
 		fromfrom = { set_site_progress_locked = yes }
 		leader = { save_event_target_as = dead_scientist exile_leader_as = dead_scientist }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 		event_target:dead_scientist = {
 			kill_leader = { show_notification = no }
 		}
 	}
-
 	option = {
 		name = site_setback
 		fromfrom = { add_stage_clues = -2 }
@@ -1346,11 +1202,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = site_delay
 		fromfrom = { add_stage_clues = -1 }
@@ -1361,14 +1215,12 @@ fleet_event = {
 fleet_event = {
 	id = ancrel.8202
 	title = "ancrel.8200.name"
-
 	desc = {
 		trigger = {
 			leader = { is_robotic_species = no } # Vfix
 		}
 		text = ancrel.8202.desc
 	}
-
 	desc = {
 		trigger = {
 			leader = { is_robotic_species = yes } # Vfix
@@ -1384,11 +1236,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = site_success
 		fromfrom = { add_stage_clues = 3 }
@@ -1399,14 +1249,12 @@ fleet_event = {
 fleet_event = {
 	id = ancrel.8203
 	title = "ancrel.8200.name"
-
 	desc = {
 		trigger = {
 			leader = { is_robotic_species = no } # Vfix
 		}
 		text = ancrel.8203.desc
 	}
-
 	desc = {
 		trigger = {
 			leader = { is_robotic_species = yes } # Vfix
@@ -1422,11 +1270,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = ancrel.8203.A
 		allow = {
@@ -1434,12 +1280,9 @@ fleet_event = {
 				resource_stockpile_compare = { resource = energy value >= 100 }
 			}
 		}
-		owner = {
-			add_resource = { energy = -100 }
-		}
+		owner = { add_resource = { energy = -100 } }
 		fromfrom = { add_stage_clues = 3 }
 	}
-
 	option = {
 		name = ancrel.8203.B
 		fromfrom = { add_stage_clues = -2 }
@@ -1460,11 +1303,9 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = EXCELLENT
 		small_artifact_reward = yes
@@ -1484,16 +1325,13 @@ fleet_event = {
 	immediate = {
 		fromfrom = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		fromfrom = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = UNFORTUNATE
 		fromfrom = { add_stage_clues = -3 }
 	}
-
 	option = {
 		name = ancrel.kick_it
 		trigger = {

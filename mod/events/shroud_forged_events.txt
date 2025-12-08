@@ -63,7 +63,6 @@ country_event = {
 		has_origin = origin_shroud_forged
 		any_situation = { is_situation_type = situation_shroud_forged }
 	}
-
 	option = {
 		name = shroud_forged.5.a
 		add_monthly_resource_mult = {
@@ -82,12 +81,10 @@ country_event = {
 	desc = shroud_forged.10.desc
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
 	}
-
 	trigger = {
 		exists = event_target:shroud_forged_situation
 	}
@@ -95,34 +92,25 @@ country_event = {
 	immediate = {
 		set_country_flag = has_met_animator_of_clay
 	}
-
 	option = {
 		name = shroud_forged.10.a
-		event_target:shroud_forged_situation = {
-			set_situation_approach = approach_shroud_forged_appease
-		}
+		event_target:shroud_forged_situation = { set_situation_approach = approach_shroud_forged_appease }
 		add_resource = { unity = 100 }
 		hidden_effect = {
 			country_event = { id = shroud_forged.15 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.10.b
-		event_target:shroud_forged_situation = {
-			set_situation_approach = approach_shroud_forged_suppress
-		}
+		event_target:shroud_forged_situation = { set_situation_approach = approach_shroud_forged_suppress }
 		add_resource = { influence = 50 }
 		hidden_effect = {
 			country_event = { id = shroud_forged.20 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.10.c
-		event_target:shroud_forged_situation = {
-			set_situation_approach = approach_shroud_forged_support
-		}
+		event_target:shroud_forged_situation = { set_situation_approach = approach_shroud_forged_support }
 		random_owned_ship = {
 			limit = {
 				exists = leader
@@ -154,7 +142,6 @@ country_event = {
 	desc = shroud_forged.15.desc
 	option_clear = yes
 	trigger_clear = yes
-
 	option = {
 		name = DOTDOTDOT
 	}
@@ -167,7 +154,6 @@ country_event = {
 	desc = shroud_forged.20.desc
 	option_clear = yes
 	trigger_clear = yes
-
 	option = {
 		name = DOTDOTDOT
 	}
@@ -180,7 +166,6 @@ country_event = {
 	desc = shroud_forged.25.desc
 	option_clear = yes
 	trigger_clear = yes
-
 	option = {
 		name = DOTDOTDOT
 	}
@@ -198,7 +183,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = shroud_forged.30.a
 		add_research_option = tech_materiality_engine
@@ -211,12 +195,10 @@ country_event = {
 planet_event = {
 	id = shroud_forged.39
 	title = shroud_forged.39.title
-
 	desc = {
 		trigger = { has_planet_flag = materiality_engine_construction }
 		text = shroud_forged.39.desc_construction
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_planet_flag = materiality_engine_construction }
@@ -234,7 +216,6 @@ planet_event = {
 		has_owner = yes
 		owner = { is_same_empire = from has_origin = origin_shroud_forged }
 	}
-
 	option = {
 		name = shroud_forged.39.a
 		enable_special_project = {
@@ -266,12 +247,7 @@ country_event = {
 			else = {
 				set_variable = { which = materiality_engine_power value = 1 }
 			}
-			planet_event = {
-				id = shroud_forged.39
-				scopes = { from = root }
-				days = 1440
-				random = 720
-			}
+			planet_event = { id = shroud_forged.39 scopes = { from = root } days = 1440 random = 720 }
 		}
 		# Trigger event depending on component rolled
 		random_list = {
@@ -373,11 +349,13 @@ country_event = {
 	picture = GFX_evt_shroud_generic
 	show_sound = event_finding_loot
 	is_triggered_only = yes
-
 	option = {
 		name = shroud_forged.40.a
 		custom_tooltip = shroud_forged.40.tt
-		give_tech_no_error_effect = { MESSAGE = yes TECH = tech_psi_jump_drive_1 }
+		give_tech_no_error_effect = {
+			MESSAGE = yes
+			TECH = tech_psi_jump_drive_1
+		}
 	}
 }
 
@@ -389,11 +367,13 @@ country_event = {
 	picture = GFX_evt_shroud_generic
 	show_sound = event_finding_loot
 	is_triggered_only = yes
-
 	option = {
 		name = shroud_forged.40.a
 		custom_tooltip = shroud_forged.40.tt
-		give_tech_no_error_effect = { MESSAGE = yes TECH = tech_psionic_shield }
+		give_tech_no_error_effect = {
+			MESSAGE = yes
+			TECH = tech_psionic_shield
+		}
 	}
 }
 
@@ -405,11 +385,13 @@ country_event = {
 	picture = GFX_evt_shroud_generic
 	show_sound = event_finding_loot
 	is_triggered_only = yes
-
 	option = {
 		name = shroud_forged.40.a
 		custom_tooltip = shroud_forged.40.tt
-		give_tech_no_error_effect = { MESSAGE = yes TECH = tech_precognition_interface }
+		give_tech_no_error_effect = {
+			MESSAGE = yes
+			TECH = tech_precognition_interface
+		}
 	}
 }
 
@@ -421,11 +403,13 @@ country_event = {
 	picture = GFX_evt_shroud_generic
 	show_sound = event_finding_loot
 	is_triggered_only = yes
-
 	option = {
 		name = shroud_forged.40.a
 		custom_tooltip = shroud_forged.40.tt
-		give_tech_no_error_effect = { MESSAGE = yes TECH = tech_psionic_bombers }
+		give_tech_no_error_effect = {
+			MESSAGE = yes
+			TECH = tech_psionic_bombers
+		}
 	}
 }
 
@@ -437,11 +421,13 @@ country_event = {
 	picture = GFX_evt_shroud_generic
 	show_sound = event_finding_loot
 	is_triggered_only = yes
-
 	option = {
 		name = shroud_forged.40.a
 		custom_tooltip = shroud_forged.40.tt
-		give_tech_no_error_effect = { MESSAGE = yes TECH = tech_psionic_lightning }
+		give_tech_no_error_effect = {
+			MESSAGE = yes
+			TECH = tech_psionic_lightning
+		}
 	}
 }
 
@@ -453,11 +439,13 @@ country_event = {
 	picture = GFX_evt_shroud_generic
 	show_sound = event_finding_loot
 	is_triggered_only = yes
-
 	option = {
 		name = shroud_forged.40.a
 		custom_tooltip = shroud_forged.40.tt
-		give_tech_no_error_effect = { MESSAGE = yes TECH = tech_psionic_disruptor }
+		give_tech_no_error_effect = {
+			MESSAGE = yes
+			TECH = tech_psionic_disruptor
+		}
 	}
 }
 
@@ -469,11 +457,13 @@ country_event = {
 	picture = GFX_evt_shroud_generic
 	show_sound = event_finding_loot
 	is_triggered_only = yes
-
 	option = {
 		name = shroud_forged.40.a
 		custom_tooltip = shroud_forged.40.tt
-		give_tech_no_error_effect = { MESSAGE = yes TECH = tech_zro_launcher }
+		give_tech_no_error_effect = {
+			MESSAGE = yes
+			TECH = tech_zro_launcher
+		}
 	}
 }
 
@@ -485,7 +475,6 @@ country_event = {
 	picture = GFX_evt_shroud_generic
 	show_sound = event_administrative_work
 	is_triggered_only = yes
-
 	option = {
 		name = shroud_forged.40.a
 		custom_tooltip = shroud_forged.40.tt
@@ -502,7 +491,6 @@ country_event = {
 country_event = {
 	id = shroud_forged.50
 	title = shroud_forged.50.title
-
 	desc = {
 		trigger = {
 			text = shroud_forged.50.desc
@@ -520,7 +508,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = shroud_forged.50.a
 		enable_special_project = { name = "SHROUD_FORGED_REINTEGRATION" }
@@ -537,7 +524,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = shroud_forged.60.a
 		add_modifier = { modifier = shroud_forged_reintegration_modifier days = -1 }
@@ -559,7 +545,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = shroud_forged.70.a
 		enable_special_project = { name = "SHROUD_FORGED_GUIDE" }
@@ -594,7 +579,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = shroud_forged.80.a
 		add_modifier = { modifier = shroud_forged_guide_modifier days = -1 }
@@ -765,7 +749,6 @@ planet_event = {
 	id = shroud_forged.160
 	title = shroud_forged.160.title
 	desc = shroud_forged.160.desc
-
 	desc = {
 		trigger = {
 			from = {
@@ -791,7 +774,6 @@ planet_event = {
 			change_variable = { which = shroud_pierce_decision_zro_bonus_count value = 1 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.160.a
 		from = {
@@ -890,10 +872,7 @@ planet_event = {
 	}
 
 	immediate = {
-		planet_event = {
-			id = shroud_forged.200
-			scopes = { from = owner }
-		}
+		planet_event = { id = shroud_forged.200 scopes = { from = owner } }
 	}
 }
 
@@ -920,7 +899,6 @@ planet_event = {
 	immediate = {
 		owner = { set_country_flag = triggered_first_colonization_event }
 	}
-
 	option = {
 		name = ACKNOWLEDGED
 	}
@@ -948,7 +926,6 @@ planet_event = {
 	immediate = {
 		owner = { set_country_flag = triggered_first_colonization_event }
 	}
-
 	option = {
 		name = ACKNOWLEDGED
 	}
@@ -967,7 +944,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = shroud_forged.250.a
 		custom_tooltip = tooltip_shroud_forged_increase_progress_2
@@ -990,7 +966,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.250.b
 	}
@@ -1008,7 +983,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = shroud_forged.260.opt.a
 	}
@@ -1026,7 +1000,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = shroud_forged.270.a
 		custom_tooltip = tooltip_shroud_forged_decrease_progress_2
@@ -1038,7 +1011,6 @@ country_event = {
 			country_event = { id = shroud_forged.5 days = 1 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.270.b
 		custom_tooltip = tooltip_shroud_forged_increase_progress_2
@@ -1075,7 +1047,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = shroud_forged.280.opt.a
 	}
@@ -1118,11 +1089,16 @@ country_event = {
 				}
 			}
 		}
-		zroni_legacy_poi_effect = { NUMBER = 01 }
-		zroni_legacy_poi_effect = { NUMBER = 02 }
-		zroni_legacy_poi_effect = { NUMBER = 03 }
+		zroni_legacy_poi_effect = {
+			NUMBER = 01
+		}
+		zroni_legacy_poi_effect = {
+			NUMBER = 02
+		}
+		zroni_legacy_poi_effect = {
+			NUMBER = 03
+		}
 	}
-
 	option = {
 		name = shroud_forged.300.a
 		trigger = {
@@ -1134,7 +1110,6 @@ country_event = {
 			country_event = { id = shroud_forged.301 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.300.b
 		trigger = { has_country_flag = last_zroni_system }
@@ -1143,7 +1118,6 @@ country_event = {
 			country_event = { id = shroud_forged.302 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.300.c
 		trigger = {
@@ -1170,7 +1144,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = DOTDOTDOT
 	}
@@ -1187,7 +1160,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = DOTDOTDOT
 	}
@@ -1204,7 +1176,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = DOTDOTDOT
 	}
@@ -1256,7 +1227,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = shroud_forged.305.a
 		custom_tooltip = shroud_forged.305.a.tt
@@ -1279,7 +1249,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = shroud_forged.306.a
 		custom_tooltip = shroud_forged.306.a.tt
@@ -1297,7 +1266,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = shroud_forged.307.a
 		custom_tooltip = shroud_forged.307.a.tt
@@ -1315,7 +1283,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = shroud_forged.308.a
 		hidden_effect = {
@@ -1347,14 +1314,12 @@ country_event = {
 			save_event_target_as = the_animator_of_clay
 		}
 	}
-
 	option = {
 		name = shroud_forged.310.a
 		hidden_effect = {
 			country_event = { id = shroud_forged.311 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.310.b
 		custom_tooltip = shroud_forged.310.b.tt
@@ -1373,14 +1338,12 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = shroud_forged.311.a
 		hidden_effect = {
 			country_event = { id = shroud_forged.312 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.310.b
 		custom_tooltip = shroud_forged.310.b.tt
@@ -1399,7 +1362,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = shroud_forged.312.a
 		custom_tooltip = shroud_forged.312.a.tt
@@ -1409,7 +1371,6 @@ country_event = {
 			set_country_flag = shroud_forged_traitor
 		}
 	}
-
 	option = {
 		name = shroud_forged.310.b
 		custom_tooltip = shroud_forged.310.b.tt
@@ -1431,7 +1392,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = shroud_forged.313.a
 	}
@@ -1483,12 +1443,10 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = shroud_forged.320.a
 		custom_tooltip = shroud_forged.320.a.tt
 	}
-
 	after = {
 		hidden_effect = {
 			shroud_major_invasion_effect = yes
@@ -1529,11 +1487,7 @@ planet_event = {
 		add_modifier = { modifier = shroud_creatures_occupy }
 		if = {
 			limit = { is_artificial = no }
-			planet_event = {
-				id = shroud_forged.324
-				days = 270
-				random = 180
-			}
+			planet_event = { id = shroud_forged.324 days = 270 random = 180 }
 		}
 	}
 }
@@ -1581,11 +1535,7 @@ planet_event = {
 				remove_deposit = yes
 			}
 			add_deposit = d_shroud_rift_deposit
-			planet_event = {
-				id = shroud_forged.324
-				days = 270
-				random = 180
-			}
+			planet_event = { id = shroud_forged.324 days = 270 random = 180 }
 		}
 		else = {
 			if = {
@@ -1609,7 +1559,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = shroud_forged.320.a
 		custom_tooltip = shroud_forged.320.a.tt
@@ -1629,24 +1578,18 @@ country_event = {
 
 	trigger = {
 		has_origin = origin_shroud_forged
-		from = {
-			is_country_type = shroud
-			has_country_flag = animator_of_clay_country_flag
-		}
+		from = { is_country_type = shroud has_country_flag = animator_of_clay_country_flag }
 	}
-
 	picture_event_data = {
 		trigger = { has_breached_shroud = no }
 		portrait = shroud1
 		room = no_video_feed_room
 	}
-
 	picture_event_data = {
 		trigger = { has_breached_shroud = yes }
 		portrait = shroud1
 		room = shroud_room
 	}
-
 	desc = {
 		trigger = {
 			has_breached_shroud = no
@@ -1655,7 +1598,6 @@ country_event = {
 		}
 		text = shroud_forged.400.desc.default.active
 	}
-
 	desc = {
 		trigger = {
 			has_breached_shroud = no
@@ -1664,17 +1606,14 @@ country_event = {
 		}
 		text = shroud_forged.400.desc.default.cooldown
 	}
-
 	desc = {
 		trigger = { has_breached_shroud = no has_zroni_equilibrators = no }
 		text = shroud_forged.400.desc.default.inactive
 	}
-
 	desc = {
 		trigger = { has_breached_shroud = yes }
 		text = shroud_forged.400.desc.breached
 	}
-
 	option = { # Military Assistance
 		name = shroud_forged.400.a
 		allow = {
@@ -1727,7 +1666,6 @@ country_event = {
 			country_event = { id = shroud_forged.415 }
 		}
 	}
-
 	option = { # Civic Assistance
 		name = shroud_forged.400.b
 		allow = {
@@ -1786,7 +1724,6 @@ country_event = {
 			country_event = { id = shroud_forged.420 }
 		}
 	}
-
 	option = { # Research Assistance
 		name = shroud_forged.400.c
 		allow = {
@@ -1845,7 +1782,6 @@ country_event = {
 			country_event = { id = shroud_forged.425 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.400.d
 		trigger = { has_breached_shroud = yes }
@@ -1866,7 +1802,6 @@ country_event = {
 			country_event = { id = shroud_forged.470 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.400.e
 		trigger = { has_breached_shroud = yes }
@@ -1884,7 +1819,6 @@ country_event = {
 			country_event = { id = shroud_forged.475 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.400.h
 		trigger = {
@@ -1908,7 +1842,6 @@ country_event = {
 			country_event = { id = crisis.24100 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.400.f
 		trigger = { has_breached_shroud = yes }
@@ -1916,7 +1849,6 @@ country_event = {
 			country_event = { id = shroud_forged.460 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.400.g
 		default_hide_option = yes
@@ -1935,7 +1867,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = DOTDOTDOT
 	}
@@ -1953,7 +1884,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = DOTDOTDOT
 	}
@@ -1971,7 +1901,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = DOTDOTDOT
 	}
@@ -1990,7 +1919,6 @@ country_event = {
 		has_origin = origin_shroud_forged
 		has_zroni_equilibrators = yes
 	}
-
 	option = {
 		name = shroud_forged.430.a
 		add_modifier = { modifier = shroud_forged_military_assistance years = 10 }
@@ -2008,7 +1936,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = shroud_forged.432.a
 		custom_tooltip = shroud_forged.432.a.tt
@@ -2046,7 +1973,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = shroud_forged.434.a
 		capital_scope = {
@@ -2097,7 +2023,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.436.a
 		custom_tooltip = shroud_forged.436.a.tt
@@ -2117,7 +2042,6 @@ country_event = {
 		has_origin = origin_shroud_forged
 		has_zroni_equilibrators = yes
 	}
-
 	option = {
 		name = shroud_forged.438.a
 		add_modifier = { modifier = shroud_forged_civic_assistance years = 10 }
@@ -2136,7 +2060,6 @@ country_event = {
 		has_origin = origin_shroud_forged
 		has_zroni_equilibrators = yes
 	}
-
 	option = {
 		name = shroud_forged.440.a
 		add_monthly_resource_mult = {
@@ -2173,7 +2096,6 @@ country_event = {
 		has_origin = origin_shroud_forged
 		has_zroni_equilibrators = yes
 	}
-
 	option = {
 		name = shroud_forged.442.a
 		capital_scope = {
@@ -2198,7 +2120,6 @@ country_event = {
 			planet_event = { id = shroud_forged.321 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.444.a
 		custom_tooltip = shroud_forged.444.a.tt
@@ -2218,7 +2139,6 @@ country_event = {
 		has_origin = origin_shroud_forged
 		has_zroni_equilibrators = yes
 	}
-
 	option = {
 		name = shroud_forged.446.a
 		add_modifier = { modifier = shroud_forged_research_assistance years = 10 }
@@ -2237,7 +2157,6 @@ country_event = {
 		has_origin = origin_shroud_forged
 		has_zroni_equilibrators = yes
 	}
-
 	option = {
 		name = shroud_forged.448.a
 		locked_random_list = {
@@ -2305,7 +2224,6 @@ country_event = {
 		has_origin = origin_shroud_forged
 		has_zroni_equilibrators = yes
 	}
-
 	option = {
 		name = shroud_forged.450.a
 		capital_scope = {
@@ -2328,7 +2246,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = shroud_forged.460.a
 		hidden_effect = {
@@ -2348,7 +2265,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = shroud_forged.465.a
 	}
@@ -2365,7 +2281,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = shroud_forged.470.a
 	}
@@ -2382,7 +2297,6 @@ country_event = {
 	trigger = {
 		has_origin = origin_shroud_forged
 	}
-
 	option = {
 		name = shroud_forged.475.a
 	}
@@ -2399,9 +2313,7 @@ situation_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		situation_event_shroud_forged_balanced_trigger = {
-			FLAG = shroud_forged_500_cooldown
-		}
+		situation_event_shroud_forged_balanced_trigger = { FLAG = shroud_forged_500_cooldown }
 		exists = owner
 		owner = {
 			has_origin = origin_shroud_forged
@@ -2424,7 +2336,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.500.a
 		allow = {
@@ -2446,7 +2357,6 @@ situation_event = {
 			add_modifier = { modifier = pm_shroud_forged_special_housing days = -1 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.500.b
 		shroud_forged_situation_event_negative_1 = { FLAG = shroud_forged_500_negative }
@@ -2510,7 +2420,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.510.c
 		shroud_forged_situation_event_positive_1 = { FLAG = shroud_forged_510_positive_1 }
@@ -2518,7 +2427,6 @@ situation_event = {
 			add_modifier = { modifier = pm_shroud_forged_ceremony years = 2 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.510.d
 		trigger = { situation_progress > 2100 }
@@ -2541,7 +2449,6 @@ situation_event = {
 			add_modifier = { modifier = pm_shroud_forged_ceremony years = 2 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.510.a
 		trigger = {
@@ -2574,7 +2481,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.510.b
 		trigger = { situation_progress >= 900 }
@@ -2595,10 +2501,7 @@ situation_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		situation_event_shroud_forged_less_trigger = {
-			FLAG = shroud_forged_520_cooldown
-			VALUE = 2100
-		}
+		situation_event_shroud_forged_less_trigger = { FLAG = shroud_forged_520_cooldown VALUE = 2100 }
 		exists = owner
 		owner = {
 			has_origin = origin_shroud_forged
@@ -2648,7 +2551,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.520.c
 		shroud_forged_situation_event_positive_1 = { FLAG = shroud_forged_520_positive_1 }
@@ -2667,7 +2569,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.520.a
 		trigger = {
@@ -2703,7 +2604,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.520.b
 		shroud_forged_situation_event_negative_1 = { FLAG = shroud_forged_520_negative_1 }
@@ -2726,10 +2626,7 @@ situation_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		situation_event_shroud_forged_less_trigger = {
-			FLAG = shroud_forged_530_cooldown
-			VALUE = 1500
-		}
+		situation_event_shroud_forged_less_trigger = { FLAG = shroud_forged_530_cooldown VALUE = 1500 }
 		exists = owner
 		owner = {
 			has_origin = origin_shroud_forged
@@ -2750,12 +2647,10 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.530.b
 		custom_tooltip = shroud_forged.530.b.tt
 	}
-
 	option = {
 		name = shroud_forged.530.a
 		allow = {
@@ -2805,10 +2700,7 @@ situation_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		situation_event_shroud_forged_more_trigger = {
-			FLAG = shroud_forged_540_cooldown
-			VALUE = 1500
-		}
+		situation_event_shroud_forged_more_trigger = { FLAG = shroud_forged_540_cooldown VALUE = 1500 }
 		exists = owner
 		owner = {
 			has_origin = origin_shroud_forged
@@ -2833,7 +2725,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.540.a
 		allow = {
@@ -2842,14 +2733,11 @@ situation_event = {
 			}
 		}
 		shroud_forged_situation_event_positive_2 = { FLAG = shroud_forged_540_positive_2 }
-		owner = {
-			add_resource = { sr_zro = -25 }
-		}
+		owner = { add_resource = { sr_zro = -25 } }
 		event_target:target_planet = {
 			add_modifier = { modifier = pm_shroud_forged_shroud_pilgrimage years = 5 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.540.b
 	}
@@ -2900,12 +2788,10 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.550.a
 		shroud_forged_situation_event_positive_1 = { FLAG = shroud_forged_550_positive_1 }
 	}
-
 	option = {
 		name = shroud_forged.550.b
 		trigger = {
@@ -2978,7 +2864,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.560.a
 		shroud_forged_situation_event_positive_3 = { FLAG = shroud_forged_560_positive_2 }
@@ -2990,17 +2875,17 @@ situation_event = {
 				class = official # Vfix
 				skill = 3
 				set_age = 102
-				traits = { 0 = leader_trait_psionic 1 = leader_trait_shroud_prophet }
+				traits = {
+					0 = leader_trait_psionic
+					1 = leader_trait_shroud_prophet
+				}
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.560.b
 		shroud_forged_situation_event_negative_3 = { FLAG = shroud_forged_560_negative_2 }
-		owner = {
-			add_resource = { unity = -1000 }
-		}
+		owner = { add_resource = { unity = -1000 } }
 	}
 }
 
@@ -3037,7 +2922,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.570.b
 		shroud_forged_situation_event_positive_1 = { FLAG = shroud_forged_570_positive_1 }
@@ -3045,7 +2929,6 @@ situation_event = {
 			add_modifier = { modifier = pm_shroud_forged_dance_area years = 10 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.570.a
 		shroud_forged_situation_event_negative_1 = { FLAG = shroud_forged_570_negative_1 }
@@ -3062,10 +2945,7 @@ situation_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		situation_event_shroud_forged_more_trigger = {
-			FLAG = shroud_forged_580_cooldown
-			VALUE = 1500
-		}
+		situation_event_shroud_forged_more_trigger = { FLAG = shroud_forged_580_cooldown VALUE = 1500 }
 		exists = owner
 		owner = {
 			has_origin = origin_shroud_forged
@@ -3088,13 +2968,11 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.580.a
 		shroud_forged_situation_event_positive_1 = { FLAG = shroud_forged_580_positive_1 }
 		event_target:target_planet = { add_deposit = d_shroud_flora_deposit }
 	}
-
 	option = {
 		name = shroud_forged.580.b
 		allow = {
@@ -3102,9 +2980,7 @@ situation_event = {
 				resource_stockpile_compare = { resource = energy value >= 500 }
 			}
 		}
-		owner = {
-			add_resource = { energy = -500 }
-		}
+		owner = { add_resource = { energy = -500 } }
 	}
 }
 
@@ -3141,7 +3017,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.590.b
 		shroud_forged_situation_event_positive_1 = { FLAG = shroud_forged_590_positive_1 }
@@ -3149,7 +3024,6 @@ situation_event = {
 			add_modifier = { modifier = pm_shroud_forged_inequality days = -1 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.590.a
 		shroud_forged_situation_event_negative_1 = { FLAG = shroud_forged_590_negative_1 }
@@ -3196,7 +3070,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.600.a
 		shroud_forged_situation_event_positive_3 = { FLAG = shroud_forged_600_positive_2 }
@@ -3204,13 +3077,10 @@ situation_event = {
 			add_modifier = { modifier = pm_shroud_forged_individualism days = -1 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.600.b
 		shroud_forged_situation_event_negative_3 = { FLAG = shroud_forged_600_negative_2 }
-		owner = {
-			add_resource = { unity = -1000 }
-		}
+		owner = { add_resource = { unity = -1000 } }
 	}
 }
 
@@ -3248,7 +3118,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.610.a
 		shroud_forged_situation_event_positive_1 = { FLAG = shroud_forged_610_positive_1 }
@@ -3256,13 +3125,10 @@ situation_event = {
 			add_modifier = { modifier = pm_shroud_forged_individualism days = -1 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.610.b
 		shroud_forged_situation_event_negative_1 = { FLAG = shroud_forged_610_negative_1 }
-		owner = {
-			add_resource = { unity = -250 }
-		}
+		owner = { add_resource = { unity = -250 } }
 	}
 }
 
@@ -3311,7 +3177,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.620.c
 		shroud_forged_situation_event_positive_1 = { FLAG = shroud_forged_620_positive_1 }
@@ -3319,7 +3184,6 @@ situation_event = {
 			add_modifier = { modifier = shroud_forged_zro_market years = 10 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.620.a
 		trigger = {
@@ -3351,13 +3215,10 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.620.b
 		shroud_forged_situation_event_negative_1 = { FLAG = shroud_forged_620_negative_1 }
-		owner = {
-			add_resource = { sr_zro = 100 }
-		}
+		owner = { add_resource = { sr_zro = 100 } }
 	}
 }
 
@@ -3418,7 +3279,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.630.a
 		shroud_forged_situation_event_positive_2 = { FLAG = shroud_forged_630_positive_2 }
@@ -3437,7 +3297,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.630.b
 		trigger = {
@@ -3503,7 +3362,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.640.a
 		shroud_forged_situation_event_positive_1 = { FLAG = shroud_forged_640_positive_1 }
@@ -3522,7 +3380,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.640.b
 	}
@@ -3563,7 +3420,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.650.a
 		shroud_forged_situation_event_positive_1 = { FLAG = shroud_forged_650_positive_1 }
@@ -3574,7 +3430,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.650.b
 		shroud_forged_situation_event_negative_1 = { FLAG = shroud_forged_650_negative_1 }
@@ -3603,7 +3458,6 @@ situation_event = {
 		set_timed_situation_flag = { flag = shroud_forged_random_cooldown years = 1 }
 		set_situation_flag = shroud_forged_660_cooldown # This event can only fire once
 	}
-
 	option = {
 		name = shroud_forged.660.a
 		shroud_forged_situation_event_positive_3 = { FLAG = shroud_forged_660_positive_2 }
@@ -3612,7 +3466,6 @@ situation_event = {
 			add_modifier = { modifier = shroud_forged_physician_modifier days = -1 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.660.b
 		shroud_forged_situation_event_negative_1 = { FLAG = shroud_forged_660_negative_1 }
@@ -3658,7 +3511,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.670.a
 		shroud_forged_situation_event_positive_1 = { FLAG = shroud_forged_670_positive_1 }
@@ -3666,7 +3518,6 @@ situation_event = {
 			add_modifier = { modifier = pm_shroud_forged_artistic_revolution years = 10 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.670.b
 		shroud_forged_situation_event_negative_1 = { FLAG = shroud_forged_670_negative_1 }
@@ -3711,7 +3562,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.680.a
 		shroud_forged_situation_event_positive_1 = { FLAG = shroud_forged_680_positive_1 }
@@ -3719,7 +3569,6 @@ situation_event = {
 			add_modifier = { modifier = pm_shroud_forged_fashion_modifier days = -1 }
 		}
 	}
-
 	option = {
 		name = shroud_forged.680.b
 		custom_tooltip = shroud_forged.680.b.tt
@@ -3761,7 +3610,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.690.a
 		shroud_forged_situation_event_positive_1 = { FLAG = shroud_forged_690_positive_1 }
@@ -3774,7 +3622,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = shroud_forged.690.b
 		shroud_forged_situation_event_negative_1 = { FLAG = shroud_forged_690_negative_1 }
@@ -3791,7 +3638,6 @@ country_event = {
 	diplomatic = yes
 	is_triggered_only = yes
 	diplomatic_title = TRANSMISSION
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -3805,7 +3651,6 @@ country_event = {
 			has_country_flag = shroud_forged_traitor
 		}
 	}
-
 	option = {
 		name = shroud_forged.400.h
 		allow = {
@@ -3820,7 +3665,6 @@ country_event = {
 			country_event = { id = crisis.24100 }
 		}
 	}
-
 	option = {
 		name = END_TRANSMISSION
 	}

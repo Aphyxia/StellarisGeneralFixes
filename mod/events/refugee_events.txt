@@ -1,11 +1,11 @@
 ############################
-
 #
 # Refugee Events
 #
 # Written by Martin Anward
 #
 ############################
+
 namespace = refugees
 # Refugees Arrive (new species)
 pop_group_event = {
@@ -13,7 +13,6 @@ pop_group_event = {
 	title = refugees.1.name
 	picture = GFX_evt_unknown_ships
 	location = root
-
 	desc = {
 		text = refugees.1.desc.1
 		trigger = {
@@ -21,16 +20,13 @@ pop_group_event = {
 			event_target:RefugeeEscapedFrom = {
 				root = {
 					OR = {
-						NOT = {
-							has_citizenship_type = { type = citizenship_purge country = prev }
-						}
+						NOT = { has_citizenship_type = { type = citizenship_purge country = prev } }
 						has_purge_type = { type = purge_displacement country = prev }
 					}
 				}
 			}
 		}
 	}
-
 	desc = {
 		text = refugees.1.desc.2
 		trigger = {
@@ -38,15 +34,12 @@ pop_group_event = {
 			event_target:RefugeeEscapedFrom = {
 				root = {
 					has_citizenship_type = { type = citizenship_purge country = prev }
-					NOT = {
-						has_purge_type = { type = purge_displacement country = prev }
-					}
+					NOT = { has_purge_type = { type = purge_displacement country = prev } }
 					prev = { is_gestalt = no }
 				}
 			}
 		}
 	}
-
 	desc = {
 		text = refugees.1.desc.2.b
 		trigger = {
@@ -54,15 +47,12 @@ pop_group_event = {
 			event_target:RefugeeEscapedFrom = {
 				root = {
 					has_citizenship_type = { type = citizenship_purge country = prev }
-					NOT = {
-						has_purge_type = { type = purge_displacement country = prev }
-					}
+					NOT = { has_purge_type = { type = purge_displacement country = prev } }
 					prev = { is_gestalt = yes }
 				}
 			}
 		}
 	}
-
 	desc = {
 		text = refugees.1.desc.3
 		trigger = {
@@ -78,7 +68,6 @@ pop_group_event = {
 			set_country_flag = refugeecountry@event_target:RefugeeEscapedFrom
 		}
 	}
-
 	option = {
 		name = refugees.1.a
 		if = {
@@ -101,9 +90,7 @@ pop_group_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = {
-			owner = { has_country_flag = recentrefugees@root.species }
-		}
+		NOT = { owner = { has_country_flag = recentrefugees@root.species } }
 	}
 
 	immediate = {
@@ -206,11 +193,7 @@ planet_event = {
 
 	immediate = {
 		set_planet_flag = refugees_escaping_crisis
-		planet_event = {
-			id = refugees.6
-			days = 45
-			random = 45
-		}
+		planet_event = { id = refugees.6 days = 45 random = 45 }
 	}
 }
 

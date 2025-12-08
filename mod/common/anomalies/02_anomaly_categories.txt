@@ -3,7 +3,6 @@ TROP_BIOLOGY_CAT = {
 	desc = "TROP_BIOLOGY_DESC"
 	picture = "GFX_evt_alien_nature"
 	level = 3
-
 	spawn_chance = {
 		modifier = { add = 3 is_planet_class = pc_tropical }
 	}
@@ -15,7 +14,6 @@ AST_MINING_CAT = {
 	desc = "AST_MINING_DESC"
 	picture = "GFX_evt_mining_station"
 	level = 2
-
 	spawn_chance = {
 		modifier = {
 			add = 3
@@ -31,7 +29,6 @@ GEN_DERELICT_SHIP_CAT = {
 	desc = "GEN_DERELICT_SHIP_DESC"
 	picture = "GFX_evt_ship_in_orbit"
 	level = 2
-
 	spawn_chance = {
 		modifier = {
 			add = 3
@@ -53,11 +50,9 @@ GEN_LOST_CARGO_CAT = {
 	desc = "GEN_LOST_CARGO_DESC"
 	picture = "GFX_evt_unidentified_ship"
 	level = 6
-
 	spawn_chance = {
 		modifier = { add = 3 is_asteroid = yes }
 	}
-
 	on_success = {
 		1 = anomaly.4015
 		1 = anomaly.4085
@@ -68,7 +63,6 @@ GEN_OLD_WAR_CAT = {
 	desc = "GEN_OLD_WAR_DESC"
 	picture = "GFX_evt_ship_in_orbit_2"
 	level = 2
-
 	spawn_chance = {
 		modifier = {
 			add = 3
@@ -80,7 +74,6 @@ GEN_OLD_WAR_CAT = {
 			NOT = { has_planet_flag = nuked_planet_anomalies_disabled }
 		}
 	}
-
 	on_success = {
 		1 = anomaly.4020
 		1 = {
@@ -116,17 +109,16 @@ GEN_OLD_WAR_CAT = {
 #
 #	on_success = anomaly.4025
 # }
+
 DES_BURIED_CAT = {
 	desc = "DES_BURIED_DESC"
 	picture = "GFX_evt_desert"
 	level = 4
-
 	spawn_chance = {
 		modifier = { add = 3 is_planet_class = pc_desert }
 	}
 
 	max_once = yes
-
 	on_success = {
 		1 = {
 			modifier = {
@@ -154,7 +146,6 @@ SUN_RAYS_CAT = {
 	desc = "SUN_RAYS_DESC"
 	picture = "GFX_evt_physics_research"
 	level = 5
-
 	spawn_chance = {
 		modifier = {
 			add = 3
@@ -166,7 +157,6 @@ SUN_RAYS_CAT = {
 	}
 
 	max_once = yes
-
 	on_success = {
 		1 = {
 			modifier = {
@@ -183,7 +173,6 @@ WAT_PLANET_CAT = {
 	desc = "WAT_PLANET_DESC"
 	picture = "GFX_evt_ocean"
 	level = 3
-
 	spawn_chance = {
 		modifier = {
 			add = 3
@@ -204,7 +193,6 @@ COLD_RESEARCH_CAT = {
 	desc = "COLD_RESEARCH_DESC"
 	picture = "GFX_evt_tundra"
 	level = 3
-
 	spawn_chance = {
 		modifier = {
 			add = 3
@@ -214,7 +202,6 @@ COLD_RESEARCH_CAT = {
 			}
 		}
 	}
-
 	on_success = {
 		1 = {
 			modifier = {
@@ -261,7 +248,6 @@ SUN_TEAPOT_CAT = {
 	desc = "SUN_TEAPOT_DESC"
 	picture = "GFX_evt_star_yellow"
 	level = 5
-
 	spawn_chance = {
 		modifier = {
 			add = 1
@@ -280,7 +266,6 @@ AST_GEAR_CAT = {
 	desc = "AST_GEAR_DESC"
 	picture = "GFX_evt_mining_station"
 	level = 6
-
 	spawn_chance = {
 		modifier = { add = 3 is_asteroid = yes }
 	}
@@ -292,7 +277,6 @@ TROP_CONDITIONS_CAT = {
 	desc = "TROP_CONDITIONS_DESC"
 	picture = "GFX_evt_alien_nature"
 	level = 3
-
 	spawn_chance = {
 		modifier = { add = 3 is_planet_class = pc_tropical }
 		modifier = {
@@ -311,7 +295,6 @@ ARID_SENSOR_CAT = {
 	desc = "ARID_SENSOR_DESC"
 	picture = "GFX_evt_arid"
 	level = 6
-
 	spawn_chance = {
 		modifier = { add = 3 is_planet_class = pc_arid }
 	}
@@ -323,11 +306,9 @@ CON_BIOLOGY_CAT = {
 	desc = "CON_BIOLOGY_DESC"
 	picture = "GFX_evt_continental"
 	level = 1
-
 	spawn_chance = {
 		modifier = { add = 3 is_planet_class = pc_continental }
 	}
-
 	on_success = {
 		1 = {
 			modifier = {
@@ -358,7 +339,6 @@ TOX_PLANET_CAT = {
 	desc = "TOX_PLANET_DESC"
 	picture = "GFX_evt_toxic"
 	level = 3
-
 	spawn_chance = {
 		modifier = { add = 3 is_planet_class = pc_toxic }
 	}
@@ -370,7 +350,6 @@ DES_PLANET_CAT = {
 	desc = "DES_PLANET_DESC"
 	picture = "GFX_evt_desert"
 	level = 1
-
 	spawn_chance = {
 		modifier = { add = 3 is_planet_class = pc_desert }
 	}
@@ -391,11 +370,11 @@ DES_PLANET_CAT = {
 #
 #	on_success = anomaly.4125
 # }
+
 GEN_MYSTICAL_CAT = {
 	desc = "GEN_MYSTICAL_DESC"
 	picture = "GFX_evt_asteroid_field"
 	level = 7
-
 	spawn_chance = {
 		modifier = { add = 1 is_asteroid = yes }
 		modifier = {
@@ -411,7 +390,6 @@ NUKE_PLANET_CAT = {
 	desc = "NUKE_PLANET_DESC"
 	picture = "GFX_evt_ship_in_orbit"
 	level = 5
-
 	spawn_chance = {
 		modifier = {
 			add = 3
@@ -436,7 +414,6 @@ RADIOACTIVE_PLANET_CAT = {
 	desc = "RADIOACTIVE_PLANET_DESC"
 	picture = "GFX_evt_ship_in_orbit"
 	level = 2
-
 	spawn_chance = {
 		modifier = {
 			add = 3
@@ -452,7 +429,6 @@ ARID_PLANET_CAT = {
 	desc = "ARID_PLANET_DESC"
 	picture = "GFX_evt_arid"
 	level = 3
-
 	spawn_chance = {
 		modifier = { add = 3 is_planet_class = pc_arid }
 	}
@@ -464,7 +440,6 @@ NANO_SWARM_CAT = {
 	desc = "NANO_SWARM_CAT_DESC"
 	picture = "GFX_evt_desert"
 	level = 6
-
 	spawn_chance = { # Vfix
 		base = 0 # Added by system initializer
 	}
@@ -476,7 +451,6 @@ STAR_RESONANCE_CAT = {
 	desc = "STAR_RESONANCE_DESC"
 	picture = "GFX_evt_star_yellow"
 	level = 2
-
 	spawn_chance = {
 		modifier = {
 			add = 1
@@ -489,7 +463,6 @@ STAR_RESONANCE_CAT = {
 	}
 
 	null_spawn_chance = 0.60 # 40% chance to spawn
-
 	on_success = {
 		1 = anomaly.6740
 	}
@@ -504,9 +477,7 @@ ALPHA_CENTAURI_CAT = {
 		1 = {
 			modifier = {
 				factor = 0
-				NOT = {
-					owner.capital_scope = { has_planet_flag = planet_earth }
-				}
+				NOT = { owner.capital_scope = { has_planet_flag = planet_earth } }
 			}
 			anomaly_event = anomaly.6745
 		}
@@ -524,7 +495,6 @@ TEMPORAL_PRISM_CAT = {
 	desc = "TEMPORAL_PRISM_CAT_DESC"
 	picture = "GFX_evt_clocks"
 	level = 5
-
 	spawn_chance = {
 		modifier = { add = 3 is_asteroid = yes }
 	}
@@ -536,7 +506,6 @@ VENDING_MACHINE_CAT = {
 	desc = "VENDING_MACHINE_CAT_DESC"
 	picture = "GFX_evt_asteroid_field"
 	level = 3
-
 	spawn_chance = {
 		modifier = { add = 3 is_asteroid = yes }
 		modifier = {
@@ -553,7 +522,6 @@ TIYANKI_ASTEROID_CAT = {
 	desc = "TIYANKI_ASTEROID_CAT_DESC"
 	picture = "GFX_evt_ice_asteroids"
 	level = 3
-
 	spawn_chance = { # Vfix
 		base = 0 # Called in initializer
 	}
@@ -582,7 +550,6 @@ SINGING_PLANET_CAT = {
 	desc = "SINGING_PLANET_CAT_DESC"
 	picture = GFX_evt_decryption
 	level = 7
-
 	spawn_chance = {
 		modifier = {
 			add = 2
@@ -603,7 +570,6 @@ SINGING_PLANET_CAT = {
 	}
 
 	max_once = yes
-
 	on_spawn = {
 		clear_deposits = yes
 	}
@@ -615,11 +581,9 @@ FROZEN_SPRINGS_CAT = {
 	desc = "FROZEN_SPRINGS_CAT_desc"
 	picture = GFX_evt_microscopic_life
 	level = 2
-
 	spawn_chance = {
 		modifier = { add = 3 is_planet_class = pc_frozen }
 	}
-
 	on_success = {
 		1 = anomaly.3140
 	}
@@ -629,11 +593,9 @@ SOLARPUNK_CAT = {
 	desc = "SOLARPUNK_CAT_DESC"
 	picture = GFX_evt_vortex
 	level = 7
-
 	spawn_chance = { # Vfix
 		base = 0 # Called in an event
 	}
-
 	on_success = {
 		1 = fircon.5010
 	}
@@ -643,7 +605,6 @@ DATA_DIAMOND_CAT = {
 	desc = "DATA_DIAMOND_CAT_DESC"
 	picture = GFX_evt_frozen
 	level = 4
-
 	spawn_chance = {
 		modifier = {
 			add = 1
@@ -657,7 +618,6 @@ DATA_DIAMOND_CAT = {
 	}
 
 	max_once_global = yes
-
 	on_spawn = {
 		clear_deposits = yes
 	}
@@ -671,7 +631,6 @@ INTEMPORAL_ORB_CAT = {
 	level = 2
 	max_once_global = yes
 	null_spawn_chance = 0.50 # 50% chance to spawn
-
 	spawn_chance = {
 		modifier = {
 			add = 1
@@ -684,7 +643,6 @@ INTEMPORAL_ORB_CAT = {
 			}
 		}
 	}
-
 	on_success = {
 		1 = anomaly.7105
 	}
@@ -695,7 +653,6 @@ RAPID_DESERTIFICATION_CAT = {
 	picture = GFX_evt_unidentified_monster
 	level = 1
 	max_once_global = yes
-
 	spawn_chance = {
 		modifier = {
 			add = 1
@@ -708,7 +665,6 @@ RAPID_DESERTIFICATION_CAT = {
 	}
 
 	null_spawn_chance = 0.70 # 30% chance to spawn
-
 	on_success = {
 		1 = anomaly.7135
 	}
@@ -738,11 +694,9 @@ MYSTERIOUS_ROCK_CAT = {
 	desc = "MYSTERIOUS_ROCK_CAT_DESC"
 	picture = "GFX_evt_desert"
 	level = 3
-
 	spawn_chance = {
 		modifier = { add = 3 is_planet_class = pc_barren }
 	}
-
 	on_success = {
 		1 = anomaly.2000
 	}
@@ -752,11 +706,9 @@ ICY_FLOWERS_CAT = {
 	desc = "ICY_FLOWERS_CAT_DESC"
 	picture = "GFX_evt_frozen"
 	level = 3
-
 	spawn_chance = {
 		modifier = { add = 3 is_planet_class = pc_frozen }
 	}
-
 	on_success = {
 		1 = anomaly.2010
 	}

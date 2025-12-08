@@ -239,15 +239,14 @@ country_event = {
 }
 
 ## Scholarium planetary sensor.
+
 country_event = {
 	id = specialist.900
 	title = specialist.900.name
-
 	desc = {
 		text = specialist.900.desc
 		trigger = { is_gestalt = no }
 	}
-
 	desc = {
 		text = specialist.900.desc.gestalt
 		trigger = { is_gestalt = yes }
@@ -256,14 +255,10 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_scholarium_anomaly
 	show_sound = evn_ove_scholarium_anomaly
-	location = FROM
-
+	location = from
 	option = {
 		name = specialist.900.A
-		enable_special_project = {
-			name = SCHOLARIUM_PLANETARY_SENSORS
-			location = ROOT.FROM
-		}
+		enable_special_project = { name = SCHOLARIUM_PLANETARY_SENSORS location = ROOT.FROM }
 	}
 }
 
@@ -271,12 +266,10 @@ country_event = {
 country_event = {
 	id = specialist.905
 	title = specialist.905.name
-
 	desc = {
 		text = specialist.905.desc
 		trigger = { is_gestalt = no }
 	}
-
 	desc = {
 		text = specialist.905.desc.gestalt
 		trigger = { is_gestalt = yes }
@@ -285,8 +278,7 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_engineering_cache
 	show_sound = evn_ove_scholarium_cache_engineering
-	location = FROM
-
+	location = from
 	option = {
 		name = EXCELLENT
 		add_scholarium_research = { TYPE = engineering }
@@ -297,12 +289,10 @@ country_event = {
 country_event = {
 	id = specialist.910
 	title = specialist.910.name
-
 	desc = {
 		text = specialist.910.desc
 		trigger = { is_gestalt = no }
 	}
-
 	desc = {
 		text = specialist.910.desc.gestalt
 		trigger = { is_gestalt = yes }
@@ -311,8 +301,7 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_society_cache
 	show_sound = evn_ove_scholarium_cache_society
-	location = FROM
-
+	location = from
 	option = {
 		name = EXCELLENT
 		add_scholarium_research = { TYPE = society }
@@ -323,12 +312,10 @@ country_event = {
 country_event = {
 	id = specialist.915
 	title = specialist.915.name
-
 	desc = {
 		text = specialist.915.desc
 		trigger = { is_gestalt = no }
 	}
-
 	desc = {
 		text = specialist.915.desc.gestalt
 		trigger = { is_gestalt = yes }
@@ -337,8 +324,7 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_physics_cache
 	show_sound = evn_ove_scholarium_cache_physics
-	location = FROM
-
+	location = from
 	option = {
 		name = EXCELLENT
 		add_scholarium_research = { TYPE = physics }
@@ -349,12 +335,10 @@ country_event = {
 country_event = {
 	id = specialist.920
 	title = specialist.920.name
-
 	desc = {
 		text = specialist.920.desc
 		trigger = { is_gestalt = no }
 	}
-
 	desc = {
 		text = specialist.920.desc.gestalt
 		trigger = { is_gestalt = yes }
@@ -363,8 +347,7 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_rare_tech_cache
 	show_sound = evn_ove_scholarium_cache_rare_tech
-	location = FROM
-
+	location = from
 	option = {
 		name = EXCELLENT
 		add_random_research_option = { ignore_rare = no }
@@ -413,11 +396,7 @@ country_event = {
 				limit = { valid_for_prospectorium_discovery = yes }
 				save_event_target_as = prospectorium_discovery_target
 			}
-			country_event = {
-				id = specialist.1150
-				days = 1
-				random = 180
-			}
+			country_event = { id = specialist.1150 days = 1 random = 180 }
 		}
 	}
 }
@@ -434,15 +413,11 @@ country_event = {
 
 	trigger = {
 		is_specialist_subject_type = { TYPE = prospectorium }
-		event_target:prospectorium_discovery_target = {
-			valid_for_prospectorium_discovery = yes
-		}
+		event_target:prospectorium_discovery_target = { valid_for_prospectorium_discovery = yes }
 	}
 
 	immediate = {
-		event_target:prospectorium_discovery_target = {
-			set_planet_flag = resource_discovery_flag
-		}
+		event_target:prospectorium_discovery_target = { set_planet_flag = resource_discovery_flag }
 		if = {
 			limit = {
 				any_agreement = { specialist_tier = 1 }
@@ -463,7 +438,6 @@ country_event = {
 			prospectorium_resource_discovery_flag_tier_3_effect = yes
 		}
 	}
-
 	option = { # Energy
 		name = specialist.1150.a
 		trigger = { has_country_flag = prospectorium_resource_discovery_energy }
@@ -473,7 +447,6 @@ country_event = {
 		}
 		custom_tooltip = specialist.1150.a.tt
 	}
-
 	option = { # Minerals
 		name = specialist.1150.b
 		trigger = { has_country_flag = prospectorium_resource_discovery_minerals }
@@ -483,7 +456,6 @@ country_event = {
 		}
 		custom_tooltip = specialist.1150.b.tt
 	}
-
 	option = { # Alloys
 		name = specialist.1150.c
 		trigger = { has_country_flag = prospectorium_resource_discovery_alloys }
@@ -493,7 +465,6 @@ country_event = {
 		}
 		custom_tooltip = specialist.1150.c.tt
 	}
-
 	option = { # Rare Crystals
 		name = specialist.1150.d
 		trigger = { has_country_flag = prospectorium_resource_discovery_rare_crystals }
@@ -503,7 +474,6 @@ country_event = {
 		}
 		custom_tooltip = specialist.1150.d.tt
 	}
-
 	option = { # Volatile Motes
 		name = specialist.1150.e
 		trigger = { has_country_flag = prospectorium_resource_discovery_volatile_motes }
@@ -513,7 +483,6 @@ country_event = {
 		}
 		custom_tooltip = specialist.1150.e.tt
 	}
-
 	option = { # Exotic Gases
 		name = specialist.1150.f
 		trigger = { has_country_flag = prospectorium_resource_discovery_exotic_gases }
@@ -523,7 +492,6 @@ country_event = {
 		}
 		custom_tooltip = specialist.1150.f.tt
 	}
-
 	option = { # Zro
 		name = specialist.1150.g
 		trigger = { has_country_flag = prospectorium_resource_discovery_zro }
@@ -533,7 +501,6 @@ country_event = {
 		}
 		custom_tooltip = specialist.1150.g.tt
 	}
-
 	option = { # Dark Matter
 		name = specialist.1150.h
 		trigger = { has_country_flag = prospectorium_resource_discovery_dark_matter }
@@ -543,7 +510,6 @@ country_event = {
 		}
 		custom_tooltip = specialist.1150.h.tt
 	}
-
 	option = { # Living Metal
 		name = specialist.1150.i
 		trigger = { has_country_flag = prospectorium_resource_discovery_living_metal }
@@ -553,7 +519,6 @@ country_event = {
 		}
 		custom_tooltip = specialist.1150.i.tt
 	}
-
 	after = {
 		prospectorium_resource_discovery_remove_flag_effect = yes
 	}
@@ -567,7 +532,6 @@ country_event = {
 	picture = GFX_evt_physics_cache
 	show_sound = evn_ove_scholarium_cache_physics
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		event_target:prospectorium_discovery_target = {
@@ -595,7 +559,6 @@ country_event = {
 	picture = GFX_evt_physics_cache
 	show_sound = evn_ove_scholarium_cache_physics
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		event_target:prospectorium_discovery_target = {
@@ -623,7 +586,6 @@ country_event = {
 	picture = GFX_evt_physics_cache
 	show_sound = evn_ove_scholarium_cache_physics
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		event_target:prospectorium_discovery_target = {
@@ -651,7 +613,6 @@ country_event = {
 	picture = GFX_evt_physics_cache
 	show_sound = evn_ove_scholarium_cache_physics
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		event_target:prospectorium_discovery_target = {
@@ -679,7 +640,6 @@ country_event = {
 	picture = GFX_evt_physics_cache
 	show_sound = evn_ove_scholarium_cache_physics
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		event_target:prospectorium_discovery_target = {
@@ -707,7 +667,6 @@ country_event = {
 	picture = GFX_evt_physics_cache
 	show_sound = evn_ove_scholarium_cache_physics
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		event_target:prospectorium_discovery_target = {
@@ -735,7 +694,6 @@ country_event = {
 	picture = GFX_evt_physics_cache
 	show_sound = evn_ove_scholarium_cache_physics
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		event_target:prospectorium_discovery_target = {
@@ -763,7 +721,6 @@ country_event = {
 	picture = GFX_evt_physics_cache
 	show_sound = evn_ove_scholarium_cache_physics
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		event_target:prospectorium_discovery_target = {
@@ -791,7 +748,6 @@ country_event = {
 	picture = GFX_evt_physics_cache
 	show_sound = evn_ove_scholarium_cache_physics
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		event_target:prospectorium_discovery_target = {

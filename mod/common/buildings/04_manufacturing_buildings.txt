@@ -6,12 +6,10 @@ building_foundry_1 = {
 	can_build = yes
 	base_buildtime = @b1_time
 	category = manufacturing
-
 	building_sets = {
 		industrial
 		foundry
 	}
-
 	potential = {
 		has_owner = yes # Vfix opt
 		NOR = {
@@ -33,7 +31,6 @@ building_foundry_1 = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		# Vfix sync
 		has_owner = yes
@@ -43,21 +40,17 @@ building_foundry_1 = {
 			owner = { is_wilderness_empire = yes }
 		}
 	}
-
 	prerequisites = {
 		tech_basic_industry
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = no
 	}
 
 	ai_weight_coefficient = 0
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -67,12 +60,10 @@ building_foundry_1 = {
 			energy = @b1_upkeep
 		}
 	}
-
 	inline_script = {
 		script = jobs/foundry_add
 		AMOUNT = @building_static_jobs
 	}
-
 	upgrades = {
 		"building_foundry_2"
 	}
@@ -82,22 +73,18 @@ building_foundry_2 = {
 	base_buildtime = @b2_time
 	category = manufacturing
 	can_build = no
-
 	building_sets = {
 		industrial
 		foundry
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no } # see 'building_natural_furnace_2'
 		is_special_colony_type = no
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		OR = {
@@ -106,7 +93,6 @@ building_foundry_2 = {
 			owner = { is_wilderness_empire = yes }
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -118,20 +104,16 @@ building_foundry_2 = {
 			volatile_motes = @b3_rare_upkeep
 		}
 	}
-
 	prerequisites = {
 		tech_alloys_1
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = no
 	}
-
 	inline_script = {
 		script = jobs/foundry_add
 		AMOUNT = @building_static_jobs_high
 	}
-
 	upgrades = {
 		"building_foundry_3"
 	}
@@ -141,22 +123,18 @@ building_foundry_3 = {
 	base_buildtime = @b3_time
 	category = manufacturing
 	can_build = no
-
 	building_sets = {
 		foundry
 		industrial
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no } # see 'building_natural_furnace_3'
 		is_special_colony_type = no
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		OR = {
@@ -165,7 +143,6 @@ building_foundry_3 = {
 			owner = { is_wilderness_empire = yes }
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -177,11 +154,9 @@ building_foundry_3 = {
 			volatile_motes = @b4_rare_upkeep
 		}
 	}
-
 	prerequisites = {
 		tech_alloys_2
 	}
-
 	inline_script = {
 		script = jobs/foundry_add
 		AMOUNT = @building_static_jobs_very_high
@@ -192,12 +167,10 @@ building_factory_1 = {
 	can_build = yes
 	base_buildtime = @b1_time
 	category = manufacturing
-
 	building_sets = {
 		industrial
 		factory
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -226,7 +199,6 @@ building_factory_1 = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		# Vfix sync
 		has_owner = yes
@@ -243,11 +215,9 @@ building_factory_1 = {
 	}
 
 	ai_weight_coefficient = 0
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -257,16 +227,13 @@ building_factory_1 = {
 			energy = @b1_upkeep
 		}
 	}
-
 	inline_script = {
 		script = jobs/factory_add
 		AMOUNT = @building_static_jobs
 	}
-
 	prerequisites = {
 		tech_basic_industry
 	}
-
 	upgrades = {
 		"building_factory_2"
 	}
@@ -276,16 +243,13 @@ building_factory_2 = {
 	base_buildtime = @b2_time
 	category = manufacturing
 	can_build = no
-
 	building_sets = {
 		factory
 		industrial
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { country_uses_consumer_goods = yes }
@@ -294,7 +258,6 @@ building_factory_2 = {
 			has_modifier = slave_colony
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		OR = {
@@ -303,7 +266,6 @@ building_factory_2 = {
 			owner = { country_uses_consumer_goods = no }
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -315,16 +277,13 @@ building_factory_2 = {
 			rare_crystals = @b3_rare_upkeep
 		}
 	}
-
 	inline_script = {
 		script = jobs/factory_add
 		AMOUNT = @building_static_jobs_high
 	}
-
 	prerequisites = {
 		tech_luxuries_1
 	}
-
 	upgrades = {
 		"building_factory_3"
 	}
@@ -334,16 +293,13 @@ building_factory_3 = {
 	base_buildtime = @b3_time
 	category = manufacturing
 	can_build = no
-
 	building_sets = {
 		factory
 		industrial
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { country_uses_consumer_goods = yes }
@@ -352,7 +308,6 @@ building_factory_3 = {
 			has_modifier = slave_colony
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		OR = {
@@ -361,7 +316,6 @@ building_factory_3 = {
 			owner = { country_uses_consumer_goods = no }
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -373,12 +327,10 @@ building_factory_3 = {
 			rare_crystals = @b4_rare_upkeep
 		}
 	}
-
 	inline_script = {
 		script = jobs/factory_add
 		AMOUNT = @building_static_jobs_very_high
 	}
-
 	prerequisites = {
 		tech_luxuries_2
 	}
@@ -389,13 +341,11 @@ building_refinery = {
 	planet_limit = 1
 	exempt_from_ai_planet_specialization = no
 	category = manufacturing
-
 	building_sets = {
 		industrial
 		factory
 		foundry
 	}
-
 	potential = {
 		NOR = {
 			has_modifier = resort_colony
@@ -404,7 +354,6 @@ building_refinery = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no } # see 'building_churning_stomach'
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -414,31 +363,25 @@ building_refinery = {
 			energy = 3
 		}
 	}
-
 	planet_modifier = {
 		industrial_jobs_exotic_gases_produces_add = 0.25
 	}
-
 	triggered_planet_modifier = {
 		potential = { industrial_jobs_are_catalytic_trigger = no }
 		planet_metallurgists_minerals_upkeep_add = 1.25
 		planet_artisans_minerals_upkeep_add = 1.25
 	}
-
 	triggered_planet_modifier = {
 		potential = { industrial_jobs_are_catalytic_trigger = yes }
 		planet_metallurgists_food_upkeep_add = 2
 		planet_artisans_food_upkeep_add = 2
 	}
-
 	prerequisites = {
 		"tech_exotic_gases"
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = no
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
@@ -449,13 +392,11 @@ building_chemical_plant = {
 	planet_limit = 1
 	exempt_from_ai_planet_specialization = no
 	category = manufacturing
-
 	building_sets = {
 		industrial
 		factory
 		foundry
 	}
-
 	potential = {
 		NOR = {
 			has_modifier = resort_colony
@@ -464,7 +405,6 @@ building_chemical_plant = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no } # see 'building_mote_aggravator'
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -474,31 +414,25 @@ building_chemical_plant = {
 			energy = 3
 		}
 	}
-
 	planet_modifier = {
 		industrial_jobs_volatile_motes_produces_add = 0.25
 	}
-
 	triggered_planet_modifier = {
 		potential = { industrial_jobs_are_catalytic_trigger = no }
 		planet_metallurgists_minerals_upkeep_add = 1.25
 		planet_artisans_minerals_upkeep_add = 1.25
 	}
-
 	triggered_planet_modifier = {
 		potential = { industrial_jobs_are_catalytic_trigger = yes }
 		planet_metallurgists_food_upkeep_add = 2
 		planet_artisans_food_upkeep_add = 2
 	}
-
 	prerequisites = {
 		"tech_volatile_motes"
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = no
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
@@ -509,13 +443,11 @@ building_crystal_plant = {
 	planet_limit = 1
 	exempt_from_ai_planet_specialization = no
 	category = manufacturing
-
 	building_sets = {
 		industrial
 		factory
 		foundry
 	}
-
 	potential = {
 		NOR = {
 			has_modifier = resort_colony
@@ -524,7 +456,6 @@ building_crystal_plant = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no }
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -534,35 +465,28 @@ building_crystal_plant = {
 			energy = 3
 		}
 	}
-
 	planet_modifier = {
 		industrial_jobs_rare_crystals_produces_add = 0.25
 	}
-
 	triggered_planet_modifier = {
 		potential = { industrial_jobs_are_catalytic_trigger = no }
 		planet_metallurgists_minerals_upkeep_add = 1.25
 		planet_artisans_minerals_upkeep_add = 1.25
 	}
-
 	triggered_planet_modifier = {
 		potential = { industrial_jobs_are_catalytic_trigger = yes }
 		planet_metallurgists_food_upkeep_add = 2
 		planet_artisans_food_upkeep_add = 2
 	}
-
 	prerequisites = {
 		"tech_rare_crystals"
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = no
 	}
-
 	upgrades = {
 		"building_crystal_plant_2"
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
@@ -571,13 +495,11 @@ building_crystal_plant = {
 building_nanite_transmuter = {
 	base_buildtime = @b3_time
 	category = manufacturing
-
 	building_sets = {
 		industrial
 		factory
 		foundry
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -594,12 +516,10 @@ building_nanite_transmuter = {
 			has_modifier = slave_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -607,9 +527,7 @@ building_nanite_transmuter = {
 		}
 		produces = {
 			trigger = {
-				NOT = {
-					owner = { has_deficit = nanites }
-				}
+				NOT = { owner = { has_deficit = nanites } }
 			}
 			rare_crystals = 5
 			volatile_motes = 5
@@ -620,11 +538,9 @@ building_nanite_transmuter = {
 			energy = 5
 		}
 	}
-
 	prerequisites = {
 		"tech_nanite_transmutation"
 	}
-
 	ai_resource_production = {
 		rare_crystals = @b3_rare_upkeep
 		volatile_motes = @b3_rare_upkeep
@@ -638,13 +554,11 @@ building_ministry_production = {
 	planet_limit = 1
 	icon = building_production_center
 	category = manufacturing
-
 	building_sets = {
 		industrial
 		factory
 		foundry
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_regular_empire = yes }
@@ -653,7 +567,6 @@ building_ministry_production = {
 			has_modifier = slave_colony
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		OR = {
@@ -662,22 +575,18 @@ building_ministry_production = {
 			owner = { is_gestalt = yes } # Vfix opt
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_major_upgraded_capital = yes
 	}
-
 	inline_script = {
 		script = "jobs/politician_add"
 		AMOUNT = @building_static_jobs
 	}
-
 	planet_modifier = {
 		planet_metallurgists_produces_mult = 0.15
 		planet_artisans_produces_mult = 0.15
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -689,20 +598,16 @@ building_ministry_production = {
 			volatile_motes = @b2_rare_upkeep
 		}
 	}
-
 	prerequisites = {
 		"tech_global_production_strategy"
 	}
-
 	show_tech_unlock_if = {
 		is_regular_empire = yes
 	}
-
 	inline_script = {
 		script = districts/ai_alloys_extra_weighting
 		AMOUNT = 10
 	}
-
 	inline_script = {
 		script = districts/ai_consumer_goods_extra_weighting
 		AMOUNT = 10
@@ -713,32 +618,26 @@ building_production_center = {
 	base_buildtime = @b2_time
 	planet_limit = 1
 	category = manufacturing
-
 	building_sets = {
 		industrial
 		factory
 		foundry
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_gestalt = yes is_wilderness_empire = no }
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_gestalt = no }
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_major_upgraded_capital = yes
 	}
-
 	planet_modifier = {
 		planet_metallurgists_produces_mult = 0.15
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -746,7 +645,6 @@ building_production_center = {
 		}
 		planet_artisans_produces_mult = 0.15
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -758,26 +656,21 @@ building_production_center = {
 			volatile_motes = @b2_rare_upkeep
 		}
 	}
-
 	inline_script = {
 		script = jobs/foundry_add
 		AMOUNT = @b1_jobs
 	}
-
 	prerequisites = {
 		"tech_global_production_strategy"
 	}
-
 	show_tech_unlock_if = {
 		is_gestalt = yes
 		is_wilderness_empire = no
 	}
-
 	inline_script = {
 		script = districts/ai_alloys_extra_weighting
 		AMOUNT = 10
 	}
-
 	inline_script = {
 		script = districts/ai_consumer_goods_extra_weighting
 		AMOUNT = 10
@@ -788,13 +681,11 @@ building_coordinated_fulfillment_center_1 = {
 	base_buildtime = @b1_time
 	planet_limit = 1
 	category = manufacturing
-
 	building_sets = {
 		industrial
 		factory
 		foundry
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_relentless_industrialist_empire = yes }
@@ -803,7 +694,6 @@ building_coordinated_fulfillment_center_1 = {
 			has_modifier = slave_colony
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		OR = {
@@ -812,20 +702,16 @@ building_coordinated_fulfillment_center_1 = {
 			owner = { is_relentless_industrialist_empire = no }
 		}
 	}
-
 	prerequisites = {
 		tech_basic_industry
 	}
-
 	show_tech_unlock_if = {
 		is_relentless_industrialist_empire = yes
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
-
 	triggered_desc = {
 		trigger = {
 			NOR = {
@@ -838,12 +724,10 @@ building_coordinated_fulfillment_center_1 = {
 		}
 		text = building_coordinated_fulfillment_center_tooltip
 	}
-
 	planet_modifier = {
 		planet_metallurgists_produces_mult = 0.2
 		planet_artisans_produces_mult = 0.2
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -852,7 +736,6 @@ building_coordinated_fulfillment_center_1 = {
 		planet_metallurgists_produces_mult = 0.1
 		planet_artisans_produces_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -860,7 +743,6 @@ building_coordinated_fulfillment_center_1 = {
 		}
 		logistic_growth_mult = -0.15
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -874,7 +756,6 @@ building_coordinated_fulfillment_center_1 = {
 		}
 		logistic_growth_mult = -0.05
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -882,7 +763,6 @@ building_coordinated_fulfillment_center_1 = {
 		}
 		habitability_ceil_add = -0.075
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -896,11 +776,9 @@ building_coordinated_fulfillment_center_1 = {
 		}
 		habitability_ceil_add = -0.025
 	}
-
 	upgrades = {
 		building_coordinated_fulfillment_center_2
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -916,12 +794,10 @@ building_coordinated_fulfillment_center_1 = {
 			}
 		}
 	}
-
 	inline_script = {
 		script = districts/ai_alloys_extra_weighting
 		AMOUNT = 10
 	}
-
 	inline_script = {
 		script = districts/ai_consumer_goods_extra_weighting
 		AMOUNT = 10
@@ -932,13 +808,11 @@ building_coordinated_fulfillment_center_2 = {
 	base_buildtime = @b2_time
 	can_build = no
 	category = manufacturing
-
 	building_sets = {
 		industrial
 		factory
 		foundry
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		OR = {
@@ -947,12 +821,10 @@ building_coordinated_fulfillment_center_2 = {
 			owner = { is_relentless_industrialist_empire = no }
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_major_upgraded_capital = yes
 	}
-
 	triggered_desc = {
 		trigger = {
 			NOR = {
@@ -965,12 +837,10 @@ building_coordinated_fulfillment_center_2 = {
 		}
 		text = building_coordinated_fulfillment_center_tooltip
 	}
-
 	planet_modifier = {
 		planet_metallurgists_produces_mult = 0.4
 		planet_artisans_produces_mult = 0.4
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -979,7 +849,6 @@ building_coordinated_fulfillment_center_2 = {
 		planet_metallurgists_produces_mult = 0.2
 		planet_artisans_produces_mult = 0.2
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -987,7 +856,6 @@ building_coordinated_fulfillment_center_2 = {
 		}
 		logistic_growth_mult = -0.25
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1001,7 +869,6 @@ building_coordinated_fulfillment_center_2 = {
 		}
 		logistic_growth_mult = -0.15
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1009,7 +876,6 @@ building_coordinated_fulfillment_center_2 = {
 		}
 		habitability_ceil_add = -0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1023,7 +889,6 @@ building_coordinated_fulfillment_center_2 = {
 		}
 		habitability_ceil_add = -0.05
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1041,20 +906,16 @@ building_coordinated_fulfillment_center_2 = {
 			}
 		}
 	}
-
 	prerequisites = {
 		tech_global_production_strategy
 	}
-
 	show_tech_unlock_if = {
 		is_relentless_industrialist_empire = yes
 	}
-
 	inline_script = {
 		script = districts/ai_alloys_extra_weighting
 		AMOUNT = 15
 	}
-
 	inline_script = {
 		script = districts/ai_consumer_goods_extra_weighting
 		AMOUNT = 15
@@ -1065,13 +926,11 @@ building_archaeo_refinery = {
 	base_buildtime = @b3_time
 	planet_limit = 1
 	category = manufacturing
-
 	building_sets = {
 		industrial
 		factory
 		foundry
 	}
-
 	potential = {
 		has_owner = yes # Vfix
 		NOR = {
@@ -1080,7 +939,6 @@ building_archaeo_refinery = {
 		}
 		owner = { has_technology = tech_archaeo_refinery }
 	}
-
 	planet_modifier = {
 		planet_jobs_exotic_gases_produces_mult = 0.25
 		planet_jobs_rare_crystals_produces_mult = 0.25
@@ -1089,7 +947,6 @@ building_archaeo_refinery = {
 		industrial_jobs_rare_crystals_produces_add = 0.25
 		industrial_jobs_volatile_motes_produces_add = 0.25
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1099,19 +956,16 @@ building_archaeo_refinery = {
 		planet_jobs_rare_crystals_produces_mult = 0.15
 		planet_jobs_volatile_motes_produces_mult = 0.15
 	}
-
 	triggered_planet_modifier = {
 		potential = { industrial_jobs_are_catalytic_trigger = no }
 		planet_metallurgists_minerals_upkeep_add = 2
 		planet_artisans_minerals_upkeep_add = 2
 	}
-
 	triggered_planet_modifier = {
 		potential = { industrial_jobs_are_catalytic_trigger = yes }
 		planet_metallurgists_food_upkeep_add = 3
 		planet_artisans_food_upkeep_add = 3
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1122,11 +976,9 @@ building_archaeo_refinery = {
 			energy = @b2_upkeep
 		}
 	}
-
 	prerequisites = {
 		"tech_archaeo_refinery"
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
@@ -1136,18 +988,15 @@ building_foundry_upkeep_1 = {
 	base_buildtime = @b2_time
 	planet_limit = 1
 	category = manufacturing
-
 	building_sets = {
 		foundry
 		industrial
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no } # see 'building_natural_furnace_2'
 		NOT = { has_modifier = resort_colony }
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		OR = {
@@ -1156,7 +1005,6 @@ building_foundry_upkeep_1 = {
 			owner = { is_wilderness_empire = yes }
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1168,15 +1016,12 @@ building_foundry_upkeep_1 = {
 			volatile_motes = @b3_rare_upkeep
 		}
 	}
-
 	prerequisites = {
 		tech_alloys_1
 	}
-
 	planet_modifier = {
 		planet_metallurgists_upkeep_mult = -0.20
 	}
-
 	ai_resource_production = {
 		minerals = 10
 		trigger = {
@@ -1185,7 +1030,6 @@ building_foundry_upkeep_1 = {
 			has_any_foundry_zone = yes
 		}
 	}
-
 	ai_resource_production = {
 		food = 10
 		trigger = {
@@ -1194,11 +1038,9 @@ building_foundry_upkeep_1 = {
 			has_any_foundry_zone = yes
 		}
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = no
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
@@ -1208,12 +1050,10 @@ building_foundry_efficiency_1 = {
 	base_buildtime = @b3_time
 	planet_limit = 1
 	category = manufacturing
-
 	building_sets = {
 		foundry
 		industrial
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no } # see 'building_natural_furnace_3'
@@ -1223,7 +1063,6 @@ building_foundry_efficiency_1 = {
 			owner = { is_wilderness_empire = yes }
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		OR = {
@@ -1232,7 +1071,6 @@ building_foundry_efficiency_1 = {
 			owner = { is_wilderness_empire = yes }
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1256,11 +1094,9 @@ building_foundry_efficiency_1 = {
 			volatile_motes = 8
 		}
 	}
-
 	prerequisites = {
 		tech_alloys_2
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_ringworld_output_boost = yes
@@ -1269,7 +1105,6 @@ building_foundry_efficiency_1 = {
 		planet_metallurgists_alloys_produces_add = 1
 		planet_metallurgists_minerals_upkeep_add = 2
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_ringworld_output_boost = yes
@@ -1278,20 +1113,16 @@ building_foundry_efficiency_1 = {
 		planet_metallurgists_alloys_produces_add = 1.25
 		planet_metallurgists_food_upkeep_add = 3
 	}
-
 	planet_modifier = {
 		foundry_jobs_bonus_workforce_mult = 0.15
 	}
-
 	ai_resource_production = {
 		alloys = 10
 		trigger = { has_any_foundry_zone = yes }
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = no
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
@@ -1301,12 +1132,10 @@ building_factory_upkeep_1 = {
 	base_buildtime = @b2_time
 	planet_limit = 1
 	category = manufacturing
-
 	building_sets = {
 		factory
 		industrial
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { country_uses_consumer_goods = yes }
@@ -1315,7 +1144,6 @@ building_factory_upkeep_1 = {
 			has_modifier = slave_colony
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		OR = {
@@ -1324,7 +1152,6 @@ building_factory_upkeep_1 = {
 			owner = { country_uses_consumer_goods = no }
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1336,11 +1163,9 @@ building_factory_upkeep_1 = {
 			rare_crystals = @b3_rare_upkeep
 		}
 	}
-
 	planet_modifier = {
 		planet_artisans_upkeep_mult = -0.20
 	}
-
 	ai_resource_production = {
 		minerals = 10
 		trigger = {
@@ -1349,7 +1174,6 @@ building_factory_upkeep_1 = {
 			has_any_foundry_zone = yes
 		}
 	}
-
 	ai_resource_production = {
 		food = 10
 		trigger = {
@@ -1358,11 +1182,9 @@ building_factory_upkeep_1 = {
 			has_any_foundry_zone = yes
 		}
 	}
-
 	prerequisites = {
 		tech_luxuries_1
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
@@ -1372,12 +1194,10 @@ building_factory_efficiency_1 = {
 	base_buildtime = @b3_time
 	planet_limit = 1
 	category = manufacturing
-
 	building_sets = {
 		factory
 		industrial
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { country_uses_consumer_goods = yes }
@@ -1386,7 +1206,6 @@ building_factory_efficiency_1 = {
 			has_modifier = slave_colony
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes # Vfix sync
 		OR = {
@@ -1395,7 +1214,6 @@ building_factory_efficiency_1 = {
 			owner = { country_uses_consumer_goods = no }
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1419,11 +1237,9 @@ building_factory_efficiency_1 = {
 			rare_crystals = 8
 		}
 	}
-
 	planet_modifier = {
 		artisan_jobs_bonus_workforce_mult = 0.15
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_ringworld_output_boost = yes
@@ -1432,7 +1248,6 @@ building_factory_efficiency_1 = {
 		planet_artisans_consumer_goods_produces_add = 1
 		planet_artisans_minerals_upkeep_add = 1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_ringworld_output_boost = yes
@@ -1441,16 +1256,13 @@ building_factory_efficiency_1 = {
 		planet_artisans_consumer_goods_produces_add = 1.25
 		planet_artisans_food_upkeep_add = 1.5
 	}
-
 	ai_resource_production = {
 		consumer_goods = 10
 		trigger = { has_any_factory_zone = yes }
 	}
-
 	prerequisites = {
 		tech_luxuries_2
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
@@ -1460,18 +1272,15 @@ building_offworld_expedition_hub = {
 	base_buildtime = @b2_time
 	planet_limit = 1
 	category = manufacturing
-
 	building_sets = {
 		factory
 		foundry
 		industrial
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_galvanic_empire = yes }
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -1481,12 +1290,10 @@ building_offworld_expedition_hub = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_galvanic_empire = no }
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1496,7 +1303,6 @@ building_offworld_expedition_hub = {
 			energy = @b2_upkeep
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1504,7 +1310,6 @@ building_offworld_expedition_hub = {
 		}
 		job_offworld_prospector_add = @building_static_jobs
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1513,4 +1318,3 @@ building_offworld_expedition_hub = {
 		job_offworld_prospector_drone_add = @building_static_jobs
 	}
 }
-

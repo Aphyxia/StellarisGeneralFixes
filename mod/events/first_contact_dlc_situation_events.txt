@@ -201,10 +201,7 @@ ship_event = {
 		from.owner = {
 			random_situation = {
 				limit = { is_situation_type = pre_ftl_tech_progress_situation }
-				set_timed_situation_flag = {
-					flag = had_recent_observation_event
-					days = root.observation_event_delay
-				}
+				set_timed_situation_flag = { flag = had_recent_observation_event days = root.observation_event_delay }
 			}
 		}
 		clear_variable = observation_event_delay
@@ -268,15 +265,10 @@ situation_event = {
 		if = {
 			limit = {
 				owner = {
-					capital_scope = {
-						has_observation_outpost = yes
-						exists = observation_outpost_owner
-					}
+					capital_scope = { has_observation_outpost = yes exists = observation_outpost_owner }
 				}
 			}
-			owner.capital_scope.observation_outpost_owner = {
-				save_event_target_as = observing_country
-			}
+			owner.capital_scope.observation_outpost_owner = { save_event_target_as = observing_country }
 		}
 		# Prevent some Observation situation events from firing for "Broken Shackles" empires observing their original species
 		if = {
@@ -291,9 +283,7 @@ situation_event = {
 			fire_on_action = { on_action = on_monthly_pulse_pre_ftl_observation }
 		}
 		else = {
-			fire_on_action = {
-				on_action = on_monthly_pulse_pre_ftl_observation_broken_shackles
-			}
+			fire_on_action = { on_action = on_monthly_pulse_pre_ftl_observation_broken_shackles }
 		}
 	}
 }
@@ -438,8 +428,12 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		set_pre_ftl_age_effect = { PRE_FTL_AGE = bronze_age }
-		increase_pre_ftl_pops_by_age_effect = { PRE_FTL_AGE = bronze_age }
+		set_pre_ftl_age_effect = {
+			PRE_FTL_AGE = bronze_age
+		}
+		increase_pre_ftl_pops_by_age_effect = {
+			PRE_FTL_AGE = bronze_age
+		}
 		capital_scope = {
 			if = {
 				limit = {
@@ -460,14 +454,12 @@ country_event = {
 country_event = {
 	id = preftl.200
 	title = "preftl.200.name"
-
 	desc = {
 		trigger = {
 			from.owner = { is_gestalt = no }
 		}
 		text = preftl.200.desc.normal
 	}
-
 	desc = {
 		trigger = {
 			from.owner = { is_gestalt = yes }
@@ -478,7 +470,6 @@ country_event = {
 	picture = GFX_evt_alien_cavemen
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = preftl.200.a
 	}
@@ -497,8 +488,12 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		set_pre_ftl_age_effect = { PRE_FTL_AGE = iron_age }
-		increase_pre_ftl_pops_by_age_effect = { PRE_FTL_AGE = iron_age }
+		set_pre_ftl_age_effect = {
+			PRE_FTL_AGE = iron_age
+		}
+		increase_pre_ftl_pops_by_age_effect = {
+			PRE_FTL_AGE = iron_age
+		}
 		capital_scope = {
 			if = {
 				limit = {
@@ -519,28 +514,24 @@ country_event = {
 country_event = {
 	id = preftl.300
 	title = "preftl.300.name"
-
 	desc = {
 		trigger = {
 			from.owner = { is_gestalt = no }
 		}
 		text = preftl.300.desc.normal
 	}
-
 	desc = {
 		trigger = {
 			from.owner = { is_gestalt = yes }
 		}
 		text = preftl.300.desc.gestalt
 	}
-
 	picture = {
 		trigger = {
 			from.owner = { is_gestalt = no }
 		}
 		picture = GFX_evt_medieval_alien_civilization
 	}
-
 	picture = {
 		trigger = {
 			from.owner = { is_gestalt = yes }
@@ -550,7 +541,6 @@ country_event = {
 
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = preftl.300.a
 	}
@@ -569,8 +559,12 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		set_pre_ftl_age_effect = { PRE_FTL_AGE = late_medieval_age }
-		increase_pre_ftl_pops_by_age_effect = { PRE_FTL_AGE = late_medieval_age }
+		set_pre_ftl_age_effect = {
+			PRE_FTL_AGE = late_medieval_age
+		}
+		increase_pre_ftl_pops_by_age_effect = {
+			PRE_FTL_AGE = late_medieval_age
+		}
 		capital_scope = {
 			if = {
 				limit = {
@@ -591,28 +585,24 @@ country_event = {
 country_event = {
 	id = preftl.400
 	title = "preftl.400.name"
-
 	desc = {
 		trigger = {
 			from.owner = { is_gestalt = no }
 		}
 		text = preftl.400.desc.normal
 	}
-
 	desc = {
 		trigger = {
 			from.owner = { is_gestalt = yes }
 		}
 		text = preftl.400.desc.gestalt
 	}
-
 	picture = {
 		trigger = {
 			from.owner = { is_gestalt = no }
 		}
 		picture = GFX_evt_medieval_alien_civilization
 	}
-
 	picture = {
 		trigger = {
 			from.owner = { is_gestalt = yes }
@@ -622,7 +612,6 @@ country_event = {
 
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = preftl.400.a
 	}
@@ -641,8 +630,12 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		set_pre_ftl_age_effect = { PRE_FTL_AGE = renaissance_age }
-		increase_pre_ftl_pops_by_age_effect = { PRE_FTL_AGE = renaissance_age }
+		set_pre_ftl_age_effect = {
+			PRE_FTL_AGE = renaissance_age
+		}
+		increase_pre_ftl_pops_by_age_effect = {
+			PRE_FTL_AGE = renaissance_age
+		}
 		capital_scope = {
 			if = {
 				limit = {
@@ -663,28 +656,24 @@ country_event = {
 country_event = {
 	id = preftl.500
 	title = "preftl.500.name"
-
 	desc = {
 		trigger = {
 			from.owner = { is_gestalt = no }
 		}
 		text = preftl.500.desc.normal
 	}
-
 	desc = {
 		trigger = {
 			from.owner = { is_gestalt = yes }
 		}
 		text = preftl.500.desc.gestalt
 	}
-
 	picture = {
 		trigger = {
 			from.owner = { is_gestalt = no }
 		}
 		picture = GFX_evt_medieval_alien_civilization
 	}
-
 	picture = {
 		trigger = {
 			from.owner = { is_gestalt = yes }
@@ -693,7 +682,6 @@ country_event = {
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = preftl.500.a
 	}
@@ -712,8 +700,12 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		set_pre_ftl_age_effect = { PRE_FTL_AGE = steam_age }
-		increase_pre_ftl_pops_by_age_effect = { PRE_FTL_AGE = steam_age }
+		set_pre_ftl_age_effect = {
+			PRE_FTL_AGE = steam_age
+		}
+		increase_pre_ftl_pops_by_age_effect = {
+			PRE_FTL_AGE = steam_age
+		}
 		capital_scope = {
 			if = {
 				limit = {
@@ -734,28 +726,24 @@ country_event = {
 country_event = {
 	id = preftl.600
 	title = "preftl.600.name"
-
 	desc = {
 		trigger = {
 			from.owner = { is_gestalt = no }
 		}
 		text = preftl.600.desc.normal
 	}
-
 	desc = {
 		trigger = {
 			from.owner = { is_gestalt = yes }
 		}
 		text = preftl.600.desc.gestalt
 	}
-
 	picture = {
 		trigger = {
 			from.owner = { is_gestalt = no }
 		}
 		picture = GFX_evt_medieval_alien_civilization
 	}
-
 	picture = {
 		trigger = {
 			from.owner = { is_gestalt = yes }
@@ -765,7 +753,6 @@ country_event = {
 
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = preftl.600.a
 	}
@@ -784,8 +771,12 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		set_pre_ftl_age_effect = { PRE_FTL_AGE = industrial_age }
-		increase_pre_ftl_pops_by_age_effect = { PRE_FTL_AGE = industrial_age }
+		set_pre_ftl_age_effect = {
+			PRE_FTL_AGE = industrial_age
+		}
+		increase_pre_ftl_pops_by_age_effect = {
+			PRE_FTL_AGE = industrial_age
+		}
 		set_graphical_culture = industrial_01
 		capital_scope = {
 			clear_blockers = yes
@@ -810,28 +801,24 @@ country_event = {
 country_event = {
 	id = preftl.700
 	title = "preftl.700.name"
-
 	desc = {
 		trigger = {
 			from.owner = { is_gestalt = no }
 		}
 		text = preftl.700.desc.normal
 	}
-
 	desc = {
 		trigger = {
 			from.owner = { is_gestalt = yes }
 		}
 		text = preftl.700.desc.gestalt
 	}
-
 	picture = {
 		trigger = {
 			from.owner = { is_gestalt = no }
 		}
 		picture = GFX_evt_medieval_alien_civilization
 	}
-
 	picture = {
 		trigger = {
 			from.owner = { is_gestalt = yes }
@@ -841,7 +828,6 @@ country_event = {
 
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = preftl.700.a
 	}
@@ -860,8 +846,12 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		set_pre_ftl_age_effect = { PRE_FTL_AGE = machine_age }
-		increase_pre_ftl_pops_by_age_effect = { PRE_FTL_AGE = machine_age }
+		set_pre_ftl_age_effect = {
+			PRE_FTL_AGE = machine_age
+		}
+		increase_pre_ftl_pops_by_age_effect = {
+			PRE_FTL_AGE = machine_age
+		}
 		capital_scope = {
 			if = {
 				limit = {
@@ -882,28 +872,24 @@ country_event = {
 country_event = {
 	id = preftl.800
 	title = "preftl.800.name"
-
 	desc = {
 		trigger = {
 			from.owner = { is_gestalt = no }
 		}
 		text = preftl.800.desc.normal
 	}
-
 	desc = {
 		trigger = {
 			from.owner = { is_gestalt = yes }
 		}
 		text = preftl.800.desc.gestalt
 	}
-
 	picture = {
 		trigger = {
 			from.owner = { is_gestalt = no }
 		}
 		picture = GFX_evt_medieval_alien_civilization
 	}
-
 	picture = {
 		trigger = {
 			from.owner = { is_gestalt = yes }
@@ -913,7 +899,6 @@ country_event = {
 
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = preftl.800.a
 	}
@@ -932,8 +917,12 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		set_pre_ftl_age_effect = { PRE_FTL_AGE = atomic_age }
-		increase_pre_ftl_pops_by_age_effect = { PRE_FTL_AGE = atomic_age }
+		set_pre_ftl_age_effect = {
+			PRE_FTL_AGE = atomic_age
+		}
+		increase_pre_ftl_pops_by_age_effect = {
+			PRE_FTL_AGE = atomic_age
+		}
 		capital_scope = {
 			if = {
 				limit = {
@@ -954,28 +943,24 @@ country_event = {
 country_event = {
 	id = preftl.900
 	title = "preftl.900.name"
-
 	desc = {
 		trigger = {
 			from.owner = { is_gestalt = no }
 		}
 		text = preftl.900.desc.normal
 	}
-
 	desc = {
 		trigger = {
 			from.owner = { is_gestalt = yes }
 		}
 		text = preftl.900.desc.gestalt
 	}
-
 	picture = {
 		trigger = {
 			from.owner = { is_gestalt = no }
 		}
 		picture = GFX_evt_metropolis
 	}
-
 	picture = {
 		trigger = {
 			from.owner = { is_gestalt = yes }
@@ -985,7 +970,6 @@ country_event = {
 
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = preftl.900.a
 	}
@@ -1004,8 +988,12 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		set_pre_ftl_age_effect = { PRE_FTL_AGE = early_space_age }
-		increase_pre_ftl_pops_by_age_effect = { PRE_FTL_AGE = early_space_age }
+		set_pre_ftl_age_effect = {
+			PRE_FTL_AGE = early_space_age
+		}
+		increase_pre_ftl_pops_by_age_effect = {
+			PRE_FTL_AGE = early_space_age
+		}
 		capital_scope = {
 			if = {
 				limit = {
@@ -1026,14 +1014,12 @@ country_event = {
 country_event = {
 	id = preftl.1000
 	title = "preftl.1000.name"
-
 	desc = {
 		trigger = {
 			from.owner = { is_gestalt = no }
 		}
 		text = preftl.1000.desc.normal
 	}
-
 	desc = {
 		trigger = {
 			from.owner = { is_gestalt = yes }
@@ -1044,7 +1030,6 @@ country_event = {
 	picture = GFX_evt_satellite_in_orbit
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = preftl.1000.a
 	}
@@ -1135,7 +1120,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		custom_tooltip = cannot_reveal_tt
 		custom_tooltip = cannot_dismantle_outpost_tt
@@ -1150,7 +1134,6 @@ country_event = {
 	picture = GFX_evt_organic_oppression
 	location = from.capital_scope
 	is_triggered_only = yes
-
 	option = {
 		name = preftl.1020.a
 		trigger = {
@@ -1161,12 +1144,10 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = preftl.1020.spiritualist
 		trigger = { is_individual_machine = no is_spiritualist = yes }
 	}
-
 	option = {
 		name = preftl.1020.machine
 		trigger = {
@@ -1206,7 +1187,10 @@ country_event = {
 			class = MACHINE
 			portrait = random
 			homeworld = fromfrom
-			traits = { trait = trait_machine_unit trait = random_traits }
+			traits = {
+				trait = trait_machine_unit
+				trait = random_traits
+			}
 			immortal = yes
 		}
 		# create machine country
@@ -1313,9 +1297,7 @@ country_event = {
 				add_resource = { unity = 1000 }
 				if = {
 					limit = {
-						NOT = {
-							owner = { has_valid_civic = civic_machine_terminator }
-						}
+						NOT = { owner = { has_valid_civic = civic_machine_terminator } }
 					}
 					# Prevent bankruptcy from food.
 					if = {
@@ -1324,7 +1306,9 @@ country_event = {
 						}
 						add_resource = { food = 100 }
 						prev = {
-							add_district_and_planet_size_if_needed_effect = { district = district_farming }
+							add_district_and_planet_size_if_needed_effect = {
+								district = district_farming
+							}
 						}
 					}
 					# Prevent bankruptcy from minerals.
@@ -1334,7 +1318,9 @@ country_event = {
 						}
 						add_resource = { minerals = 100 }
 						prev = {
-							add_district_and_planet_size_if_needed_effect = { district = district_mining }
+							add_district_and_planet_size_if_needed_effect = {
+								district = district_mining
+							}
 						}
 					}
 				}
@@ -1437,7 +1423,6 @@ country_event = {
 		set_country_flag = engineering_insights
 		set_predictive_observation_insight = { VALUE = 20 }
 	}
-
 	option = {
 		trigger = {
 			NOR = {
@@ -1461,7 +1446,6 @@ country_event = {
 			OUTPOST = from.capital_scope.observation_outpost
 		}
 	}
-
 	option = {
 		name = preftl.1035.b.spiritualist
 		trigger = { is_individual_machine = no is_spiritualist = yes }
@@ -1470,7 +1454,6 @@ country_event = {
 			OUTPOST = from.capital_scope.observation_outpost
 		}
 	}
-
 	option = {
 		name = preftl.1035.b.machine
 		trigger = {
@@ -1485,7 +1468,6 @@ country_event = {
 			OUTPOST = from.capital_scope.observation_outpost
 		}
 	}
-
 	option = {
 		name = preftl.1035.b.machine.terminator
 		trigger = { is_machine_empire = yes has_valid_civic = civic_machine_terminator }
@@ -1563,7 +1545,10 @@ country_event = {
 			}
 		}
 		else = { # if nobody is in the system, they become an empire
-			achieve_ftl_effect = { PRE_FTL = root OWNER = root }
+			achieve_ftl_effect = {
+				PRE_FTL = root
+				OWNER = root
+			}
 		}
 	}
 }
@@ -1587,11 +1572,9 @@ country_event = {
 		establish_communications_no_message = from
 		establish_contact = { who = from location = from.capital_scope.solar_system }
 	}
-
 	option = {
 		name = preftl.1100.a
 	}
-
 	after = {
 		hidden_effect = {
 			from = {
@@ -1603,11 +1586,7 @@ country_event = {
 				}
 			}
 			# they will ask us to cede control of our starbase after this event
-			country_event = {
-				id = preftl.180
-				days = 1
-				scopes = { from = from }
-			}
+			country_event = { id = preftl.180 days = 1 scopes = { from = from } }
 		}
 	}
 }
@@ -1721,12 +1700,14 @@ country_event = {
 					}
 				}
 			}
-			achieve_ftl_effect = { PRE_FTL = event_target:new_ftl_country OWNER = root }
+			achieve_ftl_effect = {
+				PRE_FTL = event_target:new_ftl_country
+				OWNER = root
+			}
 		}
 		establish_communications_no_message = from
 		establish_contact = { who = from location = from.capital_scope.solar_system }
 	}
-
 	option = {
 		name = "observation.2000.a"
 		custom_tooltip = observation.2000.a.tt
@@ -1762,7 +1743,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = observation.2000.b
 		add_monthly_resource_mult = {
@@ -1772,7 +1752,6 @@ country_event = {
 			max = @tier3unitymax
 		}
 	}
-
 	after = {
 		if = {
 			limit = { has_country_flag = vassalized_the_pre_ftl }
@@ -1822,11 +1801,9 @@ country_event = {
 		establish_communications_no_message = from
 		establish_contact = { who = from location = from.capital_scope.solar_system }
 	}
-
 	option = {
 		name = ACKNOWLEDGED
 	}
-
 	after = {
 		hidden_effect = {
 			country_event = { id = distar.238 days = 1 }
@@ -1848,7 +1825,6 @@ country_event = {
 		set_country_flag = engineering_insights
 		set_predictive_observation_insight = { VALUE = 20 }
 	}
-
 	option = {
 		name = preftl.1110.a
 		trigger = {
@@ -1859,7 +1835,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = preftl.1110.b.spiritualist
 		trigger = { is_individual_machine = no is_spiritualist = yes }
@@ -1868,7 +1843,6 @@ country_event = {
 			OUTPOST = from.capital_scope.observation_outpost
 		}
 	}
-
 	option = {
 		name = preftl.1110.b.machine
 		trigger = {
@@ -1883,7 +1857,6 @@ country_event = {
 			OUTPOST = from.capital_scope.observation_outpost
 		}
 	}
-
 	option = {
 		name = preftl.1110.b.machine.servitor
 		trigger = { has_valid_civic = civic_machine_servitor }
@@ -1902,7 +1875,6 @@ country_event = {
 	desc = preftl.1115.desc
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:current_uprising
 		planet_background = event_target:current_uprising
@@ -1910,7 +1882,6 @@ country_event = {
 		city_level = event_target:current_uprising
 		room = event_target:current_uprising.ruler
 	}
-
 	option = {
 		name = preftl.1115.recognize
 		trigger = {
@@ -1955,7 +1926,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = preftl.1115.claim
 		trigger = {
@@ -2004,7 +1974,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = preftl.1115.subjugate
 		trigger = {
@@ -2079,14 +2048,11 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = preftl.1115.network
 		trigger = {
 			is_machine_empire = yes
-			NOT = {
-				event_target:current_uprising = { has_valid_civic = civic_machine_servitor }
-			}
+			NOT = { event_target:current_uprising = { has_valid_civic = civic_machine_servitor } }
 			OR = {
 				AND = {
 					event_target:current_uprising = { has_valid_civic = civic_machine_terminator }
@@ -2115,16 +2081,16 @@ country_event = {
 		custom_tooltip = preftl.1115.network.tooltip
 		hidden_effect = {
 			event_target:current_uprising = {
-				integrate_country_effect = { OWNER = root }
+				integrate_country_effect = {
+					OWNER = root
+				}
 			}
 		}
 	}
-
 	option = {
 		name = TASTY # Prey...
 		trigger = { has_valid_civic = civic_hive_devouring_swarm }
 	}
-
 	option = {
 		name = SCUM # Xeno Scum
 		trigger = { has_valid_civic = civic_fanatic_purifiers }
@@ -2197,23 +2163,18 @@ country_event = {
 	id = preftl.180
 	title = preftl.180.name
 	location = from.capital_scope.solar_system
-
 	desc = {
 		trigger = {
-			NOT = {
-				from = { has_country_flag = knew_of_aliens }
-			}
+			NOT = { from = { has_country_flag = knew_of_aliens } }
 		}
 		text = preftl.180.desc.noawarness
 	}
-
 	desc = {
 		trigger = {
 			from = { has_country_flag = knew_of_aliens }
 		}
 		text = preftl.180.desc.awarness
 	}
-
 	desc = {
 		exclusive_trigger = {
 			from = {
@@ -2228,7 +2189,6 @@ country_event = {
 		}
 		text = preftl.180.desc.bshomeworld.noawarness
 	}
-
 	desc = {
 		exclusive_trigger = {
 			from = {
@@ -2246,7 +2206,6 @@ country_event = {
 
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = from
 		planet_background = from
@@ -2254,12 +2213,10 @@ country_event = {
 		city_level = from
 		room = from.ruler
 	}
-
 	immediate = {
 		establish_communications_no_message = from
 		establish_contact = { who = from location = from.capital_scope.solar_system }
 	}
-
 	option = {
 		name = preftl.180.a # Cede
 		trigger = { is_homicidal = no }
@@ -2274,13 +2231,15 @@ country_event = {
 		hidden_effect = {
 			from = {
 				set_truce = { target = root type = guarantee }
-				achieve_ftl_effect = { PRE_FTL = root.from OWNER = root }
+				achieve_ftl_effect = {
+					PRE_FTL = root.from
+					OWNER = root
+				}
 				capital_scope.starbase = { set_owner = root.from }
 				add_opinion_modifier = { modifier = opinion_ceded_starbase who = root }
 			}
 		}
 	}
-
 	option = {
 		name = preftl.180.b # Don't cede
 		trigger = { is_homicidal = no }
@@ -2315,7 +2274,10 @@ country_event = {
 		}
 		hidden_effect = {
 			from = {
-				achieve_ftl_effect = { PRE_FTL = root.from OWNER = root }
+				achieve_ftl_effect = {
+					PRE_FTL = root.from
+					OWNER = root
+				}
 				add_opinion_modifier = { modifier = opinion_not_ceded_starbase who = root }
 			}
 			from.capital_scope = {
@@ -2324,7 +2286,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = preftl.180.c
 		trigger = {
@@ -2348,7 +2309,6 @@ country_event = {
 			add_modifier = { modifier = culture_shock_early_space_age years = 10 }
 		}
 	}
-
 	option = {
 		name = EXTERMINATE
 		trigger = { has_valid_civic = civic_machine_terminator }
@@ -2357,7 +2317,6 @@ country_event = {
 			add_modifier = { modifier = culture_shock_early_space_age years = 10 }
 		}
 	}
-
 	option = {
 		name = TASTY
 		trigger = {
@@ -2371,7 +2330,6 @@ country_event = {
 			add_modifier = { modifier = culture_shock_early_space_age years = 10 }
 		}
 	}
-
 	option = {
 		name = SCUM # Xeno Scum
 		trigger = { has_valid_civic = civic_fanatic_purifiers }
@@ -2380,7 +2338,6 @@ country_event = {
 			add_modifier = { modifier = culture_shock_early_space_age years = 10 }
 		}
 	}
-
 	option = {
 		name = INF_SCUM
 		trigger = { is_genocidal_infernal = yes }
@@ -2520,7 +2477,6 @@ situation_event = {
 country_event = {
 	id = preftl.2001
 	title = preftl.2001.name
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = outbreak_perpetrator }
@@ -2528,7 +2484,6 @@ country_event = {
 		}
 		text = preftl.2001.can_not_help.desc
 	}
-
 	desc = {
 		trigger = {
 			NOR = {
@@ -2538,7 +2493,6 @@ country_event = {
 		}
 		text = preftl.2001.can_help.desc
 	}
-
 	desc = {
 		trigger = { has_country_flag = outbreak_perpetrator }
 		text = preftl.2001.perpetrator.desc
@@ -2568,18 +2522,21 @@ country_event = {
 			start_situation = {
 				type = situation_pre_ftl_plague
 				target = event_target:accidental_outbreak_planet
-				effect = { save_event_target_as = plague_situation }
+				effect = {
+					save_event_target_as = plague_situation
+				}
 			}
 		}
 		else = {
 			start_situation = {
 				type = situation_pre_ftl_plague
 				target = from.owner.capital_scope
-				effect = { save_event_target_as = plague_situation }
+				effect = {
+					save_event_target_as = plague_situation
+				}
 			}
 		}
 	}
-
 	option = { # Watch
 		name = preftl.2001.a
 		icon = {
@@ -2589,7 +2546,6 @@ country_event = {
 		}
 		event_target:plague_situation = { set_situation_approach = approach_watch_learn }
 	}
-
 	option = { # Provide Aid
 		name = preftl.2001.b
 		icon = {
@@ -2599,7 +2555,6 @@ country_event = {
 		}
 		event_target:plague_situation = { set_situation_approach = approach_provide_aid }
 	}
-
 	option = { # Promote Disease
 		name = preftl.2001.c
 		icon = {
@@ -2607,11 +2562,8 @@ country_event = {
 			icon_background = GFX_situation_approach_bg_red
 			text = set_situation_approach_icon_text
 		}
-		event_target:plague_situation = {
-			set_situation_approach = approach_promote_disease
-		}
+		event_target:plague_situation = { set_situation_approach = approach_promote_disease }
 	}
-
 	after = {
 		hidden_effect = {
 			event_target:plague_situation = { set_situation_locked = no }
@@ -2804,7 +2756,6 @@ situation_event = {
 			set_predictive_observation_insight = { VALUE = 10 }
 		}
 	}
-
 	option = {
 		name = UNDERSTOOD
 		owner = {
@@ -2821,7 +2772,6 @@ situation_event = {
 			set_country_flag = religious_mania
 		}
 	}
-
 	option = {
 		trigger = {
 			owner = { is_spiritualist = yes }
@@ -2852,7 +2802,6 @@ situation_event = {
 			set_predictive_observation_insight = { VALUE = 10 }
 		}
 	}
-
 	option = {
 		name = UNDERSTOOD
 		owner = {
@@ -2869,7 +2818,6 @@ situation_event = {
 			set_country_flag = rise_of_warlords
 		}
 	}
-
 	option = {
 		trigger = {
 			owner = {
@@ -2907,7 +2855,6 @@ situation_event = {
 			set_predictive_observation_insight = { VALUE = 10 }
 		}
 	}
-
 	option = {
 		name = preftl.2008.a
 		owner = {
@@ -2943,7 +2890,6 @@ situation_event = {
 			set_predictive_observation_insight = { VALUE = 10 }
 		}
 	}
-
 	option = {
 		name = preftl.2008.a
 		owner = {
@@ -2978,7 +2924,6 @@ situation_event = {
 			set_predictive_observation_insight = { VALUE = 10 }
 		}
 	}
-
 	option = {
 		name = UNDERSTOOD
 		owner = {
@@ -3007,7 +2952,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = preftl.2010.a
 		owner = {
@@ -3045,7 +2989,6 @@ situation_event = {
 			set_predictive_observation_insight = { VALUE = 10 }
 		}
 	}
-
 	option = {
 		name = preftl.2011.a
 		owner = {
@@ -3063,9 +3006,7 @@ situation_event = {
 		target.owner = {
 			if = {
 				limit = {
-					NOT = {
-						species = { has_trait = trait_extremely_adaptive }
-					}
+					NOT = { species = { has_trait = trait_extremely_adaptive } }
 				}
 				modify_species = { add_trait = trait_extremely_adaptive }
 			}
@@ -3096,7 +3037,6 @@ situation_event = {
 			set_predictive_observation_insight = { VALUE = 10 }
 		}
 	}
-
 	option = {
 		name = preftl.2020.a
 		owner = {
@@ -3114,7 +3054,6 @@ situation_event = {
 			set_country_flag = overwhelming_demand
 		}
 	}
-
 	option = {
 		name = preftl.2020.b
 		owner = {
@@ -3145,7 +3084,6 @@ situation_event = {
 			set_predictive_observation_insight = { VALUE = 10 }
 		}
 	}
-
 	option = {
 		name = preftl.2020.a
 		owner = {
@@ -3163,7 +3101,6 @@ situation_event = {
 			set_country_flag = power_of_faith
 		}
 	}
-
 	option = {
 		name = preftl.2020.b
 		owner = {
@@ -3210,7 +3147,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = UNDERSTOOD
 		owner = {
@@ -3226,7 +3162,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
 			owner = { is_spiritualist = yes }
@@ -3280,7 +3215,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = preftl.2026.a
 		custom_tooltip = true_prophet_tt
@@ -3301,14 +3235,17 @@ situation_event = {
 				species = root.target.owner_species
 				name = random
 				skill = 5
-				traits = { trait = leader_trait_zealot }
+				traits = {
+					trait = leader_trait_zealot
+				}
 				event_leader = yes
-				effect = { set_leader_flag = true_prophet }
+				effect = {
+					set_leader_flag = true_prophet
+				}
 			}
 		}
 		target.owner = { add_awareness = 15 }
 	}
-
 	after = {
 		destroy_situation = this
 		target = { remove_planet_flag = has_on_going_observation_situation }
@@ -3333,7 +3270,6 @@ situation_event = {
 			set_country_flag = society_insights
 		}
 	}
-
 	option = {
 		name = UNFORTUNATE
 		target.owner.capital_scope = {
@@ -3374,7 +3310,6 @@ situation_event = {
 			set_predictive_observation_insight = { VALUE = 10 }
 		}
 	}
-
 	option = {
 		name = preftl.2031.a
 		custom_tooltip = brilliant_banner_tt
@@ -3384,7 +3319,9 @@ situation_event = {
 				species = root.target.owner_species
 				name = random
 				skill = 5
-				traits = { 1 = leader_trait_plague_hardened }
+				traits = {
+					1 = leader_trait_plague_hardened
+				}
 				event_leader = yes
 			}
 			add_observation_insight_effect = {
@@ -3401,7 +3338,6 @@ situation_event = {
 		}
 		target.owner = { add_awareness = 15 }
 	}
-
 	after = {
 		destroy_situation = this
 		target = { remove_planet_flag = has_on_going_observation_situation }
@@ -3420,12 +3356,8 @@ situation_event = {
 	situation = this
 
 	immediate = {
-		owner = {
-			set_country_flag = apocalypse_now
-			remove_country_flag = rampant_contagion
-		}
+		owner = { set_country_flag = apocalypse_now remove_country_flag = rampant_contagion }
 	}
-
 	option = {
 		name = EXCELLENT
 	}
@@ -3450,7 +3382,6 @@ situation_event = {
 			set_predictive_observation_insight = { VALUE = 10 }
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		owner = {
@@ -3480,9 +3411,7 @@ situation_event = {
 
 	trigger = {
 		exists = owner
-		NOT = {
-			owner = { has_country_flag = apocalypse_now }
-		}
+		NOT = { owner = { has_country_flag = apocalypse_now } }
 	}
 
 	immediate = {
@@ -3493,11 +3422,9 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = ACKNOWLEDGED
 	}
-
 	after = {
 		destroy_situation = this
 		target = { remove_planet_flag = has_on_going_observation_situation }
@@ -3523,12 +3450,10 @@ situation_event = {
 			remove_modifier = plague_05
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		custom_tooltip = dead_world_tt
 	}
-
 	after = {
 		destroy_situation = this
 		hidden_effect = {
@@ -3548,7 +3473,6 @@ situation_event = {
 	id = preftl.2061
 	hide_window = yes
 	is_triggered_only = yes
-
 	weight_multiplier = {
 		factor = 1
 		modifier = {
@@ -3560,7 +3484,6 @@ situation_event = {
 			current_situation_approach = approach_provide_aid
 		}
 	}
-
 	immediate = {
 		if = {
 			limit = {
@@ -3605,15 +3528,12 @@ situation_event = {
 
 	trigger = {
 		exists = owner
-		NOT = {
-			owner = { has_country_flag = bring_out_your_dead }
-		}
+		NOT = { owner = { has_country_flag = bring_out_your_dead } }
 	}
 
 	immediate = {
 		owner = { set_country_flag = bring_out_your_dead }
 	}
-
 	option = {
 		name = UNDERSTOOD
 		tooltip = {
@@ -3654,7 +3574,6 @@ situation_event = {
 			set_predictive_observation_insight = { VALUE = 10 }
 		}
 	}
-
 	option = {
 		name = ACKNOWLEDGED
 		owner = {
@@ -3670,7 +3589,6 @@ situation_event = {
 			}
 		}
 	}
-
 	after = {
 		destroy_situation = this
 		target = {
@@ -3709,7 +3627,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = UNDERSTOOD
 		custom_tooltip = minds_open_tt
@@ -3724,7 +3641,6 @@ situation_event = {
 			set_awareness = 100
 		}
 	}
-
 	after = {
 		destroy_situation = this
 		target = { remove_planet_flag = has_on_going_observation_situation }
@@ -3755,7 +3671,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = UNDERSTOOD
 		owner = {
@@ -3785,7 +3700,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = preftl.2026.a
 		trigger = {
@@ -3813,7 +3727,6 @@ situation_event = {
 			}
 		}
 	}
-
 	after = {
 		destroy_situation = this
 		target = { remove_planet_flag = has_on_going_observation_situation }
@@ -3844,11 +3757,8 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
-		trigger = {
-			owner = { is_militarist = no }
-		}
+		trigger = { owner = { is_militarist = no } }
 		name = UNDERSTOOD
 		owner = {
 			add_observation_insight_effect = {
@@ -3912,11 +3822,8 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
-		trigger = {
-			owner = { is_militarist = yes }
-		}
+		trigger = { owner = { is_militarist = yes } }
 		name = preftl.2031.a
 		owner = {
 			add_observation_insight_effect = {
@@ -3975,7 +3882,6 @@ situation_event = {
 			}
 		}
 	}
-
 	after = {
 		destroy_situation = this
 		target = { remove_planet_flag = has_on_going_observation_situation }
@@ -4005,7 +3911,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		custom_tooltip = grateful_populace_tt
@@ -4027,7 +3932,6 @@ situation_event = {
 			set_awareness = 100
 		}
 	}
-
 	after = {
 		destroy_situation = this
 		target = { remove_planet_flag = has_on_going_observation_situation }
@@ -4058,7 +3962,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = preftl.2085.a
 		custom_tooltip = mass_exorcism_tt
@@ -4103,7 +4006,6 @@ situation_event = {
 			set_awareness = 80
 		}
 	}
-
 	after = {
 		destroy_situation = this
 		target = { remove_planet_flag = has_on_going_observation_situation }
@@ -4114,12 +4016,10 @@ situation_event = {
 situation_event = {
 	id = preftl.2090
 	title = preftl.2090.name
-
 	desc = {
 		trigger = { owner = { is_gestalt = no } }
 		text = preftl.2090.desc
 	}
-
 	desc = {
 		trigger = {
 			owner = { is_hive_empire = yes }
@@ -4127,7 +4027,6 @@ situation_event = {
 		}
 		text = preftl.2090.desc.hive
 	}
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = yes }
@@ -4154,7 +4053,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
 			owner = { is_machine_empire = no }
@@ -4174,7 +4072,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
 			owner = { is_machine_empire = no }
@@ -4194,7 +4091,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
 			owner = { is_machine_empire = yes }
@@ -4213,7 +4109,6 @@ situation_event = {
 			}
 		}
 	}
-
 	after = {
 		destroy_situation = this
 		target = { remove_planet_flag = has_on_going_observation_situation }
@@ -4253,12 +4148,10 @@ situation_event = {
 country_event = {
 	id = preftl.2101
 	title = preftl.2101.name
-
 	desc = {
 		trigger = { has_policy_flag = interference_not_allowed }
 		text = preftl.2101.can_not_help.desc
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_policy_flag = interference_not_allowed }
@@ -4285,10 +4178,11 @@ country_event = {
 		start_situation = {
 			type = situation_pre_ftl_singularity
 			target = from.owner.capital_scope
-			effect = { save_event_target_as = singularity_situation }
+			effect = {
+				save_event_target_as = singularity_situation
+			}
 		}
 	}
-
 	option = { # Watch
 		name = preftl.2101.a
 		icon = {
@@ -4296,11 +4190,8 @@ country_event = {
 			icon_background = GFX_situation_approach_bg_yellow
 			text = set_situation_approach_icon_text
 		}
-		event_target:singularity_situation = {
-			set_situation_approach = approach_watch_singularity
-		}
+		event_target:singularity_situation = { set_situation_approach = approach_watch_singularity }
 	}
-
 	option = { # Prevent Singularity
 		name = preftl.2101.b
 		icon = {
@@ -4316,11 +4207,8 @@ country_event = {
 				cooldown = yes
 			}
 		}
-		event_target:singularity_situation = {
-			set_situation_approach = approach_prevent_singularity
-		}
+		event_target:singularity_situation = { set_situation_approach = approach_prevent_singularity }
 	}
-
 	option = { # Promote Singularity
 		name = preftl.2101.c
 		icon = {
@@ -4336,11 +4224,8 @@ country_event = {
 				cooldown = yes
 			}
 		}
-		event_target:singularity_situation = {
-			set_situation_approach = approach_promote_singularity
-		}
+		event_target:singularity_situation = { set_situation_approach = approach_promote_singularity }
 	}
-
 	after = {
 		hidden_effect = {
 			event_target:singularity_situation = { set_situation_locked = no }
@@ -4530,7 +4415,6 @@ situation_event = {
 			set_predictive_observation_insight = { VALUE = 10 }
 		}
 	}
-
 	option = {
 		name = preftl.2110.a
 		owner = {
@@ -4564,7 +4448,6 @@ situation_event = {
 			set_predictive_observation_insight = { VALUE = 10 }
 		}
 	}
-
 	option = {
 		name = FASCINATING
 		owner = {
@@ -4610,7 +4493,6 @@ situation_event = {
 		}
 		NOT = { has_situation_flag = exponential_growth }
 	}
-
 	option = {
 		name = FASCINATING
 		target.owner = {
@@ -4640,7 +4522,6 @@ situation_event = {
 			}
 		}
 	}
-
 	after = {
 		set_situation_flag = exponential_growth
 	}
@@ -4660,7 +4541,6 @@ situation_event = {
 	trigger = {
 		NOT = { has_situation_flag = suspicious_minds }
 	}
-
 	option = {
 		name = UNDERSTOOD
 		owner = {
@@ -4673,7 +4553,6 @@ situation_event = {
 		}
 		target.owner = { add_awareness = 15 }
 	}
-
 	after = {
 		set_situation_flag = suspicious_minds
 	}
@@ -4684,28 +4563,24 @@ situation_event = {
 	id = preftl.2130
 	title = preftl.2130.name
 	desc = preftl.2130.desc
-
 	picture = {
 		trigger = {
 			target = { is_planet_class = pc_desert }
 		}
 		picture = GFX_evt_desert
 	}
-
 	picture = {
 		trigger = {
 			target = { is_planet_class = pc_tropical }
 		}
 		picture = GFX_evt_tropical
 	}
-
 	picture = {
 		trigger = {
 			target = { is_planet_class = pc_arid }
 		}
 		picture = GFX_evt_arid
 	}
-
 	picture = {
 		trigger = {
 			target = {
@@ -4718,35 +4593,30 @@ situation_event = {
 		}
 		picture = GFX_evt_continental
 	}
-
 	picture = {
 		trigger = {
 			target = { is_planet_class = pc_ocean }
 		}
 		picture = GFX_evt_ocean
 	}
-
 	picture = {
 		trigger = {
 			target = { is_planet_class = pc_tundra }
 		}
 		picture = GFX_evt_tundra
 	}
-
 	picture = {
 		trigger = {
 			target = { is_planet_class = pc_arctic }
 		}
 		picture = GFX_evt_arctic
 	}
-
 	picture = {
 		trigger = {
 			target = { is_planet_class = pc_gaia }
 		}
 		picture = GFX_evt_gaia
 	}
-
 	picture = {
 		trigger = {
 			target = { is_planet_class = pc_nuked }
@@ -4769,7 +4639,6 @@ situation_event = {
 			set_predictive_observation_insight = { VALUE = 10 }
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		owner = {
@@ -4786,7 +4655,6 @@ situation_event = {
 		}
 		target.owner = { add_awareness = 10 }
 	}
-
 	after = {
 		set_situation_flag = organic_idyll
 	}
@@ -4813,7 +4681,6 @@ situation_event = {
 			set_predictive_observation_insight = { VALUE = 10 }
 		}
 	}
-
 	option = {
 		name = UNDERSTOOD
 		target = {
@@ -4832,7 +4699,6 @@ situation_event = {
 			}
 		}
 	}
-
 	after = {
 		set_situation_flag = uneasy_synergy
 	}
@@ -4842,14 +4708,12 @@ situation_event = {
 situation_event = {
 	id = preftl.2136
 	title = preftl.2136.name
-
 	desc = {
 		trigger = {
 			target.owner = { has_pre_ftl_age = early_space_age }
 		}
 		text = preftl.2136.ftl.desc
 	}
-
 	desc = {
 		trigger = {
 			target.owner = {
@@ -4887,7 +4751,10 @@ situation_event = {
 		}
 		else = {
 			target.owner = { # Flips control of the starbase to the new spacefaring civilization
-				achieve_ftl_effect = { PRE_FTL = root.target.owner OWNER = root.owner }
+				achieve_ftl_effect = {
+					PRE_FTL = root.target.owner
+					OWNER = root.owner
+				}
 				solar_system = {
 					if = {
 						limit = { exists = starbase }
@@ -4949,7 +4816,6 @@ situation_event = {
 			set_predictive_observation_insight = { VALUE = 10 }
 		}
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -4985,7 +4851,6 @@ situation_event = {
 			}
 		}
 	}
-
 	after = {
 		destroy_situation = this
 		owner = {
@@ -5027,12 +4892,9 @@ situation_event = {
 			set_predictive_observation_insight = { VALUE = 10 }
 		}
 	}
-
 	option = {
 		name = {
-			trigger = {
-				owner = { is_gestalt = yes }
-			}
+			trigger = { owner = { is_gestalt = yes } }
 			text = preftl.2140.a
 		}
 		name = {
@@ -5066,7 +4928,6 @@ situation_event = {
 			}
 		}
 	}
-
 	after = {
 		destroy_situation = this
 		owner = {
@@ -5098,7 +4959,6 @@ situation_event = {
 			set_predictive_observation_insight = { VALUE = 10 }
 		}
 	}
-
 	option = {
 		name = preftl.2145.a
 		owner = {
@@ -5117,7 +4977,6 @@ situation_event = {
 			add_modifier = { modifier = singularity_situation_05 }
 		}
 	}
-
 	after = {
 		set_situation_flag = alternate_agenda
 	}
@@ -5152,7 +5011,6 @@ situation_event = {
 		}
 		owner = { set_country_flag = engineering_insights }
 	}
-
 	option = {
 		name = preftl.2150.a
 		owner = {
@@ -5185,7 +5043,6 @@ situation_event = {
 			}
 		}
 	}
-
 	after = {
 		destroy_situation = this
 		owner = {
@@ -5231,7 +5088,6 @@ situation_event = {
 			country_event = { id = preftl.2001 days = 10 }
 		}
 	}
-
 	option = {
 		name = UNFORTUNATE
 		owner = {
@@ -5241,7 +5097,6 @@ situation_event = {
 			}
 		}
 	}
-
 	after = {
 		destroy_situation = this
 		owner = { remove_country_flag = had_observation_situation }
@@ -5277,7 +5132,6 @@ situation_event = {
 			set_predictive_observation_insight = { VALUE = 10 }
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		custom_tooltip = preftl.2160.tt
@@ -5319,7 +5173,9 @@ situation_event = {
 						remove_trait = trait_psionic
 						remove_trait = trait_robot_psionic
 						change_scoped_species = no
-						effect = { save_event_target_as = convert_to_species }
+						effect = {
+							save_event_target_as = convert_to_species
+						}
 					}
 				}
 				set_country_flag = organic_singularity_communion # To identify this country in 'abort' blocks, such as for Espionage Operations
@@ -5335,9 +5191,7 @@ situation_event = {
 					20 = {
 						if = {
 							limit = {
-								NOT = {
-									owner = { has_valid_civic = civic_hive_devouring_swarm }
-								}
+								NOT = { owner = { has_valid_civic = civic_hive_devouring_swarm } }
 							}
 							change_government = {
 								civics = { civic = civic_hive_devouring_swarm }
@@ -5349,7 +5203,6 @@ situation_event = {
 			}
 		}
 	}
-
 	after = {
 		destroy_situation = this
 		target = {
@@ -5390,11 +5243,9 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = UNDERSTOOD
 	}
-
 	after = {
 		event_target:singularity_planet.owner = {
 			remove_country_flag = had_observation_situation
@@ -5466,12 +5317,10 @@ situation_event = {
 country_event = {
 	id = preftl.2167
 	title = preftl.2167.name
-
 	desc = {
 		trigger = { has_policy_flag = interference_not_allowed }
 		text = preftl.2167.can_not_help.desc
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_policy_flag = interference_not_allowed }
@@ -5493,7 +5342,9 @@ country_event = {
 			start_situation = {
 				type = situation_pre_ftl_nwo
 				target = from.owner.capital_scope
-				effect = { save_event_target_as = nwo_situation }
+				effect = {
+					save_event_target_as = nwo_situation
+				}
 			}
 		}
 		from.owner = {
@@ -5503,12 +5354,13 @@ country_event = {
 				name = random
 				skill = 4
 				set_age = 1 # Vfix opt
-				traits = { trait = leader_trait_iron_fist }
+				traits = {
+					trait = leader_trait_iron_fist
+				}
 			}
 			set_leader = last_created_leader
 		}
 	}
-
 	option = { # Watch
 		name = preftl.2167.a
 		icon = {
@@ -5518,7 +5370,6 @@ country_event = {
 		}
 		event_target:nwo_situation = { set_situation_approach = approach_watch_nwo }
 	}
-
 	option = { # Aid Leader
 		name = preftl.2167.b
 		icon = {
@@ -5536,7 +5387,6 @@ country_event = {
 		}
 		event_target:nwo_situation = { set_situation_approach = approach_aid_leader }
 	}
-
 	option = { # Aid Rebels
 		name = preftl.2167.c
 		icon = {
@@ -5554,7 +5404,6 @@ country_event = {
 		}
 		event_target:nwo_situation = { set_situation_approach = approach_aid_rebels }
 	}
-
 	after = {
 		hidden_effect = {
 			event_target:nwo_situation = { set_situation_locked = no }
@@ -5581,14 +5430,12 @@ situation_event = {
 		set_situation_flag = consolidation_nwo
 		target = { add_planet_devastation = 50 }
 	}
-
 	option = {
 		name = UNDERSTOOD
 		tooltip = {
 			target = { add_planet_devastation = 50 }
 		}
 	}
-
 	option = {
 		trigger = { current_situation_approach = approach_aid_rebels }
 		allow = {
@@ -5612,7 +5459,6 @@ situation_event = {
 		}
 		custom_tooltip = increase_aid_tt
 	}
-
 	option = {
 		trigger = { current_situation_approach = approach_aid_leader }
 		allow = {
@@ -5657,14 +5503,12 @@ situation_event = {
 		set_situation_flag = war_crimes_nwo
 		target = { add_planet_devastation = 50 }
 	}
-
 	option = {
 		name = UNDERSTOOD
 		tooltip = {
 			target = { add_planet_devastation = 50 }
 		}
 	}
-
 	option = {
 		trigger = { current_situation_approach = approach_aid_rebels }
 		allow = {
@@ -5688,7 +5532,6 @@ situation_event = {
 		}
 		custom_tooltip = increase_aid_tt
 	}
-
 	option = {
 		trigger = { current_situation_approach = approach_aid_leader }
 		name = preftl.2175.b
@@ -5718,12 +5561,10 @@ situation_event = {
 situation_event = {
 	id = preftl.2180
 	title = preftl.2180.name
-
 	desc = {
 		trigger = { has_situation_flag = consolidation_nwo }
 		text = preftl.2180.a.desc
 	}
-
 	desc = {
 		trigger = { has_situation_flag = war_crimes_nwo }
 		text = preftl.2180.b.desc
@@ -5754,7 +5595,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = UNDERSTOOD
 		tooltip = {
@@ -5782,7 +5622,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = { current_situation_approach = approach_aid_rebels }
 		name = preftl.2180.a
@@ -5800,7 +5639,6 @@ situation_event = {
 			add_resource = { influence = -200 }
 		}
 	}
-
 	option = {
 		trigger = { current_situation_approach = approach_aid_leader }
 		name = preftl.2180.b
@@ -5824,12 +5662,10 @@ situation_event = {
 situation_event = {
 	id = preftl.2185
 	title = preftl.2185.name
-
 	desc = {
 		trigger = { has_situation_flag = consolidation_nwo }
 		text = preftl.2185.a.desc
 	}
-
 	desc = {
 		trigger = { has_situation_flag = war_crimes_nwo }
 		text = preftl.2185.b.desc
@@ -5860,7 +5696,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = UNFORTUNATE
 		tooltip = {
@@ -5888,7 +5723,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = { current_situation_approach = approach_aid_rebels }
 		name = preftl.2185.a
@@ -5906,7 +5740,6 @@ situation_event = {
 			add_resource = { influence = -200 }
 		}
 	}
-
 	option = {
 		trigger = { current_situation_approach = approach_aid_leader }
 		name = preftl.2185.a
@@ -5930,12 +5763,10 @@ situation_event = {
 situation_event = {
 	id = preftl.2190
 	title = preftl.2190.name
-
 	desc = {
 		trigger = { has_situation_flag = fat_and_happy_nwo }
 		text = preftl.2190.a.desc
 	}
-
 	desc = {
 		trigger = { has_situation_flag = suppress_destroy_nwo }
 		text = preftl.2190.b.desc
@@ -5966,7 +5797,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = UNDERSTOOD
 		tooltip = {
@@ -5994,7 +5824,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = { current_situation_approach = approach_aid_rebels }
 		name = preftl.2190.a
@@ -6012,7 +5841,6 @@ situation_event = {
 			add_resource = { energy = -1000 }
 		}
 	}
-
 	option = {
 		trigger = { current_situation_approach = approach_aid_leader }
 		name = preftl.2195.a
@@ -6036,12 +5864,10 @@ situation_event = {
 situation_event = {
 	id = preftl.2195
 	title = preftl.2195.name
-
 	desc = {
 		trigger = { has_situation_flag = fat_and_happy_nwo }
 		text = preftl.2195.a.desc
 	}
-
 	desc = {
 		trigger = { has_situation_flag = suppress_destroy_nwo }
 		text = preftl.2195.b.desc
@@ -6072,7 +5898,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = UNDERSTOOD
 		tooltip = {
@@ -6100,7 +5925,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = { current_situation_approach = approach_aid_rebels }
 		name = preftl.2190.a
@@ -6118,7 +5942,6 @@ situation_event = {
 			add_resource = { energy = -1000 }
 		}
 	}
-
 	option = {
 		trigger = { current_situation_approach = approach_aid_leader }
 		name = preftl.2195.a
@@ -6173,7 +5996,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = { current_situation_approach = approach_watch_nwo }
 		name = UNDERSTOOD
@@ -6191,7 +6013,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = { current_situation_approach = approach_aid_leader }
 		name = EXCELLENT
@@ -6212,7 +6033,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = { current_situation_approach = approach_aid_rebels }
 		name = preftl.2200.a
@@ -6230,7 +6050,6 @@ situation_event = {
 			}
 		}
 	}
-
 	after = {
 		target.owner = {
 			shift_ethic = ethic_fanatic_authoritarian
@@ -6254,12 +6073,10 @@ situation_event = {
 situation_event = {
 	id = preftl.2205
 	title = preftl.2205.name
-
 	desc = {
 		trigger = { has_situation_flag = power_plays_nwo }
 		text = preftl.2205.a.desc
 	}
-
 	desc = {
 		trigger = { has_situation_flag = total_revolution_nwo }
 		text = preftl.2205.b.desc
@@ -6289,7 +6106,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = { current_situation_approach = approach_watch_nwo }
 		name = UNDERSTOOD
@@ -6307,7 +6123,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = { current_situation_approach = approach_aid_rebels }
 		name = EXCELLENT
@@ -6328,7 +6143,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = { current_situation_approach = approach_aid_leader }
 		name = preftl.2205.a
@@ -6346,7 +6160,6 @@ situation_event = {
 			}
 		}
 	}
-
 	after = {
 		target.owner = {
 			shift_ethic = ethic_egalitarian
@@ -6401,7 +6214,6 @@ country_event = {
 	picture = GFX_evt_galactic_senate
 	show_sound = event_factions
 	is_triggered_only = yes
-
 	option = {
 		name = FED_WE_MUST_COMPLY
 		allow = {
@@ -6417,7 +6229,6 @@ country_event = {
 		breach_fix_resolution_resolution_pre_ftl_stances_equal_standing = yes
 		ai_chance = { factor = 5 }
 	}
-
 	option = {
 		name = FED_WE_WILL_RETAIN
 		trigger = { is_xenophobe = no is_materialist = no }
@@ -6442,7 +6253,6 @@ country_event = {
 		}
 		custom_tooltip = "FED_WE_WILL_BE_IN_BREACH"
 	}
-
 	option = {
 		name = FED_WE_WILL_NOT_SUBMIT
 		trigger = {
@@ -6487,9 +6297,7 @@ country_event = {
 
 	trigger = {
 		is_country_type = default
-		any_pre_ftl_within_border = {
-			has_country_flag = violation_of_equal_standing@root
-		}
+		any_pre_ftl_within_border = { has_country_flag = violation_of_equal_standing@root }
 		is_galactic_community_formed = yes
 		is_galactic_community_member = yes
 		is_active_resolution = resolution_pre_ftl_stances_equal_standing
@@ -6507,7 +6315,6 @@ country_event = {
 			years = 10
 		}
 	}
-
 	option = {
 		name = CURSES
 		add_resource = { energy = -5000 }
@@ -6541,7 +6348,6 @@ country_event = {
 			years = 5
 		}
 	}
-
 	option = {
 		name = UNDERSTOOD
 		add_resource = { energy = -2500 }
@@ -6557,7 +6363,6 @@ country_event = {
 	picture = GFX_evt_galactic_senate
 	show_sound = event_factions
 	is_triggered_only = yes
-
 	option = {
 		name = FED_WE_MUST_COMPLY
 		allow = {
@@ -6567,7 +6372,6 @@ country_event = {
 		breach_fix_resolution_resolution_pre_ftl_stances_non_interference = yes
 		ai_chance = { factor = 5 }
 	}
-
 	option = {
 		name = FED_WE_WILL_RETAIN
 		trigger = { is_xenophobe = no is_materialist = no }
@@ -6586,7 +6390,6 @@ country_event = {
 		}
 		custom_tooltip = "FED_WE_WILL_BE_IN_BREACH"
 	}
-
 	option = {
 		name = FED_WE_WILL_NOT_SUBMIT
 		trigger = {
@@ -6635,9 +6438,7 @@ country_event = {
 					root = { is_harming_relations_with = prev }
 				}
 			}
-			any_pre_ftl_within_border = {
-				has_country_flag = violation_of_non_interference@root
-			}
+			any_pre_ftl_within_border = { has_country_flag = violation_of_non_interference@root }
 		}
 		is_galactic_community_formed = yes
 		is_galactic_community_member = yes
@@ -6670,7 +6471,6 @@ country_event = {
 			years = 10
 		}
 	}
-
 	option = {
 		name = CURSES
 		add_resource = { energy = -5000 }
@@ -6704,7 +6504,6 @@ country_event = {
 			years = 5
 		}
 	}
-
 	option = {
 		name = UNDERSTOOD
 		add_resource = { energy = -2500 }
@@ -6768,7 +6567,6 @@ country_event = {
 			years = 10
 		}
 	}
-
 	option = {
 		name = CURSES
 		add_resource = { energy = -5000 }
@@ -6832,7 +6630,6 @@ country_event = {
 			years = 10
 		}
 	}
-
 	option = {
 		name = CURSES
 		add_resource = { energy = -5000 }
@@ -6847,7 +6644,6 @@ country_event = {
 	picture = GFX_evt_galactic_senate
 	show_sound = event_factions
 	is_triggered_only = yes
-
 	option = {
 		name = FED_WE_MUST_COMPLY
 		allow = {
@@ -6860,7 +6656,6 @@ country_event = {
 		breach_fix_resolution_resolution_pre_ftl_stances_exploitation = yes
 		ai_chance = { factor = 5 }
 	}
-
 	option = {
 		name = FED_WE_WILL_RETAIN
 		trigger = { is_xenophile = no is_egalitarian = no }
@@ -6882,7 +6677,6 @@ country_event = {
 		}
 		custom_tooltip = "FED_WE_WILL_BE_IN_BREACH"
 	}
-
 	option = {
 		name = FED_WE_WILL_NOT_SUBMIT
 		trigger = {
@@ -6924,9 +6718,7 @@ country_event = {
 	trigger = {
 		is_country_type = default
 		OR = {
-			any_observed_pre_ftl_within_border = {
-				is_under_open_technological_enlightenment = root
-			}
+			any_observed_pre_ftl_within_border = { is_under_open_technological_enlightenment = root }
 			any_pre_ftl_within_border = { has_country_flag = violation_of_exploitation@root }
 		}
 		is_galactic_community_formed = yes
@@ -6954,7 +6746,6 @@ country_event = {
 			years = 10
 		}
 	}
-
 	option = {
 		name = CURSES
 		add_resource = { energy = -5000 }
@@ -6996,6 +6787,7 @@ country_event = {
 # 		add_resource = { energy = -2500 }
 # 	}
 # }
+
 planet_event = {
 	id = preftl.10300
 	hide_window = yes
@@ -7019,4 +6811,3 @@ planet_event = {
 		}
 	}
 }
-

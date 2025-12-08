@@ -67,9 +67,7 @@ planet_event = {
 
 	trigger = {
 		has_owner = yes
-		NOT = {
-			owner = { has_country_flag = first_colony_finished }
-		}
+		NOT = { owner = { has_country_flag = first_colony_finished } }
 	}
 
 	immediate = {
@@ -89,9 +87,7 @@ ship_event = {
 		OR = {
 			AND = {
 				is_ship_size = corvette
-				NOT = {
-					owner = { has_civic = civic_beastmasters }
-				}
+				NOT = { owner = { has_civic = civic_beastmasters } }
 			}
 			AND = {
 				is_ship_size = space_amoeba
@@ -101,10 +97,7 @@ ship_event = {
 		exists = owner
 		owner = {
 			is_country_type = default
-			check_variable = {
-				which = focus_built_corvettes
-				value < @focus_goal_built_corvettes
-			}
+			check_variable = { which = focus_built_corvettes value < @focus_goal_built_corvettes }
 		}
 	}
 
@@ -128,10 +121,7 @@ ship_event = {
 		exists = owner
 		owner = {
 			is_country_type = default
-			check_variable = {
-				which = focus_produced_maulers
-				value < @focus_goal_produced_maulers
-			}
+			check_variable = { which = focus_produced_maulers value < @focus_goal_produced_maulers }
 		}
 	}
 
@@ -152,9 +142,7 @@ ship_event = {
 
 	trigger = {
 		exists = owner
-		NOT = {
-			owner = { has_country_flag = first_anomaly_finished }
-		}
+		NOT = { owner = { has_country_flag = first_anomaly_finished } }
 	}
 
 	immediate = {
@@ -173,9 +161,7 @@ ship_event = {
 
 	trigger = {
 		exists = owner
-		NOT = {
-			owner = { has_country_flag = first_system_survey_finished }
-		}
+		NOT = { owner = { has_country_flag = first_system_survey_finished } }
 	}
 
 	immediate = {
@@ -209,9 +195,7 @@ fleet_event = {
 
 	trigger = {
 		exists = owner
-		NOT = {
-			owner = { has_country_flag = first_archaeology_site_finished }
-		}
+		NOT = { owner = { has_country_flag = first_archaeology_site_finished } }
 	}
 
 	immediate = {
@@ -231,7 +215,7 @@ country_event = {
 
 	trigger = {
 		NOT = { has_country_flag = swarm_30_research }
-		exists = FROMFROM
+		exists = fromfrom
 		fromfrom = {
 			system_has_dyson_swarm = yes
 			any_system_planet = {
@@ -332,9 +316,7 @@ leader_event = {
 
 	trigger = {
 		exists = owner
-		NOT = {
-			owner = { has_country_flag = scientist_level_4 }
-		}
+		NOT = { owner = { has_country_flag = scientist_level_4 } }
 	}
 
 	immediate = {
@@ -359,9 +341,7 @@ leader_event = {
 
 	trigger = {
 		exists = owner
-		NOT = {
-			owner = { has_country_flag = scientist_governor_assigned }
-		}
+		NOT = { owner = { has_country_flag = scientist_governor_assigned } }
 		leader_class = scientist
 		exists = planet # This means that they are a planet or sector governor
 		days_passed > 0
@@ -444,9 +424,7 @@ planet_event = {
 
 	trigger = {
 		has_planet_flag = fallen_empire_world
-		NOT = {
-			from = { has_country_flag = conquered_fallen_empire_world }
-		}
+		NOT = { from = { has_country_flag = conquered_fallen_empire_world } }
 	}
 
 	immediate = {
@@ -490,18 +468,9 @@ country_event = {
 		clear_variable = focus_physics_research
 		clear_variable = focus_society_research
 		clear_variable = focus_engineering_research
-		export_resource_income_to_variable = {
-			resource = physics_research
-			variable = focus_physics_research
-		}
-		export_resource_income_to_variable = {
-			resource = society_research
-			variable = focus_society_research
-		}
-		export_resource_income_to_variable = {
-			resource = engineering_research
-			variable = focus_engineering_research
-		}
+		export_resource_income_to_variable = { resource = physics_research variable = focus_physics_research }
+		export_resource_income_to_variable = { resource = society_research variable = focus_society_research }
+		export_resource_income_to_variable = { resource = engineering_research variable = focus_engineering_research }
 		if = {
 			limit = {
 				check_variable_arithmetic = {
@@ -528,9 +497,7 @@ ship_event = {
 
 	trigger = {
 		exists = owner
-		NOT = {
-			owner = { has_country_flag = mining_station_built }
-		}
+		NOT = { owner = { has_country_flag = mining_station_built } }
 	}
 
 	immediate = {
@@ -552,9 +519,7 @@ planet_event = {
 
 	trigger = {
 		has_owner = yes
-		NOT = {
-			owner = { has_country_flag = planet_building_built }
-		}
+		NOT = { owner = { has_country_flag = planet_building_built } }
 	}
 
 	immediate = {
@@ -815,10 +780,7 @@ country_event = {
 		exists = owner
 		owner = {
 			is_country_type = default
-			check_variable = {
-				which = focus_agendas_completed
-				value < @focus_goal_agendas_completed
-			}
+			check_variable = { which = focus_agendas_completed value < @focus_goal_agendas_completed }
 		}
 	}
 
@@ -844,9 +806,7 @@ planet_event = {
 
 	trigger = {
 		has_owner = yes
-		NOT = {
-			owner = { has_country_flag = planetary_decision_enacted }
-		}
+		NOT = { owner = { has_country_flag = planetary_decision_enacted } }
 	}
 
 	immediate = {
@@ -864,9 +824,7 @@ ship_event = {
 
 	trigger = {
 		exists = owner
-		NOT = {
-			owner = { has_country_flag = built_observation_station }
-		}
+		NOT = { owner = { has_country_flag = built_observation_station } }
 	}
 
 	immediate = {
@@ -885,9 +843,7 @@ fleet_event = {
 
 	trigger = {
 		exists = owner
-		NOT = {
-			owner = { has_country_flag = entered_wormhole }
-		}
+		NOT = { owner = { has_country_flag = entered_wormhole } }
 	}
 
 	immediate = {
@@ -904,7 +860,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOR = {
+		NAND = {
 			has_country_flag = has_research_pact
 			from = { has_country_flag = has_research_pact }
 		}
@@ -927,10 +883,7 @@ planet_event = {
 
 	trigger = {
 		from = {
-			check_variable = {
-				which = focus_terraformed_worlds
-				value < @focus_goal_terraformed_worlds
-			}
+			check_variable = { which = focus_terraformed_worlds value < @focus_goal_terraformed_worlds }
 		}
 	}
 
@@ -951,10 +904,7 @@ country_event = {
 	trigger = {
 		exists = owner
 		owner = {
-			check_variable = {
-				which = focus_activated_relics
-				value < @focus_goal_activated_relics
-			}
+			check_variable = { which = focus_activated_relics value < @focus_goal_activated_relics }
 		}
 	}
 
@@ -976,9 +926,7 @@ country_event = {
 
 	trigger = {
 		exists = from
-		NOT = {
-			from = { has_country_flag = has_won_war }
-		}
+		NOT = { from = { has_country_flag = has_won_war } }
 	}
 
 	immediate = {
@@ -1021,9 +969,7 @@ planet_event = {
 	}
 
 	trigger = {
-		NOT = {
-			from = { has_country_flag = has_conquered_homeworld }
-		}
+		NOT = { from = { has_country_flag = has_conquered_homeworld } }
 	}
 
 	immediate = {
@@ -1040,9 +986,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = {
-			from = { has_country_flag = favor_gained }
-		}
+		NOT = { from = { has_country_flag = favor_gained } }
 	}
 
 	immediate = {
@@ -1059,9 +1003,7 @@ leader_event = {
 
 	trigger = {
 		exists = owner
-		NOT = {
-			owner = { has_country_flag = official_governor_assigned }
-		}
+		NOT = { owner = { has_country_flag = official_governor_assigned } }
 		leader_class = official
 		exists = planet # This means that they are a planet or sector governor
 		days_passed > 0
@@ -1098,10 +1040,7 @@ planet_event = {
 
 	trigger = {
 		from = {
-			check_variable = {
-				which = branch_offices_established
-				value < @focus_goal_branch_offices_established
-			}
+			check_variable = { which = branch_offices_established value < @focus_goal_branch_offices_established }
 		}
 	}
 
@@ -1269,7 +1208,6 @@ country_event = {
 			value = FROMFROM.solar_system.value:num_arc_furnace_planets
 		}
 	}
-
 	after = {
 		if = {
 			limit = {
@@ -1315,9 +1253,7 @@ planet_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = {
-			from = { has_country_flag = has_ring_world }
-		}
+		NOT = { from = { has_country_flag = has_ring_world } }
 		is_planet_class = pc_ringworld_habitable
 	}
 
@@ -1358,10 +1294,7 @@ ship_event = {
 	trigger = {
 		is_ship_size = military_station_small
 		owner = {
-			check_variable = {
-				which = focus_built_platforms
-				value < @focus_goal_built_platforms
-			}
+			check_variable = { which = focus_built_platforms value < @focus_goal_built_platforms }
 		}
 	}
 
@@ -1415,10 +1348,7 @@ ship_event = {
 	trigger = {
 		is_ship_size = destroyer
 		owner = {
-			check_variable = {
-				which = focus_built_destroyers
-				value < @focus_goal_built_destroyers
-			}
+			check_variable = { which = focus_built_destroyers value < @focus_goal_built_destroyers }
 		}
 	}
 
@@ -1440,10 +1370,7 @@ ship_event = {
 	trigger = {
 		ship_uses_weaver_components = yes
 		owner = {
-			check_variable = {
-				which = focus_produced_weavers
-				value < @focus_goal_produced_weavers
-			}
+			check_variable = { which = focus_produced_weavers value < @focus_goal_produced_weavers }
 		}
 	}
 
@@ -1557,9 +1484,7 @@ country_event = {
 
 	trigger = {
 		exists = from
-		NOT = {
-			from = { has_country_flag = defeated_fallen_empire }
-		}
+		NOT = { from = { has_country_flag = defeated_fallen_empire } }
 		is_fallen_empire = yes
 	}
 
@@ -1591,10 +1516,7 @@ planet_event = {
 
 	trigger = {
 		from = {
-			check_variable = {
-				which = focus_conquered_worlds
-				value < @focus_goal_conquered_worlds
-			}
+			check_variable = { which = focus_conquered_worlds value < @focus_goal_conquered_worlds }
 		}
 	}
 
@@ -1613,9 +1535,7 @@ leader_event = {
 
 	trigger = {
 		exists = owner
-		NOT = {
-			owner = { has_country_flag = commander_governor_assigned }
-		}
+		NOT = { owner = { has_country_flag = commander_governor_assigned } }
 		leader_class = commander
 		exists = planet
 		days_passed > 0
@@ -1637,10 +1557,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		check_variable = {
-			which = level_5_scientist
-			value < @focus_goal_scientists_level_5
-		}
+		check_variable = { which = level_5_scientist value < @focus_goal_scientists_level_5 }
 		from = {
 			leader_class = scientist
 			NOR = {
@@ -1667,10 +1584,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		check_variable = {
-			which = level_5_commander
-			value < @focus_goal_commanders_level_5
-		}
+		check_variable = { which = level_5_commander value < @focus_goal_commanders_level_5 }
 		from = {
 			leader_class = commander
 			NOR = {
@@ -1743,10 +1657,7 @@ ship_event = {
 	trigger = {
 		is_ship_size = battleship
 		owner = {
-			check_variable = {
-				which = focus_built_battleship
-				value < @focus_goal_built_battleships
-			}
+			check_variable = { which = focus_built_battleship value < @focus_goal_built_battleships }
 		}
 	}
 
@@ -1808,4 +1719,3 @@ ship_event = {
 		}
 	}
 }
-

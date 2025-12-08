@@ -16,10 +16,7 @@ country_event = {
 		}
 		set_variable = { which = hyperthermia_red_var value = 0 }
 		set_variable = { which = hyperthermia_volcanic_var value = 0 }
-		set_variable = {
-			which = hyperthermia_systems_var
-			value = value:gh_critical_mass_value
-		}
+		set_variable = { which = hyperthermia_systems_var value = value:gh_critical_mass_value }
 		set_variable = { which = hyperthermia_giant_var value = 0 }
 		export_trigger_value_to_variable = { # Used for the UI to show the current progress
 			trigger = controlled_systems
@@ -31,13 +28,10 @@ country_event = {
 			override_tooltip = "TIMELINE_EVENT_GH_START_TOOLTIP"
 			override_types = { country }
 			override_text = { "text:TIMELINE_EVENT_GH_START" }
-			override_texture = {
-				"background:GFX_evt_inf_crisis_crucible_construction"
-			}
+			override_texture = { "background:GFX_evt_inf_crisis_crucible_construction" }
 			targets = { root }
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		trigger = {
@@ -50,7 +44,6 @@ country_event = {
 			owner = root
 		}
 	}
-
 	option = {
 		name = ACKNOWLEDGED
 		trigger = {
@@ -63,7 +56,6 @@ country_event = {
 			owner = root
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		trigger = {
@@ -72,7 +64,6 @@ country_event = {
 		}
 		set_country_flag = Hyperthermia_Lv1_unlocked
 	}
-
 	option = {
 		name = ACKNOWLEDGED
 		trigger = {
@@ -81,7 +72,6 @@ country_event = {
 		}
 		set_country_flag = Hyperthermia_Lv1_unlocked
 	}
-
 	after = {
 		begin_event_chain = { event_chain = galactic_hyperthermia_chain target = root }
 	}
@@ -91,16 +81,12 @@ country_event = {
 country_event = {
 	id = infernals.1005
 	title = infernals.1005.name
-
 	desc = {
 		trigger = {
-			NOT = {
-				owner = { has_country_flag = red_giant_discovered_crystallized_entropy }
-			}
+			NOT = { owner = { has_country_flag = red_giant_discovered_crystallized_entropy } }
 		}
 		text = infernals.1005.desc1
 	}
-
 	desc = {
 		trigger = {
 			owner = { has_country_flag = red_giant_discovered_crystallized_entropy }
@@ -112,19 +98,16 @@ country_event = {
 	show_sound = event_mystic_reveal
 	event_chain = galactic_hyperthermia_chain
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.1005.a
 		custom_tooltip = infernals.1005.a.tt
 		trigger = { is_gestalt = no }
 	}
-
 	option = {
 		name = infernals.1005.b
 		custom_tooltip = infernals.1005.b.tt
 		trigger = { is_gestalt = yes }
 	}
-
 	after = {
 		hidden_effect = {
 			if = {
@@ -146,7 +129,6 @@ country_event = {
 	show_sound = event_mystic_reveal
 	event_chain = galactic_hyperthermia_chain
 	is_triggered_only = yes
-
 	option = {
 		name = ACKNOWLEDGED
 		enable_special_project = {
@@ -177,12 +159,10 @@ country_event = {
 	show_sound = event_mystic_reveal
 	event_chain = galactic_hyperthermia_chain
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.1010.a
 		trigger = { is_gestalt = no }
 	}
-
 	option = {
 		name = infernals.1010.b
 		trigger = { is_gestalt = yes }
@@ -203,7 +183,6 @@ country_event = {
 		set_country_flag = allow_terraforming_into_volcanic
 		activate_fog_machine = crisis_firestorm_S
 	}
-
 	option = {
 		name = infernals.1015.a # Become evil
 		custom_tooltip = infernals.1015.a.desc
@@ -223,7 +202,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = infernals.1015.b # Back to Level 3
 		custom_tooltip = infernals.1015.b.desc
@@ -247,13 +225,11 @@ country_event = {
 	show_sound = event_mystic_reveal
 	event_chain = galactic_hyperthermia_chain
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.1020.a
 		custom_tooltip = infernals.1020.a.tt
 		trigger = { is_gestalt = no }
 	}
-
 	option = {
 		name = infernals.1020.b
 		custom_tooltip = infernals.1020.b.tt
@@ -270,12 +246,10 @@ country_event = {
 	show_sound = event_mystic_reveal
 	event_chain = galactic_hyperthermia_chain
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.1021.a
 		trigger = { is_gestalt = no }
 	}
-
 	option = {
 		name = infernals.1021.b
 		trigger = { is_gestalt = yes }
@@ -291,13 +265,11 @@ country_event = {
 	show_sound = event_mystic_reveal
 	event_chain = galactic_hyperthermia_chain
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.1025.a
 		custom_tooltip = infernals.1025.a.tt
 		trigger = { is_gestalt = no }
 	}
-
 	option = {
 		name = infernals.1025.b
 		custom_tooltip = infernals.1025.b.tt
@@ -331,14 +303,8 @@ country_event = {
 			set_surveyed = { surveyed = yes surveyor = root }
 		}
 		add_seen_bypass_type = entropy_wormhole
-		set_variable = {
-			which = gh_crisis_difficulty_var
-			value = value:gh_crisis_difficulty_value
-		}
-		set_variable = {
-			which = gh_crisis_opponent_var
-			value = value:gh_crisis_opponent_value
-		}
+		set_variable = { which = gh_crisis_difficulty_var value = value:gh_crisis_difficulty_value }
+		set_variable = { which = gh_crisis_opponent_var value = value:gh_crisis_opponent_value }
 		if = { # Should never go too low
 			limit = {
 				check_variable = { which = gh_crisis_opponent_value value < -2.5 }
@@ -347,13 +313,11 @@ country_event = {
 		}
 		start_situation = { type = situation_galactic_hyperthermia_timer target = root }
 	}
-
 	option = {
 		name = infernals.1030.a
 		custom_tooltip = infernals.1030.a.tt
 		trigger = { is_gestalt = no }
 	}
-
 	option = {
 		name = infernals.1030.b
 		custom_tooltip = infernals.1030.b.tt
@@ -384,9 +348,7 @@ country_event = {
 		}
 		save_global_event_target_as = hyperthermia_empire
 		every_playable_country = {
-			limit = {
-				NOT = { is_same_value = root }
-			}
+			limit = { NOT = { is_same_value = root } }
 			country_event = { id = infernals.1040 }
 		}
 		# Not all FEs should attack on lower difficulty, starting with 3
@@ -399,12 +361,10 @@ country_event = {
 		}
 		activate_fog_machine = crisis_firestorm_L
 	}
-
 	option = {
 		name = infernals.1035.a
 		trigger = { is_gestalt = no }
 	}
-
 	option = {
 		name = infernals.1035.b
 		trigger = { is_gestalt = yes }
@@ -425,10 +385,7 @@ country_event = {
 	option = {
 		name = infernals.1040.a
 		custom_tooltip = infernals.1040.a.tt
-		trigger = {
-			is_player_crisis = no
-			is_homicidal = no
-		}
+		trigger = { is_player_crisis = no is_homicidal = no }
 		ai_chance = {
 			modifier = {
 				add = 5
@@ -487,10 +444,7 @@ country_event = {
 	option = {
 		name = infernals.1040.d
 		custom_tooltip = infernals.1040.d.tt
-		trigger = {
-			is_infernal_empire = no
-			is_homicidal = no
-		}
+		trigger = { is_infernal_empire = no is_homicidal = no }
 		ai_chance = {
 			modifier = { add = 10 is_pacifist = yes }
 			modifier = { add = 25 has_civic = civic_inwards_perfection }
@@ -523,7 +477,10 @@ country_event = {
 			start_situation = {
 				type = situation_galactic_hyperthermia
 				target = root
-				effect = { set_situation_flag = hyperthermia_counter set_situation_progress = 10 }
+				effect = {
+					set_situation_flag = hyperthermia_counter
+					set_situation_progress = 10
+				}
 			}
 		}
 		# Will add the GalCom leaders as war_leader, otherwise the strongest opponent
@@ -624,7 +581,9 @@ country_event = {
 					variable_string = "[This.MainDefender.GetAdj]"
 				}
 				attacker_war_goal = "wg_declared_crisis"
-				effect = { save_event_target_as = hyperthermia_war }
+				effect = {
+					save_event_target_as = hyperthermia_war
+				}
 			}
 		}
 		every_country = {
@@ -674,7 +633,6 @@ country_event = {
 	show_sound = event_death_cult
 	event_chain = galactic_hyperthermia_chain
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.1042.a
 	}
@@ -688,7 +646,6 @@ country_event = {
 	picture = GFX_evt_crisis_declared
 	show_sound = event_announcement
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.1043.a
 	}
@@ -698,19 +655,15 @@ country_event = {
 situation_event = {
 	id = infernals.1045
 	title = infernals.1045.name
-
 	desc = {
 		trigger = {
 			owner = { has_crisis_level = crisis_hyperthermia_level_5 }
 		}
 		text = infernals.1045.desc1
 	}
-
 	desc = {
 		trigger = {
-			NOT = {
-				owner = { has_crisis_level = crisis_hyperthermia_level_5 }
-			}
+			NOT = { owner = { has_crisis_level = crisis_hyperthermia_level_5 } }
 		}
 		text = infernals.1045.desc2
 	}
@@ -719,7 +672,6 @@ situation_event = {
 	show_sound = event_worrying_signal
 	situation = this
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.1045.a
 		custom_tooltip = infernals.1045.a.tooltip
@@ -727,14 +679,11 @@ situation_event = {
 			owner = { has_crisis_level = crisis_hyperthermia_level_5 }
 		}
 	}
-
 	option = {
 		name = infernals.1045.a
 		custom_tooltip = infernals.1045.a.tooltip
 		trigger = {
-			NOT = {
-				owner = { has_crisis_level = crisis_hyperthermia_level_5 }
-			}
+			NOT = { owner = { has_crisis_level = crisis_hyperthermia_level_5 } }
 		}
 	}
 }
@@ -822,7 +771,6 @@ country_event = {
 			add_modifier = { modifier = crisis_conduit_stop }
 		}
 	}
-
 	option = {
 		name = infernals.1052.a
 		custom_tooltip = infernals.1052.a.tt
@@ -857,7 +805,6 @@ country_event = {
 			modifier = { factor = 0 is_infernal_empire = no }
 		}
 	}
-
 	option = {
 		name = infernals.1052.b
 		custom_tooltip = infernals.1052.b.tt
@@ -892,9 +839,7 @@ country_event = {
 		NOT = { has_country_flag = discovered_crucible }
 		if = {
 			limit = { has_ascension_perk = ap_galactic_hyperthermia }
-			NOT = {
-				from = { has_megastructure_flag = galactic_crucible@root }
-			}
+			NOT = { from = { has_megastructure_flag = galactic_crucible@root } }
 		}
 	}
 
@@ -937,11 +882,9 @@ country_event = {
 		is_at_war = yes
 		is_at_war_with = event_target:crucible_builders
 	}
-
 	option = { # Thats evil!
 		name = infernals.1053.a
 	}
-
 	option = { # After all, it could still benefit them!
 		name = infernals.1053.b
 		trigger = {
@@ -996,10 +939,7 @@ country_event = {
 				owner_species = { has_trait = trait_organic }
 			}
 			species = {
-				change_species_characteristics = {
-					remove_trait = trait_organic
-					add_trait = trait_infernal
-				}
+				change_species_characteristics = { remove_trait = trait_organic add_trait = trait_infernal }
 			}
 		}
 		every_system = { hyperthermia_galaxy_effect = yes }
@@ -1015,27 +955,22 @@ country_event = {
 			targets = { root }
 		}
 	}
-
 	option = {
 		name = infernals.1055.a
 		trigger = { is_gestalt = no }
 	}
-
 	option = {
 		name = infernals.1055.b
 		trigger = { is_gestalt = yes }
 	}
-
 	option = { # Scorched world heralds
 		name = infernals.1055.c
 		trigger = { is_genocidal_infernal = yes }
 	}
-
 	option = { # Infernal Fire Cult
 		name = infernals.1055.d
 		trigger = { has_valid_civic = civic_pyrolatry }
 	}
-
 	option = { # Other Infernals only
 		name = infernals.1055.e
 		trigger = {
@@ -1046,12 +981,10 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Generic Genocidal response
 		name = infernals.1055.f
 		trigger = { is_homicidal = yes }
 	}
-
 	after = {
 		add_relic = r_crystallized_singularity
 	}
@@ -1065,17 +998,14 @@ country_event = {
 	picture = GFX_evt_cosmic_storms_solar_storm
 	show_sound = event_the_great_awakening
 	is_triggered_only = yes
-
 	option = {
 		name = infernals.1056.a
 		trigger = { is_gestalt = no }
 	}
-
 	option = {
 		name = infernals.1056.b
 		trigger = { is_gestalt = yes }
 	}
-
 	option = {
 		name = infernals.1056.c
 		trigger = { is_infernal_empire = yes }
@@ -1101,10 +1031,7 @@ country_event = {
 
 	immediate = {
 		# Shows progress for "Critical Mass"
-		export_trigger_value_to_variable = {
-			trigger = controlled_systems
-			variable = hyperthermia_own_systems_var
-		}
+		export_trigger_value_to_variable = { trigger = controlled_systems variable = hyperthermia_own_systems_var }
 		# Cycle interval
 		if = {
 			limit = { has_modifier = crisis_conduit_stop }
@@ -1204,22 +1131,14 @@ country_event = {
 			}
 			random_situation = {
 				limit = { is_situation_type = situation_galactic_hyperthermia }
-				export_trigger_value_to_variable = {
-					trigger = situation_progress
-					variable = gh_crisis_progress_var
-				}
+				export_trigger_value_to_variable = { trigger = situation_progress variable = gh_crisis_progress_var }
 				owner = {
-					set_variable = {
-						which = gh_crisis_progress_var
-						value = prev.gh_crisis_progress_var
-					}
+					set_variable = { which = gh_crisis_progress_var value = prev.gh_crisis_progress_var }
 				}
 			}
 			# Security mechanism in case anything (lag/monthly tick) goes wrong
 			every_playable_country = {
-				limit = {
-					NOT = { is_same_value = root }
-				}
+				limit = { NOT = { is_same_value = root } }
 				random_situation = {
 					limit = { is_situation_type = situation_galactic_hyperthermia }
 					set_situation_progress = root.gh_crisis_progress_var
@@ -1321,9 +1240,7 @@ system_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = {
-			from = { has_ascension_perk = ap_galactic_hyperthermia }
-		}
+		NOT = { from = { has_ascension_perk = ap_galactic_hyperthermia } }
 	}
 
 	immediate = {

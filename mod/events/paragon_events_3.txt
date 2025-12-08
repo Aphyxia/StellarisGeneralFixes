@@ -40,15 +40,10 @@ country_event = {
 	immediate = {
 		from = { save_event_target_as = gateway_system }
 	}
-
 	option = {
 		name = "paragon.3000.a"
 		hidden_effect = {
-			country_event = {
-				id = paragon.3001
-				days = 10
-				random = 2
-			}
+			country_event = { id = paragon.3001 days = 10 random = 2 }
 		}
 	}
 }
@@ -62,7 +57,6 @@ country_event = {
 	location = event_target:paragon_gateway_dude_homegate
 	fire_only_once = yes
 	is_triggered_only = yes
-
 	option = {
 		name = {
 			trigger = { is_gestalt = no }
@@ -87,7 +81,9 @@ country_event = {
 						"null"
 					}
 				}
-				effect = { save_global_event_target_as = sharpbeak_country }
+				effect = {
+					save_global_event_target_as = sharpbeak_country
+				}
 			}
 			event_target:sharpbeak_country = {
 				set_country_flag = sharpbeak_country_flag
@@ -102,7 +98,9 @@ country_event = {
 						trait = "trait_survivor"
 						trait = "trait_nomadic"
 					}
-					effect = { save_event_target_as = sharpbeak_species }
+					effect = {
+						save_event_target_as = sharpbeak_species
+					}
 				}
 				create_leader = {
 					class = commander
@@ -163,11 +161,7 @@ country_event = {
 					}
 				}
 			}
-			country_event = {
-				id = paragon.3002
-				days = 120
-				random = 120
-			}
+			country_event = { id = paragon.3002 days = 120 random = 120 }
 		}
 	}
 }
@@ -190,7 +184,6 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = "paragon.3002.a"
 		enable_special_project = {
@@ -205,12 +198,10 @@ country_event = {
 country_event = {
 	id = paragon.3003
 	title = "paragon.3003.name"
-
 	desc = {
 		text = paragon.3003.desc
 		trigger = { is_gestalt = no }
 	}
-
 	desc = { # Gestalt
 		text = paragon.3003.desc_gestalt
 		trigger = { is_gestalt = yes }
@@ -228,7 +219,6 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = "paragon.3003.a"
 		trigger = { is_gestalt = no is_fanatic_xenophobe = no }
@@ -238,7 +228,6 @@ country_event = {
 			owner = root
 		}
 	}
-
 	option = {
 		name = "paragon.3003.b"
 		trigger = { is_fanatic_xenophile = no }
@@ -288,11 +277,7 @@ country_event = {
 						owner_species = { has_trait = trait_juiced_power }
 					}
 					modifier = { factor = 2 has_origin = origin_clone_army }
-					country_event = {
-						id = paragon.3006
-						days = 30
-						random = 30
-					}
+					country_event = { id = paragon.3006 days = 30 random = 30 }
 				}
 				80 = {
 					modifier = {
@@ -338,11 +323,7 @@ country_event = {
 						owner_species = { has_trait = trait_juiced_power }
 					}
 					modifier = { factor = 0.8 has_origin = origin_clone_army }
-					country_event = {
-						id = paragon.3007
-						days = 30
-						random = 30
-					}
+					country_event = { id = paragon.3007 days = 30 random = 30 }
 				}
 			}
 		}
@@ -352,12 +333,10 @@ country_event = {
 country_event = {
 	id = paragon.3004
 	title = "paragon.3004.name"
-
 	desc = {
 		trigger = { has_country_flag = found_skravird }
 		text = paragon.3004.a.desc
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = found_skravird }
@@ -378,15 +357,10 @@ country_event = {
 	immediate = {
 		set_country_flag = met_skrand
 	}
-
 	option = {
 		name = "paragon.3004.a"
 		hidden_effect = {
-			country_event = {
-				id = paragon.3005
-				days = 60
-				random = 60
-			}
+			country_event = { id = paragon.3005 days = 60 random = 60 }
 		}
 	}
 }
@@ -410,24 +384,20 @@ country_event = {
 	immediate = {
 		remove_global_flag = sharpbeak_recruit_phase
 	}
-
 	picture_event_data = {
 		portrait = event_target:admiral_sharpbeak
 		room = galactic_custodian_room
 	}
-
 	option = {
 		name = paragon.3005.a
 		response_text = paragon.3005.a.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.3005.b
 		response_text = paragon.3005.b.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.3005.c
 		# Special tag to make mark this is the hire option
@@ -467,7 +437,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = paragon.3005.d
 		custom_tooltip = paragon.3005.d_custom_tooltip
@@ -494,7 +463,6 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = paragon.3006.a
 		hidden_effect = {
@@ -502,11 +470,7 @@ country_event = {
 				kill_leader = { class = commander show_notification = no }
 				set_owner = root
 			}
-			country_event = {
-				id = paragon.3021
-				days = 360
-				random = 360
-			}
+			country_event = { id = paragon.3021 days = 360 random = 360 }
 		}
 	}
 }
@@ -526,7 +490,6 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = "paragon.3007.a"
 		set_country_flag = attacked_sharpbeak
@@ -555,7 +518,6 @@ country_event = {
 		start_situation = { type = situation_paragon_skrand_sickness }
 		start_situation = { type = situation_paragon_skrand_cure }
 	}
-
 	option = {
 		name = "paragon.3010.a"
 	}
@@ -581,7 +543,6 @@ situation_event = {
 			event_target:admiral_sharpbeak = { kill_leader = {  } }
 		}
 	}
-
 	option = {
 		name = TERRIBLE
 		destroy_situation = this
@@ -599,7 +560,6 @@ situation_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = UNFORTUNATE
 	}
@@ -617,7 +577,6 @@ situation_event = {
 	immediate = {
 		event_target:admiral_sharpbeak = { remove_trait = trait_ruler_warlike_2 }
 	}
-
 	option = {
 		name = WORRYING
 	}
@@ -635,7 +594,6 @@ situation_event = {
 	immediate = {
 		event_target:admiral_sharpbeak = { remove_trait = leader_trait_resilient }
 	}
-
 	option = {
 		name = DISCONCERTING
 	}
@@ -657,7 +615,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		destroy_situation = this
@@ -683,7 +640,6 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = "paragon.3020.a"
 		add_research_option = tech_strike_craft_skrand
@@ -708,7 +664,6 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = "paragon.3021.a"
 		add_research_option = tech_strike_craft_skrand
@@ -747,21 +702,15 @@ country_event = {
 			save_global_event_target_as = leader_to_fire_skrand
 		}
 	}
-
 	option = {
 		name = "paragon.admiral_fight.a"
 		custom_tooltip = paragon.admiral_fight.a.tt
 		event_target:leader_to_fire_skrand = { exile_leader_as = bickering_admiral }
 		hidden_effect = {
-			country_event = {
-				id = paragon.3031
-				days = 360
-				random = 720
-			}
+			country_event = { id = paragon.3031 days = 360 random = 720 }
 			clear_global_event_target = leader_to_fire_skrand
 		}
 	}
-
 	option = {
 		name = "paragon.admiral_fight.b"
 		random_owned_leader = {
@@ -775,7 +724,6 @@ country_event = {
 			clear_global_event_target = leader_to_fire_skrand
 		}
 	}
-
 	option = {
 		name = "paragon.3030.c"
 		allow = {
@@ -783,11 +731,7 @@ country_event = {
 		}
 		add_resource = { unity = -10000 }
 		hidden_effect = {
-			country_event = {
-				id = paragon.3031
-				days = 360
-				random = 720
-			}
+			country_event = { id = paragon.3031 days = 360 random = 720 }
 			clear_global_event_target = leader_to_fire_skrand
 		}
 	}
@@ -809,21 +753,15 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = "paragon.3031.a"
 		custom_tooltip = paragon.situations.tt
 		start_situation = { type = situation_paragon_skrand_integration }
 	}
-
 	option = {
 		name = "paragon.3031.b"
 		hidden_effect = {
-			country_event = {
-				id = paragon.3035
-				days = 30
-				random = 720
-			}
+			country_event = { id = paragon.3035 days = 30 random = 720 }
 		}
 	}
 }
@@ -839,7 +777,6 @@ situation_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = EXCELLENT
 		owner = {
@@ -860,7 +797,6 @@ situation_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = CURIOUS
 	}
@@ -877,7 +813,6 @@ situation_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = EXCELLENT
 	}
@@ -915,21 +850,15 @@ country_event = {
 			save_global_event_target_as = leader_to_fire_skrand
 		}
 	}
-
 	option = {
 		name = "paragon.admiral_fight.a"
 		custom_tooltip = paragon.admiral_fight.a.tt
 		event_target:leader_to_fire_skrand = { exile_leader_as = bickering_admiral }
 		hidden_effect = {
-			country_event = {
-				id = paragon.3036
-				days = 360
-				random = 1080
-			}
+			country_event = { id = paragon.3036 days = 360 random = 1080 }
 			clear_global_event_target = leader_to_fire_skrand
 		}
 	}
-
 	option = {
 		name = "paragon.admiral_fight.b"
 		random_owned_leader = {
@@ -943,7 +872,6 @@ country_event = {
 			clear_global_event_target = leader_to_fire_skrand
 		}
 	}
-
 	option = {
 		name = "paragon.admiral_fight.c"
 		start_situation = { type = situation_paragon_skrand_integration }
@@ -982,7 +910,6 @@ country_event = {
 			save_global_event_target_as = leader_to_fire_skrand
 		}
 	}
-
 	option = {
 		name = "paragon.admiral_fight.a"
 		custom_tooltip = paragon.3036.a.tt
@@ -991,7 +918,6 @@ country_event = {
 			clear_global_event_target = leader_to_fire_skrand
 		}
 	}
-
 	option = {
 		name = "paragon.admiral_fight.b"
 		random_owned_leader = {
@@ -1025,13 +951,11 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = "paragon.3040.a"
 		custom_tooltip = paragon.situations.tt
 		start_situation = { type = situation_paragon_skrand_upgrade }
 	}
-
 	option = {
 		name = "paragon.3040.b"
 	}
@@ -1049,7 +973,6 @@ situation_event = {
 	immediate = {
 		owner = { set_country_flag = talon_upgraded }
 	}
-
 	option = {
 		name = EXCELLENT
 		event_target:last_talon_ship = {
@@ -1076,7 +999,6 @@ situation_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = INTERESTING
 	}
@@ -1093,7 +1015,6 @@ situation_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = UNFORTUNATE
 		add_situation_progress = -5
@@ -1118,31 +1039,26 @@ country_event = {
 
 	immediate = {
 	}
-
 	picture_event_data = {
 		portrait = paragon02 # sharpbeak_portrait
 		room = paragon_skrand_room
 	}
-
 	option = {
 		name = paragon.3050.a
 		response_text = paragon.3050.a.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.3050.b
 		response_text = paragon.3050.b.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.3050.c
 		response_text = paragon.3050.c.response
 		custom_tooltip = paragon.situations.tt
 		start_situation = { type = situation_paragon_skrand_crisis }
 	}
-
 	option = {
 		name = paragon.3050.d
 		response_text = paragon.3050.d.response
@@ -1160,7 +1076,6 @@ situation_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = EXCELLENT
 		owner = {
@@ -1181,7 +1096,6 @@ situation_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = INTERESTING
 	}
@@ -1198,7 +1112,6 @@ situation_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = INTERESTING
 	}
@@ -1221,13 +1134,11 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = "paragon.3060.a"
 		custom_tooltip = paragon.situations.tt
 		start_situation = { type = situation_paragon_skrand_study }
 	}
-
 	option = {
 		name = "paragon.3060.b"
 	}
@@ -1245,7 +1156,6 @@ situation_event = {
 	immediate = {
 		owner = { set_country_flag = studied_talon }
 	}
-
 	option = {
 		name = EXCELLENT
 		owner = {
@@ -1270,11 +1180,7 @@ country_event = {
 	immediate = {
 		random = {
 			chance = 80
-			country_event = {
-				id = paragon.3072
-				days = 10
-				random = 20
-			}
+			country_event = { id = paragon.3072 days = 10 random = 20 }
 		}
 	}
 }
@@ -1294,7 +1200,6 @@ situation_event = {
 			country_event = { id = paragon.3073 }
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		destroy_situation = this
@@ -1315,12 +1220,10 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = "paragon.3072.a"
 		start_situation = { type = situation_paragon_skrand_rebuild }
 	}
-
 	option = {
 		name = "paragon.3072.b"
 		add_resource = { alloys = 20000 }
@@ -1388,13 +1291,11 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = "paragon.3080.a"
 		custom_tooltip = paragon.situations.tt
 		start_situation = { type = situation_paragon_skrand_species }
 	}
-
 	option = {
 		name = "paragon.3080.b"
 	}
@@ -1411,7 +1312,6 @@ situation_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = EXCELLENT
 		custom_tooltip = paragon.3081.tt
@@ -1430,11 +1330,7 @@ situation_event = {
 		}
 		hidden_effect = {
 			owner = {
-				country_event = {
-					id = paragon.3083
-					days = 10
-					random = 10
-				}
+				country_event = { id = paragon.3083 days = 10 random = 10 }
 			}
 			owner.capital_scope = {
 				create_pop_group = { species = last_created_species }
@@ -1455,7 +1351,6 @@ situation_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = WORRYING
 	}
@@ -1476,12 +1371,10 @@ country_event = {
 
 	immediate = {
 	}
-
 	picture_event_data = {
 		portrait = paragon02 # sharpbeak_portrait
 		room = paragon_skrand_room
 	}
-
 	option = {
 		name = paragon.3083.a
 		response_text = paragon.3083.a.response
@@ -1504,13 +1397,11 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = "paragon.3090.a"
 		custom_tooltip = paragon.situations.tt
 		start_situation = { type = situation_paragon_skrand_story }
 	}
-
 	option = {
 		name = "paragon.3090.b"
 	}
@@ -1527,7 +1418,6 @@ situation_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = FASCINATING
 	}
@@ -1544,7 +1434,6 @@ situation_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = FASCINATING
 	}
@@ -1561,7 +1450,6 @@ situation_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = FASCINATING
 	}
@@ -1578,7 +1466,6 @@ situation_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = FASCINATING
 		owner = {
@@ -1600,11 +1487,7 @@ country_event = {
 
 	immediate = {
 		fire_on_action = { on_action = on_decade_pulse_skrand_country }
-		country_event = {
-			id = paragon.3095
-			days = 3600
-			random = 5400
-		}
+		country_event = { id = paragon.3095 days = 3600 random = 5400 }
 	}
 }
 
@@ -1635,7 +1518,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = paragon.3100.a
 		owner = {
@@ -1646,7 +1528,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = paragon.3100.b
 	}
@@ -1677,7 +1558,6 @@ country_event = {
 			abort_special_project = { type = LEGENDARY_LEADER_FIRST_PROJECT }
 		}
 	}
-
 	option = { # Resuscitate leader
 		name = paragon.3104.a
 		capital_scope = {
@@ -1715,7 +1595,6 @@ country_event = {
 			abort_special_project = { type = LEGENDARY_LEADER_FIRST_PROJECT }
 		}
 	}
-
 	option = { # Take leader
 		name = paragon.3105.a
 		trigger = { is_homicidal = no is_gestalt = no }
@@ -1729,7 +1608,6 @@ country_event = {
 		country_event = { id = paragon.3114 days = 3600 }
 		add_relic = r_wormhole_key_fragment_1
 	}
-
 	option = { # Dismiss the leader
 		name = paragon.3105.b
 		capital_scope = {
@@ -1741,7 +1619,6 @@ country_event = {
 		}
 		add_relic = r_wormhole_key_fragment_1
 	}
-
 	option = { # Eat the Baby
 		name = paragon.3105.c
 		trigger = {
@@ -1766,13 +1643,9 @@ country_event = {
 			limit = {
 				owner = { has_origin = origin_evolutionary_predators }
 			}
-			give_evolutionary_predator_situation_progress_and_dna = {
-				AMOUNT = medium
-				TYPE = humanoid
-			}
+			give_evolutionary_predator_situation_progress_and_dna = { AMOUNT = medium TYPE = humanoid }
 		}
 	}
-
 	after = {
 		clear_global_event_target = exakeides_planet
 	}
@@ -1787,7 +1660,6 @@ country_event = {
 	show_sound = event_finding_loot
 	fire_only_once = yes
 	is_triggered_only = yes
-
 	option = {
 		name = UNFORTUNATE
 	}
@@ -1805,55 +1677,46 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = paragon.3114.a
 		trigger = { is_xenophile = yes }
 		set_global_flag = leader_raised_xenophile
 	}
-
 	option = {
 		name = paragon.3114.b
 		trigger = { is_xenophobe = yes }
 		set_global_flag = leader_raised_xenophobe
 	}
-
 	option = {
 		name = paragon.3114.c
 		trigger = { is_pacifist = yes }
 		set_global_flag = leader_raised_pacifist
 	}
-
 	option = {
 		name = paragon.3114.d
 		trigger = { is_militarist = yes }
 		set_global_flag = leader_raised_militarist
 	}
-
 	option = {
 		name = paragon.3114.e
 		trigger = { is_egalitarian = yes }
 		set_global_flag = leader_raised_egalitarian
 	}
-
 	option = {
 		name = paragon.3114.f
 		trigger = { is_authoritarian = yes }
 		set_global_flag = leader_raised_authoritarian
 	}
-
 	option = {
 		name = paragon.3114.g
 		trigger = { is_spiritualist = yes }
 		set_global_flag = leader_raised_spiritualist
 	}
-
 	option = {
 		name = paragon.3114.h
 		trigger = { is_materialist = yes }
 		set_global_flag = leader_raised_materialist
 	}
-
 	after = {
 		country_event = { id = paragon.3115 days = 3600 }
 	}
@@ -1898,7 +1761,9 @@ country_event = {
 					"null"
 				}
 			}
-			effect = { save_event_target_as = keides_country }
+			effect = {
+				save_event_target_as = keides_country
+			}
 		}
 		event_target:keides_country = {
 			create_species = {
@@ -1911,7 +1776,9 @@ country_event = {
 					trait = "trait_quick_learners"
 					trait = "trait_erudite"
 				}
-				effect = { save_event_target_as = exakeides_species }
+				effect = {
+					save_event_target_as = exakeides_species
+				}
 			}
 			create_leader = {
 				class = scientist
@@ -1936,12 +1803,10 @@ country_event = {
 			}
 		}
 	}
-
 	picture_event_data = {
 		portrait = event_target:legendary_lost_leader
 		room = galactic_custodian_room
 	}
-
 	option = {
 		name = paragon.3115.a
 		hidden_effect = {
@@ -1961,16 +1826,13 @@ country_event = {
 	show_sound = par_event_keides
 	picture = GFX_leader_recruitment_bg_legendary_keides
 	event_window_type = leader_recruit
-
 	picture_event_data = {
 		portrait = event_target:legendary_lost_leader
 		room = galactic_custodian_room
 	}
-
 	trigger = {
 		exists = event_target:legendary_lost_leader
 	}
-
 	option = {
 		# Special tag to make mark this is the hire option
 		name = HIRE
@@ -1997,43 +1859,29 @@ country_event = {
 					event_target:legendary_lost_leader = { change_background_ethic = ethic_xenophobe }
 				}
 				leader_raised_militarist = {
-					event_target:legendary_lost_leader = {
-						change_background_ethic = ethic_militarist
-					}
+					event_target:legendary_lost_leader = { change_background_ethic = ethic_militarist }
 				}
 				leader_raised_pacifist = {
 					event_target:legendary_lost_leader = { change_background_ethic = ethic_pacifist }
 				}
 				leader_raised_egalitarian = {
-					event_target:legendary_lost_leader = {
-						change_background_ethic = ethic_egalitarian
-					}
+					event_target:legendary_lost_leader = { change_background_ethic = ethic_egalitarian }
 				}
 				leader_raised_authoritarian = {
-					event_target:legendary_lost_leader = {
-						change_background_ethic = ethic_authoritarian
-					}
+					event_target:legendary_lost_leader = { change_background_ethic = ethic_authoritarian }
 				}
 				leader_raised_spiritualist = {
-					event_target:legendary_lost_leader = {
-						change_background_ethic = ethic_spiritualist
-					}
+					event_target:legendary_lost_leader = { change_background_ethic = ethic_spiritualist }
 				}
 				leader_raised_materialist = {
-					event_target:legendary_lost_leader = {
-						change_background_ethic = ethic_materialist
-					}
+					event_target:legendary_lost_leader = { change_background_ethic = ethic_materialist }
 				}
 			}
 			if = {
 				limit = { is_variable_set = paragon_memory_vault }
 				change_variable = { which = paragon_memory_vault value = 1 }
 			}
-			country_event = {
-				id = paragon.3117
-				days = 60
-				random = 60
-			}
+			country_event = { id = paragon.3117 days = 60 random = 60 }
 		}
 		create_message = {
 			type = MESSAGE_RECRUITED_LEADER
@@ -2048,7 +1896,6 @@ country_event = {
 			variable = { key = "border" value = "GFX_border_legendary" }
 		}
 	}
-
 	option = {
 		name = DISMISS
 		# Special tag to mark this as the dismiss option
@@ -2060,19 +1907,16 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = paragon.3116.a
 		response_text = paragon.3116.a.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.3116.b
 		response_text = paragon.3116.b.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = paragon.3116.c
 		response_text = paragon.3116.c.response
@@ -2091,11 +1935,9 @@ country_event = {
 	picture = GFX_evt_analyzing_artifacts
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_legendary_keides"
-
 	picture_event_data = {
 		portrait = event_target:legendary_lost_leader
 	}
-
 	trigger = {
 		exists = event_target:legendary_lost_leader
 	}
@@ -2117,7 +1959,6 @@ country_event = {
 		set_visited = event_target:2nd_system_legendary
 		set_visited = event_target:3rd_system_legendary
 	}
-
 	option = {
 		name = CURIOUS
 		begin_event_chain = { event_chain = paragon_legendary_leader_chain target = root }
@@ -2173,7 +2014,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = paragon.3120.a
 		from = {
@@ -2207,7 +2047,6 @@ country_event = {
 	immediate = {
 		remove_point_of_interest = legendary_leader_system.1
 	}
-
 	option = {
 		name = paragon.3121.a
 		country_event = { id = paragon.3122 }
@@ -2230,26 +2069,21 @@ country_event = {
 	is_triggered_only = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_legendary_keides"
-
 	picture_event_data = {
 		portrait = event_target:legendary_lost_leader
 	}
-
 	trigger = {
 		exists = event_target:legendary_lost_leader
 	}
 
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_legendary_keides"
-
 	picture_event_data = {
 		portrait = event_target:legendary_lost_leader
 	}
-
 	immediate = {
 		country_event = { id = paragon.3123 }
 	}
-
 	option = {
 		name = paragon.3122.a
 		if = {
@@ -2293,7 +2127,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = paragon.3125.a
 		from = {
@@ -2323,7 +2156,6 @@ country_event = {
 	trigger = {
 		exists = event_target:legendary_lost_leader
 	}
-
 	option = {
 		name = paragon.3126.a
 		country_event = { id = paragon.3127 }
@@ -2346,26 +2178,21 @@ country_event = {
 	is_triggered_only = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_legendary_keides"
-
 	picture_event_data = {
 		portrait = event_target:legendary_lost_leader
 	}
-
 	trigger = {
 		exists = event_target:legendary_lost_leader
 	}
 
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_legendary_keides"
-
 	picture_event_data = {
 		portrait = event_target:legendary_lost_leader
 	}
-
 	immediate = {
 		country_event = { id = paragon.3123 }
 	}
-
 	option = {
 		name = paragon.3127.a
 		if = {
@@ -2409,7 +2236,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = paragon.3130.a
 		from = {
@@ -2439,7 +2265,6 @@ country_event = {
 	trigger = {
 		exists = event_target:legendary_lost_leader
 	}
-
 	option = {
 		name = paragon.3131.a
 		country_event = { id = paragon.3132 }
@@ -2462,26 +2287,21 @@ country_event = {
 	show_sound = par_event_keides
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_legendary_keides"
-
 	picture_event_data = {
 		portrait = event_target:legendary_lost_leader
 	}
-
 	trigger = {
 		exists = event_target:legendary_lost_leader
 	}
 
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_legendary_keides"
-
 	picture_event_data = {
 		portrait = event_target:legendary_lost_leader
 	}
-
 	immediate = {
 		country_event = { id = paragon.3123 }
 	}
-
 	option = {
 		name = paragon.3132.a
 		if = {
@@ -2509,30 +2329,22 @@ country_event = {
 			r_wormhole_key_fragment_4 = {
 				remove_relic = r_wormhole_key_fragment_4
 				add_relic = r_wormhole_key
-				event_target:legendary_lost_leader = {
-					change_leader_portrait = paragon_exakeides_artifact_5
-				}
+				event_target:legendary_lost_leader = { change_leader_portrait = paragon_exakeides_artifact_5 }
 			}
 			r_wormhole_key_fragment_3 = {
 				remove_relic = r_wormhole_key_fragment_3
 				add_relic = r_wormhole_key_fragment_4
-				event_target:legendary_lost_leader = {
-					change_leader_portrait = paragon_exakeides_artifact_4
-				}
+				event_target:legendary_lost_leader = { change_leader_portrait = paragon_exakeides_artifact_4 }
 			}
 			r_wormhole_key_fragment_2 = {
 				remove_relic = r_wormhole_key_fragment_2
 				add_relic = r_wormhole_key_fragment_3
-				event_target:legendary_lost_leader = {
-					change_leader_portrait = paragon_exakeides_artifact_3
-				}
+				event_target:legendary_lost_leader = { change_leader_portrait = paragon_exakeides_artifact_3 }
 			}
 			r_wormhole_key_fragment_1 = {
 				remove_relic = r_wormhole_key_fragment_1
 				add_relic = r_wormhole_key_fragment_2
-				event_target:legendary_lost_leader = {
-					change_leader_portrait = paragon_exakeides_artifact_2
-				}
+				event_target:legendary_lost_leader = { change_leader_portrait = paragon_exakeides_artifact_2 }
 			}
 		}
 	}
@@ -2549,11 +2361,9 @@ country_event = {
 	is_triggered_only = yes
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_legendary_keides"
-
 	picture_event_data = {
 		portrait = event_target:legendary_lost_leader
 	}
-
 	trigger = {
 		exists = event_target:legendary_lost_leader
 	}
@@ -2570,7 +2380,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = paragon.3135.a
 		capital_scope = {
@@ -2595,11 +2404,9 @@ country_event = {
 	location = capital_scope
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_legendary_keides"
-
 	picture_event_data = {
 		portrait = event_target:legendary_lost_leader
 	}
-
 	trigger = {
 		exists = event_target:legendary_lost_leader
 	}
@@ -2610,7 +2417,6 @@ country_event = {
 			country_event = { id = paragon.3123 }
 		}
 	}
-
 	option = {
 		name = paragon.3140.a
 		hidden_effect = {
@@ -2631,11 +2437,9 @@ country_event = {
 	location = capital_scope
 	event_window_type = leader_story
 	event_picture_background = "GFX_leader_recruitment_bg_legendary_keides"
-
 	picture_event_data = {
 		portrait = event_target:legendary_lost_leader
 	}
-
 	trigger = {
 		exists = event_target:legendary_lost_leader
 	}
@@ -2657,7 +2461,6 @@ country_event = {
 		set_country_flag = encountered_first_wormhole
 		add_seen_bypass_type = wormhole
 	}
-
 	option = {
 		name = paragon.3141.a
 		hidden_effect = {
@@ -2720,7 +2523,6 @@ ship_event = {
 		}
 		from = { has_star_flag = legendary_leader_final_system }
 	}
-
 	option = {
 		name = paragon.3144.a
 		hidden_effect = {
@@ -2739,7 +2541,6 @@ country_event = {
 	diplomatic = yes
 	fire_only_once = yes
 	location = fromfrom
-
 	picture_event_data = {
 		portrait = ai_crisis_1
 	}
@@ -2749,7 +2550,6 @@ country_event = {
 	trigger = {
 		any_owned_leader = { has_trait = leader_trait_legendary_far_from_home }
 	}
-
 	option = {
 		name = paragon.3145.a
 		capital_scope = {
@@ -2760,7 +2560,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = paragon.3145.b
 		remove_relic = r_wormhole_key
@@ -2777,7 +2576,6 @@ country_event = {
 	desc = "paragon.3146.desc"
 	diplomatic = yes
 	fire_only_once = yes
-
 	picture_event_data = {
 		portrait = ai_crisis_1
 	}
@@ -2787,17 +2585,11 @@ country_event = {
 	trigger = {
 		exists = event_target:legendary_lost_leader
 	}
-
 	option = {
 		name = paragon.3146.a
 	}
-
 	after = {
-		country_event = {
-			id = paragon.3147
-			days = 15
-			random = 15
-		}
+		country_event = { id = paragon.3147 days = 15 random = 15 }
 	}
 }
 
@@ -2819,7 +2611,6 @@ country_event = {
 			delete_fleet = { target = this destroy_template = yes }
 		}
 	}
-
 	option = {
 		name = paragon.3147.a
 	}
@@ -2838,7 +2629,6 @@ country_event = {
 	trigger = {
 		exists = event_target:legendary_lost_leader
 	}
-
 	option = {
 		name = paragon.3148.a
 		event_target:overlord_enforcers_automated_fleet = {
@@ -2867,7 +2657,6 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = paragon.3149.a
 		abort_special_project = { type = LEGENDARY_LEADER_SABOTAGE_FLEET_PROJECT }
@@ -2892,11 +2681,9 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = paragon.3150.a
 	}
@@ -2920,11 +2707,9 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = paragon.3151.a
 	}
@@ -2948,11 +2733,9 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = paragon.3152.a
 	}
@@ -2976,11 +2759,9 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = paragon.3153.a
 	}
@@ -3004,11 +2785,9 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = paragon.3154.a
 	}
@@ -3032,11 +2811,9 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = paragon.3155.a
 	}
@@ -3060,19 +2837,13 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
-
 	option = {
 		name = paragon.3156.a
 		owner = {
-			country_event = {
-				id = paragon.3160
-				days = 15
-				random = 30
-			}
+			country_event = { id = paragon.3160 days = 15 random = 30 }
 		}
 	}
 }
@@ -3086,7 +2857,6 @@ country_event = {
 	fire_only_once = yes
 	show_sound = par_event_keides
 	picture = GFX_leader_recruitment_bg_renowned
-
 	picture_event_data = {
 		portrait = event_target:legendary_lost_leader
 		room = paragon_keides_room
@@ -3097,37 +2867,29 @@ country_event = {
 	trigger = {
 		exists = event_target:legendary_lost_leader
 	}
-
 	option = { # It was their failure, not yours.
 		name = paragon.3160.a
 		response_text = paragon.3160.a.response
 		is_dialog_only = yes
 	}
-
 	option = { # What of the Key?
 		name = paragon.3160.b
 		trigger = { has_relic = r_wormhole_key }
 		response_text = paragon.3160.b.response
 		is_dialog_only = yes
 	}
-
 	option = { # What do you want to focus on?
 		name = paragon.3160.c
 		response_text = paragon.3160.c.response
 		is_dialog_only = yes
 	}
-
 	option = { # Remain a Scientist
 		name = paragon.3160.d
 		response_text = paragon.3160.new_focus
-		event_target:legendary_lost_leader = {
-			remove_all_negative_traits = yes
-			add_experience = 54000
-		}
+		event_target:legendary_lost_leader = { remove_all_negative_traits = yes add_experience = 54000 }
 		custom_tooltip = paragon.3160.d.custom_tooltip
 		custom_gui = "enclave_caravaneer_option"
 	}
-
 	option = { # Become an Admiral
 		name = paragon.3160.e
 		response_text = paragon.3160.new_focus
@@ -3143,7 +2905,6 @@ country_event = {
 		custom_tooltip = paragon.3160.e.custom_tooltip
 		custom_gui = "enclave_caravaneer_option"
 	}
-
 	option = { # Become an Official
 		name = paragon.3160.f
 		response_text = paragon.3160.new_focus
@@ -3218,9 +2979,7 @@ fleet_event = {
 
 	trigger = {
 		exists = owner # Vfix log
-		NOT = {
-			owner = { has_country_flag = sharpbeak_known }
-		}
+		NOT = { owner = { has_country_flag = sharpbeak_known } }
 		owner = {
 			NAND = {
 				is_ai = yes
@@ -3234,11 +2993,7 @@ fleet_event = {
 	immediate = {
 		owner = {
 			set_country_flag = sharpbeak_known
-			country_event = {
-				id = paragon.3902
-				days = 15
-				random = 15
-			}
+			country_event = { id = paragon.3902 days = 15 random = 15 }
 		}
 	}
 }
@@ -3261,28 +3016,18 @@ country_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = "paragon.3902.a"
 		trigger = { is_gestalt = no }
 		hidden_effect = {
-			country_event = {
-				id = paragon.3002
-				days = 60
-				random = 60
-			}
+			country_event = { id = paragon.3002 days = 60 random = 60 }
 		}
 	}
-
 	option = {
 		name = "paragon.3001.b"
 		trigger = { is_gestalt = yes }
 		hidden_effect = {
-			country_event = {
-				id = paragon.3002
-				days = 60
-				random = 60
-			}
+			country_event = { id = paragon.3002 days = 60 random = 60 }
 		}
 	}
 }
@@ -3376,4 +3121,3 @@ country_event = {
 		}
 	}
 }
-

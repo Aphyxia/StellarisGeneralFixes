@@ -8,14 +8,12 @@ namespace = colony_mod
 planet_event = {
 	id = colony_mod.1
 	title = "colony_mod.1.name"
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = no }
 		}
 		text = "colony_mod.1.desc"
 	}
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = yes }
@@ -49,40 +47,15 @@ planet_event = {
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = colony_mod.1.a
 		custom_tooltip = irradiated_planet_tooltip
 		hidden_effect = {
 			random_list = {
-				20 = {
-					planet_event = {
-						id = colony_mod.6
-						days = 40
-						random = 20
-					}
-				}
-				20 = {
-					planet_event = {
-						id = colony_mod.7
-						days = 40
-						random = 20
-					}
-				}
-				20 = {
-					planet_event = {
-						id = colony_mod.8
-						days = 40
-						random = 20
-					}
-				}
-				40 = {
-					planet_event = {
-						id = colony_mod.9
-						days = 40
-						random = 20
-					}
-				}
+				20 = { planet_event = { id = colony_mod.6 days = 40 random = 20 } }
+				20 = { planet_event = { id = colony_mod.7 days = 40 random = 20 } }
+				20 = { planet_event = { id = colony_mod.8 days = 40 random = 20 } }
+				40 = { planet_event = { id = colony_mod.9 days = 40 random = 20 } }
 			}
 		}
 	}
@@ -96,7 +69,6 @@ planet_event = {
 	show_sound = event_air_raid_siren
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = colony_mod.6.a # physics
 		add_deposit = d_ancient_bombardment_craters
@@ -111,7 +83,6 @@ planet_event = {
 	show_sound = event_air_raid_siren
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = colony_mod.7.a # eng
 		add_deposit = d_ancient_battlefield
@@ -121,7 +92,6 @@ planet_event = {
 planet_event = {
 	id = colony_mod.8
 	title = "colony_mod.8.name"
-
 	desc = {
 		text = "colony_mod.8.desc"
 		trigger = {
@@ -133,7 +103,6 @@ planet_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = "colony_mod.8.desc_mach"
 		trigger = {
@@ -150,7 +119,6 @@ planet_event = {
 	show_sound = event_air_raid_siren
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = colony_mod.8.a # soc
 		add_deposit = d_irradiated_ruins
@@ -165,7 +133,6 @@ planet_event = {
 	show_sound = event_air_raid_siren
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = colony_mod.9.a # modifier
 		add_modifier = { modifier = "planet_uncertain_past" days = -1 }
@@ -205,23 +172,18 @@ planet_event = {
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = colony_mod.2.a # yes
 		# study them, may have bad outcome, such as a hostile unit spawning
 		enable_special_project = { name = "titanic_life_study_normal" owner = root }
 	}
-
 	option = {
 		name = colony_mod.2.b # no
 		# no effect, don't bother them
 	}
-
 	option = {
 		name = colony_mod.2.c
-		trigger = {
-			owner = { is_xenophile = yes } # nice, for xenophiles
-		}
+		trigger = { owner = { is_xenophile = yes } } # nice, for xenophiles
 		# study them, bad outcome less likely but takes longer.
 		# Remove blockers in success result
 		enable_special_project = { name = "titanic_life_study_nice" owner = root }
@@ -229,7 +191,6 @@ planet_event = {
 			set_planet_flag = nice_titan_study
 		}
 	}
-
 	option = {
 		name = colony_mod.2.d
 		trigger = {
@@ -245,9 +206,7 @@ planet_event = {
 		enable_special_project = { name = "titanic_life_study_mean" owner = root }
 		if = {
 			limit = {
-				NOT = {
-					owner = { has_origin = origin_evolutionary_predators }
-				}
+				NOT = { owner = { has_origin = origin_evolutionary_predators } }
 			}
 			add_modifier = { modifier = "eat_the_titans" days = -1 }
 		}
@@ -265,7 +224,6 @@ planet_event = {
 	show_sound = event_air_raid_siren
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		trigger = {
@@ -277,7 +235,6 @@ planet_event = {
 		}
 		custom_tooltip = titanic_recruit_tooltip
 	}
-
 	option = {
 		name = EXCELLENT
 		trigger = { has_planet_flag = nice_titan_study }
@@ -306,7 +263,9 @@ planet_event = {
 		create_country = {
 			name = "NAME_Titanic_Life"
 			type = faction
-			effect = { establish_communications_no_message = root.owner }
+			effect = {
+				establish_communications_no_message = root.owner
+			}
 		}
 		create_species = {
 			name = "NAME_Titans"
@@ -334,7 +293,6 @@ planet_event = {
 		}
 		set_planet_purge_type = purge_displacement
 	}
-
 	option = {
 		name = TERRIBLE
 		custom_tooltip = titanic_uprising_tooltip
@@ -367,34 +325,15 @@ planet_event = {
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = colony_mod.3.a
 		add_modifier = { modifier = "recent_quake" years = 1 }
 		custom_tooltip = quake_report_tooltip
 		hidden_effect = {
 			random_list = {
-				33 = {
-					planet_event = {
-						id = colony_mod.21
-						days = 10
-						random = 5
-					}
-				}
-				33 = {
-					planet_event = {
-						id = colony_mod.22
-						days = 10
-						random = 5
-					}
-				}
-				33 = {
-					planet_event = {
-						id = colony_mod.23
-						days = 10
-						random = 5
-					}
-				}
+				33 = { planet_event = { id = colony_mod.21 days = 10 random = 5 } }
+				33 = { planet_event = { id = colony_mod.22 days = 10 random = 5 } }
+				33 = { planet_event = { id = colony_mod.23 days = 10 random = 5 } }
 			}
 		}
 	}
@@ -408,7 +347,6 @@ planet_event = {
 	show_sound = event_air_raid_siren
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = WORRYING
 		add_blocker = { type = d_deep_sinkhole blocked_deposit = random }
@@ -423,7 +361,6 @@ planet_event = {
 	show_sound = event_air_raid_siren
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = REMARKABLE
 		owner = {
@@ -445,7 +382,6 @@ planet_event = {
 	show_sound = event_air_raid_siren
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = GOOD
 		# no effect
@@ -478,7 +414,6 @@ planet_event = {
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = colony_mod.4.a
 		add_modifier = { modifier = "recent_comet" years = 5 }
@@ -518,18 +453,14 @@ planet_event = {
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = colony_mod.5.a
 		enable_special_project = { name = "hallucinogen_removal" owner = root }
 		ai_chance = { factor = 2 }
 	}
-
 	option = {
 		name = colony_mod.5.b
-		owner = {
-			add_resource = { unity = -200 }
-		}
+		owner = { add_resource = { unity = -200 } }
 	}
 }
 
@@ -541,7 +472,6 @@ planet_event = {
 	show_sound = event_air_raid_siren
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = GOOD
 		remove_modifier = "atmospheric_hallucinogen"
@@ -556,7 +486,6 @@ planet_event = {
 	show_sound = event_air_raid_siren
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = MARVELOUS
 		hidden_effect = {
@@ -743,7 +672,6 @@ planet_event = {
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = FASCINATING
 		# Idea to revisit: research bonus/increase flag - after a number, say 5, of these events a new special project is enabled to make the effect permanent
@@ -801,7 +729,6 @@ planet_event = {
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = UNFORTUNATE
 		# research penalty/unhappiness
@@ -829,7 +756,6 @@ planet_event = {
 	show_sound = event_air_raid_siren
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = colony_mod.18.a # modifier
 		set_planet_flag = magnetic_mystery_solved
@@ -888,20 +814,8 @@ planet_event = {
 				}
 			}
 			random_list = {
-				50 = {
-					planet_event = {
-						id = colony_mod.16
-						days = 30
-						random = 90
-					}
-				}
-				50 = {
-					planet_event = {
-						id = colony_mod.17
-						days = 30
-						random = 90
-					}
-				}
+				50 = { planet_event = { id = colony_mod.16 days = 30 random = 90 } }
+				50 = { planet_event = { id = colony_mod.17 days = 30 random = 90 } }
 			}
 			break = yes
 		}
@@ -923,11 +837,7 @@ planet_event = {
 				has_modifier = irradiated_planet
 				NOT = { has_planet_flag = irradiated_colony_flag }
 			}
-			planet_event = {
-				id = colony_mod.1
-				days = 30
-				random = 90
-			}
+			planet_event = { id = colony_mod.1 days = 30 random = 90 }
 			break = yes
 		}
 		if = {
@@ -939,20 +849,12 @@ planet_event = {
 				limit = {
 					owner = { has_origin = origin_primal_calling }
 				}
-				planet_event = {
-					id = grand_archive.1010
-					days = 30
-					random = 90
-				}
+				planet_event = { id = grand_archive.1010 days = 30 random = 90 }
 				break = yes
 			}
 			else_if = {
 				limit = { owner = { is_gestalt = no } }
-				planet_event = {
-					id = colony_mod.2
-					days = 30
-					random = 90
-				}
+				planet_event = { id = colony_mod.2 days = 30 random = 90 }
 				break = yes
 			}
 		}
@@ -961,11 +863,7 @@ planet_event = {
 				has_modifier = unstable_tectonics
 				NOT = { has_modifier = recent_quake }
 			}
-			planet_event = {
-				id = colony_mod.3
-				days = 30
-				random = 90
-			}
+			planet_event = { id = colony_mod.3 days = 30 random = 90 }
 			break = yes
 		}
 		if = {
@@ -976,11 +874,7 @@ planet_event = {
 					owner = { is_gestalt = yes }
 				}
 			}
-			planet_event = {
-				id = colony_mod.4
-				days = 30
-				random = 90
-			}
+			planet_event = { id = colony_mod.4 days = 30 random = 90 }
 			break = yes
 		}
 		if = {
@@ -991,11 +885,7 @@ planet_event = {
 					owner = { is_gestalt = yes }
 				}
 			}
-			planet_event = {
-				id = colony_mod.5
-				days = 30
-				random = 90
-			}
+			planet_event = { id = colony_mod.5 days = 30 random = 90 }
 			break = yes
 		}
 	}
@@ -1053,7 +943,6 @@ planet_event = {
 			save_event_target_as = roguemoon
 		}
 	}
-
 	option = {
 		name = CURIOUS
 		enable_special_project = { name = "ROGUEMOON_PROJECT" owner = root }
@@ -1068,7 +957,6 @@ planet_event = {
 	picture = GFX_evt_alien_ruins
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = ASTOUNDING
 		owner = {
@@ -1099,7 +987,6 @@ planet_event = {
 	picture = GFX_evt_alien_ruins
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = FASCINATING
 		owner = {
@@ -1163,7 +1050,6 @@ planet_event = {
 		set_planet_flag = colony_event
 		owner = { set_country_flag = dportal_country }
 	}
-
 	option = {
 		name = INTRIGUING
 		enable_special_project = { name = "DPORTAL_PROJECT" owner = root }
@@ -1175,14 +1061,12 @@ planet_event = {
 planet_event = {
 	id = colony.3006
 	title = "colony.3006.name"
-
 	desc = {
 		text = colony.3006.knight.desc
 		trigger = {
 			owner = { has_origin = origin_toxic_knights }
 		}
 	}
-
 	desc = {
 		text = colony.3006.spir.desc
 		trigger = {
@@ -1192,7 +1076,6 @@ planet_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = colony.3006.desc
 		trigger = {
@@ -1212,7 +1095,6 @@ planet_event = {
 	immediate = {
 		set_planet_flag = dportal_hell
 	}
-
 	option = {
 		trigger = {
 			owner = { is_spiritualist = no }
@@ -1220,7 +1102,6 @@ planet_event = {
 		name = colony.3006.science
 		enable_special_project = { name = "DPORTAL_PROJECT_SCIENCE" owner = root }
 	}
-
 	option = {
 		name = colony.3006.psi.prayer
 		trigger = {
@@ -1228,7 +1109,6 @@ planet_event = {
 		}
 		enable_special_project = { name = "DPORTAL_PROJECT_PSI_PRAYER" owner = root }
 	}
-
 	option = {
 		name = colony.3006.prayer
 		trigger = {
@@ -1239,7 +1119,6 @@ planet_event = {
 		}
 		enable_special_project = { name = "DPORTAL_PROJECT_PRAYER" owner = root }
 	}
-
 	option = {
 		name = colony.3006.rocks
 		trigger = {
@@ -1247,7 +1126,6 @@ planet_event = {
 		}
 		enable_special_project = { name = "DPORTAL_PROJECT_ROCKS" owner = root }
 	}
-
 	option = {
 		name = colony.3006.knights
 		trigger = {
@@ -1259,7 +1137,10 @@ planet_event = {
 					class = commander
 					species = owner_species
 					name = random
-					traits = { trait = leader_trait_chosen trait = leader_trait_butcher }
+					traits = {
+						trait = leader_trait_chosen
+						trait = leader_trait_butcher
+					}
 					effect = {
 						exile_leader_as = doomslayer_knight
 						save_event_target_as = doomslayer_knight
@@ -1273,30 +1154,13 @@ planet_event = {
 				15 = {  }
 				25 = {
 					modifier = { factor = 0 blocks_disruptive_gameplay = yes }
-					planet_event = {
-						id = colony.3050
-						days = 3600
-						random = 900
-					} # Daemonic Incursion
+					planet_event = { id = colony.3050 days = 3600 random = 900 } # Daemonic Incursion
 				}
-				20 = {
-					planet_event = {
-						id = colony.3060
-						days = 3600
-						random = 900
-					}
-				} # Quest Complete
-				40 = {
-					planet_event = {
-						id = colony.3055
-						days = 3600
-						random = 900
-					}
-				} # Daemon Refugees
+				20 = { planet_event = { id = colony.3060 days = 3600 random = 900 } } # Quest Complete
+				40 = { planet_event = { id = colony.3055 days = 3600 random = 900 } } # Daemon Refugees
 			}
 		}
 	}
-
 	option = {
 		name = colony.3006.keep
 		add_deposit = d_portal_research_zone
@@ -1312,7 +1176,6 @@ planet_event = {
 	picture = GFX_evt_news_room
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		owner = {
@@ -1352,34 +1215,28 @@ planet_event = {
 planet_event = {
 	id = colony.3011
 	title = "colony.3010.name"
-
 	desc = {
 		text = colony.3011.psi.desc
 		trigger = {
 			owner = { has_technology = tech_psionic_theory is_robot_empire = no }
 		}
 	}
-
 	desc = {
 		text = colony.3011.psi_robot.desc
 		trigger = {
 			owner = { has_technology = tech_psionic_theory is_robot_empire = yes }
 		}
 	}
-
 	desc = {
 		text = colony.3011.desc
 		trigger = {
-			NOT = {
-				owner = { has_technology = tech_psionic_theory }
-			}
+			NOT = { owner = { has_technology = tech_psionic_theory } }
 		}
 	}
 
 	picture = GFX_evt_news_room
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		owner = {
@@ -1415,7 +1272,6 @@ planet_event = {
 	picture = GFX_evt_news_room
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		owner = {
@@ -1463,7 +1319,6 @@ planet_event = {
 	immediate = {
 		set_planet_flag = dportal_energy
 	}
-
 	option = {
 		name = FASCINATING
 		set_planet_flag = dportal_energy
@@ -1517,7 +1372,6 @@ planet_event = {
 	immediate = {
 		set_planet_flag = dportal_void
 	}
-
 	option = {
 		name = FASCINATING
 		owner = {
@@ -1526,11 +1380,7 @@ planet_event = {
 		}
 		custom_tooltip = portal_void_tooltip
 		hidden_effect = {
-			planet_event = {
-				id = colony.3040
-				days = 1825
-				random = 1825
-			}
+			planet_event = { id = colony.3040 days = 1825 random = 1825 }
 		}
 	}
 }
@@ -1550,7 +1400,6 @@ planet_event = {
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = INTRIGUING
 		enable_special_project = { name = "NULLVOID_PROJECT" owner = root }
@@ -1572,7 +1421,6 @@ planet_event = {
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		custom_tooltip = portal_void_tooltip2
@@ -1587,7 +1435,6 @@ planet_event = {
 	desc = "colony.3009.desc"
 	picture = GFX_evt_galactic_senate
 	is_triggered_only = yes
-
 	option = {
 		name = colony.3009.a.robot
 		exclusive_trigger = {
@@ -1597,7 +1444,6 @@ planet_event = {
 			planet_event = { id = colony.3020 }
 		}
 	}
-
 	option = {
 		name = colony.3009.a
 		hidden_effect = {
@@ -1610,14 +1456,12 @@ planet_event = {
 planet_event = {
 	id = colony.3020
 	title = "colony.3020.name"
-
 	desc = {
 		text = colony.3020.desc
 		trigger = {
 			owner = { is_machine_empire = no }
 		}
 	}
-
 	desc = {
 		text = colony.3020.desc.robot
 		trigger = {
@@ -1627,7 +1471,6 @@ planet_event = {
 
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = root.owner.leader
 		planet_background = root.owner
@@ -1635,14 +1478,12 @@ planet_event = {
 		city_level = root.owner
 		room = root.owner
 	}
-
 	option = {
 		name = colony.3020.a
 		hidden_effect = {
 			planet_event = { id = colony.3021 }
 		}
 	}
-
 	option = {
 		name = colony.3020.a.robot
 		exclusive_trigger = {
@@ -1658,14 +1499,12 @@ planet_event = {
 planet_event = {
 	id = colony.3021
 	title = "colony.3020.name"
-
 	desc = {
 		text = colony.3021.desc
 		trigger = {
 			owner = { is_machine_empire = no }
 		}
 	}
-
 	desc = {
 		text = colony.3021.desc.robot
 		trigger = {
@@ -1675,7 +1514,6 @@ planet_event = {
 
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = root.owner.leader
 		planet_background = root.owner
@@ -1683,7 +1521,6 @@ planet_event = {
 		city_level = root.owner
 		room = root.owner
 	}
-
 	option = {
 		name = colony.3021.a # talk more
 		trigger = {
@@ -1693,7 +1530,6 @@ planet_event = {
 			planet_event = { id = colony.3022 }
 		}
 	}
-
 	option = {
 		name = colony.3021.b # just trade
 		trigger = {
@@ -1706,7 +1542,6 @@ planet_event = {
 			owner = { set_country_flag = dportal_trader }
 		}
 	}
-
 	option = {
 		name = colony.3021.a.robot # talk more
 		trigger = {
@@ -1716,7 +1551,6 @@ planet_event = {
 			planet_event = { id = colony.3022 }
 		}
 	}
-
 	option = {
 		name = colony.3021.b.robot # just trade
 		trigger = {
@@ -1735,14 +1569,12 @@ planet_event = {
 planet_event = {
 	id = colony.3022
 	title = "colony.3020.name"
-
 	desc = {
 		text = colony.3022.desc
 		trigger = {
 			owner = { is_machine_empire = no }
 		}
 	}
-
 	desc = {
 		text = colony.3022.desc.robot
 		trigger = {
@@ -1752,7 +1584,6 @@ planet_event = {
 
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = root.owner.leader
 		planet_background = root.owner
@@ -1760,14 +1591,12 @@ planet_event = {
 		city_level = root.owner
 		room = root.owner
 	}
-
 	option = {
 		name = colony.3022.a
 		hidden_effect = {
 			planet_event = { id = colony.3023 }
 		}
 	}
-
 	option = {
 		name = colony.3022.a.robot
 		exclusive_trigger = {
@@ -1783,14 +1612,12 @@ planet_event = {
 planet_event = {
 	id = colony.3023
 	title = "colony.3020.name"
-
 	desc = {
 		text = colony.3023.desc
 		trigger = {
 			owner = { is_machine_empire = no }
 		}
 	}
-
 	desc = {
 		text = colony.3023.desc.robot
 		trigger = {
@@ -1800,7 +1627,6 @@ planet_event = {
 
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = root.owner.leader
 		planet_background = root.owner
@@ -1808,14 +1634,12 @@ planet_event = {
 		city_level = root.owner
 		room = root.owner
 	}
-
 	option = {
 		name = colony.3023.a
 		hidden_effect = {
 			planet_event = { id = colony.3024 }
 		}
 	}
-
 	option = {
 		name = colony.3023.a.robot
 		exclusive_trigger = {
@@ -1831,14 +1655,12 @@ planet_event = {
 planet_event = {
 	id = colony.3024
 	title = "colony.3020.name"
-
 	desc = {
 		text = colony.3024.desc
 		trigger = {
 			owner = { is_machine_empire = no }
 		}
 	}
-
 	desc = {
 		text = colony.3024.desc.robot
 		trigger = {
@@ -1848,7 +1670,6 @@ planet_event = {
 
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = root.owner.leader
 		planet_background = root.owner
@@ -1856,7 +1677,6 @@ planet_event = {
 		city_level = root.owner
 		room = root.owner
 	}
-
 	option = {
 		name = colony.3024.a # trade
 		response_text = mirror_trade_reply2
@@ -1866,7 +1686,6 @@ planet_event = {
 			owner = { set_country_flag = dportal_trader }
 		}
 	}
-
 	option = {
 		name = colony.3024.a.robot # trade
 		exclusive_trigger = {
@@ -1957,7 +1776,6 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = EXCELLENT
 		if = {
@@ -2025,7 +1843,6 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = colony.3032.a.robot
 		exclusive_trigger = {
@@ -2079,16 +1896,11 @@ planet_event = {
 			add_modifier = { modifier = "dportal_trade_crisis" days = -1 }
 			hidden_effect = {
 				remove_modifier = dportal_trade_low
-				planet_event = {
-					id = colony.3033
-					days = 1825
-					random = 1825
-				}
+				planet_event = { id = colony.3033 days = 1825 random = 1825 }
 				owner = { set_country_flag = dportal_empire_crisis_flag }
 			}
 		}
 	}
-
 	option = {
 		name = colony.3032.a
 		if = {
@@ -2145,11 +1957,7 @@ planet_event = {
 			add_modifier = { modifier = "dportal_trade_crisis" days = -1 }
 			hidden_effect = {
 				remove_modifier = dportal_trade_low
-				planet_event = {
-					id = colony.3033
-					days = 1825
-					random = 1825
-				}
+				planet_event = { id = colony.3033 days = 1825 random = 1825 }
 				owner = { set_country_flag = dportal_empire_crisis_flag }
 			}
 		}
@@ -2160,14 +1968,12 @@ planet_event = {
 planet_event = {
 	id = colony.3033
 	title = "colony.3033.name"
-
 	desc = {
 		text = colony.3033.desc
 		trigger = {
 			owner = { is_machine_empire = no }
 		}
 	}
-
 	desc = {
 		text = colony.3033.desc.robot
 		trigger = {
@@ -2178,7 +1984,6 @@ planet_event = {
 	picture = GFX_evt_wormhole
 	location = root
 	diplomatic = yes
-
 	picture_event_data = {
 		room = no_video_feed_room
 	}
@@ -2187,7 +1992,6 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = {
 		name = colony.3033.a
 		trigger = {
@@ -2196,7 +2000,6 @@ planet_event = {
 		is_dialog_only = yes
 		response_text = colony.3033.reply
 	}
-
 	option = {
 		name = colony.3033.b
 		trigger = {
@@ -2205,7 +2008,6 @@ planet_event = {
 		is_dialog_only = yes
 		response_text = colony.3033.reply
 	}
-
 	option = {
 		name = colony.3033.c
 		trigger = {
@@ -2214,7 +2016,6 @@ planet_event = {
 		is_dialog_only = yes
 		response_text = colony.3033.reply
 	}
-
 	option = {
 		name = colony.3033.d
 		trigger = {
@@ -2224,7 +2025,6 @@ planet_event = {
 			remove_modifier = dportal_trade_crisis
 		}
 	}
-
 	option = {
 		name = colony.3033.a.robot
 		trigger = {
@@ -2233,7 +2033,6 @@ planet_event = {
 		is_dialog_only = yes
 		response_text = colony.3033.reply
 	}
-
 	option = {
 		name = colony.3033.d.robot
 		trigger = {
@@ -2294,10 +2093,7 @@ planet_event = {
 				exists = from
 				from = { is_scope_type = country }
 				exists = event_target:doomslayer_knight@from
-				event_target:doomslayer_knight@from = {
-					is_scope_valid = yes
-					is_scope_type = leader
-				}
+				event_target:doomslayer_knight@from = { is_scope_valid = yes is_scope_type = leader }
 			}
 			event_target:doomslayer_knight@from = { save_event_target_as = doomslayer_knight }
 		}
@@ -2305,14 +2101,9 @@ planet_event = {
 			limit = {
 				NOT = { exists = event_target:doomslayer_knight }
 				exists = event_target:doomslayer_knight@event_target:dportal_country
-				event_target:doomslayer_knight@event_target:dportal_country = {
-					is_scope_valid = yes
-					is_scope_type = leader
-				}
+				event_target:doomslayer_knight@event_target:dportal_country = { is_scope_valid = yes is_scope_type = leader }
 			}
-			event_target:doomslayer_knight@event_target:dportal_country = {
-				save_event_target_as = doomslayer_knight
-			}
+			event_target:doomslayer_knight@event_target:dportal_country = { save_event_target_as = doomslayer_knight }
 		}
 		if = {
 			limit = { exists = event_target:doomslayer_knight }
@@ -2323,7 +2114,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = colony.3050.a
 		custom_tooltip = portal_closed_tooltip
@@ -2331,9 +2121,7 @@ planet_event = {
 		hidden_effect = {
 			if = { # Needs to be here as leaders can't be changed in battle
 				limit = { exists = event_target:doomslayer_knight }
-				event_target:doomslayer_knight = {
-					set_owner = event_target:demonic_incursion_armies
-				}
+				event_target:doomslayer_knight = { set_owner = event_target:demonic_incursion_armies }
 			}
 			create_army = {
 				name = "NAME_Deformed_Creatures"
@@ -2602,12 +2390,10 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = colony.3051.a
 		custom_tooltip = demonic_incursion_tooltip
 	}
-
 	option = {
 		name = colony.3051.b
 		custom_tooltip = demonic_takeover_tooltip
@@ -2615,7 +2401,6 @@ country_event = {
 			event_target:demonic_incursion_country = { set_player = root }
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			fromfrom = { remove_deposit = d_portal_research_zone }
@@ -2631,7 +2416,6 @@ planet_event = {
 	picture = GFX_evt_cover_blown
 	location = root
 	is_triggered_only = yes
-
 	option = { # Kill the demons!
 		name = colony.3055.a
 		owner = {
@@ -2648,7 +2432,6 @@ planet_event = {
 			remove_planet_flag = dportal_hell
 		}
 	}
-
 	option = { # Welcome the refugees
 		name = colony.3055.b
 		custom_tooltip = portal_closed_tooltip
@@ -2669,7 +2452,6 @@ planet_event = {
 	picture = GFX_evt_zro_3
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = colony.3060.a
 		hidden_effect = {
@@ -2688,6 +2470,7 @@ planet_event = {
 # by Joachim
 #
 ##############################
+
 namespace = colony
 # The Lonely Bot welcomes new colonists on the planet
 planet_event = {
@@ -2711,16 +2494,11 @@ planet_event = {
 	trigger = {
 		has_deposit = d_hab_lonely_bot_deposit
 	}
-
 	option = {
 		name = colony.5000.a
 		add_modifier = { modifier = the_lonely_bot_welcome years = 10 }
 		hidden_effect = {
-			planet_event = {
-				id = colony.5005
-				days = 3600
-				random = 1800
-			}
+			planet_event = { id = colony.5005 days = 3600 random = 1800 }
 		}
 	}
 }
@@ -2743,7 +2521,6 @@ planet_event = {
 	trigger = {
 		has_deposit = d_hab_lonely_bot_deposit
 	}
-
 	option = {
 		name = colony.5005.a
 		enable_special_project = { name = "LONELY_BOT_PROJECT" owner = root.owner }
@@ -2768,7 +2545,6 @@ planet_event = {
 	trigger = {
 		has_deposit = d_hab_lonely_bot_deposit
 	}
-
 	option = {
 		name = colony.5006.a
 		remove_deposit = d_hab_lonely_bot_deposit
@@ -2808,7 +2584,6 @@ planet_event = {
 			add_deposit = d_hab_lonely_bot_deposit_2
 		}
 	}
-
 	option = {
 		name = colony.5010.a
 		custom_tooltip = colony.5010.tt
@@ -2821,11 +2596,7 @@ planet_event = {
 			}
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.5015
-				days = 3600
-				random = 7200
-			}
+			planet_event = { id = colony.5015 days = 3600 random = 7200 }
 		}
 	}
 }
@@ -2848,7 +2619,6 @@ planet_event = {
 	trigger = {
 		has_deposit = d_hab_lonely_bot_deposit_2
 	}
-
 	option = {
 		name = colony.5015.a
 		enable_special_project = { name = "LONELY_BOT_MISSING_PROJECT" owner = root.owner }
@@ -2873,7 +2643,6 @@ planet_event = {
 	trigger = {
 		has_deposit = d_hab_lonely_bot_deposit_2
 	}
-
 	option = {
 		name = colony.5020.a
 		hidden_effect = {
@@ -2882,7 +2651,6 @@ planet_event = {
 		}
 		custom_tooltip = colony.5020.tt
 	}
-
 	option = {
 		name = colony.5020.b
 		if = {
@@ -2935,9 +2703,11 @@ planet_event = {
 # Written by Douglas Furen
 #
 ############################
+
 namespace = colony
 
 ### FERAL OVERLOAD
+
 planet_event = {
 	id = colony.8001
 	title = "colony.8001.name"
@@ -2983,16 +2753,11 @@ planet_event = {
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = colony.8001.a
 		add_modifier = { modifier = feral_overload_00 days = -1 }
 		hidden_effect = {
-			planet_event = {
-				id = colony.8002
-				days = 40
-				random = 20
-			}
+			planet_event = { id = colony.8002 days = 40 random = 20 }
 		}
 	}
 }
@@ -3010,16 +2775,11 @@ planet_event = {
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = colony.8002.a
 		add_modifier = { modifier = feral_overload_01 days = -1 }
 		hidden_effect = {
-			planet_event = {
-				id = colony.8003
-				days = 40
-				random = 20
-			}
+			planet_event = { id = colony.8003 days = 40 random = 20 }
 		}
 	}
 }
@@ -3073,7 +2833,6 @@ planet_event = {
 		}
 		add_planet_devastation = 50
 	}
-
 	option = {
 		name = colony.8003.a
 		enable_special_project = { name = "INVESTIGATE_CAVE_SHROOM_PROJECT" owner = root }
@@ -3081,6 +2840,7 @@ planet_event = {
 }
 
 ### Choose how to respond to Cave Shrooms
+
 planet_event = {
 	id = colony.8004
 	title = "colony.8004.name"
@@ -3089,12 +2849,10 @@ planet_event = {
 	show_sound = event_laboratory_sound
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = colony.8004.a
 		enable_special_project = { name = "UTILIZE_CAVE_SHROOM_PROJECT" owner = root }
 	}
-
 	option = {
 		name = colony.8004.b
 		enable_special_project = { name = "EXTERMINATE_CAVE_SHROOM_PROJECT" owner = root }
@@ -3102,6 +2860,7 @@ planet_event = {
 }
 
 ### Special Project: Utilize Cave Shrooms
+
 planet_event = {
 	id = colony.8005
 	title = "colony.8005.name"
@@ -3114,11 +2873,9 @@ planet_event = {
 	immediate = {
 		remove_modifier = feral_overload_01
 	}
-
 	after = {
 		remove_planet_flag = colony_event
 	}
-
 	option = {
 		name = colony.8005.a
 		add_deposit = d_spore_vents
@@ -3128,6 +2885,7 @@ planet_event = {
 }
 
 ### Special Project: Exterminate Cave Shrooms
+
 planet_event = {
 	id = colony.8006
 	title = "colony.8006.name"
@@ -3140,11 +2898,9 @@ planet_event = {
 	immediate = {
 		remove_modifier = feral_overload_01
 	}
-
 	after = {
 		remove_planet_flag = colony_event
 	}
-
 	option = {
 		name = colony.8006.a
 		add_deposit = d_cave_shroom_veins
@@ -3158,6 +2914,7 @@ planet_event = {
 # Written by Gemma Thomson
 #
 ############################
+
 namespace = colony_fed
 
 planet_event = {
@@ -3203,7 +2960,6 @@ planet_event = {
 		set_planet_flag = colony_event
 		owner = { set_country_flag = bluelotus }
 	}
-
 	option = {
 		name = CURIOUS
 		add_deposit = d_impossiblecorrie
@@ -3216,16 +2972,12 @@ planet_event = {
 planet_event = {
 	id = colony_fed.105
 	title = colony_fed.105.name
-
 	desc = {
 		trigger = { owner = { is_gestalt = no } }
 		text = colony_fed.105.desc
 	}
-
 	desc = {
-		trigger = {
-			owner = { is_gestalt = yes }
-		}
+		trigger = { owner = { is_gestalt = yes } }
 		text = colony_fed.105.gestalt.desc
 	}
 
@@ -3233,30 +2985,23 @@ planet_event = {
 	show_sound = event_construction
 	location = root
 	is_triggered_only = yes
-
 	option = { # Gestalt embrace option
 		name = colony_fed.105.a
-		trigger = {
-			owner = { is_gestalt = yes }
-		}
+		trigger = { owner = { is_gestalt = yes } }
 		add_deposit = d_bluelotus
 		hidden_effect = {
 			planet_event = { id = colony_fed.110 days = 40 }
 		}
 	}
-
 	option = { # Embrace option
 		name = colony_fed.105.b
 		trigger = { owner = { is_gestalt = no } }
-		owner = {
-			add_resource = { energy = -420 }
-		}
+		owner = { add_resource = { energy = -420 } }
 		add_deposit = d_bluelotus
 		hidden_effect = {
 			planet_event = { id = colony_fed.110 days = 55 }
 		}
 	}
-
 	option = { # Cease
 		name = colony_fed.105.c
 		trigger = { owner = { is_gestalt = no } }
@@ -3264,12 +3009,9 @@ planet_event = {
 			planet_event = { id = colony_fed.106 days = 40 }
 		}
 	}
-
 	option = { # Gestalt purge
 		name = colony_fed.105.d
-		trigger = {
-			owner = { is_gestalt = yes }
-		}
+		trigger = { owner = { is_gestalt = yes } }
 		random_owned_pop_job = {
 			limit = { has_job_type = fabricator }
 			kill_assigned_pop_amount = { amount = @building_static_jobs_low }
@@ -3289,7 +3031,6 @@ planet_event = {
 	show_sound = event_structural_collapse
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = UNFORTUNATE
 		remove_deposit = d_bluelotus # Also removes job
@@ -3313,7 +3054,6 @@ planet_event = {
 	show_sound = event_structural_collapse
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = GOOD
 		remove_deposit = d_bluelotus # Also removes job
@@ -3332,16 +3072,12 @@ planet_event = {
 planet_event = {
 	id = colony_fed.110
 	title = colony_fed.110.name
-
 	desc = {
 		trigger = { owner = { is_gestalt = no } }
 		text = colony_fed.110.desc
 	}
-
 	desc = {
-		trigger = {
-			owner = { is_gestalt = yes }
-		}
+		trigger = { owner = { is_gestalt = yes } }
 		text = colony_fed.110.gestalt.desc
 	}
 
@@ -3349,7 +3085,6 @@ planet_event = {
 	show_sound = event_default
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = OK
 		enable_special_project = { name = "BLUELOTUS_SCALE_PROJECT" owner = root.owner }
@@ -3365,7 +3100,6 @@ planet_event = {
 	show_sound = event_structural_collapse
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = colony_fed.111.a
 		add_deposit = d_ruin_bluelotus
@@ -3390,7 +3124,6 @@ planet_event = {
 	show_sound = event_laboratory_sound
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = colony_fed.115.a
 		remove_deposit = d_bluelotus
@@ -3398,11 +3131,7 @@ planet_event = {
 		hidden_effect = {
 			random = {
 				chance = 50
-				planet_event = {
-					id = colony_fed.120
-					days = 1800
-					random = 360
-				}
+				planet_event = { id = colony_fed.120 days = 1800 random = 360 }
 			}
 		}
 	}
@@ -3442,7 +3171,6 @@ planet_event = {
 			kill_assigned_pop_amount = { amount = @building_static_jobs }
 		}
 	}
-
 	option = {
 		name = UNFORTUNATE
 		remove_deposit = d_bluelotus2
@@ -3494,13 +3222,10 @@ planet_event = {
 			begin_event_chain = { event_chain = nemma_world_chain target = this }
 		}
 	}
-
 	option = {
 		name = {
 			trigger = {
-				NOT = {
-					owner = { species_portrait = rep14 }
-				}
+				NOT = { owner = { species_portrait = rep14 } }
 			}
 			text = "colony.9000.a"
 		}
@@ -3523,11 +3248,7 @@ planet_event = {
 			add_modifier = { modifier = "turtle_world_modifier_evopred" days = -1 }
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.9005
-				days = 700
-				random = 30
-			}
+			planet_event = { id = colony.9005 days = 700 random = 30 }
 		}
 	}
 }
@@ -3535,16 +3256,12 @@ planet_event = {
 planet_event = {
 	id = colony.9005
 	title = "colony.9005.name"
-
 	desc = {
 		trigger = { owner = { is_gestalt = no } }
 		text = "colony.9005.desc"
 	}
-
 	desc = {
-		trigger = {
-			owner = { is_gestalt = yes }
-		}
+		trigger = { owner = { is_gestalt = yes } }
 		text = "colony.9005.desc.gestalt"
 	}
 
@@ -3554,21 +3271,17 @@ planet_event = {
 	trackable = yes
 	event_chain = nemma_world_chain
 	is_triggered_only = yes
-
 	option = { # Yes investigate the Nemmas
 		name = colony.9005.a
 		enable_special_project = { name = "study_turtle_world_project" owner = root }
 	}
-
 	option = { # Leave the Nemmas alone
 		name = {
 			trigger = { owner = { is_gestalt = no } }
 			text = "colony.9005.b"
 		}
 		name = {
-			trigger = {
-				owner = { is_gestalt = yes }
-			}
+			trigger = { owner = { is_gestalt = yes } }
 			text = "colony.9005.b.gestalt"
 		}
 		owner = { end_event_chain = nemma_world_chain }
@@ -3587,7 +3300,6 @@ planet_event = {
 	trackable = yes
 	event_chain = nemma_world_chain
 	is_triggered_only = yes
-
 	option = {
 		name = colony.9010.a
 		trigger = {
@@ -3604,7 +3316,6 @@ planet_event = {
 		}
 		enable_special_project = { name = "breed_turtle_world_project" owner = root }
 	}
-
 	option = {
 		name = colony.9010.b
 		trigger = {
@@ -3621,7 +3332,6 @@ planet_event = {
 		}
 		enable_special_project = { name = "enslave_turtle_world_project" owner = root }
 	}
-
 	option = {
 		name = colony.9010.c
 		trigger = {
@@ -3635,12 +3345,9 @@ planet_event = {
 		}
 		enable_special_project = { name = "mine_turtle_world_project" owner = root }
 	}
-
 	option = {
 		name = colony.9010.d
-		trigger = {
-			owner = { is_homicidal = yes }
-		}
+		trigger = { owner = { is_homicidal = yes } }
 		enable_special_project = { name = "kill_turtle_world_project" owner = root }
 	}
 }
@@ -3660,15 +3367,10 @@ planet_event = {
 	immediate = {
 		set_variable = { which = turtle_amount value = 0 }
 	}
-
 	option = {
 		name = colony.9015.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.9020
-				days = 3600
-				random = 100
-			}
+			planet_event = { id = colony.9020 days = 3600 random = 100 }
 		}
 	}
 }
@@ -3677,14 +3379,12 @@ planet_event = {
 planet_event = {
 	id = colony.9020
 	title = "colony.9020.name"
-
 	desc = {
 		trigger = {
 			check_variable = { which = turtle_amount value = 5 }
 		}
 		text = "colony.9020.desc.full"
 	}
-
 	desc = {
 		trigger = {
 			check_variable = { which = turtle_amount value < 5 }
@@ -3703,7 +3403,6 @@ planet_event = {
 		add_deposit = d_house_turtle
 		change_variable = { which = turtle_amount value = 1 }
 	}
-
 	option = {
 		name = colony.9020.a
 		trigger = {
@@ -3711,34 +3410,21 @@ planet_event = {
 		}
 		hidden_effect = {
 			random_list = {
-				2 = {
-					planet_event = {
-						id = colony.9020
-						days = 3600
-						random = 100
-					}
-				}
+				2 = { planet_event = { id = colony.9020 days = 3600 random = 100 } }
 				1 = {
-					planet_event = {
-						id = colony.9025
-						days = 3600
-						random = 100
-					}
+					planet_event = { id = colony.9025 days = 3600 random = 100 }
 					modifier = { factor = turtle_amount is_variable_set = turtle_amount }
 				}
 			}
 		}
 	}
-
 	option = {
 		name = {
 			trigger = { owner = { is_gestalt = no } }
 			text = "colony.9020.b"
 		}
 		name = {
-			trigger = {
-				owner = { is_gestalt = yes }
-			}
+			trigger = { owner = { is_gestalt = yes } }
 			text = "colony.9020.b.gestalt"
 		}
 		trigger = {
@@ -3759,7 +3445,6 @@ planet_event = {
 	trackable = yes
 	event_chain = nemma_world_chain
 	is_triggered_only = yes
-
 	option = {
 		name = colony.9025.a
 		owner = {
@@ -3773,19 +3458,11 @@ planet_event = {
 		hidden_effect = {
 			random_list = {
 				3 = {
-					planet_event = {
-						id = colony.9020
-						days = 3600
-						random = 100
-					}
+					planet_event = { id = colony.9020 days = 3600 random = 100 }
 					change_variable = { which = turtle_amount value = 1 }
 				}
 				1 = {
-					planet_event = {
-						id = colony.9025
-						days = 3600
-						random = 100
-					}
+					planet_event = { id = colony.9025 days = 3600 random = 100 }
 					modifier = { factor = turtle_amount is_variable_set = turtle_amount }
 				}
 			}
@@ -3804,7 +3481,6 @@ planet_event = {
 	trackable = yes
 	event_chain = nemma_world_chain
 	is_triggered_only = yes
-
 	option = {
 		name = colony.9030.a
 		add_modifier = { modifier = "turtle_world_slaves_modifier" days = -1 }
@@ -3814,11 +3490,7 @@ planet_event = {
 				limit = {
 					owner = { is_gestalt = no is_authoritarian = no }
 				}
-				planet_event = {
-					id = colony.9035
-					days = 1000
-					random = 50
-				}
+				planet_event = { id = colony.9035 days = 1000 random = 50 }
 			}
 		}
 	}
@@ -3835,20 +3507,14 @@ planet_event = {
 	trackable = yes
 	event_chain = nemma_world_chain
 	is_triggered_only = yes
-
 	option = {
 		name = colony.9035.a
 		remove_modifier = turtle_world_slaves_modifier
 		add_modifier = { modifier = "turtle_world_modifier" days = -1 }
 		hidden_effect = {
-			planet_event = {
-				id = colony.9015
-				days = 2000
-				random = 100
-			}
+			planet_event = { id = colony.9015 days = 2000 random = 100 }
 		}
 	}
-
 	option = {
 		name = colony.9035.b
 		owner = { end_event_chain = nemma_world_chain }
@@ -3867,7 +3533,6 @@ planet_event = {
 	trackable = yes
 	event_chain = nemma_world_chain
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		owner = { end_event_chain = nemma_world_chain }
@@ -3895,7 +3560,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = {
 		exclusive_trigger = {
 			owner = {
@@ -3905,31 +3569,24 @@ planet_event = {
 		}
 		name = PREY
 	}
-
 	option = {
 		exclusive_trigger = {
 			owner = { has_civic = civic_machine_terminator }
 		}
 		name = E_DOW_PROPOSE_03
 	}
-
 	option = {
 		exclusive_trigger = {
 			owner = { has_origin = origin_evolutionary_predators }
 		}
 		name = DELICIOUS
 		owner = {
-			give_evolutionary_predator_situation_progress_and_dna = {
-				AMOUNT = large
-				TYPE = reptilian
-			}
+			give_evolutionary_predator_situation_progress_and_dna = { AMOUNT = large TYPE = reptilian }
 		}
 	}
-
 	option = {
 		name = colony.9045.a
 	}
-
 	after = {
 		remove_modifier = "turtle_world_modifier"
 		add_deposit = d_turtle_corpse
@@ -4380,11 +4037,7 @@ planet_event = {
 			add_resource = { energy = -1000 }
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.9055
-				days = 90
-				random = 20
-			}
+			planet_event = { id = colony.9055 days = 90 random = 20 }
 		}
 	}
 }
@@ -4424,11 +4077,7 @@ planet_event = {
 			add_resource = { energy = -1500 }
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.9060
-				days = 120
-				random = 20
-			}
+			planet_event = { id = colony.9060 days = 120 random = 20 }
 		}
 	}
 
@@ -4452,11 +4101,7 @@ planet_event = {
 			add_resource = { energy = -1500 }
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.9065
-				days = 90
-				random = 20
-			}
+			planet_event = { id = colony.9065 days = 90 random = 20 }
 		}
 	}
 }
@@ -4506,11 +4151,7 @@ planet_event = {
 			add_resource = { energy = -2000 }
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.9070
-				days = 90
-				random = 20
-			}
+			planet_event = { id = colony.9070 days = 90 random = 20 }
 		}
 	}
 }
@@ -4530,11 +4171,7 @@ planet_event = {
 		add_deposit = d_crystalline_caverns
 		add_modifier = { modifier = ultra_rich days = -1 }
 		hidden_effect = {
-			planet_event = {
-				id = colony.9085
-				days = 3000
-				random = 600
-			}
+			planet_event = { id = colony.9085 days = 3000 random = 600 }
 		}
 	}
 
@@ -4550,11 +4187,7 @@ planet_event = {
 			add_resource = { energy = -2500 }
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.9075
-				days = 90
-				random = 20
-			}
+			planet_event = { id = colony.9075 days = 90 random = 20 }
 		}
 	}
 }
@@ -4563,7 +4196,6 @@ planet_event = {
 planet_event = {
 	id = colony.9075
 	title = "colony.9075.name"
-
 	desc = {
 		trigger = {
 			owner = { has_modifier = pacified_crystals }
@@ -4704,11 +4336,7 @@ planet_event = {
 	option = {
 		name = colony.9085.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.9090
-				days = 1000
-				random = 200
-			}
+			planet_event = { id = colony.9090 days = 1000 random = 200 }
 		}
 	}
 
@@ -4724,7 +4352,6 @@ planet_event = {
 planet_event = {
 	id = colony.9090
 	title = "colony.9075.name"
-
 	desc = {
 		trigger = {
 			owner = { has_modifier = pacified_crystals }
@@ -4791,10 +4418,7 @@ planet_event = {
 		add_modifier = { modifier = "crystal_kraken" days = -1 }
 		fromfrom = {
 			set_policy = { policy = purge option = purge_not_allowed }
-			set_policy = {
-				policy = population_controls
-				option = population_controls_not_allowed
-			}
+			set_policy = { policy = population_controls option = population_controls_not_allowed }
 		}
 	}
 }
@@ -4837,16 +4461,11 @@ planet_event = {
 		set_planet_flag = colony_event
 		owner = { set_country_flag = ancient_manufactorium }
 	}
-
 	option = { # find your way into the vault
 		name = colony.9200.a
 		custom_tooltip = colony.9200.a.desc
 		hidden_effect = {
-			planet_event = {
-				id = colony.9201
-				days = 30
-				random = 30
-			}
+			planet_event = { id = colony.9201 days = 30 random = 30 }
 		}
 	}
 }
@@ -4874,30 +4493,20 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # proceed
 		name = colony.9201.a
 		custom_tooltip = colony.9201.a.desc
 		add_deposit = d_ancient_manufactorium_vaultexploration
 		hidden_effect = {
-			planet_event = {
-				id = colony.9210
-				days = 180
-				random = 360
-			}
+			planet_event = { id = colony.9210 days = 180 random = 360 }
 		}
 	}
-
 	option = { # opt out
 		name = colony.9201.b
 		custom_tooltip = colony.9201.b.desc
 		remove_deposit = d_ancient_manufactorium_vaultexploration
 		hidden_effect = {
-			planet_event = {
-				id = colony.9202
-				days = 60
-				random = 60
-			}
+			planet_event = { id = colony.9202 days = 60 random = 60 }
 		}
 	}
 }
@@ -4925,7 +4534,6 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # add weak deposit - end the chain
 		name = colony.9202.a
 		add_deposit = d_ancient_manufactorium_crater
@@ -4955,20 +4563,14 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # casual
 		name = colony.9210.a
 		custom_tooltip = colony.9210.a.desc
 		trigger = { owner = { is_gestalt = no } }
 		hidden_effect = {
-			planet_event = {
-				id = colony.9211
-				days = 180
-				random = 360
-			}
+			planet_event = { id = colony.9211 days = 180 random = 360 }
 		}
 	}
-
 	option = { # egalitarian
 		name = colony.9210.b
 		custom_tooltip = colony.9210.b.desc
@@ -4976,14 +4578,9 @@ planet_event = {
 			owner = { is_egalitarian = yes }
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.9212
-				days = 120
-				random = 180
-			}
+			planet_event = { id = colony.9212 days = 120 random = 180 }
 		}
 	}
-
 	option = { # authoritarian
 		name = colony.9210.c
 		custom_tooltip = colony.9210.c.desc
@@ -4991,26 +4588,15 @@ planet_event = {
 			owner = { is_authoritarian = yes }
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.9213
-				days = 120
-				random = 180
-			}
+			planet_event = { id = colony.9213 days = 120 random = 180 }
 		}
 	}
-
 	option = { # gestalt - pop dies
 		name = colony.9210.d
 		custom_tooltip = colony.9210.d.desc
-		trigger = {
-			owner = { is_gestalt = yes }
-		}
+		trigger = { owner = { is_gestalt = yes } }
 		hidden_effect = {
-			planet_event = {
-				id = colony.9214
-				days = 100
-				random = 100
-			}
+			planet_event = { id = colony.9214 days = 100 random = 100 }
 		}
 	}
 }
@@ -5038,7 +4624,6 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # proceed
 		name = colony.9211.a
 		random_owned_pop_group = { kill_single_pop = yes }
@@ -5046,11 +4631,7 @@ planet_event = {
 			add_modifier = { modifier = media_coverage_negative_medium years = 1 }
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.9220
-				days = 360
-				random = 360
-			}
+			planet_event = { id = colony.9220 days = 360 random = 360 }
 		}
 	}
 }
@@ -5078,18 +4659,13 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # proceed
 		name = colony.9212.a
 		owner = {
 			add_modifier = { modifier = media_coverage_negative_low years = 1 }
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.9220
-				days = 360
-				random = 360
-			}
+			planet_event = { id = colony.9220 days = 360 random = 360 }
 		}
 	}
 }
@@ -5117,16 +4693,11 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # proceed
 		name = colony.9213.a
 		random_owned_pop_group = { kill_single_pop = yes }
 		hidden_effect = {
-			planet_event = {
-				id = colony.9220
-				days = 360
-				random = 360
-			}
+			planet_event = { id = colony.9220 days = 360 random = 360 }
 		}
 	}
 }
@@ -5154,16 +4725,11 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # proceed
 		name = colony.9214.a
 		random_owned_pop_group = { kill_single_pop = yes }
 		hidden_effect = {
-			planet_event = {
-				id = colony.9220
-				days = 360
-				random = 360
-			}
+			planet_event = { id = colony.9220 days = 360 random = 360 }
 		}
 	}
 }
@@ -5190,19 +4756,13 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # casual - opportunity wasted
 		name = colony.9220.a
 		custom_tooltip = colony.9220.a.desc
 		hidden_effect = {
-			planet_event = {
-				id = colony.9230
-				days = 360
-				random = 360
-			}
+			planet_event = { id = colony.9230 days = 360 random = 360 }
 		}
 	}
-
 	option = { # masterful crafters + unity output
 		name = colony.9220.b
 		custom_tooltip = colony.9220.b.desc
@@ -5211,14 +4771,9 @@ planet_event = {
 		}
 		set_planet_flag = manufactorium_crafters
 		hidden_effect = {
-			planet_event = {
-				id = colony.9230
-				days = 360
-				random = 360
-			}
+			planet_event = { id = colony.9230 days = 360 random = 360 }
 		}
 	}
-
 	option = { # subterranean + unity output
 		name = colony.9220.c
 		custom_tooltip = colony.9220.c.desc
@@ -5227,14 +4782,9 @@ planet_event = {
 		}
 		set_planet_flag = manufactorium_subterranean
 		hidden_effect = {
-			planet_event = {
-				id = colony.9230
-				days = 360
-				random = 360
-			}
+			planet_event = { id = colony.9230 days = 360 random = 360 }
 		}
 	}
-
 	option = { # subterranean AND masterful crafters + unity output
 		name = colony.9220.d
 		custom_tooltip = colony.9220.d.desc
@@ -5243,11 +4793,7 @@ planet_event = {
 		}
 		set_planet_flag = manufactorium_dwarven_craft
 		hidden_effect = {
-			planet_event = {
-				id = colony.9230
-				days = 360
-				random = 360
-			}
+			planet_event = { id = colony.9230 days = 360 random = 360 }
 		}
 	}
 }
@@ -5275,31 +4821,20 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # casual1 - more upkeep
 		name = colony.9230.a
 		set_planet_flag = manufactorium_earthquake_upkeep
 		hidden_effect = {
-			planet_event = {
-				id = colony.9231
-				days = 36
-				random = 36
-			}
+			planet_event = { id = colony.9231 days = 36 random = 36 }
 		}
 	}
-
 	option = { # casual2 - produce less
 		name = colony.9230.b
 		set_planet_flag = manufactorium_earthquake_production
 		hidden_effect = {
-			planet_event = {
-				id = colony.9232
-				days = 36
-				random = 36
-			}
+			planet_event = { id = colony.9232 days = 36 random = 36 }
 		}
 	}
-
 	option = { # managed to maintain everything intactc - bad thing averted
 		name = colony.9230.c
 		trigger = {
@@ -5311,25 +4846,16 @@ planet_event = {
 			}
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.9233
-				days = 36
-				random = 36
-			}
+			planet_event = { id = colony.9233 days = 36 random = 36 }
 		}
 	}
-
 	option = { # managed to maintain everything intactc - bad thing averted
 		name = colony.9230.d
 		trigger = {
 			owner = { has_civic = civic_hive_divided_attention }
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.9234
-				days = 36
-				random = 36
-			}
+			planet_event = { id = colony.9234 days = 36 random = 36 }
 		}
 	}
 }
@@ -5357,15 +4883,10 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # proceed
 		name = colony.9231.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.9240
-				days = 720
-				random = 360
-			}
+			planet_event = { id = colony.9240 days = 720 random = 360 }
 		}
 	}
 }
@@ -5393,15 +4914,10 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # proceed
 		name = colony.9232.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.9240
-				days = 720
-				random = 360
-			}
+			planet_event = { id = colony.9240 days = 720 random = 360 }
 		}
 	}
 }
@@ -5429,15 +4945,10 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # proceed
 		name = colony.9233.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.9240
-				days = 720
-				random = 360
-			}
+			planet_event = { id = colony.9240 days = 720 random = 360 }
 		}
 	}
 }
@@ -5465,15 +4976,10 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # proceed
 		name = colony.9234.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.9240
-				days = 720
-				random = 360
-			}
+			planet_event = { id = colony.9240 days = 720 random = 360 }
 		}
 	}
 }
@@ -5500,34 +5006,23 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # casual1 - pop death
 		name = colony.9240.a
 		custom_tooltip = colony.9240.a.desc
 		trigger = { owner = { is_gestalt = no } }
 		hidden_effect = {
-			planet_event = {
-				id = colony.9241
-				days = 60
-				random = 60
-			}
+			planet_event = { id = colony.9241 days = 60 random = 60 }
 		}
 	}
-
 	option = { # casual2 - less produce
 		name = colony.9240.b
 		custom_tooltip = colony.9240.b.desc
 		trigger = { owner = { is_gestalt = no } }
 		set_planet_flag = manufactorium_guardians_produce
 		hidden_effect = {
-			planet_event = {
-				id = colony.9242
-				days = 30
-				random = 30
-			}
+			planet_event = { id = colony.9242 days = 30 random = 30 }
 		}
 	}
-
 	option = { # spiritualist ethic - managed to avert the bad situation
 		name = colony.9240.c
 		custom_tooltip = colony.9240.c.desc
@@ -5535,14 +5030,9 @@ planet_event = {
 			owner = { is_spiritualist = yes }
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.9243
-				days = 180
-				random = 360
-			}
+			planet_event = { id = colony.9243 days = 180 random = 360 }
 		}
 	}
-
 	option = { # meritocracy civic - managed to avert the bad situation
 		name = colony.9240.d
 		custom_tooltip = colony.9240.d.desc
@@ -5550,26 +5040,15 @@ planet_event = {
 			owner = { has_civic = civic_meritocracy }
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.9244
-				days = 180
-				random = 360
-			}
+			planet_event = { id = colony.9244 days = 180 random = 360 }
 		}
 	}
-
 	option = { # gestalt - managed to avert the bad situation
 		name = colony.9240.e
 		custom_tooltip = colony.9240.e.desc
-		trigger = {
-			owner = { is_gestalt = yes }
-		}
+		trigger = { owner = { is_gestalt = yes } }
 		hidden_effect = {
-			planet_event = {
-				id = colony.9245
-				days = 60
-				random = 60
-			}
+			planet_event = { id = colony.9245 days = 60 random = 60 }
 		}
 	}
 }
@@ -5596,16 +5075,11 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # proceed
 		name = CURSES
 		random_owned_pop_group = { kill_single_pop = yes }
 		hidden_effect = {
-			planet_event = {
-				id = colony.9250
-				days = 360
-				random = 360
-			}
+			planet_event = { id = colony.9250 days = 360 random = 360 }
 		}
 	}
 }
@@ -5632,15 +5106,10 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # proceed
 		name = CURSES
 		hidden_effect = {
-			planet_event = {
-				id = colony.9250
-				days = 360
-				random = 360
-			}
+			planet_event = { id = colony.9250 days = 360 random = 360 }
 		}
 	}
 }
@@ -5667,15 +5136,10 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # proceed
 		name = colony.9243.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.9250
-				days = 360
-				random = 360
-			}
+			planet_event = { id = colony.9250 days = 360 random = 360 }
 		}
 	}
 }
@@ -5702,15 +5166,10 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # proceed
 		name = colony.9244.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.9250
-				days = 360
-				random = 360
-			}
+			planet_event = { id = colony.9250 days = 360 random = 360 }
 		}
 	}
 }
@@ -5737,15 +5196,10 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # proceed
 		name = colony.9245.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.9250
-				days = 360
-				random = 360
-			}
+			planet_event = { id = colony.9250 days = 360 random = 360 }
 		}
 	}
 }
@@ -5773,16 +5227,11 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # casual - opportunity wasted - start the project
 		name = colony.9250.a
 		custom_tooltip = colony.9250.a.desc
-		enable_special_project = {
-			name = ANCIENT_MANUFACTORIUM_PROJECT
-			owner = root.owner
-		}
+		enable_special_project = { name = ANCIENT_MANUFACTORIUM_PROJECT owner = root.owner }
 	}
-
 	option = { # technocracy +1 engineering research job output - start the project
 		name = colony.9250.b
 		custom_tooltip = colony.9250.b.desc
@@ -5790,12 +5239,8 @@ planet_event = {
 			owner = { has_civic = civic_technocracy }
 		}
 		set_planet_flag = manufactorium_engineering
-		enable_special_project = {
-			name = ANCIENT_MANUFACTORIUM_PROJECT
-			owner = root.owner
-		}
+		enable_special_project = { name = ANCIENT_MANUFACTORIUM_PROJECT owner = root.owner }
 	}
-
 	option = { # philosopher king +1 society research job output - start the project
 		name = colony.9250.c
 		custom_tooltip = colony.9250.c.desc
@@ -5803,12 +5248,8 @@ planet_event = {
 			owner = { has_civic = civic_philosopher_king }
 		}
 		set_planet_flag = manufactorium_society
-		enable_special_project = {
-			name = ANCIENT_MANUFACTORIUM_PROJECT
-			owner = root.owner
-		}
+		enable_special_project = { name = ANCIENT_MANUFACTORIUM_PROJECT owner = root.owner }
 	}
-
 	option = { # natural neural network +1 society research job output - start the project
 		name = colony.9250.d
 		custom_tooltip = colony.9250.d.desc
@@ -5821,12 +5262,8 @@ planet_event = {
 			}
 		}
 		set_planet_flag = manufactorium_society
-		enable_special_project = {
-			name = ANCIENT_MANUFACTORIUM_PROJECT
-			owner = root.owner
-		}
+		enable_special_project = { name = ANCIENT_MANUFACTORIUM_PROJECT owner = root.owner }
 	}
-
 	option = { # introspective +1 engineering research job output - start the project
 		name = colony.9250.e
 		custom_tooltip = colony.9250.e.desc
@@ -5839,12 +5276,8 @@ planet_event = {
 			}
 		}
 		set_planet_flag = manufactorium_engineering
-		enable_special_project = {
-			name = ANCIENT_MANUFACTORIUM_PROJECT
-			owner = root.owner
-		}
+		enable_special_project = { name = ANCIENT_MANUFACTORIUM_PROJECT owner = root.owner }
 	}
-
 	option = { # oputing out - no special project, instead gain scrapyard - ending the chain
 		name = colony.9250.f
 		custom_tooltip = colony.9250.f.desc
@@ -5876,15 +5309,10 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # proceed
 		name = colony.9251.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.9260
-				days = 360
-				random = 360
-			}
+			planet_event = { id = colony.9260 days = 360 random = 360 }
 		}
 	}
 }
@@ -5911,35 +5339,24 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # casual1 - bad outcome, lowered happiness
 		name = colony.9260.a
 		custom_tooltip = colony.9260.a.desc
 		trigger = { owner = { is_gestalt = no } }
 		set_planet_flag = manufactorium_work_happiness
 		hidden_effect = {
-			planet_event = {
-				id = colony.9270
-				days = 360
-				random = 360
-			}
+			planet_event = { id = colony.9270 days = 360 random = 360 }
 		}
 	}
-
 	option = { # casual2 - bad outcome, lowered production
 		name = colony.9260.b
 		custom_tooltip = colony.9260.b.desc
 		trigger = { owner = { is_gestalt = no } }
 		set_planet_flag = manufactorium_work_production
 		hidden_effect = {
-			planet_event = {
-				id = colony.9270
-				days = 360
-				random = 360
-			}
+			planet_event = { id = colony.9270 days = 360 random = 360 }
 		}
 	}
-
 	option = { # slaver guilds - bad outcome averted
 		name = colony.9260.c
 		custom_tooltip = colony.9260.c.desc
@@ -5952,14 +5369,9 @@ planet_event = {
 			}
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.9270
-				days = 360
-				random = 360
-			}
+			planet_event = { id = colony.9270 days = 360 random = 360 }
 		}
 	}
-
 	option = { # shared burdens - bad outcome averted
 		name = colony.9260.d
 		custom_tooltip = colony.9260.d.desc
@@ -5967,27 +5379,16 @@ planet_event = {
 			owner = { has_civic = civic_shared_burden }
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.9270
-				days = 360
-				random = 360
-			}
+			planet_event = { id = colony.9270 days = 360 random = 360 }
 		}
 	}
-
 	option = { # gestalt - bad outcome only - increased amenities usage
 		name = colony.9260.e
 		custom_tooltip = colony.9260.e.desc
-		trigger = {
-			owner = { is_gestalt = yes }
-		}
+		trigger = { owner = { is_gestalt = yes } }
 		set_planet_flag = manufactorium_work_gestalt
 		hidden_effect = {
-			planet_event = {
-				id = colony.9270
-				days = 360
-				random = 360
-			}
+			planet_event = { id = colony.9270 days = 360 random = 360 }
 		}
 	}
 }
@@ -6014,20 +5415,14 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # casual - opportunity random
 		name = colony.9270.a
 		custom_tooltip = colony.9270.a.desc
 		hidden_effect = {
 			random = { chance = 34 set_planet_flag = manufactorium_random_good }
-			planet_event = {
-				id = colony.9280
-				days = 360
-				random = 360
-			}
+			planet_event = { id = colony.9280 days = 360 random = 360 }
 		}
 	}
-
 	option = { # Environmentalist - lowered upkeep
 		name = colony.9270.b
 		custom_tooltip = colony.9270.b.desc
@@ -6042,14 +5437,9 @@ planet_event = {
 		}
 		set_planet_flag = manufactorium_environmentalists
 		hidden_effect = {
-			planet_event = {
-				id = colony.9280
-				days = 360
-				random = 360
-			}
+			planet_event = { id = colony.9280 days = 360 random = 360 }
 		}
 	}
-
 	option = { # Barbaric Despoilers - increased production
 		name = colony.9270.c
 		custom_tooltip = colony.9270.c.desc
@@ -6063,11 +5453,7 @@ planet_event = {
 		}
 		set_planet_flag = manufactorium_despoilers
 		hidden_effect = {
-			planet_event = {
-				id = colony.9280
-				days = 360
-				random = 360
-			}
+			planet_event = { id = colony.9280 days = 360 random = 360 }
 		}
 	}
 }
@@ -6094,19 +5480,13 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # dont use the opportunity
 		name = colony.9280.a
 		custom_tooltip = colony.9280.a.desc
 		hidden_effect = {
-			planet_event = {
-				id = colony.9290
-				days = 60
-				random = 60
-			}
+			planet_event = { id = colony.9290 days = 60 random = 60 }
 		}
 	}
-
 	option = { # use the opportunity - upkeep + production
 		name = colony.9280.b
 		custom_tooltip = colony.9280.b.desc
@@ -6116,14 +5496,9 @@ planet_event = {
 				26 = { set_planet_flag = manufactorium_took_opportunity_bad }
 				40 = {  }
 			}
-			planet_event = {
-				id = colony.9290
-				days = 180
-				random = 360
-			}
+			planet_event = { id = colony.9290 days = 180 random = 360 }
 		}
 	}
-
 	option = { # Catalytic Processing - increase production, add food upkeep (better than casual 1:2 ratio)
 		name = colony.9280.c
 		custom_tooltip = colony.9280.c.desc
@@ -6138,14 +5513,9 @@ planet_event = {
 		}
 		set_planet_flag = manufactorium_catalytic
 		hidden_effect = {
-			planet_event = {
-				id = colony.9290
-				days = 180
-				random = 360
-			}
+			planet_event = { id = colony.9290 days = 180 random = 360 }
 		}
 	}
-
 	option = { # remnants origin - upgrades casual option from taking the opportunity
 		name = colony.9280.d
 		custom_tooltip = colony.9280.d.desc
@@ -6154,11 +5524,7 @@ planet_event = {
 		}
 		set_planet_flag = manufactorium_remnants
 		hidden_effect = {
-			planet_event = {
-				id = colony.9290
-				days = 180
-				random = 360
-			}
+			planet_event = { id = colony.9290 days = 180 random = 360 }
 		}
 	}
 }
@@ -6186,7 +5552,6 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # casual - timed happiness boost
 		name = colony.9290.a
 		trigger = { owner = { is_gestalt = no } }
@@ -6196,7 +5561,6 @@ planet_event = {
 		remove_deposit = d_ancient_manufactorium_vaultexploration
 		add_deposit = d_ancient_manufactorium_working
 	}
-
 	option = { # memorialists civic - adding 1 death/drone chronicler job
 		name = colony.9290.b
 		custom_tooltip = colony.9290.b.desc
@@ -6213,7 +5577,6 @@ planet_event = {
 		remove_deposit = d_ancient_manufactorium_vaultexploration
 		add_deposit = d_ancient_manufactorium_working
 	}
-
 	option = { # aristocratic elite - adding 1 noble job
 		name = colony.9290.c
 		custom_tooltip = colony.9290.c.desc
@@ -6224,7 +5587,6 @@ planet_event = {
 		remove_deposit = d_ancient_manufactorium_vaultexploration
 		add_deposit = d_ancient_manufactorium_working
 	}
-
 	option = { # free traders - adding 1 executive job
 		name = colony.9290.d
 		custom_tooltip = colony.9290.d.desc
@@ -6235,18 +5597,16 @@ planet_event = {
 		remove_deposit = d_ancient_manufactorium_vaultexploration
 		add_deposit = d_ancient_manufactorium_working
 	}
-
 	option = { # casual - gestalt, nothing
 		name = colony.9290.e
-		trigger = {
-			owner = { is_gestalt = yes }
-		}
+		trigger = { owner = { is_gestalt = yes } }
 		remove_deposit = d_ancient_manufactorium_vaultexploration
 		add_deposit = d_ancient_manufactorium_working
 	}
 }
 
 ### Metallic Puddles
+
 planet_event = {
 	id = colony.9295
 	title = "colony.9295.name"
@@ -6287,15 +5647,10 @@ planet_event = {
 		set_global_flag = metallic_puddles_global
 		set_planet_flag = colony_event
 	}
-
 	option = {
 		name = colony.9295.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.9296
-				days = 35
-				random = 40
-			}
+			planet_event = { id = colony.9296 days = 35 random = 40 }
 		}
 		owner = {
 			add_monthly_resource_mult = {
@@ -6306,15 +5661,10 @@ planet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = colony.9295.b
 		hidden_effect = {
-			planet_event = {
-				id = colony.9299
-				days = 35
-				random = 40
-			}
+			planet_event = { id = colony.9299 days = 35 random = 40 }
 		}
 		owner = {
 			add_monthly_resource_mult = {
@@ -6328,6 +5678,7 @@ planet_event = {
 }
 
 ### Silver Slime
+
 planet_event = {
 	id = colony.9296
 	title = "colony.9296.name"
@@ -6337,15 +5688,10 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.9296.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.9297
-				days = 35
-				random = 40
-			}
+			planet_event = { id = colony.9297 days = 35 random = 40 }
 		}
 		owner = {
 			add_monthly_resource_mult = {
@@ -6359,6 +5705,7 @@ planet_event = {
 }
 
 ### Disappearing Puddles
+
 planet_event = {
 	id = colony.9297
 	title = "colony.9297.name"
@@ -6368,20 +5715,16 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.9297.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.9298
-				days = 35
-				random = 40
-			}
+			planet_event = { id = colony.9298 days = 35 random = 40 }
 		}
 	}
 }
 
 ### Return of the Silver Slime
+
 planet_event = {
 	id = colony.9298
 	title = "colony.9298.name"
@@ -6391,15 +5734,10 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.9298.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.9300
-				days = 35
-				random = 40
-			}
+			planet_event = { id = colony.9300 days = 35 random = 40 }
 		}
 		owner = {
 			add_monthly_resource_mult = {
@@ -6413,6 +5751,7 @@ planet_event = {
 }
 
 ### Elusive Viscosity
+
 planet_event = {
 	id = colony.9299
 	title = "colony.9299.name"
@@ -6422,20 +5761,16 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.9299.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.9300
-				days = 35
-				random = 40
-			}
+			planet_event = { id = colony.9300 days = 35 random = 40 }
 		}
 	}
 }
 
 ### Elementary, Dear Leader!
+
 planet_event = {
 	id = colony.9300
 	title = "colony.9300.name"
@@ -6445,7 +5780,6 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.9300.a
 		enable_special_project = { name = "FASCINATING_METEOROLOGY_PROJECT" owner = root }
@@ -6453,6 +5787,7 @@ planet_event = {
 }
 
 ### Invaluable Insight
+
 planet_event = {
 	id = colony.9301
 	title = "colony.9301.name"
@@ -6462,7 +5797,6 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.9301.a
 		owner = {
@@ -6517,17 +5851,12 @@ planet_event = {
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = colony.9310.a
 		custom_tooltip = colony.9310.a.tooltip
 		add_blocker = { type = d_sprawling_landfill_blocker blocked_deposit = random }
 		hidden_effect = {
-			planet_event = {
-				id = colony.9315
-				days = 360
-				random = 20
-			}
+			planet_event = { id = colony.9315 days = 360 random = 20 }
 		}
 	}
 }
@@ -6544,7 +5873,6 @@ planet_event = {
 	trigger = {
 		has_deposit = d_sprawling_landfill_blocker
 	}
-
 	option = {
 		name = colony.9315.a
 		custom_tooltip = colony.9315.a.tooltip
@@ -6552,31 +5880,17 @@ planet_event = {
 		add_modifier = { modifier = "trash_rings" days = -1 }
 		enable_special_project = { name = "orbital_cleanup" owner = root }
 	}
-
 	option = {
 		name = colony.9315.b
 		custom_tooltip = colony.9315.b.tooltip
 		add_modifier = { modifier = "trash_rings" days = -1 }
 		hidden_effect = {
 			random_list = {
-				60 = {
-					planet_event = {
-						id = colony.9325
-						days = 180
-						random = 20
-					}
-				}
-				40 = {
-					planet_event = {
-						id = colony.9330
-						days = 180
-						random = 20
-					}
-				}
+				60 = { planet_event = { id = colony.9325 days = 180 random = 20 } }
+				40 = { planet_event = { id = colony.9330 days = 180 random = 20 } }
 			}
 		}
 	}
-
 	option = {
 		name = colony.9315.c
 		custom_tooltip = colony.9315.c.tooltip
@@ -6584,9 +5898,7 @@ planet_event = {
 			OR = {
 				owner_species = { has_trait = trait_conservational }
 				owner = {
-					NOT = {
-						species = { has_trait = trait_conservational }
-					}
+					NOT = { species = { has_trait = trait_conservational } }
 					OR = {
 						has_valid_civic = civic_environmentalist
 						has_valid_civic = civic_idyllic_bloom
@@ -6613,7 +5925,6 @@ planet_event = {
 	show_sound = event_coronation
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = colony.9320.a
 		owner = {
@@ -6636,7 +5947,6 @@ planet_event = {
 	show_sound = event_burning_city
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = colony.9325.a
 		add_modifier = { modifier = "ground_locked" years = 5 }
@@ -6651,7 +5961,6 @@ planet_event = {
 	show_sound = event_conversation
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = colony.9330.a
 		add_modifier = { modifier = "shooting_stars" years = 5 }
@@ -6667,7 +5976,6 @@ planet_event = {
 	show_sound = event_coronation
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = colony.9335.a
 		add_modifier = { modifier = "clear_skies" years = 5 }
@@ -6714,7 +6022,6 @@ planet_event = {
 		set_global_flag = myrmeku # Prevent others from getting the same chain
 		save_global_event_target_as = myrmeku_planet
 	}
-
 	option = {
 		name = ACKNOWLEDGED
 		owner = {
@@ -6723,14 +6030,9 @@ planet_event = {
 			}
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.9355
-				days = 180
-				random = 30
-			}
+			planet_event = { id = colony.9355 days = 180 random = 30 }
 		}
 	}
-
 	option = {
 		name = colony.9350.a.mem_vault
 		trigger = {
@@ -6748,14 +6050,9 @@ planet_event = {
 			}
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.9355
-				days = 180
-				random = 30
-			}
+			planet_event = { id = colony.9355 days = 180 random = 30 }
 		}
 	}
-
 	option = {
 		name = colony.9350.a.exp_prot
 		trigger = {
@@ -6778,11 +6075,7 @@ planet_event = {
 			}
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.9355
-				days = 180
-				random = 30
-			}
+			planet_event = { id = colony.9355 days = 180 random = 30 }
 		}
 	}
 }
@@ -6807,15 +6100,10 @@ planet_event = {
 	immediate = {
 		add_modifier = { modifier = "planet_myrmeku_attacks" days = -1 }
 	}
-
 	option = {
 		name = colony.9355.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.9360
-				days = 120
-				random = 30
-			}
+			planet_event = { id = colony.9360 days = 120 random = 30 }
 		}
 		tooltip = {
 			add_modifier = { modifier = "planet_myrmeku_attacks" days = -1 }
@@ -6839,35 +6127,24 @@ planet_event = {
 		NOT = { is_planet_class = pc_nuked }
 		owner = { has_country_flag = myrmeku_flag@root }
 	}
-
 	option = { # Hermetic Seal
 		name = colony.9360.a
 		custom_tooltip = colony.9360.a.tt
 		hidden_effect = {
 			remove_modifier = "planet_myrmeku_attacks"
 			add_modifier = { modifier = "planet_myrmeku_seal_colony" days = -1 }
-			planet_event = {
-				id = colony.9365
-				days = 720
-				random = 30
-			}
+			planet_event = { id = colony.9365 days = 720 random = 30 }
 		}
 	}
-
 	option = { # The Upgrades Do Nothing
 		name = colony.9360.b
 		custom_tooltip = colony.9360.b.tt
 		hidden_effect = {
 			remove_modifier = "planet_myrmeku_attacks"
 			add_modifier = { modifier = "planet_myrmeku_upgrade_robots" days = -1 }
-			planet_event = {
-				id = colony.9365
-				days = 180
-				random = 30
-			}
+			planet_event = { id = colony.9365 days = 180 random = 30 }
 		}
 	}
-
 	option = { # Pest Control
 		name = colony.9360.c
 		custom_tooltip = colony.9360.c.tt
@@ -6875,14 +6152,9 @@ planet_event = {
 			remove_modifier = "planet_myrmeku_attacks"
 			add_modifier = { modifier = "planet_myrmeku_pest_control" days = -1 }
 			set_planet_flag = "myrmeku_pest_control"
-			planet_event = {
-				id = colony.9365
-				days = 180
-				random = 30
-			}
+			planet_event = { id = colony.9365 days = 180 random = 30 }
 		}
 	}
-
 	option = { # The Harvest
 		name = colony.9360.d.org_repro
 		custom_tooltip = colony.9360.d.tt
@@ -6901,14 +6173,9 @@ planet_event = {
 			remove_modifier = "planet_myrmeku_attacks"
 			add_modifier = { modifier = "planet_myrmeku_pest_control" days = -1 }
 			set_planet_flag = "myrmeku_harvest"
-			planet_event = {
-				id = colony.9365
-				days = 360
-				random = 30
-			}
+			planet_event = { id = colony.9365 days = 360 random = 30 }
 		}
 	}
-
 	option = { # Nuclear Option
 		name = colony.9360.e.purifier
 		custom_tooltip = colony.9360.e.tt
@@ -6929,17 +6196,14 @@ planet_event = {
 planet_event = {
 	id = colony.9365
 	title = colony.9365.desc
-
 	desc = {
 		trigger = { has_modifier = "planet_myrmeku_seal_colony" }
 		text = colony.9365.desc.seal_colony
 	}
-
 	desc = {
 		trigger = { has_modifier = "planet_myrmeku_upgrade_robots" }
 		text = colony.9365.desc.upgrade_robots
 	}
-
 	desc = {
 		trigger = {
 			has_modifier = "planet_myrmeku_pest_control"
@@ -6947,7 +6211,6 @@ planet_event = {
 		}
 		text = colony.9365.desc.pest_control
 	}
-
 	desc = {
 		trigger = {
 			has_modifier = "planet_myrmeku_pest_control"
@@ -6967,7 +6230,6 @@ planet_event = {
 		NOT = { is_planet_class = pc_nuked }
 		owner = { has_country_flag = myrmeku_flag@root }
 	}
-
 	option = {
 		name = colony.9365.a
 		if = {
@@ -6981,11 +6243,7 @@ planet_event = {
 			}
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.9375
-				days = 90
-				random = 15
-			}
+			planet_event = { id = colony.9375 days = 90 random = 15 }
 		}
 	}
 }
@@ -7006,7 +6264,6 @@ planet_event = {
 		NOT = { is_planet_class = pc_nuked }
 		owner = { has_country_flag = myrmeku_flag@root }
 	}
-
 	option = {
 		name = colony.9370.a
 		hidden_effect = {
@@ -7036,7 +6293,6 @@ planet_event = {
 		NOT = { is_planet_class = pc_nuked }
 		owner = { has_country_flag = myrmeku_flag@root }
 	}
-
 	option = { # Resource Diversion
 		name = colony.9375.a
 		custom_tooltip = colony.9375.a.tt
@@ -7058,7 +6314,6 @@ planet_event = {
 		}
 		owner = { end_event_chain = myrmeku_chain }
 	}
-
 	option = { # Special Research Project
 		name = colony.9375.b
 		enable_special_project = { name = MYRMEKU_STUDY_PROJECT owner = root.owner }
@@ -7089,7 +6344,6 @@ planet_event = {
 		remove_modifier = "planet_myrmeku_upgrade_robots"
 		remove_modifier = "planet_myrmeku_pest_control"
 	}
-
 	option = {
 		name = colony.9380.a
 		tooltip = { add_deposit = d_myrmeku_power_farms }
@@ -7150,7 +6404,6 @@ planet_event = {
 	immediate = {
 		set_global_flag = b_world_intrudes
 	}
-
 	option = {
 		name = DISCONCERTING
 		owner = {
@@ -7165,11 +6418,7 @@ planet_event = {
 		hidden_effect = {
 			set_planet_flag = dportal_closed
 			owner = {
-				country_event = {
-					id = colony.9805
-					days = 900
-					random = 100
-				}
+				country_event = { id = colony.9805 days = 900 random = 100 }
 			}
 		}
 	}
@@ -7182,26 +6431,16 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_physics_research
 	show_sound = event_laboratory_sound
-
 	option = {
 		name = colony.9805.a
 		hidden_effect = {
-			country_event = {
-				id = colony.9810
-				days = 200
-				random = 30
-			}
+			country_event = { id = colony.9810 days = 200 random = 30 }
 		}
 	}
-
 	option = {
 		name = colony.9805.b
 		hidden_effect = {
-			country_event = {
-				id = colony.9810
-				days = 150
-				random = 30
-			}
+			country_event = { id = colony.9810 days = 150 random = 30 }
 		}
 	}
 }
@@ -7210,17 +6449,14 @@ country_event = {
 country_event = {
 	id = colony.9810
 	title = "colony.9810.name"
-
 	desc = {
 		trigger = { is_machine_empire = yes }
 		text = "colony.9810.desc.robot"
 	}
-
 	desc = {
 		trigger = { is_hive_empire = yes }
 		text = "colony.9810.desc.hive"
 	}
-
 	desc = {
 		trigger = { is_regular_empire = yes }
 		text = "colony.9810.desc"
@@ -7272,7 +6508,6 @@ country_event = {
 		}
 		begin_event_chain = { event_chain = negative_mass target = root }
 	}
-
 	option = {
 		name = FASCINATING
 		add_modifier = { modifier = harvesting_negative_mass days = -1 }
@@ -7280,11 +6515,7 @@ country_event = {
 			begin_event_chain = { event_chain = negative_mass target = root }
 		}
 		hidden_effect = {
-			country_event = {
-				id = colony.9815
-				days = 360
-				random = 360
-			}
+			country_event = { id = colony.9815 days = 360 random = 360 }
 		}
 	}
 }
@@ -7293,17 +6524,14 @@ country_event = {
 country_event = {
 	id = colony.9815
 	title = "colony.9815.name"
-
 	desc = {
 		trigger = { is_machine_empire = yes }
 		text = "colony.9815.desc.robot"
 	}
-
 	desc = {
 		trigger = { is_hive_empire = yes }
 		text = "colony.9815.desc.hive"
 	}
-
 	desc = {
 		trigger = { is_regular_empire = yes }
 		text = "colony.9815.desc"
@@ -7330,7 +6558,6 @@ country_event = {
 			set_ambient_object_flag = b_world_portal
 		}
 	}
-
 	option = {
 		name = BATTLESTATIONS
 		create_country = {
@@ -7395,17 +6622,14 @@ country_event = {
 country_event = {
 	id = colony.9820
 	title = "colony.9820.name"
-
 	desc = {
 		trigger = { is_machine_empire = yes }
 		text = "colony.9820.desc.robot"
 	}
-
 	desc = {
 		trigger = { is_hive_empire = yes }
 		text = "colony.9820.desc.hive"
 	}
-
 	desc = {
 		trigger = { is_regular_empire = yes }
 		text = "colony.9820.desc"
@@ -7426,7 +6650,6 @@ country_event = {
 			has_relation_flag = { who = root flag = B_world_relation }
 		}
 	}
-
 	option = {
 		trigger = { is_machine_empire = no }
 		name = ONSCREEN
@@ -7434,7 +6657,6 @@ country_event = {
 			country_event = { id = colony.9821 }
 		}
 	}
-
 	option = {
 		trigger = { is_machine_empire = yes }
 		name = colony.9820.a.robot
@@ -7448,17 +6670,14 @@ country_event = {
 country_event = {
 	id = colony.9821
 	title = colony.9821.name
-
 	desc = {
 		trigger = { is_machine_empire = yes }
 		text = "colony.9821.desc.robot"
 	}
-
 	desc = {
 		trigger = { is_hive_empire = yes }
 		text = "colony.9821.desc.hive"
 	}
-
 	desc = {
 		trigger = { is_regular_empire = yes }
 		text = "colony.9821.desc"
@@ -7466,7 +6685,6 @@ country_event = {
 
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:cloned_physicist
 		planet_background = root.owner
@@ -7474,49 +6692,42 @@ country_event = {
 		city_level = root.owner
 		room = root.owner
 	}
-
 	option = {
 		name = colony.9821.a
 		response_text = colony.9821.a.response
 		trigger = { is_regular_empire = yes }
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = colony.9821.a.robot
 		response_text = colony.9821.a.response.robot
 		trigger = { is_machine_empire = yes }
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = colony.9821.a
 		response_text = colony.9821.a.response.hive
 		trigger = { is_hive_empire = yes }
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = colony.9821.b
 		trigger = { is_regular_empire = yes }
 		response_text = colony.9821.b.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = colony.9821.b.robot
 		trigger = { is_machine_empire = yes }
 		response_text = colony.9821.b.response.robot
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = colony.9821.b
 		response_text = colony.9821.b.response.hive
 		trigger = { is_hive_empire = yes }
 		is_dialog_only = yes
 	}
-
 	option = {
 		trigger = { is_machine_empire = no }
 		name = colony.9821.c
@@ -7524,7 +6735,6 @@ country_event = {
 			country_event = { id = colony.9822 }
 		}
 	}
-
 	option = {
 		trigger = { is_machine_empire = yes }
 		name = colony.9821.c.robot
@@ -7538,17 +6748,14 @@ country_event = {
 country_event = {
 	id = colony.9822
 	title = colony.9821.name
-
 	desc = {
 		trigger = { is_machine_empire = yes }
 		text = "colony.9822.desc.robot"
 	}
-
 	desc = {
 		trigger = { is_hive_empire = yes }
 		text = "colony.9822.desc.hive"
 	}
-
 	desc = {
 		trigger = { is_regular_empire = yes }
 		text = "colony.9822.desc"
@@ -7556,7 +6763,6 @@ country_event = {
 
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:cloned_physicist
 		planet_background = root.owner
@@ -7564,40 +6770,25 @@ country_event = {
 		city_level = root.owner
 		room = root.owner
 	}
-
 	option = {
 		trigger = { is_regular_empire = yes }
 		name = colony.9822.a
 		hidden_effect = {
-			country_event = {
-				id = colony.9840
-				days = 360
-				random = 20
-			}
+			country_event = { id = colony.9840 days = 360 random = 20 }
 		}
 	}
-
 	option = {
 		trigger = { is_machine_empire = yes }
 		name = colony.9822.a.robot
 		hidden_effect = {
-			country_event = {
-				id = colony.9840
-				days = 360
-				random = 20
-			}
+			country_event = { id = colony.9840 days = 360 random = 20 }
 		}
 	}
-
 	option = {
 		trigger = { is_hive_empire = yes }
 		name = colony.9822.a.hive
 		hidden_effect = {
-			country_event = {
-				id = colony.9840
-				days = 360
-				random = 20
-			}
+			country_event = { id = colony.9840 days = 360 random = 20 }
 		}
 	}
 }
@@ -7606,17 +6797,14 @@ country_event = {
 country_event = {
 	id = colony.9840
 	title = "colony.9840.name"
-
 	desc = {
 		trigger = { is_machine_empire = yes }
 		text = "colony.9840.desc.robot"
 	}
-
 	desc = {
 		trigger = { is_hive_empire = yes }
 		text = "colony.9840.desc.hive"
 	}
-
 	desc = {
 		trigger = { is_regular_empire = yes }
 		text = "colony.9840.desc"
@@ -7641,7 +6829,9 @@ country_event = {
 		start_situation = {
 			type = situation_negative_mass
 			target = home_planet
-			effect = { set_situation_approach = approach_observe_nmass }
+			effect = {
+				set_situation_approach = approach_observe_nmass
+			}
 		}
 	}
 
@@ -7693,10 +6883,11 @@ country_event = {
 		start_situation = {
 			type = situation_negative_mass
 			target = home_planet
-			effect = { set_situation_approach = approach_plunder_nmass }
+			effect = {
+				set_situation_approach = approach_plunder_nmass
+			}
 		}
 	}
-
 	option = { # Save them
 		name = {
 			trigger = { is_machine_empire = yes }
@@ -7737,7 +6928,9 @@ country_event = {
 					count = 6
 					create_pop_group = {
 						species = root.species
-						effect = { save_event_target_as = b_worlder_pop_group }
+						effect = {
+							save_event_target_as = b_worlder_pop_group
+						}
 					}
 					event_target:b_worlder_pop_group = { set_pop_group_flag = b_worlder }
 				}
@@ -7774,17 +6967,14 @@ country_event = {
 country_event = {
 	id = colony.9850
 	title = "colony.9850.name"
-
 	desc = {
 		trigger = { is_machine_empire = yes }
 		text = "colony.9850.desc.robot"
 	}
-
 	desc = {
 		trigger = { is_hive_empire = yes }
 		text = "colony.9850.desc.hive"
 	}
-
 	desc = {
 		trigger = { is_regular_empire = yes }
 		text = "colony.9850.desc"
@@ -7947,7 +7137,9 @@ country_event = {
 			create_pop_group = {
 				species = root.species
 				size = 1800 # Vfix opt
-				effect = { set_pop_group_flag = b_worlder }
+				effect = {
+					set_pop_group_flag = b_worlder
+				}
 			}
 			every_owned_pop_group = {
 				limit = { has_pop_group_flag = b_worlder }
@@ -7962,7 +7154,6 @@ country_event = {
 			add_modifier = { modifier = b_world_saved years = 10 }
 		}
 	}
-
 	option = {
 		name = colony.9850.a
 		end_event_chain = negative_mass
@@ -7987,7 +7178,6 @@ country_event = {
 	immediate = {
 		event_target:b_world_portal = { destroy_ambient_object = this }
 	}
-
 	option = {
 		name = colony.9851.a
 		end_event_chain = negative_mass
@@ -8012,7 +7202,6 @@ situation_event = {
 		current_situation_approach = approach_save_b_world
 		owner = { is_gestalt = no }
 	}
-
 	option = {
 		name = colony.9855.a
 		add_situation_progress = 20
@@ -8020,17 +7209,13 @@ situation_event = {
 			add_modifier = { modifier = appeased_populace years = 5 }
 		}
 	}
-
 	option = {
-		allow = {
-			owner = { is_egalitarian = no }
-		}
+		allow = { owner = { is_egalitarian = no } }
 		name = colony.9855.b
 		target = {
 			add_modifier = { modifier = angered_populace years = 5 }
 		}
 	}
-
 	option = {
 		name = colony.9855.c
 		add_situation_progress = 5
@@ -8050,7 +7235,6 @@ situation_event = {
 		current_situation_approach = approach_save_b_world
 		owner = { is_gestalt = no }
 	}
-
 	option = {
 		allow = {
 			owner = {
@@ -8064,17 +7248,12 @@ situation_event = {
 			}
 		}
 		name = colony.9860.a
-		owner = {
-			add_resource = { unity = -150 }
-		}
+		owner = { add_resource = { unity = -150 } }
 	}
-
 	option = {
 		name = {
 			trigger = {
-				NOT = {
-					target = { has_modifier = stolen_great_work }
-				}
+				NOT = { target = { has_modifier = stolen_great_work } }
 			}
 			text = colony.9860.b
 		}
@@ -8130,12 +7309,10 @@ situation_event = {
 	id = colony.9870
 	title = colony.9870.name
 	situation = this
-
 	desc = {
 		trigger = { current_situation_approach = approach_save_b_world }
 		text = colony.9870.desc.helped
 	}
-
 	desc = {
 		trigger = {
 			NOT = { current_situation_approach = approach_save_b_world }
@@ -8150,18 +7327,15 @@ situation_event = {
 	trigger = {
 		situation_progress < 100
 	}
-
 	option = { # Redouble efforts
 		trigger = { current_situation_approach = approach_save_b_world }
 		name = colony.9870.a
 		custom_tooltip = colony.9870.a.tooltip
 		set_situation_flag = redoubled_efforts
 	}
-
 	option = { # Everything is fine
 		name = colony.9870.b
 	}
-
 	option = { # Regret
 		name = colony.9870.c
 		trigger = {
@@ -8181,14 +7355,12 @@ situation_event = {
 	desc = colony.9875.desc
 	is_triggered_only = yes
 	situation = this
-
 	picture = {
 		trigger = {
 			owner = { is_hive_empire = yes }
 		}
 		picture = GFX_evt_hive_mind
 	}
-
 	picture = {
 		trigger = {
 			owner = { is_machine_empire = yes }
@@ -8202,7 +7374,6 @@ situation_event = {
 		current_situation_approach = approach_save_b_world
 		owner = { is_gestalt = yes }
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -8221,7 +7392,6 @@ situation_event = {
 		}
 		add_situation_progress = 20
 	}
-
 	option = {
 		name = colony.9875.b
 		add_situation_progress = -5
@@ -8235,14 +7405,12 @@ situation_event = {
 	desc = colony.9880.desc
 	is_triggered_only = yes
 	situation = this
-
 	picture = {
 		trigger = {
 			owner = { is_hive_empire = yes }
 		}
 		picture = GFX_evt_hive_mind
 	}
-
 	picture = {
 		trigger = {
 			owner = { is_machine_empire = yes }
@@ -8270,7 +7438,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
 			owner = { is_machine_empire = yes }
@@ -8304,7 +7471,6 @@ situation_event = {
 		}
 		add_situation_progress = 20
 	}
-
 	option = {
 		trigger = {
 			owner = { is_hive_empire = yes }
@@ -8338,7 +7504,6 @@ situation_event = {
 		}
 		add_situation_progress = 20
 	}
-
 	option = {
 		trigger = {
 			owner = { is_hive_empire = yes }
@@ -8371,7 +7536,6 @@ situation_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
 			owner = { is_machine_empire = yes }
@@ -8404,7 +7568,6 @@ situation_event = {
 			}
 		}
 	}
-
 	after = {
 		if = {
 			limit = {
@@ -8448,12 +7611,10 @@ situation_event = {
 country_event = {
 	id = colony.9885
 	title = colony.9821.name
-
 	desc = {
 		trigger = { is_hive_empire = yes }
 		text = colony.9885.desc.hive
 	}
-
 	desc = {
 		trigger = { is_machine_empire = yes }
 		text = colony.9885.desc.machine
@@ -8461,7 +7622,6 @@ country_event = {
 
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = root.ruler
 		planet_background = root.owner
@@ -8469,7 +7629,6 @@ country_event = {
 		city_level = root.owner
 		room = root.owner
 	}
-
 	trigger = {
 		has_country_flag = b_world_invasion
 		from = { is_same_value = event_target:dominated_drones }
@@ -8478,19 +7637,16 @@ country_event = {
 	immediate = {
 		remove_country_flag = b_world_invasion
 	}
-
 	option = {
 		trigger = { is_hive_empire = yes }
 		name = colony.9885.a.hive
 		custom_tooltip = colony.9885.a.hive.tooltip
 	}
-
 	option = {
 		trigger = { is_machine_empire = yes }
 		name = colony.9885.a.machine
 		custom_tooltip = colony.9885.a.machine.tooltip
 	}
-
 	option = {
 		trigger = { is_hive_empire = yes has_country_flag = calmed_b_world }
 		name = colony.9885.b.hive
@@ -8499,7 +7655,6 @@ country_event = {
 			add_situation_progress = -15
 		}
 	}
-
 	option = {
 		trigger = { is_machine_empire = yes has_country_flag = calmed_b_world }
 		name = colony.9885.b.machine
@@ -8551,7 +7706,6 @@ country_event = {
 			set_situation_approach = approach_save_b_world
 		}
 	}
-
 	option = {
 		name = colony.9890.a
 		hidden_effect = {
@@ -8623,7 +7777,6 @@ planet_event = {
 		set_planet_flag = colony_event
 		set_global_flag = dimensional_prison_colony
 	}
-
 	option = {
 		name = colony.9900.a
 		allow = {
@@ -8631,31 +7784,20 @@ planet_event = {
 				resource_stockpile_compare = { resource = energy value >= 500 }
 			}
 		}
-		owner = {
-			add_resource = { energy = -500 }
-		}
+		owner = { add_resource = { energy = -500 } }
 		custom_tooltip = colony.9900.a.tooltip
 		add_modifier = { modifier = "reassured_tracking" days = -1 }
 		hidden_effect = {
-			planet_event = {
-				id = colony.9905
-				days = 180
-				random = 180
-			}
+			planet_event = { id = colony.9905 days = 180 random = 180 }
 			random_owned_pop_group = { kill_single_pop = yes }
 		}
 	}
-
 	option = {
 		name = colony.9900.b
 		custom_tooltip = colony.9900.b.tooltip
 		add_modifier = { modifier = "collective_autophobia" days = -1 }
 		hidden_effect = {
-			planet_event = {
-				id = colony.9905
-				days = 360
-				random = 360
-			}
+			planet_event = { id = colony.9905 days = 360 random = 360 }
 			random_owned_pop_group = { kill_single_pop = yes }
 		}
 	}
@@ -8666,12 +7808,10 @@ planet_event = {
 planet_event = {
 	id = colony.9905
 	title = "colony.9905.name"
-
 	desc = {
 		trigger = { has_modifier = reassured_tracking }
 		text = colony.9905.desc.a
 	}
-
 	desc = {
 		trigger = { has_modifier = collective_autophobia }
 		text = colony.9905.desc.b
@@ -8682,7 +7822,6 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.9905.a
 		custom_tooltip = colony.9905.a.tooltip
@@ -8704,15 +7843,10 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.9910.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.9915
-				days = 60
-				random = 60
-			}
+			planet_event = { id = colony.9915 days = 60 random = 60 }
 		}
 	}
 }
@@ -8734,13 +7868,11 @@ planet_event = {
 		remove_modifier = reassured_tracking
 		remove_modifier = collective_autophobia
 	}
-
 	option = {
 		name = colony.9915.a
 		custom_tooltip = colony.9915.a.tooltip
 		add_deposit = d_stasis_prison
 	}
-
 	option = {
 		name = colony.9915.b
 		trigger = { owner = { is_gestalt = no } }
@@ -8764,19 +7896,9 @@ planet_event = {
 						add = 15
 						owner = { is_xenophobe = yes }
 					}
-					planet_event = {
-						id = colony.9920
-						days = 60
-						random = 60
-					}
+					planet_event = { id = colony.9920 days = 60 random = 60 }
 				}
-				50 = {
-					planet_event = {
-						id = colony.9925
-						days = 60
-						random = 60
-					}
-				}
+				50 = { planet_event = { id = colony.9925 days = 60 random = 60 } }
 				25 = {
 					modifier = {
 						add = 15
@@ -8786,16 +7908,11 @@ planet_event = {
 						add = -15
 						owner = { is_xenophobe = yes }
 					}
-					planet_event = {
-						id = colony.9930
-						days = 60
-						random = 60
-					}
+					planet_event = { id = colony.9930 days = 60 random = 60 }
 				}
 			}
 		}
 	}
-
 	option = {
 		name = colony.9915.c
 		trigger = {
@@ -8822,7 +7939,10 @@ planet_event = {
 				name = random
 				class = random_non_machine
 				portrait = random
-				traits = { trait = trait_unruly trait = trait_communal }
+				traits = {
+					trait = trait_unruly
+					trait = trait_communal
+				}
 				homeworld = root
 				effect = {
 					if = {
@@ -8841,7 +7961,6 @@ planet_event = {
 			create_pop_group = { species = last_created_species size = 200 }
 		}
 	}
-
 	option = {
 		name = colony.9915.d
 		trigger = {
@@ -8879,7 +7998,6 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.9920.a
 		add_modifier = { modifier = freed_stasis_criminals years = 5 }
@@ -8888,7 +8006,10 @@ planet_event = {
 				name = random
 				class = random_non_machine
 				portrait = random
-				traits = { trait = trait_unruly trait = trait_communal }
+				traits = {
+					trait = trait_unruly
+					trait = trait_communal
+				}
 				homeworld = root
 			}
 			create_pop_group = { species = last_created_species size = 400 }
@@ -8907,7 +8028,6 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.9925.a
 		add_modifier = { modifier = freed_stasis_criminals years = 5 }
@@ -8917,7 +8037,10 @@ planet_event = {
 				name = random
 				class = random_non_machine
 				portrait = random
-				traits = { trait = trait_unruly trait = trait_communal }
+				traits = {
+					trait = trait_unruly
+					trait = trait_communal
+				}
 				homeworld = root
 			}
 			create_pop_group = { species = last_created_species size = 400 }
@@ -8936,7 +8059,6 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.9930.a
 		add_modifier = { modifier = freed_stasis_dissidents days = -1 }
@@ -8945,7 +8067,10 @@ planet_event = {
 				name = random
 				class = random_non_machine
 				portrait = random
-				traits = { trait = trait_unruly trait = trait_communal }
+				traits = {
+					trait = trait_unruly
+					trait = trait_communal
+				}
 				homeworld = root
 			}
 			create_pop_group = { species = last_created_species size = 400 }
@@ -9002,7 +8127,6 @@ planet_event = {
 			begin_event_chain = { event_chain = stratovent_world_chain target = this }
 		}
 	}
-
 	option = { # Investigate the vents
 		name = "colony.9950.a"
 		owner = {
@@ -9012,7 +8136,6 @@ planet_event = {
 		}
 		enable_special_project = { name = "STRATOVENTS_PROJECT" owner = root.owner }
 	}
-
 	option = { # ignore the vents
 		name = "colony.9950.b"
 		hidden_effect = {
@@ -9038,34 +8161,22 @@ planet_event = {
 			remove_modifier = "stratovents"
 		}
 	}
-
 	option = { # TOURISM
 		name = colony.9955.a
 		trigger = { owner = { is_gestalt = no } }
 		add_modifier = { modifier = "stratovent_world_modifier_tourism" }
 		hidden_effect = {
-			planet_event = {
-				id = colony.9960
-				days = 700
-				random = 100
-			}
+			planet_event = { id = colony.9960 days = 700 random = 100 }
 		}
 	}
-
 	option = { # REFINING
 		name = colony.9955.b
 		trigger = {
-			NOT = {
-				owner = { has_civic = civic_environmentalist }
-			}
+			NOT = { owner = { has_civic = civic_environmentalist } }
 		}
 		add_modifier = { modifier = "stratovent_world_modifier_refining" }
 		hidden_effect = {
-			planet_event = {
-				id = colony.9965
-				days = 700
-				random = 100
-			}
+			planet_event = { id = colony.9965 days = 700 random = 100 }
 		}
 	}
 }
@@ -9081,7 +8192,6 @@ planet_event = {
 	trackable = yes
 	event_chain = stratovent_world_chain
 	is_triggered_only = yes
-
 	option = { # BUILD
 		name = colony.9960.a
 		allow = {
@@ -9091,15 +8201,11 @@ planet_event = {
 		}
 		remove_modifier = "stratovent_world_modifier_tourism"
 		add_modifier = { modifier = "stratovent_world_modifier_tourism_boost" }
-		owner = {
-			add_resource = { alloys = -200 }
-		}
+		owner = { add_resource = { alloys = -200 } }
 	}
-
 	option = { # IGNORE
 		name = colony.9960.b
 	}
-
 	after = {
 		owner = { end_event_chain = stratovent_world_chain }
 	}
@@ -9116,7 +8222,6 @@ planet_event = {
 	trackable = yes
 	event_chain = stratovent_world_chain
 	is_triggered_only = yes
-
 	option = { # AUTHORIZE USE OF EXPLOSIVES
 		name = colony.9965.a
 		hidden_effect = {
@@ -9126,12 +8231,10 @@ planet_event = {
 			}
 		}
 	}
-
 	option = { # LEAVE THE VENTS BE
 		name = colony.9965.b
 		owner = { end_event_chain = stratovent_world_chain }
 	}
-
 	option = { # AUTHORIZE EXPLOSIVES (MINING GUILDS)
 		name = colony.9965.c
 		trigger = {
@@ -9156,7 +8259,6 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		add_planet_devastation = 10
@@ -9179,7 +8281,6 @@ planet_event = {
 	trackable = yes
 	event_chain = stratovent_world_chain
 	is_triggered_only = yes
-
 	option = {
 		name = UNFORTUNATE
 		add_planet_devastation = 20
@@ -9249,9 +8350,7 @@ planet_event = {
 	}
 
 	trigger = {
-		NOT = {
-			owner = { has_ascension_perk = ap_mastery_of_nature }
-		}
+		NOT = { owner = { has_ascension_perk = ap_mastery_of_nature } }
 		OR = {
 			is_planet_class = pc_alpine
 			is_planet_class = pc_tundra
@@ -9262,7 +8361,6 @@ planet_event = {
 	immediate = {
 		save_event_target_as = flooding_planet
 	}
-
 	option = {
 		name = colony.7230.a
 		custom_tooltip = "colony.7230.a.tooltip"
@@ -9274,15 +8372,10 @@ planet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = colony.7230.b
 		hidden_effect = {
-			planet_event = {
-				id = colony.7245
-				days = 360
-				random = 80
-			}
+			planet_event = { id = colony.7245 days = 360 random = 80 }
 		}
 	}
 }
@@ -9296,20 +8389,14 @@ planet_event = {
 	location = from
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.7235.a
 		add_modifier = { modifier = "active_melting" days = -1 }
 		add_modifier = { modifier = "halted_production" days = -1 }
 		hidden_effect = {
-			planet_event = {
-				id = colony.7240
-				days = 360
-				random = 60
-			}
+			planet_event = { id = colony.7240 days = 360 random = 60 }
 		}
 	}
-
 	option = {
 		name = colony.7235.b
 		custom_tooltip = "colony.7235.b.tooltip"
@@ -9329,19 +8416,13 @@ planet_event = {
 	location = from
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.7240.a
 		add_blocker = { type = d_floodplains blocked_deposit = random }
 		hidden_effect = {
-			planet_event = {
-				id = colony.7247
-				days = 360
-				random = 60
-			}
+			planet_event = { id = colony.7247 days = 360 random = 60 }
 		}
 	}
-
 	option = {
 		name = colony.7240.b
 		trigger = {
@@ -9370,7 +8451,6 @@ planet_event = {
 	location = event_target:flooding_planet
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.7245.a
 		add_blocker = { type = d_floodplains blocked_deposit = random }
@@ -9378,11 +8458,7 @@ planet_event = {
 			random_owned_pop_group = { kill_single_pop = yes }
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.7247
-				days = 360
-				random = 60
-			}
+			planet_event = { id = colony.7247 days = 360 random = 60 }
 		}
 	}
 }
@@ -9401,30 +8477,16 @@ planet_event = {
 		remove_modifier = active_melting
 		remove_modifier = halted_production
 	}
-
 	option = {
 		name = colony.7247.a
 		add_deposit = d_ore_rich_caverns
 		hidden_effect = {
 			random_list = {
-				60 = {
-					planet_event = {
-						id = colony.7250
-						days = 240
-						random = 60
-					}
-				}
-				40 = {
-					planet_event = {
-						id = colony.7255
-						days = 240
-						random = 60
-					}
-				}
+				60 = { planet_event = { id = colony.7250 days = 240 random = 60 } }
+				40 = { planet_event = { id = colony.7255 days = 240 random = 60 } }
 			}
 		}
 	}
-
 	option = {
 		name = colony.7247.b
 		custom_tooltip = "colony.7247.b.tooltip"
@@ -9455,13 +8517,11 @@ planet_event = {
 		has_owner = yes
 		owner = { is_machine_empire = no }
 	}
-
 	option = {
 		name = colony.7250.a
 		random_owned_pop_group = { kill_single_pop = yes }
 		add_modifier = { modifier = "cruel_actions" years = 1 }
 	}
-
 	option = {
 		name = colony.7250.b
 		add_modifier = { modifier = "ancient_plague" years = 2 }
@@ -9477,7 +8537,6 @@ planet_event = {
 	location = event_target:flooding_planet
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.7255.a
 		add_deposit = d_crystalline_glacier
@@ -9493,7 +8552,6 @@ planet_event = {
 	location = event_target:flooding_planet
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.7260.a
 		remove_modifier = active_melting
@@ -9532,7 +8590,6 @@ planet_event = {
 			is_planet_class = pc_arctic
 		}
 	}
-
 	option = {
 		name = colony.7265.a
 		remove_modifier = active_melting
@@ -9581,7 +8638,6 @@ country_event = {
 	immediate = {
 		set_country_flag = friendly_desertlings
 	}
-
 	option = {
 		name = colony.7160.a
 		add_modifier = { modifier = "national_pets" years = 5 }
@@ -9633,7 +8689,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = colony.7165.a
 		owner = {
@@ -9644,24 +8699,11 @@ planet_event = {
 		}
 		hidden_effect = {
 			random_list = {
-				50 = {
-					planet_event = {
-						id = colony.7170
-						days = 180
-						random = 60
-					}
-				}
-				50 = {
-					planet_event = {
-						id = colony.7175
-						days = 180
-						random = 60
-					}
-				}
+				50 = { planet_event = { id = colony.7170 days = 180 random = 60 } }
+				50 = { planet_event = { id = colony.7175 days = 180 random = 60 } }
 			}
 		}
 	}
-
 	option = {
 		name = colony.7165.b
 		allow = {
@@ -9669,9 +8711,7 @@ planet_event = {
 				resource_stockpile_compare = { resource = energy value > 500 }
 			}
 		}
-		owner = {
-			add_resource = { energy = 1000 }
-		}
+		owner = { add_resource = { energy = 1000 } }
 		owner = {
 			random_owned_planet = {
 				limit = { has_planet_flag = desertling_target }
@@ -9698,39 +8738,23 @@ planet_event = {
 
 	trigger = {
 		has_owner = yes
-		NOT = {
-			owner = { has_country_flag = friendly_desertlings }
-		}
+		NOT = { owner = { has_country_flag = friendly_desertlings } }
 	}
 
 	immediate = {
 		set_planet_flag = rampant_desertlings
 		set_planet_flag = desertling_target
 	}
-
 	option = {
 		name = colony.7165.a
 		add_deposit = d_desertling_infestation
 		hidden_effect = {
 			random_list = {
-				50 = {
-					planet_event = {
-						id = colony.7170
-						days = 180
-						random = 60
-					}
-				}
-				50 = {
-					planet_event = {
-						id = colony.7175
-						days = 180
-						random = 60
-					}
-				}
+				50 = { planet_event = { id = colony.7170 days = 180 random = 60 } }
+				50 = { planet_event = { id = colony.7175 days = 180 random = 60 } }
 			}
 		}
 	}
-
 	option = {
 		name = colony.7165.b
 		allow = {
@@ -9738,9 +8762,7 @@ planet_event = {
 				resource_stockpile_compare = { resource = energy value > 500 }
 			}
 		}
-		owner = {
-			add_resource = { energy = 1000 }
-		}
+		owner = { add_resource = { energy = 1000 } }
 		add_deposit = d_alien_sanctuary
 	}
 }
@@ -9754,12 +8776,9 @@ planet_event = {
 	trackable = yes
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = colony.7170.a
-		owner = {
-			add_resource = { food = 1000 }
-		}
+		owner = { add_resource = { food = 1000 } }
 		owner = {
 			random_owned_planet = {
 				limit = { has_planet_flag = desertling_target }
@@ -9778,7 +8797,6 @@ planet_event = {
 	trackable = yes
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = colony.7175.a
 		owner = {
@@ -9789,7 +8807,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = colony.7175.b
 		custom_tooltip = colony.7175.b.tooltip
@@ -9864,34 +8881,15 @@ planet_event = {
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = colony_mod.31.a
 		add_modifier = { modifier = "recent_eruption" years = 1 }
 		custom_tooltip = eruption_report_tooltip
 		hidden_effect = {
 			random_list = {
-				33 = {
-					planet_event = {
-						id = colony_mod.32
-						days = 10
-						random = 5
-					}
-				}
-				33 = {
-					planet_event = {
-						id = colony_mod.33
-						days = 10
-						random = 5
-					}
-				}
-				33 = {
-					planet_event = {
-						id = colony_mod.34
-						days = 10
-						random = 5
-					}
-				}
+				33 = { planet_event = { id = colony_mod.32 days = 10 random = 5 } }
+				33 = { planet_event = { id = colony_mod.33 days = 10 random = 5 } }
+				33 = { planet_event = { id = colony_mod.34 days = 10 random = 5 } }
 			}
 		}
 	}
@@ -9909,7 +8907,6 @@ planet_event = {
 	immediate = {
 		add_planet_devastation = 12
 	}
-
 	option = {
 		name = WORRYING
 		tooltip = { add_planet_devastation = 12 }
@@ -9925,7 +8922,6 @@ planet_event = {
 	show_sound = event_air_raid_siren
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = REMARKABLE
 		owner = {
@@ -9942,7 +8938,6 @@ planet_event = {
 	show_sound = event_default
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = GOOD
 		# no effect
@@ -9950,6 +8945,7 @@ planet_event = {
 }
 
 ## A Court of Blossoms
+
 planet_event = {
 	id = colony.10000
 	title = "colony.10000.name"
@@ -9999,39 +8995,28 @@ planet_event = {
 		owner = { set_global_flag = court_of_blossoms }
 		set_planet_flag = colony_event
 	}
-
 	option = { # investigating further
 		name = colony.10000.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.10005
-				days = 15
-				random = 10
-			}
+			planet_event = { id = colony.10005 days = 15 random = 10 }
 		}
 		allow = {
 			owner = {
 				resource_stockpile_compare = { resource = energy value >= 100 }
 			}
 		}
-		owner = {
-			add_resource = { energy = -100 }
-		}
+		owner = { add_resource = { energy = -100 } }
 	}
-
 	option = { # ignore
 		name = colony.10000.b
 		hidden_effect = {
-			planet_event = {
-				id = colony.10010
-				days = 35
-				random = 40
-			}
+			planet_event = { id = colony.10010 days = 35 random = 40 }
 		}
 	}
 }
 
 ## A Dead Monster
+
 planet_event = {
 	id = colony.10005
 	title = "colony.10005.name"
@@ -10051,30 +9036,31 @@ planet_event = {
 				portrait = humanoid_hp_01
 				traits = random
 				homeworld = root
-				effect = { save_global_event_target_as = species_tamperion }
+				effect = {
+					save_global_event_target_as = species_tamperion
+				}
 			}
 			create_leader = {
 				class = commander
 				species = event_target:species_tamperion
 				name = NAME_Tamperion
-				effect = { exile_leader_as = tamperion save_event_target_as = tamperion }
+				effect = {
+					exile_leader_as = tamperion
+					save_event_target_as = tamperion
+				}
 			}
 		}
 	}
-
 	option = {
 		name = colony.10005.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.10015
-				days = 120
-				random = 40
-			}
+			planet_event = { id = colony.10015 days = 120 random = 40 }
 		}
 	}
 }
 
 ## Continued Disappearances
+
 planet_event = {
 	id = colony.10010
 	title = "colony.10010.name"
@@ -10083,44 +9069,24 @@ planet_event = {
 	show_sound = event_alien_nature
 	location = root
 	is_triggered_only = yes
-
 	option = { # investigating further
 		name = colony.10010.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.10005
-				days = 35
-				random = 40
-			}
+			planet_event = { id = colony.10005 days = 35 random = 40 }
 		}
 		allow = {
 			owner = {
 				resource_stockpile_compare = { resource = energy value >= 150 }
 			}
 		}
-		owner = {
-			add_resource = { energy = -150 }
-		}
+		owner = { add_resource = { energy = -150 } }
 	}
-
 	option = { # Getting either a good or bad final ending
 		name = colony.10010.b
 		hidden_effect = {
 			random_list = { # 60/40 chance for outcome, higher chance of bad ending because player chose to ignore
-				60 = {
-					planet_event = {
-						id = colony.10090
-						days = 90
-						random = 50
-					}
-				} # Bad ending
-				40 = {
-					planet_event = {
-						id = colony.10095
-						days = 90
-						random = 50
-					}
-				} # Good ending
+				60 = { planet_event = { id = colony.10090 days = 90 random = 50 } } # Bad ending
+				40 = { planet_event = { id = colony.10095 days = 90 random = 50 } } # Good ending
 			}
 		}
 	}
@@ -10133,7 +9099,6 @@ planet_event = {
 	desc = "colony.10015.desc"
 	diplomatic = yes
 	diplomatic_title = BLANK_STRING
-
 	picture_event_data = {
 		portrait = event_target:tamperion
 		room = wilderness_room
@@ -10141,32 +9106,27 @@ planet_event = {
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = colony.10015.a.question
 		is_dialog_only = yes
 		response_text = colony.10015.a.answer
 	}
-
 	option = {
 		name = colony.10015.b.question
 		is_dialog_only = yes
 		response_text = colony.10015.b.answer
 	}
-
 	option = {
 		name = colony.10015.c.question
 		is_dialog_only = yes
 		response_text = colony.10015.c.answer
 	}
-
 	option = { # Sending colonist to learn
 		name = colony.10015.a
 		hidden_effect = {
 			planet_event = { id = colony.10016 }
 		}
 	}
-
 	option = { # Do not send anyone
 		name = colony.10015.b
 		hidden_effect = {
@@ -10182,7 +9142,6 @@ planet_event = {
 	desc = "colony.10016.desc"
 	diplomatic = yes
 	diplomatic_title = BLANK_STRING
-
 	picture_event_data = {
 		portrait = event_target:tamperion
 		room = wilderness_room
@@ -10190,15 +9149,10 @@ planet_event = {
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = colony.10016.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.10025
-				days = 150
-				random = 40
-			}
+			planet_event = { id = colony.10025 days = 150 random = 40 }
 		}
 		owner = {
 			add_monthly_resource_mult = {
@@ -10218,7 +9172,6 @@ planet_event = {
 	desc = "colony.10017.desc"
 	diplomatic = yes
 	diplomatic_title = BLANK_STRING
-
 	picture_event_data = {
 		portrait = event_target:tamperion
 		room = wilderness_room
@@ -10226,15 +9179,10 @@ planet_event = {
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = colony.10017.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.10020
-				days = 150
-				random = 40
-			}
+			planet_event = { id = colony.10020 days = 150 random = 40 }
 		}
 		owner = {
 			add_monthly_resource_mult = {
@@ -10248,6 +9196,7 @@ planet_event = {
 }
 
 ## Tamperion attacks
+
 planet_event = {
 	id = colony.10020
 	title = "colony.10020.name"
@@ -10263,32 +9212,20 @@ planet_event = {
 			kill_pop_group = { pop_group = this percentage = 0.10 }
 		}
 	}
-
 	option = {
 		name = colony.10020.a
 		custom_tooltip = tamperion_kills_pops_tt
 		hidden_effect = {
 			random_list = { # 60/40 chance for outcome, slightly higher chance of bad ending because player breaks the law of Anathari
-				60 = {
-					planet_event = {
-						id = colony.10090
-						days = 90
-						random = 50
-					}
-				} # Bad ending
-				40 = {
-					planet_event = {
-						id = colony.10095
-						days = 90
-						random = 50
-					}
-				} # Good ending
+				60 = { planet_event = { id = colony.10090 days = 90 random = 50 } } # Bad ending
+				40 = { planet_event = { id = colony.10095 days = 90 random = 50 } } # Good ending
 			}
 		}
 	}
 }
 
 ## Sending colonist
+
 planet_event = {
 	id = colony.10025
 	title = "colony.10025.name"
@@ -10298,15 +9235,10 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.10025.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.10026
-				days = 15
-				random = 5
-			}
+			planet_event = { id = colony.10026 days = 15 random = 5 }
 		}
 	}
 }
@@ -10318,7 +9250,6 @@ planet_event = {
 	desc = "colony.10026.desc"
 	diplomatic = yes
 	diplomatic_title = BLANK_STRING
-
 	picture_event_data = {
 		portrait = event_target:tamperion
 		room = wilderness_room
@@ -10326,25 +9257,21 @@ planet_event = {
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = colony.10026.a.question
 		is_dialog_only = yes
 		response_text = colony.10026.a.answer
 	}
-
 	option = {
 		name = colony.10026.b.question
 		is_dialog_only = yes
 		response_text = colony.10026.b.answer
 	}
-
 	option = {
 		name = colony.10026.c.question
 		is_dialog_only = yes
 		response_text = colony.10026.c.answer
 	}
-
 	option = { # Issue special project
 		name = colony.10026.a
 		enable_special_project = { name = "A_CRYPTIC_ESSENCE_PROJECT" owner = root }
@@ -10357,7 +9284,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = { # Distrust Tamperion
 		name = colony.10026.b
 		hidden_effect = {
@@ -10375,6 +9301,7 @@ planet_event = {
 }
 
 ## A Seedling of Doubt
+
 planet_event = {
 	id = colony.10027
 	title = "colony.10027.name"
@@ -10384,33 +9311,26 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = { # Issue special project with higher cost
 		name = colony.10027.a
 		enable_special_project = { name = "THE_CRYPTIC_ESSENCE_PROJECT" owner = root }
 	}
-
 	option = {
 		name = colony.10027.b
 		hidden_effect = {
-			planet_event = {
-				id = colony.10030
-				days = 5
-				random = 10
-			}
+			planet_event = { id = colony.10030 days = 5 random = 10 }
 		}
 		allow = {
 			owner = {
 				resource_stockpile_compare = { resource = energy value >= 250 }
 			}
 		}
-		owner = {
-			add_resource = { energy = -250 }
-		}
+		owner = { add_resource = { energy = -250 } }
 	}
 }
 
 ## Colonists attack Tamperion
+
 planet_event = {
 	id = colony.10030
 	title = "colony.10030.name"
@@ -10420,7 +9340,6 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.10030.a
 		custom_tooltip = tamperion_kills_pops_tt
@@ -10445,26 +9364,15 @@ planet_event = {
 		}
 		hidden_effect = {
 			random_list = { # 50/50 chance for outcome
-				50 = {
-					planet_event = {
-						id = colony.10090
-						days = 90
-						random = 50
-					}
-				} # Bad ending
-				50 = {
-					planet_event = {
-						id = colony.10095
-						days = 90
-						random = 50
-					}
-				} # Good ending
+				50 = { planet_event = { id = colony.10090 days = 90 random = 50 } } # Bad ending
+				50 = { planet_event = { id = colony.10095 days = 90 random = 50 } } # Good ending
 			}
 		}
 	}
 }
 
 ## The Dark Immortal
+
 planet_event = {
 	id = colony.10035
 	title = "colony.10035.name"
@@ -10474,32 +9382,23 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.10035.a
 		custom_tooltip = colony.10035.a.tt
 		hidden_effect = {
-			planet_event = {
-				id = colony.10040
-				days = 15
-				random = 20
-			}
+			planet_event = { id = colony.10040 days = 15 random = 20 }
 		}
 	}
-
 	option = {
 		name = colony.10035.b
 		hidden_effect = {
-			planet_event = {
-				id = colony.10086
-				days = 15
-				random = 20
-			}
+			planet_event = { id = colony.10086 days = 15 random = 20 }
 		}
 	}
 }
 
 ## Trial of Bravery
+
 planet_event = {
 	id = colony.10040
 	title = "colony.10040.name"
@@ -10509,81 +9408,39 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.10040.a
-		trigger = {
-			owner = { is_militarist = no }
-		}
+		trigger = { owner = { is_militarist = no } }
 		hidden_effect = {
 			random_list = {
-				70 = {
-					planet_event = {
-						id = colony.10045
-						days = 1
-						random = 3
-					}
-				} # Success
-				30 = {
-					planet_event = {
-						id = colony.10047
-						days = 1
-						random = 3
-					}
-				} # Failure
+				70 = { planet_event = { id = colony.10045 days = 1 random = 3 } } # Success
+				30 = { planet_event = { id = colony.10047 days = 1 random = 3 } } # Failure
 			}
 		}
 	}
-
 	option = {
 		name = colony.10040.a.militarist
-		trigger = {
-			owner = { is_militarist = yes }
-		}
+		trigger = { owner = { is_militarist = yes } }
 		hidden_effect = {
 			random_list = {
-				95 = {
-					planet_event = {
-						id = colony.10045
-						days = 1
-						random = 3
-					}
-				} # Success
-				5 = {
-					planet_event = {
-						id = colony.10047
-						days = 1
-						random = 3
-					}
-				} # Failure
+				95 = { planet_event = { id = colony.10045 days = 1 random = 3 } } # Success
+				5 = { planet_event = { id = colony.10047 days = 1 random = 3 } } # Failure
 			}
 		}
 	}
-
 	option = {
 		name = colony.10040.b
 		hidden_effect = {
 			random_list = {
-				70 = {
-					planet_event = {
-						id = colony.10046
-						days = 1
-						random = 3
-					}
-				} # Success
-				30 = {
-					planet_event = {
-						id = colony.10047
-						days = 1
-						random = 3
-					}
-				} # Failure
+				70 = { planet_event = { id = colony.10046 days = 1 random = 3 } } # Success
+				30 = { planet_event = { id = colony.10047 days = 1 random = 3 } } # Failure
 			}
 		}
 	}
 }
 
 ## Succeeding the trial of bravery by trying to kill it
+
 planet_event = {
 	id = colony.10045
 	title = "colony.10045.name"
@@ -10593,7 +9450,6 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.10045.a
 		owner = {
@@ -10614,16 +9470,13 @@ planet_event = {
 		}
 		custom_tooltip = colony.10045.a.tt
 		hidden_effect = {
-			planet_event = {
-				id = colony.10050
-				days = 10
-				random = 20
-			}
+			planet_event = { id = colony.10050 days = 10 random = 20 }
 		}
 	}
 }
 
 ## Succeeding the trial of bravery by trying to trick
+
 planet_event = {
 	id = colony.10046
 	title = "colony.10046.name"
@@ -10633,7 +9486,6 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.10045.a
 		owner = {
@@ -10654,16 +9506,13 @@ planet_event = {
 		}
 		custom_tooltip = colony.10045.a.tt
 		hidden_effect = {
-			planet_event = {
-				id = colony.10050
-				days = 30
-				random = 20
-			}
+			planet_event = { id = colony.10050 days = 30 random = 20 }
 		}
 	}
 }
 
 ## Failing the Trial of Bravery
+
 planet_event = {
 	id = colony.10047
 	title = "colony.10047.name"
@@ -10673,20 +9522,16 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.10047.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.10085
-				days = 10
-				random = 20
-			}
+			planet_event = { id = colony.10085 days = 10 random = 20 }
 		}
 	}
 }
 
 ## The Trial of Wisdom
+
 planet_event = {
 	id = colony.10050
 	title = "colony.10050.name"
@@ -10696,31 +9541,22 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = { # failure
 		name = colony.10050.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.10055
-				days = 10
-				random = 20
-			}
+			planet_event = { id = colony.10055 days = 10 random = 20 }
 		}
 	}
-
 	option = { # success
 		name = colony.10050.b
 		hidden_effect = {
-			planet_event = {
-				id = colony.10060
-				days = 10
-				random = 20
-			}
+			planet_event = { id = colony.10060 days = 10 random = 20 }
 		}
 	}
 }
 
 ## Failing the Trial of Wisdom
+
 planet_event = {
 	id = colony.10055
 	title = "colony.10055.name"
@@ -10730,20 +9566,16 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.10047.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.10085
-				days = 10
-				random = 20
-			}
+			planet_event = { id = colony.10085 days = 10 random = 20 }
 		}
 	}
 }
 
 ## Succeeding the Trial of Wisdom
+
 planet_event = {
 	id = colony.10060
 	title = "colony.10060.name"
@@ -10753,7 +9585,6 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.10060.a
 		owner = {
@@ -10766,16 +9597,13 @@ planet_event = {
 		}
 		custom_tooltip = colony.10060.a.tt
 		hidden_effect = {
-			planet_event = {
-				id = colony.10065
-				days = 10
-				random = 20
-			}
+			planet_event = { id = colony.10065 days = 10 random = 20 }
 		}
 	}
 }
 
 ## The Trial of Sacrifice
+
 planet_event = {
 	id = colony.10065
 	title = "colony.10065.name"
@@ -10785,31 +9613,22 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = { # success
 		name = colony.10065.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.10070
-				days = 10
-				random = 20
-			}
+			planet_event = { id = colony.10070 days = 10 random = 20 }
 		}
 	}
-
 	option = { # failure
 		name = colony.10065.b
 		hidden_effect = {
-			planet_event = {
-				id = colony.10075
-				days = 10
-				random = 20
-			}
+			planet_event = { id = colony.10075 days = 10 random = 20 }
 		}
 	}
 }
 
 ## Succeeding the Trial of Sacrifice
+
 planet_event = {
 	id = colony.10070
 	title = "colony.10070.name"
@@ -10819,7 +9638,6 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.10070.a
 		owner = {
@@ -10831,16 +9649,13 @@ planet_event = {
 			}
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.10080
-				days = 5
-				random = 10
-			}
+			planet_event = { id = colony.10080 days = 5 random = 10 }
 		}
 	}
 }
 
 ## Failing the Trial of Sacrifice
+
 planet_event = {
 	id = colony.10075
 	title = "colony.10075.name"
@@ -10850,20 +9665,16 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.10047.a
 		hidden_effect = {
-			planet_event = {
-				id = colony.10085
-				days = 5
-				random = 10
-			}
+			planet_event = { id = colony.10085 days = 5 random = 10 }
 		}
 	}
 }
 
 ## Best ending, succeeding all trials
+
 planet_event = {
 	id = colony.10080
 	title = "colony.10080.name"
@@ -10873,7 +9684,6 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.10080.a
 		owner = {
@@ -10893,14 +9703,9 @@ planet_event = {
 			}
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.10081
-				days = 90
-				random = 40
-			}
+			planet_event = { id = colony.10081 days = 90 random = 40 }
 		}
 	}
-
 	option = {
 		name = colony.10080.b
 		owner = {
@@ -10918,16 +9723,13 @@ planet_event = {
 			}
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.10082
-				days = 90
-				random = 40
-			}
+			planet_event = { id = colony.10082 days = 90 random = 40 }
 		}
 	}
 }
 
 ## A grandiose success
+
 planet_event = {
 	id = colony.10081
 	title = "colony.10081.name"
@@ -10937,7 +9739,6 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.10081.a
 		add_modifier = { modifier = happy_anathari days = -1 }
@@ -10960,6 +9761,7 @@ planet_event = {
 }
 
 ## A Rain of Golden Petals
+
 planet_event = {
 	id = colony.10082
 	title = "colony.10082.name"
@@ -10969,13 +9771,13 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.10082.a
 	}
 }
 
 ## Failing at least one of the trials
+
 planet_event = {
 	id = colony.10085
 	title = "colony.10085.name"
@@ -10985,7 +9787,6 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = { # attacking the dark immortal
 		name = colony.10085.a
 		allow = {
@@ -10994,17 +9795,12 @@ planet_event = {
 			}
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.10086
-				days = 90
-				random = 40
-			}
+			planet_event = { id = colony.10086 days = 90 random = 40 }
 		}
 		owner = {
 			add_resource = { energy = -1000 }
 		}
 	}
-
 	option = { # becoming thralls
 		name = colony.10085.b
 		owner = {
@@ -11016,38 +9812,22 @@ planet_event = {
 			}
 		}
 		hidden_effect = {
-			planet_event = {
-				id = colony.10087
-				days = 90
-				random = 40
-			}
+			planet_event = { id = colony.10087 days = 90 random = 40 }
 		}
 	}
-
 	option = { # retreat back to colony
 		name = colony.10085.c
 		hidden_effect = {
 			random_list = { # chances of getting a good ending is higher since the player has at least tried to help the Anathari
-				30 = {
-					planet_event = {
-						id = colony.10090
-						days = 90
-						random = 50
-					}
-				} # Bad ending
-				70 = {
-					planet_event = {
-						id = colony.10095
-						days = 90
-						random = 50
-					}
-				} # Good ending
+				30 = { planet_event = { id = colony.10090 days = 90 random = 50 } } # Bad ending
+				70 = { planet_event = { id = colony.10095 days = 90 random = 50 } } # Good ending
 			}
 		}
 	}
 }
 
 ## War is the only answer
+
 planet_event = {
 	id = colony.10086
 	title = "colony.10086.name"
@@ -11057,7 +9837,6 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.10086.a
 		create_pop_group = { species = event_target:species_tamperion size = 500 }
@@ -11073,6 +9852,7 @@ planet_event = {
 }
 
 ## The way of the thralls
+
 planet_event = {
 	id = colony.10087
 	title = "colony.10087.name"
@@ -11082,7 +9862,6 @@ planet_event = {
 	location = root
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = colony.10087.a
 		add_planet_devastation = 50
@@ -11091,6 +9870,7 @@ planet_event = {
 }
 
 ## Bad final ending, 50% of population is being killed
+
 planet_event = {
 	id = colony.10090
 	title = "colony.10090.name"
@@ -11107,7 +9887,6 @@ planet_event = {
 			kill_pop_group = { pop_group = this percentage = 0.50 }
 		}
 	}
-
 	option = {
 		name = colony.10090.a
 		custom_tooltip = dark_immortal_kills_pops_tt
@@ -11123,6 +9902,7 @@ planet_event = {
 }
 
 ## Good final ending
+
 planet_event = {
 	id = colony.10095
 	title = "colony.10095.name"
@@ -11136,7 +9916,6 @@ planet_event = {
 	immediate = {
 		add_planet_devastation = 10
 	}
-
 	option = {
 		name = colony.10095.a
 		tooltip = { add_planet_devastation = 10 }
@@ -11159,4 +9938,3 @@ planet_event = {
 		add_modifier = { modifier = remnants_of_court_of_blossoms days = -1 }
 	}
 }
-

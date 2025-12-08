@@ -11,6 +11,7 @@ This file gathers credits referenced in the mod and in the workshop description.
 - Dr. Addiction — [Bug Fixes (workshop)](https://steamcommunity.com/workshop/filedetails/?id=2871620925) (mentioned as included).
 - SushiDragon — [Stellaris Fixes (workshop)](https://steamcommunity.com/workshop/filedetails/?id=3476603953) (mentioned as included).
 - v.kihot — [Stellaris Reforged: AI (workshop)](https://steamcommunity.com/workshop/filedetails/?id=3508502505) and [Stellaris Reforged: Base Fixes (workshop)](https://steamcommunity.com/workshop/filedetails/?id=3507171482) (mentioned).
+- 17blue17 (some syntax bugs shown by CWTools)
 
 ## Thanks / Inspiration / Mentions
 - WoodenPotatoes (WP) — credited as inspiration: [WP recommendation link](https://steamcommunity.com/id/WoodenPotatoes/recommended/281990) (mentioned in workshop description).

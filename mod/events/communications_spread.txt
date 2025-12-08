@@ -1,11 +1,11 @@
 ############################
-
 #
 # Spread of communications
 #
 # Written by Martin Anward
 #
 ############################
+
 namespace = communications_spread
 # Communications - neighbor | Fired by on_five_years_communication_spread_country
 country_event = {
@@ -20,8 +20,8 @@ country_event = {
 		is_country_type = default
 		any_neighbor_country = {
 			is_country_type = default
-			NOT = { is_same_empire = ROOT }
-			has_communications = ROOT
+			NOT = { is_same_empire = root }
+			has_communications = root
 			NOR = {
 				is_homicidal = yes
 				has_valid_civic = civic_inwards_perfection
@@ -31,13 +31,12 @@ country_event = {
 					is_country_type = default
 					is_country_type = fallen_empire
 				}
-				NOT = { is_same_empire = ROOT }
-				has_communications = PREV
-				NOT = { has_communications = ROOT }
+				NOT = { is_same_empire = root }
+				has_communications = prev
+				NOT = { has_communications = root }
 			}
 		}
 	}
-
 	weight_multiplier = {
 		factor = 1
 		modifier = {
@@ -79,13 +78,12 @@ country_event = {
 			}
 		}
 	}
-
 	immediate = {
 		random_neighbor_country = {
 			limit = {
 				is_country_type = default
-				NOT = { is_same_empire = ROOT }
-				has_communications = ROOT
+				NOT = { is_same_empire = root }
+				has_communications = root
 				NOR = {
 					is_homicidal = yes
 					has_valid_civic = civic_inwards_perfection
@@ -95,9 +93,9 @@ country_event = {
 						is_country_type = default
 						is_country_type = fallen_empire
 					}
-					NOT = { is_same_empire = ROOT }
-					has_communications = PREV
-					NOT = { has_communications = ROOT }
+					NOT = { is_same_empire = root }
+					has_communications = prev
+					NOT = { has_communications = root }
 				}
 			}
 			save_event_target_as = CommSpreader
@@ -107,16 +105,15 @@ country_event = {
 						is_country_type = default
 						is_country_type = fallen_empire
 					}
-					NOT = { is_same_empire = ROOT }
-					has_communications = PREV
-					NOT = { has_communications = ROOT }
+					NOT = { is_same_empire = root }
+					has_communications = prev
+					NOT = { has_communications = root }
 				}
 				save_event_target_as = contact_empire
 				establish_communications_no_message = root
 			}
 		}
 	}
-
 	option = {
 		name = "communications_spread.1.a"
 		custom_tooltip = communications_spread.1.tooltip
@@ -136,7 +133,6 @@ country_event = {
 	picture = GFX_evt_star_chart
 	show_sound = event_alien_signal
 	is_triggered_only = yes
-
 	option = {
 		name = "communications_spread.2.a"
 		custom_tooltip = communications_spread.2.tooltip
@@ -164,9 +160,9 @@ country_event = {
 				is_homicidal = yes
 				is_fanatic_xenophobe = yes
 				has_valid_civic = civic_inwards_perfection
-				is_same_empire = ROOT
+				is_same_empire = root
 			}
-			has_communications = ROOT
+			has_communications = root
 			OR = { # stops Scions spreading knowledge across the galaxy quite so much (FE can be anywhere, if you establish comms with the FE then you get them with the Scion, then you soon find out about the whole opposite side of the galaxy)
 				NOT = { has_origin = origin_scion }
 				any_neighbor_country = { has_communications = root }
@@ -176,13 +172,12 @@ country_event = {
 					is_country_type = default
 					is_country_type = fallen_empire
 				}
-				NOT = { is_same_empire = ROOT }
-				has_communications = PREV
-				NOT = { has_communications = ROOT }
+				NOT = { is_same_empire = root }
+				has_communications = prev
+				NOT = { has_communications = root }
 			}
 		}
 	}
-
 	weight_multiplier = {
 		factor = 1
 		modifier = { factor = 2 years_passed > 40 }
@@ -224,7 +219,6 @@ country_event = {
 			check_modifier_value = { modifier = intel_decryption_add value < 2 }
 		}
 	}
-
 	immediate = {
 		random_relation = {
 			limit = {
@@ -233,9 +227,9 @@ country_event = {
 					is_homicidal = yes
 					is_fanatic_xenophobe = yes
 					has_valid_civic = civic_inwards_perfection
-					is_same_empire = ROOT
+					is_same_empire = root
 				}
-				has_communications = ROOT
+				has_communications = root
 				OR = { # stops Scions spreading knowledge across the galaxy quite so much (FE can be anywhere, if you establish comms with the FE then you get them with the Scion, then you soon find out about the whole opposite side of the galaxy)
 					NOT = { has_origin = origin_scion }
 					any_neighbor_country = { has_communications = root }
@@ -245,9 +239,9 @@ country_event = {
 						is_country_type = default
 						is_country_type = fallen_empire
 					}
-					NOT = { is_same_empire = ROOT }
-					has_communications = PREV
-					NOT = { has_communications = ROOT }
+					NOT = { is_same_empire = root }
+					has_communications = prev
+					NOT = { has_communications = root }
 				}
 			}
 			save_event_target_as = CommSpreader
@@ -257,16 +251,15 @@ country_event = {
 						is_country_type = default
 						is_country_type = fallen_empire
 					}
-					NOT = { is_same_empire = ROOT }
-					has_communications = PREV
-					NOT = { has_communications = ROOT }
+					NOT = { is_same_empire = root }
+					has_communications = prev
+					NOT = { has_communications = root }
 				}
 				save_event_target_as = contact_empire
 				establish_communications_no_message = root
 			}
 		}
 	}
-
 	option = {
 		name = "communications_spread.1.a"
 		custom_tooltip = communications_spread.1.tooltip
@@ -364,4 +357,3 @@ ship_event = {
 		}
 	}
 }
-

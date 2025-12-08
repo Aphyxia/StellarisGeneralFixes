@@ -11,15 +11,14 @@ namespace = fircon
 ##################################
 # pre-FTL Insights fircon.5 - 99 #
 ##################################
+
 ship_event = {
 	id = fircon.5
 	hide_window = yes
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = {
-			owner = { has_country_flag = built_observation_post }
-		}
+		NOT = { owner = { has_country_flag = built_observation_post } }
 	}
 
 	immediate = {
@@ -143,7 +142,6 @@ situation_event = {
 			}
 		}
 	}
-
 	after = {
 		destroy_situation = this
 	}
@@ -286,38 +284,14 @@ ship_event = {
 	}
 
 	immediate = {
-		ship_event = {
-			id = fircon.5
-			scopes = { from = FROM }
-		}
-		ship_event = {
-			id = communications_spread.4
-			scopes = { from = FROM }
-		}
-		ship_event = {
-			id = preftl.40
-			scopes = { from = FROM }
-		}
-		ship_event = {
-			id = preftl.41
-			scopes = { from = FROM }
-		}
-		ship_event = {
-			id = fircon.5025
-			scopes = { from = FROM }
-		}
-		ship_event = {
-			id = fircon.25
-			scopes = { from = FROM }
-		}
-		ship_event = {
-			id = origin.5515
-			scopes = { from = FROM }
-		}
-		ship_event = {
-			id = origin.5520
-			scopes = { from = FROM }
-		}
+		ship_event = { id = fircon.5 scopes = { from = from } }
+		ship_event = { id = communications_spread.4 scopes = { from = from } }
+		ship_event = { id = preftl.40 scopes = { from = from } }
+		ship_event = { id = preftl.41 scopes = { from = from } }
+		ship_event = { id = fircon.5025 scopes = { from = from } }
+		ship_event = { id = fircon.25 scopes = { from = from } }
+		ship_event = { id = origin.5515 scopes = { from = from } }
+		ship_event = { id = origin.5520 scopes = { from = from } }
 	}
 }
 
@@ -344,7 +318,9 @@ country_event = {
 			portrait = mol7
 			namelist = "PRT1"
 			traits = random
-			effect = { save_event_target_as = traveler_species }
+			effect = {
+				save_event_target_as = traveler_species
+			}
 		}
 		create_country = { # This will create a dummy country that will not be deleted. It will be used for "first contact" with the Guest
 			type = jaunting_traveler_dummy
@@ -374,11 +350,9 @@ first_contact_event = {
 	immediate = {
 		set_site_progress_locked = yes
 	}
-
 	after = {
 		set_site_progress_locked = no
 	}
-
 	option = {
 		name = INTERESTING
 		set_first_contact_stage = jaunting_traveler_stage_2
@@ -397,11 +371,9 @@ first_contact_event = {
 	immediate = {
 		set_site_progress_locked = yes
 	}
-
 	after = {
 		set_site_progress_locked = no
 	}
-
 	option = {
 		name = INTERESTING
 		set_first_contact_stage = jaunting_traveler_finish
@@ -421,18 +393,13 @@ first_contact_event = {
 	immediate = {
 		set_site_progress_locked = yes
 	}
-
 	option = { # pacific ending
 		name = {
-			trigger = {
-				owner = { is_xenophobe = no }
-			}
+			trigger = { owner = { is_xenophobe = no } }
 			text = "fircon.1212.a"
 		}
 		name = {
-			trigger = {
-				owner = { is_xenophobe = yes }
-			}
+			trigger = { owner = { is_xenophobe = yes } }
 			text = "fircon.1212.ab"
 		}
 		custom_tooltip = "fircon.1212.a.tooltip"
@@ -443,25 +410,20 @@ first_contact_event = {
 				species = root.contact_country.species
 				gender = female
 				skill = 5
-				traits = { trait = leader_trait_psionic }
+				traits = {
+					trait = leader_trait_psionic
+				}
 				event_leader = yes
-				effect = { save_event_target_as = guest_scientist }
+				effect = {
+					save_event_target_as = guest_scientist
+				}
 			}
 			hidden_effect = {
-				country_event = {
-					id = fircon.1231
-					days = 1800
-					random = 360
-				} # homesickness (5 years)
-				country_event = {
-					id = fircon.1230
-					days = 60
-					random = 30
-				} # special project
+				country_event = { id = fircon.1231 days = 1800 random = 360 } # homesickness (5 years)
+				country_event = { id = fircon.1230 days = 60 random = 30 } # special project
 			}
 		}
 	}
-
 	option = { # lab ending
 		name = fircon.1212.b
 		trigger = {
@@ -490,7 +452,6 @@ first_contact_event = {
 			}
 		}
 	}
-
 	option = { # sacrifice ending
 		name = fircon.1212.c
 		trigger = {
@@ -511,7 +472,6 @@ first_contact_event = {
 			}
 		}
 	}
-
 	after = {
 		set_site_progress_locked = no
 		hidden_effect = {
@@ -534,11 +494,9 @@ first_contact_event = {
 	immediate = {
 		set_site_progress_locked = yes
 	}
-
 	after = {
 		set_site_progress_locked = no
 	}
-
 	option = {
 		name = INTERESTING
 		add_stage_clues = -2
@@ -557,11 +515,9 @@ first_contact_event = {
 	immediate = {
 		set_site_progress_locked = yes
 	}
-
 	after = {
 		set_site_progress_locked = no
 	}
-
 	option = {
 		name = INTERESTING
 		add_stage_clues = -1
@@ -572,12 +528,10 @@ first_contact_event = {
 country_event = {
 	id = fircon.1230
 	title = "fircon.1230.name"
-
 	desc = {
 		trigger = { is_gestalt = no }
 		text = fircon.1230.desc.non_gestalt
 	}
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = fircon.1230.desc.gestalt
@@ -593,7 +547,6 @@ country_event = {
 		owner = { is_xenophobe = no }
 		owner_species = { has_psionic_species_trait = yes }
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -607,7 +560,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -647,11 +599,7 @@ country_event = {
 		add_resource = { energy = -1000 }
 		hidden_effect = {
 			owner = {
-				country_event = {
-					id = fircon.1232
-					days = 3600
-					random = 360
-				}
+				country_event = { id = fircon.1232 days = 3600 random = 360 }
 			}
 		}
 	}
@@ -661,11 +609,7 @@ country_event = {
 		name = fircon.1231.b
 		hidden_effect = {
 			owner = {
-				country_event = {
-					id = fircon.1232
-					days = 1800
-					random = 360
-				}
+				country_event = { id = fircon.1232 days = 1800 random = 360 }
 			}
 		}
 	}
@@ -689,12 +633,10 @@ country_event = {
 			event_target:guest_scientist = { exile_leader_as = guest_scientist }
 		}
 	}
-
 	option = {
 		name = GOODBYE
 		custom_tooltip = first_contact.1232.tooltip
 	}
-
 	after = {
 		hidden_effect = {
 			random = {
@@ -714,7 +656,6 @@ country_event = {
 	show_sound = event_mystic_reveal
 	location = capital_scope
 	is_triggered_only = yes
-
 	option = {
 		name = FASCINATING
 		if = {
@@ -736,12 +677,10 @@ country_event = {
 country_event = {
 	id = fircon.1240
 	title = "fircon.1240.name"
-
 	desc = {
 		trigger = { is_robot_empire = no }
 		text = fircon.1240.desc.organic
 	}
-
 	desc = {
 		trigger = { is_robot_empire = yes }
 		text = fircon.1240.desc.machine
@@ -751,7 +690,6 @@ country_event = {
 	show_sound = event_mystic_reveal
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = "fircon.1240.a"
 		add_monthly_resource_mult = {
@@ -766,12 +704,10 @@ country_event = {
 country_event = {
 	id = fircon.1241
 	title = "fircon.1241.name"
-
 	desc = {
 		trigger = { is_gestalt = no }
 		text = fircon.1241.desc.non_gestalt
 	}
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = fircon.1241.desc.gestalt
@@ -781,7 +717,6 @@ country_event = {
 	show_sound = event_mystic_reveal
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = INTERESTING
 		add_monthly_resource_mult = {
@@ -797,22 +732,18 @@ country_event = {
 country_event = {
 	id = fircon.1242
 	title = "fircon.1242.name"
-
 	desc = {
 		trigger = { is_robot_empire = no is_gestalt = no }
 		text = fircon.1242.desc.organic_non_gestalt
 	}
-
 	desc = {
 		trigger = { is_robot_empire = yes is_gestalt = no }
 		text = fircon.1242.desc.machine_non_gestalt
 	}
-
 	desc = {
 		trigger = { is_robot_empire = no is_gestalt = yes }
 		text = fircon.1242.desc.organic_gestalt
 	}
-
 	desc = {
 		trigger = { is_robot_empire = yes is_gestalt = yes }
 		text = fircon.1242.desc.machine_gestalt
@@ -822,7 +753,6 @@ country_event = {
 	show_sound = event_mystic_reveal
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = UNFORTUNATE
 		custom_tooltip = "enclave.7110.a.tooltip"
@@ -841,7 +771,6 @@ country_event = {
 country_event = {
 	id = fircon.1243
 	title = "fircon.1243.name"
-
 	desc = {
 		trigger = {
 			if = {
@@ -883,7 +812,6 @@ country_event = {
 	show_sound = event_mystic_reveal
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		if = {
@@ -958,7 +886,6 @@ country_event = {
 		set_observation_events_locked = yes
 		save_event_target_as = observation_post_owner
 	}
-
 	option = {
 		name = "fircon.1256.a"
 		add_observation_insight_effect = {
@@ -972,7 +899,6 @@ country_event = {
 			max = @tier1researchmax
 		}
 	}
-
 	option = {
 		name = "fircon.1256.b"
 		add_observation_insight_effect = {
@@ -1009,7 +935,6 @@ country_event = {
 		set_country_flag = society_insights
 		set_predictive_observation_insight = { VALUE = 10 }
 	}
-
 	option = {
 		name = "FASCINATING"
 		add_observation_insight_effect = {
@@ -1026,7 +951,6 @@ country_event = {
 			add_modifier = { modifier = rock_abundance years = 1 }
 		}
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -1085,7 +1009,6 @@ country_event = {
 		set_predictive_observation_insight = { VALUE = 10 }
 		save_event_target_as = observation_post_owner
 	}
-
 	option = {
 		name = "fircon.1261.a"
 		add_observation_insight_effect = {
@@ -1123,7 +1046,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "fircon.1261.b"
 		add_observation_insight_effect = {
@@ -1165,7 +1087,6 @@ country_event = {
 			add_resource = { minerals = -50 }
 		}
 	}
-
 	option = {
 		name = "fircon.1261.c"
 		trigger = {
@@ -1204,7 +1125,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -1230,7 +1150,6 @@ country_event = {
 		set_country_flag = society_insights
 		set_predictive_observation_insight = { VALUE = 10 }
 	}
-
 	option = {
 		name = "EXCELLENT"
 		add_observation_insight_effect = {
@@ -1247,7 +1166,6 @@ country_event = {
 			add_resource = { minerals = 100 }
 		}
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -1307,7 +1225,6 @@ country_event = {
 		set_observation_events_locked = yes
 		save_event_target_as = observation_post_owner
 	}
-
 	option = {
 		name = "fircon.1271.a"
 		add_observation_insight_effect = {
@@ -1323,7 +1240,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "fircon.1271.b"
 		trigger = { is_xenophobe = yes }
@@ -1340,7 +1256,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "fircon.1271.c"
 		trigger = { is_xenophile = yes }
@@ -1362,7 +1277,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -1382,10 +1296,7 @@ situation_event = {
 				is_gestalt = yes
 			}
 			OR = {
-				pre_ftl_in_age_is_observed_with = {
-					AGE = bronze_age
-					MISSION = passive_observation
-				}
+				pre_ftl_in_age_is_observed_with = { AGE = bronze_age MISSION = passive_observation }
 				pre_ftl_in_age_is_observed_with = { AGE = iron_age MISSION = passive_observation }
 			}
 		}
@@ -1431,7 +1342,6 @@ country_event = {
 		set_observation_events_locked = yes
 		save_event_target_as = observation_post_owner
 	}
-
 	option = {
 		name = "fircon.1285.a"
 		add_observation_insight_effect = {
@@ -1441,7 +1351,6 @@ country_event = {
 		add_modifier = { modifier = hands_off_approach years = 2 }
 		set_observation_events_unlocked = yes
 	}
-
 	option = {
 		name = "fircon.1285.b"
 		add_observation_insight_effect = {
@@ -1487,7 +1396,6 @@ country_event = {
 		set_country_flag = society_insights
 		set_predictive_observation_insight = { VALUE = 10 }
 	}
-
 	option = {
 		name = "ACKNOWLEDGED"
 		add_observation_insight_effect = {
@@ -1520,7 +1428,6 @@ country_event = {
 		set_country_flag = society_insights
 		set_predictive_observation_insight = { VALUE = 10 }
 	}
-
 	option = {
 		name = "FASCINATING"
 		add_monthly_resource_mult = {
@@ -1534,7 +1441,6 @@ country_event = {
 			OUTPOST = event_target:pre_ftl_planet.observation_outpost
 		}
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -1560,7 +1466,6 @@ country_event = {
 		set_country_flag = society_insights
 		set_predictive_observation_insight = { VALUE = 10 }
 	}
-
 	option = {
 		name = "ACKNOWLEDGED"
 		add_observation_insight_effect = {
@@ -1568,7 +1473,6 @@ country_event = {
 			OUTPOST = event_target:pre_ftl_planet.observation_outpost
 		}
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -1585,10 +1489,7 @@ situation_event = {
 		owner = {
 			NOT = { has_country_flag = fircon_1295_fired }
 			OR = {
-				pre_ftl_in_age_is_observed_with = {
-					AGE = bronze_age
-					MISSION = passive_observation
-				}
+				pre_ftl_in_age_is_observed_with = { AGE = bronze_age MISSION = passive_observation }
 				pre_ftl_in_age_is_observed_with = { AGE = iron_age MISSION = passive_observation }
 			}
 			is_gestalt = no
@@ -1635,7 +1536,6 @@ country_event = {
 		set_observation_events_locked = yes
 		save_event_target_as = observation_post_owner
 	}
-
 	option = {
 		name = "fircon.1300.a"
 		trigger = { is_gestalt = no }
@@ -1649,7 +1549,6 @@ country_event = {
 			RESOLUTION = resolution_pre_ftl_stances_non_interference
 		}
 	}
-
 	option = {
 		name = "fircon.1300.b"
 		add_observation_insight_effect = {
@@ -1663,7 +1562,6 @@ country_event = {
 			max = @tier1researchmax
 		}
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -1680,10 +1578,7 @@ situation_event = {
 		owner = {
 			NOT = { has_country_flag = fircon_1305_fired }
 			OR = {
-				pre_ftl_in_age_is_observed_with = {
-					AGE = bronze_age
-					MISSION = specimen_collection
-				}
+				pre_ftl_in_age_is_observed_with = { AGE = bronze_age MISSION = specimen_collection }
 				pre_ftl_in_age_is_observed_with = { AGE = iron_age MISSION = specimen_collection }
 			}
 			is_gestalt = no
@@ -1728,7 +1623,6 @@ country_event = {
 		set_observation_events_locked = yes
 		save_event_target_as = observation_post_owner
 	}
-
 	option = {
 		name = "fircon.1310.a"
 		add_resource = {
@@ -1745,7 +1639,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "fircon.1310.b"
 		add_monthly_resource_mult = {
@@ -1779,7 +1672,6 @@ country_event = {
 		set_predictive_observation_insight = { VALUE = 10 }
 		save_event_target_as = observation_post_owner
 	}
-
 	option = {
 		name = "ACKNOWLEDGED"
 		add_monthly_resource_mult = {
@@ -1797,7 +1689,6 @@ country_event = {
 			RESOLUTION = resolution_pre_ftl_stances_non_interference
 		}
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -1807,17 +1698,14 @@ country_event = {
 country_event = {
 	id = fircon.1320
 	title = "fircon.1320.name"
-
 	desc = {
 		text = "fircon.1320.desc.regular"
 		trigger = { is_authoritarian = no is_materialist = no }
 	}
-
 	desc = {
 		text = "fircon.1320.desc.materialist"
 		trigger = { is_materialist = yes is_fanatic_authoritarian = no }
 	}
-
 	desc = {
 		text = "fircon.1320.desc.authoritarian"
 		trigger = { is_authoritarian = yes is_fanatic_materialist = no }
@@ -1837,7 +1725,6 @@ country_event = {
 	immediate = {
 		save_event_target_as = observation_post_owner
 	}
-
 	option = {
 		name = "ACKNOWLEDGED"
 		event_target:pre_ftl_country = { shift_ethic = ethic_fanatic_materialist }
@@ -1845,7 +1732,6 @@ country_event = {
 			RESOLUTION = resolution_pre_ftl_stances_non_interference
 		}
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -1862,14 +1748,8 @@ situation_event = {
 		owner = {
 			NOT = { has_country_flag = fircon_1325_fired }
 			OR = {
-				pre_ftl_in_age_is_observed_with = {
-					AGE = late_medieval_age
-					MISSION = passive_observation
-				}
-				pre_ftl_in_age_is_observed_with = {
-					AGE = renaissance_age
-					MISSION = passive_observation
-				}
+				pre_ftl_in_age_is_observed_with = { AGE = late_medieval_age MISSION = passive_observation }
+				pre_ftl_in_age_is_observed_with = { AGE = renaissance_age MISSION = passive_observation }
 			}
 		}
 	}
@@ -1905,7 +1785,6 @@ country_event = {
 		exists = event_target:pre_ftl_species
 		exists = event_target:pre_ftl_country
 	}
-
 	trigger = {
 		NOT = { has_country_flag = fircon_1330_fired }
 	}
@@ -1917,7 +1796,6 @@ country_event = {
 		}
 		set_observation_events_locked = yes
 	}
-
 	option = {
 		name = "FASCINATING"
 		add_monthly_resource_mult = {
@@ -1927,19 +1805,16 @@ country_event = {
 			max = @tier1researchmax
 		}
 	}
-
 	option = {
 		name = "fircon.1330.b"
 		trigger = { values_others = yes }
 		add_modifier = { modifier = hands_off_approach years = 1 }
 	}
-
 	option = {
 		name = "fircon.1330.c"
 		trigger = { is_xenophobe = yes }
 		add_modifier = { modifier = art_is_dead years = 10 }
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 		event_target:pre_ftl_planet = { check_planet_employment = yes }
@@ -1960,14 +1835,8 @@ situation_event = {
 				has_country_flag = fircon_1355_fired # blocks this event if 'Ignorance is Contagious' has already happened
 			}
 			OR = {
-				pre_ftl_in_age_is_observed_with = {
-					AGE = late_medieval_age
-					MISSION = passive_observation
-				}
-				pre_ftl_in_age_is_observed_with = {
-					AGE = renaissance_age
-					MISSION = passive_observation
-				}
+				pre_ftl_in_age_is_observed_with = { AGE = late_medieval_age MISSION = passive_observation }
+				pre_ftl_in_age_is_observed_with = { AGE = renaissance_age MISSION = passive_observation }
 			}
 		}
 	}
@@ -2010,7 +1879,6 @@ country_event = {
 		event_target:pre_ftl_country = { add_awareness = 5 }
 		set_observation_events_locked = yes
 	}
-
 	option = {
 		name = "ACKNOWLEDGED"
 		add_monthly_resource_mult = {
@@ -2021,7 +1889,6 @@ country_event = {
 		}
 		set_observation_events_unlocked = yes
 	}
-
 	option = {
 		name = "fircon.1340.b"
 		trigger = { is_spiritualist = yes }
@@ -2032,7 +1899,6 @@ country_event = {
 			country_event = { id = fircon.1345 days = 100 }
 		}
 	}
-
 	option = {
 		name = "fircon.1340.c"
 		trigger = { is_materialist = yes is_gestalt = no }
@@ -2058,7 +1924,6 @@ country_event = {
 		exists = event_target:pre_ftl_species
 		exists = event_target:pre_ftl_country
 	}
-
 	option = {
 		name = "ACKNOWLEDGED"
 		add_monthly_resource_mult = {
@@ -2068,7 +1933,6 @@ country_event = {
 			max = @tier1influencemax
 		}
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -2089,7 +1953,6 @@ country_event = {
 		exists = event_target:pre_ftl_species
 		exists = event_target:pre_ftl_country
 	}
-
 	option = {
 		name = "ACKNOWLEDGED"
 		add_monthly_resource_mult = {
@@ -2100,7 +1963,6 @@ country_event = {
 		}
 		event_target:pre_ftl_country = { shift_ethic = ethic_fanatic_materialist }
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -2117,14 +1979,8 @@ situation_event = {
 		owner = {
 			NOT = { has_country_flag = fircon_1355_fired }
 			OR = {
-				pre_ftl_in_age_is_observed_with = {
-					AGE = late_medieval_age
-					MISSION = specimen_collection
-				}
-				pre_ftl_in_age_is_observed_with = {
-					AGE = renaissance_age
-					MISSION = specimen_collection
-				}
+				pre_ftl_in_age_is_observed_with = { AGE = late_medieval_age MISSION = specimen_collection }
+				pre_ftl_in_age_is_observed_with = { AGE = renaissance_age MISSION = specimen_collection }
 			}
 			is_gestalt = no
 		}
@@ -2167,7 +2023,6 @@ country_event = {
 		set_timed_country_flag = { flag = fircon_1360_fired years = 5 }
 		set_observation_events_locked = yes
 	}
-
 	option = {
 		name = "fircon.1360.a"
 		trigger = { is_spiritualist = no is_materialist = no }
@@ -2175,7 +2030,6 @@ country_event = {
 			country_event = { id = fircon.1365 days = 100 }
 		}
 	}
-
 	option = {
 		name = "fircon.1360.b"
 		trigger = { is_spiritualist = yes }
@@ -2187,7 +2041,6 @@ country_event = {
 		}
 		set_observation_events_unlocked = yes
 	}
-
 	option = {
 		name = "fircon.1360.c"
 		trigger = { is_materialist = yes }
@@ -2212,15 +2065,10 @@ country_event = {
 		exists = event_target:pre_ftl_species
 		exists = event_target:pre_ftl_country
 	}
-
 	option = {
 		name = "fircon.1365.a"
-		event_target:pre_ftl_country = {
-			shift_ethic = ethic_fanatic_spiritualist
-			add_awareness = 50
-		}
+		event_target:pre_ftl_country = { shift_ethic = ethic_fanatic_spiritualist add_awareness = 50 }
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -2241,15 +2089,10 @@ country_event = {
 		exists = event_target:pre_ftl_species
 		exists = event_target:pre_ftl_country
 	}
-
 	option = {
 		name = "fircon.1370.a"
-		event_target:pre_ftl_country = {
-			shift_ethic = ethic_fanatic_xenophobe
-			add_awareness = 50
-		}
+		event_target:pre_ftl_country = { shift_ethic = ethic_fanatic_xenophobe add_awareness = 50 }
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -2272,14 +2115,8 @@ situation_event = {
 			}
 			OR = {
 				pre_ftl_in_age_is_observed_with = { AGE = steam_age MISSION = specimen_collection }
-				pre_ftl_in_age_is_observed_with = {
-					AGE = industrial_age
-					MISSION = specimen_collection
-				}
-				pre_ftl_in_age_is_observed_with = {
-					AGE = machine_age
-					MISSION = specimen_collection
-				}
+				pre_ftl_in_age_is_observed_with = { AGE = industrial_age MISSION = specimen_collection }
+				pre_ftl_in_age_is_observed_with = { AGE = machine_age MISSION = specimen_collection }
 			}
 		}
 	}
@@ -2320,7 +2157,6 @@ country_event = {
 		set_observation_events_locked = yes
 		save_event_target_as = observation_post_owner
 	}
-
 	option = {
 		name = "fircon.1380.a"
 		observation_breach_effect = {
@@ -2330,7 +2166,6 @@ country_event = {
 			country_event = { id = fircon.1385 days = 100 }
 		}
 	}
-
 	option = {
 		name = "fircon.1380.b"
 		hidden_effect = {
@@ -2354,7 +2189,6 @@ country_event = {
 		exists = event_target:pre_ftl_species
 		exists = event_target:pre_ftl_country
 	}
-
 	option = {
 		name = "fircon.1385.a"
 		hidden_effect = {
@@ -2387,7 +2221,6 @@ country_event = {
 		set_country_flag = society_insights
 		set_predictive_observation_insight = { VALUE = 10 }
 	}
-
 	option = {
 		name = "ACKNOWLEDGED"
 		event_target:pre_ftl_planet = {
@@ -2401,7 +2234,6 @@ country_event = {
 			random_owned_pop_group = { kill_single_pop = yes }
 		}
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -2427,7 +2259,6 @@ country_event = {
 		set_country_flag = society_insights
 		set_predictive_observation_insight = { VALUE = 10 }
 	}
-
 	option = {
 		name = "ACKNOWLEDGED"
 		event_target:pre_ftl_country = { shift_ethic = ethic_pacifist }
@@ -2436,7 +2267,6 @@ country_event = {
 			OUTPOST = event_target:pre_ftl_planet.observation_outpost
 		}
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -2457,7 +2287,6 @@ country_event = {
 		exists = event_target:pre_ftl_species
 		exists = event_target:pre_ftl_country
 	}
-
 	option = {
 		name = "ACKNOWLEDGED"
 		fromfromfrom.owner = {
@@ -2471,7 +2300,6 @@ country_event = {
 		}
 		event_target:pre_ftl_country = { shift_ethic = ethic_fanatic_xenophobe }
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -2489,14 +2317,8 @@ situation_event = {
 			NOT = { has_country_flag = fircon_1405_fired }
 			OR = {
 				pre_ftl_in_age_is_observed_with = { AGE = steam_age MISSION = passive_observation }
-				pre_ftl_in_age_is_observed_with = {
-					AGE = industrial_age
-					MISSION = passive_observation
-				}
-				pre_ftl_in_age_is_observed_with = {
-					AGE = machine_age
-					MISSION = passive_observation
-				}
+				pre_ftl_in_age_is_observed_with = { AGE = industrial_age MISSION = passive_observation }
+				pre_ftl_in_age_is_observed_with = { AGE = machine_age MISSION = passive_observation }
 			}
 		}
 	}
@@ -2521,14 +2343,12 @@ situation_event = {
 country_event = {
 	id = fircon.1410
 	title = "fircon.1410.name"
-
 	desc = {
 		text = "fircon.1410.desc.regular"
 		trigger = {
 			from.owner = { is_gestalt = no }
 		}
 	}
-
 	desc = {
 		text = "fircon.1410.desc.gestalt"
 		trigger = {
@@ -2552,7 +2372,6 @@ country_event = {
 		set_predictive_observation_insight = { VALUE = 20 }
 		set_observation_events_locked = yes
 	}
-
 	option = {
 		name = "fircon.1410.a"
 		add_monthly_resource_mult = {
@@ -2567,7 +2386,6 @@ country_event = {
 		}
 		set_observation_events_unlocked = yes
 	}
-
 	option = {
 		name = "fircon.1410.b"
 		custom_tooltip = "fircon.1410.b.tooltip"
@@ -2598,7 +2416,6 @@ country_event = {
 		set_predictive_observation_insight = { VALUE = 20 }
 		save_event_target_as = observation_post_owner
 	}
-
 	option = {
 		name = "fircon.1415.a"
 		add_observation_insight_effect = {
@@ -2607,7 +2424,6 @@ country_event = {
 		}
 		set_observation_events_unlocked = yes
 	}
-
 	option = {
 		name = "fircon.1415.b"
 		random_list = {
@@ -2640,7 +2456,6 @@ country_event = {
 		set_country_flag = engineering_insights
 		set_predictive_observation_insight = { VALUE = 20 }
 	}
-
 	option = {
 		name = "fircon.1425.a"
 		add_resource = { alloys = 100 }
@@ -2649,7 +2464,6 @@ country_event = {
 			OUTPOST = event_target:pre_ftl_planet.observation_outpost
 		}
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -2670,12 +2484,10 @@ country_event = {
 		exists = event_target:pre_ftl_species
 		exists = event_target:pre_ftl_country
 	}
-
 	option = {
 		name = "fircon.1430.a"
 		fromfromfrom.owner = { add_awareness = 50 }
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -2696,14 +2508,8 @@ situation_event = {
 			}
 			OR = {
 				pre_ftl_in_age_is_observed_with = { AGE = steam_age MISSION = passive_observation }
-				pre_ftl_in_age_is_observed_with = {
-					AGE = industrial_age
-					MISSION = passive_observation
-				}
-				pre_ftl_in_age_is_observed_with = {
-					AGE = machine_age
-					MISSION = passive_observation
-				}
+				pre_ftl_in_age_is_observed_with = { AGE = industrial_age MISSION = passive_observation }
+				pre_ftl_in_age_is_observed_with = { AGE = machine_age MISSION = passive_observation }
 			}
 		}
 	}
@@ -2745,7 +2551,6 @@ country_event = {
 		set_predictive_observation_insight = { VALUE = 10 }
 		set_observation_events_locked = yes
 	}
-
 	option = {
 		name = "fircon.1445.a"
 		trigger = { is_egalitarian = yes }
@@ -2763,7 +2568,6 @@ country_event = {
 			country_event = { id = fircon.1450 days = 100 }
 		}
 	}
-
 	option = {
 		name = "fircon.1445.b"
 		trigger = { is_megacorp = no }
@@ -2778,7 +2582,6 @@ country_event = {
 			country_event = { id = fircon.1451 days = 100 }
 		}
 	}
-
 	option = {
 		name = "fircon.1445.c"
 		trigger = {
@@ -2812,7 +2615,6 @@ country_event = {
 		set_country_flag = society_insights
 		set_predictive_observation_insight = { VALUE = 10 }
 	}
-
 	option = {
 		name = "fircon.1450.a"
 		event_target:pre_ftl_planet = {
@@ -2825,7 +2627,6 @@ country_event = {
 		}
 		set_observation_events_unlocked = yes
 	}
-
 	option = {
 		name = "fircon.1450.b"
 		country_event = { id = fircon.1455 days = 50 }
@@ -2850,14 +2651,12 @@ country_event = {
 		exists = event_target:pre_ftl_species
 		exists = event_target:pre_ftl_country
 	}
-
 	option = {
 		name = "ACKNOWLEDGED"
 		event_target:pre_ftl_planet = {
 			random_owned_pop_group = { kill_single_pop = yes }
 		}
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -2883,7 +2682,6 @@ country_event = {
 		set_country_flag = society_insights
 		set_predictive_observation_insight = { VALUE = 10 }
 	}
-
 	option = {
 		name = "EXCELLENT"
 		add_observation_insight_effect = {
@@ -2897,7 +2695,6 @@ country_event = {
 			max = @tier2researchmax
 		}
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -2923,7 +2720,6 @@ country_event = {
 		set_country_flag = society_insights
 		set_predictive_observation_insight = { VALUE = 10 }
 	}
-
 	option = {
 		name = "DISTURBING"
 		event_target:pre_ftl_planet = {
@@ -2937,7 +2733,6 @@ country_event = {
 		}
 		add_modifier = { modifier = waking_workers years = 5 }
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -2964,7 +2759,6 @@ country_event = {
 		set_predictive_observation_insight = { VALUE = 10 }
 		save_event_target_as = observation_post_owner
 	}
-
 	option = {
 		name = "fircon.1455.a"
 		event_target:pre_ftl_planet = {
@@ -2976,7 +2770,6 @@ country_event = {
 		}
 		set_observation_events_unlocked = yes
 	}
-
 	option = {
 		name = "fircon.1455.b"
 		trigger = { is_pacifist = no }
@@ -3004,21 +2797,18 @@ country_event = {
 		exists = event_target:pre_ftl_species
 		exists = event_target:pre_ftl_country
 	}
-
 	option = {
 		name = "ACKNOWLEDGED"
 		trigger = { is_egalitarian = no }
 		event_target:pre_ftl_country = { shift_ethic = ethic_fanatic_authoritarian }
 		event_target:pre_ftl_country = { add_awareness = 50 }
 	}
-
 	option = {
 		name = "fircon.1460.b"
 		trigger = { is_egalitarian = yes }
 		event_target:pre_ftl_country = { shift_ethic = ethic_fanatic_authoritarian }
 		event_target:pre_ftl_country = { add_awareness = 50 }
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -3035,14 +2825,8 @@ situation_event = {
 		owner = {
 			NOT = { has_country_flag = fircon_1465_fired }
 			OR = {
-				pre_ftl_in_age_is_observed_with = {
-					AGE = atomic_age
-					MISSION = specimen_collection
-				}
-				pre_ftl_in_age_is_observed_with = {
-					AGE = early_space_age
-					MISSION = specimen_collection
-				}
+				pre_ftl_in_age_is_observed_with = { AGE = atomic_age MISSION = specimen_collection }
+				pre_ftl_in_age_is_observed_with = { AGE = early_space_age MISSION = specimen_collection }
 			}
 		}
 	}
@@ -3078,7 +2862,6 @@ country_event = {
 		set_observation_events_locked = yes
 		save_event_target_as = observation_post_owner
 	}
-
 	option = {
 		name = "fircon.1470.a"
 		hidden_effect = {
@@ -3088,7 +2871,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "fircon.1470.b"
 		trigger = { values_others = no }
@@ -3108,12 +2890,10 @@ country_event = {
 country_event = {
 	id = fircon.1475
 	title = "fircon.1475.name"
-
 	desc = {
 		text = "fircon.1475.desc.regular"
 		trigger = { is_gestalt = no }
 	}
-
 	desc = {
 		text = "fircon.1475.desc.gestalt"
 		trigger = { is_gestalt = yes }
@@ -3134,7 +2914,6 @@ country_event = {
 		set_country_flag = physics_insights
 		set_predictive_observation_insight = { VALUE = 10 }
 	}
-
 	option = {
 		name = "fircon.1475.a"
 		add_observation_insight_effect = {
@@ -3143,13 +2922,11 @@ country_event = {
 		}
 		event_target:pre_ftl_country = { add_awareness = 50 }
 	}
-
 	option = {
 		name = "fircon.1475.b"
 		add_modifier = { modifier = compromised_security days = 1000 }
 		event_target:pre_ftl_country = { add_awareness = 20 }
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -3175,7 +2952,6 @@ country_event = {
 		set_country_flag = society_insights
 		set_predictive_observation_insight = { VALUE = 10 }
 	}
-
 	option = {
 		name = "fircon.1480.a"
 		add_observation_insight_effect = {
@@ -3184,7 +2960,6 @@ country_event = {
 		}
 		event_target:pre_ftl_country = { add_awareness = -20 }
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -3210,7 +2985,6 @@ country_event = {
 		set_country_flag = physics_insights
 		set_predictive_observation_insight = { VALUE = 10 }
 	}
-
 	option = {
 		name = "fircon.1485.a"
 		add_observation_insight_effect = {
@@ -3219,7 +2993,6 @@ country_event = {
 		}
 		event_target:pre_ftl_country = { add_awareness = 10 }
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -3240,7 +3013,6 @@ country_event = {
 			owner = { is_primitive = yes }
 		}
 	}
-
 	option = {
 		name = "fircon.1490.a"
 		trigger = {
@@ -3248,7 +3020,6 @@ country_event = {
 		}
 		event_target:pre_ftl_country = { shift_ethic = ethic_fanatic_xenophobe }
 	}
-
 	option = {
 		name = "fircon.1490.a"
 		trigger = {
@@ -3259,7 +3030,6 @@ country_event = {
 			force_add_civic = civic_hive_strength_of_legions
 		}
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -3279,14 +3049,8 @@ situation_event = {
 				has_blocked_random_devastating_pre_ftl_events = yes
 			}
 			OR = {
-				pre_ftl_in_age_is_observed_with = {
-					AGE = early_space_age
-					MISSION = passive_observation
-				}
-				pre_ftl_in_age_is_observed_with = {
-					AGE = early_space_age
-					MISSION = specimen_collection
-				}
+				pre_ftl_in_age_is_observed_with = { AGE = early_space_age MISSION = passive_observation }
+				pre_ftl_in_age_is_observed_with = { AGE = early_space_age MISSION = specimen_collection }
 			}
 			capital_scope.observation_outpost_owner = {
 				NOT = { has_country_flag = fircon_1495_fired_owner }
@@ -3337,7 +3101,6 @@ country_event = {
 		set_predictive_observation_insight = { VALUE = 30 }
 		set_observation_events_locked = yes
 	}
-
 	option = {
 		name = "FASCINATING"
 		hidden_effect = {
@@ -3385,19 +3148,13 @@ country_event = {
 			name = "NAME_Pre_FTL_Laser_Ship"
 			effect = {
 				set_owner = event_target:pre_ftl_planet.owner
-				create_ship = {
-					name = "NAME_Pre_FTL_Laser_Ship"
-					design = "NAME_Pre_FTL_Laser_Ship"
-				}
+				create_ship = { name = "NAME_Pre_FTL_Laser_Ship" design = "NAME_Pre_FTL_Laser_Ship" }
 				set_location = event_target:pre_ftl_planet
 				set_fleet_stance = passive
 				queue_actions = {
 					repeat = {
 						find_closest_planet = {
-							trigger = {
-								id = laser_ship.patrol.1
-								is_same_value = event_target:lasership_planet_1
-							}
+							trigger = { id = laser_ship.patrol.1 is_same_value = event_target:lasership_planet_1 }
 							found_planet = {
 								move_to = this
 								orbit_planet = this
@@ -3405,10 +3162,7 @@ country_event = {
 							}
 						}
 						find_closest_planet = {
-							trigger = {
-								id = laser_ship.patrol.2
-								is_same_value = event_target:lasership_planet_2
-							}
+							trigger = { id = laser_ship.patrol.2 is_same_value = event_target:lasership_planet_2 }
 							found_planet = {
 								move_to = this
 								orbit_planet = this
@@ -3423,7 +3177,6 @@ country_event = {
 		set_predictive_observation_insight = { VALUE = 10 }
 		save_event_target_as = observation_post_owner
 	}
-
 	option = {
 		name = "fircon.1505.a"
 		trigger = { values_others = yes }
@@ -3435,7 +3188,6 @@ country_event = {
 			OUTPOST = event_target:pre_ftl_planet.observation_outpost
 		}
 	}
-
 	option = {
 		name = "fircon.1505.b"
 		trigger = { values_others = no }
@@ -3450,7 +3202,6 @@ country_event = {
 			OUTPOST = event_target:pre_ftl_planet.observation_outpost
 		}
 	}
-
 	option = {
 		name = "fircon.1505.c"
 		trigger = { values_others = yes }
@@ -3461,7 +3212,6 @@ country_event = {
 			country_event = { id = fircon.1515 days = 1000 }
 		}
 	}
-
 	option = {
 		name = "fircon.1505.d"
 		trigger = { values_others = no }
@@ -3495,29 +3245,30 @@ country_event = {
 			every_controlled_ship = { destroy_fleet = fleet }
 		}
 	}
-
 	option = {
 		name = "fircon.1510.a"
 		trigger = { values_others = yes }
 		hidden_effect = {
 			event_target:pre_ftl_country = {
-				set_pre_ftl_age_effect = { PRE_FTL_AGE = atomic_age }
+				set_pre_ftl_age_effect = {
+					PRE_FTL_AGE = atomic_age
+				}
 			}
 		}
 		custom_tooltip = unadavance_tech_tt
 	}
-
 	option = {
 		name = "fircon.1510.b"
 		trigger = { values_others = no }
 		hidden_effect = {
 			event_target:pre_ftl_country = {
-				set_pre_ftl_age_effect = { PRE_FTL_AGE = atomic_age }
+				set_pre_ftl_age_effect = {
+					PRE_FTL_AGE = atomic_age
+				}
 			}
 		}
 		custom_tooltip = unadavance_tech_tt
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -3541,7 +3292,6 @@ country_event = {
 		set_country_flag = physics_insights
 		set_predictive_observation_insight = { VALUE = 10 }
 	}
-
 	option = {
 		name = "fircon.1515.a"
 		hidden_effect = {
@@ -3580,14 +3330,16 @@ country_event = {
 		exists = event_target:pre_ftl_country
 		event_target:pre_ftl_country = { is_primitive = yes }
 	}
-
 	option = {
 		name = "fircon.1520.a"
 		trigger = { values_others = yes }
 		custom_tooltip = fircon.advance_tech
 		hidden_effect = {
 			event_target:pre_ftl_country = { # Flips control of the starbase to the new spacefaring civilization
-				achieve_ftl_effect = { PRE_FTL = event_target:pre_ftl_country OWNER = root }
+				achieve_ftl_effect = {
+					PRE_FTL = event_target:pre_ftl_country
+					OWNER = root
+				}
 				solar_system = {
 					if = {
 						limit = { exists = starbase }
@@ -3634,18 +3386,19 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "fircon.1520.b"
 		trigger = { values_others = no }
 		custom_tooltip = fircon.advance_tech
 		hidden_effect = {
 			event_target:pre_ftl_country = { # Retains ownership of starbase as they become spacefaring and instantly colonizes them
-				achieve_ftl_effect = { PRE_FTL = root OWNER = root }
+				achieve_ftl_effect = {
+					PRE_FTL = root
+					OWNER = root
+				}
 			}
 		}
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -3705,7 +3458,6 @@ country_event = {
 			years = 5 # 10 years
 		}
 	}
-
 	option = { # kidnap them again
 		name = "fircon.2001.a"
 		add_monthly_resource_mult = {
@@ -3716,7 +3468,6 @@ country_event = {
 		}
 		from.owner = { add_awareness = 10 }
 	}
-
 	option = { # fix defective tractor beams
 		name = "fircon.2001.b"
 		event_target:pre_ftl_planet = {
@@ -3730,7 +3481,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # target practice
 		name = "fircon.2001.c"
 		add_laser_tech = yes
@@ -3778,19 +3528,15 @@ situation_event = {
 country_event = {
 	id = fircon.2011
 	title = "fircon.2011.name"
-
 	desc = {
 		trigger = {
 			event_target:pre_ftl_species = { is_species_class = AVI }
 		}
 		text = "fircon.2011.avian.desc"
 	}
-
 	desc = {
 		trigger = {
-			NOT = {
-				event_target:pre_ftl_species = { is_species_class = AVI }
-			}
+			NOT = { event_target:pre_ftl_species = { is_species_class = AVI } }
 		}
 		text = "fircon.2011.noavian.desc"
 	}
@@ -3814,7 +3560,6 @@ country_event = {
 			years = 5 # 10 years
 		}
 	}
-
 	option = { # fix beams
 		name = "fircon.2011.a"
 		allow = {
@@ -3822,7 +3567,6 @@ country_event = {
 		}
 		add_resource = { alloys = -300 }
 	}
-
 	option = { # stop interfering
 		name = "fircon.2011.b"
 		trigger = {
@@ -3835,7 +3579,6 @@ country_event = {
 		}
 		custom_tooltip = "fircon.2011.b.tt"
 	}
-
 	option = { # keep going
 		name = "fircon.2011.c"
 		from.owner = { add_awareness = 10 }
@@ -3877,11 +3620,7 @@ situation_event = {
 				save_event_target_as = pre_ftl_planet
 				observation_outpost_owner = {
 					save_event_target_as = observing_empire # AKA the player
-					country_event = {
-						id = fircon.2505
-						days = 5
-						random = 25
-					}
+					country_event = { id = fircon.2505 days = 5 random = 25 }
 				}
 			}
 		}
@@ -3902,7 +3641,6 @@ country_event = {
 		set_country_flag = physics_insights
 		set_predictive_observation_insight = { VALUE = 10 }
 	}
-
 	option = {
 		name = "fircon.2505.a"
 		trigger = { is_hive_empire = yes }
@@ -3913,7 +3651,6 @@ country_event = {
 			max = @tier2unitymax
 		}
 	}
-
 	option = {
 		name = "fircon.2505.b"
 		trigger = { is_machine_empire = yes }
@@ -3928,7 +3665,6 @@ country_event = {
 			OUTPOST = event_target:pre_ftl_planet.observation_outpost
 		}
 	}
-
 	option = {
 		name = "fircon.2505.c"
 		trigger = { is_regular_empire = yes }
@@ -3937,7 +3673,6 @@ country_event = {
 			OUTPOST = event_target:pre_ftl_planet.observation_outpost
 		}
 	}
-
 	option = {
 		name = FASCINATING
 		add_monthly_resource_mult = {
@@ -3976,11 +3711,7 @@ situation_event = {
 				save_event_target_as = pre_ftl_planet
 				observation_outpost_owner = {
 					save_event_target_as = observing_empire # AKA the player
-					country_event = {
-						id = fircon.2515
-						days = 5
-						random = 25
-					}
+					country_event = { id = fircon.2515 days = 5 random = 25 }
 				}
 			}
 		}
@@ -4001,7 +3732,6 @@ country_event = {
 		set_country_flag = society_insights
 		set_predictive_observation_insight = { VALUE = 10 }
 	}
-
 	option = {
 		name = "fircon.2515.a"
 		trigger = { is_hive_empire = yes }
@@ -4016,7 +3746,6 @@ country_event = {
 			max = @tier1unitymax
 		}
 	}
-
 	option = {
 		name = "fircon.2515.b"
 		trigger = { is_machine_empire = yes }
@@ -4025,7 +3754,6 @@ country_event = {
 			OUTPOST = event_target:pre_ftl_planet.observation_outpost
 		}
 	}
-
 	option = {
 		name = "fircon.2515.c"
 		trigger = { is_regular_empire = yes }
@@ -4034,7 +3762,6 @@ country_event = {
 			OUTPOST = event_target:pre_ftl_planet.observation_outpost
 		}
 	}
-
 	option = {
 		name = FASCINATING
 		add_monthly_resource_mult = {
@@ -4044,17 +3771,12 @@ country_event = {
 			max = @tier3researchmax
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			random = {
 				chance = 5
 				event_target:pre_ftl_planet = {
-					planet_event = {
-						id = fircon.2516
-						days = 5400
-						random = 1800
-					}
+					planet_event = { id = fircon.2516 days = 5400 random = 1800 }
 				}
 			}
 		}
@@ -4094,14 +3816,8 @@ situation_event = {
 			NOT = { has_country_flag = fircon_2520_fired }
 			is_gestalt = yes
 			OR = {
-				pre_ftl_in_age_is_observed_with = {
-					AGE = industrial_age
-					MISSION = passive_observation
-				}
-				pre_ftl_in_age_is_observed_with = {
-					AGE = industrial_age
-					MISSION = specimen_collection
-				}
+				pre_ftl_in_age_is_observed_with = { AGE = industrial_age MISSION = passive_observation }
+				pre_ftl_in_age_is_observed_with = { AGE = industrial_age MISSION = specimen_collection }
 			}
 		}
 	}
@@ -4115,11 +3831,7 @@ situation_event = {
 				save_event_target_as = pre_ftl_planet
 				observation_outpost_owner = {
 					save_event_target_as = observing_empire # AKA the player
-					country_event = {
-						id = fircon.2525
-						days = 5
-						random = 25
-					}
+					country_event = { id = fircon.2525 days = 5 random = 25 }
 				}
 			}
 		}
@@ -4141,7 +3853,6 @@ country_event = {
 		set_country_flag = engineering_insights
 		set_predictive_observation_insight = { VALUE = 10 }
 	}
-
 	option = {
 		name = "fircon.2525.a"
 		trigger = { is_hive_empire = yes }
@@ -4156,7 +3867,6 @@ country_event = {
 			max = @tier1unitymax
 		}
 	}
-
 	option = {
 		name = "fircon.2525.b"
 		trigger = { is_machine_empire = yes }
@@ -4171,7 +3881,6 @@ country_event = {
 			max = @tier1researchmax
 		}
 	}
-
 	option = {
 		name = {
 			trigger = { has_civic = civic_environmentalist }
@@ -4196,7 +3905,6 @@ country_event = {
 			OUTPOST = event_target:pre_ftl_planet.observation_outpost
 		}
 	}
-
 	option = {
 		name = FASCINATING
 		add_monthly_resource_mult = {
@@ -4235,11 +3943,7 @@ situation_event = {
 				save_event_target_as = pre_ftl_planet
 				observation_outpost_owner = {
 					save_event_target_as = observing_empire # AKA the player
-					country_event = {
-						id = fircon.2535
-						days = 5
-						random = 25
-					}
+					country_event = { id = fircon.2535 days = 5 random = 25 }
 				}
 			}
 		}
@@ -4260,7 +3964,6 @@ country_event = {
 		set_country_flag = society_insights
 		set_predictive_observation_insight = { VALUE = 10 }
 	}
-
 	option = {
 		name = "fircon.2535.a"
 		trigger = { is_hive_empire = yes }
@@ -4275,7 +3978,6 @@ country_event = {
 			max = @tier1researchmax
 		}
 	}
-
 	option = {
 		name = "fircon.2535.b"
 		trigger = { is_machine_empire = yes }
@@ -4284,7 +3986,6 @@ country_event = {
 			OUTPOST = event_target:pre_ftl_planet.observation_outpost
 		}
 	}
-
 	option = {
 		name = "fircon.2535.c"
 		trigger = { is_regular_empire = yes }
@@ -4313,9 +4014,7 @@ situation_event = {
 			NOT = { has_country_flag = fircon_2540_fired }
 			is_gestalt = yes
 			pre_ftl_in_age_is_observed_with = { AGE = stone_age MISSION = passive_observation }
-			NOT = {
-				capital_scope = { has_planet_flag = organic_singularity_communion }
-			}
+			NOT = { capital_scope = { has_planet_flag = organic_singularity_communion } }
 		}
 	}
 
@@ -4328,11 +4027,7 @@ situation_event = {
 				save_event_target_as = pre_ftl_planet
 				observation_outpost_owner = {
 					save_event_target_as = observing_empire # AKA the player
-					country_event = {
-						id = fircon.2545
-						days = 5
-						random = 25
-					}
+					country_event = { id = fircon.2545 days = 5 random = 25 }
 				}
 			}
 		}
@@ -4355,7 +4050,6 @@ country_event = {
 		set_observation_events_locked = yes
 		save_event_target_as = observation_post_owner
 	}
-
 	option = {
 		name = {
 			trigger = { is_wilderness_empire = no }
@@ -4378,7 +4072,6 @@ country_event = {
 		}
 		set_observation_events_unlocked = yes
 	}
-
 	option = {
 		name = "fircon.2545.b"
 		trigger = { is_machine_empire = yes }
@@ -4388,7 +4081,6 @@ country_event = {
 		}
 		set_observation_events_unlocked = yes
 	}
-
 	option = {
 		name = "fircon.2545.c"
 		trigger = { is_regular_empire = yes }
@@ -4398,7 +4090,6 @@ country_event = {
 		}
 		set_observation_events_unlocked = yes
 	}
-
 	option = {
 		name = "fircon.2545.d"
 		event_target:pre_ftl_country = { add_awareness = 10 }
@@ -4426,7 +4117,6 @@ country_event = {
 	show_sound = event_vivisection
 	location = event_target:pre_ftl_planet
 	is_triggered_only = yes
-
 	option = {
 		name = "fircon.2546.a"
 		add_monthly_resource_mult = {
@@ -4437,7 +4127,6 @@ country_event = {
 		}
 		event_target:pre_ftl_country = { add_awareness = 15 }
 	}
-
 	option = {
 		name = "fircon.2546.b"
 		if = {
@@ -4484,7 +4173,6 @@ country_event = {
 	show_sound = event_whispering
 	location = event_target:pre_ftl_planet
 	is_triggered_only = yes
-
 	option = {
 		name = "fircon.2547.a"
 		event_target:pre_ftl_planet = {
@@ -4494,7 +4182,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -4524,11 +4211,7 @@ situation_event = {
 				save_event_target_as = pre_ftl_planet
 				observation_outpost_owner = {
 					save_event_target_as = observing_empire # AKA the player
-					country_event = {
-						id = fircon.2555
-						days = 5
-						random = 25
-					}
+					country_event = { id = fircon.2555 days = 5 random = 25 }
 				}
 			}
 		}
@@ -4549,7 +4232,6 @@ country_event = {
 		set_country_flag = society_insights
 		set_predictive_observation_insight = { VALUE = 10 }
 	}
-
 	option = {
 		name = "fircon.2555.a"
 		trigger = { is_hive_empire = yes }
@@ -4564,7 +4246,6 @@ country_event = {
 			max = @tier2unitymax
 		}
 	}
-
 	option = {
 		name = "fircon.2555.b"
 		trigger = { is_machine_empire = yes }
@@ -4573,7 +4254,6 @@ country_event = {
 			OUTPOST = event_target:pre_ftl_planet.observation_outpost
 		}
 	}
-
 	option = {
 		name = "fircon.2555.c"
 		trigger = { is_regular_empire = yes }
@@ -4628,11 +4308,7 @@ situation_event = {
 				save_event_target_as = pre_ftl_planet
 				observation_outpost_owner = {
 					save_event_target_as = observing_empire # AKA the player
-					country_event = {
-						id = fircon.2605
-						days = 5
-						random = 25
-					}
+					country_event = { id = fircon.2605 days = 5 random = 25 }
 				}
 			}
 		}
@@ -4643,14 +4319,12 @@ situation_event = {
 country_event = {
 	id = fircon.2605
 	title = fircon.2605.name
-
 	desc = {
 		trigger = {
 			from.owner = { is_gestalt = no }
 		}
 		text = fircon.2605.desc.regular
 	}
-
 	desc = {
 		trigger = {
 			from.owner = { is_gestalt = yes }
@@ -4703,14 +4377,9 @@ country_event = {
 				}
 			}
 		}
-		country_event = {
-			id = fircon.2620
-			days = 60
-			scopes = { from = last_created_fleet }
-		}
+		country_event = { id = fircon.2620 days = 60 scopes = { from = last_created_fleet } }
 		set_observation_events_locked = yes
 	}
-
 	option = {
 		name = {
 			trigger = { is_unfriendly = yes }
@@ -4750,7 +4419,6 @@ country_event = {
 	id = fircon.2615
 	title = fircon.2615.name
 	desc = fircon.2615.desc
-
 	inline_script = {
 		script = events/biogenesis_event_art
 		OWNER = owner
@@ -4766,7 +4434,6 @@ country_event = {
 		set_country_flag = physics_insights
 		set_predictive_observation_insight = { VALUE = 30 }
 	}
-
 	option = {
 		name = EXCELLENT
 		remove_global_flag = inteplanetary_flight_ongoing
@@ -4784,7 +4451,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		delete_fleet = from
 	}
@@ -4808,7 +4474,6 @@ country_event = {
 		}
 		save_event_target_as = observation_post_owner
 	}
-
 	option = {
 		trigger = { is_unfriendly = no }
 		name = fircon.2620.a
@@ -4819,7 +4484,6 @@ country_event = {
 			country_event = { id = fircon.2625 days = 5 }
 		}
 	}
-
 	option = {
 		trigger = {
 			any_spynetwork = {
@@ -4844,7 +4508,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
 			count_spynetwork = {
@@ -4870,7 +4533,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Mind wipe them
 		trigger = {
 			species = { is_psionic_species = yes }
@@ -4896,7 +4558,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = fircon.2620.e
 		hidden_effect = {
@@ -4911,14 +4572,12 @@ country_event = {
 country_event = {
 	id = fircon.2625
 	title = fircon.2625.name
-
 	desc = {
 		trigger = {
 			fromfrom.owner = { is_gestalt = no }
 		}
 		text = fircon.2625.desc.regular
 	}
-
 	desc = {
 		trigger = {
 			fromfrom.owner = { is_gestalt = yes }
@@ -4928,7 +4587,6 @@ country_event = {
 
 	picture = GFX_evt_worrying_signal
 	is_triggered_only = yes
-
 	option = { # Keep Them
 		name = fircon.2625.a
 		custom_tooltip = fircon.2625.a.tt
@@ -4951,7 +4609,6 @@ country_event = {
 			give_evolutionary_predator_situation_progress_and_dna = { AMOUNT = small }
 		}
 	}
-
 	option = { # Return them to their planet
 		name = fircon.2625.b
 		fromfrom.owner = { add_awareness = 50 }
@@ -4978,7 +4635,6 @@ country_event = {
 		delete_fleet = fromfrom
 		fromfromfrom.owner = { save_event_target_as = pre_ftl_country }
 	}
-
 	option = {
 		name = {
 			trigger = { is_unfriendly = yes }
@@ -4998,7 +4654,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -5035,7 +4690,6 @@ country_event = {
 			owner = { save_event_target_as = pre_ftl_country }
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		add_monthly_resource_mult = {
@@ -5045,7 +4699,6 @@ country_event = {
 			max = @tier2unitymax
 		}
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -5105,7 +4758,7 @@ fleet_event = {
 		}
 		if = {
 			limit = {
-				FROM.owner = { is_country_type_with_subjects = yes }
+				from.owner = { is_country_type_with_subjects = yes }
 			}
 			root.owner = {
 				declare_war = { target = FROM.owner attacker_war_goal = wg_cleansing }
@@ -5127,7 +4780,6 @@ country_event = {
 	trigger = {
 		is_country_type = default
 	}
-
 	picture_event_data = {
 		portrait = event_target:chosen_empire
 		planet_background = event_target:chosen_empire.capital_scope
@@ -5135,11 +4787,9 @@ country_event = {
 		city_level = event_target:chosen_empire.capital_scope
 		room = event_target:chosen_empire.ruler
 	}
-
 	immediate = {
 		establish_communications_no_message = from.owner
 	}
-
 	option = {
 		name = fircon.3510.A
 		tooltip = {
@@ -5168,7 +4818,6 @@ country_event = {
 	show_sound = event_worrying_signal
 	location = fromfromfrom
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:chosen_empire
 		planet_background = event_target:chosen_empire.capital_scope
@@ -5176,7 +4825,6 @@ country_event = {
 		city_level = event_target:chosen_empire.capital_scope
 		room = event_target:chosen_empire.ruler
 	}
-
 	trigger = {
 		is_country_type_with_subjects = yes
 		exists = event_target:chosen_empire
@@ -5187,7 +4835,6 @@ country_event = {
 	immediate = {
 		establish_communications_no_message = from
 	}
-
 	option = {
 		name = DISTURBING
 		from = {
@@ -5198,6 +4845,7 @@ country_event = {
 
 ### Solarpunk Society
 ### fircon 5000 - 5100
+
 fleet_event = {
 	id = fircon.5000
 	title = fircon.5000.name
@@ -5212,15 +4860,12 @@ fleet_event = {
 			has_star_flag = solarpunk_system_01
 			NOT = { has_star_flag = solarpunk_system_revealed }
 		}
-		NOT = {
-			owner = { has_country_flag = found_helito }
-		}
+		NOT = { owner = { has_country_flag = found_helito } }
 	}
 
 	immediate = {
 		owner = { set_country_flag = found_helito }
 	}
-
 	option = {
 		name = FASCINATING
 		from.star = {
@@ -5232,16 +4877,12 @@ fleet_event = {
 fleet_event = {
 	id = fircon.5005
 	title = fircon.5000.name
-
 	desc = {
 		trigger = {
-			NOT = {
-				from = { has_star_flag = solarpunk_mad }
-			}
+			NOT = { from = { has_star_flag = solarpunk_mad } }
 		}
 		text = fircon.5005.desc.open
 	}
-
 	desc = {
 		trigger = {
 			from = { has_star_flag = solarpunk_mad }
@@ -5259,15 +4900,12 @@ fleet_event = {
 			has_star_flag = solarpunk_system_01
 			has_star_flag = solarpunk_system_revealed
 		}
-		NOT = {
-			controller = { has_country_flag = found_helito }
-		}
+		NOT = { controller = { has_country_flag = found_helito } }
 	}
 
 	immediate = {
 		controller = { set_country_flag = found_helito }
 	}
-
 	option = {
 		name = INTRIGUING
 	}
@@ -5281,7 +4919,6 @@ ship_event = {
 	show_sound = event_mystic_reveal_light
 	is_triggered_only = yes
 	location = from
-
 	option = {
 		name = fircon.5010.a
 		owner = {
@@ -5384,7 +5021,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = fircon.5010.b
 		owner = {
@@ -5412,15 +5048,12 @@ fleet_event = {
 			has_star_flag = solarpunk_system_02
 			NOT = { has_star_flag = solarpunk_mad }
 		}
-		NOT = {
-			owner = { has_country_flag = encountered_solarpunk }
-		}
+		NOT = { owner = { has_country_flag = encountered_solarpunk } }
 	}
 
 	immediate = {
 		owner = { set_country_flag = encountered_solarpunk }
 	}
-
 	option = {
 		name = fircon.5015.a
 		owner = {
@@ -5432,7 +5065,6 @@ fleet_event = {
 			}
 		}
 	}
-
 	option = {
 		exclusive_trigger = {
 			owner = {
@@ -5453,7 +5085,6 @@ fleet_event = {
 			}
 		}
 	}
-
 	option = {
 		exclusive_trigger = {
 			owner = { is_homicidal = yes }
@@ -5493,7 +5124,7 @@ ship_event = {
 	title = fircon.5020.name
 	desc = fircon.5020.desc
 	picture = GFX_evt_clocks
-	location = FROM
+	location = from
 	show_sound = evn_fc_observation
 	is_triggered_only = yes
 
@@ -5502,15 +5133,12 @@ ship_event = {
 			has_owner = yes
 			owner = { has_country_flag = solarpunk_country }
 		}
-		NOT = {
-			owner = { has_country_flag = scanned_solarpunk }
-		}
+		NOT = { owner = { has_country_flag = scanned_solarpunk } }
 	}
 
 	immediate = {
 		owner = { set_country_flag = scanned_solarpunk }
 	}
-
 	option = {
 		name = fircon.5020.a
 	}
@@ -5525,9 +5153,7 @@ ship_event = {
 
 	trigger = {
 		from.owner = { has_country_flag = solarpunk_country }
-		NOT = {
-			owner = { has_country_flag = observed_solarpunk }
-		}
+		NOT = { owner = { has_country_flag = observed_solarpunk } }
 	}
 
 	immediate = {
@@ -5551,7 +5177,7 @@ country_event = {
 	title = fircon.5026.name
 	desc = fircon.5026.desc
 	picture = GFX_evt_scholarium_anomaly
-	location = FROMFROM
+	location = fromfrom
 	show_sound = evn_fc_observation
 	is_triggered_only = yes
 
@@ -5564,7 +5190,6 @@ country_event = {
 		set_country_flag = physics_insights
 		set_predictive_observation_insight = { VALUE = 100 }
 	}
-
 	option = {
 		name = ASTOUNDING
 		add_observation_insight_effect = {
@@ -5613,17 +5238,9 @@ planet_event = {
 	}
 
 	immediate = {
-		planet_event = {
-			id = fircon.5035
-			scopes = { from = from }
-			days = 1
-		}
+		planet_event = { id = fircon.5035 scopes = { from = from } days = 1 }
 		owner = {
-			country_event = {
-				id = fircon.5045
-				scopes = { from = from }
-				days = 5
-			}
+			country_event = { id = fircon.5045 scopes = { from = from } days = 5 }
 		}
 	}
 }
@@ -5698,7 +5315,6 @@ country_event = {
 	trigger = {
 		NOT = { has_country_flag = had_solarpunk_communication }
 	}
-
 	picture_event_data = {
 		portrait = from.owner.ruler
 		planet_background = from
@@ -5706,11 +5322,9 @@ country_event = {
 		city_level = from
 		room = from.owner
 	}
-
 	immediate = {
 		set_country_flag = had_solarpunk_communication
 	}
-
 	option = {
 		name = fircon.5036.a
 		custom_tooltip = fircon.5036.tt
@@ -5737,11 +5351,8 @@ fleet_event = {
 			has_star_flag = solarpunk_mad
 			NOT = { has_star_flag = solarpunk_returned }
 		}
-		NOT = {
-			owner = { has_country_flag = solarpunk_country }
-		}
+		NOT = { owner = { has_country_flag = solarpunk_country } }
 	}
-
 	picture_event_data = {
 		portrait = from.space_owner.ruler
 		planet_background = from.space_owner.capital_scope
@@ -5749,7 +5360,6 @@ fleet_event = {
 		city_level = from.space_owner.capital_scope
 		room = from.space_owner
 	}
-
 	immediate = {
 		from = {
 			set_star_flag = solarpunk_returned
@@ -5757,7 +5367,6 @@ fleet_event = {
 		}
 		every_country = { establish_communications_no_message = from.space_owner }
 	}
-
 	option = {
 		name = ACTION_STATIONS
 		custom_tooltip = fircon.5040.a.tt
@@ -5797,10 +5406,7 @@ country_event = {
 		change_government = {
 			authority = auth_democratic
 			remove_invalid_civics = yes
-			civics = {
-				civic = civic_distinguished_admiralty
-				civic = civic_idealistic_foundation
-			}
+			civics = { civic = civic_distinguished_admiralty civic = civic_idealistic_foundation }
 		}
 		copy_techs_from = {
 			target = from
@@ -5916,7 +5522,6 @@ country_event = {
 	immediate = {
 		owner = { set_country_flag = polite_request_fired }
 	}
-
 	picture_event_data = {
 		portrait = event_target:solarpunk_country.ruler
 		planet_background = event_target:solarpunk_country.capital_scope
@@ -5924,7 +5529,6 @@ country_event = {
 		city_level = event_target:solarpunk_country.capital_scope
 		room = event_target:solarpunk_country
 	}
-
 	option = {
 		allow = {
 			event_target:solarpunk_country = { is_primitive = yes }
@@ -5954,7 +5558,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = fircon.5050.c
 		custom_tooltip = fircon.5050.c.tt
@@ -6041,12 +5644,10 @@ country_event = {
 country_event = {
 	id = fircon.6000
 	title = fircon.6000.name
-
 	desc = {
 		text = fircon.6000.desc
 		trigger = { is_subterranean_empire = no }
 	}
-
 	desc = {
 		text = fircon.6000.desc.subterranean
 		trigger = { is_subterranean_empire = yes }
@@ -6090,43 +5691,27 @@ country_event = {
 		save_event_target_as = subterranean_planet_owner
 		set_timed_country_flag = { flag = recent_preftl_diplomatic_event years = 15 }
 	}
-
 	option = { # Bring them to space
 		name = fircon.6000.a
 		event_target:non_believers_country = {
 			add_modifier = { modifier = pre_ftl_distrustful }
 		}
-		country_event = {
-			id = fircon.6005
-			days = 15
-			random = 15
-		}
+		country_event = { id = fircon.6005 days = 15 random = 15 }
 	}
-
 	option = { # The planet is not hollow!
 		name = fircon.6000.b
 		event_target:non_believers_country = {
 			add_modifier = { modifier = pre_ftl_distrustful }
 		}
-		country_event = {
-			id = fircon.6015
-			days = 15
-			random = 15
-		}
+		country_event = { id = fircon.6015 days = 15 random = 15 }
 	}
-
 	option = { # Bring them to space
 		name = fircon.6000.c
 		event_target:non_believers_country = {
 			add_modifier = { modifier = pre_ftl_distrustful }
 		}
-		country_event = {
-			id = fircon.6020
-			days = 15
-			random = 15
-		}
+		country_event = { id = fircon.6020 days = 15 random = 15 }
 	}
-
 	after = {
 		# Applying it to both the country and the planet to have a visual reminder
 		hidden_effect = {
@@ -6142,7 +5727,6 @@ country_event = {
 	id = fircon.6005
 	title = fircon.6005.name
 	desc = fircon.6005.desc
-
 	inline_script = {
 		script = events/biogenesis_event_art
 		OWNER = owner
@@ -6157,18 +5741,12 @@ country_event = {
 	trigger = {
 		exists = event_target:non_believers_country
 	}
-
 	option = {
 		name = fircon.6005.a
 	}
-
 	after = {
 		hidden_effect = {
-			country_event = {
-				id = fircon.6025
-				days = 30
-				random = 30
-			}
+			country_event = { id = fircon.6025 days = 30 random = 30 }
 		}
 	}
 }
@@ -6186,7 +5764,6 @@ country_event = {
 	trigger = {
 		exists = event_target:non_believers_country
 	}
-
 	option = {
 		name = fircon.6005.a
 		add_monthly_resource_mult = {
@@ -6197,14 +5774,9 @@ country_event = {
 		}
 		event_target:non_believers_country = { force_add_civic = civic_flat_world_theory }
 	}
-
 	after = {
 		hidden_effect = {
-			country_event = {
-				id = fircon.6025
-				days = 30
-				random = 30
-			}
+			country_event = { id = fircon.6025 days = 30 random = 30 }
 		}
 	}
 }
@@ -6222,20 +5794,14 @@ country_event = {
 	trigger = {
 		exists = event_target:non_believers_country
 	}
-
 	option = {
 		name = fircon.6005.a
 	}
-
 	after = {
 		# Applying it to both the country and the planet to have a visual reminder
 		event_target:non_believers_country = { remove_modifier = pre_ftl_distrustful }
 		hidden_effect = {
-			country_event = {
-				id = fircon.6025
-				days = 30
-				random = 30
-			}
+			country_event = { id = fircon.6025 days = 30 random = 30 }
 			event_target:non_believers_planet = { remove_modifier = pre_ftl_distrustful }
 		}
 	}
@@ -6265,7 +5831,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Give them troops
 		name = fircon.6025.a
 		enable_special_project = {
@@ -6274,33 +5839,14 @@ country_event = {
 			owner = root.owner
 		}
 	}
-
 	option = { # Nah
 		name = fircon.6025.b
 		hidden_effect = {
 			# Slightly higher chances of something happening if you do nothing
 			random_list = {
-				35 = {
-					country_event = {
-						id = fircon.6030
-						days = 360
-						random = 720
-					}
-				} # Subterranean invasion!
-				35 = {
-					country_event = {
-						id = fircon.6032
-						days = 360
-						random = 720
-					}
-				} # Eruption!
-				30 = {
-					country_event = {
-						id = fircon.6033
-						days = 360
-						random = 720
-					}
-				} # Absolutely nothing happens
+				35 = { country_event = { id = fircon.6030 days = 360 random = 720 } } # Subterranean invasion!
+				35 = { country_event = { id = fircon.6032 days = 360 random = 720 } } # Eruption!
+				30 = { country_event = { id = fircon.6033 days = 360 random = 720 } } # Absolutely nothing happens
 			}
 		}
 	}
@@ -6321,9 +5867,7 @@ country_event = {
 	}
 
 	immediate = {
-		event_target:non_believers_country = {
-			set_country_flag = pre_ftl_subterranean_invasion_started
-		}
+		event_target:non_believers_country = { set_country_flag = pre_ftl_subterranean_invasion_started }
 		event_target:non_believers_planet = {
 			create_subterranean_nation = { FLAG = subterranean_nation_fc }
 			while = {
@@ -6338,7 +5882,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = {
 			text = fircon.6030.a
@@ -6357,14 +5900,12 @@ country_event = {
 country_event = {
 	id = fircon.6032
 	title = fircon.6032.name
-
 	desc = {
 		text = fircon.6032.desc.notroops
 		trigger = {
 			NOT = { has_country_flag = helped_non_believers }
 		}
 	}
-
 	desc = {
 		text = fircon.6032.desc.troops
 		trigger = { has_country_flag = helped_non_believers }
@@ -6378,7 +5919,6 @@ country_event = {
 	trigger = {
 		exists = event_target:non_believers_country
 	}
-
 	option = {
 		name = fircon.6032.a
 		if = { # if you did not help them, people die
@@ -6394,7 +5934,6 @@ country_event = {
 		}
 		event_target:non_believers_planet = { add_deposit = d_active_volcano }
 	}
-
 	after = {
 		hidden_effect = {
 			country_event = { id = fircon.6035 days = 15 }
@@ -6415,11 +5954,9 @@ country_event = {
 	trigger = {
 		exists = event_target:non_believers_country
 	}
-
 	option = {
 		name = ACKNOWLEDGED
 	}
-
 	after = {
 		hidden_effect = {
 			country_event = { id = fircon.6035 days = 15 }
@@ -6431,7 +5968,7 @@ country_event = {
 country_event = {
 	id = fircon.6034
 	hide_window = yes
-	location = FROMFROM
+	location = fromfrom
 	is_triggered_only = yes
 
 	trigger = {
@@ -6458,7 +5995,6 @@ country_event = {
 country_event = {
 	id = fircon.6035
 	title = fircon.6035.name
-
 	desc = {
 		trigger = {
 			text = fircon.6035.desc.start
@@ -6468,9 +6004,7 @@ country_event = {
 			}
 			success_text = {
 				text = fircon.6035.desc.sun
-				NOT = {
-					event_target:non_believers_planet = { has_climate = wet }
-				}
+				NOT = { event_target:non_believers_planet = { has_climate = wet } }
 			}
 			text = newline
 			text = fircon.6035.desc.end
@@ -6485,7 +6019,6 @@ country_event = {
 	trigger = {
 		exists = event_target:non_believers_country
 	}
-
 	option = {
 		name = fircon.6035.a
 		add_monthly_resource_mult = {
@@ -6495,7 +6028,6 @@ country_event = {
 			max = @tier4researchmax
 		}
 	}
-
 	after = {
 		event_target:non_believers_country = {
 			if = {
@@ -6513,7 +6045,7 @@ country_event = {
 country_event = {
 	id = fircon.6036
 	hide_window = yes
-	location = FROMFROM
+	location = fromfrom
 	is_triggered_only = yes
 
 	trigger = {
@@ -6572,7 +6104,6 @@ country_event = {
 			set_owner = event_target:subterranean_country_preftl
 		}
 	}
-
 	option = {
 		name = fircon.6031.a
 	}
@@ -6582,14 +6113,12 @@ country_event = {
 country_event = {
 	id = fircon.6038
 	title = fircon.6038.name
-
 	desc = {
 		text = fircon.6038.desc.notroops
 		trigger = {
 			NOT = { has_country_flag = helped_non_believers }
 		}
 	}
-
 	desc = {
 		text = fircon.6038.desc.troops
 		trigger = { has_country_flag = helped_non_believers }
@@ -6608,11 +6137,9 @@ country_event = {
 		# Destroying the subterraneans
 		event_target:subterranean_country = { destroy_country = yes }
 	}
-
 	option = {
 		name = EXCELLENT
 	}
-
 	after = {
 		hidden_effect = {
 			country_event = { id = fircon.6035 days = 15 }
@@ -6666,7 +6193,6 @@ country_event = {
 		set_timed_country_flag = { flag = fircon_7500_fired years = 15 }
 		set_timed_country_flag = { flag = recent_preftl_diplomatic_event years = 5 }
 	}
-
 	option = { # They are not wrong
 		name = fircon.7500.a
 		trigger = {
@@ -6684,13 +6210,11 @@ country_event = {
 			max = @tier2unitymax
 		}
 	}
-
 	option = { # They ARE wrong
 		trigger = { is_xenophobe = yes }
 		name = fircon.7500.b
 		add_resource = { influence = 200 }
 	}
-
 	option = { # Really? Us!?
 		trigger = {
 			species = {
@@ -6708,7 +6232,6 @@ country_event = {
 			max = @tier3unitymax
 		}
 	}
-
 	option = { # What a waste of time
 		trigger = { values_others = no }
 		name = fircon.7500.d
@@ -6716,13 +6239,11 @@ country_event = {
 			pop_group_transfer_ethic = { ETHOS = ethic_xenophobe AMOUNT = 100 }
 		}
 	}
-
 	option = { # Can we have some of those plushies?
 		trigger = { is_megacorp = no values_others = yes }
 		name = fircon.7500.e
 		add_modifier = { modifier = stuffed_toy days = -1 }
 	}
-
 	option = { # Where is our cut?
 		trigger = { is_megacorp = yes }
 		name = fircon.7500.f
@@ -6780,7 +6301,6 @@ country_event = {
 		set_timed_country_flag = { flag = fircon_7505_fired years = 15 }
 		set_timed_country_flag = { flag = recent_preftl_diplomatic_event years = 5 }
 	}
-
 	option = { # Lie to them
 		name = {
 			trigger = { is_hive_empire = yes }
@@ -6821,7 +6341,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # White Lie
 		name = fircon.7505.b
 		random_list = {
@@ -6860,7 +6379,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Correct Them
 		name = fircon.7505.c
 	}
@@ -6870,12 +6388,10 @@ country_event = {
 country_event = {
 	id = fircon.7510
 	title = fircon.7510.name
-
 	desc = {
 		trigger = { is_gestalt = no }
 		text = fircon.7510.desc.regular
 	}
-
 	desc = {
 		trigger = { is_gestalt = yes }
 		text = fircon.7510.desc.gestalt
@@ -6915,7 +6431,6 @@ country_event = {
 		set_timed_country_flag = { flag = fircon_7510_fired years = 15 }
 		set_timed_country_flag = { flag = recent_preftl_diplomatic_event years = 5 }
 	}
-
 	option = { # How horrible
 		name = fircon.7510.a
 		custom_tooltip = fircon.distrust_diplomacy
@@ -6946,7 +6461,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # This is progress
 		trigger = { values_others = no }
 		name = {
@@ -7015,12 +6529,8 @@ country_event = {
 			owner = { save_event_target_as = pre_ftl_country }
 		}
 		set_country_flag = fircon_8000_fired
-		set_timed_country_flag = {
-			flag = recent_preftl_diplomatic_event
-			days = @PreFTLDiplomacyEventTimer
-		}
+		set_timed_country_flag = { flag = recent_preftl_diplomatic_event days = @PreFTLDiplomacyEventTimer }
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -7029,15 +6539,11 @@ country_event = {
 			text = INTERESTING
 		}
 		name = {
-			trigger = {
-				owner = { is_xenophile = yes }
-			}
+			trigger = { owner = { is_xenophile = yes } }
 			text = fircon.8000.a
 		}
 		name = {
-			trigger = {
-				owner = { is_xenophobe = yes }
-			}
+			trigger = { owner = { is_xenophobe = yes } }
 			text = fircon.8000.b
 		}
 		owner = {
@@ -7048,15 +6554,10 @@ country_event = {
 				max = @tier2researchmax
 			}
 			hidden_effect = {
-				country_event = {
-					id = fircon.8001
-					days = 360
-					random = 60
-				}
+				country_event = { id = fircon.8001 days = 360 random = 60 }
 			}
 		}
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -7065,9 +6566,7 @@ country_event = {
 			text = fircon.8000.c
 		}
 		name = {
-			trigger = {
-				owner = { is_xenophobe = yes }
-			}
+			trigger = { owner = { is_xenophobe = yes } }
 			text = fircon.8000.d
 		}
 		custom_tooltip = xenophiliacs_tt
@@ -7086,20 +6585,8 @@ country_event = {
 			add_resource = { influence = -100 }
 			hidden_effect = {
 				random_list = {
-					50 = {
-						country_event = {
-							id = fircon.8002
-							days = 360
-							random = 60
-						}
-					}
-					50 = {
-						country_event = {
-							id = fircon.8003
-							days = 360
-							random = 60
-						}
-					}
+					50 = { country_event = { id = fircon.8002 days = 360 random = 60 } }
+					50 = { country_event = { id = fircon.8003 days = 360 random = 60 } }
 				}
 			}
 		}
@@ -7114,11 +6601,8 @@ country_event = {
 	show_sound = event_galactic_community
 	is_triggered_only = yes
 	location = event_target:pre_ftl_planet
-
 	option = {
-		trigger = {
-			owner = { is_xenophile = no }
-		}
+		trigger = { owner = { is_xenophile = no } }
 		name = fircon.8001.a
 		event_target:pre_ftl_country = {
 			add_modifier = { modifier = pre_ftl_diplomacy_01 years = 5 }
@@ -7150,11 +6634,8 @@ country_event = {
 			unity = 300
 		}
 	}
-
 	option = {
-		trigger = {
-			owner = { is_xenophile = yes }
-		}
+		trigger = { owner = { is_xenophile = yes } }
 		name = fircon.8001.a
 		event_target:pre_ftl_country = {
 			add_modifier = { modifier = pre_ftl_diplomacy_01 years = 10 }
@@ -7196,7 +6677,6 @@ country_event = {
 	show_sound = event_galactic_community
 	is_triggered_only = yes
 	location = event_target:pre_ftl_planet
-
 	option = {
 		name = UNDERSTOOD
 		add_monthly_resource_mult = {
@@ -7241,7 +6721,6 @@ country_event = {
 	show_sound = event_galactic_community
 	is_triggered_only = yes
 	location = event_target:pre_ftl_planet
-
 	option = {
 		name = fircon.8003.a
 		event_target:pre_ftl_country = {
@@ -7299,7 +6778,6 @@ country_event = {
 		set_country_flag = fircon_8025_fired
 		set_timed_country_flag = { flag = recent_preftl_diplomatic_event years = 15 }
 	}
-
 	option = {
 		name = fircon.8025.a
 		allow = {
@@ -7308,14 +6786,12 @@ country_event = {
 		add_resource = { influence = -50 }
 		event_target:freeport_planet = { add_deposit = d_freeports }
 	}
-
 	option = {
 		name = fircon.8025.b
 		event_target:freeport_planet = {
 			add_modifier = { modifier = freeport_smuggling years = 20 }
 		}
 	}
-
 	option = {
 		name = fircon.8025.c
 		allow = {
@@ -7332,14 +6808,12 @@ country_event = {
 country_event = {
 	id = fircon.8030
 	title = fircon.8030.name
-
 	desc = {
 		trigger = {
 			event_target:sweet_species = { is_lithoid = no }
 		}
 		text = fircon.8030.desc
 	}
-
 	desc = {
 		trigger = {
 			event_target:sweet_species = { is_lithoid = yes }
@@ -7360,9 +6834,7 @@ country_event = {
 			has_country_flag = recent_preftl_diplomatic_event
 		}
 		any_observed_pre_ftl_within_border = {
-			NOT = {
-				is_broken_shackles_pre_ftl_to_scope = { SCOPE = root }
-			}
+			NOT = { is_broken_shackles_pre_ftl_to_scope = { SCOPE = root } }
 		}
 	}
 
@@ -7371,12 +6843,10 @@ country_event = {
 		set_country_flag = fircon_8030_fired
 		set_timed_country_flag = { flag = recent_preftl_diplomatic_event years = 15 }
 	}
-
 	option = {
 		name = fircon.8030.a
 		add_modifier = { modifier = sweet_tooth_blockade years = 20 }
 	}
-
 	option = {
 		name = fircon.8030.b
 		if = {
@@ -7387,7 +6857,6 @@ country_event = {
 			add_modifier = { modifier = sweet_tooth_medecine years = 10 }
 		}
 	}
-
 	option = {
 		name = fircon.8030.c
 		add_resource = { energy = 1000 }
@@ -7426,7 +6895,6 @@ country_event = {
 		set_country_flag = fircon_8035_fired
 		set_timed_country_flag = { flag = recent_preftl_diplomatic_event years = 15 }
 	}
-
 	option = {
 		name = fircon.8035.a
 		allow = {
@@ -7437,12 +6905,10 @@ country_event = {
 			energy = 500
 		}
 	}
-
 	option = {
 		name = fircon.8035.b
 		event_target:landgrab_planet = { add_deposit = d_landgrab_blocker }
 	}
-
 	option = {
 		name = fircon.8035.c
 		allow = {
@@ -7478,14 +6944,12 @@ country_event = {
 		set_country_flag = fircon_8040_fired
 		set_timed_country_flag = { flag = recent_preftl_diplomatic_event years = 15 }
 	}
-
 	option = {
 		name = EXCELLENT
 		event_target:fruitful_coop_planet = {
 			add_modifier = { modifier = fruitful_coop_planet_mod days = -1 }
 		}
 	}
-
 	option = {
 		name = fircon.8040.b
 		allow = {
@@ -7519,9 +6983,7 @@ country_event = {
 			is_primitive = no
 		}
 		any_observed_pre_ftl_within_border = {
-			NOT = {
-				is_broken_shackles_pre_ftl_to_scope = { SCOPE = root }
-			}
+			NOT = { is_broken_shackles_pre_ftl_to_scope = { SCOPE = root } }
 		}
 	}
 
@@ -7539,7 +7001,6 @@ country_event = {
 		set_country_flag = fircon_8045_fired
 		set_timed_country_flag = { flag = recent_preftl_diplomatic_event years = 15 }
 	}
-
 	option = {
 		name = fircon.8045.a
 		allow = {
@@ -7551,7 +7012,6 @@ country_event = {
 			energy = -5000
 		}
 	}
-
 	option = {
 		name = fircon.8045.b
 		custom_tooltip = fircon.8045.b.tt
@@ -7564,7 +7024,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = fircon.8045.c
 		trigger = { allows_slavery = yes }
@@ -7599,9 +7058,7 @@ country_event = {
 			has_country_flag = recent_preftl_diplomatic_event
 		}
 		any_observed_pre_ftl_within_border = {
-			NOT = {
-				is_broken_shackles_pre_ftl_to_scope = { SCOPE = root }
-			}
+			NOT = { is_broken_shackles_pre_ftl_to_scope = { SCOPE = root } }
 		}
 	}
 
@@ -7610,11 +7067,9 @@ country_event = {
 		set_country_flag = fircon.8050_fired
 		set_timed_country_flag = { flag = recent_preftl_diplomatic_event years = 15 }
 	}
-
 	option = {
 		name = fircon.8050.a
 	}
-
 	option = {
 		name = fircon.8050.b
 		allow = {
@@ -7628,7 +7083,6 @@ country_event = {
 			max = @tier1unitymax
 		}
 	}
-
 	option = {
 		name = fircon.8050.c
 		custom_tooltip = fircon.8050.c.tt
@@ -7663,20 +7117,15 @@ country_event = {
 		}
 		has_pre_ftl_trade_agreement = yes
 		any_observed_pre_ftl_within_border = {
-			NOT = {
-				is_broken_shackles_pre_ftl_to_scope = { SCOPE = root }
-			}
+			NOT = { is_broken_shackles_pre_ftl_to_scope = { SCOPE = root } }
 		}
 	}
 
 	immediate = {
-		get_random_pre_ftl_trade_agreement_no_broken_shackles = {
-			EVENT = preftl_hagglers
-		}
+		get_random_pre_ftl_trade_agreement_no_broken_shackles = { EVENT = preftl_hagglers }
 		set_country_flag = fircon.8055_fired
 		set_timed_country_flag = { flag = recent_preftl_diplomatic_event years = 15 }
 	}
-
 	option = {
 		name = fircon.8055.a
 		allow = {
@@ -7685,7 +7134,6 @@ country_event = {
 		add_resource = { energy = -6000 }
 		add_modifier = { modifier = preftl_hagglers_mod days = -1 }
 	}
-
 	option = {
 		name = fircon.8055.b
 		custom_tooltip = fircon.8055.b.tt
@@ -7698,10 +7146,11 @@ country_event = {
 			species = event_target:preftl_hagglers_species
 			class = official
 			skill = 4
-			traits = { 1 = leader_trait_preftl_haggler }
+			traits = {
+				1 = leader_trait_preftl_haggler
+			}
 		}
 	}
-
 	option = {
 		name = fircon.8055.c
 		add_resource = { energy = 100 }
@@ -7751,16 +7200,9 @@ country_event = {
 		event_target:pre_ftl_country.capital_scope = {
 			add_modifier = { modifier = pre_ftl_diplomatic_03 }
 		}
-		set_timed_country_flag = {
-			flag = fircon_8060_fired
-			days = @PreFTLDiplomacyEventTimerLong
-		}
-		set_timed_country_flag = {
-			flag = recent_preftl_diplomatic_event
-			days = @PreFTLDiplomacyEventTimer
-		}
+		set_timed_country_flag = { flag = fircon_8060_fired days = @PreFTLDiplomacyEventTimerLong }
+		set_timed_country_flag = { flag = recent_preftl_diplomatic_event days = @PreFTLDiplomacyEventTimer }
 	}
-
 	option = {
 		name = fircon.8060.a
 		if = {
@@ -7777,14 +7219,9 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			country_event = {
-				id = fircon.8065
-				days = 720
-				random = 100
-			}
+			country_event = { id = fircon.8065 days = 720 random = 100 }
 		}
 	}
-
 	option = {
 		name = fircon.8060.b
 		tooltip = {
@@ -7794,20 +7231,8 @@ country_event = {
 		}
 		hidden_effect = {
 			random_list = {
-				25 = {
-					country_event = {
-						id = fircon.8070
-						days = 720
-						random = 100
-					}
-				}
-				75 = {
-					country_event = {
-						id = fircon.8075
-						days = 720
-						random = 100
-					}
-				}
+				25 = { country_event = { id = fircon.8070 days = 720 random = 100 } }
+				75 = { country_event = { id = fircon.8075 days = 720 random = 100 } }
 			}
 		}
 	}
@@ -7849,13 +7274,10 @@ country_event = {
 			add_opinion_modifier = { who = root.owner modifier = opinion_pre_ftl_diplomacy_02 }
 		}
 	}
-
 	option = {
 		name = fircon.8065.a
 		tooltip = {
-			event_target:pre_ftl_country.capital_scope = {
-				remove_modifier = pre_ftl_diplomatic_03
-			}
+			event_target:pre_ftl_country.capital_scope = { remove_modifier = pre_ftl_diplomatic_03 }
 			event_target:pre_ftl_country = {
 				if = {
 					limit = {
@@ -7896,17 +7318,12 @@ country_event = {
 	}
 
 	immediate = {
-		event_target:pre_ftl_country.capital_scope = {
-			remove_modifier = pre_ftl_diplomatic_03
-		}
+		event_target:pre_ftl_country.capital_scope = { remove_modifier = pre_ftl_diplomatic_03 }
 	}
-
 	option = {
 		name = EXCELLENT
 		tooltip = {
-			event_target:pre_ftl_country.capital_scope = {
-				remove_modifier = pre_ftl_diplomatic_03
-			}
+			event_target:pre_ftl_country.capital_scope = { remove_modifier = pre_ftl_diplomatic_03 }
 		}
 		event_target:pre_ftl_country.capital_scope = {
 			add_modifier = { modifier = pre_ftl_diplomatic_04 }
@@ -7936,7 +7353,6 @@ country_event = {
 			add_opinion_modifier = { who = root.owner modifier = opinion_pre_ftl_diplomacy_01 }
 		}
 	}
-
 	option = {
 		name = UNFORTUNATE
 		custom_tooltip = economic_whoopsie_tt
@@ -7962,14 +7378,12 @@ country_event = {
 country_event = {
 	id = fircon.8500
 	title = fircon.8500.name
-
 	desc = {
 		text = "fircon.8500.desc.regular"
 		trigger = {
 			from.owner = { is_xenophobe = no }
 		}
 	}
-
 	desc = {
 		text = "fircon.8500.desc.xenophobe"
 		trigger = {
@@ -7990,27 +7404,18 @@ country_event = {
 		}
 		has_pre_ftl_trade_agreement = yes
 		any_observed_pre_ftl_within_border = {
-			NOT = {
-				is_broken_shackles_pre_ftl_to_scope = { SCOPE = root }
-			}
+			NOT = { is_broken_shackles_pre_ftl_to_scope = { SCOPE = root } }
 		}
 	}
 
 	immediate = {
-		get_random_pre_ftl_trade_agreement_no_broken_shackles = {
-			EVENT = preftl_misusers
-		}
+		get_random_pre_ftl_trade_agreement_no_broken_shackles = { EVENT = preftl_misusers }
 		set_country_flag = fircon.8500_fired
 		set_timed_country_flag = { flag = recent_preftl_diplomatic_event years = 15 }
 	}
-
 	option = {
 		name = fircon.8500.a
-		country_event = {
-			id = fircon.8505
-			days = 180
-			random = 20
-		}
+		country_event = { id = fircon.8505 days = 180 random = 20 }
 		add_monthly_resource_mult = {
 			resource = unity
 			value = @tier1unityreward
@@ -8018,14 +7423,9 @@ country_event = {
 			max = @tier1unitymax
 		}
 	}
-
 	option = {
 		name = fircon.8500.b
-		country_event = {
-			id = fircon.8510
-			days = 180
-			random = 20
-		}
+		country_event = { id = fircon.8510 days = 180 random = 20 }
 		event_target:preftl_misusers_country = {
 			add_opinion_modifier = { who = root.owner modifier = opinion_tech_abusers_pro }
 		}
@@ -8045,7 +7445,6 @@ country_event = {
 	trigger = {
 		exists = event_target:preftl_misusers_planet
 	}
-
 	option = {
 		name = "ACKNOWLEDGED"
 		event_target:preftl_misusers_country = {
@@ -8067,7 +7466,6 @@ country_event = {
 	trigger = {
 		exists = event_target:preftl_misusers_planet
 	}
-
 	option = {
 		name = "ACKNOWLEDGED"
 		event_target:preftl_misusers_country = {
@@ -8109,14 +7507,9 @@ country_event = {
 		set_timed_country_flag = { flag = recent_preftl_diplomatic_event years = 15 }
 		event_target:pre_ftl_planet.observation_outpost = { set_event_locked = yes }
 	}
-
 	option = {
 		name = fircon.8515.a
-		country_event = {
-			id = fircon.8520
-			days = 180
-			random = 20
-		}
+		country_event = { id = fircon.8520 days = 180 random = 20 }
 		add_monthly_resource_mult = {
 			resource = influence
 			value = @tier1influencereward
@@ -8124,14 +7517,9 @@ country_event = {
 			max = @tier1influencemax
 		}
 	}
-
 	option = {
 		name = fircon.8515.b
-		country_event = {
-			id = fircon.8525
-			days = 180
-			random = 20
-		}
+		country_event = { id = fircon.8525 days = 180 random = 20 }
 		add_monthly_resource_mult = {
 			resource = unity
 			value = @tier1unityreward
@@ -8154,7 +7542,6 @@ country_event = {
 	trigger = {
 		exists = event_target:preftl_lone_drone_planet
 	}
-
 	option = {
 		name = "ACKNOWLEDGED"
 		event_target:preftl_lone_drone_country = {
@@ -8176,7 +7563,6 @@ country_event = {
 	trigger = {
 		exists = event_target:preftl_lone_drone_planet
 	}
-
 	option = {
 		name = fircon.8525.a
 		custom_tooltip = fircon.8525.a.tt
@@ -8185,8 +7571,12 @@ country_event = {
 			name = random
 			class = scientist
 			skill = 3
-			traits = { 1 = leader_trait_meticulous }
-			effect = { save_event_target_as = lone_drone_leader }
+			traits = {
+				1 = leader_trait_meticulous
+			}
+			effect = {
+				save_event_target_as = lone_drone_leader
+			}
 		}
 	}
 }
@@ -8196,7 +7586,6 @@ country_event = {
 	id = fircon.8565
 	title = fircon.8565.name
 	desc = fircon.8565.desc
-
 	inline_script = {
 		script = events/biogenesis_event_art
 		OWNER = owner
@@ -8217,21 +7606,16 @@ country_event = {
 		}
 		has_pre_ftl_trade_agreement = yes
 		any_observed_pre_ftl_within_border = {
-			NOT = {
-				is_broken_shackles_pre_ftl_to_scope = { SCOPE = root }
-			}
+			NOT = { is_broken_shackles_pre_ftl_to_scope = { SCOPE = root } }
 		}
 	}
 
 	immediate = {
-		get_random_pre_ftl_trade_agreement_no_broken_shackles = {
-			EVENT = preftl_invasives
-		}
+		get_random_pre_ftl_trade_agreement_no_broken_shackles = { EVENT = preftl_invasives }
 		set_country_flag = fircon.8565_fired
 		set_timed_country_flag = { flag = recent_preftl_diplomatic_event years = 15 }
 		set_observation_events_locked = yes
 	}
-
 	option = {
 		name = fircon.8565.a
 		hidden_effect = {
@@ -8239,7 +7623,6 @@ country_event = {
 		}
 		add_modifier = { modifier = straight_talkers years = 20 }
 	}
-
 	option = {
 		name = fircon.8565.b
 		hidden_effect = {
@@ -8262,7 +7645,6 @@ country_event = {
 	trigger = {
 		exists = event_target:preftl_invasives_planet
 	}
-
 	option = {
 		name = "fircon.8570.a"
 		add_monthly_resource_mult = {
@@ -8272,7 +7654,6 @@ country_event = {
 			max = @tier2unitymax
 		}
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -8291,7 +7672,6 @@ country_event = {
 	trigger = {
 		exists = event_target:preftl_invasives_planet
 	}
-
 	option = {
 		name = "fircon.8575.a"
 		add_monthly_resource_mult = {
@@ -8301,7 +7681,6 @@ country_event = {
 			max = @tier2researchmax
 		}
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -8323,9 +7702,7 @@ country_event = {
 			is_gestalt = yes
 		}
 		any_observed_pre_ftl_within_border = {
-			NOT = {
-				is_broken_shackles_pre_ftl_to_scope = { SCOPE = root }
-			}
+			NOT = { is_broken_shackles_pre_ftl_to_scope = { SCOPE = root } }
 		}
 	}
 
@@ -8333,9 +7710,7 @@ country_event = {
 		random_observed_pre_ftl_within_border = {
 			limit = {
 				is_under_societal_enlightenment = root
-				NOT = {
-					is_broken_shackles_pre_ftl_to_scope = { SCOPE = root }
-				}
+				NOT = { is_broken_shackles_pre_ftl_to_scope = { SCOPE = root } }
 			}
 			save_event_target_as = preftl_different_flavors_country
 			set_country_flag = preftl_different_flavors_flag
@@ -8398,7 +7773,6 @@ country_event = {
 	immediate = {
 		set_observation_events_locked = yes
 	}
-
 	option = {
 		name = "fircon.8531.a"
 		add_monthly_resource_mult = {
@@ -8412,12 +7786,9 @@ country_event = {
 			20 = { country_event = { id = fircon.8555 days = 100 } }
 		}
 		hidden_effect = {
-			event_target:preftl_different_flavors_country = {
-				set_country_flag = democracy_flavor
-			}
+			event_target:preftl_different_flavors_country = { set_country_flag = democracy_flavor }
 		}
 	}
-
 	option = {
 		name = "fircon.8531.b"
 		add_monthly_resource_mult = {
@@ -8428,9 +7799,7 @@ country_event = {
 		}
 		country_event = { id = fircon.8560 days = 100 }
 		hidden_effect = {
-			event_target:preftl_different_flavors_country = {
-				set_country_flag = democracy_flavor
-			}
+			event_target:preftl_different_flavors_country = { set_country_flag = democracy_flavor }
 		}
 	}
 }
@@ -8452,7 +7821,6 @@ country_event = {
 	immediate = {
 		set_observation_events_locked = yes
 	}
-
 	option = {
 		name = "fircon.8531.a"
 		add_monthly_resource_mult = {
@@ -8466,12 +7834,9 @@ country_event = {
 			20 = { country_event = { id = fircon.8555 days = 100 } }
 		}
 		hidden_effect = {
-			event_target:preftl_different_flavors_country = {
-				set_country_flag = imperial_flavor
-			}
+			event_target:preftl_different_flavors_country = { set_country_flag = imperial_flavor }
 		}
 	}
-
 	option = {
 		name = "fircon.8531.b"
 		add_monthly_resource_mult = {
@@ -8482,9 +7847,7 @@ country_event = {
 		}
 		country_event = { id = fircon.8560 days = 100 }
 		hidden_effect = {
-			event_target:preftl_different_flavors_country = {
-				set_country_flag = imperial_flavor
-			}
+			event_target:preftl_different_flavors_country = { set_country_flag = imperial_flavor }
 		}
 	}
 }
@@ -8506,7 +7869,6 @@ country_event = {
 	immediate = {
 		set_observation_events_locked = yes
 	}
-
 	option = {
 		name = "fircon.8531.a"
 		add_monthly_resource_mult = {
@@ -8520,12 +7882,9 @@ country_event = {
 			20 = { country_event = { id = fircon.8555 days = 100 } }
 		}
 		hidden_effect = {
-			event_target:preftl_different_flavors_country = {
-				set_country_flag = dictator_flavor
-			}
+			event_target:preftl_different_flavors_country = { set_country_flag = dictator_flavor }
 		}
 	}
-
 	option = {
 		name = "fircon.8531.b"
 		add_monthly_resource_mult = {
@@ -8536,9 +7895,7 @@ country_event = {
 		}
 		country_event = { id = fircon.8560 days = 100 }
 		hidden_effect = {
-			event_target:preftl_different_flavors_country = {
-				set_country_flag = dictator_flavor
-			}
+			event_target:preftl_different_flavors_country = { set_country_flag = dictator_flavor }
 		}
 	}
 }
@@ -8560,7 +7917,6 @@ country_event = {
 	immediate = {
 		set_observation_events_locked = yes
 	}
-
 	option = {
 		name = "fircon.8531.a"
 		add_monthly_resource_mult = {
@@ -8574,12 +7930,9 @@ country_event = {
 			20 = { country_event = { id = fircon.8555 days = 100 } }
 		}
 		hidden_effect = {
-			event_target:preftl_different_flavors_country = {
-				set_country_flag = oligarch_flavor
-			}
+			event_target:preftl_different_flavors_country = { set_country_flag = oligarch_flavor }
 		}
 	}
-
 	option = {
 		name = "fircon.8531.b"
 		add_monthly_resource_mult = {
@@ -8590,9 +7943,7 @@ country_event = {
 		}
 		country_event = { id = fircon.8560 days = 100 }
 		hidden_effect = {
-			event_target:preftl_different_flavors_country = {
-				set_country_flag = oligarch_flavor
-			}
+			event_target:preftl_different_flavors_country = { set_country_flag = oligarch_flavor }
 		}
 	}
 }
@@ -8610,61 +7961,40 @@ country_event = {
 	trigger = {
 		exists = event_target:preftl_different_flavors_planet
 	}
-
 	option = {
 		name = "ACKNOWLEDGED"
 		hidden_effect = {
 			switch = {
 				trigger = has_ethic
 				ethic_fanatic_materialist = {
-					event_target:preftl_different_flavors_country = {
-						shift_ethic = ethic_fanatic_materialist
-					}
+					event_target:preftl_different_flavors_country = { shift_ethic = ethic_fanatic_materialist }
 				}
 				ethic_fanatic_spiritualist = {
-					event_target:preftl_different_flavors_country = {
-						shift_ethic = ethic_fanatic_spiritualist
-					}
+					event_target:preftl_different_flavors_country = { shift_ethic = ethic_fanatic_spiritualist }
 				}
 				ethic_fanatic_militarist = {
-					event_target:preftl_different_flavors_country = {
-						shift_ethic = ethic_fanatic_militarist
-					}
+					event_target:preftl_different_flavors_country = { shift_ethic = ethic_fanatic_militarist }
 				}
 				ethic_fanatic_pacifist = {
-					event_target:preftl_different_flavors_country = {
-						shift_ethic = ethic_fanatic_pacifist
-					}
+					event_target:preftl_different_flavors_country = { shift_ethic = ethic_fanatic_pacifist }
 				}
 				ethic_fanatic_xenophile = {
-					event_target:preftl_different_flavors_country = {
-						shift_ethic = ethic_fanatic_xenophile
-					}
+					event_target:preftl_different_flavors_country = { shift_ethic = ethic_fanatic_xenophile }
 				}
 				ethic_fanatic_xenophobe = {
-					event_target:preftl_different_flavors_country = {
-						shift_ethic = ethic_fanatic_xenophobe
-					}
+					event_target:preftl_different_flavors_country = { shift_ethic = ethic_fanatic_xenophobe }
 				}
 				ethic_fanatic_authoritarian = {
-					event_target:preftl_different_flavors_country = {
-						shift_ethic = ethic_fanatic_authoritarian
-					}
+					event_target:preftl_different_flavors_country = { shift_ethic = ethic_fanatic_authoritarian }
 				}
 				ethic_fanatic_egalitarian = {
-					event_target:preftl_different_flavors_country = {
-						shift_ethic = ethic_fanatic_egalitarian
-					}
+					event_target:preftl_different_flavors_country = { shift_ethic = ethic_fanatic_egalitarian }
 				}
 				ethic_materialist = {
-					event_target:preftl_different_flavors_country = {
-						shift_ethic = ethic_materialist
-					}
+					event_target:preftl_different_flavors_country = { shift_ethic = ethic_materialist }
 				}
 				ethic_spiritualist = {
-					event_target:preftl_different_flavors_country = {
-						shift_ethic = ethic_spiritualist
-					}
+					event_target:preftl_different_flavors_country = { shift_ethic = ethic_spiritualist }
 				}
 				ethic_militarist = {
 					event_target:preftl_different_flavors_country = { shift_ethic = ethic_militarist }
@@ -8679,48 +8009,35 @@ country_event = {
 					event_target:preftl_different_flavors_country = { shift_ethic = ethic_xenophobe }
 				}
 				ethic_authoritarian = {
-					event_target:preftl_different_flavors_country = {
-						shift_ethic = ethic_authoritarian
-					}
+					event_target:preftl_different_flavors_country = { shift_ethic = ethic_authoritarian }
 				}
 				ethic_egalitarian = {
-					event_target:preftl_different_flavors_country = {
-						shift_ethic = ethic_egalitarian
-					}
+					event_target:preftl_different_flavors_country = { shift_ethic = ethic_egalitarian }
 				}
 			}
 		}
 		event_target:preftl_different_flavors_country = {
-			add_opinion_modifier = { who = ROOT modifier = opinion_flavors_up }
+			add_opinion_modifier = { who = root modifier = opinion_flavors_up }
 		}
 		hidden_effect = {
 			switch = {
 				trigger = has_authority
 				auth_democratic = {
-					event_target:preftl_different_flavors_country = {
-						change_government = auth_democratic
-					}
+					event_target:preftl_different_flavors_country = { change_government = auth_democratic }
 				}
 				auth_imperial = {
-					event_target:preftl_different_flavors_country = {
-						change_government = auth_imperial
-					}
+					event_target:preftl_different_flavors_country = { change_government = auth_imperial }
 				}
 				auth_dictatorial = {
-					event_target:preftl_different_flavors_country = {
-						change_government = auth_dictatorial
-					}
+					event_target:preftl_different_flavors_country = { change_government = auth_dictatorial }
 				}
 				auth_oligarchic = {
-					event_target:preftl_different_flavors_country = {
-						change_government = auth_oligarchic
-					}
+					event_target:preftl_different_flavors_country = { change_government = auth_oligarchic }
 				}
 			}
 		}
 		custom_tooltip = align_pre_FTL_country_ethics_tooltip
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -8739,17 +8056,15 @@ country_event = {
 	trigger = {
 		exists = event_target:preftl_different_flavors_planet
 	}
-
 	option = {
 		name = "ACKNOWLEDGED"
 		event_target:preftl_different_flavors_country = {
-			add_opinion_modifier = { who = ROOT modifier = opinion_flavors_down }
+			add_opinion_modifier = { who = root modifier = opinion_flavors_down }
 		}
 		event_target:preftl_different_flavors_planet = {
 			add_modifier = { modifier = stand_your_ground }
 		}
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
@@ -8768,16 +8083,13 @@ country_event = {
 	trigger = {
 		exists = event_target:preftl_different_flavors_planet
 	}
-
 	option = {
 		name = "fircon.8560.a"
 		event_target:preftl_different_flavors_country = {
-			add_opinion_modifier = { who = ROOT modifier = opinion_flavors_up }
+			add_opinion_modifier = { who = root modifier = opinion_flavors_up }
 		}
 	}
-
 	after = {
 		set_observation_events_unlocked = yes
 	}
 }
-

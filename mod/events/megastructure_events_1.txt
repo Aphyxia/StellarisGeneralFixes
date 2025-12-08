@@ -9,7 +9,6 @@ namespace = utopia
 country_event = {
 	id = utopia.1
 	title = "utopia.1.name"
-
 	desc = {
 		trigger = {
 			switch = {
@@ -44,7 +43,7 @@ country_event = {
 			has_communications = root
 			NOR = {
 				has_country_flag = ringworld_diplomatic_event
-				is_at_war_with = ROOT
+				is_at_war_with = root
 				is_subject = yes
 				is_same_value = root
 			}
@@ -55,11 +54,9 @@ country_event = {
 			is_homicidal = yes
 		}
 	}
-
 	mean_time_to_happen = {
 		years = 10
 	}
-
 	immediate = {
 		random_neighbor_country = {
 			limit = {
@@ -72,7 +69,7 @@ country_event = {
 				}
 				NOR = {
 					has_country_flag = ringworld_diplomatic_event
-					is_at_war_with = ROOT
+					is_at_war_with = root
 					is_subject = yes
 					is_same_value = root
 				}
@@ -94,7 +91,6 @@ country_event = {
 		}
 		set_country_flag = ringworld_diplomatic_event
 	}
-
 	option = {
 		name = utopia.1.a
 		ai_chance = { factor = 90 }
@@ -102,7 +98,6 @@ country_event = {
 			country_event = { id = utopia.2 days = 5 }
 		}
 	}
-
 	option = {
 		name = utopia.1.b
 		switch = {
@@ -200,7 +195,6 @@ country_event = {
 country_event = {
 	id = utopia.2
 	title = "utopia.2.name"
-
 	desc = {
 		trigger = {
 			hidden:from = {
@@ -262,7 +256,6 @@ country_event = {
 			country_event = { id = utopia.6 days = 20 }
 		}
 	}
-
 	option = {
 		name = utopia.2.c
 		trigger = {
@@ -289,7 +282,6 @@ country_event = {
 			add_opinion_modifier = { who = root modifier = opinion_ringworld_terms_accepted }
 		}
 	}
-
 	option = {
 		name = utopia.2.b
 		custom_tooltip = utopia.2.b.tooltip
@@ -331,7 +323,6 @@ country_event = {
 country_event = {
 	id = utopia.3
 	title = "utopia.3.name"
-
 	desc = {
 		trigger = {
 			switch = {
@@ -352,7 +343,6 @@ country_event = {
 	show_sound = event_conversation
 	location = event_target:ring_world
 	is_triggered_only = yes
-
 	option = {
 		name = utopia.3.a
 		# custom_tooltip = utopia.3.a.tooltip
@@ -372,7 +362,6 @@ country_event = {
 	show_sound = event_conversation
 	location = event_target:ring_world
 	is_triggered_only = yes
-
 	option = {
 		name = utopia.4.a
 		tooltip = {
@@ -387,7 +376,6 @@ country_event = {
 country_event = {
 	id = utopia.5
 	title = "utopia.5.name"
-
 	desc = {
 		trigger = {
 			switch = {
@@ -408,7 +396,6 @@ country_event = {
 	show_sound = event_conversation
 	location = event_target:ring_world
 	is_triggered_only = yes
-
 	option = {
 		name = OK
 		trigger = {
@@ -446,7 +433,6 @@ country_event = {
 country_event = {
 	id = utopia.6
 	title = "utopia.6.name"
-
 	desc = {
 		trigger = {
 			hidden:fromfrom = {
@@ -469,7 +455,6 @@ country_event = {
 	show_sound = event_conversation
 	location = event_target:ring_world
 	is_triggered_only = yes
-
 	option = {
 		name = OK
 		trigger = {
@@ -481,7 +466,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = utopia.5.b
 		trigger = {
@@ -506,14 +490,13 @@ country_event = {
 }
 
 ##Ring World Incident Events
+
 country_event = {
 	id = utopia.20
 	hide_window = yes
-
 	mean_time_to_happen = {
 		years = 10
 	}
-
 	trigger = {
 		NOT = { has_country_flag = event_utopia_20 }
 		any_owned_megastructure = {
@@ -564,7 +547,6 @@ country_event = {
 			add_modifier = { modifier = "ms_build_speed_mult" days = -1 }
 		}
 	}
-
 	option = {
 		tooltip = {
 			add_modifier = { modifier = "ms_build_speed_mult" days = -1 }
@@ -582,14 +564,10 @@ country_event = {
 	show_sound = event_construction
 	location = event_target:ring_world
 	is_triggered_only = yes
-
 	option = {
 		name = utopia.22.a
 		allow = {
-			any_owned_megastructure = {
-				is_megastructure_type = ring_world_2
-				is_upgrading = yes
-			}
+			any_owned_megastructure = { is_megastructure_type = ring_world_2 is_upgrading = yes }
 		}
 		event_target:ring_world = {
 			set_halted = 20
@@ -597,7 +575,6 @@ country_event = {
 		}
 		add_resource = { minerals = 500 }
 	}
-
 	option = {
 		name = utopia.22.b
 	}
@@ -618,7 +595,6 @@ country_event = {
 			add_modifier = { modifier = "lower_build_speed_mult" months = 1 }
 		}
 	}
-
 	option = {
 		name = utopia.27.a
 		tooltip = {
@@ -636,7 +612,6 @@ country_event = {
 	show_sound = event_construction
 	location = event_target:ring_world
 	is_triggered_only = yes
-
 	option = {
 		name = utopia.28.a
 		country_event = { id = utopia.23 days = 20 }
@@ -651,7 +626,6 @@ country_event = {
 	show_sound = event_construction
 	location = event_target:ring_world
 	is_triggered_only = yes
-
 	option = {
 		name = utopia.23.a
 		event_target:ring_world = {
@@ -662,7 +636,6 @@ country_event = {
 		}
 		country_event = { id = utopia.26 days = 30 }
 	}
-
 	option = {
 		name = utopia.23.b
 		country_event = { id = utopia.25 days = 30 }
@@ -681,7 +654,6 @@ country_event = {
 	immediate = {
 		event_target:ring_world = { set_halted = 20 }
 	}
-
 	option = {
 		name = utopia.25.a
 	}
@@ -695,7 +667,6 @@ country_event = {
 	show_sound = event_construction
 	location = event_target:ring_world
 	is_triggered_only = yes
-
 	option = {
 		name = utopia.26.a
 	}
@@ -717,8 +688,8 @@ country_event = {
 		any_neighbor_country = {
 			is_country_type = default
 			has_communications = root
-			opinion = { who = ROOT value > -100 }
-			their_opinion = { who = ROOT value > -100 }
+			opinion = { who = root value > -100 }
+			their_opinion = { who = root value > -100 }
 			OR = {
 				has_intel_level = {
 					who = root
@@ -752,8 +723,8 @@ country_event = {
 			limit = {
 				is_country_type = default
 				has_communications = root
-				opinion = { who = ROOT value > -100 }
-				their_opinion = { who = ROOT value > -100 }
+				opinion = { who = root value > -100 }
+				their_opinion = { who = root value > -100 }
 				OR = {
 					has_intel_level = {
 						who = root
@@ -782,11 +753,7 @@ country_event = {
 		random = {
 			chance = 35
 			event_target:dyson_sphere_neighbor = {
-				country_event = {
-					id = utopia.30
-					days = 10
-					random = 7
-				}
+				country_event = { id = utopia.30 days = 10 random = 7 }
 			}
 		}
 		set_global_flag = dyson_diplo_event_global
@@ -881,7 +848,6 @@ country_event = {
 	location = from.capital_scope
 	title = TRANSMISSION
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = from
 		room = from.ruler
@@ -961,7 +927,6 @@ country_event = {
 	is_triggered_only = yes
 	title = TRANSMISSION
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = from
 		room = from.ruler
@@ -1073,16 +1038,10 @@ country_event = {
 				}
 			}
 		}
-		add_opinion_modifier = {
-			who = event_target:dysonsphere_builder
-			modifier = opinion_dysonsphere_terms_denied
-		}
+		add_opinion_modifier = { who = event_target:dysonsphere_builder modifier = opinion_dysonsphere_terms_denied }
 		tooltip = {
 			event_target:dysonsphere_builder = {
-				add_opinion_modifier = {
-					who = root
-					modifier = opinion_dysonsphere_apology_rejected
-				}
+				add_opinion_modifier = { who = root modifier = opinion_dysonsphere_apology_rejected }
 			}
 		}
 		hidden_effect = {
@@ -1104,7 +1063,6 @@ country_event = {
 	is_triggered_only = yes
 	# title = TRANSMISSION
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = from
 		room = from.ruler
@@ -1114,10 +1072,7 @@ country_event = {
 	option = {
 		name = utopia.34.a
 		ai_chance = { factor = 60 }
-		add_opinion_modifier = {
-			who = event_target:dysonsphere_builder
-			modifier = opinion_dysonsphere_terms_denied
-		}
+		add_opinion_modifier = { who = event_target:dysonsphere_builder modifier = opinion_dysonsphere_terms_denied }
 		hidden_effect = {
 			event_target:dysonsphere_builder = {
 				country_event = { id = utopia.40 days = 5 }
@@ -1152,10 +1107,7 @@ country_event = {
 				}
 			}
 		}
-		add_opinion_modifier = {
-			who = event_target:dysonsphere_builder
-			modifier = opinion_dysonsphere_terms_denied
-		}
+		add_opinion_modifier = { who = event_target:dysonsphere_builder modifier = opinion_dysonsphere_terms_denied }
 		tooltip = {
 			event_target:dysonsphere_builder = {
 				add_opinion_modifier = { who = root modifier = opinion_dysonsphere_insult }
@@ -1222,16 +1174,10 @@ country_event = {
 				}
 			}
 		}
-		add_opinion_modifier = {
-			who = event_target:dysonsphere_builder
-			modifier = opinion_dysonsphere_terms_denied
-		}
+		add_opinion_modifier = { who = event_target:dysonsphere_builder modifier = opinion_dysonsphere_terms_denied }
 		tooltip = {
 			event_target:dysonsphere_builder = {
-				add_opinion_modifier = {
-					who = root
-					modifier = opinion_dysonsphere_apology_rejected
-				}
+				add_opinion_modifier = { who = root modifier = opinion_dysonsphere_apology_rejected }
 			}
 		}
 		hidden_effect = {
@@ -1288,16 +1234,10 @@ country_event = {
 				}
 			}
 		}
-		add_opinion_modifier = {
-			who = event_target:dysonsphere_builder
-			modifier = opinion_dysonsphere_terms_denied
-		}
+		add_opinion_modifier = { who = event_target:dysonsphere_builder modifier = opinion_dysonsphere_terms_denied }
 		tooltip = {
 			event_target:dysonsphere_builder = {
-				add_opinion_modifier = {
-					who = root
-					modifier = opinion_dysonsphere_apology_rejected
-				}
+				add_opinion_modifier = { who = root modifier = opinion_dysonsphere_apology_rejected }
 			}
 		}
 		hidden_effect = {
@@ -1319,17 +1259,12 @@ country_event = {
 
 	immediate = {
 		event_target:dysonsphere_builder = {
-			add_opinion_modifier = {
-				who = event_target:dyson_sphere_neighbor
-				modifier = opinion_dysonsphere_apology_rejected
-			}
+			add_opinion_modifier = { who = event_target:dyson_sphere_neighbor modifier = opinion_dysonsphere_apology_rejected }
 		}
 	}
-
 	option = {
 		name = utopia.37.a
 	}
-
 	option = {
 		name = utopia.37.b
 	}
@@ -1343,7 +1278,6 @@ country_event = {
 	show_sound = event_conversation
 	location = from.capital_scope
 	is_triggered_only = yes
-
 	option = {
 		name = utopia.38.a
 	}
@@ -1359,29 +1293,21 @@ country_event = {
 	is_triggered_only = yes
 	title = TRANSMISSION
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = from
 		room = from.ruler
 	}
-
 	immediate = {
 		event_target:dysonsphere_builder = {
-			add_opinion_modifier = {
-				who = event_target:dyson_sphere_neighbor
-				modifier = opinion_dysonsphere_insult
-			}
+			add_opinion_modifier = { who = event_target:dyson_sphere_neighbor modifier = opinion_dysonsphere_insult }
 		}
 	}
-
 	option = {
 		name = utopia.39.a
 	}
-
 	option = {
 		name = utopia.39.b
 	}
-
 	option = {
 		name = utopia.39.c
 	}
@@ -1395,7 +1321,6 @@ country_event = {
 	show_sound = event_conversation
 	location = from.capital_scope
 	is_triggered_only = yes
-
 	option = {
 		name = utopia.40.a
 		tooltip = {
@@ -1404,7 +1329,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = utopia.40.b
 		tooltip = {
@@ -1450,20 +1374,10 @@ event = {
 				# Nothing
 				90 = {  }
 				# Fountain of Youth
-				30 = {
-					country_event = {
-						id = utopia.51
-						days = 60
-						random = 60
-					}
-				}
+				30 = { country_event = { id = utopia.51 days = 60 random = 60 } }
 				# Abducted Leader
 				30 = {
-					country_event = {
-						id = utopia.62
-						days = 60
-						random = 60
-					}
+					country_event = { id = utopia.62 days = 60 random = 60 }
 					modifier = {
 						factor = 0
 						any_owned_leader = {
@@ -1479,11 +1393,7 @@ event = {
 				}
 				# Neural Bank
 				30 = {
-					country_event = {
-						id = utopia.64
-						days = 60
-						random = 60
-					}
+					country_event = { id = utopia.64 days = 60 random = 60 }
 					modifier = {
 						factor = 0
 						count_owned_leader = {
@@ -1555,7 +1465,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = utopia.51.a
 		trigger = {
@@ -1566,14 +1475,9 @@ country_event = {
 			set_global_flag = utopia_51
 		}
 		hidden_effect = {
-			country_event = {
-				id = utopia.54
-				days = 60
-				random = 20
-			}
+			country_event = { id = utopia.54 days = 60 random = 20 }
 		}
 	}
-
 	option = {
 		name = utopia.51.b
 		trigger = {
@@ -1590,11 +1494,7 @@ country_event = {
 						}
 					}
 				}
-				country_event = {
-					id = utopia.59
-					days = 60
-					random = 20
-				}
+				country_event = { id = utopia.59 days = 60 random = 20 }
 			}
 			else_if = {
 				limit = {
@@ -1609,15 +1509,10 @@ country_event = {
 						}
 					}
 				}
-				country_event = {
-					id = utopia.60
-					days = 60
-					random = 20
-				}
+				country_event = { id = utopia.60 days = 60 random = 20 }
 			}
 		}
 	}
-
 	option = {
 		name = utopia.51.c
 		trigger = {
@@ -1634,11 +1529,7 @@ country_event = {
 						}
 					}
 				}
-				country_event = {
-					id = utopia.59
-					days = 60
-					random = 20
-				}
+				country_event = { id = utopia.59 days = 60 random = 20 }
 			}
 			else_if = {
 				limit = {
@@ -1653,11 +1544,7 @@ country_event = {
 						}
 					}
 				}
-				country_event = {
-					id = utopia.60
-					days = 60
-					random = 20
-				}
+				country_event = { id = utopia.60 days = 60 random = 20 }
 			}
 		}
 	}
@@ -1671,18 +1558,12 @@ country_event = {
 	show_sound = event_administrative_work
 	location = event_target:think_tank_2
 	is_triggered_only = yes
-
 	option = {
 		name = utopia.54.a
 		hidden_effect = {
-			country_event = {
-				id = utopia.58
-				days = 60
-				random = 20
-			}
+			country_event = { id = utopia.58 days = 60 random = 20 }
 		}
 	}
-
 	option = {
 		name = utopia.54.b
 		trigger = {
@@ -1690,14 +1571,9 @@ country_event = {
 		}
 		add_resource = { energy = -500 }
 		hidden_effect = {
-			country_event = {
-				id = utopia.55
-				days = 60
-				random = 20
-			}
+			country_event = { id = utopia.55 days = 60 random = 20 }
 		}
 	}
-
 	option = {
 		name = utopia.54.c
 		trigger = {
@@ -1714,23 +1590,17 @@ country_event = {
 	show_sound = event_administrative_work
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = utopia.55.a
 		hidden_effect = {
 			country_event = { id = utopia.56 days = 10 }
 		}
 	}
-
 	option = {
 		name = utopia.55.b
 		custom_tooltip = utopia.55.b.tooltip
 		hidden_effect = {
-			country_event = {
-				id = utopia.57
-				days = 60
-				random = 20
-			}
+			country_event = { id = utopia.57 days = 60 random = 20 }
 			set_country_flag = miracle_cream
 			event_target:target_country = {
 				country_event = { id = utopia.100 days = 80 }
@@ -1747,11 +1617,9 @@ country_event = {
 	show_sound = event_administrative_work
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = utopia.56.a
 	}
-
 	option = {
 		name = utopia.56.b
 		add_monthly_resource_mult = {
@@ -1761,7 +1629,6 @@ country_event = {
 			max = @tier1researchmax
 		}
 	}
-
 	option = {
 		name = utopia.56.c
 	}
@@ -1780,7 +1647,6 @@ country_event = {
 	immediate = {
 		add_modifier = { modifier = "energy_utopia_57" years = 5 }
 	}
-
 	option = {
 		name = utopia.57.a
 		tooltip = {
@@ -1806,7 +1672,6 @@ country_event = {
 			add_modifier = { modifier = pop_disappearances years = 20 }
 		}
 	}
-
 	option = {
 		name = utopia.100.a
 		event_target:missing_pops_planet = {
@@ -1817,7 +1682,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = utopia.100.b
 	}
@@ -1836,7 +1700,6 @@ country_event = {
 	immediate = {
 		event_target:missing_pops_planet = { remove_modifier = pop_disappearances }
 	}
-
 	option = {
 		name = utopia.101.a
 	}
@@ -1859,7 +1722,6 @@ country_event = {
 			save_event_target_as = worried_scientist
 		}
 	}
-
 	option = {
 		name = utopia.102.a
 		# planet/owner project, best start in country scope, instead of location scope
@@ -1869,7 +1731,6 @@ country_event = {
 			owner = root
 		}
 	}
-
 	option = {
 		name = utopia.102.b
 	}
@@ -1889,7 +1750,6 @@ country_event = {
 	immediate = {
 		add_modifier = { modifier = ageless days = -1 }
 	}
-
 	option = {
 		name = utopia.103.a
 		tooltip = {
@@ -1902,7 +1762,6 @@ country_event = {
 			owner = root
 		}
 	}
-
 	option = {
 		name = utopia.103.b
 		tooltip = {
@@ -1920,7 +1779,6 @@ country_event = {
 	show_sound = event_administrative_work
 	location = event_target:fountain_of_youth_country
 	is_triggered_only = yes
-
 	option = {
 		name = utopia.104.a
 		custom_tooltip = "utopia.104.a.tooltip"
@@ -1930,12 +1788,10 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = utopia.104.c
 		custom_tooltip = utopia.104.c.tooltip
 	}
-
 	option = {
 		name = utopia.104.d
 	}
@@ -1950,7 +1806,6 @@ country_event = {
 	show_sound = event_administrative_work
 	location = event_target:missing_pops_planet
 	is_triggered_only = yes
-
 	option = {
 		name = utopia.105.a
 		hidden_effect = {
@@ -1963,7 +1818,6 @@ country_event = {
 			remove_modifier = energy_utopia_57
 		}
 	}
-
 	option = {
 		name = utopia.105.b
 		event_target:target_country = {
@@ -1976,7 +1830,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = utopia.105.c
 		custom_tooltip = utopia.105.c.tooltip
@@ -2002,7 +1855,6 @@ country_event = {
 	show_sound = event_administrative_work
 	location = capital_scope
 	is_triggered_only = yes
-
 	option = {
 		name = utopia.106.a
 	}
@@ -2012,14 +1864,12 @@ country_event = {
 country_event = {
 	id = utopia.107
 	title = utopia.107.name
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = request_ignored }
 		}
 		text = utopia.107.desc.a
 	}
-
 	desc = {
 		trigger = { has_country_flag = request_ignored }
 		text = utopia.107.desc.b
@@ -2029,7 +1879,6 @@ country_event = {
 	show_sound = event_administrative_work
 	location = capital_scope
 	is_triggered_only = yes
-
 	option = {
 		name = utopia.107.a
 	}
@@ -2051,7 +1900,6 @@ country_event = {
 			remove_modifier = energy_utopia_57
 		}
 	}
-
 	option = {
 		name = utopia.108.a
 		if = {
@@ -2069,7 +1917,6 @@ country_event = {
 	show_sound = event_administrative_work
 	location = event_target:think_tank_2
 	is_triggered_only = yes
-
 	option = {
 		name = utopia.58.a
 	}
@@ -2139,7 +1986,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = utopia.59.a
 		custom_tooltip = utopia.59.a.tooltip
@@ -2158,11 +2004,9 @@ country_event = {
 		}
 		# hidden_effect = { country_event = { id = utopia.61 days = 1800 random = 100 } }
 	}
-
 	option = {
 		name = utopia.59.b
 	}
-
 	option = {
 		name = utopia.59.c
 	}
@@ -2176,14 +2020,12 @@ country_event = {
 	show_sound = event_administrative_work
 	location = event_target:think_tank_2
 	is_triggered_only = yes
-
 	option = {
 		name = utopia.60.a
 		trigger = {
 			resource_stockpile_compare = { resource = energy value < 1000 }
 		}
 	}
-
 	option = {
 		name = utopia.60.b
 		trigger = {
@@ -2192,7 +2034,6 @@ country_event = {
 		add_modifier = { modifier = research_utopia_60 days = -1 }
 		# hidden_effect = { country_event = { id = utopia.61 days = 1800 random = 100 } }
 	}
-
 	option = {
 		name = utopia.60.c
 		trigger = {
@@ -2280,15 +2121,10 @@ country_event = {
 		}
 		set_country_flag = think_tank_event
 	}
-
 	option = {
 		name = utopia.62.a
 		hidden_effect = {
-			country_event = {
-				id = utopia.63
-				days = 360
-				random = 20
-			}
+			country_event = { id = utopia.63 days = 360 random = 20 }
 		}
 	}
 }
@@ -2320,7 +2156,9 @@ country_event = {
 					graphical_culture = "extra_dimensional_01"
 					prefix = no
 					upgradable = no
-					effect = { set_ship_flag = special_science_ship }
+					effect = {
+						set_ship_flag = special_science_ship
+					}
 				}
 				set_location = from.capital_scope
 				save_event_target_as = deleted_ship
@@ -2332,7 +2170,6 @@ country_event = {
 			delete_fleet = this
 		}
 	}
-
 	option = {
 		name = utopia.63.a
 	}
@@ -2410,7 +2247,6 @@ country_event = {
 		}
 		set_country_flag = think_tank_event
 	}
-
 	option = {
 		name = utopia.59.a
 		custom_tooltip = utopia.59.a.tooltip
@@ -2430,11 +2266,9 @@ country_event = {
 		}
 		# hidden_effect = { country_event = { id = utopia.61 days = 1800 random = 100 } }
 	}
-
 	option = {
 		name = utopia.59.b
 	}
-
 	option = {
 		name = utopia.59.c
 	}
@@ -2448,13 +2282,12 @@ country_event = {
 	desc = utopia.80.desc
 	picture = GFX_evt_think_tank
 	show_sound = event_think_tank_build_start
-	location = FROMFROM
+	location = fromfrom
 	is_triggered_only = yes
 
 	trigger = {
 		from = { is_megastructure_type = think_tank_0 }
 	}
-
 	option = {
 		name = utopia.80.a
 	}
@@ -2508,7 +2341,6 @@ country_event = {
 country_event = {
 	id = utopia.82
 	title = utopia.82.name
-
 	desc = {
 		text = utopia.82.desc.a
 		trigger = {
@@ -2518,7 +2350,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = utopia.82.desc.b
 		trigger = {
@@ -2530,15 +2361,12 @@ country_event = {
 	show_sound = event_mega_structure_other_empire_build_start
 	location = event_target:think_tank_system
 	is_triggered_only = yes
-
 	option = {
 		name = utopia.82.a
 	}
-
 	option = {
 		name = utopia.82.b
 	}
-
 	option = {
 		name = utopia.82.c
 	}
@@ -2551,13 +2379,12 @@ country_event = {
 	desc = utopia.83.desc
 	picture = GFX_evt_think_tank
 	show_sound = event_think_tank_build_upgrade
-	location = FROMFROM
+	location = fromfrom
 	is_triggered_only = yes
 
 	trigger = {
 		from = { is_megastructure_type = think_tank_1 }
 	}
-
 	option = {
 		name = utopia.83.a
 	}
@@ -2570,13 +2397,12 @@ country_event = {
 	desc = utopia.85.desc
 	picture = GFX_evt_think_tank
 	show_sound = event_think_tank_build_upgrade
-	location = FROMFROM
+	location = fromfrom
 	is_triggered_only = yes
 
 	trigger = {
 		from = { is_megastructure_type = think_tank_2 }
 	}
-
 	option = {
 		name = utopia.85.a
 	}
@@ -2586,14 +2412,12 @@ country_event = {
 country_event = {
 	id = utopia.84
 	title = utopia.84.name
-
 	desc = {
 		text = utopia.84.desc.a
 		trigger = {
 			NOT = { has_country_flag = finished_think_tank }
 		}
 	}
-
 	desc = {
 		text = utopia.84.desc.b
 		trigger = { has_country_flag = finished_think_tank }
@@ -2601,7 +2425,7 @@ country_event = {
 
 	picture = GFX_evt_think_tank
 	show_sound = event_think_tank_build_complete
-	location = FROMFROM
+	location = fromfrom
 	is_triggered_only = yes
 
 	trigger = {
@@ -2629,13 +2453,11 @@ country_event = {
 			country_event = { id = utopia.86 }
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			country_event = { id = utopia.87 days = 5 }
 		}
 	}
-
 	option = {
 		name = utopia.84.a
 	}
@@ -2659,9 +2481,8 @@ country_event = {
 	desc = utopia.86.desc
 	picture = GFX_evt_think_tank
 	show_sound = event_mega_structure_other_empire_build_complete
-	location = FROMFROMFROM
+	location = fromfromfrom
 	is_triggered_only = yes
-
 	option = {
 		name = OK
 	}
@@ -2676,13 +2497,12 @@ country_event = {
 	desc = utopia.4100.desc
 	picture = GFX_evt_spy_orb
 	show_sound = event_spy_orb_build_start
-	location = FROM
+	location = from
 	is_triggered_only = yes
 
 	trigger = {
 		from = { is_megastructure_type = spy_orb_0 }
 	}
-
 	option = {
 		name = utopia.4100.a
 		custom_tooltip = utopia.4100.a.tooltip
@@ -2742,7 +2562,6 @@ country_event = {
 	show_sound = event_mega_structure_other_empire_build_start
 	location = event_target:spy_system
 	is_triggered_only = yes
-
 	option = {
 		name = OK
 	}
@@ -2755,13 +2574,12 @@ country_event = {
 	desc = utopia.4103.desc
 	picture = GFX_evt_spy_orb
 	show_sound = event_spy_orb_build_upgrade
-	location = FROM
+	location = from
 	is_triggered_only = yes
 
 	trigger = {
 		from = { is_megastructure_type = spy_orb_1 }
 	}
-
 	option = {
 		name = OK
 		custom_tooltip = utopia.4103.a.tooltip
@@ -2775,7 +2593,7 @@ country_event = {
 	desc = utopia.4104.desc
 	picture = GFX_evt_spy_orb
 	show_sound = event_spy_orb_build_complete
-	location = FROM
+	location = from
 	is_triggered_only = yes
 
 	trigger = {
@@ -2804,7 +2622,6 @@ country_event = {
 			country_event = { id = utopia.4110 }
 		}
 	}
-
 	option = {
 		name = utopia.4104.a
 		custom_tooltip = utopia.4104.a.tooltip
@@ -2818,9 +2635,8 @@ country_event = {
 	desc = utopia.4110.desc
 	picture = GFX_evt_spy_orb
 	show_sound = event_mega_structure_other_empire_build_complete
-	location = FROMFROMFROM
+	location = fromfromfrom
 	is_triggered_only = yes
-
 	option = {
 		name = OK
 	}
@@ -2834,13 +2650,12 @@ country_event = {
 	desc = utopia.4000.desc
 	picture = GFX_evt_dyson_sphere
 	show_sound = event_dyson_sphere_build_start
-	location = FROMFROM
+	location = fromfrom
 	is_triggered_only = yes
 
 	trigger = {
 		from = { is_megastructure_type = dyson_sphere_0 }
 	}
-
 	option = {
 		name = utopia.4000.a
 	}
@@ -2894,7 +2709,6 @@ country_event = {
 country_event = {
 	id = utopia.4002
 	title = utopia.4002.name
-
 	desc = {
 		text = utopia.4002.desc.a
 		trigger = {
@@ -2904,7 +2718,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = utopia.4002.desc.b
 		trigger = {
@@ -2916,7 +2729,6 @@ country_event = {
 	show_sound = event_mega_structure_other_empire_build_start
 	location = event_target:dyson_system
 	is_triggered_only = yes
-
 	option = { # has built own Dyson Sphere
 		trigger = {
 			any_owned_megastructure = {
@@ -2932,7 +2744,6 @@ country_event = {
 		}
 		name = utopia.4002.a
 	}
-
 	option = { # has no Dyson Sphere
 		trigger = {
 			NOT = {
@@ -2959,13 +2770,12 @@ country_event = {
 	desc = utopia.4003.desc
 	picture = GFX_evt_dyson_sphere
 	show_sound = event_dyson_sphere_build_upgrade_frame
-	location = FROMFROM
+	location = fromfrom
 	is_triggered_only = yes
 
 	trigger = {
 		from = { is_megastructure_type = dyson_sphere_1 }
 	}
-
 	option = {
 		name = utopia.4003.a
 	}
@@ -2978,13 +2788,12 @@ country_event = {
 	desc = utopia.4004.desc
 	picture = GFX_evt_dyson_sphere
 	show_sound = event_dyson_sphere_build_upgrade_panel
-	location = FROMFROM
+	location = fromfrom
 	is_triggered_only = yes
 
 	trigger = {
 		from = { is_megastructure_type = dyson_sphere_2 }
 	}
-
 	option = {
 		name = utopia.4004.a
 	}
@@ -2997,7 +2806,7 @@ country_event = {
 	desc = utopia.4005.desc
 	picture = GFX_evt_dyson_sphere
 	show_sound = event_dyson_sphere_build_complete
-	location = FROMFROM
+	location = fromfrom
 	is_triggered_only = yes
 
 	trigger = {
@@ -3014,7 +2823,6 @@ country_event = {
 		#	country_event = { id = utopia.4010 }
 		# }
 	}
-
 	option = {
 		name = utopia.4005.a
 	}
@@ -3118,13 +2926,12 @@ country_event = {
 	desc = "utopia.2000.desc"
 	picture = GFX_evt_unknown_ships
 	show_sound = event_ringworld_build_start
-	location = FROMFROM
+	location = fromfrom
 	is_triggered_only = yes
 
 	trigger = {
 		from = { is_megastructure_type = ring_world_1 }
 	}
-
 	option = {
 		name = "utopia.2000.a"
 	}
@@ -3146,7 +2953,7 @@ country_event = {
 			limit = {
 				NOR = {
 					is_ai = yes
-					is_same_value = ROOT
+					is_same_value = root
 				}
 				OR = {
 					has_intel_level = {
@@ -3164,7 +2971,6 @@ country_event = {
 			country_event = { id = utopia.2002 }
 		}
 	}
-
 	after = {
 		if = {
 			limit = {
@@ -3184,7 +2990,6 @@ country_event = {
 country_event = {
 	id = utopia.2002
 	title = "utopia.2002.name"
-
 	desc = {
 		text = utopia.2002.desc.a
 		trigger = {
@@ -3194,7 +2999,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = utopia.2002.desc.b
 		trigger = {
@@ -3206,7 +3010,6 @@ country_event = {
 	show_sound = event_mega_structure_other_empire_build_start
 	location = event_target:ringworld_system
 	is_triggered_only = yes
-
 	option = { # has built own Ring World
 		trigger = {
 			OR = {
@@ -3221,7 +3024,6 @@ country_event = {
 		}
 		name = "utopia.2002.a"
 	}
-
 	option = { # has no Ring World
 		trigger = {
 			count_owned_megastructure = {
@@ -3246,13 +3048,12 @@ country_event = {
 	desc = "utopia.2003.desc"
 	picture = GFX_evt_ringworld
 	show_sound = event_ringworld_build_upgrade
-	location = FROMFROM
+	location = fromfrom
 	is_triggered_only = yes
 
 	trigger = {
 		from = { is_megastructure_type = ring_world_2_intermediate }
 	}
-
 	option = {
 		name = "utopia.2003.a"
 	}
@@ -3262,14 +3063,12 @@ country_event = {
 country_event = {
 	id = utopia.2004
 	title = "utopia.2004.name"
-
 	desc = {
 		text = utopia.2004.desc.a
 		trigger = {
 			NOT = { has_country_flag = finished_ringworld }
 		}
 	}
-
 	desc = {
 		text = utopia.2004.desc.b
 		trigger = { has_country_flag = finished_ringworld }
@@ -3277,7 +3076,7 @@ country_event = {
 
 	picture = GFX_evt_ringworld
 	show_sound = event_ringworld_build_complete
-	location = FROMFROM
+	location = fromfrom
 	is_triggered_only = yes
 
 	trigger = {
@@ -3296,7 +3095,7 @@ country_event = {
 			limit = {
 				NOR = {
 					is_ai = yes
-					is_same_value = ROOT
+					is_same_value = root
 				}
 				OR = {
 					has_intel_level = {
@@ -3316,13 +3115,11 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			country_event = { id = utopia.2006 days = 5 }
 		}
 	}
-
 	option = {
 		name = "utopia.2004.a"
 	}
@@ -3332,16 +3129,12 @@ country_event = {
 country_event = {
 	id = utopia.2005
 	title = "utopia.2005.name"
-
 	desc = {
 		text = utopia.2005.desc.a
 		trigger = {
-			NOT = {
-				from = { has_country_flag = finished_ringworld }
-			}
+			NOT = { from = { has_country_flag = finished_ringworld } }
 		}
 	}
-
 	desc = {
 		text = utopia.2005.desc.b
 		trigger = {
@@ -3353,7 +3146,6 @@ country_event = {
 	show_sound = event_mega_structure_other_empire_build_complete
 	location = event_target:completed_ringworld_system
 	is_triggered_only = yes
-
 	option = { # has built own Ring World
 		trigger = {
 			OR = {
@@ -3368,7 +3160,6 @@ country_event = {
 		}
 		name = "utopia.2005.a"
 	}
-
 	option = { # has no Ring World
 		trigger = {
 			any_owned_megastructure = {
@@ -3399,16 +3190,12 @@ country_event = {
 ship_event = {
 	id = utopia.2010
 	title = "utopia.2010.name"
-
 	desc = {
 		trigger = {
-			NOT = {
-				owner = { has_technology = tech_mega_engineering }
-			}
+			NOT = { owner = { has_technology = tech_mega_engineering } }
 		}
 		text = utopia.2010.a.desc
 	}
-
 	desc = {
 		trigger = {
 			owner = { has_technology = tech_mega_engineering }
@@ -3418,7 +3205,7 @@ ship_event = {
 
 	picture = GFX_evt_space_debris
 	show_sound = event_radio_chatter
-	location = FROM
+	location = from
 	is_triggered_only = yes
 
 	trigger = {
@@ -3431,7 +3218,6 @@ ship_event = {
 	immediate = {
 		from = { save_event_target_as = dyson_system }
 	}
-
 	option = {
 		name = "utopia.2010.a"
 		trigger = {
@@ -3448,7 +3234,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = FASCINATING
 		trigger = {
@@ -3481,9 +3266,8 @@ country_event = {
 	desc = "utopia.2011.desc"
 	picture = GFX_evt_dyson_sphere
 	show_sound = event_dyson_sphere_build_complete
-	location = FROM
+	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 	}
@@ -3496,7 +3280,7 @@ ship_event = {
 	desc = "utopia.2012.desc"
 	picture = GFX_evt_space_debris
 	show_sound = event_radio_chatter
-	location = FROM
+	location = from
 	is_triggered_only = yes
 
 	trigger = {
@@ -3509,7 +3293,6 @@ ship_event = {
 	immediate = {
 		from = { save_event_target_as = nexus_system }
 	}
-
 	option = {
 		name = "utopia.2012.a"
 		trigger = {
@@ -3523,7 +3306,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = FASCINATING
 		trigger = {
@@ -3553,9 +3335,8 @@ country_event = {
 	desc = "utopia.2013.desc"
 	picture = GFX_evt_think_tank
 	show_sound = event_think_tank_build_complete
-	location = FROM
+	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 	}
@@ -3568,7 +3349,7 @@ ship_event = {
 	desc = "utopia.2014.desc"
 	picture = GFX_evt_space_debris
 	show_sound = event_radio_chatter
-	location = FROM
+	location = from
 	is_triggered_only = yes
 
 	trigger = {
@@ -3581,7 +3362,6 @@ ship_event = {
 	immediate = {
 		from = { save_event_target_as = sentry_system }
 	}
-
 	option = {
 		name = "utopia.2014.a"
 		trigger = {
@@ -3597,7 +3377,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = FASCINATING
 		trigger = {
@@ -3629,9 +3408,8 @@ country_event = {
 	desc = "utopia.2015.desc"
 	picture = GFX_evt_spy_orb
 	show_sound = event_spy_orb_build_complete
-	location = FROM
+	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 	}
@@ -3644,7 +3422,7 @@ ship_event = {
 	desc = "utopia.2016.desc"
 	picture = GFX_evt_space_debris
 	show_sound = event_radio_chatter
-	location = FROM
+	location = from
 	is_triggered_only = yes
 
 	trigger = {
@@ -3657,20 +3435,16 @@ ship_event = {
 	immediate = {
 		from = { save_event_target_as = ring_system }
 	}
-
 	option = {
 		name = "utopia.2016.a"
 		trigger = {
 			owner = { has_country_flag = finished_ringworld }
 		}
 	}
-
 	option = {
 		name = AMAZING
 		trigger = {
-			NOT = {
-				owner = { has_country_flag = finished_ringworld }
-			}
+			NOT = { owner = { has_country_flag = finished_ringworld } }
 		}
 		hidden_effect = {
 			owner = {
@@ -3687,9 +3461,8 @@ country_event = {
 	desc = "utopia.2017.desc"
 	picture = GFX_evt_ringworld
 	show_sound = event_ringworld_build_complete
-	location = FROM
+	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 	}
@@ -3726,6 +3499,7 @@ country_event = {
 # Megacorp Megastructure
 #
 ##########################
+
 namespace = mega
 # Mega Art installation Notification
 country_event = {
@@ -3735,8 +3509,7 @@ country_event = {
 	show_sound = event_mystic_reveal
 	picture = GFX_evt_mega_art_installation
 	is_triggered_only = yes
-	location = FROM
-
+	location = from
 	option = {
 		name = EXCELLENT
 		hidden_effect = {
@@ -3752,8 +3525,7 @@ country_event = {
 	show_sound = event_mystic_reveal
 	picture = GFX_evt_mega_art_installation
 	is_triggered_only = yes
-	location = FROM
-
+	location = from
 	option = {
 		name = EXCELLENT
 	}
@@ -3762,12 +3534,10 @@ country_event = {
 country_event = {
 	id = mega.9002
 	title = "mega.9002.name"
-
 	desc = {
 		trigger = { is_xenophile = yes }
 		text = mega.9002.phile.desc
 	}
-
 	desc = {
 		trigger = {
 			OR = {
@@ -3777,7 +3547,6 @@ country_event = {
 		}
 		text = mega.9002.phobe.desc
 	}
-
 	desc = {
 		trigger = {
 			NOR = {
@@ -3793,8 +3562,7 @@ country_event = {
 	show_sound = event_mystic_reveal
 	picture = GFX_evt_mega_art_installation
 	is_triggered_only = yes
-	location = FROM
-
+	location = from
 	option = {
 		name = EXCELLENT
 	}
@@ -3804,12 +3572,10 @@ country_event = {
 country_event = {
 	id = mega.9003
 	title = "mega.9003.name"
-
 	desc = {
 		trigger = { is_slaver = yes }
 		text = mega.9003.slave.desc
 	}
-
 	desc = {
 		trigger = {
 			OR = {
@@ -3819,7 +3585,6 @@ country_event = {
 		}
 		text = mega.9003.mil.desc
 	}
-
 	desc = {
 		trigger = {
 			NOR = {
@@ -3835,8 +3600,7 @@ country_event = {
 	show_sound = event_mystic_reveal
 	picture = GFX_evt_strategic_coordination_center
 	is_triggered_only = yes
-	location = FROM
-
+	location = from
 	option = {
 		name = EXCELLENT
 		hidden_effect = {
@@ -3852,8 +3616,7 @@ country_event = {
 	show_sound = event_mystic_reveal
 	picture = GFX_evt_strategic_coordination_center
 	is_triggered_only = yes
-	location = FROM
-
+	location = from
 	option = {
 		name = EXCELLENT
 	}
@@ -3866,8 +3629,7 @@ country_event = {
 	show_sound = event_mystic_reveal
 	picture = GFX_evt_strategic_coordination_center
 	is_triggered_only = yes
-	location = FROM
-
+	location = from
 	option = {
 		name = EXCELLENT
 	}
@@ -3881,8 +3643,7 @@ country_event = {
 	show_sound = event_mystic_reveal
 	picture = GFX_evt_interstellar_assembly
 	is_triggered_only = yes
-	location = FROM
-
+	location = from
 	option = {
 		name = EXCELLENT
 	}
@@ -3895,8 +3656,7 @@ country_event = {
 	show_sound = event_mystic_reveal
 	picture = GFX_evt_interstellar_assembly
 	is_triggered_only = yes
-	location = FROM
-
+	location = from
 	option = {
 		name = EXCELLENT
 		hidden_effect = {
@@ -3912,8 +3672,7 @@ country_event = {
 	show_sound = event_mystic_reveal
 	picture = GFX_evt_interstellar_assembly
 	is_triggered_only = yes
-	location = FROM
-
+	location = from
 	option = {
 		name = EXCELLENT
 	}
@@ -3926,8 +3685,7 @@ country_event = {
 	show_sound = event_mystic_reveal
 	picture = GFX_evt_interstellar_assembly
 	is_triggered_only = yes
-	location = FROM
-
+	location = from
 	option = {
 		name = EXCELLENT
 	}
@@ -3941,8 +3699,7 @@ country_event = {
 	show_sound = event_mystic_reveal
 	picture = GFX_evt_matter_decompressor
 	is_triggered_only = yes
-	location = FROM
-
+	location = from
 	option = {
 		name = EXCELLENT
 	}
@@ -3955,8 +3712,7 @@ country_event = {
 	show_sound = event_mystic_reveal
 	picture = GFX_evt_matter_decompressor
 	is_triggered_only = yes
-	location = FROM
-
+	location = from
 	option = {
 		name = EXCELLENT
 	}
@@ -3969,8 +3725,7 @@ country_event = {
 	show_sound = event_mystic_reveal
 	picture = GFX_evt_matter_decompressor
 	is_triggered_only = yes
-	location = FROM
-
+	location = from
 	option = {
 		name = EXCELLENT
 	}
@@ -3983,8 +3738,7 @@ country_event = {
 	show_sound = event_mystic_reveal
 	picture = GFX_evt_matter_decompressor
 	is_triggered_only = yes
-	location = FROM
-
+	location = from
 	option = {
 		name = EXCELLENT
 	}
@@ -3995,16 +3749,12 @@ country_event = {
 ship_event = {
 	id = mega.9100
 	title = "mega.9100.name"
-
 	desc = {
 		trigger = {
-			NOT = {
-				owner = { has_technology = tech_mega_engineering }
-			}
+			NOT = { owner = { has_technology = tech_mega_engineering } }
 		}
 		text = mega.9100.a.desc
 	}
-
 	desc = {
 		trigger = {
 			owner = { has_technology = tech_mega_engineering }
@@ -4014,7 +3764,7 @@ ship_event = {
 
 	picture = GFX_evt_space_debris
 	show_sound = event_radio_chatter
-	location = FROM
+	location = from
 	is_triggered_only = yes
 
 	trigger = {
@@ -4027,7 +3777,6 @@ ship_event = {
 	immediate = {
 		from = { save_event_target_as = matter_decompressor_system }
 	}
-
 	option = {
 		name = "mega.9100.a"
 		trigger = {
@@ -4044,7 +3793,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = FASCINATING
 		trigger = {
@@ -4077,9 +3825,8 @@ country_event = {
 	desc = "mega.1000.desc"
 	picture = GFX_evt_matter_decompressor
 	show_sound = event_dyson_sphere_build_complete
-	location = FROM
+	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = mega.1000.a.mater
 	}
@@ -4089,16 +3836,12 @@ country_event = {
 ship_event = {
 	id = mega.9110
 	title = "mega.9110.name"
-
 	desc = {
 		trigger = {
-			NOT = {
-				owner = { has_technology = tech_mega_engineering }
-			}
+			NOT = { owner = { has_technology = tech_mega_engineering } }
 		}
 		text = mega.9110.a.desc
 	}
-
 	desc = {
 		trigger = {
 			owner = { has_technology = tech_mega_engineering }
@@ -4108,22 +3851,19 @@ ship_event = {
 
 	picture = GFX_evt_space_debris
 	show_sound = event_radio_chatter
-	location = FROM
+	location = from
 	is_triggered_only = yes
 
 	trigger = {
 		from = {
 			has_star_flag = ruined_strategic_coordination_center_system
-			any_system_megastructure = {
-				is_megastructure_type = strategic_coordination_center_ruined
-			}
+			any_system_megastructure = { is_megastructure_type = strategic_coordination_center_ruined }
 		}
 	}
 
 	immediate = {
 		from = { save_event_target_as = strategic_coordination_center_system }
 	}
-
 	option = {
 		name = "mega.9110.a"
 		trigger = {
@@ -4139,7 +3879,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = FASCINATING
 		trigger = {
@@ -4171,9 +3910,8 @@ country_event = {
 	desc = "mega.9111.desc"
 	picture = GFX_evt_strategic_coordination_center
 	show_sound = event_dyson_sphere_build_complete
-	location = FROM
+	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 	}
@@ -4183,16 +3921,12 @@ country_event = {
 ship_event = {
 	id = mega.9120
 	title = "mega.9120.name"
-
 	desc = {
 		trigger = {
-			NOT = {
-				owner = { has_technology = tech_mega_engineering }
-			}
+			NOT = { owner = { has_technology = tech_mega_engineering } }
 		}
 		text = mega.9120.a.desc
 	}
-
 	desc = {
 		trigger = {
 			owner = { has_technology = tech_mega_engineering }
@@ -4202,22 +3936,19 @@ ship_event = {
 
 	picture = GFX_evt_space_debris
 	show_sound = event_radio_chatter
-	location = FROM
+	location = from
 	is_triggered_only = yes
 
 	trigger = {
 		from = {
 			has_star_flag = ruined_mega_art_installation_system
-			any_system_megastructure = {
-				is_megastructure_type = mega_art_installation_restored
-			}
+			any_system_megastructure = { is_megastructure_type = mega_art_installation_restored }
 		}
 	}
 
 	immediate = {
 		from = { save_event_target_as = mega_art_installation_system }
 	}
-
 	option = {
 		name = "mega.9120.a"
 		trigger = {
@@ -4233,7 +3964,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = FASCINATING
 		trigger = {
@@ -4265,9 +3995,8 @@ country_event = {
 	desc = "mega.9121.desc"
 	picture = GFX_evt_mega_art_installation
 	show_sound = event_dyson_sphere_build_complete
-	location = FROM
+	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 	}
@@ -4277,16 +4006,12 @@ country_event = {
 ship_event = {
 	id = mega.9130
 	title = "mega.9130.name"
-
 	desc = {
 		trigger = {
-			NOT = {
-				owner = { has_technology = tech_mega_engineering }
-			}
+			NOT = { owner = { has_technology = tech_mega_engineering } }
 		}
 		text = mega.9130.a.desc
 	}
-
 	desc = {
 		trigger = {
 			owner = { has_technology = tech_mega_engineering }
@@ -4296,22 +4021,19 @@ ship_event = {
 
 	picture = GFX_evt_space_debris
 	show_sound = event_radio_chatter
-	location = FROM
+	location = from
 	is_triggered_only = yes
 
 	trigger = {
 		from = {
 			has_star_flag = ruined_interstellar_assembly_system
-			any_system_megastructure = {
-				is_megastructure_type = interstellar_assembly_ruined
-			}
+			any_system_megastructure = { is_megastructure_type = interstellar_assembly_ruined }
 		}
 	}
 
 	immediate = {
 		from = { save_event_target_as = interstellar_assembly_system }
 	}
-
 	option = {
 		name = "mega.9130.a"
 		trigger = {
@@ -4328,7 +4050,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = FASCINATING
 		trigger = {
@@ -4361,9 +4082,8 @@ country_event = {
 	desc = "mega.9131.desc"
 	picture = GFX_evt_interstellar_assembly
 	show_sound = event_dyson_sphere_build_complete
-	location = FROM
+	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 	}
@@ -4374,6 +4094,7 @@ country_event = {
 # Federations Megastructure
 #
 ##############################
+
 namespace = feda
 # Matter decompresser Notification
 country_event = {
@@ -4383,8 +4104,7 @@ country_event = {
 	show_sound = event_mystic_reveal
 	picture = GFX_evt_megashipyard
 	is_triggered_only = yes
-	location = FROM
-
+	location = from
 	option = {
 		name = EXCELLENT
 	}
@@ -4397,8 +4117,7 @@ country_event = {
 	show_sound = event_mystic_reveal
 	picture = GFX_evt_megashipyard
 	is_triggered_only = yes
-	location = FROM
-
+	location = from
 	option = {
 		name = EXCELLENT
 	}
@@ -4411,8 +4130,7 @@ country_event = {
 	show_sound = event_mystic_reveal
 	picture = GFX_evt_megashipyard
 	is_triggered_only = yes
-	location = FROM
-
+	location = from
 	option = {
 		name = EXCELLENT
 	}
@@ -4436,16 +4154,12 @@ country_event = {
 ship_event = {
 	id = feda.5
 	title = "feda.5.name"
-
 	desc = {
 		trigger = {
-			NOT = {
-				owner = { has_technology = tech_mega_engineering }
-			}
+			NOT = { owner = { has_technology = tech_mega_engineering } }
 		}
 		text = feda.5.a.desc
 	}
-
 	desc = {
 		trigger = {
 			owner = { has_technology = tech_mega_engineering }
@@ -4455,7 +4169,7 @@ ship_event = {
 
 	picture = GFX_evt_space_debris
 	show_sound = event_radio_chatter
-	location = FROM
+	location = from
 	is_triggered_only = yes
 
 	trigger = {
@@ -4468,7 +4182,6 @@ ship_event = {
 	immediate = {
 		from = { save_event_target_as = mega_shipyard_system }
 	}
-
 	option = {
 		name = "feda.5.a"
 		trigger = {
@@ -4484,7 +4197,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = FASCINATING
 		trigger = {
@@ -4516,9 +4228,8 @@ country_event = {
 	desc = "feda.6.desc"
 	picture = GFX_evt_megashipyard
 	show_sound = event_dyson_sphere_build_complete
-	location = FROM
+	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 	}
@@ -4529,6 +4240,7 @@ country_event = {
 # Overlord Megastructures
 #
 ##############################
+
 namespace = over
 # Quantum Catapult Notification
 country_event = {
@@ -4538,8 +4250,7 @@ country_event = {
 	show_sound = event_mystic_reveal
 	picture = GFX_evt_quantum_catapult
 	is_triggered_only = yes
-	location = FROM
-
+	location = from
 	option = {
 		name = EXCELLENT
 	}
@@ -4552,8 +4263,7 @@ country_event = {
 	show_sound = event_mystic_reveal
 	picture = GFX_evt_quantum_catapult
 	is_triggered_only = yes
-	location = FROM
-
+	location = from
 	option = {
 		name = EXCELLENT
 	}
@@ -4566,8 +4276,7 @@ country_event = {
 	show_sound = event_mystic_reveal
 	picture = GFX_evt_quantum_catapult_build
 	is_triggered_only = yes
-	location = FROM
-
+	location = from
 	option = {
 		name = over.10.a
 	}
@@ -4578,16 +4287,12 @@ country_event = {
 ship_event = {
 	id = over.20
 	title = "over.20.name"
-
 	desc = {
 		trigger = {
-			NOT = {
-				owner = { has_technology = tech_mega_engineering }
-			}
+			NOT = { owner = { has_technology = tech_mega_engineering } }
 		}
 		text = over.20.a.desc
 	}
-
 	desc = {
 		trigger = {
 			owner = { has_technology = tech_mega_engineering }
@@ -4597,7 +4302,7 @@ ship_event = {
 
 	picture = GFX_evt_space_debris
 	show_sound = event_radio_chatter
-	location = FROM
+	location = from
 	is_triggered_only = yes
 
 	trigger = {
@@ -4610,7 +4315,6 @@ ship_event = {
 	immediate = {
 		from = { save_event_target_as = quantum_catapult_system }
 	}
-
 	option = {
 		name = "over.20.a"
 		trigger = {
@@ -4626,7 +4330,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = FASCINATING
 		trigger = {
@@ -4655,7 +4358,6 @@ ship_event = {
 country_event = {
 	id = over.25
 	title = "over.25.name"
-
 	desc = {
 		trigger = {
 			has_origin = origin_star_slingshot
@@ -4667,13 +4369,11 @@ country_event = {
 	desc = "over.25.desc"
 	picture = GFX_evt_quantum_catapult_build
 	show_sound = evn_ove_quantum_catapult_construction
-	location = FROM
+	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 	}
-
 	immediate = {
 		from = { save_event_target_as = quantum_catapult_system }
 		if = {
@@ -4747,14 +4447,13 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "over.50.a"
 		event_target:jabbardeeni_cache = {
 			enable_special_project = {
 				name = "YUHT_JABBARDEENI_CACHE"
 				location = event_target:jabbardeeni_cache
-				owner = ROOT
+				owner = root
 			}
 		}
 	}
@@ -4767,9 +4466,8 @@ country_event = {
 	desc = "over.60.desc"
 	picture = GFX_evt_crashed_station
 	show_sound = event_dyson_sphere_build_complete
-	location = FROM
+	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = ACKNOWLEDGED
 		add_monthly_resource_mult = {
@@ -4813,10 +4511,7 @@ country_event = {
 				NOT = { has_technology = tech_experimental_subspace_navigation }
 			}
 			add_research_option = tech_experimental_subspace_navigation
-			add_tech_progress = {
-				tech = tech_experimental_subspace_navigation
-				progress = 0.20
-			}
+			add_tech_progress = { tech = tech_experimental_subspace_navigation progress = 0.20 }
 		}
 		generate_lcluster_clue = yes
 	}
@@ -4827,7 +4522,6 @@ country_event = {
 country_event = {
 	id = over.100
 	title = over.100.title
-
 	desc = {
 		trigger = {
 			NOR = {
@@ -4839,7 +4533,6 @@ country_event = {
 		}
 		text = over.100.a.desc
 	}
-
 	desc = {
 		trigger = {
 			OR = {
@@ -4853,7 +4546,6 @@ country_event = {
 		}
 		text = over.100.b.desc
 	}
-
 	desc = {
 		trigger = {
 			OR = {
@@ -4863,7 +4555,6 @@ country_event = {
 		}
 		text = over.100.c.desc
 	}
-
 	picture = {
 		trigger = {
 			is_machine_empire = no
@@ -4874,7 +4565,6 @@ country_event = {
 		}
 		picture = GFX_evt_hyper_relay_conjunction
 	}
-
 	picture = {
 		trigger = {
 			OR = {
@@ -4904,17 +4594,14 @@ country_event = {
 	immediate = {
 		set_country_flag = hyper_relay_flag
 	}
-
 	option = {
 		name = over.100.a
 		trigger = { is_xenophobe = no is_gestalt = no }
 	}
-
 	option = {
 		name = over.100.b
 		trigger = { is_megacorp = yes }
 	}
-
 	option = {
 		name = over.100.c
 		trigger = {
@@ -4925,4 +4612,3 @@ country_event = {
 		}
 	}
 }
-

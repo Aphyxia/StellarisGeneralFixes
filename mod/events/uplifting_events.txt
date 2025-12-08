@@ -1,118 +1,102 @@
 ########################
-
 #
 # Uplift Events
 # by Maximilian Olbers
 #
 ########################
+
 namespace = uplift
 # Pre-sapients Found
 ship_event = {
 	id = uplift.6000
 	title = uplift.6000.name.2
-
 	desc = {
 		text = uplift.6000.wilderness.desc
 		exclusive_trigger = {
 			controller = { is_wilderness_empire = yes }
 		}
 	}
-
 	desc = {
 		text = uplift.6000.continental.desc
 		exclusive_trigger = {
 			from = { is_planet_class = pc_continental }
 		}
 	}
-
 	desc = {
 		text = uplift.6000.ocean.desc
 		exclusive_trigger = {
 			from = { is_planet_class = pc_ocean }
 		}
 	}
-
 	desc = {
 		text = uplift.6000.tropical.desc
 		exclusive_trigger = {
 			from = { is_planet_class = pc_tropical }
 		}
 	}
-
 	desc = {
 		text = uplift.6000.arid.desc
 		exclusive_trigger = {
 			from = { is_planet_class = pc_arid }
 		}
 	}
-
 	desc = {
 		text = uplift.6000.desert.desc
 		exclusive_trigger = {
 			from = { is_planet_class = pc_desert }
 		}
 	}
-
 	desc = {
 		text = uplift.6000.savannah.desc
 		exclusive_trigger = {
 			from = { is_planet_class = pc_savannah }
 		}
 	}
-
 	desc = {
 		text = uplift.6000.tundra.desc
 		exclusive_trigger = {
 			from = { is_planet_class = pc_tundra }
 		}
 	}
-
 	desc = {
 		text = uplift.6000.arctic.desc
 		exclusive_trigger = {
 			from = { is_planet_class = pc_arctic }
 		}
 	}
-
 	desc = {
 		text = uplift.6000.alpine.desc
 		exclusive_trigger = {
 			from = { is_planet_class = pc_alpine }
 		}
 	}
-
 	desc = {
 		text = uplift.6000.nuked.desc
 		exclusive_trigger = {
 			from = { is_planet_class = pc_nuked }
 		}
 	}
-
 	desc = {
 		text = uplift.6000.gaia.desc
 		exclusive_trigger = {
 			from = { is_planet_class = pc_gaia }
 		}
 	}
-
 	desc = {
 		text = uplift.6000.relic.desc
 		exclusive_trigger = {
 			from = { is_planet_class = pc_relic }
 		}
 	}
-
 	desc = {
 		text = uplift.6000.fallback.desc
 	}
-
 	picture = {
 		picture = GFX_evt_animal_wildlife
 		trigger = {
 			from = { is_planet_class = pc_gaia }
 		}
 	}
-
 	picture = {
 		inline_script = {
 			script = events/biogenesis_event_art
@@ -122,31 +106,26 @@ ship_event = {
 		}
 		trigger = { from = { is_dry = yes } }
 	}
-
 	picture = {
 		picture = GFX_evt_big_landing_ship
 		trigger = { from = { is_wet = yes } }
 	}
-
 	picture = {
 		picture = GFX_evt_landing_ship_2
 		trigger = { from = { is_cold = yes } }
 	}
-
 	picture = {
 		picture = GFX_evt_relic_world_building
 		trigger = {
 			from = { is_planet_class = pc_relic }
 		}
 	}
-
 	picture = {
 		picture = GFX_evt_tomb_world
 		trigger = {
 			from = { is_planet_class = pc_nuked }
 		}
 	}
-
 	inline_script = {
 		script = events/biogenesis_event_art
 		OWNER = owner
@@ -180,89 +159,73 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = uplift.6000.a
 		trigger = {
 			owner = { has_technology = tech_epigenetic_triggers }
 		}
 	}
-
 	option = {
 		name = uplift.6000.b
 		trigger = {
-			NOT = {
-				owner = { has_technology = tech_epigenetic_triggers }
-			}
+			NOT = { owner = { has_technology = tech_epigenetic_triggers } }
 		}
 	}
 }
 
 ### Uplifting Generic Success
+
 planet_event = {
 	id = uplift.6010
 	title = uplift.6010.name
-
 	desc = {
 		text = uplift.6010.continental.desc
 		exclusive_trigger = { is_planet_class = pc_continental }
 	}
-
 	desc = {
 		text = uplift.6010.ocean.desc
 		exclusive_trigger = { is_planet_class = pc_ocean }
 	}
-
 	desc = {
 		text = uplift.6010.tropical.desc
 		exclusive_trigger = { is_planet_class = pc_tropical }
 	}
-
 	desc = {
 		text = uplift.6010.arid.desc
 		trigger = { is_planet_class = pc_arid }
 	}
-
 	desc = {
 		text = uplift.6010.desert.desc
 		exclusive_trigger = { is_planet_class = pc_desert }
 	}
-
 	desc = {
 		text = uplift.6010.savannah.desc
 		exclusive_trigger = { is_planet_class = pc_savannah }
 	}
-
 	desc = {
 		text = uplift.6010.tundra.desc
 		exclusive_trigger = { is_planet_class = pc_tundra }
 	}
-
 	desc = {
 		text = uplift.6010.arctic.desc
 		exclusive_trigger = { is_planet_class = pc_arctic }
 	}
-
 	desc = {
 		text = uplift.6010.alpine.desc
 		exclusive_trigger = { is_planet_class = pc_alpine }
 	}
-
 	desc = {
 		text = uplift.6010.nuked.desc
 		exclusive_trigger = { is_planet_class = pc_nuked }
 	}
-
 	desc = {
 		text = uplift.6010.gaia.desc
 		exclusive_trigger = { is_planet_class = pc_gaia }
 	}
-
 	desc = {
 		text = uplift.6010.relic.desc
 		exclusive_trigger = { is_planet_class = pc_relic }
 	}
-
 	desc = {
 		text = uplift.6010.fallback.desc
 	}
@@ -283,7 +246,6 @@ planet_event = {
 		}
 		remove_planet_flag = upl_ongoing_planet
 	}
-
 	option = {
 		name = uplift.6010.a
 		custom_tooltip = uplift.6010.tt
@@ -299,6 +261,7 @@ planet_event = {
 #######################
 # Followup Events
 #######################
+
 planet_event = {
 	id = uplift.7000
 	title = uplift.7000.name
@@ -306,7 +269,6 @@ planet_event = {
 	picture = GFX_evt_colony_settlement
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = OK
 	}
@@ -319,7 +281,6 @@ planet_event = {
 	picture = GFX_evt_smugglers_in_bar
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = OK
 		add_modifier = { modifier = uplift_rocky years = 2 }
@@ -341,51 +302,15 @@ planet_event = {
 	immediate = {
 		# initial reception
 		random_list = {
-			30 = {
-				planet_event = {
-					id = uplift.7000
-					days = 30
-					random = 30
-				}
-			}
-			70 = {
-				planet_event = {
-					id = uplift.7010
-					days = 30
-					random = 30
-				}
-			}
+			30 = { planet_event = { id = uplift.7000 days = 30 random = 30 } }
+			70 = { planet_event = { id = uplift.7010 days = 30 random = 30 } }
 		}
 		# set ethics
 		random_list = {
-			15 = {
-				planet_event = {
-					id = uplift.7200
-					days = 40
-					random = 30
-				}
-			}
-			15 = {
-				planet_event = {
-					id = uplift.7205
-					days = 40
-					random = 30
-				}
-			}
-			15 = {
-				planet_event = {
-					id = uplift.7210
-					days = 40
-					random = 30
-				}
-			}
-			15 = {
-				planet_event = {
-					id = uplift.7215
-					days = 40
-					random = 30
-				}
-			}
+			15 = { planet_event = { id = uplift.7200 days = 40 random = 30 } }
+			15 = { planet_event = { id = uplift.7205 days = 40 random = 30 } }
+			15 = { planet_event = { id = uplift.7210 days = 40 random = 30 } }
+			15 = { planet_event = { id = uplift.7215 days = 40 random = 30 } }
 		}
 	}
 }
@@ -407,11 +332,9 @@ planet_event = {
 			NOT = { has_pop_group_flag = upl_ethic_spimat }
 		}
 	}
-
 	option = {
 		name = uplift.7200.a
 	}
-
 	option = {
 		name = uplift.7200.b
 		custom_tooltip = uplift.7200.b.tooltip
@@ -430,7 +353,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = uplift.7200.c
 		custom_tooltip = uplift.7200.c.tooltip
@@ -468,11 +390,9 @@ planet_event = {
 			NOT = { has_pop_group_flag = upl_ethic_pacmil }
 		}
 	}
-
 	option = {
 		name = uplift.7205.a
 	}
-
 	option = {
 		name = uplift.7205.b
 		custom_tooltip = uplift.7205.b.tooltip
@@ -493,7 +413,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = uplift.7205.c
 		custom_tooltip = uplift.7205.c.tooltip
@@ -532,11 +451,9 @@ planet_event = {
 			NOT = { has_pop_group_flag = upl_ethic_xenoph }
 		}
 	}
-
 	option = {
 		name = uplift.7210.a
 	}
-
 	option = {
 		name = uplift.7210.b
 		custom_tooltip = uplift.7210.b.tooltip
@@ -555,7 +472,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = uplift.7210.c
 		custom_tooltip = uplift.7210.c.tooltip
@@ -592,11 +508,9 @@ planet_event = {
 			NOT = { has_pop_group_flag = upl_ethic_colind }
 		}
 	}
-
 	option = {
 		name = uplift.7215.a
 	}
-
 	option = {
 		name = uplift.7215.b
 		custom_tooltip = uplift.7215.b.tooltip
@@ -615,7 +529,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = uplift.7215.c
 		custom_tooltip = uplift.7215.c.tooltip
@@ -669,15 +582,12 @@ planet_event = {
 			}
 		}
 	}
-
 	mean_time_to_happen = {
 		years = 100
 	}
-
 	immediate = {
 		set_planet_flag = chainblocked
 	}
-
 	option = {
 		name = UNFORTUNATE
 		trigger = {
@@ -685,11 +595,8 @@ planet_event = {
 				resource_stockpile_compare = { resource = energy value >= 300 }
 			}
 		}
-		owner = {
-			add_resource = { energy = -300 }
-		}
+		owner = { add_resource = { energy = -300 } }
 	}
-
 	option = {
 		name = UNFORTUNATE
 		trigger = {
@@ -697,9 +604,7 @@ planet_event = {
 				resource_stockpile_compare = { resource = energy value < 300 }
 			}
 		}
-		owner = {
-			add_resource = { energy = -100 }
-		}
+		owner = { add_resource = { energy = -100 } }
 	}
 }
 
@@ -732,26 +637,20 @@ planet_event = {
 			}
 		}
 	}
-
 	mean_time_to_happen = {
 		years = 100
 	}
-
 	immediate = {
 		set_planet_flag = unethical_presapient_experiments
 	}
-
 	option = {
 		name = uplift.7510.a
 		add_modifier = { modifier = unproductive_without_experiments years = 2 }
 	}
-
 	option = {
 		name = uplift.7510.b
 		custom_tooltip = uplift.7510.b.tooltip
-		trigger = {
-			owner = { is_xenophobe = no }
-		}
+		trigger = { owner = { is_xenophobe = no } }
 		owner = {
 			add_monthly_resource_mult = {
 				resource = society_research
@@ -762,12 +661,9 @@ planet_event = {
 		}
 		add_modifier = { modifier = unhappy_with_experiments years = 2 }
 	}
-
 	option = {
 		name = uplift.7510.c
-		trigger = {
-			owner = { is_xenophobe = yes }
-		}
+		trigger = { owner = { is_xenophobe = yes } }
 		owner = {
 			add_monthly_resource_mult = {
 				resource = society_research
@@ -818,20 +714,15 @@ planet_event = {
 			}
 		}
 	}
-
 	mean_time_to_happen = {
 		months = 5000
 	}
-
 	immediate = {
 		owner = { set_country_flag = fidgeting_natives }
 	}
-
 	option = {
 		name = uplift.7520.a
-		trigger = {
-			owner = { is_xenophobe = no }
-		}
+		trigger = { owner = { is_xenophobe = no } }
 		owner = {
 			add_monthly_resource_mult = {
 				resource = unity
@@ -841,13 +732,10 @@ planet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = uplift.7520.b
 		custom_tooltip = uplift.7520.b.tooltip
-		trigger = {
-			owner = { is_xenophobe = yes }
-		}
+		trigger = { owner = { is_xenophobe = yes } }
 		owner = {
 			add_monthly_resource_mult = {
 				resource = influence
@@ -857,12 +745,9 @@ planet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = uplift.7520.c
-		trigger = {
-			owner = { is_xenophile = yes }
-		}
+		trigger = { owner = { is_xenophile = yes } }
 		hidden_effect = {
 			planet_event = { id = uplift.7525 days = 5 }
 		}
@@ -876,7 +761,6 @@ planet_event = {
 	picture = GFX_evt_colony_settlement
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = FASCINATING
 		owner = {

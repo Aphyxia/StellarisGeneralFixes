@@ -2,6 +2,7 @@
 namespace = game_start
 
 ### Hidden Game Start Event
+
 event = {
 	id = game_start.1
 	hide_window = yes
@@ -11,11 +12,7 @@ event = {
 		set_global_flag = game_started
 		every_playable_country = {
 			limit = { is_ai = no }
-			country_event = {
-				id = country.900
-				days = 460
-				random = 60
-			}
+			country_event = { id = country.900 days = 460 random = 60 }
 			country_event = { id = game_start.74 }
 		}
 		### HUMAN SPAWNS
@@ -60,10 +57,7 @@ event = {
 		}
 		if = { # If someone is playing human lithoids and there is no UNE lets give it a chance to spawn
 			limit = {
-				any_playable_country = {
-					has_country_flag = human_lithoid
-					species_portrait = lith_human
-				}
+				any_playable_country = { has_country_flag = human_lithoid species_portrait = lith_human }
 				NOR = {
 					any_playable_country = { has_country_flag = human_1 }
 					any_system = { has_star_flag = sol }
@@ -136,7 +130,9 @@ event = {
 		create_country = {
 			name = "global_event_country"
 			type = global_event
-			effect = { save_global_event_target_as = global_event_country }
+			effect = {
+				save_global_event_target_as = global_event_country
+			}
 		}
 		### SPAWN SPECIAL COUNTRIES
 		create_country = {
@@ -771,6 +767,7 @@ event = {
 }
 
 ### Hidden Game Start Event that resets tutorial for advisor trigger purposes
+
 event = {
 	id = game_start.3
 	hide_window = yes
@@ -785,6 +782,7 @@ event = {
 }
 
 ### Countdown to Nomad Fleet
+
 event = {
 	id = game_start.5
 	hide_window = yes
@@ -795,27 +793,9 @@ event = {
 			limit = { is_ai = no }
 			random_list = {
 				# 1 = { country_event = { id = nomad.1 days = 1 } } # DEBUG
-				20 = {
-					country_event = {
-						id = nomad.1
-						days = 7200
-						random = 500
-					}
-				} # 25 years
-				25 = {
-					country_event = {
-						id = nomad.1
-						days = 14400
-						random = 500
-					}
-				} # 40 years
-				25 = {
-					country_event = {
-						id = nomad.1
-						days = 1980
-						random = 500
-					}
-				} # 55 years
+				20 = { country_event = { id = nomad.1 days = 7200 random = 500 } } # 25 years
+				25 = { country_event = { id = nomad.1 days = 14400 random = 500 } } # 40 years
+				25 = { country_event = { id = nomad.1 days = 1980 random = 500 } } # 55 years
 				30 = {  } # No nomads
 			}
 		}
@@ -823,6 +803,7 @@ event = {
 }
 
 ### Country-scope start event for advanced empires
+
 country_event = {
 	id = game_start.6
 	hide_window = yes
@@ -888,6 +869,7 @@ country_event = {
 }
 
 ### Empire init - add technologies and some resources
+
 country_event = {
 	id = game_start.8
 	hide_window = yes
@@ -934,6 +916,7 @@ country_event = {
 }
 
 ### Empire init - add ships
+
 country_event = {
 	id = game_start.9
 	hide_window = yes
@@ -957,7 +940,9 @@ country_event = {
 							name = random
 							species = owner_species
 							randomize_traits = no
-							traits = { 1 = random_common }
+							traits = {
+								1 = random_common
+							}
 						}
 					}
 					set_leader = last_created_leader
@@ -971,7 +956,9 @@ country_event = {
 				name = random
 				species = owner_species
 				randomize_traits = no
-				traits = { 1 = random_common }
+				traits = {
+					1 = random_common
+				}
 			}
 		}
 		if = {
@@ -991,14 +978,14 @@ country_event = {
 								name = random
 								species = owner_species
 								randomize_traits = no
-								traits = { 1 = random_common }
+								traits = {
+									1 = random_common
+								}
 							}
 						}
 						if = {
 							limit = {
-								NOT = {
-									root = { has_country_flag = created_first_eager_ship }
-								}
+								NOT = { root = { has_country_flag = created_first_eager_ship } }
 							}
 							root = { set_country_flag = created_first_eager_ship }
 							last_created_leader = {
@@ -1080,7 +1067,9 @@ country_event = {
 							name = random
 							species = owner_species
 							randomize_traits = no
-							traits = { 1 = random_common }
+							traits = {
+								1 = random_common
+							}
 						}
 					}
 					set_leader = last_created_leader
@@ -1090,11 +1079,7 @@ country_event = {
 			if = {
 				limit = { has_origin = origin_fruitful }
 				event_target:beastmasters_starting_fleet = {
-					fleet_event = {
-						id = origin.7303
-						days = 20
-						scopes = { from = prev.capital_star.starbase }
-					}
+					fleet_event = { id = origin.7303 days = 20 scopes = { from = prev.capital_star.starbase } }
 				}
 			}
 		}
@@ -1129,9 +1114,7 @@ country_event = {
 					}
 					else_if = {
 						limit = {
-							NOT = {
-								root = { has_valid_civic = civic_hive_cordyceptic_drones }
-							}
+							NOT = { root = { has_valid_civic = civic_hive_cordyceptic_drones } }
 						}
 						while = {
 							count = 2
@@ -1187,7 +1170,9 @@ country_event = {
 							name = random
 							species = owner_species
 							randomize_traits = no
-							traits = { 1 = random_common }
+							traits = {
+								1 = random_common
+							}
 						}
 					}
 					set_leader = last_created_leader
@@ -1218,7 +1203,9 @@ country_event = {
 							name = random
 							species = owner_species
 							randomize_traits = no
-							traits = { 1 = random_common }
+							traits = {
+								1 = random_common
+							}
 						}
 					}
 					set_leader = last_created_leader
@@ -1237,7 +1224,9 @@ country_event = {
 				name = random
 				species = owner_species
 				randomize_traits = no
-				traits = { 1 = random_common }
+				traits = {
+					1 = random_common
+				}
 			}
 		}
 	}
@@ -1316,9 +1305,7 @@ planet_event = {
 						NOT = { has_planet_flag = planet_earth }
 						owner = { has_origin = origin_remnants } # no special earth for you, sorry
 					}
-					NOT = {
-						owner = { has_origin = origin_shattered_ring } # setup in initializer
-					}
+					NOT = { owner = { has_origin = origin_shattered_ring } } # setup in initializer
 				}
 				generate_start_deposits_and_blockers = yes
 			}
@@ -1359,9 +1346,7 @@ planet_event = {
 
 	trigger = {
 		has_owner = yes
-		NOT = {
-			owner = { has_origin = origin_shattered_ring }
-		}
+		NOT = { owner = { has_origin = origin_shattered_ring } }
 	}
 
 	immediate = {
@@ -1404,52 +1389,78 @@ planet_event = {
 		if = {
 			limit = {
 				is_capital = yes
-				NOT = {
-					owner = { has_origin = origin_shattered_ring }
-				}
+				NOT = { owner = { has_origin = origin_shattered_ring } }
 			}
-			add_district_and_planet_size_if_needed_effect = { district = district_mining }
-			add_district_and_planet_size_if_needed_effect = { district = district_generator }
-			add_district_and_planet_size_if_needed_effect = { district = district_generator }
+			add_district_and_planet_size_if_needed_effect = {
+				district = district_mining
+			}
+			add_district_and_planet_size_if_needed_effect = {
+				district = district_generator
+			}
+			add_district_and_planet_size_if_needed_effect = {
+				district = district_generator
+			}
 			if = {
 				limit = {
 					owner = { is_machine_empire = yes }
 				}
-				add_district_and_planet_size_if_needed_effect = { district = district_nexus }
-				add_district_and_planet_size_if_needed_effect = { district = district_nexus }
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_nexus
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_nexus
+				}
 			}
 			else_if = {
-				limit = {
-					owner = { is_hive_empire = yes }
+				limit = { owner = { is_hive_empire = yes } }
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_hive
 				}
-				add_district_and_planet_size_if_needed_effect = { district = district_hive }
-				add_district_and_planet_size_if_needed_effect = { district = district_hive }
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_hive
+				}
 			}
 			else = {
-				add_district_and_planet_size_if_needed_effect = { district = district_city }
-				add_district_and_planet_size_if_needed_effect = { district = district_city }
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_city
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_city
+				}
 			}
 			if = {
 				limit = {
 					owner = { is_machine_empire = no is_lithoid_empire = no }
 				}
-				add_district_and_planet_size_if_needed_effect = { district = district_farming }
-				add_district_and_planet_size_if_needed_effect = { district = district_farming }
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_farming
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_farming
+				}
 			}
 			if = {
 				limit = {
 					owner = { is_machine_empire = yes }
 				}
-				add_district_and_planet_size_if_needed_effect = { district = district_generator }
-				add_district_and_planet_size_if_needed_effect = { district = district_generator }
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_generator
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_generator
+				}
 			}
 			# TODO-CD is this correct? This used to be uncapped, so we now add 2 extra mining ones, not sure if balanced
 			if = {
 				limit = {
 					owner = { is_subterranean_empire = yes }
 				}
-				add_district_and_planet_size_if_needed_effect = { district = district_mining }
-				add_district_and_planet_size_if_needed_effect = { district = district_mining }
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_mining
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_mining
+				}
 			}
 		}
 		else_if = {
@@ -1471,85 +1482,119 @@ planet_event = {
 			}
 			while = {
 				count = 2
-				add_district_if_possible_effect = { district = district_mining }
+				add_district_if_possible_effect = {
+					district = district_mining
+				}
 			}
 			if = {
 				limit = { owner = { is_gestalt = no } }
 				while = {
 					count = 2
-					add_district_if_possible_effect = { district = district_city }
+					add_district_if_possible_effect = {
+						district = district_city
+					}
 				}
 				if = {
 					limit = {
 						owner = { is_lithoid_empire = yes }
 					}
-					add_district_if_possible_effect = { district = district_city }
+					add_district_if_possible_effect = {
+						district = district_city
+					}
 				}
 				else = {
-					add_district_if_possible_effect = { district = district_farming }
+					add_district_if_possible_effect = {
+						district = district_farming
+					}
 				}
 			}
 			else_if = {
-				limit = {
-					owner = { is_hive_empire = yes }
-				}
+				limit = { owner = { is_hive_empire = yes } }
 				while = {
 					count = 2
-					add_district_if_possible_effect = { district = district_hive }
+					add_district_if_possible_effect = {
+						district = district_hive
+					}
 				}
 				if = {
 					limit = {
 						owner = { is_lithoid_empire = yes }
 					}
-					add_district_if_possible_effect = { district = district_hive }
+					add_district_if_possible_effect = {
+						district = district_hive
+					}
 				}
 				else = {
-					add_district_if_possible_effect = { district = district_farming }
+					add_district_if_possible_effect = {
+						district = district_farming
+					}
 				}
 			}
 			else = {
 				while = {
 					count = 3
-					add_district_if_possible_effect = { district = district_nexus }
+					add_district_if_possible_effect = {
+						district = district_nexus
+					}
 				}
 			}
 		}
 		else = {
-			add_district_and_planet_size_if_needed_effect = { district = district_generator }
-			add_district_and_planet_size_if_needed_effect = { district = district_mining }
+			add_district_and_planet_size_if_needed_effect = {
+				district = district_generator
+			}
+			add_district_and_planet_size_if_needed_effect = {
+				district = district_mining
+			}
 			if = {
 				limit = {
 					owner = { is_machine_empire = yes }
 				}
-				add_district_and_planet_size_if_needed_effect = { district = district_nexus }
-				add_district_and_planet_size_if_needed_effect = { district = district_generator }
-				add_district_and_planet_size_if_needed_effect = { district = district_generator }
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_nexus
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_generator
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_generator
+				}
 			}
 			else_if = {
-				limit = {
-					owner = { is_hive_empire = yes }
+				limit = { owner = { is_hive_empire = yes } }
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_hive
 				}
-				add_district_and_planet_size_if_needed_effect = { district = district_hive }
 				if = {
 					limit = {
 						owner = { is_lithoid_empire = yes }
 					}
-					add_district_and_planet_size_if_needed_effect = { district = district_mining }
+					add_district_and_planet_size_if_needed_effect = {
+						district = district_mining
+					}
 				}
 				else = {
-					add_district_and_planet_size_if_needed_effect = { district = district_farming }
+					add_district_and_planet_size_if_needed_effect = {
+						district = district_farming
+					}
 				}
 			}
 			else = {
-				add_district_and_planet_size_if_needed_effect = { district = district_city }
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_city
+				}
 				if = {
 					limit = {
 						owner = { is_lithoid_empire = no }
 					}
-					add_district_and_planet_size_if_needed_effect = { district = district_farming }
+					add_district_and_planet_size_if_needed_effect = {
+						district = district_farming
+					}
 				}
 				else = {
-					add_district_and_planet_size_if_needed_effect = { district = district_mining }
+					add_district_and_planet_size_if_needed_effect = {
+						district = district_mining
+					}
 				}
 			}
 			if = {
@@ -1592,9 +1637,7 @@ planet_event = {
 				create_pop_group = { species = owner_species size = 1300 }
 			}
 			else_if = {
-				limit = {
-					owner = { is_hive_empire = yes }
-				}
+				limit = { owner = { is_hive_empire = yes } }
 				create_pop_group = { species = owner_species size = 1600 }
 			}
 			else_if = {
@@ -1636,9 +1679,7 @@ planet_event = {
 				create_pop_group = { species = owner_species size = 1500 }
 			}
 			else_if = {
-				limit = {
-					owner = { is_hive_empire = yes }
-				}
+				limit = { owner = { is_hive_empire = yes } }
 				create_pop_group = { species = owner_species size = 1800 }
 			}
 			else_if = {
@@ -1676,6 +1717,7 @@ planet_event = {
 }
 
 ### Create wormhole pairs
+
 event = {
 	id = game_start.31
 	hide_window = yes
@@ -1726,6 +1768,7 @@ event = {
 }
 
 ### Empire init - populate home system
+
 country_event = {
 	id = game_start.33
 	hide_window = yes
@@ -2009,9 +2052,7 @@ country_event = {
 					}
 				}
 				weighted_random_owned_pop_group = {
-					limit = {
-						NOT = { is_same_species = prev }
-					}
+					limit = { NOT = { is_same_species = prev } }
 					species = { save_event_target_as = correct_prepatent_species }
 				}
 			}
@@ -2063,6 +2104,7 @@ country_event = {
 }
 
 ### Nebula System Art
+
 event = {
 	id = game_start.50
 	hide_window = yes
@@ -2515,9 +2557,7 @@ country_event = {
 		# Add Minister of Defense Position
 		if = {
 			limit = {
-				NOT = {
-					has_councilor = { COUNCILOR = councilor_defense }
-				}
+				NOT = { has_councilor = { COUNCILOR = councilor_defense } }
 			}
 			if = {
 				limit = { has_paragon_dlc = yes }
@@ -2547,17 +2587,19 @@ country_event = {
 					name = random
 					species = owner_species
 					randomize_traits = no
-					traits = { 1 = random_common }
-					effect = { set_council_position = councilor_defense }
+					traits = {
+						1 = random_common
+					}
+					effect = {
+						set_council_position = councilor_defense
+					}
 				}
 			}
 		}
 		# Add Head of Research Position
 		if = {
 			limit = {
-				NOT = {
-					has_councilor = { COUNCILOR = councilor_research }
-				}
+				NOT = { has_councilor = { COUNCILOR = councilor_research } }
 			}
 			if = {
 				limit = { has_paragon_dlc = yes }
@@ -2603,9 +2645,7 @@ country_event = {
 			limit = { blocks_minister_of_state = no }
 			if = {
 				limit = {
-					NOT = {
-						has_councilor = { COUNCILOR = councilor_state }
-					}
+					NOT = { has_councilor = { COUNCILOR = councilor_state } }
 				}
 				if = {
 					limit = { has_paragon_dlc = yes }
@@ -2651,9 +2691,7 @@ country_event = {
 			limit = {
 				has_valid_civic = civic_inwards_perfection
 				has_paragon_dlc = yes
-				NOT = {
-					has_councilor = { COUNCILOR = councilor_inwards_perfection }
-				}
+				NOT = { has_councilor = { COUNCILOR = councilor_inwards_perfection } }
 			}
 			unlock_council_slots = 1
 			set_council_position_to_council = councilor_inwards_perfection
@@ -2695,9 +2733,7 @@ country_event = {
 			limit = {
 				has_valid_civic = civic_fanatic_purifiers
 				has_paragon_dlc = yes
-				NOT = {
-					has_councilor = { COUNCILOR = councilor_fanatic_purifiers }
-				}
+				NOT = { has_councilor = { COUNCILOR = councilor_fanatic_purifiers } }
 			}
 			unlock_council_slots = 1
 			set_council_position_to_council = councilor_fanatic_purifiers
@@ -2739,9 +2775,7 @@ country_event = {
 			limit = {
 				has_valid_civic = civic_scorched_earth
 				has_paragon_dlc = yes
-				NOT = {
-					has_councilor = { COUNCILOR = councilor_infernal_scorcher }
-				}
+				NOT = { has_councilor = { COUNCILOR = councilor_infernal_scorcher } }
 			}
 			unlock_council_slots = 1
 			set_council_position_to_council = councilor_infernal_scorcher
@@ -2783,6 +2817,7 @@ country_event = {
 }
 
 ### Empire Focus
+
 country_event = {
 	id = game_start.74
 	hide_window = yes
@@ -2827,4 +2862,3 @@ country_event = {
 		}
 	}
 }
-

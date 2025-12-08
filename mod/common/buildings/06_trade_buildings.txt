@@ -6,12 +6,10 @@ building_commercial_zone = {
 	base_buildtime = @b1_time
 	exempt_from_ai_planet_specialization = no
 	category = trade
-
 	building_sets = {
 		urban
 		trade
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_regular_empire = yes }
@@ -32,7 +30,6 @@ building_commercial_zone = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		OR = {
@@ -41,15 +38,12 @@ building_commercial_zone = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	convert_to = {
 		building_maintenance_depot
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -59,16 +53,13 @@ building_commercial_zone = {
 			energy = @b1_upkeep
 		}
 	}
-
 	inline_script = {
 		script = jobs/trader_add
 		AMOUNT = @building_static_jobs
 	}
-
 	prerequisites = {
 		"tech_interplanetary_commerce"
 	}
-
 	show_tech_unlock_if = {
 		is_regular_empire = yes
 	}
@@ -78,11 +69,9 @@ building_commercial_megaplex = {
 	base_buildtime = @b2_time
 	planet_limit = 1
 	category = trade
-
 	building_sets = {
 		trade
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_regular_empire = yes }
@@ -91,7 +80,6 @@ building_commercial_megaplex = {
 			has_modifier = penal_colony
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		OR = {
@@ -100,16 +88,13 @@ building_commercial_megaplex = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	inline_script = {
 		script = jobs/trader_add
 		AMOUNT = @building_static_jobs
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -121,19 +106,15 @@ building_commercial_megaplex = {
 			rare_crystals = @b2_rare_upkeep
 		}
 	}
-
 	planet_modifier = {
 		planet_traders_upkeep_mult = -0.20
 	}
-
 	prerequisites = {
 		"tech_interstellar_economics"
 	}
-
 	show_tech_unlock_if = {
 		is_regular_empire = yes
 	}
-
 	ai_resource_production = {
 		energy = 6
 		trigger = {
@@ -149,11 +130,9 @@ building_galactic_stock_exchange = {
 	base_buildtime = @b2_time
 	planet_limit = 1
 	category = trade
-
 	building_sets = {
 		trade
 	}
-
 	potential = {
 		NOR = {
 			has_modifier = resort_colony
@@ -161,11 +140,9 @@ building_galactic_stock_exchange = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		OR = {
@@ -175,20 +152,16 @@ building_galactic_stock_exchange = {
 			has_modifier = penal_colony
 		}
 	}
-
 	planet_modifier = {
 		pop_trader_bonus_workforce_mult = 0.15
 	}
-
 	country_modifier = {
 		country_trade_fee = -0.05
 	}
-
 	inline_script = {
 		script = jobs/trader_add
 		AMOUNT = @building_static_jobs
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -200,11 +173,9 @@ building_galactic_stock_exchange = {
 			rare_crystals = @b2_rare_upkeep
 		}
 	}
-
 	prerequisites = {
 		"tech_galactic_markets"
 	}
-
 	ai_resource_production = {
 		trade = 10
 	}
@@ -213,18 +184,15 @@ building_galactic_stock_exchange = {
 building_maintenance_depot = {
 	base_buildtime = 240
 	category = trade
-
 	building_sets = {
 		urban
 		trade
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_gestalt = yes }
 		owner = { is_wilderness_empire = no }
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = {
@@ -234,16 +202,13 @@ building_maintenance_depot = {
 			}
 		}
 	}
-
 	convert_to = {
 		building_commercial_zone
 	}
-
 	inline_script = {
 		script = jobs/trader_add
 		AMOUNT = @building_static_jobs
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -253,9 +218,7 @@ building_maintenance_depot = {
 			energy = 2
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
 }
-

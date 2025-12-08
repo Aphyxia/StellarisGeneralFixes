@@ -40,18 +40,12 @@ country_event = {
 	id = fallen_empires.2
 	title = fallen_empires.2.name
 	desc = fallen_empires.2.desc
-
 	picture = {
-		trigger = {
-			from = { is_hive_empire = no }
-		}
+		trigger = { from = { is_hive_empire = no } }
 		picture = GFX_evt_fallen_empire
 	}
-
 	picture = {
-		trigger = {
-			from = { is_hive_empire = yes }
-		}
+		trigger = { from = { is_hive_empire = yes } }
 		picture = GFX_evt_hive_mind_fallen_empire
 	}
 
@@ -77,7 +71,6 @@ country_event = {
 			kill_leader = { ruler = yes show_notification = no }
 		}
 	}
-
 	option = {
 		name = fallen_empires.2.a
 		custom_tooltip = fallen_empires.2.a.tooltip
@@ -107,10 +100,7 @@ situation_event = {
 				}
 				NOR = {
 					root.owner = {
-						has_opinion_modifier = {
-							who = prev
-							modifier = opinion_refused_fallen_empire_demand
-						}
+						has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_demand }
 					}
 					has_country_flag = fe_demand_made@root.owner
 				}
@@ -130,10 +120,7 @@ situation_event = {
 				}
 				NOR = {
 					root.owner = {
-						has_opinion_modifier = {
-							who = prev
-							modifier = opinion_refused_fallen_empire_demand
-						}
+						has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_demand }
 					}
 					has_country_flag = fe_demand_made@root.owner
 				}
@@ -146,10 +133,7 @@ situation_event = {
 					root.owner = { has_ai_personality_behaviour = holy_planets }
 					is_valid_target_fe_cleanse_holy_worlds = yes
 				}
-				country_event = {
-					id = fallen_empires.4
-					scopes = { from = root.owner }
-				}
+				country_event = { id = fallen_empires.4 scopes = { from = root.owner } }
 			}
 			# Demand - ban AI research (spiritualist)
 			else_if = {
@@ -157,10 +141,7 @@ situation_event = {
 					root.owner = { is_fanatic_spiritualist = yes }
 					is_valid_target_fe_stop_ai = yes
 				}
-				country_event = {
-					id = fallen_empires.5
-					scopes = { from = root.owner }
-				}
+				country_event = { id = fallen_empires.5 scopes = { from = root.owner } }
 			}
 			# Demand - ban slavery and purging (xenophile)
 			else_if = {
@@ -168,10 +149,7 @@ situation_event = {
 					root.owner = { is_fanatic_xenophile = yes }
 					is_valid_target_fe_stop_atrocities = yes
 				}
-				country_event = {
-					id = fallen_empires.6
-					scopes = { from = root.owner }
-				}
+				country_event = { id = fallen_empires.6 scopes = { from = root.owner } }
 			}
 			# Demand - abandon colonies nearby (xenophobe)
 			else_if = {
@@ -183,10 +161,7 @@ situation_event = {
 						}
 					}
 				}
-				country_event = {
-					id = fallen_empires.7
-					scopes = { from = root.owner }
-				}
+				country_event = { id = fallen_empires.7 scopes = { from = root.owner } }
 			}
 			# Demand - prostrate yourself, mere mortal!
 			else_if = {
@@ -196,10 +171,7 @@ situation_event = {
 						has_modifier = humiliated_cosmogenesis
 					}
 				}
-				country_event = {
-					id = fallen_empires.8
-					scopes = { from = root.owner }
-				}
+				country_event = { id = fallen_empires.8 scopes = { from = root.owner } }
 			}
 		}
 	}
@@ -211,7 +183,6 @@ country_event = {
 	desc = fallen_empires.4.desc
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = from
 		planet_background = from
@@ -219,7 +190,6 @@ country_event = {
 		city_level = from
 		room = from.ruler
 	}
-
 	option = {
 		name = fallen_empires.4.a
 		ai_chance = {
@@ -233,17 +203,13 @@ country_event = {
 			remove_country_flag = fe_demand_made@from
 		}
 	}
-
 	option = {
 		name = fallen_empires.4.b
 		ai_chance = { factor = 10 }
 		custom_tooltip = fallen_empire_refuse_tooltip
 		hidden_effect = {
 			from = {
-				add_opinion_modifier = {
-					who = root
-					modifier = opinion_refused_fallen_empire_demand
-				}
+				add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_demand }
 			}
 			remove_country_flag = fe_demand_made@from
 		}
@@ -256,7 +222,6 @@ country_event = {
 	desc = fallen_empires.5.desc
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = from
 		planet_background = from
@@ -264,7 +229,6 @@ country_event = {
 		city_level = from
 		room = from.ruler
 	}
-
 	option = {
 		name = fallen_empires.5.a
 		ai_chance = {
@@ -282,17 +246,13 @@ country_event = {
 			remove_country_flag = fe_demand_made@from
 		}
 	}
-
 	option = {
 		name = fallen_empires.5.b
 		ai_chance = { factor = 10 }
 		custom_tooltip = fallen_empire_refuse_tooltip
 		hidden_effect = {
 			from = {
-				add_opinion_modifier = {
-					who = root
-					modifier = opinion_refused_fallen_empire_demand
-				}
+				add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_demand }
 			}
 			remove_country_flag = fe_demand_made@from
 		}
@@ -305,7 +265,6 @@ country_event = {
 	desc = fallen_empires.6.desc
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = from
 		planet_background = from
@@ -313,7 +272,6 @@ country_event = {
 		city_level = from
 		room = from.ruler
 	}
-
 	option = {
 		name = fallen_empires.6.a
 		ai_chance = {
@@ -328,17 +286,13 @@ country_event = {
 			remove_country_flag = fe_demand_made@from
 		}
 	}
-
 	option = {
 		name = fallen_empires.6.b
 		ai_chance = { factor = 10 }
 		custom_tooltip = fallen_empire_refuse_tooltip
 		hidden_effect = {
 			from = {
-				add_opinion_modifier = {
-					who = root
-					modifier = opinion_refused_fallen_empire_demand
-				}
+				add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_demand }
 			}
 			remove_country_flag = fe_demand_made@from
 		}
@@ -351,7 +305,6 @@ country_event = {
 	desc = fallen_empires.7.desc
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = from
 		planet_background = from
@@ -359,7 +312,6 @@ country_event = {
 		city_level = from
 		room = from.ruler
 	}
-
 	option = {
 		name = fallen_empires.7.a
 		ai_chance = {
@@ -373,17 +325,13 @@ country_event = {
 			remove_country_flag = fe_demand_made@from
 		}
 	}
-
 	option = {
 		name = fallen_empires.7.b
 		ai_chance = { factor = 10 }
 		custom_tooltip = fallen_empire_refuse_tooltip
 		hidden_effect = {
 			from = {
-				add_opinion_modifier = {
-					who = root
-					modifier = opinion_refused_fallen_empire_demand
-				}
+				add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_demand }
 			}
 			remove_country_flag = fe_demand_made@from
 		}
@@ -394,21 +342,18 @@ country_event = {
 	id = fallen_empires.8
 	title = fallen_empires.8.name
 	desc = fallen_empires.8.desc
-
 	desc = {
 		exclusive_trigger = {
 			from = { has_country_flag = fallen_empire_hive_control }
 		}
 		text = fallen_empires.8.desc.control
 	}
-
 	desc = {
 		exclusive_trigger = {
 			from = { has_country_flag = fallen_empire_hive_growth }
 		}
 		text = fallen_empires.8.desc.growth
 	}
-
 	desc = {
 		exclusive_trigger = {
 			from = { has_country_flag = fallen_empire_hive_war }
@@ -418,7 +363,6 @@ country_event = {
 
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = from
 		planet_background = from
@@ -426,7 +370,6 @@ country_event = {
 		city_level = from
 		room = from.ruler
 	}
-
 	option = {
 		name = fallen_empires.8.a
 		ai_chance = {
@@ -451,17 +394,13 @@ country_event = {
 			remove_country_flag = fe_demand_made@from
 		}
 	}
-
 	option = {
 		name = fallen_empires.8.b
 		ai_chance = { factor = 10 }
 		custom_tooltip = fallen_empire_refuse_tooltip
 		hidden_effect = {
 			from = {
-				add_opinion_modifier = {
-					who = root
-					modifier = opinion_refused_fallen_empire_demand
-				}
+				add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_demand }
 			}
 			remove_country_flag = fe_demand_made@from
 		}
@@ -634,7 +573,7 @@ situation_event = {
 								graphical_culture = "fallen_empire_02"
 							}
 						}
-						set_location = { target = PREV distance = 80 }
+						set_location = { target = prev distance = 80 }
 					}
 				}
 			}
@@ -706,7 +645,6 @@ ship_event = {
 		}
 		text = fallen_empires.100.A.desc
 	}
-
 	desc = {
 		trigger = {
 			owner = {
@@ -716,7 +654,6 @@ ship_event = {
 		}
 		text = fallen_empires.100.A.desc.spi
 	}
-
 	desc = {
 		trigger = {
 			owner = {
@@ -738,7 +675,6 @@ ship_event = {
 		}
 		text = fallen_empires.100.B.desc
 	}
-
 	desc = {
 		trigger = {
 			owner = {
@@ -748,7 +684,6 @@ ship_event = {
 		}
 		text = fallen_empires.100.B.desc.spi
 	}
-
 	desc = {
 		trigger = {
 			owner = {
@@ -758,7 +693,6 @@ ship_event = {
 		}
 		text = fallen_empires.100.B.desc.gestalt
 	}
-
 	inline_script = {
 		script = events/biogenesis_event_art
 		OWNER = owner
@@ -796,7 +730,6 @@ ship_event = {
 		}
 		owner = { set_country_flag = encountered_holy_world }
 	}
-
 	option = { # "Curious."
 		name = CURIOUS
 		owner = {
@@ -808,7 +741,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = { # Respectful
 		name = fallen_empires.100.a
 		trigger = {
@@ -828,7 +760,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = { # "Ours for the taking."
 		name = fallen_empires.100.b
 		trigger = {
@@ -849,7 +780,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = { # "We could thrive there."
 		name = fallen_empires.100.c
 		trigger = {
@@ -867,7 +797,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = { # Insult
 		name = fallen_empires.100.d
 		trigger = {
@@ -889,7 +818,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = { # Spiritualist insult
 		name = fallen_empires.100.e
 		trigger = {
@@ -912,4 +840,3 @@ ship_event = {
 		}
 	}
 }
-

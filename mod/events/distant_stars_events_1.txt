@@ -10,15 +10,14 @@ namespace = distar
 # root = ship scope
 # from = planet scope
 ### Supply Wreckage ###
+
 ship_event = {
 	id = distar.1
 	title = "distar.1.name"
-
 	desc = {
 		trigger = { exists = event_target:wreckage_owner }
 		text = "distar.1.desc.contact"
 	}
-
 	desc = {
 		trigger = { exists = event_target:wreckage_owner }
 		text = "distar.1.desc.nocontact"
@@ -56,7 +55,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "distar.1.a"
 		owner = {
@@ -76,7 +74,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
 			exists = event_target:wreckage_owner
@@ -97,12 +94,10 @@ ship_event = {
 country_event = {
 	id = distar.2
 	title = "distar.2.name"
-
 	desc = {
 		trigger = { is_machine_empire = no }
 		text = "distar.2.desc"
 	}
-
 	desc = {
 		trigger = { is_machine_empire = yes }
 		text = "distar.2.desc.machi"
@@ -111,7 +106,6 @@ country_event = {
 	location = event_target:wreckage_owner
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:wreckage_owner
 		planet_background = event_target:wreckage_owner
@@ -119,7 +113,6 @@ country_event = {
 		city_level = event_target:wreckage_owner
 		room = event_target:wreckage_owner.ruler
 	}
-
 	option = {
 		trigger = {
 			resource_stockpile_compare = { resource = minerals value >= 300 }
@@ -132,7 +125,6 @@ country_event = {
 			event_target:supply_wreckage_tar = { destroy_ambient_object = this }
 		}
 	}
-
 	option = {
 		trigger = {
 			resource_stockpile_compare = { resource = minerals value >= 300 }
@@ -144,7 +136,6 @@ country_event = {
 			event_target:supply_wreckage_tar = { destroy_ambient_object = this }
 		}
 	}
-
 	option = {
 		trigger = {
 			resource_stockpile_compare = { resource = minerals value < 300 }
@@ -166,7 +157,6 @@ country_event = {
 	location = event_target:wreckage_owner
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:wreckage_owner
 		planet_background = event_target:wreckage_owner
@@ -174,7 +164,6 @@ country_event = {
 		city_level = event_target:wreckage_owner
 		room = event_target:wreckage_owner.ruler
 	}
-
 	option = {
 		name = distar.3.a
 		add_resource = { influence = 100 }
@@ -189,6 +178,7 @@ country_event = {
 }
 
 ## Superflare Gatekeeper (on_colonized)
+
 planet_event = {
 	id = distar.5
 	hide_window = yes
@@ -199,21 +189,14 @@ planet_event = {
 	}
 
 	immediate = {
-		planet_event = {
-			id = distar.7
-			days = 360
-			random = 50
-		}
-		planet_event = {
-			id = distar.8
-			days = 360
-			random = 50
-		}
+		planet_event = { id = distar.7 days = 360 random = 50 }
+		planet_event = { id = distar.8 days = 360 random = 50 }
 		set_planet_flag = colony_event
 	}
 }
 
 ## Superflare Ancient Civ
+
 ship_event = {
 	id = distar.6
 	title = "distar.6.name"
@@ -228,7 +211,6 @@ ship_event = {
 			country_event = { id = story.5 days = 30 }
 		}
 	}
-
 	option = {
 		name = INTERESTING
 		from = {
@@ -243,7 +225,6 @@ ship_event = {
 planet_event = {
 	id = distar.7
 	title = "distar.7.name"
-
 	desc = {
 		trigger = {
 			has_modifier = superflare_planet
@@ -254,7 +235,6 @@ planet_event = {
 		}
 		text = "distar.7.desc"
 	}
-
 	desc = {
 		trigger = {
 			has_modifier = superflare_planet
@@ -286,7 +266,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
 			OR = {
@@ -304,7 +283,6 @@ planet_event = {
 			planet_event = { id = distar.8 days = 180 }
 		}
 	}
-
 	option = {
 		trigger = { is_under_colonization = no is_colony = no }
 		name = "distar.7.b"
@@ -345,7 +323,6 @@ ship_event = {
 	show_sound = event_scanner
 	location = fromfrom
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		fromfrom = {
@@ -369,7 +346,6 @@ country_event = {
 	show_sound = event_scanner
 	location = fromfromfrom
 	is_triggered_only = yes
-
 	option = {
 		name = TERRIBLE
 		fromfromfrom = {
@@ -383,6 +359,7 @@ country_event = {
 }
 
 ## Energetic Spectra
+
 ship_event = {
 	id = distar.15
 	title = "distar.15.name"
@@ -401,7 +378,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = FASCINATING
 		from = {
@@ -414,6 +390,7 @@ ship_event = {
 }
 
 ## Blackhole Hologram
+
 ship_event = {
 	id = distar.20
 	title = "distar.20.name"
@@ -435,7 +412,6 @@ ship_event = {
 			country_event = { id = story.5 days = 30 }
 		}
 	}
-
 	option = {
 		name = CURIOUS
 		from = {
@@ -448,6 +424,7 @@ ship_event = {
 }
 
 ## Rudimentary Robots
+
 ship_event = {
 	id = distar.25
 	title = "distar.25.name"
@@ -483,6 +460,7 @@ ship_event = {
 }
 
 ## Make Rudimentary Robots exist
+
 planet_event = {
 	id = distar.2599 # I am sorry
 	is_triggered_only = yes
@@ -500,7 +478,9 @@ planet_event = {
 			portrait = "default_robot"
 			namelist = "PRT1"
 			homeworld = this
-			traits = { trait = "trait_mechanical" }
+			traits = {
+				trait = "trait_mechanical"
+			}
 			effect = {
 				set_species_flag = primitive_robots_flag
 				save_global_event_target_as = primitive_robot_species
@@ -520,6 +500,7 @@ planet_event = {
 }
 
 ## Rudimentary Robots -> Rage Virus Chain
+
 planet_event = {
 	id = distar.26
 	title = "distar.26.name"
@@ -541,14 +522,9 @@ planet_event = {
 	}
 
 	immediate = {
-		planet_event = {
-			id = distar.31
-			days = 1800
-			random = 720
-		}
+		planet_event = { id = distar.31 days = 1800 random = 720 }
 		set_planet_flag = colony_event
 	}
-
 	option = {
 		trigger = {
 			owner = {
@@ -561,19 +537,12 @@ planet_event = {
 		name = "distar.26.a"
 		custom_tooltip = "distar.26.a.tooltip"
 		hidden_effect = {
-			planet_event = {
-				id = distar.27
-				days = 90
-				random = 10
-			}
+			planet_event = { id = distar.27 days = 90 random = 10 }
 		}
 	}
-
 	option = {
 		trigger = {
-			NOT = {
-				owner = { has_policy_flag = ai_outlawed }
-			}
+			NOT = { owner = { has_policy_flag = ai_outlawed } }
 		}
 		name = "distar.26.b"
 		owner = {
@@ -588,7 +557,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
 			owner = { has_policy_flag = ai_outlawed }
@@ -606,7 +574,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
 			owner = { is_machine_empire = yes }
@@ -614,14 +581,9 @@ planet_event = {
 		name = "distar.26.mach"
 		custom_tooltip = "distar.26.a.tooltip"
 		hidden_effect = {
-			planet_event = {
-				id = distar.27
-				days = 90
-				random = 10
-			}
+			planet_event = { id = distar.27 days = 90 random = 10 }
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			remove_modifier = "primitive_robots"
@@ -641,7 +603,6 @@ planet_event = {
 	trigger = {
 		has_owner = yes
 	}
-
 	option = {
 		name = "distar.27.a"
 		enable_special_project = {
@@ -666,7 +627,6 @@ ship_event = {
 		exists = owner
 		owner = { is_machine_empire = yes }
 	}
-
 	option = {
 		name = "distar.28.a"
 		owner = {
@@ -695,7 +655,6 @@ ship_event = {
 		exists = owner
 		owner = { is_machine_empire = no }
 	}
-
 	option = {
 		name = "distar.29.a"
 		owner = {
@@ -722,35 +681,29 @@ ship_event = {
 	location = fromfromfrom
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		room = no_video_feed_room
 	}
-
 	option = {
 		name = "distar.30.a"
 		response_text = distar.30.desc
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = "distar.30.b"
 		response_text = distar.30.b.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = "distar.30.c"
 		response_text = distar.30.c.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = "distar.30.d"
 		response_text = distar.30.d.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = "distar.30.e"
 	}
@@ -836,7 +789,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "distar.31.a"
 		enable_special_project = {
@@ -863,9 +815,7 @@ planet_event = {
 
 	trigger = {
 		has_owner = yes
-		NOT = {
-			owner = { has_country_flag = cured_rage_virus }
-		}
+		NOT = { owner = { has_country_flag = cured_rage_virus } }
 		any_owned_pop_group = {
 			NOR = {
 				is_robot_pop_group = yes
@@ -908,7 +858,6 @@ planet_event = {
 		}
 		planet_event = { id = distar.32 days = 60 }
 	}
-
 	option = {
 		name = WORRYING
 	}
@@ -926,9 +875,7 @@ planet_event = {
 
 	trigger = {
 		has_owner = yes
-		NOT = {
-			owner = { has_country_flag = cured_rage_virus }
-		}
+		NOT = { owner = { has_country_flag = cured_rage_virus } }
 	}
 
 	immediate = {
@@ -975,7 +922,6 @@ planet_event = {
 			type = "enraged_army"
 		}
 	}
-
 	option = {
 		name = distar.33.a
 		custom_tooltip = distar.33.a.tooltip
@@ -985,12 +931,10 @@ planet_event = {
 country_event = {
 	id = distar.34
 	title = "distar.34.name"
-
 	desc = {
 		trigger = { has_country_flag = started_retrovirus_project }
 		text = "distar.34.desc.a"
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = started_retrovirus_project }
@@ -1007,7 +951,6 @@ country_event = {
 		fromfrom = { has_planet_flag = retrovirus_armies }
 		from = { is_same_value = event_target:enraged_colonists_country }
 	}
-
 	option = {
 		name = distar.34.a
 		hidden_effect = {
@@ -1024,7 +967,6 @@ planet_event = {
 	show_sound = event_red_alert
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = "distar.35.a"
 		add_modifier = { modifier = researcher_rage years = 1 }
@@ -1047,7 +989,6 @@ planet_event = {
 			remove_country_flag = started_retrovirus_project
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		owner = {
@@ -1125,12 +1066,10 @@ planet_event = {
 country_event = {
 	id = distar.37
 	title = "distar.34.name"
-
 	desc = {
 		trigger = { has_country_flag = started_retrovirus_project }
 		text = "distar.34.desc.a"
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = started_retrovirus_project }
@@ -1149,7 +1088,6 @@ country_event = {
 			controller = { is_same_empire = event_target:enraged_colonists_country }
 		}
 	}
-
 	option = {
 		name = distar.34.a
 		hidden_effect = {
@@ -1159,6 +1097,7 @@ country_event = {
 }
 
 ## Gray Goo
+
 ship_event = {
 	id = distar.40
 	title = "distar.40.name"
@@ -1168,7 +1107,6 @@ ship_event = {
 	location = from
 	is_triggered_only = yes
 	specimen = nanite_sludge
-
 	option = {
 		name = EXCELLENT
 		owner = {
@@ -1194,6 +1132,7 @@ ship_event = {
 }
 
 ## Dark Flow
+
 ship_event = {
 	id = distar.45
 	title = "distar.45.name"
@@ -1217,7 +1156,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = INTERESTING
 		event_target:dark_flow_gateway = {
@@ -1250,7 +1188,6 @@ ship_event = {
 			save_event_target_as = dark_flow_gateway
 		}
 	}
-
 	option = {
 		name = DISCONCERTING
 		owner = {
@@ -1272,22 +1209,19 @@ ship_event = {
 }
 
 ## Lost Amoeba
+
 ship_event = {
 	id = distar.50
 	title = "distar.50.name"
-
 	desc = {
 		trigger = {
 			owner = { has_country_flag = amoeba_encountered }
 		}
 		text = "distar.50.desc"
 	}
-
 	desc = {
 		trigger = {
-			NOT = {
-				owner = { has_country_flag = amoeba_encountered }
-			}
+			NOT = { owner = { has_country_flag = amoeba_encountered } }
 		}
 		text = "distar.50.desc.first_enc"
 	}
@@ -1353,7 +1287,6 @@ ship_event = {
 			auto_follow_fleet = { target = event_target:science_ship_fleet attack_fleet = no }
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			owner = {
@@ -1368,30 +1301,21 @@ ship_event = {
 					}
 					root.owner = {
 						establish_communications_no_message = prev
-						establish_communication_with_subjects_and_federation = {
-							FLAG = amoeba_encountered
-						}
+						establish_communication_with_subjects_and_federation = { FLAG = amoeba_encountered }
 					}
 				}
 			}
 		}
 	}
-
 	option = { # Pacify/adopt it
 		name = distar.50.a
-		trigger = {
-			owner = { is_homicidal = no }
-		}
+		trigger = { owner = { is_homicidal = no } }
 		event_target:lost_amoeba_fleet = { set_owner = root.owner }
 		hidden_effect = {
 			leader = { save_global_event_target_as = amoeba_finding_scientist }
 			owner = {
 				set_country_flag = amoeba_befriended # Achievement flag
-				country_event = {
-					id = distar.51
-					days = 360
-					random = 60
-				}
+				country_event = { id = distar.51 days = 360 random = 60 }
 				country_event = { id = distar.304 days = 36000 }
 			}
 		}
@@ -1412,7 +1336,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = distar.50.b
 		custom_tooltip = distar.50.b.tooltip
@@ -1435,7 +1358,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "distar.50.c"
 		event_target:lost_amoeba_fleet = {
@@ -1455,7 +1377,6 @@ ship_event = {
 			}
 		}
 	}
-
 	abort_trigger = {
 		NOT = { exists = event_target:lost_amoeba_fleet }
 	}
@@ -1512,7 +1433,6 @@ country_event = {
 			event_target:lost_amoeba_country = { destroy_country = yes }
 		}
 	}
-
 	option = {
 		name = "distar.51.a"
 		event_target:lost_amoeba_adult_fleet = {
@@ -1525,13 +1445,9 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			event_target:lost_amoeba_ship = {
-				set_name = "NAME_Bubbles"
-				set_fleet_flag = NAME_Bubbles
-			}
+			event_target:lost_amoeba_ship = { set_name = "NAME_Bubbles" set_fleet_flag = NAME_Bubbles }
 		}
 	}
-
 	option = {
 		name = "distar.51.b"
 		event_target:lost_amoeba_adult_fleet = {
@@ -1547,7 +1463,6 @@ country_event = {
 			event_target:lost_amoeba_ship = { set_name = "NAME_Nyx" set_fleet_flag = NAME_Nyx }
 		}
 	}
-
 	option = {
 		name = "distar.51.c"
 		event_target:lost_amoeba_adult_fleet = {
@@ -1560,13 +1475,9 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			event_target:lost_amoeba_ship = {
-				set_name = "NAME_Renegade"
-				set_fleet_flag = NAME_Renegade
-			}
+			event_target:lost_amoeba_ship = { set_name = "NAME_Renegade" set_fleet_flag = NAME_Renegade }
 		}
 	}
-
 	option = {
 		name = "distar.51.d"
 		event_target:lost_amoeba_adult_fleet = {
@@ -1579,13 +1490,9 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			event_target:lost_amoeba_ship = {
-				set_name = "NAME_Euka"
-				set_fleet_flag = NAME_Euka
-			}
+			event_target:lost_amoeba_ship = { set_name = "NAME_Euka" set_fleet_flag = NAME_Euka }
 		}
 	}
-
 	option = {
 		name = "distar.51.e"
 		event_target:lost_amoeba_adult_fleet = {
@@ -1598,13 +1505,9 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			event_target:lost_amoeba_ship = {
-				set_name = "NAME_Cyto"
-				set_fleet_flag = NAME_Cyto
-			}
+			event_target:lost_amoeba_ship = { set_name = "NAME_Cyto" set_fleet_flag = NAME_Cyto }
 		}
 	}
-
 	option = {
 		name = "distar.51.f"
 		trigger = {
@@ -1625,13 +1528,9 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			event_target:lost_amoeba_ship = {
-				set_name = "NAME_Boomer"
-				set_fleet_flag = NAME_Boomer
-			}
+			event_target:lost_amoeba_ship = { set_name = "NAME_Boomer" set_fleet_flag = NAME_Boomer }
 		}
 	}
-
 	option = {
 		name = "distar.51.fb"
 		trigger = {
@@ -1652,13 +1551,9 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			event_target:lost_amoeba_ship = {
-				set_name = "NAME_Bloomer"
-				set_fleet_flag = NAME_Bloomer
-			}
+			event_target:lost_amoeba_ship = { set_name = "NAME_Bloomer" set_fleet_flag = NAME_Bloomer }
 		}
 	}
-
 	option = {
 		name = "distar.51.g"
 		event_target:lost_amoeba_adult_fleet = {
@@ -1671,13 +1566,9 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			event_target:lost_amoeba_ship = {
-				set_name = "NAME_Blaze"
-				set_fleet_flag = NAME_Blaze
-			}
+			event_target:lost_amoeba_ship = { set_name = "NAME_Blaze" set_fleet_flag = NAME_Blaze }
 		}
 	}
-
 	option = {
 		name = "distar.51.h"
 		event_target:lost_amoeba_adult_fleet = {
@@ -1690,13 +1581,9 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			event_target:lost_amoeba_ship = {
-				set_name = "NAME_Nova"
-				set_fleet_flag = NAME_Nova
-			}
+			event_target:lost_amoeba_ship = { set_name = "NAME_Nova" set_fleet_flag = NAME_Nova }
 		}
 	}
-
 	option = {
 		name = "distar.51.more"
 		hidden_effect = {
@@ -1725,40 +1612,27 @@ country_event = {
 	trigger = {
 		exists = event_target:lost_amoeba_adult_fleet
 	}
-
 	option = {
 		name = "distar.55.a"
 		event_target:lost_amoeba_adult_fleet = { set_name = "NAME_Blitz" }
 		hidden_effect = {
-			event_target:lost_amoeba_ship = {
-				set_name = "NAME_Blitz"
-				set_fleet_flag = NAME_Blitz
-			}
+			event_target:lost_amoeba_ship = { set_name = "NAME_Blitz" set_fleet_flag = NAME_Blitz }
 		}
 	}
-
 	option = {
 		name = "distar.55.b"
 		event_target:lost_amoeba_adult_fleet = { set_name = "NAME_Zero" }
 		hidden_effect = {
-			event_target:lost_amoeba_ship = {
-				set_name = "NAME_Zero"
-				set_fleet_flag = NAME_Zero
-			}
+			event_target:lost_amoeba_ship = { set_name = "NAME_Zero" set_fleet_flag = NAME_Zero }
 		}
 	}
-
 	option = {
 		name = "distar.55.c"
 		event_target:lost_amoeba_adult_fleet = { set_name = "NAME_Deva" }
 		hidden_effect = {
-			event_target:lost_amoeba_ship = {
-				set_name = "NAME_Deva"
-				set_fleet_flag = NAME_Deva
-			}
+			event_target:lost_amoeba_ship = { set_name = "NAME_Deva" set_fleet_flag = NAME_Deva }
 		}
 	}
-
 	option = {
 		name = "distar.55.d"
 		event_target:lost_amoeba_adult_fleet = { set_name = "NAME_Kos" }
@@ -1766,18 +1640,13 @@ country_event = {
 			event_target:lost_amoeba_ship = { set_name = "NAME_Kos" set_fleet_flag = NAME_Kos }
 		}
 	}
-
 	option = {
 		name = "distar.55.e"
 		event_target:lost_amoeba_adult_fleet = { set_name = "NAME_Amemba" }
 		hidden_effect = {
-			event_target:lost_amoeba_ship = {
-				set_name = "NAME_Amemba"
-				set_fleet_flag = NAME_Amemba
-			}
+			event_target:lost_amoeba_ship = { set_name = "NAME_Amemba" set_fleet_flag = NAME_Amemba }
 		}
 	}
-
 	option = {
 		name = "distar.55.f"
 		event_target:lost_amoeba_adult_fleet = { set_name = "NAME_Beauregarde" }
@@ -1788,29 +1657,20 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "distar.55.g"
 		event_target:lost_amoeba_adult_fleet = { set_name = "NAME_Bluey" }
 		hidden_effect = {
-			event_target:lost_amoeba_ship = {
-				set_name = "NAME_Bluey"
-				set_fleet_flag = NAME_Bluey
-			}
+			event_target:lost_amoeba_ship = { set_name = "NAME_Bluey" set_fleet_flag = NAME_Bluey }
 		}
 	}
-
 	option = {
 		name = "distar.55.h"
 		event_target:lost_amoeba_adult_fleet = { set_name = "NAME_Zeke" }
 		hidden_effect = {
-			event_target:lost_amoeba_ship = {
-				set_name = "NAME_Zeke"
-				set_fleet_flag = NAME_Zeke
-			}
+			event_target:lost_amoeba_ship = { set_name = "NAME_Zeke" set_fleet_flag = NAME_Zeke }
 		}
 	}
-
 	option = {
 		name = "distar.51.more"
 		hidden_effect = {
@@ -1831,7 +1691,6 @@ country_event = {
 	trigger = {
 		exists = event_target:lost_amoeba_adult_fleet
 	}
-
 	option = {
 		name = "distar.56.a"
 		event_target:lost_amoeba_adult_fleet = { set_name = "NAME_Storm" }
@@ -1839,7 +1698,6 @@ country_event = {
 			event_target:lost_amoeba_ship = { set_name = "NAME_Storm" }
 		}
 	}
-
 	option = {
 		name = "distar.56.b"
 		event_target:lost_amoeba_adult_fleet = { set_name = "NAME_Ghost" }
@@ -1847,7 +1705,6 @@ country_event = {
 			event_target:lost_amoeba_ship = { set_name = "NAME_Ghost" }
 		}
 	}
-
 	option = {
 		name = "distar.56.c"
 		event_target:lost_amoeba_adult_fleet = { set_name = "NAME_Cygni" }
@@ -1855,7 +1712,6 @@ country_event = {
 			event_target:lost_amoeba_ship = { set_name = "NAME_Cygni" }
 		}
 	}
-
 	option = {
 		name = "distar.56.d"
 		event_target:lost_amoeba_adult_fleet = { set_name = "NAME_Vesper" }
@@ -1863,7 +1719,6 @@ country_event = {
 			event_target:lost_amoeba_ship = { set_name = "NAME_Vesper" }
 		}
 	}
-
 	option = {
 		name = "distar.56.e"
 		event_target:lost_amoeba_adult_fleet = { set_name = "NAME_Arda" }
@@ -1871,7 +1726,6 @@ country_event = {
 			event_target:lost_amoeba_ship = { set_name = "NAME_Arda" }
 		}
 	}
-
 	option = {
 		name = "distar.56.f"
 		event_target:lost_amoeba_adult_fleet = { set_name = "NAME_Phaeton" }
@@ -1879,7 +1733,6 @@ country_event = {
 			event_target:lost_amoeba_ship = { set_name = "NAME_Phaeton" }
 		}
 	}
-
 	option = {
 		name = "distar.56.g"
 		event_target:lost_amoeba_adult_fleet = { set_name = "NAME_Wraith" }
@@ -1887,7 +1740,6 @@ country_event = {
 			event_target:lost_amoeba_ship = { set_name = "NAME_Wraith" }
 		}
 	}
-
 	option = {
 		name = "distar.56.h"
 		event_target:lost_amoeba_adult_fleet = { set_name = "NAME_Rokka" }
@@ -1895,7 +1747,6 @@ country_event = {
 			event_target:lost_amoeba_ship = { set_name = "NAME_Rokka" }
 		}
 	}
-
 	option = {
 		name = "distar.56.i"
 		event_target:lost_amoeba_adult_fleet = { set_name = "NAME_Fluffy" }
@@ -1930,7 +1781,6 @@ country_event = {
 			event_target:lost_amoeba_country = { destroy_country = yes }
 		}
 	}
-
 	option = {
 		name = INTERESTING
 		if = {
@@ -1961,16 +1811,12 @@ country_event = {
 ship_event = {
 	id = distar.53
 	title = "distar.53.name"
-
 	desc = {
 		trigger = {
-			NOT = {
-				owner = { has_technology = tech_regenerative_hull_tissue }
-			}
+			NOT = { owner = { has_technology = tech_regenerative_hull_tissue } }
 		}
 		text = "distar.53.desc.lacks_tech"
 	}
-
 	desc = {
 		trigger = {
 			owner = { has_technology = tech_regenerative_hull_tissue }
@@ -1995,7 +1841,6 @@ ship_event = {
 			event_target:lost_amoeba_country = { destroy_country = yes }
 		}
 	}
-
 	option = {
 		name = INTERESTING
 		owner = {
@@ -2055,7 +1900,6 @@ country_event = {
 			event_target:lost_amoeba_country = { destroy_country = yes }
 		}
 	}
-
 	option = {
 		name = CURSES
 	}
@@ -2068,14 +1912,13 @@ country_event = {
 	desc = "distar.57.desc"
 	picture = GFX_evt_space_funeral
 	show_sound = event_life_support_fail
-	location = FromFrom
+	location = fromfrom
 	is_triggered_only = yes
 	specimen = memorial_for_bubbles
 
 	trigger = {
 		exists = event_target:amoeba_finding_scientist
 	}
-
 	option = {
 		name = "distar.57.a"
 		event_target:amoeba_finding_scientist = {
@@ -2119,12 +1962,10 @@ ship_event = {
 ship_event = {
 	id = distar.340
 	title = "distar.57.name"
-
 	desc = {
 		trigger = { exists = event_target:amoeba_finding_scientist }
 		text = "distar.340.desc.science"
 	}
-
 	desc = {
 		trigger = {
 			NOT = { exists = event_target:amoeba_finding_scientist }
@@ -2139,16 +1980,15 @@ ship_event = {
 
 	trigger = {
 	}
-
 	option = {
 		name = "distar.340.a"
-		trigger = {
-			owner = { is_reanimator = yes }
-		}
+		trigger = { owner = { is_reanimator = yes } }
 		if = {
 			limit = { exists = event_target:amoeba_finding_scientist }
 			event_target:amoeba_finding_scientist = {
-				add_or_level_up_veteran_trait_effect = { TRAIT = leader_trait_maniacal }
+				add_or_level_up_veteran_trait_effect = {
+					TRAIT = leader_trait_maniacal
+				}
 			}
 		}
 		enable_special_project = {
@@ -2157,7 +1997,6 @@ ship_event = {
 			owner = root.owner
 		}
 	}
-
 	option = {
 		name = "distar.340.b"
 		if = {
@@ -2176,12 +2015,10 @@ ship_event = {
 country_event = {
 	id = distar.59
 	title = "distar.218.name"
-
 	desc = {
 		trigger = { exists = event_target:amoeba_finding_scientist }
 		text = "distar.59.desc" # This is the loc that mentions the scientist
 	}
-
 	desc = {
 		trigger = {
 			NOT = { exists = event_target:amoeba_finding_scientist }
@@ -2201,7 +2038,6 @@ country_event = {
 			save_event_target_as = reanimated_amoeba
 		}
 	}
-
 	option = {
 		name = "it_hungers"
 		event_target:reanimated_amoeba = { set_disabled = no }
@@ -2260,7 +2096,10 @@ country_event = {
 					design = "NAME_Adopted_Amoeba_Centenarian"
 					prefix = no
 					upgradable = no
-					effect = { set_disable_at_health = 0.001 set_ship_flag = lost_amoeba_ship }
+					effect = {
+						set_disable_at_health = 0.001
+						set_ship_flag = lost_amoeba_ship
+					}
 				}
 				set_location = { target = event_target:lost_amoeba_adult_fleet }
 				set_fleet_stance = passive
@@ -2281,7 +2120,6 @@ country_event = {
 		}
 		event_target:lost_amoeba_adult_fleet = { delete_fleet = this }
 	}
-
 	option = {
 		name = ASTOUNDING
 		custom_tooltip = "distar.304.a.tooltip"
@@ -2315,7 +2153,6 @@ ship_event = {
 		solar_system = { save_global_event_target_as = ouroboros_system }
 		from = { set_planet_flag = ouroboros_pulsar_flag }
 	}
-
 	option = {
 		name = UNFORTUNATE
 		owner = {
@@ -2378,7 +2215,9 @@ country_event = {
 				portrait = mol4
 				namelist = "MOL1"
 				traits = random
-				effect = { save_event_target_as = kohtalo_species }
+				effect = {
+					save_event_target_as = kohtalo_species
+				}
 			}
 			create_leader = {
 				class = commander
@@ -2386,7 +2225,9 @@ country_event = {
 				name = "NAME_The_Captain"
 				skill = 2
 				event_leader = yes
-				effect = { save_event_target_as = kohtalo_captain }
+				effect = {
+					save_event_target_as = kohtalo_captain
+				}
 			}
 			create_fleet = {
 				name = "NAME_Kohtalo"
@@ -2405,7 +2246,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = ONSCREEN
 		hidden_effect = {
@@ -2422,12 +2262,10 @@ country_event = {
 	location = event_target:kohtalo_second_fleet
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:kohtalo_captain
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = "distar.62.a"
 		hidden_effect = {
@@ -2444,12 +2282,10 @@ country_event = {
 	location = event_target:kohtalo_second_fleet
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:kohtalo_captain
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = "distar.63.a"
 		hidden_effect = {
@@ -2466,12 +2302,10 @@ country_event = {
 	location = event_target:kohtalo_second_fleet
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:kohtalo_captain
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = "distar.64.a"
 		hidden_effect = {
@@ -2488,12 +2322,10 @@ country_event = {
 	location = event_target:kohtalo_second_fleet
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:kohtalo_captain
 		room = ethic_spaceship_room
 	}
-
 	immediate = {
 		event_target:ouroboros_system = {
 			random_system_planet = {
@@ -2502,7 +2334,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "distar.65.a"
 		custom_tooltip = "distar.65.a.tooltip"
@@ -2510,7 +2341,6 @@ country_event = {
 			country_event = { id = distar.66 }
 		}
 	}
-
 	option = {
 		name = "distar.65.b"
 		custom_tooltip = "distar.65.b.tooltip"
@@ -2529,12 +2359,10 @@ country_event = {
 	location = event_target:kohtalo_second_fleet
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:kohtalo_captain
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = "distar.66.a"
 		hidden_effect = {
@@ -2566,12 +2394,10 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = OOPS
 		event_target:ouroboros_pulsar = { add_deposit = d_physics_7 }
 	}
-
 	after = {
 		if = {
 			limit = { exists = event_target:kohtalo_country }
@@ -2594,10 +2420,7 @@ country_event = {
 			limit = { exists = event_target:kohtalo_country }
 			event_target:kohtalo_country = { destroy_country = yes }
 		}
-		create_ambient_object = {
-			type = "kohtalo_object"
-			location = event_target:ouroboros_pulsar
-		}
+		create_ambient_object = { type = "kohtalo_object" location = event_target:ouroboros_pulsar }
 		last_created_ambient_object = {
 			set_location = {
 				target = event_target:ouroboros_pulsar
@@ -2607,7 +2430,6 @@ country_event = {
 			save_event_target_as = kohtalo_second_ambient
 		}
 	}
-
 	option = {
 		name = "distar.68.a"
 		event_target:ouroboros_pulsar = { add_deposit = d_physics_7 }
@@ -2627,7 +2449,6 @@ ship_event = {
 	immediate = {
 		from = { set_deposit = d_physics_3 }
 	}
-
 	option = {
 		name = "distar.70.a"
 		trigger = {
@@ -2660,7 +2481,6 @@ ship_event = {
 			owner = { pop_lcluster_event = yes }
 		}
 	}
-
 	option = {
 		name = "distar.70.b"
 		from = {
@@ -2671,7 +2491,6 @@ ship_event = {
 			owner = { pop_lcluster_event = yes }
 		}
 	}
-
 	option = {
 		name = "distar.70.exter"
 		custom_tooltip = "distar.70.exter.tooltip"
@@ -2696,7 +2515,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "distar.70.fp"
 		custom_tooltip = "distar.70.fp.tooltip"
@@ -2721,7 +2539,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = { # In the event of no free tiles (ignoring Terminators and Swarm)
 		name = "distar.70.no_room"
 		trigger = {
@@ -2772,7 +2589,9 @@ ship_event = {
 					trait = "trait_nerve_stapled"
 					trait = "trait_pc_nuked_preference"
 				}
-				effect = { save_global_event_target_as = cryonic_clones }
+				effect = {
+					save_global_event_target_as = cryonic_clones
+				}
 			}
 		}
 		else_if = {
@@ -2792,7 +2611,9 @@ ship_event = {
 					trait = "trait_nerve_stapled"
 					trait = "trait_pc_nuked_preference"
 				}
-				effect = { save_global_event_target_as = cryonic_clones }
+				effect = {
+					save_global_event_target_as = cryonic_clones
+				}
 			}
 		}
 		owner = {
@@ -2806,7 +2627,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = { # Default, if you have free tiles
 		name = "distar.71.pop.default"
 		custom_tooltip = "distar.71.pop.tooltip"
@@ -2835,7 +2655,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "distar.71.no_room"
 		trigger = {
@@ -2873,7 +2692,6 @@ ship_event = {
 			owner = { set_country_flag = got_cryonic_clone_colonizer }
 		}
 	}
-
 	option = { # Phile and free tiles
 		name = "distar.71.pop.phile"
 		custom_tooltip = "distar.71.pop.tooltip"
@@ -2898,7 +2716,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = { # Slaver and free tiles
 		name = "distar.71.pop.slave"
 		custom_tooltip = "distar.71.pop.tooltip"
@@ -2923,7 +2740,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = { # Devouring Swarm with or without free tiles
 		name = "distar.71.pop.swarm"
 		exclusive_trigger = {
@@ -2966,7 +2782,6 @@ ship_event = {
 			# }
 		}
 	}
-
 	option = { # Servitor and free tiles
 		name = "distar.71.pop.servi"
 		custom_tooltip = "distar.71.pop.tooltip"
@@ -2991,7 +2806,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = { # Assimilator and free tiles
 		name = "distar.71.pop.assim"
 		custom_tooltip = "distar.71.pop.tooltip"
@@ -3056,7 +2870,9 @@ planet_event = {
 					trait = "trait_nerve_stapled"
 					trait = "trait_pc_nuked_preference"
 				}
-				effect = { save_global_event_target_as = cryonic_clones }
+				effect = {
+					save_global_event_target_as = cryonic_clones
+				}
 			}
 		}
 		else_if = {
@@ -3076,11 +2892,12 @@ planet_event = {
 					trait = "trait_nerve_stapled"
 					trait = "trait_pc_nuked_preference"
 				}
-				effect = { save_global_event_target_as = cryonic_clones }
+				effect = {
+					save_global_event_target_as = cryonic_clones
+				}
 			}
 		}
 	}
-
 	option = {
 		name = "distar.72.a"
 		trigger = {
@@ -3093,7 +2910,6 @@ planet_event = {
 		}
 		add_deposit = d_cryonic_clones
 	}
-
 	option = {
 		name = "distar.72.b"
 		trigger = {
@@ -3108,7 +2924,6 @@ planet_event = {
 			create_pop_group = { species = event_target:cryonic_clones size = 200 }
 		}
 	}
-
 	option = {
 		name = "distar.71.pop.assim"
 		trigger = {
@@ -3118,7 +2933,6 @@ planet_event = {
 			create_pop_group = { species = event_target:cryonic_clones size = 200 }
 		}
 	}
-
 	option = {
 		name = "distar.72.b.servi"
 		trigger = {
@@ -3128,7 +2942,6 @@ planet_event = {
 			create_pop_group = { species = event_target:cryonic_clones size = 200 }
 		}
 	}
-
 	option = {
 		name = "distar.71.pop.swarm"
 		trigger = {
@@ -3138,7 +2951,6 @@ planet_event = {
 			create_pop_group = { species = event_target:cryonic_clones size = 200 }
 		}
 	}
-
 	option = {
 		name = "distar.72.c"
 		trigger = {
@@ -3187,16 +2999,11 @@ ship_event = {
 	show_sound = event_scanner
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		from = { add_rare_crystals = yes }
 		hidden_effect = {
-			ship_event = {
-				id = action.941
-				days = 1
-				scopes = { from = fromfrom }
-			}
+			ship_event = { id = action.941 days = 1 scopes = { from = fromfrom } }
 		}
 	}
 }
@@ -3230,11 +3037,9 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = FASCINATING
 	}
-
 	option = {
 		exclusive_trigger = {
 			owner = { has_origin = origin_evolutionary_predators }
@@ -3244,7 +3049,6 @@ ship_event = {
 			give_evolutionary_predator_situation_progress_and_dna = { AMOUNT = large }
 		}
 	}
-
 	after = {
 		owner = {
 			add_monthly_resource_mult = {
@@ -3301,7 +3105,6 @@ country_event = {
 	show_sound = event_mystic_reveal
 	location = event_target:dead_god_planet
 	is_triggered_only = yes
-
 	option = {
 		name = "distar.82.a"
 		event_target:dead_god_planet = {
@@ -3315,11 +3118,9 @@ country_event = {
 		}
 		give_specimen = { key = dead_god_mantle }
 	}
-
 	option = {
 		name = "distar.82.b"
 	}
-
 	option = {
 		name = "distar.82.c"
 		trigger = {
@@ -3329,7 +3130,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "distar.82.d"
 		trigger = { has_policy_flag = purge_displacement_only }
@@ -3358,12 +3158,9 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = FASCINATING
-		trigger = {
-			owner = { is_xenophobe = no }
-		}
+		trigger = { owner = { is_xenophobe = no } }
 		from = {
 			add_deposit = d_society_3
 			hidden_effect = {
@@ -3372,12 +3169,9 @@ ship_event = {
 		}
 		leader = { add_skill_without_trait_selection = 1 }
 	}
-
 	option = {
 		name = "distar.234.phobe"
-		trigger = {
-			owner = { is_xenophobe = yes }
-		}
+		trigger = { owner = { is_xenophobe = yes } }
 		from = {
 			add_deposit = d_society_3
 			hidden_effect = {
@@ -3402,11 +3196,9 @@ ship_event = {
 		exists = owner
 		owner = { is_machine_empire = no }
 	}
-
 	option = {
 		name = "distar.90.a"
 	}
-
 	option = {
 		name = "distar.90.b"
 		owner = {
@@ -3446,7 +3238,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "distar.91.a"
 		custom_tooltip = "distar.91.a.tooltip"
@@ -3459,7 +3250,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "distar.91.b"
 	}
@@ -3474,11 +3264,8 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = {
-			event_target:rum_nation = { is_hostile_to = root }
-		}
+		NOT = { event_target:rum_nation = { is_hostile_to = root } }
 	}
-
 	picture_event_data = {
 		portrait = event_target:rum_nation
 		planet_background = event_target:rum_nation
@@ -3486,7 +3273,6 @@ country_event = {
 		city_level = event_target:rum_nation
 		room = event_target:rum_nation.ruler
 	}
-
 	option = {
 		name = distar.92.a
 		add_resource = { influence = 100 }
@@ -3508,7 +3294,6 @@ country_event = {
 	trigger = {
 		event_target:rum_nation = { is_hostile_to = root }
 	}
-
 	picture_event_data = {
 		portrait = event_target:rum_nation
 		planet_background = event_target:rum_nation
@@ -3516,7 +3301,6 @@ country_event = {
 		city_level = event_target:rum_nation
 		room = event_target:rum_nation.ruler
 	}
-
 	option = {
 		name = distar.93.a
 		event_target:rum_nation = {
@@ -3535,7 +3319,6 @@ ship_event = {
 	location = from
 	is_triggered_only = yes
 	specimen = vibrating_crystal
-
 	option = {
 		name = INTERESTING
 		from = {
@@ -3553,7 +3336,6 @@ ship_event = {
 	show_sound = event_scanner
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = "distar.100.a"
 		from = {
@@ -3572,7 +3354,6 @@ ship_event = {
 	location = from
 	is_triggered_only = yes
 	specimen = invasive_exofungus
-
 	option = {
 		name = WORRYING
 		owner = {
@@ -3605,7 +3386,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = CURIOUS
 		from = { add_deposit = d_physics_3 }
@@ -3631,7 +3411,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = INTERESTING
 		from = { add_deposit = d_minerals_3 }
@@ -3648,7 +3427,6 @@ ship_event = {
 	location = from
 	is_triggered_only = yes
 	specimen = flooded_settlement_mound
-
 	option = {
 		name = INTERESTING
 		from = {
@@ -3667,7 +3445,6 @@ ship_event = {
 	show_sound = event_scanner
 	location = event_target:derelict_particle_accelerator
 	is_triggered_only = yes
-
 	option = {
 		name = DISCONCERTING
 		owner = {
@@ -3765,7 +3542,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = UNFORTUNATE
 		owner = {
@@ -3810,7 +3586,6 @@ fleet_event = {
 			country_event = { id = story.8 days = 15 }
 		}
 	}
-
 	option = {
 		name = DISCONCERTING
 	}
@@ -3838,10 +3613,7 @@ country_event = {
 			}
 		}
 		from = {
-			auto_move_to_planet = {
-				target = event_target:new_location
-				clear_auto_move_on_arrival = no
-			}
+			auto_move_to_planet = { target = event_target:new_location clear_auto_move_on_arrival = no }
 		}
 	}
 }
@@ -3878,14 +3650,12 @@ country_event = {
 			end_curator_chain = yes
 		}
 	}
-
 	option = {
 		name = OK
 		exclusive_trigger = {
 			NOT = { is_country_type = default }
 		}
 	}
-
 	option = {
 		name = "distar.137.a"
 		hidden_effect = {
@@ -3944,7 +3714,6 @@ country_event = {
 		give_nanite_techs = yes
 		custom_tooltip = distar.137.tooltip
 	}
-
 	option = {
 		name = "distar.137.paci"
 		trigger = {
@@ -4022,14 +3791,12 @@ country_event = {
 		}
 		give_nanite_techs = yes
 	}
-
 	option = {
 		name = distar.137.harv
 		trigger = { can_harvest_parts = yes }
 		set_country_flag = harvested_scavenger_parts
 		add_research_option = tech_leviathan_techgenesis
 	}
-
 	after = {
 		generate_parade_city = yes
 		start_situation = {
@@ -4061,7 +3828,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = FASCINATING
 		from = { add_deposit = d_physics_4 }
@@ -4083,7 +3849,6 @@ ship_event = {
 			country_event = { id = story.1 days = 30 }
 		}
 	}
-
 	option = {
 		name = FASCINATING
 		owner = {
@@ -4096,11 +3861,7 @@ ship_event = {
 		}
 		from = { add_exotic_gases = yes }
 		hidden_effect = {
-			ship_event = {
-				id = action.941
-				days = 1
-				scopes = { from = fromfrom }
-			}
+			ship_event = { id = action.941 days = 1 scopes = { from = fromfrom } }
 		}
 	}
 }
@@ -4120,7 +3881,6 @@ ship_event = {
 			country_event = { id = story.1 days = 30 }
 		}
 	}
-
 	option = {
 		name = CURIOUS
 		owner = {
@@ -4145,7 +3905,6 @@ ship_event = {
 	show_sound = event_scanner
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		# Ariphaos Todo: Move this to dialog?
 		trigger = {
@@ -4165,7 +3924,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
 			owner = {
@@ -4178,7 +3936,6 @@ ship_event = {
 		name = "distar.155.b"
 		custom_tooltip = distar.155.machine.tt
 	}
-
 	option = {
 		trigger = {
 			owner = { has_policy_flag = ai_outlawed }
@@ -4186,7 +3943,6 @@ ship_event = {
 		name = "distar.155.c"
 		custom_tooltip = "distar.155.c.tooltip"
 	}
-
 	option = {
 		trigger = {
 			owner = { is_machine_empire = yes }
@@ -4200,7 +3956,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
 			owner = { is_machine_empire = yes }
@@ -4213,14 +3968,12 @@ ship_event = {
 ship_event = {
 	id = distar.156
 	title = "distar.156.name"
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = no }
 		}
 		text = "distar.156.desc"
 	}
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = yes }
@@ -4248,7 +4001,9 @@ ship_event = {
 				trait = trait_machine_unit
 				trait = random_traits
 			}
-			effect = { save_event_target_as = warform_species }
+			effect = {
+				save_event_target_as = warform_species
+			}
 		}
 		create_country = {
 			name = "NAME_S8751"
@@ -4265,7 +4020,9 @@ ship_event = {
 					"null"
 				}
 			}
-			effect = { save_event_target_as = warform_country }
+			effect = {
+				save_event_target_as = warform_country
+			}
 		}
 		event_target:warform_country = {
 			set_faction_hostility = { target = root.owner set_friendly = yes }
@@ -4274,8 +4031,13 @@ ship_event = {
 				class = ROBOT
 				portrait = cpl_03
 				namelist = "AI"
-				traits = { trait = trait_machine_unit trait = random_traits }
-				effect = { save_event_target_as = warform_species }
+				traits = {
+					trait = trait_machine_unit
+					trait = random_traits
+				}
+				effect = {
+					save_event_target_as = warform_species
+				}
 			}
 			create_leader = {
 				class = commander
@@ -4334,7 +4096,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = ONSCREEN
 		hidden_effect = {
@@ -4354,7 +4115,6 @@ country_event = {
 	show_sound = event_scanner
 	location = fromfrom
 	is_triggered_only = yes
-
 	option = {
 		name = CURSES
 	}
@@ -4367,30 +4127,25 @@ country_event = {
 	location = event_target:repaired_warform
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:warform_leader
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = "distar.158.a"
 		response_text = distar.158.a.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = "distar.158.b"
 		response_text = distar.158.b.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = "distar.158.c"
 		response_text = distar.158.c.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = "distar.158.d"
 		trigger = { is_machine_empire = no }
@@ -4398,7 +4153,6 @@ country_event = {
 			country_event = { id = distar.159 }
 		}
 	}
-
 	option = {
 		name = "distar.158.d.machi"
 		trigger = { is_machine_empire = yes }
@@ -4415,12 +4169,10 @@ country_event = {
 	location = event_target:repaired_warform
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:warform_leader
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = "distar.159.a"
 		trigger = { is_machine_empire = no }
@@ -4428,7 +4180,6 @@ country_event = {
 			country_event = { id = distar.160 }
 		}
 	}
-
 	option = {
 		name = "distar.159.a.machi"
 		trigger = { is_machine_empire = yes }
@@ -4445,12 +4196,10 @@ country_event = {
 	location = event_target:repaired_warform
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:warform_leader
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = "distar.160.a"
 		trigger = { is_machine_empire = no }
@@ -4458,7 +4207,6 @@ country_event = {
 			country_event = { id = distar.161 }
 		}
 	}
-
 	option = {
 		name = "distar.160.a.machi"
 		trigger = { is_machine_empire = yes }
@@ -4475,12 +4223,10 @@ country_event = {
 	location = event_target:repaired_warform
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:warform_leader
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = "distar.161.a"
 		trigger = { is_machine_empire = no }
@@ -4488,7 +4234,6 @@ country_event = {
 			country_event = { id = distar.162 }
 		}
 	}
-
 	option = {
 		name = "distar.161.a.machi"
 		trigger = { is_machine_empire = yes }
@@ -4496,7 +4241,6 @@ country_event = {
 			country_event = { id = distar.162 }
 		}
 	}
-
 	option = {
 		name = "distar.161.b"
 		trigger = { is_machine_empire = no }
@@ -4513,12 +4257,10 @@ country_event = {
 	location = event_target:repaired_warform
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:warform_leader
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = "distar.162.a"
 		trigger = { is_machine_empire = no }
@@ -4526,7 +4268,6 @@ country_event = {
 			country_event = { id = distar.163 }
 		}
 	}
-
 	option = {
 		name = "distar.162.a.machi"
 		trigger = { is_machine_empire = yes }
@@ -4543,12 +4284,10 @@ country_event = {
 	location = event_target:repaired_warform
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:warform_leader
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = "distar.163.a"
 		trigger = { is_machine_empire = no }
@@ -4556,7 +4295,6 @@ country_event = {
 			country_event = { id = distar.164 }
 		}
 	}
-
 	option = {
 		name = "distar.163.a.machi"
 		trigger = { is_machine_empire = yes }
@@ -4574,12 +4312,10 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_leader_recruitment_bg_renowned
 	event_window_type = leader_recruit
-
 	picture_event_data = {
 		portrait = event_target:warform_leader
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = distar.165.dismiss
 		tag = dismiss_leader
@@ -4587,7 +4323,6 @@ country_event = {
 			country_event = { id = distar.165 }
 		}
 	}
-
 	option = {
 		tag = hire_leader
 		allow = {
@@ -4656,7 +4391,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "distar.164.d"
 		response_text = distar.164.d.response
@@ -4672,12 +4406,10 @@ country_event = {
 	event_window_type = leader_recruit
 	picture = GFX_leader_recruitment_bg_renowned
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:warform_leader
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = distar.165.dismiss
 		custom_tooltip = "distar.165.b"
@@ -4687,7 +4419,6 @@ country_event = {
 			country_event = { id = distar.166 }
 		}
 	}
-
 	option = {
 		name = "distar.165.a"
 		tag = hire_leader
@@ -4721,7 +4452,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "distar.165.c"
 		response_text = distar.165.c.response
@@ -4736,14 +4466,12 @@ country_event = {
 	show_sound = event_life_support_fail
 	picture = GFX_evt_sapient_AI
 	event_window_type = leader_story
-
 	picture_event_data = {
 		portrait = event_target:warform_leader
 		room = ethic_spaceship_room
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = OOPS
 		hidden_effect = {
@@ -4776,14 +4504,10 @@ ship_event = {
 			event_target:warform_country = { destroy_country = yes }
 		}
 	}
-
 	option = {
 		name = "distar.167.a"
-		owner = {
-			add_resource = { alloys = 75 }
-		}
+		owner = { add_resource = { alloys = 75 } }
 	}
-
 	option = {
 		name = "distar.167.b"
 		owner = {
@@ -4840,14 +4564,12 @@ country_event = {
 ship_event = {
 	id = distar.170
 	title = "distar.170.name"
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = no }
 		}
 		text = "distar.170.desc"
 	}
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = yes }
@@ -4867,7 +4589,6 @@ ship_event = {
 			create_generic_presapient_species = { UPLIFT_TO = REP }
 		}
 	}
-
 	option = {
 		trigger = {
 			owner = {
@@ -4892,14 +4613,12 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
 			owner = { is_machine_empire = no }
 		}
 		name = NOTIME
 	}
-
 	option = {
 		trigger = {
 			owner = { is_machine_empire = yes }
@@ -4929,7 +4648,6 @@ ship_event = {
 	immediate = {
 		leader = { save_event_target_as = brainslug_scientist }
 	}
-
 	option = {
 		name = "distar.171.a"
 		owner = {
@@ -4941,7 +4659,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "distar.171.b"
 		hidden_effect = {
@@ -4977,7 +4694,6 @@ ship_event = {
 		}
 		owner = { set_country_flag = finished_brainslug_chain }
 	}
-
 	option = {
 		trigger = {
 			owner = {
@@ -5055,7 +4771,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = { # at least one sluggable pop in xenophobe empire
 			hidden_trigger = {
@@ -5098,7 +4813,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
 			owner = { has_origin = origin_evolutionary_predators }
@@ -5124,7 +4838,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "distar.172.b"
 		custom_tooltip = "distar.172.b.tooltip"
@@ -5255,9 +4968,7 @@ country_event = {
 					}
 				}
 				if = {
-					limit = {
-						root = { is_hive_empire = no }
-					}
+					limit = { root = { is_hive_empire = no } }
 					add_modifier = { modifier = brainslug_woes years = 20 }
 				}
 				else = {
@@ -5301,7 +5012,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = INTERESTING
 		from = { add_deposit = d_minerals_4 }
@@ -5318,7 +5028,6 @@ ship_event = {
 	location = from
 	is_triggered_only = yes
 	specimen = carnivorous_megaflora
-
 	option = {
 		name = DISCONCERTING
 		owner = {
@@ -5335,21 +5044,18 @@ ship_event = {
 ship_event = {
 	id = distar.190
 	title = "distar.190.name"
-
 	desc = {
 		trigger = {
 			owner = { is_regular_empire = yes }
 		}
 		text = "distar.190.desc"
 	}
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = yes }
 		}
 		text = "distar.190.desc.machi"
 	}
-
 	desc = {
 		trigger = {
 			owner = { is_hive_empire = yes }
@@ -5375,7 +5081,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = distar.190.a
 		trigger = {
@@ -5422,7 +5127,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
 			owner = { is_regular_empire = yes }
@@ -5440,11 +5144,8 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
-		trigger = {
-			owner = { is_gestalt = yes }
-		}
+		trigger = { owner = { is_gestalt = yes } }
 		name = CURIOUS
 	}
 }
@@ -5453,12 +5154,10 @@ ship_event = {
 country_event = {
 	id = distar.191
 	title = "distar.191.name"
-
 	desc = {
 		trigger = { exists = event_target:living_planet_scientist }
 		text = "distar.191.desc.alive"
 	}
-
 	desc = {
 		trigger = {
 			NOT = { exists = event_target:living_planet_scientist }
@@ -5488,18 +5187,13 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "distar.191.a"
 		event_target:living_planet_tar = {
 			add_modifier = { modifier = pm_study_the_sea days = -1 }
 		}
 		hidden_effect = {
-			country_event = {
-				id = distar.192
-				days = 180
-				random = 30
-			} # Scientist is alive
+			country_event = { id = distar.192 days = 180 random = 30 } # Scientist is alive
 			country_event = { id = distar.193 days = 3600 } # Scientist is dead
 		}
 	}
@@ -5509,7 +5203,6 @@ country_event = {
 country_event = {
 	id = distar.192
 	title = "distar.192.name"
-
 	desc = {
 		trigger = {
 			event_target:living_planet_scientist = {
@@ -5521,7 +5214,6 @@ country_event = {
 		}
 		text = "distar.192.desc"
 	}
-
 	desc = {
 		trigger = {
 			event_target:living_planet_scientist = {
@@ -5533,7 +5225,6 @@ country_event = {
 		}
 		text = "distar.192.desc.neuter"
 	}
-
 	inline_script = {
 		script = events/biogenesis_event_art
 		OWNER = owner
@@ -5549,43 +5240,27 @@ country_event = {
 	trigger = {
 		exists = event_target:living_planet_scientist
 		exists = event_target:living_planet_tar
-		event_target:living_planet_tar = {
-			has_modifier = pm_study_the_sea
-			has_modifier = living_sea
-		}
+		event_target:living_planet_tar = { has_modifier = pm_study_the_sea has_modifier = living_sea }
 	}
 
 	immediate = {
 		set_country_flag = strange_calling_fired
 	}
-
 	option = {
 		name = "distar.192.a"
 		custom_tooltip = "distar.192.a.tooltip"
 		hidden_effect = {
-			event_target:living_planet_scientist = {
-				exile_leader_as = exiled_living_planet_scientist
-			}
-			country_event = {
-				id = distar.194
-				days = 360
-				random = 60
-			}
+			event_target:living_planet_scientist = { exile_leader_as = exiled_living_planet_scientist }
+			country_event = { id = distar.194 days = 360 random = 60 }
 		}
 	}
-
 	option = {
 		name = "distar.192.b"
 		custom_tooltip = "distar.192.b.tooltip"
 		hidden_effect = {
-			country_event = {
-				id = distar.195
-				days = 90
-				random = 10
-			}
+			country_event = { id = distar.195 days = 90 random = 10 }
 		}
 	}
-
 	option = {
 		name = "distar.192.c"
 		custom_tooltip = "distar.192.c.tooltip"
@@ -5606,7 +5281,6 @@ country_event = {
 	id = distar.193
 	title = "distar.193.name"
 	desc = "distar.193.desc"
-
 	inline_script = {
 		script = events/biogenesis_event_art
 		OWNER = owner
@@ -5625,16 +5299,12 @@ country_event = {
 			has_country_flag = strange_calling_fired
 			exists = event_target:living_planet_scientist
 		}
-		event_target:living_planet_tar = {
-			has_modifier = pm_study_the_sea
-			has_modifier = living_sea
-		}
+		event_target:living_planet_tar = { has_modifier = pm_study_the_sea has_modifier = living_sea }
 	}
 
 	immediate = {
 		set_country_flag = completed_living_sea
 	}
-
 	option = {
 		name = INCREDIBLE
 		if = {
@@ -5690,16 +5360,12 @@ country_event = {
 
 	trigger = {
 		exists = event_target:living_planet_tar
-		event_target:living_planet_tar = {
-			has_modifier = pm_study_the_sea
-			has_modifier = living_sea
-		}
+		event_target:living_planet_tar = { has_modifier = pm_study_the_sea has_modifier = living_sea }
 	}
 
 	immediate = {
 		set_country_flag = completed_living_sea
 	}
-
 	option = {
 		name = FASCINATING
 		if = {
@@ -5754,18 +5420,14 @@ country_event = {
 		exists = event_target:living_planet_scientist
 		event_target:living_planet_tar = { has_modifier = living_sea }
 	}
-
 	picture_event_data = {
 		portrait = event_target:living_planet_scientist
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = "distar.195.a"
 		hidden_effect = {
-			event_target:living_planet_scientist = {
-				exile_leader_as = exiled_living_planet_scientist
-			}
+			event_target:living_planet_scientist = { exile_leader_as = exiled_living_planet_scientist }
 			country_event = { id = distar.196 days = 10 }
 		}
 	}
@@ -5785,7 +5447,6 @@ country_event = {
 		exists = event_target:living_planet_tar
 		event_target:living_planet_tar = { has_modifier = living_sea }
 	}
-
 	option = {
 		name = CURSES
 		event_target:living_planet_scientist = {
@@ -5942,7 +5603,6 @@ country_event = {
 	id = distar.198
 	title = "distar.198.name"
 	desc = "distar.198.desc"
-
 	inline_script = {
 		script = events/biogenesis_event_art
 		OWNER = owner
@@ -5953,7 +5613,6 @@ country_event = {
 	show_sound = event_scanner
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = CURSES
 		tooltip = { end_event_chain = "living_planet_chain" }
@@ -5982,10 +5641,7 @@ country_event = {
 			}
 		}
 		from = {
-			auto_move_to_planet = {
-				target = event_target:new_location
-				clear_auto_move_on_arrival = no
-			}
+			auto_move_to_planet = { target = event_target:new_location clear_auto_move_on_arrival = no }
 		}
 	}
 }
@@ -5994,19 +5650,15 @@ country_event = {
 fleet_event = {
 	id = distar.211
 	title = "distar.211.name"
-
 	desc = {
 		trigger = {
 			owner = { has_country_flag = tiyanki_encountered }
 		}
 		text = "distar.211.desc"
 	}
-
 	desc = {
 		trigger = {
-			NOT = {
-				owner = { has_country_flag = tiyanki_encountered }
-			}
+			NOT = { owner = { has_country_flag = tiyanki_encountered } }
 		}
 		text = "distar.211.desc.first_enc"
 	}
@@ -6038,7 +5690,6 @@ fleet_event = {
 			country_event = { id = story.8 days = 15 }
 		}
 	}
-
 	option = {
 		name = INCREDIBLE
 		hidden_effect = {
@@ -6048,10 +5699,7 @@ fleet_event = {
 						NOT = { has_country_flag = tiyanki_encountered }
 						exists = event_target:tiyanki_country
 					}
-					establish_contact = {
-						who = event_target:tiyanki_country
-						location = root.solar_system
-					}
+					establish_contact = { who = event_target:tiyanki_country location = root.solar_system }
 					set_country_flag = tiyanki_encountered
 				}
 			}
@@ -6079,7 +5727,9 @@ country_event = {
 		create_ambient_object = {
 			type = "elderly_tiyanki_dead_object"
 			location = fromfromfrom
-			effect = { save_event_target_as = dead_matriarch }
+			effect = {
+				save_event_target_as = dead_matriarch
+			}
 		}
 		every_playable_country = {
 			limit = {
@@ -6096,7 +5746,6 @@ country_event = {
 			end_curator_chain = yes
 		}
 	}
-
 	option = {
 		name = "distar.212.a"
 		trigger = {
@@ -6110,7 +5759,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = UNDERSTOOD
 		trigger = { has_valid_civic = civic_memorialist }
@@ -6122,7 +5770,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = galactic_features.385.reanimated
 		trigger = { is_reanimator = yes }
@@ -6138,7 +5785,6 @@ country_event = {
 			country_event = { id = galcom.110 days = 60 }
 		}
 	}
-
 	option = {
 		name = distar.212.b
 		trigger = { can_harvest_dna = yes }
@@ -6152,7 +5798,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		if = {
 			limit = {
@@ -6180,7 +5825,6 @@ country_event = {
 	show_sound = event_space_whale
 	location = event_target:dead_matriarch
 	is_triggered_only = yes
-
 	option = {
 		name = BATTLESTATIONS
 		hidden_effect = {
@@ -6213,7 +5857,9 @@ country_event = {
 					"null"
 				}
 			}
-			effect = { save_event_target_as = reth_country }
+			effect = {
+				save_event_target_as = reth_country
+			}
 		}
 		event_target:reth_country = {
 			set_faction_hostility = { target = root.owner set_friendly = yes }
@@ -6227,7 +5873,9 @@ country_event = {
 					portrait = cpl_02_01
 					namelist = "PRT1"
 					traits = random
-					effect = { save_event_target_as = captain_species }
+					effect = {
+						save_event_target_as = captain_species
+					}
 				}
 			}
 			else_if = {
@@ -6240,7 +5888,9 @@ country_event = {
 					portrait = cpl_02_02
 					namelist = "PRT1"
 					traits = random
-					effect = { save_event_target_as = captain_species }
+					effect = {
+						save_event_target_as = captain_species
+					}
 				}
 			}
 			else = {
@@ -6252,7 +5902,9 @@ country_event = {
 							portrait = cpl_02_01
 							namelist = "PRT1"
 							traits = random
-							effect = { save_event_target_as = captain_species }
+							effect = {
+								save_event_target_as = captain_species
+							}
 						}
 					}
 					1 = {
@@ -6262,7 +5914,9 @@ country_event = {
 							portrait = cpl_02_02
 							namelist = "PRT1"
 							traits = random
-							effect = { save_event_target_as = captain_species }
+							effect = {
+								save_event_target_as = captain_species
+							}
 						}
 					}
 				}
@@ -6318,7 +5972,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = ONSCREEN
 		hidden_effect = {
@@ -6336,12 +5989,10 @@ country_event = {
 	picture = GFX_leader_recruitment_bg_renowned
 	event_window_type = leader_recruit
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:captain_reth
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		allow = { is_homicidal = no }
 		tag = hire_leader
@@ -6363,7 +6014,6 @@ country_event = {
 			hire_event_leader_message = { LEADER = captain_reth }
 		}
 	}
-
 	option = {
 		allow = { values_others = no }
 		name = distar.215.dismiss
@@ -6401,7 +6051,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = distar.215.d
 		response_text = distar.215.d.response
@@ -6416,12 +6065,10 @@ country_event = {
 	location = event_target:ahab_fleet
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:captain_reth
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = TASTY
 		exclusive_trigger = { has_civic = civic_hive_devouring_swarm }
@@ -6436,7 +6083,6 @@ country_event = {
 			max = @tier3researchmax
 		}
 	}
-
 	option = {
 		name = "distar.216.a.exter"
 		exclusive_trigger = { has_civic = civic_machine_terminator }
@@ -6451,7 +6097,6 @@ country_event = {
 			max = @tier3researchmax
 		}
 	}
-
 	option = {
 		name = "distar.216.a.scorched"
 		exclusive_trigger = { is_genocidal_infernal = yes }
@@ -6466,7 +6111,6 @@ country_event = {
 			max = @tier3researchmax
 		}
 	}
-
 	option = {
 		name = SCUM
 		exclusive_trigger = { has_civic = civic_fanatic_purifiers }
@@ -6490,12 +6134,10 @@ country_event = {
 	location = event_target:ahab_fleet
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:captain_reth
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = "distar.217.a"
 		event_target:ahab_fleet = {
@@ -6511,17 +6153,14 @@ country_event = {
 country_event = {
 	id = distar.218
 	title = "distar.218.name"
-
 	desc = {
 		trigger = { is_hive_empire = no is_machine_empire = no }
 		text = "distar.218.desc.regular"
 	}
-
 	desc = {
 		trigger = { is_hive_empire = yes is_machine_empire = no }
 		text = "distar.218.desc.hive"
 	}
-
 	desc = {
 		trigger = { is_machine_empire = yes }
 		text = "distar.218.desc.machine"
@@ -6529,19 +6168,16 @@ country_event = {
 
 	location = event_target:dead_matriarch
 	is_triggered_only = yes
-
 	picture = {
 		trigger = { is_machine_empire = no }
 		picture = GFX_evt_necromancy
 	}
-
 	picture = {
 		trigger = { is_machine_empire = yes }
 		picture = GFX_evt_mechromancy
 	}
 
 	show_sound = event_space_whale
-
 	option = {
 		name = "it_hungers"
 		create_fleet = {
@@ -6570,7 +6206,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		if = {
 			limit = { exists = event_target:dead_matriarch }
@@ -6583,14 +6218,12 @@ country_event = {
 ship_event = {
 	id = distar.220
 	title = "distar.220.name"
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = no }
 		}
 		text = "distar.220.desc"
 	}
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = yes }
@@ -6610,7 +6243,6 @@ ship_event = {
 			country_event = { id = story.5 days = 30 }
 		}
 	}
-
 	option = {
 		name = FASCINATING
 		custom_tooltip = "distar.220.a.tooltip"
@@ -6656,7 +6288,6 @@ ship_event = {
 			country_event = { id = story.5 days = 30 }
 		}
 	}
-
 	option = {
 		name = "distar.225.a"
 		from = { add_alloys = yes }
@@ -6669,11 +6300,7 @@ ship_event = {
 		}
 		hidden_effect = {
 			owner = { pop_lcluster_event = yes }
-			ship_event = {
-				id = action.941
-				days = 1
-				scopes = { from = fromfrom }
-			}
+			ship_event = { id = action.941 days = 1 scopes = { from = fromfrom } }
 		}
 	}
 }
@@ -6705,11 +6332,7 @@ fleet_event = {
 			set_country_flag = discovered_ratlings # Every player that enters the system gets this flag
 			country_event = { id = story.5 days = 30 }
 			event_target:global_event_country = {
-				country_event = {
-					id = distar.232
-					days = 9000
-					random = 3600
-				}
+				country_event = { id = distar.232 days = 9000 random = 3600 }
 			}
 		}
 		from = {
@@ -6719,31 +6342,25 @@ fleet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = CURIOUS
 	}
-
 	option = {
 		name = SCUM
 		exclusive_trigger = {
 			owner = { is_xenophobe = yes }
 		}
 	}
-
 	option = {
 		name = "distar.230.exter"
 		exclusive_trigger = {
 			owner = { has_civic = civic_machine_terminator }
 		}
 	}
-
 	after = {
 		if = {
 			limit = {
-				NOT = {
-					root.solar_system = { has_star_flag = ratling_home_system }
-				}
+				NOT = { root.solar_system = { has_star_flag = ratling_home_system } }
 			}
 			event_target:ratling_capital.solar_system = {
 				root.owner = { set_visited = prev }
@@ -6768,15 +6385,12 @@ ship_event = {
 	trigger = {
 		exists = event_target:ratling_capital
 		from = { is_same_value = event_target:ratling_capital }
-		NOT = {
-			owner = { has_country_flag = ratling_capital_surveyed }
-		}
+		NOT = { owner = { has_country_flag = ratling_capital_surveyed } }
 	}
 
 	immediate = {
 		owner = { set_country_flag = ratling_capital_surveyed }
 	}
-
 	option = {
 		name = UNFORTUNATE
 		owner = {
@@ -6791,7 +6405,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "distar.231.phobe"
 		exclusive_trigger = {
@@ -6944,11 +6557,7 @@ country_event = {
 
 	immediate = {
 		event_target:global_event_country = {
-			country_event = {
-				id = distar.325
-				days = 9000
-				random = 3600
-			}
+			country_event = { id = distar.325 days = 9000 random = 3600 }
 		}
 		if = {
 			limit = {
@@ -6990,9 +6599,7 @@ country_event = {
 					any_owned_pop_group = { is_same_species = event_target:ratling_species }
 				}
 			}
-			event_target:ratling_planet_2_tar = {
-				save_global_event_target_as = ratling_planet_2
-			}
+			event_target:ratling_planet_2_tar = { save_global_event_target_as = ratling_planet_2 }
 		}
 		if = {
 			limit = {
@@ -7002,9 +6609,7 @@ country_event = {
 					any_owned_pop_group = { is_same_species = event_target:ratling_species }
 				}
 			}
-			event_target:ratling_planet_3_tar = {
-				save_global_event_target_as = ratling_planet_3
-			}
+			event_target:ratling_planet_3_tar = { save_global_event_target_as = ratling_planet_3 }
 		}
 		if = {
 			limit = {
@@ -7014,9 +6619,7 @@ country_event = {
 					any_owned_pop_group = { is_same_species = event_target:ratling_species }
 				}
 			}
-			event_target:ratling_planet_4_tar = {
-				save_global_event_target_as = ratling_planet_4
-			}
+			event_target:ratling_planet_4_tar = { save_global_event_target_as = ratling_planet_4 }
 		}
 		if = {
 			limit = {
@@ -7026,9 +6629,7 @@ country_event = {
 					any_owned_pop_group = { is_same_species = event_target:ratling_species }
 				}
 			}
-			event_target:ratling_planet_5_tar = {
-				save_global_event_target_as = ratling_planet_5
-			}
+			event_target:ratling_planet_5_tar = { save_global_event_target_as = ratling_planet_5 }
 		}
 		if = {
 			limit = {
@@ -7038,12 +6639,9 @@ country_event = {
 					any_owned_pop_group = { is_same_species = event_target:ratling_species }
 				}
 			}
-			event_target:ratling_planet_6_tar = {
-				save_global_event_target_as = ratling_planet_6
-			}
+			event_target:ratling_planet_6_tar = { save_global_event_target_as = ratling_planet_6 }
 		}
 	}
-
 	option = {
 		name = REMARKABLE
 		begin_event_chain = { event_chain = ketling_study_chain target = root }
@@ -7107,7 +6705,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "distar.233.phobe"
 		exclusive_trigger = {
@@ -7183,11 +6780,9 @@ country_event = {
 ship_event = {
 	id = distar.234
 	title = "distar.234.name"
-
 	desc = {
 		text = "distar.234.desc"
 	}
-
 	desc = {
 		exclusive_trigger = { exists = event_target:ratling_country }
 		text = "distar.234.desc.spacefaring"
@@ -7201,7 +6796,6 @@ ship_event = {
 	immediate = {
 		owner = { set_country_flag = researched_ketlings }
 	}
-
 	option = {
 		name = FASCINATING
 		owner = {
@@ -7214,7 +6808,6 @@ ship_event = {
 			end_event_chain = "ketling_study_chain"
 		}
 	}
-
 	option = {
 		name = "distar.234.phobe"
 		exclusive_trigger = {
@@ -7235,7 +6828,6 @@ ship_event = {
 			end_event_chain = "ketling_study_chain"
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			if = {
@@ -7247,10 +6839,7 @@ ship_event = {
 				}
 				root.owner = {
 					establish_communications = event_target:ratling_country
-					establish_contact = {
-						who = event_target:ratling_country
-						location = from.solar_system
-					}
+					establish_contact = { who = event_target:ratling_country location = from.solar_system }
 				}
 			}
 		}
@@ -7261,7 +6850,6 @@ ship_event = {
 country_event = {
 	id = distar.235
 	title = "distar.235.name"
-
 	desc = {
 		trigger = {
 			any_system = {
@@ -7275,7 +6863,6 @@ country_event = {
 		}
 		text = "distar.235.desc"
 	}
-
 	desc = {
 		trigger = {
 			count_system = {
@@ -7292,7 +6879,6 @@ country_event = {
 		}
 		text = "distar.235.desc.none_left"
 	}
-
 	desc = {
 		trigger = {
 			has_civic = civic_machine_assimilator
@@ -7307,7 +6893,6 @@ country_event = {
 		}
 		text = "distar.235.desc.assim"
 	}
-
 	desc = {
 		trigger = {
 			has_civic = civic_machine_assimilator
@@ -7394,7 +6979,6 @@ country_event = {
 			add_modifier = { modifier = planet_culture_shock years = 10 }
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		exclusive_trigger = {
@@ -7405,12 +6989,10 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = UNFORTUNATE
 		exclusive_trigger = { is_pacifist = yes }
 	}
-
 	option = {
 		name = OK
 	}
@@ -7556,19 +7138,27 @@ country_event = {
 				create_pop_group = { species = event_target:ratling_species size = 2500 }
 				while = {
 					count = 4
-					add_district_and_planet_size_if_needed_effect = { district = district_city }
+					add_district_and_planet_size_if_needed_effect = {
+						district = district_city
+					}
 				}
 				while = {
 					count = 3
-					add_district_and_planet_size_if_needed_effect = { district = district_farming }
+					add_district_and_planet_size_if_needed_effect = {
+						district = district_farming
+					}
 				}
 				while = {
 					count = 3
-					add_district_and_planet_size_if_needed_effect = { district = district_mining }
+					add_district_and_planet_size_if_needed_effect = {
+						district = district_mining
+					}
 				}
 				while = {
 					count = 3
-					add_district_and_planet_size_if_needed_effect = { district = district_generator }
+					add_district_and_planet_size_if_needed_effect = {
+						district = district_generator
+					}
 				}
 				add_building = building_capital
 				add_building = building_research_lab_1
@@ -7624,10 +7214,7 @@ country_event = {
 		if = { # If the old capital belongs to Ratlings, use it
 			limit = {
 				exists = event_target:ratling_capital
-				event_target:ratling_capital = {
-					exists = owner
-					is_owned_by = event_target:ratling_country
-				}
+				event_target:ratling_capital = { exists = owner is_owned_by = event_target:ratling_country }
 			}
 			event_target:ratling_capital = { set_capital = yes }
 		}
@@ -7801,9 +7388,7 @@ country_event = {
 					}
 				}
 			}
-			event_target:ratling_country.capital_scope.solar_system = {
-				save_event_target_as = sensor_ratling_system
-			}
+			event_target:ratling_country.capital_scope.solar_system = { save_event_target_as = sensor_ratling_system }
 		}
 		else_if = {
 			limit = {
@@ -7829,11 +7414,9 @@ country_event = {
 		else = {
 		}
 	}
-
 	option = {
 		name = INTERESTING
 	}
-
 	option = {
 		name = "distar.234.phobe"
 		exclusive_trigger = {
@@ -7851,7 +7434,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = MARVELOUS
 		exclusive_trigger = {
@@ -7869,7 +7451,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = TASTY
 		exclusive_trigger = { has_civic = civic_hive_devouring_swarm }
@@ -7895,7 +7476,7 @@ country_event = {
 			any_system_within_border = { has_star_flag = ratling_system }
 		}
 		exists = event_target:ratling_country
-		event_target:contact_empire = { is_same_value = event_target:ratling_country }
+		event_target:contact_empire = { is_same_empire = event_target:ratling_country }
 	}
 
 	immediate = {
@@ -7988,7 +7569,6 @@ fleet_event = {
 			event_target:shroud_country = { establish_communications_no_message = root.owner }
 		}
 	}
-
 	option = {
 		name = "distar.240.a"
 	}
@@ -7998,7 +7578,6 @@ fleet_event = {
 fleet_event = {
 	id = distar.242
 	title = "distar.242.name"
-
 	desc = {
 		trigger = {
 			owner = { has_country_flag = encountered_sealed_system }
@@ -8006,7 +7585,6 @@ fleet_event = {
 		}
 		text = "distar.242.desc"
 	}
-
 	desc = {
 		trigger = {
 			owner = {
@@ -8018,7 +7596,6 @@ fleet_event = {
 		}
 		text = "distar.242.desc.psi"
 	}
-
 	desc = {
 		trigger = {
 			owner = {
@@ -8032,12 +7609,9 @@ fleet_event = {
 		}
 		text = "distar.242.desc.psi_hive_robot"
 	}
-
 	desc = {
 		trigger = {
-			NOT = {
-				owner = { has_country_flag = encountered_sealed_system }
-			}
+			NOT = { owner = { has_country_flag = encountered_sealed_system } }
 		}
 		text = "distar.242.desc.jump"
 	}
@@ -8049,9 +7623,7 @@ fleet_event = {
 
 	trigger = {
 		from = { has_star_flag = sealed_system }
-		NOT = {
-			owner = { has_country_flag = entered_sealed_system }
-		}
+		NOT = { owner = { has_country_flag = entered_sealed_system } }
 		exists = event_target:sealed_psionic_entity
 	}
 
@@ -8067,7 +7639,6 @@ fleet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = BATTLESTATIONS
 	}
@@ -8089,7 +7660,6 @@ country_event = {
 		FromFromFrom.fleet = { is_same_value = event_target:sealed_psionic_entity }
 		is_country_type = default
 	}
-
 	option = {
 		name = EXCELLENT
 	}
@@ -8099,14 +7669,12 @@ country_event = {
 ship_event = {
 	id = distar.244
 	title = "distar.244.name"
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = no }
 		}
 		text = "distar.244.desc"
 	}
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = yes }
@@ -8116,9 +7684,8 @@ ship_event = {
 
 	picture = GFX_evt_derelict_interior
 	show_sound = event_laboratory_sound
-	location = FROM
+	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = FASCINATING
 		owner = {
@@ -8129,7 +7696,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		exclusive_trigger = {
 			owner = { is_machine_empire = yes }
@@ -8178,7 +7744,6 @@ ship_event = {
 			set_age = 709
 		}
 	}
-
 	option = {
 		name = ONSCREEN
 		hidden_effect = {
@@ -8187,7 +7752,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = NOTIME
 		owner = {
@@ -8211,12 +7775,10 @@ country_event = {
 	picture = GFX_leader_recruitment_bg_renowned
 	event_window_type = leader_recruit
 	is_triggered_only = yes # Vfix double
-
 	picture_event_data = {
 		portrait = event_target:caretaker_leader_tar
 		room = ethic_spaceship_room
 	}
-
 	option = {	# Accept the leader
 		tag = hire_leader
 		name = {
@@ -8240,7 +7802,9 @@ country_event = {
 				limit = { is_variable_set = paragon_memory_vault }
 				change_variable = { which = paragon_memory_vault value = 1 }
 			}
-			hire_event_leader_effect = { LEADER = caretaker_leader_tar }
+			hire_event_leader_effect = {
+				LEADER = caretaker_leader_tar
+			}
 			event_target:droppod_tar = { destroy_ambient_object = this }
 		}
 		if = {
@@ -8251,7 +7815,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {	# Examine the leader
 		name = "distar.246.b"
 		trigger = {
@@ -8274,7 +7837,6 @@ country_event = {
 			country_event = { id = distar.247 }
 		}
 	}
-
 	option = { # Destroy the leader
 		name = distar.246.d.destroy
 		custom_tooltip = "distar.246.d"
@@ -8292,7 +7854,6 @@ country_event = {
 			country_event = { id = distar.248 }
 		}
 	}
-
 	option = {	# Repurpose the leader (MI)
 		trigger = { is_machine_empire = yes }
 		tag = dismiss_leader
@@ -8311,13 +7872,11 @@ country_event = {
 			country_event = { id = distar.248 }
 		}
 	}
-
 	option = {
 		name = distar.246.f
 		is_dialog_only = yes
 		response_text = distar.246.f.response
 	}
-
 	option = {
 		name = distar.247.e
 		is_dialog_only = yes
@@ -8334,12 +7893,10 @@ country_event = {
 	picture = GFX_evt_robot_encounter
 	event_window_type = leader_story
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:caretaker_leader_tar
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = "distar.247.a"
 		add_monthly_resource_mult = {
@@ -8355,12 +7912,10 @@ country_event = {
 country_event = {
 	id = distar.248
 	title = "distar.248.name"
-
 	desc = {
 		trigger = { is_machine_empire = yes }
 		text = "distar.248.desc.machi"
 	}
-
 	desc = {
 		trigger = { is_machine_empire = no }
 		text = "distar.248.desc"
@@ -8370,12 +7925,10 @@ country_event = {
 	picture = GFX_evt_exploding_ship
 	event_window_type = leader_story
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:caretaker_leader_tar
 		room = ethic_spaceship_room
 	}
-
 	option = {
 		name = "distar.248.machi"
 		exclusive_trigger = { is_machine_empire = yes }
@@ -8390,7 +7943,6 @@ country_event = {
 			event_target:droppod_tar = { destroy_ambient_object = this }
 		}
 	}
-
 	option = {
 		name = "distar.248.a"
 		add_monthly_resource_mult = {
@@ -8410,14 +7962,12 @@ ship_event = {
 	id = distar.250
 	title = "distar.250.name"
 	desc = "distar.250.desc"
-
 	picture = {
 		trigger = {
 			from = { is_planet_class = pc_shrouded }
 		}
 		picture = GFX_evt_shrouded_planet
 	}
-
 	picture = {
 		trigger = {
 			from = { is_planet_class = pc_gaia }
@@ -8440,7 +7990,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "distar.250.a"
 		hidden_effect = {
@@ -8453,7 +8002,6 @@ ship_event = {
 ship_event = {
 	id = distar.251
 	title = "distar.251.name"
-
 	desc = {
 		trigger = {
 			event_target:phaseshift_planet = {
@@ -8462,7 +8010,6 @@ ship_event = {
 		}
 		text = "distar.251.desc.shroud"
 	}
-
 	desc = {
 		trigger = {
 			event_target:phaseshift_planet = {
@@ -8507,7 +8054,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = INCREDIBLE
 		owner = {
@@ -8525,30 +8071,24 @@ ship_event = {
 ship_event = {
 	id = distar.302
 	title = "distar.250.name"
-
 	desc = {
 		trigger = {
 			owner = { has_special_project = PHASESHIFT_PROJECT }
 		}
 		text = "distar.302.desc"
 	}
-
 	desc = {
 		trigger = {
-			NOT = {
-				owner = { has_special_project = PHASESHIFT_PROJECT }
-			}
+			NOT = { owner = { has_special_project = PHASESHIFT_PROJECT } }
 		}
 		text = "distar.302.desc.noproj"
 	}
-
 	picture = {
 		trigger = {
 			from = { is_planet_class = pc_shrouded }
 		}
 		picture = GFX_evt_shrouded_planet
 	}
-
 	picture = {
 		trigger = {
 			from = { is_planet_class = pc_gaia }
@@ -8563,7 +8103,6 @@ ship_event = {
 	immediate = {
 		owner = { set_country_flag = surveyed_phaseshift_planet }
 	}
-
 	option = {
 		name = FASCINATING
 		hidden_effect = {
@@ -8593,7 +8132,6 @@ ship_event = {
 	immediate = {
 		owner = { set_country_flag = surveyed_phaseshift_planet }
 	}
-
 	option = {
 		name = INTERESTING
 		owner = {
@@ -8637,7 +8175,6 @@ ship_event = {
 	show_sound = event_mystic_reveal
 	location = event_target:phaseshift_planet
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		custom_tooltip = "distar.253.a.tooltip"
@@ -8701,9 +8238,7 @@ ship_event = {
 	trigger = {
 		exists = solar_system
 		solar_system = { has_star_flag = phaseshift_system }
-		NOT = {
-			owner = { has_special_project = PHASESHIFT_PROJECT }
-		}
+		NOT = { owner = { has_special_project = PHASESHIFT_PROJECT } }
 		event_target:phaseshift_planet = { has_planet_flag = phaseshifting_active }
 	}
 
@@ -8725,12 +8260,10 @@ ship_event = {
 country_event = {
 	id = distar.255
 	title = "distar.255.name"
-
 	desc = {
 		trigger = { has_country_flag = surveyed_phaseshift_planet }
 		text = "distar.255.desc"
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = surveyed_phaseshift_planet }
@@ -8748,7 +8281,6 @@ country_event = {
 			is_at_war_with = from
 		}
 	}
-
 	option = {
 		name = "distar.255.a"
 		event_target:phaseshift_planet = {
@@ -8759,7 +8291,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "distar.255.b"
 		add_monthly_resource_mult = {
@@ -8788,9 +8319,7 @@ ship_event = {
 	immediate = {
 		if = { # If this is the first time the planet is being surveyed, add anomaly
 			limit = {
-				NOT = {
-					from = { has_planet_flag = phaseshift_planet_surveyed }
-				}
+				NOT = { from = { has_planet_flag = phaseshift_planet_surveyed } }
 			}
 			from = {
 				add_anomaly = { category = DISTAR_PHASE_CAT }
@@ -8813,9 +8342,7 @@ ship_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = {
-			owner = { has_country_flag = surveyed_phaseshift_planet }
-		}
+		NOT = { owner = { has_country_flag = surveyed_phaseshift_planet } }
 	}
 
 	immediate = {
@@ -8829,7 +8356,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = INCREDIBLE
 		owner = {
@@ -8924,8 +8450,12 @@ planet_event = {
 			namelist = "FUN4"
 			homeworld = root
 			sapient = no
-			traits = { trait = trait_presapient_docile_livestock }
-			effect = { save_global_event_target_as = livestock_species }
+			traits = {
+				trait = trait_presapient_docile_livestock
+			}
+			effect = {
+				save_global_event_target_as = livestock_species
+			}
 		}
 		create_pop_group = { species = event_target:livestock_species size = 500 }
 	}
@@ -8939,7 +8469,6 @@ ship_event = {
 	show_sound = event_alien_nature
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = "distar.234.phobe"
 		owner = {
@@ -8951,7 +8480,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = INTERESTING
 		exclusive_trigger = {
@@ -8972,7 +8500,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = TASTY
 		exclusive_trigger = {
@@ -8990,7 +8517,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "distar.261.a.servi"
 		exclusive_trigger = {
@@ -9005,7 +8531,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "distar.261.a.assim"
 		exclusive_trigger = {
@@ -9020,7 +8545,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "distar.261.a.exter"
 		exclusive_trigger = {
@@ -9035,7 +8559,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = SCUM
 		exclusive_trigger = {
@@ -9053,17 +8576,13 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = distar.261.a.evopred
 		exclusive_trigger = {
 			owner = { has_origin = origin_evolutionary_predators }
 		}
 		owner = {
-			give_evolutionary_predator_situation_progress_and_dna = {
-				AMOUNT = small
-				TYPE = fungoid
-			}
+			give_evolutionary_predator_situation_progress_and_dna = { AMOUNT = small TYPE = fungoid }
 			add_monthly_resource_mult = {
 				resource = society_research
 				value = @tier2researchreward
@@ -9088,7 +8607,6 @@ planet_event = {
 		any_owned_pop_group = { is_same_species = event_target:livestock_species }
 		owner = { is_machine_empire = no }
 	}
-
 	option = {
 		name = "distar.262.a"
 		owner = {
@@ -9100,7 +8618,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = {
 		allow = {
 			owner = {
@@ -9109,9 +8626,7 @@ planet_event = {
 		}
 		name = "distar.262.b"
 		custom_tooltip = "distar.262.b.tooltip.2"
-		owner = {
-			add_resource = { energy = -300 }
-		}
+		owner = { add_resource = { energy = -300 } }
 		add_deposit = d_processing_pens
 		hidden_effect = {
 			while = {
@@ -9142,7 +8657,6 @@ ship_event = {
 			country_event = { id = story.5 days = 30 }
 		}
 	}
-
 	option = {
 		name = CURIOUS
 		owner = {
@@ -9164,7 +8678,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		exclusive_trigger = {
 			owner = { has_civic = civic_fanatic_purifiers }
@@ -9207,7 +8720,6 @@ ship_event = {
 			country_event = { id = story.5 days = 30 }
 		}
 	}
-
 	option = {
 		name = "discovery.270.a"
 		owner = {
@@ -9220,7 +8732,6 @@ ship_event = {
 			generate_lcluster_clue = yes
 		}
 	}
-
 	option = {
 		exclusive_trigger = {
 			owner = { is_xenophobe = yes }
@@ -9242,14 +8753,12 @@ ship_event = {
 ship_event = {
 	id = distar.275
 	title = "distar.275.name"
-
 	desc = {
 		trigger = {
 			owner = { num_communications > 0 }
 		}
 		text = "distar.275.desc.comms"
 	}
-
 	desc = {
 		trigger = {
 			owner = { num_communications < 1 }
@@ -9267,7 +8776,6 @@ ship_event = {
 			country_event = { id = story.5 days = 30 }
 		}
 	}
-
 	option = {
 		name = INCREDIBLE
 		owner = {
@@ -9281,7 +8789,6 @@ ship_event = {
 			generate_lcluster_clue = yes
 		}
 	}
-
 	option = {
 		name = DISCONCERTING
 		exclusive_trigger = {
@@ -9310,21 +8817,18 @@ ship_event = {
 	id = distar.280
 	title = "distar.280.name"
 	desc = "distar.280.desc"
-
 	picture = {
 		trigger = {
 			from = { is_planet_class = pc_desert }
 		}
 		picture = GFX_evt_desert
 	}
-
 	picture = {
 		trigger = {
 			from = { is_planet_class = pc_gaia }
 		}
 		picture = GFX_evt_gaia
 	}
-
 	picture = {
 		trigger = {
 			from = { is_planet_class = pc_barren }
@@ -9347,7 +8851,6 @@ ship_event = {
 			country_event = { id = story.5 days = 30 }
 		}
 	}
-
 	option = {
 		name = ASTOUNDING
 		from = {
@@ -9370,7 +8873,6 @@ ship_event = {
 			generate_lcluster_clue = yes
 		}
 	}
-
 	option = {
 		exclusive_trigger = {
 			owner = { is_xenophobe = yes }
@@ -9413,7 +8915,6 @@ ship_event = {
 			country_event = { id = story.5 days = 30 }
 		}
 	}
-
 	option = {
 		name = INCREDIBLE
 		owner = {
@@ -9428,4 +8929,3 @@ ship_event = {
 		from = { add_deposit = d_exotic_gases_2 }
 	}
 }
-

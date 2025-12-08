@@ -12,16 +12,13 @@ building_ancient_control_center = {
 	capital_tier = 5
 	icon = building_maintenance_depot
 	category = government
-
 	building_sets = {
 		fallen_empire
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_fallen_empire_machine = yes }
 	}
-
 	convert_to = {
 		building_hive_major_capital
 		building_machine_major_capital
@@ -29,18 +26,15 @@ building_ancient_control_center = {
 		building_major_capital_wilderness
 		building_ancient_palace
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	planet_modifier = {
 		planet_housing_add = 1200
 		planet_amenities_add = 15000
 		job_fe_maintenance_bot_add = 400
 		job_fe_guardian_bot_add = 500
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -50,7 +44,6 @@ building_ancient_control_center = {
 			energy = 10
 		}
 	}
-
 	upgrades = {
 	}
 }
@@ -64,11 +57,9 @@ building_ancient_hive_capital = {
 	capital_tier = 5
 	icon = building_hive_major_capital
 	category = government
-
 	building_sets = {
 		fallen_empire
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -77,7 +68,6 @@ building_ancient_hive_capital = {
 			is_wilderness_empire = no
 		}
 	}
-
 	convert_to = {
 		building_hive_major_capital
 		building_machine_major_capital
@@ -85,23 +75,19 @@ building_ancient_hive_capital = {
 		building_ancient_palace
 		building_ancient_control_center
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	planet_modifier = {
 		planet_housing_add = 1200
 		planet_amenities_add = 15000
 		job_logistics_drone_add = 700
 		job_patrol_drone_add = 400
 	}
-
 	triggered_planet_modifier = {
 		potential = { has_owner = yes }
 		job_coordinator_add = 500
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -111,7 +97,6 @@ building_ancient_hive_capital = {
 			energy = 10
 		}
 	}
-
 	upgrades = {
 	}
 }
@@ -125,16 +110,13 @@ building_ancient_palace = {
 	capital_tier = 5
 	icon = building_palace
 	category = government
-
 	building_sets = {
 		fallen_empire
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_fallen_empire = yes is_hive_empire = no }
 	}
-
 	convert_to = {
 		building_hive_major_capital
 		building_machine_major_capital
@@ -142,16 +124,13 @@ building_ancient_palace = {
 		building_ancient_control_center
 		building_major_capital_wilderness
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	planet_modifier = {
 		planet_housing_add = 1200
 		planet_amenities_add = 15000
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -160,7 +139,6 @@ building_ancient_palace = {
 		job_fe_overseer_add = 200
 		job_fe_protector_add = 200
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -169,7 +147,6 @@ building_ancient_palace = {
 		job_fe_sky_cardinal_add = 200
 		job_fe_protector_add = 200
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -179,7 +156,6 @@ building_ancient_palace = {
 			energy = 10
 		}
 	}
-
 	upgrades = {
 	}
 }
@@ -192,11 +168,9 @@ building_fe_xeno_zoo = {
 	position_priority = 0
 	capital_tier = 5
 	category = amenity
-
 	building_sets = {
 		fallen_empire
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -205,23 +179,19 @@ building_fe_xeno_zoo = {
 			is_wilderness_empire = no
 		}
 	}
-
 	convert_to = {
 		building_hive_capital
 		building_machine_capital
 		building_capital
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	planet_modifier = {
 		planet_amenities_add = 1500
 		job_fe_xeno_keeper_add = 200
 		planet_housing_add = 3000
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -231,7 +201,6 @@ building_fe_xeno_zoo = {
 			energy = 10
 		}
 	}
-
 	upgrades = {
 	}
 }
@@ -246,25 +215,20 @@ building_hab_fe_capital = {
 	capital_tier = 5
 	icon = building_capital
 	category = government
-
 	building_sets = {
 		fallen_empire
 	}
-
 	potential = {
 		is_planet_class = pc_habitat
 		has_owner = yes
 		owner = { is_fallen_empire = yes is_wilderness_empire = no }
 	}
-
 	convert_to = {
 		building_hab_major_capital
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -274,12 +238,10 @@ building_hab_fe_capital = {
 			energy = 5
 		}
 	}
-
 	planet_modifier = {
 		planet_housing_add = 500
 		planet_amenities_add = 2500
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -288,7 +250,6 @@ building_hab_fe_capital = {
 		job_fe_overseer_add = 100
 		job_fe_protector_add = 100
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -297,7 +258,6 @@ building_hab_fe_capital = {
 		job_fe_sky_cardinal_add = 100
 		job_fe_protector_add = 100
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -306,7 +266,6 @@ building_hab_fe_capital = {
 		job_fe_guardian_bot_add = 200
 		job_fe_maintenance_bot_add = 100
 	}
-
 	upgrades = {
 	}
 }
@@ -317,7 +276,6 @@ building_master_archive = {
 	can_build = no
 	can_demolish = yes
 	category = research
-
 	building_sets = {
 		fallen_empire
 		research
@@ -325,23 +283,18 @@ building_master_archive = {
 		society
 		engineering
 	}
-
 	potential = {
 		has_owner = yes
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	destroy_trigger = {
 		always = no
 	} # Vfix needed?
-
 	country_modifier = {
 		num_tech_alternatives_add = 2
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -349,12 +302,10 @@ building_master_archive = {
 		}
 		job_fe_archivist_add = 1000
 	}
-
 	inline_script = {
 		script = "jobs/politician_add"
 		AMOUNT = @fe_jobs
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -364,7 +315,6 @@ building_master_archive = {
 		job_calculator_biologist_add = @fe2_jobs
 		job_calculator_engineer_add = @fe2_jobs
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -374,7 +324,6 @@ building_master_archive = {
 		job_calculator_biologist_add = @fe2_jobs
 		job_calculator_engineer_add = @fe2_jobs
 	}
-
 	resources = {
 		category = planet_buildings
 		produces = {
@@ -398,24 +347,19 @@ building_empyrean_shrine = {
 	can_build = no
 	can_demolish = yes
 	category = unity
-
 	building_sets = {
 		fallen_empire
 		unity
 	}
-
 	potential = {
 		has_owner = yes
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	destroy_trigger = {
 		always = no
 	} # Vfix needed?
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -423,7 +367,6 @@ building_empyrean_shrine = {
 		}
 		job_fe_augur_add = 300
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -437,7 +380,6 @@ building_empyrean_shrine = {
 		}
 		job_telepath_add = @fe_jobs
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -451,7 +393,6 @@ building_empyrean_shrine = {
 		}
 		job_telepath_drone_add = @fe_jobs
 	}
-
 	triggered_country_modifier = {
 		potential = {
 			has_shroud_dlc = no
@@ -460,7 +401,6 @@ building_empyrean_shrine = {
 		}
 		shroud_delve_cost = -0.25
 	}
-
 	triggered_country_modifier = {
 		potential = {
 			has_shroud_dlc = yes
@@ -469,7 +409,6 @@ building_empyrean_shrine = {
 		}
 		shroud_delve_cooldown = -0.1 # Delving doesn't cost anything in Shroud so it's changed
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -482,7 +421,6 @@ building_empyrean_shrine = {
 		}
 		planet_bureaucrats_produces_mult = 0.25
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -501,29 +439,23 @@ building_ancient_cryo_chamber = {
 	can_build = no
 	can_demolish = yes
 	category = government
-
 	building_sets = {
 		fallen_empire
 		research
 		society
 	}
-
 	potential = {
 		has_owner = yes
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	destroy_trigger = {
 		always = no
 	} # Vfix needed?
-
 	country_modifier = {
 		category_biology_research_speed_mult = 0.1
 	}
-
 	triggered_country_modifier = {
 		potential = {
 			has_owner = yes
@@ -532,7 +464,6 @@ building_ancient_cryo_chamber = {
 		BIOLOGICAL_species_trait_picks_add = 1
 		BIOLOGICAL_species_trait_points_add = 1
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -552,13 +483,11 @@ building_affluence_emporium = {
 	can_demolish = yes
 	icon = building_affluence_emporium
 	category = manufacturing
-
 	building_sets = {
 		fallen_empire
 		industrial
 		factory
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -575,7 +504,6 @@ building_affluence_emporium = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -589,11 +517,9 @@ building_affluence_emporium = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		always = no
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -613,7 +539,6 @@ building_affluence_emporium = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -622,20 +547,15 @@ building_affluence_emporium = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	inline_script = {
 		script = jobs/factory_add
 		AMOUNT = @fe_jobs
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -653,14 +573,12 @@ building_affluence_emporium = {
 			subtract_variable = { which = affluence_emporium_build_count value = 1 }
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
 			change_variable = { which = affluence_emporium_build_count value = 1 }
 		}
 	}
-
 	upgrades = {
 		building_affluence_center
 	}
@@ -673,13 +591,11 @@ building_affluence_center = {
 	can_build = no
 	icon = building_affluence_center
 	category = manufacturing
-
 	building_sets = {
 		fallen_empire
 		industrial
 		factory
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -695,7 +611,6 @@ building_affluence_center = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -716,11 +631,9 @@ building_affluence_center = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		always = no
 	}
-
 	resources = {
 		category = planet_buildings
 		produces = {
@@ -743,7 +656,6 @@ building_affluence_center = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -752,24 +664,18 @@ building_affluence_center = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	planet_modifier = {
 		planet_amenities_add = 1000
 	}
-
 	inline_script = {
 		script = jobs/factory_add
 		AMOUNT = @fe_jobs
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -799,7 +705,6 @@ building_affluence_center = {
 			}
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -807,11 +712,9 @@ building_affluence_center = {
 		}
 		remove_planet_flag = affluence_emporium_upgrade_queued_by@owner # Vfix
 	}
-
 	on_built = {
 		remove_planet_flag = affluence_emporium_upgrade_queued_by@owner # Vfix
 	}
-
 	on_destroy = {
 		if = { # Vfix
 			limit = {
@@ -830,12 +733,10 @@ building_nourishment_complex = {
 	can_build = yes
 	can_demolish = yes
 	category = resource
-
 	building_sets = {
 		fallen_empire
 		fallen_empire_farming
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -851,7 +752,6 @@ building_nourishment_complex = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -865,16 +765,13 @@ building_nourishment_complex = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		always = no
 	}
-
 	inline_script = {
 		script = jobs/farmers_add
 		AMOUNT = @fe_jobs
 	}
-
 	resources = {
 		category = planet_buildings
 		produces = {
@@ -895,7 +792,6 @@ building_nourishment_complex = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -904,15 +800,11 @@ building_nourishment_complex = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -930,14 +822,12 @@ building_nourishment_complex = {
 			subtract_variable = { which = nourishment_complex_build_count value = 1 }
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
 			change_variable = { which = nourishment_complex_build_count value = 1 }
 		}
 	}
-
 	upgrades = {
 		building_nourishment_center
 	}
@@ -949,12 +839,10 @@ building_nourishment_center = {
 	base_buildtime = @b2_time
 	can_build = no
 	category = resource
-
 	building_sets = {
 		fallen_empire
 		fallen_empire_farming
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -970,7 +858,6 @@ building_nourishment_center = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -991,20 +878,16 @@ building_nourishment_center = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		always = no
 	}
-
 	planet_modifier = {
 		pop_environment_tolerance = 0.05
 	}
-
 	inline_script = {
 		script = jobs/farmers_add
 		AMOUNT = @fe_jobs
 	}
-
 	resources = {
 		category = planet_buildings
 		produces = {
@@ -1025,7 +908,6 @@ building_nourishment_center = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1034,15 +916,11 @@ building_nourishment_center = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -1072,7 +950,6 @@ building_nourishment_center = {
 			}
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -1080,11 +957,9 @@ building_nourishment_center = {
 		}
 		remove_planet_flag = nourishment_complex_upgrade_queued_by@owner # Vfix
 	}
-
 	on_built = {
 		remove_planet_flag = nourishment_complex_upgrade_queued_by@owner # Vfix
 	}
-
 	on_destroy = {
 		if = { # Vfix
 			limit = {
@@ -1104,14 +979,12 @@ building_dimensional_replicator = {
 	can_demolish = yes
 	icon = building_dimensional_replicator
 	category = manufacturing
-
 	building_sets = {
 		fallen_empire
 		industrial
 		factory
 		foundry
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -1127,7 +1000,6 @@ building_dimensional_replicator = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -1141,11 +1013,9 @@ building_dimensional_replicator = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		always = no
 	}
-
 	resources = {
 		category = planet_buildings
 		produces = {
@@ -1168,7 +1038,6 @@ building_dimensional_replicator = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1177,15 +1046,11 @@ building_dimensional_replicator = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -1203,14 +1068,12 @@ building_dimensional_replicator = {
 			subtract_variable = { which = dimensional_replicator_build_count value = 1 }
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
 			change_variable = { which = dimensional_replicator_build_count value = 1 }
 		}
 	}
-
 	upgrades = {
 		building_dimensional_fabricator
 	}
@@ -1223,14 +1086,12 @@ building_dimensional_fabricator = {
 	can_build = no
 	icon = building_dimensional_fabricator
 	category = manufacturing
-
 	building_sets = {
 		fallen_empire
 		industrial
 		factory
 		foundry
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -1246,7 +1107,6 @@ building_dimensional_fabricator = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -1267,11 +1127,9 @@ building_dimensional_fabricator = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		always = no
 	}
-
 	resources = {
 		category = planet_buildings
 		produces = {
@@ -1298,7 +1156,6 @@ building_dimensional_fabricator = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1307,15 +1164,11 @@ building_dimensional_fabricator = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -1345,7 +1198,6 @@ building_dimensional_fabricator = {
 			}
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -1353,12 +1205,10 @@ building_dimensional_fabricator = {
 		}
 		remove_planet_flag = dimensional_replicator_upgrade_queued_by@owner # Vfix
 	}
-
 	on_built = {
 		owner = { clear_variable = dimensional_replicator_upgrade_count }
 		remove_planet_flag = dimensional_replicator_upgrade_queued_by@owner # Vfix
 	}
-
 	on_destroy = {
 		# Vfix
 		if = {
@@ -1378,12 +1228,10 @@ building_class_3_singularity = {
 	can_build = yes
 	can_demolish = yes
 	category = resource
-
 	building_sets = {
 		fallen_empire
 		fallen_empire_generator
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -1399,7 +1247,6 @@ building_class_3_singularity = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -1413,16 +1260,13 @@ building_class_3_singularity = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		always = no
 	}
-
 	inline_script = {
 		script = jobs/technicians_add
 		AMOUNT = @fe_jobs
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1444,7 +1288,6 @@ building_class_3_singularity = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1453,15 +1296,11 @@ building_class_3_singularity = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -1479,14 +1318,12 @@ building_class_3_singularity = {
 			subtract_variable = { which = class_3_singularity_build_count value = 1 }
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
 			change_variable = { which = class_3_singularity_build_count value = 1 }
 		}
 	}
-
 	upgrades = {
 		building_class_4_singularity
 	}
@@ -1498,12 +1335,10 @@ building_class_4_singularity = {
 	base_buildtime = @b2_time
 	can_build = no
 	category = resource
-
 	building_sets = {
 		fallen_empire
 		fallen_empire_generator
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -1519,7 +1354,6 @@ building_class_4_singularity = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -1540,16 +1374,13 @@ building_class_4_singularity = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		always = no
 	}
-
 	inline_script = {
 		script = jobs/technicians_add
 		AMOUNT = @fe_jobs
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1570,7 +1401,6 @@ building_class_4_singularity = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1579,15 +1409,11 @@ building_class_4_singularity = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -1617,7 +1443,6 @@ building_class_4_singularity = {
 			}
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -1625,11 +1450,9 @@ building_class_4_singularity = {
 		}
 		remove_planet_flag = class_3_singularity_upgrade_queued_by@owner # Vfix
 	}
-
 	on_built = {
 		remove_planet_flag = class_3_singularity_upgrade_queued_by@owner # Vfix
 	}
-
 	on_destroy = {
 		if = { # Vfix
 			limit = {
@@ -1648,13 +1471,11 @@ building_micro_forge = {
 	can_build = yes
 	can_demolish = yes
 	category = manufacturing
-
 	building_sets = {
 		fallen_empire
 		industrial
 		foundry
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -1670,7 +1491,6 @@ building_micro_forge = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -1684,16 +1504,13 @@ building_micro_forge = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		always = no
 	}
-
 	inline_script = {
 		script = jobs/foundry_add
 		AMOUNT = @fe_jobs
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1712,7 +1529,6 @@ building_micro_forge = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1721,19 +1537,14 @@ building_micro_forge = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	upgrades = {
 		building_nano_forge
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -1751,7 +1562,6 @@ building_micro_forge = {
 			subtract_variable = { which = micro_forge_build_count value = 1 }
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -1766,13 +1576,11 @@ building_nano_forge = {
 	base_buildtime = @b2_time
 	can_build = no
 	category = manufacturing
-
 	building_sets = {
 		fallen_empire
 		industrial
 		foundry
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -1788,7 +1596,6 @@ building_nano_forge = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -1809,20 +1616,16 @@ building_nano_forge = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		always = no
 	}
-
 	planet_modifier = {
 		planet_structures_upkeep_mult = -0.05
 	}
-
 	inline_script = {
 		script = jobs/foundry_add
 		AMOUNT = @fe_jobs
 	}
-
 	resources = {
 		category = planet_buildings
 		produces = {
@@ -1843,7 +1646,6 @@ building_nano_forge = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1852,15 +1654,11 @@ building_nano_forge = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -1882,15 +1680,11 @@ building_nano_forge = {
 				}
 				subtract_variable = { which = micro_forge_upgrade_count value = 1 }
 				prev = { # Vfix: mark current owner as one who queued building
-					set_timed_planet_flag = {
-						flag = micro_forge_upgrade_queued_by@owner
-						days = @b2_time
-					}
+					set_timed_planet_flag = { flag = micro_forge_upgrade_queued_by@owner days = @b2_time }
 				}
 			}
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -1898,11 +1692,9 @@ building_nano_forge = {
 		}
 		remove_planet_flag = micro_forge_upgrade_queued_by@owner # Vfix
 	}
-
 	on_built = {
 		remove_planet_flag = micro_forge_upgrade_queued_by@owner # Vfix
 	}
-
 	on_destroy = {
 		if = { # Vfix
 			limit = {
@@ -1921,14 +1713,12 @@ building_fe_sky_dome = {
 	can_build = yes
 	can_demolish = yes
 	category = amenity
-
 	building_sets = {
 		fallen_empire
 		bio_trophy
 		urban
 		resort
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -1943,7 +1733,6 @@ building_fe_sky_dome = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -1957,16 +1746,13 @@ building_fe_sky_dome = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		always = no
 	}
-
 	planet_modifier = {
 		planet_housing_add = 2500
 		planet_amenities_add = 3750
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -1974,7 +1760,6 @@ building_fe_sky_dome = {
 		}
 		job_bio_trophy_add = 3750
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1992,7 +1777,6 @@ building_fe_sky_dome = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -2001,15 +1785,11 @@ building_fe_sky_dome = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -2027,14 +1807,12 @@ building_fe_sky_dome = {
 			subtract_variable = { which = fe_sky_dome_build_count value = 1 }
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
 			change_variable = { which = fe_sky_dome_build_count value = 1 }
 		}
 	}
-
 	upgrades = {
 		building_fe_dome
 	}
@@ -2046,14 +1824,12 @@ building_fe_dome = {
 	base_buildtime = @b2_time
 	can_build = no
 	category = amenity
-
 	building_sets = {
 		fallen_empire
 		bio_trophy
 		urban
 		resort
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -2068,7 +1844,6 @@ building_fe_dome = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -2089,17 +1864,14 @@ building_fe_dome = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		always = no
 	}
-
 	planet_modifier = {
 		planet_housing_add = 5000
 		planet_amenities_add = 7500
 		planet_pops_upkeep_mult = -0.05
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -2107,7 +1879,6 @@ building_fe_dome = {
 		}
 		job_bio_trophy_add = 7500
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -2125,7 +1896,6 @@ building_fe_dome = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -2134,15 +1904,11 @@ building_fe_dome = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -2164,15 +1930,11 @@ building_fe_dome = {
 				}
 				subtract_variable = { which = fe_sky_dome_upgrade_count value = 1 }
 				prev = { # Vfix: mark current owner as one who queued building
-					set_timed_planet_flag = {
-						flag = fe_sky_dome_upgrade_queued_by@owner
-						days = @b2_time
-					}
+					set_timed_planet_flag = { flag = fe_sky_dome_upgrade_queued_by@owner days = @b2_time }
 				}
 			}
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -2180,11 +1942,9 @@ building_fe_dome = {
 		}
 		remove_planet_flag = fe_sky_dome_upgrade_queued_by@owner # Vfix
 	}
-
 	on_built = {
 		remove_planet_flag = fe_sky_dome_upgrade_queued_by@owner # Vfix
 	}
-
 	on_destroy = {
 		if = { # Vfix
 			limit = {
@@ -2204,12 +1964,10 @@ building_fe_fortress = {
 	can_demolish = yes
 	can_be_ruined = no # Vfix by Duxatious
 	category = army
-
 	building_sets = {
 		fallen_empire
 		fortress
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -2225,7 +1983,6 @@ building_fe_fortress = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -2239,16 +1996,13 @@ building_fe_fortress = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		always = no
 	}
-
 	inline_script = {
 		script = jobs/soldiers_add
 		AMOUNT = @fe_jobs
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -2268,7 +2022,6 @@ building_fe_fortress = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -2277,19 +2030,14 @@ building_fe_fortress = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	upgrades = {
 		building_fe_stronghold
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -2307,7 +2055,6 @@ building_fe_fortress = {
 			subtract_variable = { which = fe_fortress_build_count value = 1 }
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -2323,12 +2070,10 @@ building_fe_stronghold = {
 	can_build = no
 	can_be_ruined = no # Vfix by Duxatious
 	category = army
-
 	building_sets = {
 		fallen_empire
 		fortress
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -2344,7 +2089,6 @@ building_fe_stronghold = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -2365,22 +2109,18 @@ building_fe_stronghold = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		always = no
 	}
 
 	planetary_ftl_inhibitor = yes
-
 	inline_script = {
 		script = jobs/soldiers_add
 		AMOUNT = @fe_jobs
 	}
-
 	planet_modifier = {
 		planet_orbital_bombardment_damage = -0.1
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -2399,7 +2139,6 @@ building_fe_stronghold = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -2408,15 +2147,11 @@ building_fe_stronghold = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -2438,15 +2173,11 @@ building_fe_stronghold = {
 				}
 				subtract_variable = { which = fe_fortress_upgrade_count value = 1 }
 				prev = { # Vfix: mark current owner as one who queued building
-					set_timed_planet_flag = {
-						flag = fe_fortress_upgrade_queued_by@owner
-						days = @b2_time
-					}
+					set_timed_planet_flag = { flag = fe_fortress_upgrade_queued_by@owner days = @b2_time }
 				}
 			}
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -2454,11 +2185,9 @@ building_fe_stronghold = {
 		}
 		remove_planet_flag = fe_fortress_upgrade_queued_by@owner # Vfix
 	}
-
 	on_built = {
 		remove_planet_flag = fe_fortress_upgrade_queued_by@owner # Vfix
 	}
-
 	on_destroy = {
 		if = { # Vfix
 			limit = {
@@ -2477,12 +2206,10 @@ building_fe_administration_1 = {
 	can_build = yes
 	can_demolish = yes
 	category = unity
-
 	building_sets = {
 		fallen_empire
 		unity
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -2502,7 +2229,6 @@ building_fe_administration_1 = {
 			has_modifier = penal_colony
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = {
@@ -2514,13 +2240,11 @@ building_fe_administration_1 = {
 			}
 		}
 	}
-
 	convert_to = {
 		building_fe_administration_hive_1
 		building_fe_temple_1
 		building_fe_administration_machine_1
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -2534,7 +2258,6 @@ building_fe_administration_1 = {
 			}
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -2554,7 +2277,6 @@ building_fe_administration_1 = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -2563,24 +2285,18 @@ building_fe_administration_1 = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	inline_script = {
 		script = jobs/unity_jobs_add
 		AMOUNT = @fe_jobs
 	}
-
 	upgrades = {
 		building_fe_administration_2
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -2598,7 +2314,6 @@ building_fe_administration_1 = {
 			subtract_variable = { which = fe_administration_1_build_count value = 1 }
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -2607,7 +2322,6 @@ building_fe_administration_1 = {
 	}
 
 	show_in_tech = tech_fe_administration_1
-
 	show_tech_unlock_if = {
 		NOR = {
 			is_hive_empire = yes
@@ -2622,12 +2336,10 @@ building_fe_administration_2 = {
 	base_buildtime = @b2_time
 	can_build = no
 	category = unity
-
 	building_sets = {
 		fallen_empire
 		unity
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -2642,7 +2354,6 @@ building_fe_administration_2 = {
 			has_modifier = penal_colony
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = {
@@ -2654,13 +2365,11 @@ building_fe_administration_2 = {
 			}
 		}
 	}
-
 	convert_to = {
 		building_fe_administration_hive_2
 		building_fe_temple_2
 		building_fe_administration_machine_2
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -2681,7 +2390,6 @@ building_fe_administration_2 = {
 			}
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -2703,7 +2411,6 @@ building_fe_administration_2 = {
 			unity = 20
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -2712,24 +2419,18 @@ building_fe_administration_2 = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	planet_modifier = {
 		pop_housing_usage_mult = -0.1
 	}
-
 	inline_script = {
 		script = jobs/unity_jobs_add
 		AMOUNT = @fe2_jobs
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -2759,7 +2460,6 @@ building_fe_administration_2 = {
 			}
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -2767,11 +2467,9 @@ building_fe_administration_2 = {
 		}
 		remove_planet_flag = fe_administration_1_upgrade_queued_by@owner # Vfix
 	}
-
 	on_built = {
 		remove_planet_flag = fe_administration_1_upgrade_queued_by@owner # Vfix
 	}
-
 	on_destroy = {
 		if = { # Vfix
 			limit = {
@@ -2783,7 +2481,6 @@ building_fe_administration_2 = {
 	}
 
 	show_in_tech = tech_fe_administration_2
-
 	show_tech_unlock_if = {
 		NOR = {
 			is_hive_empire = yes
@@ -2799,12 +2496,10 @@ building_fe_administration_hive_1 = {
 	can_build = yes
 	can_demolish = yes
 	category = unity
-
 	building_sets = {
 		fallen_empire
 		unity
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_hive_empire = yes }
@@ -2821,18 +2516,15 @@ building_fe_administration_hive_1 = {
 			has_modifier = penal_colony
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_hive_empire = no }
 	}
-
 	convert_to = {
 		building_fe_administration_1
 		building_fe_temple_1
 		building_fe_administration_machine_1
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -2847,7 +2539,6 @@ building_fe_administration_hive_1 = {
 			}
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -2867,7 +2558,6 @@ building_fe_administration_hive_1 = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -2876,24 +2566,18 @@ building_fe_administration_hive_1 = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	inline_script = {
 		script = jobs/unity_jobs_add
 		AMOUNT = @fe_jobs
 	}
-
 	upgrades = {
 		building_fe_administration_hive_2
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -2911,7 +2595,6 @@ building_fe_administration_hive_1 = {
 			subtract_variable = { which = fe_administration_hive_1_build_count value = 1 }
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -2920,7 +2603,6 @@ building_fe_administration_hive_1 = {
 	}
 
 	show_in_tech = tech_fe_administration_1
-
 	show_tech_unlock_if = {
 		is_hive_empire = yes
 	}
@@ -2930,12 +2612,10 @@ building_fe_administration_hive_2 = {
 	base_buildtime = @b2_time
 	can_build = no
 	category = unity
-
 	building_sets = {
 		fallen_empire
 		unity
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_hive_empire = yes }
@@ -2952,18 +2632,15 @@ building_fe_administration_hive_2 = {
 			has_modifier = penal_colony
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_hive_empire = no }
 	}
-
 	convert_to = {
 		building_fe_administration_2
 		building_fe_temple_2
 		building_fe_administration_machine_2
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -2984,7 +2661,6 @@ building_fe_administration_hive_2 = {
 			}
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -3006,7 +2682,6 @@ building_fe_administration_hive_2 = {
 			unity = 20
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -3015,24 +2690,18 @@ building_fe_administration_hive_2 = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	planet_modifier = {
 		pop_housing_usage_mult = -0.1
 	}
-
 	inline_script = {
 		script = jobs/unity_jobs_add
 		AMOUNT = @fe2_jobs
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -3062,7 +2731,6 @@ building_fe_administration_hive_2 = {
 			}
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -3070,11 +2738,9 @@ building_fe_administration_hive_2 = {
 		}
 		remove_planet_flag = fe_administration_hive_1_upgrade_queued_by@owner # Vfix
 	}
-
 	on_built = {
 		remove_planet_flag = fe_administration_hive_1_upgrade_queued_by@owner # Vfix
 	}
-
 	on_destroy = {
 		if = { # Vfix
 			limit = {
@@ -3086,7 +2752,6 @@ building_fe_administration_hive_2 = {
 	}
 
 	show_in_tech = tech_fe_administration_2
-
 	show_tech_unlock_if = {
 		is_hive_empire = yes
 	}
@@ -3097,12 +2762,10 @@ building_fe_administration_machine_1 = {
 	can_build = yes
 	can_demolish = yes
 	category = unity
-
 	building_sets = {
 		fallen_empire
 		unity
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -3119,18 +2782,15 @@ building_fe_administration_machine_1 = {
 			has_modifier = penal_colony
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_machine_empire = no }
 	}
-
 	convert_to = {
 		building_fe_administration_1
 		building_fe_temple_1
 		building_fe_administration_hive_1
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -3145,7 +2805,6 @@ building_fe_administration_machine_1 = {
 			}
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -3165,7 +2824,6 @@ building_fe_administration_machine_1 = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -3174,24 +2832,18 @@ building_fe_administration_machine_1 = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	inline_script = {
 		script = jobs/unity_jobs_add
 		AMOUNT = @fe_jobs
 	}
-
 	upgrades = {
 		building_fe_administration_machine_2
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -3209,7 +2861,6 @@ building_fe_administration_machine_1 = {
 			subtract_variable = { which = fe_administration_machine_1_build_count value = 1 }
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -3218,7 +2869,6 @@ building_fe_administration_machine_1 = {
 	}
 
 	show_in_tech = tech_fe_administration_1
-
 	show_tech_unlock_if = {
 		is_machine_empire = yes
 	}
@@ -3228,12 +2878,10 @@ building_fe_administration_machine_2 = {
 	base_buildtime = @b2_time
 	can_build = no
 	category = unity
-
 	building_sets = {
 		fallen_empire
 		unity
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -3250,18 +2898,15 @@ building_fe_administration_machine_2 = {
 			has_modifier = penal_colony
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_machine_empire = no }
 	}
-
 	convert_to = {
 		building_fe_administration_2
 		building_fe_temple_2
 		building_fe_administration_hive_2
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -3285,7 +2930,6 @@ building_fe_administration_machine_2 = {
 			}
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -3307,7 +2951,6 @@ building_fe_administration_machine_2 = {
 			unity = 20
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -3316,24 +2959,18 @@ building_fe_administration_machine_2 = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	planet_modifier = {
 		pop_housing_usage_mult = -0.1
 	}
-
 	inline_script = {
 		script = jobs/unity_jobs_add
 		AMOUNT = @fe_jobs
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -3369,7 +3006,6 @@ building_fe_administration_machine_2 = {
 			}
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -3380,11 +3016,9 @@ building_fe_administration_machine_2 = {
 		}
 		remove_planet_flag = fe_administration_machine_1_upgrade_queued_by@owner # Vfix
 	}
-
 	on_built = {
 		remove_planet_flag = fe_administration_machine_1_upgrade_queued_by@owner # Vfix
 	}
-
 	on_destroy = {
 		if = { # Vfix
 			limit = {
@@ -3396,7 +3030,6 @@ building_fe_administration_machine_2 = {
 	}
 
 	show_in_tech = tech_fe_administration_2
-
 	show_tech_unlock_if = {
 		is_machine_empire = yes
 	}
@@ -3407,12 +3040,10 @@ building_fe_temple_1 = {
 	can_build = yes
 	can_demolish = yes
 	category = unity
-
 	building_sets = {
 		fallen_empire
 		unity
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -3428,18 +3059,15 @@ building_fe_temple_1 = {
 			has_modifier = penal_colony
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_spiritualist = no }
 	}
-
 	convert_to = {
 		building_fe_administration_1
 		building_fe_administration_machine_1
 		building_fe_administration_hive_1
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -3454,7 +3082,6 @@ building_fe_temple_1 = {
 			}
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -3474,7 +3101,6 @@ building_fe_temple_1 = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -3483,24 +3109,18 @@ building_fe_temple_1 = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	inline_script = {
 		script = jobs/priests_add
 		AMOUNT = @fe_jobs
 	}
-
 	upgrades = {
 		building_fe_temple_2
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -3518,7 +3138,6 @@ building_fe_temple_1 = {
 			subtract_variable = { which = fe_administration_1_build_count value = 1 }
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -3527,7 +3146,6 @@ building_fe_temple_1 = {
 	}
 
 	show_in_tech = tech_fe_administration_1
-
 	show_tech_unlock_if = {
 		OR = {
 			is_spiritualist = yes
@@ -3540,12 +3158,10 @@ building_fe_temple_2 = {
 	base_buildtime = @b2_time
 	can_build = no
 	category = unity
-
 	building_sets = {
 		fallen_empire
 		unity
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -3561,18 +3177,15 @@ building_fe_temple_2 = {
 			has_modifier = penal_colony
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_spiritualist = no }
 	}
-
 	convert_to = {
 		building_fe_administration_2
 		building_fe_administration_machine_2
 		building_fe_administration_hive_2
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -3593,7 +3206,6 @@ building_fe_temple_2 = {
 			}
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -3615,7 +3227,6 @@ building_fe_temple_2 = {
 			unity = 25
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -3624,24 +3235,18 @@ building_fe_temple_2 = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	planet_modifier = {
 		pop_housing_usage_mult = -0.1
 	}
-
 	inline_script = {
 		script = jobs/priests_add
 		AMOUNT = @fe2_jobs
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -3671,7 +3276,6 @@ building_fe_temple_2 = {
 			}
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -3679,11 +3283,9 @@ building_fe_temple_2 = {
 		}
 		remove_planet_flag = fe_administration_1_upgrade_queued_by@owner # Vfix
 	}
-
 	on_built = {
 		remove_planet_flag = fe_administration_1_upgrade_queued_by@owner # Vfix
 	}
-
 	on_destroy = {
 		if = { # Vfix
 			limit = {
@@ -3695,7 +3297,6 @@ building_fe_temple_2 = {
 	}
 
 	show_in_tech = tech_fe_administration_2
-
 	show_tech_unlock_if = {
 		OR = {
 			is_spiritualist = yes
@@ -3709,12 +3310,10 @@ building_fe_assembly_1 = {
 	can_build = yes
 	can_demolish = yes
 	category = pop_assembly
-
 	building_sets = {
 		fallen_empire
 		urban
 	}
-
 	potential = {
 		has_owner = yes
 		OR = {
@@ -3748,7 +3347,6 @@ building_fe_assembly_1 = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -3763,7 +3361,6 @@ building_fe_assembly_1 = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = {
@@ -3775,7 +3372,6 @@ building_fe_assembly_1 = {
 			}
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -3795,7 +3391,6 @@ building_fe_assembly_1 = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -3804,7 +3399,6 @@ building_fe_assembly_1 = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -3819,7 +3413,6 @@ building_fe_assembly_1 = {
 		}
 		auto_mod_monthly_add = 200
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -3827,7 +3420,6 @@ building_fe_assembly_1 = {
 		}
 		planet_pop_assembly_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -3836,12 +3428,10 @@ building_fe_assembly_1 = {
 		planet_pop_assembly_mult = -0.1
 		planet_stability_add = 5
 	}
-
 	inline_script = {
 		script = jobs/roboticist_add
 		AMOUNT = 150
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -3850,15 +3440,11 @@ building_fe_assembly_1 = {
 		}
 		auto_mod_monthly_add = 200
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -3876,14 +3462,12 @@ building_fe_assembly_1 = {
 			subtract_variable = { which = fe_assembly_1_build_count value = 1 }
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
 			change_variable = { which = fe_assembly_1_build_count value = 1 }
 		}
 	}
-
 	upgrades = {
 		building_fe_assembly_2
 	}
@@ -3895,12 +3479,10 @@ building_fe_assembly_2 = {
 	base_buildtime = @b2_time
 	can_build = no
 	category = pop_assembly
-
 	building_sets = {
 		fallen_empire
 		urban
 	}
-
 	potential = {
 		has_owner = yes
 		OR = {
@@ -3935,7 +3517,6 @@ building_fe_assembly_2 = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -3956,7 +3537,6 @@ building_fe_assembly_2 = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = {
@@ -3968,7 +3548,6 @@ building_fe_assembly_2 = {
 			}
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -3987,7 +3566,6 @@ building_fe_assembly_2 = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -3996,12 +3574,10 @@ building_fe_assembly_2 = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	inline_script = {
 		script = jobs/roboticist_add
 		AMOUNT = 300
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4016,7 +3592,6 @@ building_fe_assembly_2 = {
 		}
 		auto_mod_monthly_add = 500
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4024,7 +3599,6 @@ building_fe_assembly_2 = {
 		}
 		planet_pop_assembly_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4033,7 +3607,6 @@ building_fe_assembly_2 = {
 		planet_pop_assembly_mult = -0.1
 		planet_stability_add = 5
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4042,15 +3615,11 @@ building_fe_assembly_2 = {
 		}
 		auto_mod_monthly_add = 500
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -4072,15 +3641,11 @@ building_fe_assembly_2 = {
 				}
 				subtract_variable = { which = fe_assembly_1_upgrade_count value = 1 }
 				prev = { # Vfix: mark current owner as one who queued building
-					set_timed_planet_flag = {
-						flag = fe_assembly_1_upgrade_queued_by@owner
-						days = @b2_time
-					}
+					set_timed_planet_flag = { flag = fe_assembly_1_upgrade_queued_by@owner days = @b2_time }
 				}
 			}
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -4088,11 +3653,9 @@ building_fe_assembly_2 = {
 		}
 		remove_planet_flag = fe_assembly_1_upgrade_queued_by@owner # Vfix
 	}
-
 	on_built = {
 		remove_planet_flag = fe_assembly_1_upgrade_queued_by@owner # Vfix
 	}
-
 	on_destroy = {
 		if = { # Vfix
 			limit = {
@@ -4111,12 +3674,10 @@ building_fe_clinic_1 = {
 	can_build = yes
 	can_demolish = yes
 	category = amenity
-
 	building_sets = {
 		fallen_empire
 		urban
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -4135,7 +3696,6 @@ building_fe_clinic_1 = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -4150,12 +3710,10 @@ building_fe_clinic_1 = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_machine_empire = yes is_fallen_empire = no }
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -4175,7 +3733,6 @@ building_fe_clinic_1 = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4184,16 +3741,13 @@ building_fe_clinic_1 = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	country_modifier = {
 		leader_lifespan_add = 1
 	}
-
 	inline_script = {
 		script = jobs/spawning_drone_add
 		AMOUNT = 150
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4201,7 +3755,6 @@ building_fe_clinic_1 = {
 		}
 		job_healthcare_add = 150
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4210,7 +3763,6 @@ building_fe_clinic_1 = {
 		}
 		auto_mod_monthly_add = 400
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4219,7 +3771,6 @@ building_fe_clinic_1 = {
 		}
 		auto_mod_monthly_add = 400
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4230,7 +3781,6 @@ building_fe_clinic_1 = {
 		}
 		clone_soldiers_sustained = @clones_sustained_low
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4244,15 +3794,11 @@ building_fe_clinic_1 = {
 		}
 		organic_pop_bonus_workforce_mult = @medical_workforce_mult
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -4270,14 +3816,12 @@ building_fe_clinic_1 = {
 			subtract_variable = { which = fe_clinic_1_build_count value = 1 }
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
 			change_variable = { which = fe_clinic_1_build_count value = 1 }
 		}
 	}
-
 	upgrades = {
 		building_fe_clinic_2
 	}
@@ -4289,12 +3833,10 @@ building_fe_clinic_2 = {
 	base_buildtime = @b2_time
 	can_build = no
 	category = amenity
-
 	building_sets = {
 		fallen_empire
 		urban
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -4313,7 +3855,6 @@ building_fe_clinic_2 = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -4334,12 +3875,10 @@ building_fe_clinic_2 = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_machine_empire = yes is_fallen_empire = no }
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -4358,7 +3897,6 @@ building_fe_clinic_2 = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4367,16 +3905,13 @@ building_fe_clinic_2 = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	country_modifier = {
 		leader_lifespan_add = 2
 	}
-
 	inline_script = {
 		script = jobs/spawning_drone_add
 		AMOUNT = 300
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4384,7 +3919,6 @@ building_fe_clinic_2 = {
 		}
 		job_healthcare_add = 300
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4393,7 +3927,6 @@ building_fe_clinic_2 = {
 		}
 		auto_mod_monthly_add = 600
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4402,7 +3935,6 @@ building_fe_clinic_2 = {
 		}
 		auto_mod_monthly_add = 600
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4414,7 +3946,6 @@ building_fe_clinic_2 = {
 		clone_soldiers_sustained = @clones_sustained_low
 		mult = 2
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4429,15 +3960,11 @@ building_fe_clinic_2 = {
 		organic_pop_bonus_workforce_mult = @medical_workforce_mult
 		mult = 2
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -4459,15 +3986,11 @@ building_fe_clinic_2 = {
 				}
 				subtract_variable = { which = fe_clinic_1_upgrade_count value = 1 }
 				prev = { # Vfix: mark current owner as one who queued building
-					set_timed_planet_flag = {
-						flag = fe_clinic_1_upgrade_queued_by@owner
-						days = @b2_time
-					}
+					set_timed_planet_flag = { flag = fe_clinic_1_upgrade_queued_by@owner days = @b2_time }
 				}
 			}
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -4475,11 +3998,9 @@ building_fe_clinic_2 = {
 		}
 		remove_planet_flag = fe_clinic_1_upgrade_queued_by@owner # Vfix
 	}
-
 	on_built = {
 		remove_planet_flag = fe_clinic_1_upgrade_queued_by@owner # Vfix
 	}
-
 	on_destroy = {
 		if = { # Vfix
 			limit = {
@@ -4498,12 +4019,10 @@ building_fe_security_1 = {
 	can_build = yes
 	can_demolish = yes
 	category = government
-
 	building_sets = {
 		fallen_empire
 		urban
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -4519,7 +4038,6 @@ building_fe_security_1 = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -4534,11 +4052,9 @@ building_fe_security_1 = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		always = no
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -4558,7 +4074,6 @@ building_fe_security_1 = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4567,7 +4082,6 @@ building_fe_security_1 = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	triggered_planet_modifier = { # Vfix by Duxatious: Copied from tier 2. This part was added because the base version of this building added no FE jobs to FEs/AEs.
 		potential = {
 			has_owner = yes
@@ -4575,7 +4089,6 @@ building_fe_security_1 = {
 		}
 		job_fe_protector_add = @fe_jobs
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4587,7 +4100,6 @@ building_fe_security_1 = {
 		}
 		job_enforcer_add = @fe_jobs
 	}
-
 	triggered_desc = {
 		trigger = {
 			has_owner = yes
@@ -4598,7 +4110,6 @@ building_fe_security_1 = {
 		}
 		text = job_enforcer_desc
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4606,19 +4117,14 @@ building_fe_security_1 = {
 		}
 		job_patrol_drone_add = @fe_jobs
 	}
-
 	upgrades = {
 		building_fe_security_2
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -4636,7 +4142,6 @@ building_fe_security_1 = {
 			subtract_variable = { which = fe_security_1_build_count value = 1 }
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -4651,12 +4156,10 @@ building_fe_security_2 = {
 	base_buildtime = @b2_time
 	can_build = no
 	category = government
-
 	building_sets = {
 		fallen_empire
 		urban
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -4672,7 +4175,6 @@ building_fe_security_2 = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -4693,11 +4195,9 @@ building_fe_security_2 = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		always = no
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -4716,7 +4216,6 @@ building_fe_security_2 = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4725,11 +4224,9 @@ building_fe_security_2 = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	country_modifier = {
 		country_edict_fund_add = 10
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4737,7 +4234,6 @@ building_fe_security_2 = {
 		}
 		planet_crime_add = -40
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4745,7 +4241,6 @@ building_fe_security_2 = {
 		}
 		planet_crime_no_happiness_add = -40
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4753,7 +4248,6 @@ building_fe_security_2 = {
 		}
 		job_fe_protector_add = @fe_jobs
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4765,7 +4259,6 @@ building_fe_security_2 = {
 		}
 		job_enforcer_add = @fe_jobs
 	}
-
 	triggered_desc = {
 		trigger = {
 			has_owner = yes
@@ -4776,7 +4269,6 @@ building_fe_security_2 = {
 		}
 		text = job_enforcer_desc
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4784,15 +4276,11 @@ building_fe_security_2 = {
 		}
 		job_patrol_drone_add = @fe_jobs
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -4814,15 +4302,11 @@ building_fe_security_2 = {
 				}
 				subtract_variable = { which = fe_security_1_upgrade_count value = 1 }
 				prev = { # Vfix: mark current owner as one who queued building
-					set_timed_planet_flag = {
-						flag = fe_security_1_upgrade_queued_by@owner
-						days = @b2_time
-					}
+					set_timed_planet_flag = { flag = fe_security_1_upgrade_queued_by@owner days = @b2_time }
 				}
 			}
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -4830,11 +4314,9 @@ building_fe_security_2 = {
 		}
 		remove_planet_flag = fe_security_1_upgrade_queued_by@owner # Vfix
 	}
-
 	on_built = {
 		remove_planet_flag = fe_security_1_upgrade_queued_by@owner # Vfix
 	}
-
 	on_destroy = {
 		if = { # Vfix
 			limit = {
@@ -4853,12 +4335,10 @@ building_fe_market_1 = {
 	can_build = yes
 	can_demolish = yes
 	category = trade
-
 	building_sets = {
 		fallen_empire
 		trade
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -4873,7 +4353,6 @@ building_fe_market_1 = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -4888,14 +4367,12 @@ building_fe_market_1 = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		OR = {
 			has_modifier = slave_colony
 			has_modifier = penal_colony
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -4915,7 +4392,6 @@ building_fe_market_1 = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4924,24 +4400,18 @@ building_fe_market_1 = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	inline_script = {
 		script = "jobs/trader_add"
 		AMOUNT = @fe_jobs
 	}
-
 	upgrades = {
 		building_fe_market_2
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -4959,7 +4429,6 @@ building_fe_market_1 = {
 			subtract_variable = { which = fe_market_1_build_count value = 1 }
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -4974,12 +4443,10 @@ building_fe_market_2 = {
 	base_buildtime = @b2_time
 	can_build = no
 	category = trade
-
 	building_sets = {
 		fallen_empire
 		trade
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -4994,7 +4461,6 @@ building_fe_market_2 = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -5015,14 +4481,12 @@ building_fe_market_2 = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		OR = {
 			has_modifier = slave_colony
 			has_modifier = penal_colony
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -5041,7 +4505,6 @@ building_fe_market_2 = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -5050,20 +4513,16 @@ building_fe_market_2 = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	inline_script = {
 		script = "jobs/trader_add"
 		AMOUNT = 1200
 	}
-
 	country_modifier = {
 		country_trade_produces_mult = 0.01
 	}
-
 	planet_modifier = {
 		planet_traders_trade_produces_add = 0.5
 	}
-
 	triggered_country_modifier = {
 		potential = {
 			has_owner = yes
@@ -5071,15 +4530,11 @@ building_fe_market_2 = {
 		}
 		branch_office_value_mult = 0.05
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -5101,15 +4556,11 @@ building_fe_market_2 = {
 				}
 				subtract_variable = { which = fe_market_1_upgrade_count value = 1 }
 				prev = { # Vfix: mark current owner as one who queued building
-					set_timed_planet_flag = {
-						flag = fe_market_1_upgrade_queued_by@owner
-						days = @b2_time
-					}
+					set_timed_planet_flag = { flag = fe_market_1_upgrade_queued_by@owner days = @b2_time }
 				}
 			}
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -5117,11 +4568,9 @@ building_fe_market_2 = {
 		}
 		remove_planet_flag = fe_market_1_upgrade_queued_by@owner # Vfix
 	}
-
 	on_built = {
 		remove_planet_flag = fe_market_1_upgrade_queued_by@owner # Vfix
 	}
-
 	on_destroy = {
 		if = { # Vfix
 			limit = {
@@ -5140,14 +4589,12 @@ building_fe_silo_1 = {
 	can_build = yes
 	can_demolish = yes
 	category = resource
-
 	building_sets = {
 		fallen_empire
 		generator
 		mining
 		farming
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -5163,7 +4610,6 @@ building_fe_silo_1 = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -5178,11 +4624,9 @@ building_fe_silo_1 = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		always = no
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -5200,7 +4644,6 @@ building_fe_silo_1 = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -5209,24 +4652,18 @@ building_fe_silo_1 = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	country_modifier = {
 		country_resource_max_add = 50000
 		country_resource_max_minor_artifacts_add = 500
 	}
-
 	upgrades = {
 		building_fe_silo_2
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -5244,7 +4681,6 @@ building_fe_silo_1 = {
 			subtract_variable = { which = fe_silo_1_build_count value = 1 }
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -5259,14 +4695,12 @@ building_fe_silo_2 = {
 	base_buildtime = @b2_time
 	can_build = no
 	category = resource
-
 	building_sets = {
 		fallen_empire
 		generator
 		mining
 		farming
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -5282,7 +4716,6 @@ building_fe_silo_2 = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -5303,7 +4736,6 @@ building_fe_silo_2 = {
 			}
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -5312,11 +4744,9 @@ building_fe_silo_2 = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	destroy_trigger = {
 		always = no
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -5334,20 +4764,15 @@ building_fe_silo_2 = {
 			biomass = @b3_biomass
 		}
 	}
-
 	country_modifier = {
 		country_resource_max_add = 100000
 		country_resource_max_minor_artifacts_add = 1000
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -5369,15 +4794,11 @@ building_fe_silo_2 = {
 				}
 				subtract_variable = { which = fe_silo_1_upgrade_count value = 1 }
 				prev = { # Vfix: mark current owner as one who queued building
-					set_timed_planet_flag = {
-						flag = fe_silo_1_upgrade_queued_by@owner
-						days = @b2_time
-					}
+					set_timed_planet_flag = { flag = fe_silo_1_upgrade_queued_by@owner days = @b2_time }
 				}
 			}
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -5385,11 +4806,9 @@ building_fe_silo_2 = {
 		}
 		remove_planet_flag = fe_silo_1_upgrade_queued_by@owner # Vfix
 	}
-
 	on_built = {
 		remove_planet_flag = fe_silo_1_upgrade_queued_by@owner # Vfix
 	}
-
 	on_destroy = {
 		if = { # Vfix
 			limit = {
@@ -5408,12 +4827,10 @@ building_fe_entertainment_1 = {
 	can_build = yes
 	can_demolish = yes
 	category = amenity
-
 	building_sets = {
 		fallen_empire
 		urban
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -5430,7 +4847,6 @@ building_fe_entertainment_1 = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -5445,12 +4861,10 @@ building_fe_entertainment_1 = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_gestalt = yes is_fallen_empire = no }
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -5470,7 +4884,6 @@ building_fe_entertainment_1 = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -5479,24 +4892,18 @@ building_fe_entertainment_1 = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	inline_script = {
 		script = jobs/entertainers_add
 		AMOUNT = @fe_jobs
 	}
-
 	upgrades = {
 		building_fe_entertainment_2
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -5514,7 +4921,6 @@ building_fe_entertainment_1 = {
 			subtract_variable = { which = fe_entertainment_1_build_count value = 1 }
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -5529,12 +4935,10 @@ building_fe_entertainment_2 = {
 	base_buildtime = @b2_time
 	can_build = no
 	category = amenity
-
 	building_sets = {
 		fallen_empire
 		urban
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -5549,7 +4953,6 @@ building_fe_entertainment_2 = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -5570,12 +4973,10 @@ building_fe_entertainment_2 = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_gestalt = yes is_fallen_empire = no }
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -5594,7 +4995,6 @@ building_fe_entertainment_2 = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -5603,24 +5003,18 @@ building_fe_entertainment_2 = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	planet_modifier = {
 		planet_amenities_add = 5000
 	}
-
 	inline_script = {
 		script = jobs/entertainers_add
 		AMOUNT = @fe_jobs
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -5650,7 +5044,6 @@ building_fe_entertainment_2 = {
 			}
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -5658,11 +5051,9 @@ building_fe_entertainment_2 = {
 		}
 		remove_planet_flag = fe_entertainment_1_upgrade_queued_by@owner # Vfix
 	}
-
 	on_built = {
 		remove_planet_flag = fe_entertainment_1_upgrade_queued_by@owner # Vfix
 	}
-
 	on_destroy = {
 		if = { # Vfix
 			limit = {
@@ -5681,7 +5072,6 @@ building_fe_lab_1 = {
 	can_build = yes
 	can_demolish = yes
 	category = research
-
 	building_sets = {
 		fallen_empire
 		research
@@ -5689,7 +5079,6 @@ building_fe_lab_1 = {
 		society
 		engineering
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -5705,7 +5094,6 @@ building_fe_lab_1 = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -5720,11 +5108,9 @@ building_fe_lab_1 = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		always = no
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -5744,7 +5130,6 @@ building_fe_lab_1 = {
 			biomass = @b3_biomass
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -5753,24 +5138,18 @@ building_fe_lab_1 = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	inline_script = {
 		script = jobs/researchers_add
 		AMOUNT = @building_static_jobs
 	}
-
 	upgrades = {
 		building_fe_lab_2
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -5788,7 +5167,6 @@ building_fe_lab_1 = {
 			subtract_variable = { which = fe_lab_1_build_count value = 1 }
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -5803,7 +5181,6 @@ building_fe_lab_2 = {
 	base_buildtime = @b2_time
 	can_build = no
 	category = research
-
 	building_sets = {
 		fallen_empire
 		research
@@ -5811,7 +5188,6 @@ building_fe_lab_2 = {
 		society
 		engineering
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -5827,7 +5203,6 @@ building_fe_lab_2 = {
 			has_modifier = penal_colony
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -5848,11 +5223,9 @@ building_fe_lab_2 = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		always = no
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -5876,7 +5249,6 @@ building_fe_lab_2 = {
 			engineering_research = 20
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -5885,20 +5257,15 @@ building_fe_lab_2 = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	inline_script = {
 		script = jobs/researchers_add
 		AMOUNT = @building_static_jobs_high
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -5925,7 +5292,6 @@ building_fe_lab_2 = {
 			}
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -5933,11 +5299,9 @@ building_fe_lab_2 = {
 		}
 		remove_planet_flag = fe_lab_1_upgrade_queued_by@owner # Vfix
 	}
-
 	on_built = {
 		remove_planet_flag = fe_lab_1_upgrade_queued_by@owner # Vfix
 	}
-
 	on_destroy = {
 		if = { # Vfix
 			limit = {
@@ -5956,12 +5320,10 @@ building_fe_mine_1 = {
 	can_build = yes
 	can_demolish = yes
 	category = resource
-
 	building_sets = {
 		fallen_empire
 		fallen_empire_mining
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -5978,7 +5340,6 @@ building_fe_mine_1 = {
 			is_planet_class = pc_ringworld_habitable
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -5993,16 +5354,13 @@ building_fe_mine_1 = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		always = no
 	}
-
 	inline_script = {
 		script = jobs/miners_add
 		AMOUNT = @fe_jobs
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -6025,7 +5383,6 @@ building_fe_mine_1 = {
 			minerals = 50
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -6034,7 +5391,6 @@ building_fe_mine_1 = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			NOT = { is_planet_class = pc_shattered_ring_habitable }
@@ -6043,19 +5399,14 @@ building_fe_mine_1 = {
 		}
 		job_fe_acolyte_mine_add = @fe_jobs
 	}
-
 	upgrades = {
 		building_fe_mine_2
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -6073,7 +5424,6 @@ building_fe_mine_1 = {
 			subtract_variable = { which = fe_mine_1_build_count value = 1 }
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -6088,12 +5438,10 @@ building_fe_mine_2 = {
 	base_buildtime = @b2_time
 	can_build = no
 	category = resource
-
 	building_sets = {
 		fallen_empire
 		fallen_empire_mining
 	}
-
 	potential = {
 		has_owner = yes
 		owner = {
@@ -6110,7 +5458,6 @@ building_fe_mine_2 = {
 			is_planet_class = pc_ringworld_habitable
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 		custom_tooltip = {
@@ -6131,16 +5478,13 @@ building_fe_mine_2 = {
 			}
 		}
 	}
-
 	destroy_trigger = {
 		always = no
 	}
-
 	inline_script = {
 		script = jobs/miners_add
 		AMOUNT = @fe_jobs
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -6162,7 +5506,6 @@ building_fe_mine_2 = {
 			minerals = 150
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -6171,7 +5514,6 @@ building_fe_mine_2 = {
 		planet_building_build_speed_mult = 0.03
 		planet_decision_enact_speed_mult = 0.03
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			NOT = { is_planet_class = pc_shattered_ring_habitable }
@@ -6180,15 +5522,11 @@ building_fe_mine_2 = {
 		}
 		job_fe_acolyte_mine_add = @fe_jobs
 	}
-
 	on_queued = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = {
-					has_trait = trait_wilderness
-					pop_group_size > local_spent_biomass
-				}
+				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -6210,15 +5548,11 @@ building_fe_mine_2 = {
 				}
 				subtract_variable = { which = fe_mine_1_upgrade_count value = 1 }
 				prev = { # Vfix: mark current owner as one who queued building
-					set_timed_planet_flag = {
-						flag = fe_mine_1_upgrade_queued_by@owner
-						days = @b2_time
-					}
+					set_timed_planet_flag = { flag = fe_mine_1_upgrade_queued_by@owner days = @b2_time }
 				}
 			}
 		}
 	}
-
 	on_unqueued = {
 		unqueue_biomass_effect = yes
 		owner = {
@@ -6226,11 +5560,9 @@ building_fe_mine_2 = {
 		}
 		remove_planet_flag = fe_mine_1_upgrade_queued_by@owner # Vfix
 	}
-
 	on_built = {
 		remove_planet_flag = fe_mine_1_upgrade_queued_by@owner # Vfix
 	}
-
 	on_destroy = {
 		if = { # Vfix
 			limit = {
@@ -6243,4 +5575,3 @@ building_fe_mine_2 = {
 
 	show_in_tech = tech_fe_mine_2
 }
-

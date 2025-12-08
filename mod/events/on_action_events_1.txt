@@ -7,12 +7,12 @@
 namespace = action
 
 ### First Contact Diplomatic Message
+
 country_event = {
 	id = action.1
 	title = action.1.name
 	message_desc = action.1.message
 	location = event_target:contact_empire.capital_scope
-
 	picture_event_data = {
 		portrait = event_target:contact_empire
 		planet_background = event_target:contact_empire
@@ -32,7 +32,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_hacking_02
 		trigger = {
@@ -43,7 +42,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_hacking_03
 		trigger = {
@@ -54,7 +52,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_hostile_01
 		trigger = {
@@ -71,7 +68,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_hostile_02
 		trigger = {
@@ -85,7 +81,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_hostile_03
 		trigger = {
@@ -96,7 +91,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_hostile_04
 		trigger = {
@@ -108,7 +102,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_hostile_05
 		trigger = {
@@ -123,7 +116,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_hostile_06
 		trigger = {
@@ -133,7 +125,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_they_hostile_01
 		trigger = {
@@ -144,7 +135,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_they_hostile_02
 		trigger = {
@@ -155,7 +145,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_they_hostile_03
 		trigger = {
@@ -166,7 +155,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_vivisection_01
 		trigger = {
@@ -183,7 +171,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_vivisection_02
 		trigger = {
@@ -200,7 +187,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_vivisection_03
 		trigger = {
@@ -218,7 +204,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_vivisection_04
 		trigger = {
@@ -232,7 +217,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_they_vivisect_01
 		trigger = {
@@ -243,7 +227,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_they_vivisect_02
 		trigger = {
@@ -254,7 +237,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_hungry_01
 		trigger = {
@@ -265,14 +247,10 @@ country_event = {
 				is_individual_machine = no
 				is_hive_empire = no
 				is_homicidal = no
-				has_opinion_modifier = {
-					who = root
-					modifier = opinion_hostile_first_contact_hungry
-				}
+				has_opinion_modifier = { who = root modifier = opinion_hostile_first_contact_hungry }
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_hungry_02
 		trigger = {
@@ -281,14 +259,10 @@ country_event = {
 				is_lithoid = no
 				is_hive_empire = no
 				is_homicidal = no
-				has_opinion_modifier = {
-					who = root
-					modifier = opinion_hostile_first_contact_hungry
-				}
+				has_opinion_modifier = { who = root modifier = opinion_hostile_first_contact_hungry }
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_hungry_03
 		trigger = {
@@ -300,14 +274,10 @@ country_event = {
 				is_lithoid = no
 				is_hive_empire = no
 				is_homicidal = no
-				has_opinion_modifier = {
-					who = root
-					modifier = opinion_hostile_first_contact_hungry
-				}
+				has_opinion_modifier = { who = root modifier = opinion_hostile_first_contact_hungry }
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_hungry_04
 		trigger = {
@@ -315,50 +285,34 @@ country_event = {
 				is_lithoid = yes
 				is_hive_empire = no
 				is_homicidal = no
-				has_opinion_modifier = {
-					who = root
-					modifier = opinion_hostile_first_contact_hungry
-				}
+				has_opinion_modifier = { who = root modifier = opinion_hostile_first_contact_hungry }
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_hungry_05
 		trigger = {
 			event_target:contact_empire = {
 				is_hive_empire = yes
 				is_homicidal = no
-				has_opinion_modifier = {
-					who = root
-					modifier = opinion_hostile_first_contact_hungry
-				}
+				has_opinion_modifier = { who = root modifier = opinion_hostile_first_contact_hungry }
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_they_hungry_01
 		trigger = {
 			is_synthetic_empire = no
-			has_opinion_modifier = {
-				who = event_target:contact_empire
-				modifier = opinion_hostile_first_contact_hungry
-			}
+			has_opinion_modifier = { who = event_target:contact_empire modifier = opinion_hostile_first_contact_hungry }
 		}
 	}
-
 	desc = {
 		text = action.1.desc_they_hungry_02
 		trigger = {
 			is_synthetic_empire = yes
-			has_opinion_modifier = {
-				who = event_target:contact_empire
-				modifier = opinion_hostile_first_contact_hungry
-			}
+			has_opinion_modifier = { who = event_target:contact_empire modifier = opinion_hostile_first_contact_hungry }
 		}
 	}
-
 	desc = {
 		text = action.1.desc_hostile_to_homicidal_01
 		trigger = {
@@ -366,10 +320,7 @@ country_event = {
 			event_target:contact_empire = {
 				has_valid_civic = civic_fanatic_purifiers
 				OR = {
-					has_opinion_modifier = {
-						who = root
-						modifier = opinion_hostile_first_contact_hungry
-					}
+					has_opinion_modifier = { who = root modifier = opinion_hostile_first_contact_hungry }
 					has_opinion_modifier = {
 						who = root
 						modifier = opinion_hostile_first_contact_vivisection
@@ -379,7 +330,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_hostile_to_homicidal_02
 		trigger = {
@@ -390,10 +340,7 @@ country_event = {
 			event_target:contact_empire = {
 				has_valid_civic = civic_machine_terminator
 				OR = {
-					has_opinion_modifier = {
-						who = root
-						modifier = opinion_hostile_first_contact_hungry
-					}
+					has_opinion_modifier = { who = root modifier = opinion_hostile_first_contact_hungry }
 					has_opinion_modifier = {
 						who = root
 						modifier = opinion_hostile_first_contact_vivisection
@@ -403,7 +350,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_hostile_to_homicidal_03
 		trigger = {
@@ -414,10 +360,7 @@ country_event = {
 			event_target:contact_empire = {
 				has_valid_civic = civic_machine_terminator
 				OR = {
-					has_opinion_modifier = {
-						who = root
-						modifier = opinion_hostile_first_contact_hungry
-					}
+					has_opinion_modifier = { who = root modifier = opinion_hostile_first_contact_hungry }
 					has_opinion_modifier = {
 						who = root
 						modifier = opinion_hostile_first_contact_vivisection
@@ -427,17 +370,13 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_hostile_to_homicidal_04
 		trigger = {
 			event_target:contact_empire = {
 				has_valid_civic = civic_hive_devouring_swarm
 				OR = {
-					has_opinion_modifier = {
-						who = root
-						modifier = opinion_hostile_first_contact_hungry
-					}
+					has_opinion_modifier = { who = root modifier = opinion_hostile_first_contact_hungry }
 					has_opinion_modifier = {
 						who = root
 						modifier = opinion_hostile_first_contact_vivisection
@@ -447,7 +386,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.1.desc_hostile_to_homicidal_05
 		trigger = {
@@ -455,10 +393,7 @@ country_event = {
 			event_target:contact_empire = {
 				has_valid_civic = civic_fanatic_purifiers
 				OR = {
-					has_opinion_modifier = {
-						who = root
-						modifier = opinion_hostile_first_contact_hungry
-					}
+					has_opinion_modifier = { who = root modifier = opinion_hostile_first_contact_hungry }
 					has_opinion_modifier = {
 						who = root
 						modifier = opinion_hostile_first_contact_vivisection
@@ -1842,10 +1777,7 @@ country_event = {
 	desc = {
 		text = action.1.desc_62
 		trigger = {
-			event_target:contact_empire = {
-				is_country_type = fallen_empire
-				is_fanatic_xenophile = yes
-			}
+			event_target:contact_empire = { is_country_type = fallen_empire is_fanatic_xenophile = yes }
 		}
 	}
 
@@ -1853,10 +1785,7 @@ country_event = {
 	desc = {
 		text = action.1.desc_63
 		trigger = {
-			event_target:contact_empire = {
-				is_country_type = fallen_empire
-				is_fanatic_xenophobe = yes
-			}
+			event_target:contact_empire = { is_country_type = fallen_empire is_fanatic_xenophobe = yes }
 		}
 	}
 
@@ -1864,10 +1793,7 @@ country_event = {
 	desc = {
 		text = action.1.desc_64
 		trigger = {
-			event_target:contact_empire = {
-				is_country_type = fallen_empire
-				is_fanatic_materialist = yes
-			}
+			event_target:contact_empire = { is_country_type = fallen_empire is_fanatic_materialist = yes }
 		}
 	}
 
@@ -1875,10 +1801,7 @@ country_event = {
 	desc = {
 		text = action.1.desc_65
 		trigger = {
-			event_target:contact_empire = {
-				is_country_type = fallen_empire
-				is_fanatic_spiritualist = yes
-			}
+			event_target:contact_empire = { is_country_type = fallen_empire is_fanatic_spiritualist = yes }
 			NOR = {
 				has_origin = origin_cybernetic_creed
 				is_individual_machine = yes
@@ -1890,10 +1813,7 @@ country_event = {
 	desc = {
 		text = action.1.desc_111
 		trigger = {
-			event_target:contact_empire = {
-				is_country_type = fallen_empire
-				is_fanatic_spiritualist = yes
-			}
+			event_target:contact_empire = { is_country_type = fallen_empire is_fanatic_spiritualist = yes }
 			has_origin = origin_cybernetic_creed
 		}
 	}
@@ -1902,10 +1822,7 @@ country_event = {
 	desc = {
 		text = action.1.desc_107
 		trigger = {
-			event_target:contact_empire = {
-				is_country_type = fallen_empire
-				is_fanatic_spiritualist = yes
-			}
+			event_target:contact_empire = { is_country_type = fallen_empire is_fanatic_spiritualist = yes }
 			NOT = { has_origin = origin_cybernetic_creed }
 			is_individual_machine = yes
 			is_spiritualist = no
@@ -1916,10 +1833,7 @@ country_event = {
 	desc = {
 		text = action.1.desc_108
 		trigger = {
-			event_target:contact_empire = {
-				is_country_type = fallen_empire
-				is_fanatic_spiritualist = yes
-			}
+			event_target:contact_empire = { is_country_type = fallen_empire is_fanatic_spiritualist = yes }
 			is_individual_machine = yes
 			is_spiritualist = yes
 		}
@@ -1929,10 +1843,7 @@ country_event = {
 	desc = {
 		text = action.1.desc_109
 		trigger = {
-			event_target:contact_empire = {
-				is_country_type = fallen_empire
-				is_hive_empire = yes
-			}
+			event_target:contact_empire = { is_country_type = fallen_empire is_hive_empire = yes }
 		}
 	}
 
@@ -2328,10 +2239,7 @@ country_event = {
 		text = "action.1.desc_99"
 		trigger = {
 			first_contact_custom_greeting = yes
-			event_target:contact_empire = {
-				has_country_flag = human_lithoid
-				species_portrait = lith_human
-			}
+			event_target:contact_empire = { has_country_flag = human_lithoid species_portrait = lith_human }
 			has_country_flag = human_1
 		}
 	}
@@ -2364,7 +2272,7 @@ country_event = {
 				is_crystal_country_type = yes
 				is_country_type = cloud
 				is_country_type = enclave
-				has_relation_flag = { flag = AbandonedRefugees who = root }
+				# has_relation_flag = { flag = AbandonedRefugees who = root } # Vfix removed in v2.2
 				has_country_flag = second_hive_fe_fragment
 				has_country_flag = third_hive_fe_fragment
 			}
@@ -2449,7 +2357,6 @@ country_event = {
 			}
 		}
 	}
-
 	immediate = {
 		if = {
 			limit = {
@@ -2726,10 +2633,7 @@ country_event = {
 							who = root
 							modifier = opinion_hostile_first_contact_vivisection
 						}
-						has_opinion_modifier = {
-							who = root
-							modifier = opinion_hostile_first_contact_hungry
-						}
+						has_opinion_modifier = { who = root modifier = opinion_hostile_first_contact_hungry }
 						AND = {
 							has_origin = origin_slavers
 							has_country_flag = special_intro_for@root
@@ -2750,10 +2654,7 @@ country_event = {
 		else = {
 			custom_tooltip = seek_friends_tt
 			event_target:contact_empire = {
-				add_opinion_modifier = {
-					who = root
-					modifier = opinion_friendly_first_comms_greeting
-				}
+				add_opinion_modifier = { who = root modifier = opinion_friendly_first_comms_greeting }
 			}
 		}
 		if = {
@@ -2788,9 +2689,7 @@ country_event = {
 			}
 			NAND = {
 				has_valid_civic = civic_selective_kinship
-				NOT = {
-					event_target:contact_empire = { is_same_species_class = root }
-				}
+				NOT = { event_target:contact_empire = { is_same_species_class = root } }
 			}
 			NOT = { has_valid_civic = civic_inwards_perfection }
 			NAND = {
@@ -2843,7 +2742,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # hostile - isolationist
 		name = {
 			text = action.1.u5
@@ -3032,7 +2930,6 @@ country_event = {
 			modifier = { factor = 2 has_valid_civic = civic_inwards_perfection }
 		}
 	}
-
 	option = { # hostile - expansionist
 		name = {
 			text = action.1.u6
@@ -3229,10 +3126,7 @@ country_event = {
 		else = {
 			custom_tooltip = seek_enemies_tt
 			event_target:contact_empire = {
-				add_opinion_modifier = {
-					who = root
-					modifier = opinion_hostile_first_comms_greeting
-				}
+				add_opinion_modifier = { who = root modifier = opinion_hostile_first_comms_greeting }
 			}
 			hidden_effect = {
 				random_spynetwork = {
@@ -3265,7 +3159,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		if = {
 			limit = {
@@ -3300,12 +3193,12 @@ country_event = {
 }
 
 ### First Contact Diplomatic Message - pre-FTL version
+
 country_event = {
 	id = action.2
 	title = action.1.name
 	message_desc = action.1.message
 	location = event_target:contact_empire.capital_scope
-
 	picture_event_data = {
 		portrait = event_target:contact_empire
 		planet_background = event_target:contact_empire
@@ -3325,7 +3218,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.2.desc_02
 		trigger = {
@@ -3336,7 +3228,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.2.desc_03
 		trigger = {
@@ -3347,7 +3238,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.2.desc_04
 		trigger = {
@@ -3358,7 +3248,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.2.desc_05
 		trigger = {
@@ -3372,7 +3261,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.2.desc_06
 		trigger = {
@@ -3384,7 +3272,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.2.desc_solarpunk
 		trigger = {
@@ -3395,7 +3282,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = action.2.desc_07
 		exclusive_trigger = {
@@ -3427,47 +3313,38 @@ country_event = {
 		name = action.2.a
 		trigger = { is_xenophile = yes }
 	}
-
 	option = { # xenophobe
 		name = action.2.b
 		trigger = { is_xenophobe = yes }
 	}
-
 	option = { # spiritualist
 		name = action.2.c
 		trigger = { is_spiritualist = yes }
 	}
-
 	option = { # materialist
 		name = action.2.d
 		trigger = { is_materialist = yes }
 	}
-
 	option = { # militarist
 		name = action.2.e
 		trigger = { is_militarist = yes }
 	}
-
 	option = { # pacifist
 		name = action.2.f
 		trigger = { is_pacifist = yes }
 	}
-
 	option = { # egalitarian
 		name = action.2.g
 		trigger = { is_egalitarian = yes }
 	}
-
 	option = { # authoritarian
 		name = action.2.h
 		trigger = { is_authoritarian = yes }
 	}
-
 	option = { # gestalt
 		name = action.2.i
 		trigger = { is_gestalt = yes }
 	}
-
 	option = { # gestalt meeting other gestalt
 		name = action.2.j
 		trigger = {
@@ -3475,12 +3352,10 @@ country_event = {
 			event_target:contact_empire = { is_gestalt = yes }
 		}
 	}
-
 	option = { # megacorp
 		name = action.2.k
 		trigger = { is_megacorp = yes }
 	}
-
 	after = {
 		add_intel = { who = event_target:contact_empire amount = 100 }
 		if = {
@@ -3511,14 +3386,12 @@ country_event = {
 country_event = {
 	id = action.5
 	title = "action.5.name"
-
 	picture = {
 		trigger = {
 			event_target:primitive_civ = { is_gestalt = no }
 		}
 		picture = GFX_evt_medieval_alien_civilization
 	}
-
 	picture = {
 		trigger = {
 			event_target:primitive_civ = { is_gestalt = yes }
@@ -3526,78 +3399,62 @@ country_event = {
 		picture = GFX_evt_hive_mind_pre_ftl
 	}
 
-	location = FROMFROM
+	location = fromfrom
 	show_sound = event_pre_ftl_civilization
-
 	desc = { # Stone Age Regular
 		text = action.5.desc_00
 		trigger = {
 			event_target:primitive_civ = { has_country_flag = stone_age is_gestalt = no }
 		}
 	}
-
 	desc = { # Stone Age Hive
 		text = action.5.desc_00_hive
 		trigger = {
 			event_target:primitive_civ = { has_country_flag = stone_age is_gestalt = yes }
 		}
 	}
-
 	desc = { # Bronze Age Regular
 		text = action.5.desc_01
 		trigger = {
 			event_target:primitive_civ = { has_country_flag = bronze_age is_gestalt = no }
 		}
 	}
-
 	desc = { # Bronze Age Hive
 		text = action.5.desc_01_hive
 		trigger = {
 			event_target:primitive_civ = { has_country_flag = bronze_age is_gestalt = yes }
 		}
 	}
-
 	desc = { # Iron Age Regular
 		text = action.5.desc_02
 		trigger = {
 			event_target:primitive_civ = { has_country_flag = iron_age is_gestalt = no }
 		}
 	}
-
 	desc = { # Iron Age Hive
 		text = action.5.desc_02_hive
 		trigger = {
 			event_target:primitive_civ = { has_country_flag = iron_age is_gestalt = yes }
 		}
 	}
-
 	desc = { # Late Medieval Regular
 		text = action.5.desc_03
 		trigger = {
-			event_target:primitive_civ = {
-				has_country_flag = late_medieval_age
-				is_gestalt = no
-			}
+			event_target:primitive_civ = { has_country_flag = late_medieval_age is_gestalt = no }
 		}
 	}
-
 	desc = { # Late Medieval Hive
 		text = action.5.desc_03_hive
 		trigger = {
-			event_target:primitive_civ = {
-				has_country_flag = late_medieval_age
-				is_gestalt = yes
-			}
+			event_target:primitive_civ = { has_country_flag = late_medieval_age is_gestalt = yes }
 		}
 	}
-
 	desc = { # Renaissance
 		text = action.5.desc_04
 		trigger = {
 			event_target:primitive_civ = { has_country_flag = renaissance_age }
 		}
 	}
-
 	desc = { # Steam Age
 		text = action.5.desc_05
 		trigger = {
@@ -3637,7 +3494,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = INTERESTING
 		hidden_effect = {
@@ -3650,14 +3506,12 @@ country_event = {
 country_event = {
 	id = action.6
 	title = "action.5.name"
-
 	picture = {
 		trigger = {
 			event_target:primitive_civ = { is_gestalt = no }
 		}
 		picture = GFX_evt_metropolis
 	}
-
 	picture = {
 		trigger = {
 			event_target:primitive_civ = { is_gestalt = yes }
@@ -3665,51 +3519,42 @@ country_event = {
 		picture = GFX_evt_hive_mind_pre_ftl
 	}
 
-	location = FROMFROM
+	location = fromfrom
 	show_sound = event_scanner
-
 	desc = { # Industrial Age
 		text = action.6.desc_01
 		trigger = {
 			event_target:primitive_civ = { has_country_flag = industrial_age }
 		}
 	}
-
 	desc = { # Machine Age
 		text = action.6.desc_02
 		trigger = {
 			event_target:primitive_civ = { has_country_flag = machine_age }
 		}
 	}
-
 	desc = { # Atomic Age
 		text = action.6.desc_03
 		trigger = {
 			event_target:primitive_civ = { has_country_flag = atomic_age is_gestalt = no }
 		}
 	}
-
 	desc = { # Atomic Age
 		text = action.6.desc_03_hive
 		trigger = {
 			event_target:primitive_civ = { has_country_flag = atomic_age is_gestalt = yes }
 		}
 	}
-
 	desc = { # Early Space Age
 		text = action.6.desc_04
 		trigger = {
 			event_target:primitive_civ = { has_country_flag = early_space_age is_gestalt = no }
 		}
 	}
-
 	desc = { # Early Space Age
 		text = action.6.desc_04_hive
 		trigger = {
-			event_target:primitive_civ = {
-				has_country_flag = early_space_age
-				is_gestalt = yes
-			}
+			event_target:primitive_civ = { has_country_flag = early_space_age is_gestalt = yes }
 		}
 	}
 
@@ -3742,7 +3587,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = INTERESTING
 		hidden_effect = {
@@ -3806,24 +3650,22 @@ country_event = {
 country_event = {
 	id = action.11
 	title = "action.11.name"
-
 	desc = {
 		text = "action.11.desc"
 		trigger = {
-			NOT = {
-				fromfrom = {
-					has_relation_flag = { who = root flag = AbandonedRefugees }
-				}
-			}
+			# NOT = {  # Vfix removed in v2.2
+			# 	fromfrom = {
+			# 		has_relation_flag = { who = root flag = AbandonedRefugees }
+			# 	}
+			# }
 		}
 	}
-
 	desc = {
 		text = action.11.abandoned.desc
 		trigger = {
-			fromfrom = {
-				has_relation_flag = { who = root flag = AbandonedRefugees }
-			}
+			# fromfrom = { # Vfix removed in v2.2
+			# 	has_relation_flag = { who = root flag = AbandonedRefugees }
+			# }
 		}
 	}
 
@@ -3838,6 +3680,7 @@ country_event = {
 			OR = {
 				is_country_type = default
 				is_country_type = enclave
+				is_mercenary = yes # Vfix
 			}
 		}
 		NOT = { has_country_flag = first_contact_completed@fromfrom }
@@ -3850,14 +3693,16 @@ country_event = {
 		}
 		country_event = { id = distar.238 days = 1 }
 	}
-
 	after = {
 		hidden_effect = {
-			if = {
-				limit = {
-					fromfrom = { is_country_type = enclave }
-				}
-				fromfrom = {
+			event_target:contact_empire = {
+				if = {
+					limit = {
+						OR = {
+							is_country_type = enclave
+							is_mercenary = yes # Vfix
+						}
+					}
 					switch = {
 						trigger = has_country_flag
 						trader_enclave_country = {
@@ -3887,16 +3732,25 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
-		trigger = {
-			NOT = {
-				fromfrom = {
-					has_relation_flag = { who = root flag = AbandonedRefugees }
+		# trigger = {
+		# 	NOT = { # Vfix removed in v2.2
+		# 		fromfrom = {
+		# 			has_relation_flag = { who = root flag = AbandonedRefugees }
+		# 		}
+		# 	}
+		# }
+		name = {
+			trigger = {
+				if = {
+					limit = { is_xenophobe = no }
+					text = WORRYING
+				}
+				else = {
+					text = action.11.a
 				}
 			}
 		}
-		name = "action.11.a"
 		if = {
 			limit = { is_xenophile = yes }
 			add_monthly_resource_mult = {
@@ -3919,65 +3773,64 @@ country_event = {
 		}
 	}
 
-	option = {
-		trigger = {
-			fromfrom = {
-				has_relation_flag = { who = root flag = AbandonedRefugees }
-			}
-			is_xenophobe = no
-		}
-		name = WORRYING
-		if = {
-			limit = { is_xenophile = yes }
-			add_monthly_resource_mult = {
-				resource = influence
-				value = @tier2influencecontactxenophile
-				min = @tier2influencecontactmin
-				max = @tier2influencecontactmax
-			}
-		}
-		else = {
-			add_monthly_resource_mult = {
-				resource = influence
-				value = @tier2influencecontact
-				min = @tier2influencecontactmin
-				max = @tier2influencecontactmax
-			}
-		}
-		hidden_effect = {
-			country_event = { id = action.1 }
-		}
-	}
-
-	option = {
-		trigger = {
-			fromfrom = {
-				has_relation_flag = { who = root flag = AbandonedRefugees }
-			}
-			is_xenophobe = yes
-		}
-		name = OK
-		if = {
-			limit = { is_xenophile = yes }
-			add_monthly_resource_mult = {
-				resource = influence
-				value = @tier2influencecontactxenophile
-				min = @tier2influencecontactmin
-				max = @tier2influencecontactmax
-			}
-		}
-		else = {
-			add_monthly_resource_mult = {
-				resource = influence
-				value = @tier2influencecontact
-				min = @tier2influencecontactmin
-				max = @tier2influencecontactmax
-			}
-		}
-		hidden_effect = {
-			country_event = { id = action.1 }
-		}
-	}
+	# option = { # Vfix redundant
+	# 	trigger = {
+	# 		# fromfrom = { # Vfix removed in v2.2
+	# 		# 	has_relation_flag = { who = root flag = AbandonedRefugees }
+	# 		# }
+	# 		is_xenophobe = no
+	# 	}
+	# 	name = WORRYING
+	# 	if = {
+	# 		limit = { is_xenophile = yes }
+	# 		add_monthly_resource_mult = {
+	# 			resource = influence
+	# 			value = @tier2influencecontactxenophile
+	# 			min = @tier2influencecontactmin
+	# 			max = @tier2influencecontactmax
+	# 		}
+	# 	}
+	# 	else = {
+	# 		add_monthly_resource_mult = {
+	# 			resource = influence
+	# 			value = @tier2influencecontact
+	# 			min = @tier2influencecontactmin
+	# 			max = @tier2influencecontactmax
+	# 		}
+	# 	}
+	# 	hidden_effect = {
+	# 		country_event = { id = action.1 }
+	# 	}
+	# }
+	# option = { # Vfix double
+	# 	trigger = {
+	# 		fromfrom = { # Vfix removed in v2.2
+	# 			has_relation_flag = { who = root flag = AbandonedRefugees }
+	# 		}
+	# 		is_xenophobe = yes
+	# 	}
+	# 	name = OK
+	# 	if = {
+	# 		limit = { is_xenophile = yes }
+	# 		add_monthly_resource_mult = {
+	# 			resource = influence
+	# 			value = @tier2influencecontactxenophile
+	# 			min = @tier2influencecontactmin
+	# 			max = @tier2influencecontactmax
+	# 		}
+	# 	}
+	# 	else = {
+	# 		add_monthly_resource_mult = {
+	# 			resource = influence
+	# 			value = @tier2influencecontact
+	# 			min = @tier2influencecontactmin
+	# 			max = @tier2influencecontactmax
+	# 		}
+	# 	}
+	# 	hidden_effect = {
+	# 		country_event = { id = action.1 }
+	# 	}
+	# }
 }
 
 # Primitive planet surveyed
@@ -4103,9 +3956,7 @@ ship_event = {
 		if = {
 			limit = {
 				exists = event_target:primitive_civ
-				event_target:primitive_civ = {
-					has_country_flag = primitive_cousins_of_@root.owner
-				}
+				event_target:primitive_civ = { has_country_flag = primitive_cousins_of_@root.owner }
 			}
 			# owner = { country_event = { id = origin.410 } }
 			break = yes
@@ -4117,24 +3968,22 @@ ship_event = {
 country_event = {
 	id = action.13
 	title = "action.13.name"
-
 	desc = {
 		text = "action.13.desc"
 		trigger = {
-			NOT = {
-				from = {
-					has_relation_flag = { who = root flag = AbandonedRefugees }
-				}
-			}
+			# NOT = { # Vfix removed in v2.2
+			# 	from = {
+			# 		has_relation_flag = { who = root flag = AbandonedRefugees }
+			# 	}
+			# }
 		}
 	}
-
 	desc = {
 		text = "action.13.abandoned.desc"
 		trigger = {
-			from = {
-				has_relation_flag = { who = root flag = AbandonedRefugees }
-			}
+			# from = { # Vfix removed in v2.2
+			# 	has_relation_flag = { who = root flag = AbandonedRefugees }
+			# }
 		}
 	}
 
@@ -4157,38 +4006,35 @@ country_event = {
 		from = { save_event_target_as = contact_empire }
 		country_event = { id = distar.239 days = 1 }
 	}
-
 	option = {
 		trigger = {
-			NOT = {
-				from = {
-					has_relation_flag = { who = root flag = AbandonedRefugees }
-				}
-			}
+			# NOT = { # Vfix removed in v2.2
+			# 	from = {
+			# 		has_relation_flag = { who = root flag = AbandonedRefugees }
+			# 	}
+			# }
 		}
 		name = "action.13.a"
 		hidden_effect = {
 			country_event = { id = action.1 }
 		}
 	}
-
 	option = {
 		trigger = {
-			from = {
-				has_relation_flag = { who = root flag = AbandonedRefugees }
-			}
+			# from = { # Vfix removed in v2.2
+			# 	has_relation_flag = { who = root flag = AbandonedRefugees }
+			# }
 		}
 		name = WORRYING
 		hidden_effect = {
 			country_event = { id = action.1 }
 		}
 	}
-
 	option = {
 		trigger = {
-			from = {
-				has_relation_flag = { who = root flag = AbandonedRefugees }
-			}
+			# from = {
+			# 	has_relation_flag = { who = root flag = AbandonedRefugees }
+			# }
 			is_xenophobe = yes
 		}
 		name = "action.13.c"
@@ -4227,7 +4073,7 @@ country_event = {
 				add_modifier = { modifier = planet_culture_shock years = 10 }
 			}
 		}
-		fromfrom = { set_owner = ROOT }
+		fromfrom = { set_owner = root }
 		every_playable_country = {
 			limit = {
 				has_communications = root
@@ -4255,7 +4101,6 @@ country_event = {
 country_event = {
 	id = action.140
 	title = action.14.name
-
 	desc = { # Non-Purge Policy Regular Empires
 		text = action.14.desc
 		trigger = {
@@ -4267,7 +4112,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = { # Purge Policy Regular Empires
 		text = action.14.desc.purge
 		trigger = {
@@ -4277,22 +4121,18 @@ country_event = {
 			}
 		}
 	}
-
 	desc = { # Servitors
 		text = action.14.desc.serv
 		trigger = { has_civic = civic_machine_servitor }
 	}
-
 	desc = { # Assimilators
 		text = action.14.desc.assim
 		trigger = { has_civic = civic_machine_assimilator }
 	}
-
 	desc = { # Exterminators
 		text = action.14.desc.term
 		trigger = { has_civic = civic_machine_terminator }
 	}
-
 	desc = { # Purge Policy MIs
 		text = action.14.desc.mach.purge
 		trigger = {
@@ -4307,7 +4147,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = { # Enslave Policy MIs
 		text = action.14.desc.mach.slave
 		trigger = {
@@ -4322,7 +4161,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = { # Purge Policy Hiveminds
 		text = action.14.desc.hive.purge
 		trigger = {
@@ -4332,7 +4170,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = { # Enslave Policy Hiveminds
 		text = action.14.desc.hive.slave
 		trigger = {
@@ -4456,19 +4293,16 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = action.14.a.phobe
 		custom_tooltip = action.14.a.tooltip
 		trigger = { is_xenophobe = yes }
 	}
-
 	option = {
 		name = action.14.a.military
 		custom_tooltip = action.14.a.tooltip
 		trigger = { is_militarist = yes is_xenophobe = no }
 	}
-
 	option = {
 		name = action.14.a.spirit
 		custom_tooltip = action.14.a.tooltip
@@ -4478,7 +4312,6 @@ country_event = {
 			is_militarist = no
 		}
 	}
-
 	option = {
 		name = action.14.a.material
 		custom_tooltip = action.14.a.tooltip
@@ -4488,7 +4321,6 @@ country_event = {
 			is_militarist = no
 		}
 	}
-
 	option = {
 		name = action.14.a
 		custom_tooltip = action.14.a.tooltip
@@ -4501,27 +4333,22 @@ country_event = {
 			is_hive_empire = no
 		}
 	}
-
 	option = {
 		name = action.14.a
 		trigger = { is_hive_empire = yes }
 	}
-
 	option = {
 		name = action.14.a.serv
 		trigger = { has_civic = civic_machine_servitor }
 	}
-
 	option = {
 		name = action.14.a.assim
 		trigger = { has_civic = civic_machine_assimilator }
 	}
-
 	option = {
 		name = action.14.a.term
 		trigger = { has_civic = civic_machine_terminator }
 	}
-
 	option = {
 		name = action.14.a.mach
 		trigger = {
@@ -4570,31 +4397,33 @@ planet_event = {
 	trigger = {
 		exists = fromfrom # crisis.202 can remove the last pop
 		fromfrom = {
-			is_robot_pop_group = no
 			is_sapient = yes
 			NOR = {
+				is_robot_pop_group = yes
 				has_trait = "trait_hive_mind"
+			}
+			NAND = {
 				has_citizenship_type = { country = from type = citizenship_purge }
 				has_purge_type = { country = from type = purge_neutering }
-				has_purge_type = { country = root.from type = purge_necrophage }
+			}
+			NOR = {
+				has_purge_type = { country = from type = purge_necrophage }
 				AND = {
-					has_purge_type = { country = root.from type = purge_cosmogenesis_lathe_resettle }
-					NOT = {
-						planet = { has_designation = col_cosmogenesis_world }
-					}
+					has_purge_type = { country = from type = purge_cosmogenesis_lathe_resettle }
+					NOT = { planet = { has_designation = col_cosmogenesis_world } }
 				}
 			}
 		}
-		is_controlled_by = FROM
+		is_controlled_by = from
 	}
 
 	immediate = {
 		every_country = {
 			limit = {
-				has_communications = FROM
+				has_communications = from
 				NOR = {
-					is_same_empire = FROM
-					is_same_species = FROMFROM
+					is_same_empire = from
+					is_same_species = fromfrom
 					has_ai_personality_behaviour = purger
 				}
 				OR = {
@@ -4602,30 +4431,30 @@ planet_event = {
 					has_ai_personality = awakened_fallen_empire_xenophile
 				}
 				has_intel_level = {
-					who = FROM
+					who = from
 					category = economy
 					level >= 1
 				}
 			}
 			while = {
 				count = root.local_pop_amount
-				add_opinion_modifier = { who = FROM modifier = opinion_genocidal }
+				add_opinion_modifier = { who = from modifier = opinion_genocidal }
 			}
 		}
 		every_country = {
 			limit = {
-				has_communications = FROM
-				NOT = { is_same_empire = FROM }
-				is_same_species = FROMFROM
+				has_communications = from
+				NOT = { is_same_empire = from }
+				is_same_species = fromfrom
 				has_intel_level = {
-					who = FROM
+					who = from
 					category = economy
 					level >= 1
 				}
 			}
 			while = {
 				count = root.local_pop_amount
-				add_opinion_modifier = { who = FROM modifier = opinion_genocidal_our_species }
+				add_opinion_modifier = { who = from modifier = opinion_genocidal_our_species }
 			}
 		}
 	}
@@ -4646,7 +4475,7 @@ planet_event = {
 				has_purge_type = { country = root.from type = purge_processing }
 			}
 		}
-		is_controlled_by = FROM
+		is_controlled_by = from
 	}
 
 	immediate = {
@@ -4677,9 +4506,7 @@ planet_event = {
 					}
 				}
 				else_if = {
-					limit = {
-						fromfrom = { is_lithoid = yes }
-					}
+					limit = { fromfrom = { is_lithoid = yes } }
 					from = {
 						add_resource = {
 							minerals = 0.32
@@ -4688,9 +4515,7 @@ planet_event = {
 					}
 				}
 				else_if = {
-					limit = {
-						fromfrom = { is_infernal = yes }
-					}
+					limit = { fromfrom = { is_infernal = yes } }
 					from = {
 						add_resource = {
 							alloys = 0.12
@@ -4772,9 +4597,7 @@ planet_event = {
 					}
 				}
 				else_if = {
-					limit = {
-						fromfrom = { is_lithoid = yes }
-					}
+					limit = { fromfrom = { is_lithoid = yes } }
 					from = {
 						add_resource = {
 							minerals = 0.24
@@ -4783,9 +4606,7 @@ planet_event = {
 					}
 				}
 				else_if = {
-					limit = {
-						fromfrom = { is_infernal = yes }
-					}
+					limit = { fromfrom = { is_infernal = yes } }
 					from = {
 						add_resource = {
 							alloys = 0.12
@@ -4857,9 +4678,7 @@ planet_event = {
 					}
 				}
 				else_if = {
-					limit = {
-						fromfrom = { is_lithoid = yes }
-					}
+					limit = { fromfrom = { is_lithoid = yes } }
 					from = {
 						add_resource = {
 							minerals = 0.16
@@ -4868,9 +4687,7 @@ planet_event = {
 					}
 				}
 				else_if = {
-					limit = {
-						fromfrom = { is_infernal = yes }
-					}
+					limit = { fromfrom = { is_infernal = yes } }
 					from = {
 						add_resource = {
 							alloys = 0.12
@@ -5179,15 +4996,13 @@ country_event = {
 	id = action.37
 	title = action.37.name
 	message_desc = action.37.message
-
 	picture_event_data = {
-		portrait = FROM
-		planet_background = FROM
-		graphical_culture = FROM
-		city_level = FROM
+		portrait = from
+		planet_background = from
+		graphical_culture = from
+		city_level = from
 		room = FROM.ruler
 	}
-
 	desc = {
 		trigger = {
 			hidden:from = {
@@ -5197,14 +5012,12 @@ country_event = {
 		}
 		text = action.37.desc.ketlings
 	}
-
 	desc = {
 		trigger = {
 			hidden:from = { is_megacorp = yes }
 		}
 		text = action.37.desc.corporate
 	}
-
 	desc = {
 		trigger = {
 			hidden:from = {
@@ -5274,7 +5087,7 @@ country_event = {
 		OR = {
 			AND = {
 				fromfrom = {
-					any_attacker = { is_same_value = root }
+					any_attacker = { is_same_empire = root }
 				}
 				from = {
 					any_owned_planet = {
@@ -5289,7 +5102,7 @@ country_event = {
 			}
 			AND = {
 				fromfrom = {
-					any_defender = { is_same_value = root }
+					any_defender = { is_same_empire = root }
 				}
 				from = {
 					any_owned_planet = {
@@ -5304,7 +5117,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = action.37.a
 	}
@@ -5315,15 +5127,13 @@ country_event = {
 	id = action.38
 	title = action.38.name
 	message_desc = action.38.message
-
 	picture_event_data = {
-		portrait = FROM
-		planet_background = FROM
-		graphical_culture = FROM
-		city_level = FROM
+		portrait = from
+		planet_background = from
+		graphical_culture = from
+		city_level = from
 		room = FROM.ruler
 	}
-
 	desc = {
 		trigger = {
 			hidden:from = {
@@ -5333,14 +5143,12 @@ country_event = {
 		}
 		text = action.38.desc.ketlings
 	}
-
 	desc = {
 		trigger = {
 			hidden:from = { is_megacorp = yes }
 		}
 		text = action.38.desc.corporate
 	}
-
 	desc = {
 		trigger = {
 			hidden:from = {
@@ -5404,13 +5212,10 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = {
 			trigger = {
-				NOT = {
-					from = { has_ai_personality = awakened_fallen_empire_hive_mind_war }
-				}
+				NOT = { from = { has_ai_personality = awakened_fallen_empire_hive_mind_war } }
 			}
 			text = action.38.a
 		}
@@ -5428,15 +5233,13 @@ country_event = {
 	id = action.39
 	title = action.39.name
 	message_desc = action.39.message
-
 	picture_event_data = {
-		portrait = FROM
-		planet_background = FROM
-		graphical_culture = FROM
-		city_level = FROM
+		portrait = from
+		planet_background = from
+		graphical_culture = from
+		city_level = from
 		room = FROM.ruler
 	}
-
 	desc = {
 		trigger = {
 			hidden:from.owner = {
@@ -5446,7 +5249,6 @@ country_event = {
 		}
 		text = action.39.desc.ketlings
 	}
-
 	desc = {
 		trigger = {
 			hidden:from.owner = {
@@ -5496,7 +5298,6 @@ country_event = {
 	trigger = {
 		is_ai = no
 	}
-
 	option = {
 		name = action.39.a
 	}
@@ -5574,7 +5375,6 @@ country_event = {
 			war_begun_num_fleets_gone_mia = { who = prev value > 0 }
 		}
 	}
-
 	desc = {
 		trigger = {
 			text = "action.41.desc.a"
@@ -5591,7 +5391,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "OK"
 	}
@@ -5832,7 +5631,7 @@ country_event = {
 			every_war_participant = {
 				limit = {
 					fromfrom = {
-						is_war_participant = { who = prev side = Root }
+						is_war_participant = { who = prev side = root }
 					}
 				}
 				fromfrom = {
@@ -5934,15 +5733,13 @@ country_event = {
 	id = action.48
 	title = action.37.name
 	message_desc = action.37.message
-
 	picture_event_data = {
-		portrait = FROM
-		planet_background = FROM
-		graphical_culture = FROM
-		city_level = FROM
+		portrait = from
+		planet_background = from
+		graphical_culture = from
+		city_level = from
 		room = FROM.ruler
 	}
-
 	desc = {
 		trigger = {
 			from = { has_generic_government = yes is_galactic_emperor = no }
@@ -5951,7 +5748,6 @@ country_event = {
 		text = action.48.desc.generic.2
 		text = action.48.desc.generic.3
 	}
-
 	desc = {
 		trigger = {
 			from = { has_spiritualist_government = yes is_galactic_emperor = no }
@@ -5960,7 +5756,6 @@ country_event = {
 		text = action.48.desc.spiritualist.2
 		text = action.48.desc.spiritualist.3
 	}
-
 	desc = {
 		trigger = {
 			from = { has_militarist_government = yes is_galactic_emperor = no }
@@ -5969,7 +5764,6 @@ country_event = {
 		text = action.48.desc.militarist.2
 		text = action.48.desc.militarist.3
 	}
-
 	desc = {
 		trigger = {
 			from = { has_pacifist_government = yes is_galactic_emperor = no }
@@ -5978,7 +5772,6 @@ country_event = {
 		text = action.48.desc.pacifist.2
 		text = action.48.desc.pacifist.3
 	}
-
 	desc = {
 		trigger = {
 			from = { has_materialist_government = yes is_galactic_emperor = no }
@@ -5987,7 +5780,6 @@ country_event = {
 		text = action.48.desc.materialist.2
 		text = action.48.desc.materialist.3
 	}
-
 	desc = {
 		trigger = {
 			from = { is_megacorp = yes is_galactic_emperor = no }
@@ -5996,7 +5788,6 @@ country_event = {
 		text = action.48.desc.megacorp.2
 		text = action.48.desc.megacorp.3
 	}
-
 	desc = {
 		trigger = {
 			from = { is_hive_empire = yes is_galactic_emperor = no }
@@ -6005,7 +5796,6 @@ country_event = {
 		text = action.48.desc.hive.2
 		text = action.48.desc.hive.3
 	}
-
 	desc = {
 		trigger = {
 			from = { is_machine_empire = yes is_galactic_emperor = no }
@@ -6014,35 +5804,30 @@ country_event = {
 		text = action.48.desc.machine.2
 		text = action.48.desc.machine.3
 	}
-
 	desc = {
 		trigger = {
 			from = { has_ai_personality = fallen_empire_spiritualist }
 		}
 		text = action.48.desc.fe_spiritualist
 	}
-
 	desc = {
 		trigger = {
 			from = { has_ai_personality = fallen_empire_materialist }
 		}
 		text = action.48.desc.fe_materialist
 	}
-
 	desc = {
 		trigger = {
 			from = { has_ai_personality = fallen_empire_xenophobe }
 		}
 		text = action.48.desc.fe_xenophobe
 	}
-
 	desc = {
 		trigger = {
 			from = { has_ai_personality = fallen_empire_xenophile }
 		}
 		text = action.48.desc.fe_xenophile
 	}
-
 	desc = {
 		trigger = {
 			from = {
@@ -6055,14 +5840,12 @@ country_event = {
 		}
 		text = action.37.desc.fme
 	}
-
 	desc = {
 		trigger = {
 			from = { is_galactic_emperor = yes }
 		}
 		text = action.48.desc.gal_emperor
 	}
-
 	desc = { # Fallback
 		trigger = {
 			from = {
@@ -6105,7 +5888,7 @@ country_event = {
 		OR = {
 			AND = {
 				fromfrom = {
-					any_attacker = { is_same_value = root }
+					any_attacker = { is_same_empire = root }
 				}
 				NOT = {
 					from = {
@@ -6122,7 +5905,7 @@ country_event = {
 			}
 			AND = {
 				fromfrom = {
-					any_defender = { is_same_value = root }
+					any_defender = { is_same_empire = root }
 				}
 				NOT = {
 					from = {
@@ -6139,47 +5922,38 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = action.48.a
 		trigger = { has_generic_government = yes }
 	}
-
 	option = {
 		name = action.48.b
 		trigger = { has_spiritualist_government = yes }
 	}
-
 	option = {
 		name = action.48.c
 		trigger = { has_militarist_government = yes }
 	}
-
 	option = {
 		name = action.48.d
 		trigger = { has_pacifist_government = yes }
 	}
-
 	option = {
 		name = action.48.e
 		trigger = { has_materialist_government = yes }
 	}
-
 	option = {
 		name = action.48.f
 		trigger = { is_megacorp = yes }
 	}
-
 	option = {
 		name = action.48.g
 		trigger = { is_hive_empire = yes }
 	}
-
 	option = {
 		name = action.48.h
 		trigger = { is_machine_empire = yes }
 	}
-
 	option = { # Fallback
 		name = action.48.i
 		trigger = {
@@ -6303,9 +6077,7 @@ country_event = {
 				limit = {
 					reverse_has_relation_flag = { who = prev flag = targeted_by_fe_hive_war_task }
 				}
-				create_happy_hive_fe_task_message = {
-					FALLEN_EMPIRE = event_target:fallen_empire_hive_war
-				}
+				create_happy_hive_fe_task_message = { FALLEN_EMPIRE = event_target:fallen_empire_hive_war }
 			}
 		}
 		every_subject = {
@@ -6428,16 +6200,13 @@ country_event = {
 	show_sound = event_default
 	picture = "GFX_evt_city_ruins"
 	is_triggered_only = yes
-
 	option = {
 		name = OK
 	}
-
 	option = {
 		name = "action.62.memorialist.a"
 		exclusive_trigger = { is_memorialist_empire = yes }
 	}
-
 	after = {
 		if = {
 			limit = { has_country_flag = payback_stolen_revenge }
@@ -6458,11 +6227,9 @@ country_event = {
 	show_sound = event_default
 	picture = "GFX_evt_city_ruins"
 	is_triggered_only = yes
-
 	option = {
 		name = OK
 	}
-
 	option = {
 		name = "action.62.memorialist.a"
 		exclusive_trigger = {
@@ -6686,7 +6453,6 @@ country_event = {
 	id = action.71
 	title = action.71.name
 	desc = action.71.desc
-
 	inline_script = {
 		script = events/biogenesis_event_art
 		OWNER = owner
@@ -6720,7 +6486,6 @@ country_event = {
 			kill_leader = { show_notification = no }
 		}
 	}
-
 	option = {
 		name = UNFORTUNATE
 	}
@@ -6760,7 +6525,6 @@ country_event = {
 			kill_leader = { show_notification = no }
 		}
 	}
-
 	option = {
 		name = UNFORTUNATE
 	}
@@ -6797,7 +6561,6 @@ country_event = {
 			kill_leader = { show_notification = no }
 		}
 	}
-
 	option = {
 		name = UNFORTUNATE
 	}
@@ -6839,7 +6602,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = UNFORTUNATE
 	}
@@ -6917,9 +6679,7 @@ planet_event = {
 			has_orbital_bombardment_stance = armageddon
 			has_orbital_bombardment_stance = pox
 		}
-		NOT = {
-			from = { is_country_type = awakened_marauders }
-		}
+		NOT = { from = { is_country_type = awakened_marauders } }
 		habitable_planet = yes
 		# Vfix https://forum.paradoxplaza.com/forum/threads/1862981/
 		# Needs to be keept because of on_planet_bombarded
@@ -6972,7 +6732,6 @@ country_event = {
 	show_sound = event_super_explosion
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = action.82.a
 		custom_tooltip = bombed_to_tomb_world
@@ -6995,7 +6754,6 @@ country_event = {
 			complete_crisis_objective = crisobj_destroy_worlds
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		custom_tooltip = bombed_to_tomb_world
@@ -7144,7 +6902,6 @@ country_event = {
 	show_sound = event_default
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = UNFORTUNATE
 		tooltip = {
@@ -7179,7 +6936,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = OK
 		tooltip = {
@@ -7266,10 +7022,8 @@ event = {
 		any_country = {
 			is_default_or_fallen = yes
 			any_owned_planet = {
-				is_controlled_by = PREV
-				NOT = {
-					solar_system = { exists = starbase }
-				}
+				is_controlled_by = prev
+				NOT = { solar_system = { exists = starbase } }
 			}
 		}
 	}
@@ -7486,7 +7240,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = OK
 		tooltip = {
@@ -7660,16 +7413,12 @@ ship_event = {
 	immediate = {
 		if = {
 			limit = {
-				NOT = {
-					owner = { has_country_flag = strategic_resource_found }
-				}
+				NOT = { owner = { has_country_flag = strategic_resource_found } }
 			}
 			owner = { set_country_flag = strategic_resource_found }
 			if = {
 				limit = {
-					NOT = {
-						from = { is_scope_type = country }
-					}
+					NOT = { from = { is_scope_type = country } }
 				}
 				if = {
 					limit = {
@@ -7678,10 +7427,7 @@ ship_event = {
 							has_resource = { type = sr_zro amount > 0 }
 						}
 					}
-					ship_event = {
-						id = action.942
-						scopes = { from = from }
-					}
+					ship_event = { id = action.942 scopes = { from = from } }
 				}
 				else_if = {
 					limit = {
@@ -7690,16 +7436,10 @@ ship_event = {
 							has_resource = { type = sr_zro amount > 0 }
 						}
 					}
-					ship_event = {
-						id = action.943
-						scopes = { from = from }
-					}
+					ship_event = { id = action.943 scopes = { from = from } }
 				}
 				else = {
-					ship_event = {
-						id = action.94
-						scopes = { from = from }
-					}
+					ship_event = { id = action.94 scopes = { from = from } }
 				}
 			}
 			else = {
@@ -7710,10 +7450,7 @@ ship_event = {
 							has_resource = { type = sr_zro amount > 0 }
 						}
 					}
-					ship_event = {
-						id = action.942
-						scopes = { from = fromfrom }
-					}
+					ship_event = { id = action.942 scopes = { from = fromfrom } }
 				}
 				else_if = {
 					limit = {
@@ -7722,16 +7459,10 @@ ship_event = {
 							has_resource = { type = sr_zro amount > 0 }
 						}
 					}
-					ship_event = {
-						id = action.943
-						scopes = { from = fromfrom }
-					}
+					ship_event = { id = action.943 scopes = { from = fromfrom } }
 				}
 				else = {
-					ship_event = {
-						id = action.94
-						scopes = { from = fromfrom }
-					}
+					ship_event = { id = action.94 scopes = { from = fromfrom } }
 				}
 			}
 		}
@@ -7839,7 +7570,6 @@ ship_event = {
 	immediate = {
 		owner = { set_country_flag = zro_found }
 	}
-
 	option = {
 		name = action.942.a
 		custom_tooltip = action.92.zro.tooltip
@@ -7859,7 +7589,6 @@ ship_event = {
 	immediate = {
 		owner = { set_country_flag = zro_found }
 	}
-
 	option = {
 		name = action.92.a
 		owner = {
@@ -7876,7 +7605,6 @@ ship_event = {
 ship_event = {
 	id = action.94
 	title = action.92.name
-
 	desc = {
 		trigger = {
 			success_text = {
@@ -8070,7 +7798,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = action.92.a
 		from = {

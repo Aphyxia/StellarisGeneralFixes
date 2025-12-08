@@ -22,13 +22,11 @@ col_city = {
 			is_planet_class = pc_nanotech
 		}
 	}
-
 	planet_modifier = {
 		planet_structures_upkeep_mult = -0.10
 		planet_district_city_build_speed_mult = 0.25
 		planet_jobs_trade_produces_mult = 0.20
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -36,7 +34,6 @@ col_city = {
 		}
 		planet_jobs_trade_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness_low has_designation = col_city }
 		modifier = {
@@ -66,17 +63,14 @@ col_mining = {
 			is_planet_class = pc_nanotech
 		}
 	}
-
 	planet_modifier = {
 		planet_district_mining_build_speed_mult = 0.25
 		planet_miners_produces_mult = 0.25
 	}
-
 	triggered_planet_modifier = {
 		potential = { is_planet_class = pc_volcanic }
 		planet_district_melting_build_speed_mult = 0.25
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -90,7 +84,6 @@ col_mining = {
 		}
 		planet_jobs_worker_produces_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -104,7 +97,6 @@ col_mining = {
 		}
 		planet_jobs_simple_drone_produces_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -112,7 +104,6 @@ col_mining = {
 		}
 		planet_miners_produces_mult = 0.1
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_mining }
 		modifier = { planet_size > @rural_max_size add = @rural_over_max_size }
@@ -180,12 +171,10 @@ col_farming = {
 			is_planet_class = pc_nanotech
 		}
 	}
-
 	planet_modifier = {
 		planet_district_farming_build_speed_mult = 0.25
 		planet_farmers_produces_mult = 0.25
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -199,7 +188,6 @@ col_farming = {
 		}
 		planet_jobs_worker_produces_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -213,7 +201,6 @@ col_farming = {
 		}
 		planet_jobs_simple_drone_produces_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -221,7 +208,6 @@ col_farming = {
 		}
 		planet_farmers_produces_mult = 0.1
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_farming }
 		modifier = { planet_size > @rural_max_size add = @rural_over_max_size }
@@ -272,17 +258,14 @@ col_generator = {
 			is_planet_class = pc_nanotech
 		}
 	}
-
 	planet_modifier = {
 		planet_district_generator_build_speed_mult = 0.25
 		planet_technician_produces_mult = 0.25
 	}
-
 	triggered_planet_modifier = {
 		potential = { is_planet_class = pc_volcanic }
 		planet_district_geothermal_build_speed_mult = 0.25
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -296,7 +279,6 @@ col_generator = {
 		}
 		planet_jobs_worker_produces_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -310,7 +292,6 @@ col_generator = {
 		}
 		planet_jobs_simple_drone_produces_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -318,7 +299,6 @@ col_generator = {
 		}
 		planet_technician_produces_mult = 0.1
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_generator }
 		modifier = { planet_size > @rural_max_size add = @rural_over_max_size }
@@ -372,16 +352,13 @@ col_hive = {
 			uses_district_set = habitat
 			uses_district_set = cosmogenesis_world
 		}
-
 		owner_or_space_owner = { is_hive_empire = yes is_wilderness_empire = no }
 	}
-
 	planet_modifier = {
 		planet_structures_upkeep_mult = -0.10
 		planet_district_hive_build_speed_mult = 0.25
 		planet_jobs_trade_produces_mult = 0.20
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -389,7 +366,6 @@ col_hive = {
 		}
 		planet_jobs_trade_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_hive }
 		complex_trigger_modifier = {
@@ -420,13 +396,11 @@ col_nexus = {
 			is_planet_class = pc_nanotech
 		}
 	}
-
 	planet_modifier = {
 		planet_structures_upkeep_mult = -0.10
 		planet_district_nexus_build_speed_mult = 0.25
 		planet_jobs_trade_produces_mult = 0.20
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -434,7 +408,6 @@ col_nexus = {
 		}
 		planet_jobs_trade_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_nexus }
 		complex_trigger_modifier = {
@@ -463,19 +436,16 @@ col_industrial = {
 			is_planet_class = pc_nanotech
 		}
 	}
-
 	planet_modifier = {
 		planet_artisans_upkeep_mult = -0.10
 		planet_metallurgists_upkeep_mult = -0.10
 	}
-
 	triggered_planet_modifier = {
 		potential = { uses_district_set = ring_world }
 		logistic_growth_mult = 0.1
 		planet_pop_assembly_mult = 0.1
 		bonus_pop_growth_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -488,7 +458,6 @@ col_industrial = {
 		planet_artisans_produces_mult = 0.0375
 		planet_metallurgists_produces_mult = 0.0375
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -497,7 +466,6 @@ col_industrial = {
 		planet_artisans_produces_mult = 0.05
 		planet_metallurgists_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_industrial }
 		modifier = {
@@ -534,18 +502,15 @@ col_foundry = {
 			is_planet_class = pc_nanotech
 		}
 	}
-
 	planet_modifier = {
 		planet_metallurgists_upkeep_mult = -0.20
 	}
-
 	triggered_planet_modifier = {
 		potential = { uses_district_set = ring_world }
 		logistic_growth_mult = 0.1
 		planet_pop_assembly_mult = 0.1
 		bonus_pop_growth_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -557,7 +522,6 @@ col_foundry = {
 		}
 		planet_metallurgists_produces_mult = 0.05
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -565,7 +529,6 @@ col_foundry = {
 		}
 		planet_metallurgists_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_foundry }
 		modifier = {
@@ -595,18 +558,15 @@ col_factory = {
 			is_planet_class = pc_nanotech
 		}
 	}
-
 	planet_modifier = {
 		planet_artisans_upkeep_mult = -0.20
 	}
-
 	triggered_planet_modifier = {
 		potential = { uses_district_set = ring_world }
 		logistic_growth_mult = 0.1
 		planet_pop_assembly_mult = 0.1
 		bonus_pop_growth_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -618,7 +578,6 @@ col_factory = {
 		}
 		planet_artisans_produces_mult = 0.05
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -626,7 +585,6 @@ col_factory = {
 		}
 		planet_artisans_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_factory }
 		modifier = {
@@ -657,19 +615,16 @@ col_bureau = {
 			is_planet_class = pc_nanotech
 		}
 	}
-
 	planet_modifier = {
 		planet_bureaucrats_produces_mult = 0.10
 		planet_bureaucrats_upkeep_mult = -0.10
 	}
-
 	triggered_planet_modifier = {
 		potential = { uses_district_set = ring_world }
 		logistic_growth_mult = 0.1
 		planet_pop_assembly_mult = 0.1
 		bonus_pop_growth_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner.federation
@@ -677,7 +632,6 @@ col_bureau = {
 		}
 		job_bureaucrat_per_pop = 0.04
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -685,7 +639,6 @@ col_bureau = {
 		}
 		planet_bureaucrats_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_bureau }
 		modifier = {
@@ -721,19 +674,16 @@ col_bureau_spiritualist = {
 			is_planet_class = pc_nanotech
 		}
 	}
-
 	planet_modifier = {
 		planet_bureaucrats_produces_mult = 0.10
 		planet_bureaucrats_upkeep_mult = -0.10
 	}
-
 	triggered_planet_modifier = {
 		potential = { uses_district_set = ring_world }
 		logistic_growth_mult = 0.1
 		planet_pop_assembly_mult = 0.1
 		bonus_pop_growth_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner.federation
@@ -741,7 +691,6 @@ col_bureau_spiritualist = {
 		}
 		job_bureaucrat_per_pop = 0.04
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_bureau_spiritualist }
 		modifier = {
@@ -770,19 +719,16 @@ col_bureau_hive = {
 			is_capital = yes
 		}
 	}
-
 	planet_modifier = {
 		planet_bureaucrats_produces_mult = 0.10
 		planet_bureaucrats_upkeep_mult = -0.10
 	}
-
 	triggered_planet_modifier = {
 		potential = { uses_district_set = ring_world }
 		logistic_growth_mult = 0.1
 		planet_pop_assembly_mult = 0.1
 		bonus_pop_growth_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -790,7 +736,6 @@ col_bureau_hive = {
 		}
 		planet_bureaucrats_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_bureau_hive }
 		modifier = {
@@ -823,19 +768,16 @@ col_bureau_machine = {
 			is_planet_class = pc_nanotech
 		}
 	}
-
 	planet_modifier = {
 		planet_bureaucrats_produces_mult = 0.10
 		planet_bureaucrats_upkeep_mult = -0.10
 	}
-
 	triggered_planet_modifier = {
 		potential = { uses_district_set = ring_world }
 		logistic_growth_mult = 0.1
 		planet_pop_assembly_mult = 0.1
 		bonus_pop_growth_mult = 0.1
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_bureau_machine }
 		modifier = {
@@ -868,12 +810,10 @@ col_research = {
 		owner_or_space_owner = { is_wilderness_empire = no }
 		NOT = { is_planet_class = pc_nanotech }
 	}
-
 	planet_modifier = {
 		planet_building_research_lab_1_build_speed_mult = 0.25
 		planet_researchers_upkeep_mult = -0.2
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -881,7 +821,6 @@ col_research = {
 		}
 		planet_researchers_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_research }
 		modifier = {
@@ -927,13 +866,11 @@ col_fortress = {
 		owner_or_space_owner = { is_wilderness_empire = no }
 		NOT = { is_planet_class = pc_nanotech }
 	}
-
 	planet_modifier = {
 		planet_building_stronghold_build_speed_mult = 0.25
 		planet_orbital_bombardment_damage = -0.10
 		army_defense_damage_mult = 0.20
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -941,7 +878,6 @@ col_fortress = {
 		}
 		planet_orbital_bombardment_damage = -0.1
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_fortress }
 		modifier = {
@@ -967,6 +903,7 @@ col_fortress = {
 ####################################################
 ###		CAPITAL WORLD DESIGNATIONS		    	 ###
 ####################################################
+
 col_capital = {
 	icon = GFX_colony_type_capital
 
@@ -982,7 +919,6 @@ col_capital = {
 			}
 		}
 	}
-
 	planet_modifier = {
 		planet_stability_add = 5
 		planet_amenities_add = 1000
@@ -991,14 +927,12 @@ col_capital = {
 		planet_resettlement_unemployed_destination_mult = 0.1
 		pop_bonus_workforce_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = { uses_district_set = ring_world }
 		logistic_growth_mult = 0.1
 		planet_pop_assembly_mult = 0.1
 		bonus_pop_growth_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1006,7 +940,6 @@ col_capital = {
 		}
 		pop_bonus_workforce_mult = 0.05
 	}
-
 	weight_modifier = {
 		base = 1000
 	}
@@ -1029,13 +962,11 @@ col_capital_foundry = {
 			}
 		}
 	}
-
 	planet_modifier = {
 		planet_stability_add = 5
 		planet_housing_add = 1000
 		planet_resettlement_unemployed_destination_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1043,7 +974,6 @@ col_capital_foundry = {
 		}
 		planet_metallurgists_produces_mult = 0.15
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1051,7 +981,6 @@ col_capital_foundry = {
 		}
 		planet_metallurgists_produces_mult = 0.20
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1060,7 +989,6 @@ col_capital_foundry = {
 		planet_amenities_add = 1000
 		pop_government_ethic_attraction = 1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1069,14 +997,12 @@ col_capital_foundry = {
 		planet_amenities_no_happiness_add = 1000
 		planet_crime_no_happiness_add = -20
 	}
-
 	triggered_planet_modifier = {
 		potential = { uses_district_set = ring_world }
 		logistic_growth_mult = 0.1
 		planet_pop_assembly_mult = 0.1
 		bonus_pop_growth_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1084,7 +1010,6 @@ col_capital_foundry = {
 		}
 		pop_bonus_workforce_mult = 0.05
 	}
-
 	weight_modifier = {
 		base = 0
 	}
@@ -1108,13 +1033,11 @@ col_capital_factory = {
 			}
 		}
 	}
-
 	planet_modifier = {
 		planet_stability_add = 5
 		planet_housing_add = 1000
 		planet_resettlement_unemployed_destination_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1122,7 +1045,6 @@ col_capital_factory = {
 		}
 		planet_artisans_produces_mult = 0.15
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1130,7 +1052,6 @@ col_capital_factory = {
 		}
 		planet_artisans_produces_mult = 0.20
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1139,7 +1060,6 @@ col_capital_factory = {
 		planet_amenities_add = 1000
 		pop_government_ethic_attraction = 1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1148,14 +1068,12 @@ col_capital_factory = {
 		planet_amenities_no_happiness_add = 1000
 		planet_crime_no_happiness_add = -20
 	}
-
 	triggered_planet_modifier = {
 		potential = { uses_district_set = ring_world }
 		logistic_growth_mult = 0.1
 		planet_pop_assembly_mult = 0.1
 		bonus_pop_growth_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1163,7 +1081,6 @@ col_capital_factory = {
 		}
 		pop_bonus_workforce_mult = 0.05
 	}
-
 	weight_modifier = {
 		base = 0
 	}
@@ -1187,7 +1104,6 @@ col_capital_trade = {
 			}
 		}
 	}
-
 	planet_modifier = {
 		planet_stability_add = 5
 		planet_amenities_add = 1000
@@ -1196,14 +1112,12 @@ col_capital_trade = {
 		planet_resettlement_unemployed_destination_mult = 0.1
 		planet_jobs_trade_produces_mult = 0.15
 	}
-
 	triggered_planet_modifier = {
 		potential = { uses_district_set = ring_world }
 		logistic_growth_mult = 0.1
 		planet_pop_assembly_mult = 0.1
 		bonus_pop_growth_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1211,7 +1125,6 @@ col_capital_trade = {
 		}
 		pop_bonus_workforce_mult = 0.05
 	}
-
 	weight_modifier = {
 		base = 0
 	}
@@ -1234,13 +1147,11 @@ col_capital_extraction = {
 			}
 		}
 	}
-
 	planet_modifier = {
 		planet_stability_add = 5
 		planet_housing_add = 1000
 		planet_resettlement_unemployed_destination_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1248,7 +1159,6 @@ col_capital_extraction = {
 		}
 		planet_jobs_worker_produces_mult = 0.15
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1256,7 +1166,6 @@ col_capital_extraction = {
 		}
 		planet_jobs_worker_produces_mult = 0.20
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1265,7 +1174,6 @@ col_capital_extraction = {
 		planet_amenities_add = 1000
 		pop_government_ethic_attraction = 1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1274,14 +1182,12 @@ col_capital_extraction = {
 		planet_amenities_no_happiness_add = 1000
 		planet_crime_no_happiness_add = -20
 	}
-
 	triggered_planet_modifier = {
 		potential = { uses_district_set = ring_world }
 		logistic_growth_mult = 0.1
 		planet_pop_assembly_mult = 0.1
 		bonus_pop_growth_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1289,7 +1195,6 @@ col_capital_extraction = {
 		}
 		pop_bonus_workforce_mult = 0.05
 	}
-
 	weight_modifier = {
 		base = 0
 	}
@@ -1308,7 +1213,6 @@ col_capital_hive = {
 			is_wilderness_empire = no
 		}
 	}
-
 	planet_modifier = {
 		planet_stability_add = 5
 		planet_amenities_no_happiness_add = 1000
@@ -1317,14 +1221,12 @@ col_capital_hive = {
 		pop_bonus_workforce_mult = 0.1
 		planet_resettlement_unemployed_destination_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = { uses_district_set = ring_world }
 		logistic_growth_mult = 0.1
 		planet_pop_assembly_mult = 0.1
 		bonus_pop_growth_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1332,7 +1234,6 @@ col_capital_hive = {
 		}
 		pop_bonus_workforce_mult = 0.05
 	}
-
 	weight_modifier = {
 		base = 1000
 	}
@@ -1347,7 +1248,6 @@ col_capital_machine = {
 		exists = owner_or_space_owner
 		owner_or_space_owner = { is_country_type = default is_machine_empire = yes }
 	}
-
 	planet_modifier = {
 		planet_stability_add = 5
 		planet_amenities_no_happiness_add = 1000
@@ -1356,14 +1256,12 @@ col_capital_machine = {
 		pop_bonus_workforce_mult = 0.15
 		planet_resettlement_unemployed_destination_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = { uses_district_set = ring_world }
 		logistic_growth_mult = 0.1
 		planet_pop_assembly_mult = 0.1
 		bonus_pop_growth_mult = 0.1
 	}
-
 	weight_modifier = {
 		base = 1000
 	}
@@ -1382,12 +1280,10 @@ col_habitat_energy = {
 		check_modifier_value = { modifier = district_hab_energy_max_add value > 0 }
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_district_hab_energy_build_speed_mult = 0.25
 		planet_technician_produces_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1401,7 +1297,6 @@ col_habitat_energy = {
 		}
 		planet_jobs_worker_produces_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1415,7 +1310,6 @@ col_habitat_energy = {
 		}
 		planet_jobs_simple_drone_produces_mult = 0.1
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_habitat_energy }
 		modifier = {
@@ -1445,11 +1339,9 @@ col_habitat_trade = {
 		owner_or_space_owner = { is_gestalt = no }
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_jobs_trade_produces_mult = 0.20
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_habitat_trade }
 		complex_trigger_modifier = {
@@ -1488,12 +1380,10 @@ col_habitat_research = {
 		check_modifier_value = { modifier = district_hab_science_max_add value > 0 }
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_district_hab_science_build_speed_mult = 0.25
 		planet_researchers_produces_mult = 0.1
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_habitat_research }
 		modifier = {
@@ -1530,12 +1420,10 @@ col_habitat_mining = {
 		check_modifier_value = { modifier = district_hab_mining_max_add value > 0 }
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_district_hab_mining_build_speed_mult = 0.25
 		planet_miners_produces_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1549,7 +1437,6 @@ col_habitat_mining = {
 		}
 		planet_jobs_worker_produces_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1563,7 +1450,6 @@ col_habitat_mining = {
 		}
 		planet_jobs_simple_drone_produces_mult = 0.1
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_habitat_mining }
 		modifier = {
@@ -1593,12 +1479,10 @@ col_habitat_farming = {
 		owner_or_space_owner = { is_gestalt = no }
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_building_hydroponics_farm_build_speed_mult = 0.25
 		planet_farmers_produces_mult = 0.25
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1612,7 +1496,6 @@ col_habitat_farming = {
 		}
 		planet_jobs_worker_produces_mult = 0.1
 	}
-
 	weight_modifier = {
 		base = 0
 	}
@@ -1627,12 +1510,10 @@ col_habitat_gestalt_farming = {
 		owner_or_space_owner = { is_gestalt = yes }
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_building_hydroponics_farm_build_speed_mult = 0.25
 		planet_farmers_produces_mult = 0.25
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1646,7 +1527,6 @@ col_habitat_gestalt_farming = {
 		}
 		planet_jobs_simple_drone_produces_mult = 0.1
 	}
-
 	weight_modifier = {
 		base = 0
 	}
@@ -1660,13 +1540,11 @@ col_habitat_fortress = {
 		uses_district_set = habitat
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_building_stronghold_build_speed_mult = 0.25
 		planet_orbital_bombardment_damage = -0.10
 		army_defense_damage_mult = 0.20
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			OR = {
@@ -1676,7 +1554,6 @@ col_habitat_fortress = {
 		}
 		planet_knights_produces_mult = 0.1
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_habitat_fortress }
 		modifier = {
@@ -1720,12 +1597,10 @@ col_habitat_industrial = {
 		uses_district_set = habitat
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_metallurgists_upkeep_mult = -0.1
 		planet_artisans_upkeep_mult = -0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1738,7 +1613,6 @@ col_habitat_industrial = {
 		planet_artisans_produces_mult = 0.05
 		planet_metallurgists_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_habitat_industrial }
 		modifier = {
@@ -1767,11 +1641,9 @@ col_habitat_foundry = {
 		uses_district_set = habitat
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_metallurgists_upkeep_mult = -0.2
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1783,7 +1655,6 @@ col_habitat_foundry = {
 		}
 		planet_metallurgists_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_habitat_foundry }
 		modifier = {
@@ -1809,11 +1680,9 @@ col_habitat_factory = {
 		owner_or_space_owner = { country_uses_consumer_goods = yes }
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_artisans_upkeep_mult = -0.2
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -1825,7 +1694,6 @@ col_habitat_factory = {
 		}
 		planet_artisans_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_habitat_factory }
 		modifier = {
@@ -1855,12 +1723,10 @@ col_habitat_bureau = {
 		is_special_colony_type = no
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_bureaucrats_produces_mult = 0.10
 		planet_bureaucrats_upkeep_mult = -0.10
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner.federation
@@ -1868,7 +1734,6 @@ col_habitat_bureau = {
 		}
 		job_bureaucrat_per_pop = 0.04
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_habitat_bureau }
 		modifier = {
@@ -1900,12 +1765,10 @@ col_habitat_bureau_spiritualist = {
 		is_special_colony_type = no
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_bureaucrats_produces_mult = 0.10
 		planet_bureaucrats_upkeep_mult = -0.10
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner.federation
@@ -1913,7 +1776,6 @@ col_habitat_bureau_spiritualist = {
 		}
 		job_bureaucrat_per_pop = 0.04
 	}
-
 	weight_modifier = {
 		modifier = {
 			add = @stickiness
@@ -1942,12 +1804,10 @@ col_habitat_bureau_hive = {
 		is_special_colony_type = no
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_bureaucrats_produces_mult = 0.10
 		planet_bureaucrats_upkeep_mult = -0.10
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_habitat_bureau_hive }
 		modifier = {
@@ -1972,12 +1832,10 @@ col_habitat_bureau_machine = {
 		uses_district_set = habitat
 		is_special_colony_type = no
 	}
-
 	planet_modifier = {
 		planet_bureaucrats_produces_mult = 0.10
 		planet_bureaucrats_upkeep_mult = -0.10
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_bureau_machine }
 		modifier = {
@@ -2000,7 +1858,6 @@ col_ring_research = {
 		uses_district_set = ring_world
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_jobs_engineering_research_produces_mult = 0.15
 		planet_jobs_physics_research_produces_mult = 0.15
@@ -2009,7 +1866,6 @@ col_ring_research = {
 		planet_pop_assembly_mult = 0.1
 		bonus_pop_growth_mult = 0.1
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_ring_research }
 		modifier = {
@@ -2039,14 +1895,12 @@ col_ring_farming = {
 		uses_district_set = ring_world
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_farmers_food_produces_mult = 0.25
 		logistic_growth_mult = 0.1
 		planet_pop_assembly_mult = 0.1
 		bonus_pop_growth_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -2060,7 +1914,6 @@ col_ring_farming = {
 		}
 		planet_jobs_worker_produces_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -2074,7 +1927,6 @@ col_ring_farming = {
 		}
 		planet_jobs_simple_drone_produces_mult = 0.1
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_ring_farming }
 		modifier = {
@@ -2099,14 +1951,12 @@ col_ring_trade = {
 		owner_or_space_owner = { is_gestalt = no }
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_jobs_trade_produces_mult = 0.2
 		logistic_growth_mult = 0.1
 		planet_pop_assembly_mult = 0.1
 		bonus_pop_growth_mult = 0.1
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness_low has_designation = col_ring_trade }
 		modifier = {
@@ -2131,14 +1981,12 @@ col_ring_generator = {
 		owner_or_space_owner = { is_gestalt = yes }
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_technician_energy_produces_mult = 0.25
 		logistic_growth_mult = 0.1
 		planet_pop_assembly_mult = 0.1
 		bonus_pop_growth_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -2152,7 +2000,6 @@ col_ring_generator = {
 		}
 		planet_jobs_worker_produces_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -2166,7 +2013,6 @@ col_ring_generator = {
 		}
 		planet_jobs_simple_drone_produces_mult = 0.1
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_ring_generator }
 		modifier = {
@@ -2190,12 +2036,10 @@ col_ecu_mix = {
 		uses_district_set = city_world
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_structures_upkeep_mult = -0.25
 		planet_jobs_trade_produces_mult = 0.20
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness_low has_designation = col_ecu_mix }
 		modifier = {
@@ -2215,14 +2059,12 @@ col_ecu_industrial = {
 		uses_district_set = city_world
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_district_arcology_arms_industry_build_speed_mult = 0.25
 		planet_district_arcology_civilian_industry_build_speed_mult = 0.25
 		planet_artisans_upkeep_mult = -0.10
 		planet_metallurgists_upkeep_mult = -0.10
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -2235,7 +2077,6 @@ col_ecu_industrial = {
 		planet_artisans_produces_mult = 0.05
 		planet_metallurgists_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_ecu_industrial }
 		complex_trigger_modifier = {
@@ -2271,13 +2112,11 @@ col_ecu_foundry = {
 		uses_district_set = city_world
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_building_foundry_1_build_speed_mult = 0.25
 		planet_district_arcology_arms_industry_build_speed_mult = 0.25
 		planet_metallurgists_upkeep_mult = -0.2
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -2289,7 +2128,6 @@ col_ecu_foundry = {
 		}
 		planet_metallurgists_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_ecu_foundry }
 		complex_trigger_modifier = {
@@ -2322,13 +2160,11 @@ col_ecu_factory = {
 		owner_or_space_owner = { country_uses_consumer_goods = yes }
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_building_factory_1_build_speed_mult = 0.25
 		planet_district_arcology_civilian_industry_build_speed_mult = 0.25
 		planet_artisans_upkeep_mult = -0.2
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -2340,7 +2176,6 @@ col_ecu_factory = {
 		}
 		planet_artisans_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_ecu_factory }
 		complex_trigger_modifier = {
@@ -2371,12 +2206,10 @@ col_ecu_research = {
 		uses_district_set = city_world
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_building_research_lab_1_build_speed_mult = 0.25
 		planet_researchers_upkeep_mult = -0.2
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_ecu_research }
 		modifier = {
@@ -2401,11 +2234,9 @@ col_mac_foundry = {
 		uses_district_set = machine_world
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_metallurgists_upkeep_mult = -0.2
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -2417,7 +2248,6 @@ col_mac_foundry = {
 		}
 		planet_metallurgists_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_mac_foundry }
 		modifier = {
@@ -2438,11 +2268,9 @@ col_mac_factory = {
 		owner_or_space_owner = { country_uses_consumer_goods = yes }
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_artisans_upkeep_mult = -0.2
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -2454,7 +2282,6 @@ col_mac_factory = {
 		}
 		planet_artisans_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_mac_factory }
 		modifier = {
@@ -2475,14 +2302,12 @@ col_hiv = {
 		exists = owner_or_space_owner
 		owner_or_space_owner = { is_wilderness_empire = no }
 	}
-
 	planet_modifier = {
 		planet_district_mining_build_speed_mult = 0.25
 		planet_district_farming_build_speed_mult = 0.25
 		planet_district_generator_build_speed_mult = 0.25
 		planet_jobs_simple_drone_produces_mult = 0.05
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -2490,7 +2315,6 @@ col_hiv = {
 		}
 		planet_jobs_simple_drone_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness_low has_designation = col_hiv }
 	}
@@ -2506,11 +2330,9 @@ col_hiv_foundry = {
 		exists = owner_or_space_owner
 		owner_or_space_owner = { is_wilderness_empire = no }
 	}
-
 	planet_modifier = {
 		planet_metallurgists_upkeep_mult = -0.20
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -2522,7 +2344,6 @@ col_hiv_foundry = {
 		}
 		planet_metallurgists_produces_mult = 0.05
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -2530,7 +2351,6 @@ col_hiv_foundry = {
 		}
 		planet_metallurgists_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_hiv_foundry }
 		modifier = {
@@ -2553,19 +2373,16 @@ col_trophy_machine = {
 			is_planet_class = pc_nanotech
 		}
 	}
-
 	planet_modifier = {
 		planet_bio_trophies_produces_mult = 0.10
 		logistic_growth_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = { uses_district_set = ring_world }
 		logistic_growth_mult = 0.1
 		planet_pop_assembly_mult = 0.1
 		bonus_pop_growth_mult = 0.1
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_trophy_machine }
 		inline_script = { script = colony_types/shared_weights_trophy }
@@ -2581,12 +2398,10 @@ col_fe_capital = {
 		exists = owner_or_space_owner
 		owner_or_space_owner = { is_fallen_empire = yes }
 	}
-
 	planet_modifier = {
 		planet_stability_add = 10
 		planet_housing_add = 1000
 	}
-
 	weight_modifier = {
 		base = 1000
 	}
@@ -2601,11 +2416,9 @@ col_fe_colony = {
 		exists = owner_or_space_owner
 		owner_or_space_owner = { is_fallen_empire = yes }
 	}
-
 	planet_modifier = {
 		planet_stability_add = 5
 	}
-
 	weight_modifier = {
 		base = 1000
 	}
@@ -2622,12 +2435,10 @@ col_resort = {
 			owner = { has_unlocked_pleasure_worlds = yes }
 		}
 	}
-
 	planet_modifier = {
 		planet_jobs_trade_produces_mult = 0.10
 		planet_jobs_unity_produces_mult = 0.05
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -2635,7 +2446,6 @@ col_resort = {
 		}
 		planet_jobs_unity_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		base = 1000
 	}
@@ -2651,12 +2461,10 @@ col_pleasure = {
 		exists = owner
 		owner = { has_unlocked_pleasure_worlds = yes }
 	}
-
 	planet_modifier = {
 		planet_jobs_trade_produces_mult = 0.15
 		planet_jobs_unity_produces_mult = 0.05
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -2664,7 +2472,6 @@ col_pleasure = {
 		}
 		planet_jobs_unity_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		base = 1000
 	}
@@ -2677,12 +2484,10 @@ col_penal = {
 	potential = {
 		has_modifier = penal_colony
 	}
-
 	planet_modifier = {
 		planet_jobs_worker_produces_mult = 0.10
 		job_enforcer_per_pop = 0.04
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -2691,7 +2496,6 @@ col_penal = {
 		planet_jobs_worker_produces_mult = 0.05
 		job_enforcer_per_pop = 0.01
 	}
-
 	weight_modifier = {
 		base = 1000
 	}
@@ -2705,18 +2509,15 @@ col_gestation = {
 		has_modifier = gestation_colony
 		is_capital = no
 	}
-
 	planet_modifier = {
 		logistic_growth_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = { uses_district_set = ring_world }
 		logistic_growth_mult = 0.1
 		planet_pop_assembly_mult = 0.1
 		bonus_pop_growth_mult = 0.1
 	}
-
 	weight_modifier = {
 		base = 1000
 	}
@@ -2889,13 +2690,11 @@ col_slave = {
 	potential = {
 		has_modifier = slave_colony
 	}
-
 	planet_modifier = {
 		planet_jobs_worker_produces_mult = 0.05
 		army_starting_experience_add = 200
 		planet_army_build_time_mult = -0.10
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -2903,7 +2702,6 @@ col_slave = {
 		}
 		planet_army_build_time_mult = -0.10
 	}
-
 	weight_modifier = {
 		base = 1000
 	}
@@ -2916,14 +2714,12 @@ col_cosmogenesis_world = {
 	potential = {
 		is_planet_class = pc_cosmogenesis_world
 	}
-
 	planet_modifier = {
 		pop_bonus_workforce_mult = 0.15
 		planet_jobs_upkeep_mult = -0.05
 		pop_purge_speed = -0.05
 		pop_housing_usage_mult = -0.1
 	}
-
 	weight_modifier = {
 		base = 1000
 	}
@@ -2938,7 +2734,6 @@ col_nanotech_world = {
 		exists = owner
 		owner = { has_active_tradition = tr_nanotech_3 }
 	}
-
 	planet_modifier = {
 		planet_buildings_produces_mult = 0.15
 		planet_buildings_upkeep_mult = 0.1
@@ -2948,7 +2743,6 @@ col_nanotech_world = {
 		planet_miners_nanites_produces_mult = 0.35
 		planet_jobs_worker_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		base = 10000
 	}
@@ -2963,14 +2757,12 @@ col_wilderness_capital = {
 		owner_or_space_owner = { is_wilderness_empire = yes }
 		is_capital = yes
 	}
-
 	planet_modifier = {
 		planet_stability_add = 5
 		planet_housing_add = 1000
 		planet_crime_no_happiness_add = -20
 		pop_bonus_workforce_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -2978,7 +2770,6 @@ col_wilderness_capital = {
 		}
 		pop_bonus_workforce_mult = 0.05
 	}
-
 	weight_modifier = {
 		base = 1000
 	}
@@ -2993,12 +2784,10 @@ col_wilderness_generator = {
 		is_capital = no
 		owner_or_space_owner = { is_wilderness_empire = yes }
 	}
-
 	planet_modifier = {
 		planet_district_photosynthesis_fields_build_speed_mult = 0.25
 		planet_technician_produces_mult = 0.25
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -3006,7 +2795,6 @@ col_wilderness_generator = {
 		}
 		planet_technician_produces_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -3020,7 +2808,6 @@ col_wilderness_generator = {
 		}
 		planet_jobs_simple_drone_produces_mult = 0.1
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_wilderness_generator }
 	}
@@ -3035,12 +2822,10 @@ col_wilderness_mining = {
 		is_special_colony_type = no
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_district_hollow_mountains_build_speed_mult = 0.25
 		planet_miners_produces_mult = 0.25
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -3048,7 +2833,6 @@ col_wilderness_mining = {
 		}
 		planet_miners_produces_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -3062,7 +2846,6 @@ col_wilderness_mining = {
 		}
 		planet_jobs_simple_drone_produces_mult = 0.1
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_wilderness_mining }
 	}
@@ -3077,12 +2860,10 @@ col_wilderness_farming = {
 		is_special_colony_type = no
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_district_orchard_forests_build_speed_mult = 0.25
 		planet_farmers_produces_mult = 0.25
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -3090,7 +2871,6 @@ col_wilderness_farming = {
 		}
 		planet_farmers_produces_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -3104,7 +2884,6 @@ col_wilderness_farming = {
 		}
 		planet_jobs_simple_drone_produces_mult = 0.1
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_wilderness_farming }
 	}
@@ -3119,13 +2898,11 @@ col_wilderness_fortress = {
 		is_special_colony_type = no
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_building_planetary_carapace_build_speed_mult = 0.25
 		planet_orbital_bombardment_damage = -0.10
 		army_defense_damage_mult = 0.20
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -3133,7 +2910,6 @@ col_wilderness_fortress = {
 		}
 		planet_orbital_bombardment_damage = -0.1
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_wilderness_fortress }
 	}
@@ -3148,12 +2924,10 @@ col_wilderness_tech = {
 		is_special_colony_type = no
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_building_brain_node_1_build_speed_mult = 0.25
 		planet_researchers_upkeep_mult = -0.2
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -3161,7 +2935,6 @@ col_wilderness_tech = {
 		}
 		planet_researchers_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_wilderness_tech }
 	}
@@ -3176,13 +2949,11 @@ col_wilderness_nest = {
 		is_special_colony_type = no
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_structures_upkeep_mult = -0.10
 		planet_district_craglands_build_speed_mult = 0.25
 		planet_jobs_trade_produces_mult = 0.20
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -3190,7 +2961,6 @@ col_wilderness_nest = {
 		}
 		planet_jobs_trade_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_wilderness_nest }
 	}
@@ -3205,14 +2975,12 @@ col_wilderness_refinery = {
 		is_special_colony_type = no
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_refiners_produces_mult = 0.15
 		planet_translucers_produces_mult = 0.15
 		planet_chemists_produces_mult = 0.15
 		planet_sr_miners_produces_mult = 0.15
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -3223,7 +2991,6 @@ col_wilderness_refinery = {
 		planet_chemists_produces_mult = 0.10
 		planet_sr_miners_produces_mult = 0.10
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_wilderness_refinery }
 	}
@@ -3238,11 +3005,9 @@ col_wilderness_forge = {
 		is_special_colony_type = no
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_metallurgists_upkeep_mult = -0.20
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -3250,7 +3015,6 @@ col_wilderness_forge = {
 		}
 		planet_metallurgists_produces_mult = 0.05
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -3262,7 +3026,6 @@ col_wilderness_forge = {
 		}
 		planet_metallurgists_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_wilderness_forge }
 	}
@@ -3277,12 +3040,10 @@ col_wilderness_unification = {
 		is_special_colony_type = no
 		is_capital = no
 	}
-
 	planet_modifier = {
 		planet_bureaucrats_produces_mult = 0.10
 		planet_bureaucrats_upkeep_mult = -0.10
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner_or_space_owner
@@ -3290,9 +3051,7 @@ col_wilderness_unification = {
 		}
 		planet_bureaucrats_produces_mult = 0.05
 	}
-
 	weight_modifier = {
 		modifier = { add = @stickiness has_designation = col_wilderness_unification }
 	}
 }
-

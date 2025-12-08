@@ -4,11 +4,9 @@ dyson_sphere_0 = {
 	construction_entity = "construction_platform_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
-
 	entity_offset = { x = -7 y = -7 }
 
 	build_time = 1800
-
 	resources = {
 		category = megastructures
 		cost = {
@@ -34,15 +32,12 @@ dyson_sphere_0 = {
 	}
 
 	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_DYSON_SPHERE"
-
 	prerequisites = {
 		"tech_dyson_sphere"
 	}
-
 	potential = {
 		has_machine_age_dlc = no
 	}
-
 	possible = {
 		hidden_trigger = { exists = starbase }
 		custom_tooltip = { fail_text = "requires_inside_border" is_inside_border = from }
@@ -77,17 +72,12 @@ dyson_sphere_0 = {
 				}
 			}
 		}
-		custom_tooltip = {
-			fail_text = "requires_no_arc_furnace"
-			system_has_arc_furnace = no
-		}
+		custom_tooltip = { fail_text = "requires_no_arc_furnace" system_has_arc_furnace = no }
 		custom_tooltip = {
 			fail_text = "requires_no_arc_furnace_construction"
 			if = {
 				limit = { system_has_arc_furnace = no }
-				NOT = {
-					solar_system = { has_star_flag = arc_furnace_construction }
-				}
+				NOT = { solar_system = { has_star_flag = arc_furnace_construction } }
 			}
 		}
 		custom_tooltip = {
@@ -149,7 +139,6 @@ dyson_sphere_0 = {
 			}
 		}
 	}
-
 	placement_rules = {
 		planet_possible = {
 			custom_tooltip = { fail_text = "must_build_around_star" is_star = yes }
@@ -163,9 +152,7 @@ dyson_sphere_0 = {
 		factor = 15
 		modifier = {
 			factor = 0.1
-			NOT = {
-				starbase = { has_starbase_size >= starbase_starfortress }
-			}
+			NOT = { starbase = { has_starbase_size >= starbase_starfortress } }
 		}
 		modifier = {
 			factor = 0.1
@@ -175,15 +162,12 @@ dyson_sphere_0 = {
 			}
 		}
 	}
-
 	on_build_start = {
 		set_star_flag = dyson_sphere_construction
 	}
-
 	on_build_cancel = {
 		remove_star_flag = dyson_sphere_construction
 	}
-
 	on_build_complete = {
 		remove_star_flag = dyson_sphere_construction
 		set_star_flag = dyson_sphere_built
@@ -213,7 +197,6 @@ dyson_sphere_1 = {
 	construction_entity = "dyson_sphere_frame_entity"
 	portrait = "GFX_megastructure_construction_background"
 	build_time = 3600
-
 	resources = {
 		category = megastructures
 		cost = {
@@ -237,19 +220,13 @@ dyson_sphere_1 = {
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 	}
-
 	possible = {
-		custom_tooltip = {
-			fail_text = "requires_no_arc_furnace"
-			system_has_arc_furnace = no
-		}
+		custom_tooltip = { fail_text = "requires_no_arc_furnace" system_has_arc_furnace = no }
 		custom_tooltip = {
 			fail_text = "requires_no_arc_furnace_construction"
 			if = {
 				limit = { system_has_arc_furnace = no }
-				NOT = {
-					solar_system = { has_star_flag = arc_furnace_construction }
-				}
+				NOT = { solar_system = { has_star_flag = arc_furnace_construction } }
 			}
 		}
 		custom_tooltip = {
@@ -276,23 +253,18 @@ dyson_sphere_1 = {
 			}
 		}
 	}
-
 	upgrade_from = {
 		dyson_sphere_0
 	}
-
 	prerequisites = {
 		"tech_dyson_sphere"
 	}
-
 	on_build_start = {
 		set_star_flag = dyson_sphere_construction
 	}
-
 	on_build_cancel = {
 		remove_star_flag = dyson_sphere_construction
 	}
-
 	on_build_complete = {
 		remove_star_flag = dyson_sphere_construction
 		remove_system_terraforming_candidates = yes
@@ -306,7 +278,6 @@ dyson_sphere_2 = {
 	portrait = "GFX_megastructure_construction_background"
 	build_time = 3600
 	use_planet_resource = yes
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_no_existing_dyson_sphere"
@@ -319,21 +290,14 @@ dyson_sphere_2 = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_no_existing_dyson_sphere_two"
-			NOT = {
-				from = { has_country_flag = built_dyson_sphere_contingency_swarm }
-			}
+			NOT = { from = { has_country_flag = built_dyson_sphere_contingency_swarm } }
 		}
-		custom_tooltip = {
-			fail_text = "requires_no_arc_furnace"
-			system_has_arc_furnace = no
-		}
+		custom_tooltip = { fail_text = "requires_no_arc_furnace" system_has_arc_furnace = no }
 		custom_tooltip = {
 			fail_text = "requires_no_arc_furnace_construction"
 			if = {
 				limit = { system_has_arc_furnace = no }
-				NOT = {
-					solar_system = { has_star_flag = arc_furnace_construction }
-				}
+				NOT = { solar_system = { has_star_flag = arc_furnace_construction } }
 			}
 		}
 		custom_tooltip = {
@@ -363,7 +327,6 @@ dyson_sphere_2 = {
 			}
 		}
 	}
-
 	resources = {
 		category = megastructures
 		cost = {
@@ -387,16 +350,13 @@ dyson_sphere_2 = {
 			energy = 1000
 		}
 	}
-
 	upgrade_from = {
 		dyson_sphere_1
 		dyson_swarm_3
 	}
-
 	prerequisites = {
 		"tech_dyson_sphere"
 	}
-
 	on_build_start = {
 		set_star_flag = dyson_sphere_construction
 		from = {
@@ -418,11 +378,9 @@ dyson_sphere_2 = {
 			}
 		}
 	}
-
 	on_build_cancel = {
 		remove_star_flag = dyson_sphere_construction
 	}
-
 	on_build_complete = {
 		remove_star_flag = dyson_sphere_construction
 		remove_system_terraforming_candidates = yes
@@ -451,7 +409,6 @@ dyson_sphere_3 = {
 	portrait = "GFX_megastructure_construction_background"
 	build_time = 3600
 	use_planet_resource = yes
-
 	resources = {
 		category = megastructures
 		cost = {
@@ -475,19 +432,13 @@ dyson_sphere_3 = {
 			energy = 2000
 		}
 	}
-
 	possible = {
-		custom_tooltip = {
-			fail_text = "requires_no_arc_furnace"
-			system_has_arc_furnace = no
-		}
+		custom_tooltip = { fail_text = "requires_no_arc_furnace" system_has_arc_furnace = no }
 		custom_tooltip = {
 			fail_text = "requires_no_arc_furnace_construction"
 			if = {
 				limit = { system_has_arc_furnace = no }
-				NOT = {
-					solar_system = { has_star_flag = arc_furnace_construction }
-				}
+				NOT = { solar_system = { has_star_flag = arc_furnace_construction } }
 			}
 		}
 		custom_tooltip = {
@@ -514,23 +465,18 @@ dyson_sphere_3 = {
 			}
 		}
 	}
-
 	upgrade_from = {
 		dyson_sphere_2
 	}
-
 	prerequisites = {
 		"tech_dyson_sphere"
 	}
-
 	on_build_start = {
 		set_star_flag = dyson_sphere_construction
 	}
-
 	on_build_cancel = {
 		remove_star_flag = dyson_sphere_construction
 	}
-
 	on_build_complete = {
 		remove_star_flag = dyson_sphere_construction
 		remove_system_terraforming_candidates = yes
@@ -544,7 +490,6 @@ dyson_sphere_4 = {
 	portrait = "GFX_megastructure_construction_background"
 	build_time = 3600
 	use_planet_resource = yes
-
 	resources = {
 		category = megastructures
 		cost = {
@@ -568,27 +513,19 @@ dyson_sphere_4 = {
 			energy = 3000
 		}
 	}
-
 	upgrade_from = {
 		dyson_sphere_3
 	}
-
 	prerequisites = {
 		"tech_dyson_sphere"
 	}
-
 	possible = {
-		custom_tooltip = {
-			fail_text = "requires_no_arc_furnace"
-			system_has_arc_furnace = no
-		}
+		custom_tooltip = { fail_text = "requires_no_arc_furnace" system_has_arc_furnace = no }
 		custom_tooltip = {
 			fail_text = "requires_no_arc_furnace_construction"
 			if = {
 				limit = { system_has_arc_furnace = no }
-				NOT = {
-					solar_system = { has_star_flag = arc_furnace_construction }
-				}
+				NOT = { solar_system = { has_star_flag = arc_furnace_construction } }
 			}
 		}
 		custom_tooltip = {
@@ -615,15 +552,12 @@ dyson_sphere_4 = {
 			}
 		}
 	}
-
 	on_build_start = {
 		set_star_flag = dyson_sphere_construction
 	}
-
 	on_build_cancel = {
 		remove_star_flag = dyson_sphere_construction
 	}
-
 	on_build_complete = {
 		remove_star_flag = dyson_sphere_construction
 		remove_system_terraforming_candidates = yes
@@ -637,7 +571,6 @@ dyson_sphere_5 = {
 	portrait = "GFX_megastructure_dyson_sphere_background"
 	build_time = 3600
 	use_planet_resource = yes
-
 	resources = {
 		category = megastructures
 		cost = {
@@ -661,34 +594,25 @@ dyson_sphere_5 = {
 			energy = 4000
 		}
 	}
-
 	upgrade_from = {
 		dyson_sphere_4
 	}
-
 	prerequisites = {
 		"tech_dyson_sphere"
 	}
 
 	show_prereqs = yes
-
 	outliner_trigger = {
 		exists = owner
 		owner = { has_country_flag = can_build_disco_sphere }
 	}
-
 	possible = {
-		custom_tooltip = {
-			fail_text = "requires_no_arc_furnace"
-			system_has_arc_furnace = no
-		}
+		custom_tooltip = { fail_text = "requires_no_arc_furnace" system_has_arc_furnace = no }
 		custom_tooltip = {
 			fail_text = "requires_no_arc_furnace_construction"
 			if = {
 				limit = { system_has_arc_furnace = no }
-				NOT = {
-					solar_system = { has_star_flag = arc_furnace_construction }
-				}
+				NOT = { solar_system = { has_star_flag = arc_furnace_construction } }
 			}
 		}
 		custom_tooltip = {
@@ -715,15 +639,12 @@ dyson_sphere_5 = {
 			}
 		}
 	}
-
 	on_build_start = {
 		set_star_flag = dyson_sphere_construction
 	}
-
 	on_build_cancel = {
 		remove_star_flag = dyson_sphere_construction
 	}
-
 	on_build_complete = {
 		remove_star_flag = dyson_sphere_construction
 		from = { set_country_flag = has_built_or_repaired_megastructure }
@@ -782,7 +703,6 @@ dyson_sphere_restored = {
 	construction_entity = "dyson_sphere_part_4_entity"
 	portrait = "GFX_megastructure_dyson_sphere_background"
 	build_time = 7200
-
 	resources = {
 		category = megastructures
 		cost = {
@@ -806,29 +726,21 @@ dyson_sphere_restored = {
 			energy = 4000
 		}
 	}
-
 	upgrade_from = {
 		dyson_sphere_ruined
 	}
-
 	outliner_trigger = {
 		exists = owner
 		owner = { has_country_flag = can_build_disco_sphere }
 	}
-
 	possible = {
 		from = { has_technology = tech_mega_engineering }
-		custom_tooltip = {
-			fail_text = "requires_no_arc_furnace"
-			system_has_arc_furnace = no
-		}
+		custom_tooltip = { fail_text = "requires_no_arc_furnace" system_has_arc_furnace = no }
 		custom_tooltip = {
 			fail_text = "requires_no_arc_furnace_construction"
 			if = {
 				limit = { system_has_arc_furnace = no }
-				NOT = {
-					solar_system = { has_star_flag = arc_furnace_construction }
-				}
+				NOT = { solar_system = { has_star_flag = arc_furnace_construction } }
 			}
 		}
 		custom_tooltip = {
@@ -855,16 +767,13 @@ dyson_sphere_restored = {
 			}
 		}
 	}
-
 	on_build_start = {
 		set_star_flag = dyson_sphere_construction
 		fromfrom = { set_graphical_culture = root.from }
 	}
-
 	on_build_cancel = {
 		remove_star_flag = dyson_sphere_construction
 	}
-
 	on_build_complete = {
 		remove_star_flag = dyson_sphere_construction
 		every_system_planet = {
@@ -915,7 +824,6 @@ dyson_sphere_disco = {
 	construction_entity = "dyson_sphere_part_4_entity"
 	portrait = "GFX_megastructure_dyson_sphere_background"
 	build_time = 360
-
 	resources = {
 		category = megastructures
 		cost = {
@@ -929,32 +837,25 @@ dyson_sphere_disco = {
 			energy = 30
 		}
 	}
-
 	upgrade_from = {
 		dyson_sphere_5
 	}
-
 	potential = {
 		has_nemesis = yes
 		has_country_flag = can_build_disco_sphere
 	}
-
 	possible = {
 		from = { has_nemesis = yes has_country_flag = can_build_disco_sphere }
 	}
-
 	country_modifier = {
 		planet_amenities_mult = 0.3
 	}
-
 	on_build_start = {
 		set_star_flag = dyson_sphere_construction
 	}
-
 	on_build_cancel = {
 		remove_star_flag = dyson_sphere_construction
 	}
-
 	on_build_complete = {
 		remove_star_flag = dyson_sphere_construction
 		set_star_flag = mega_art_installation_built
@@ -1012,7 +913,6 @@ dyson_sphere_disco_restored = {
 	construction_entity = "dyson_sphere_part_4_entity"
 	portrait = "GFX_megastructure_dyson_sphere_background"
 	build_time = 360
-
 	resources = {
 		category = megastructures
 		cost = {
@@ -1026,29 +926,21 @@ dyson_sphere_disco_restored = {
 			energy = 30
 		}
 	}
-
 	upgrade_from = {
 		dyson_sphere_restored
 	}
-
 	potential = {
 		has_nemesis = yes
 		has_country_flag = can_build_disco_sphere
 	}
-
 	possible = {
 		from = { has_nemesis = yes has_country_flag = can_build_disco_sphere }
-		custom_tooltip = {
-			fail_text = "requires_no_arc_furnace"
-			system_has_arc_furnace = no
-		}
+		custom_tooltip = { fail_text = "requires_no_arc_furnace" system_has_arc_furnace = no }
 		custom_tooltip = {
 			fail_text = "requires_no_arc_furnace_construction"
 			if = {
 				limit = { system_has_arc_furnace = no }
-				NOT = {
-					solar_system = { has_star_flag = arc_furnace_construction }
-				}
+				NOT = { solar_system = { has_star_flag = arc_furnace_construction } }
 			}
 		}
 		custom_tooltip = {
@@ -1075,19 +967,15 @@ dyson_sphere_disco_restored = {
 			}
 		}
 	}
-
 	country_modifier = {
 		planet_amenities_mult = 0.3
 	}
-
 	on_build_start = {
 		set_star_flag = dyson_sphere_construction
 	}
-
 	on_build_cancel = {
 		remove_star_flag = dyson_sphere_construction
 	}
-
 	on_build_complete = {
 		remove_star_flag = dyson_sphere_construction
 		set_star_flag = mega_art_installation_built

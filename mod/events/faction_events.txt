@@ -13,9 +13,7 @@ pop_faction_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = {
-			owner = { has_origin = origin_broken_shackles }
-		}
+		NOT = { owner = { has_origin = origin_broken_shackles } }
 	}
 
 	immediate = {
@@ -128,7 +126,6 @@ pop_faction_event = {
 pop_faction_event = {
 	id = factions.1
 	title = factions.1.title
-
 	desc = {
 		trigger = {
 			# Intro
@@ -151,10 +148,7 @@ pop_faction_event = {
 			inline_script = { script = pop_faction_types/faction1_desc FACTION = supremacist }
 			inline_script = { script = pop_faction_types/faction1_desc FACTION = technologist }
 			inline_script = { script = pop_faction_types/faction1_desc FACTION = totalitarian }
-			inline_script = {
-				script = pop_faction_types/faction1_desc
-				FACTION = traditionalist
-			}
+			inline_script = { script = pop_faction_types/faction1_desc FACTION = traditionalist }
 			inline_script = { script = pop_faction_types/faction1_desc FACTION = xenoist }
 			# Body text (other, exempt Factions)
 			success_text = { text = factions.1.desc.manifesti is_pop_faction_type = manifesti }
@@ -172,7 +166,6 @@ pop_faction_event = {
 	picture = GFX_evt_galactic_senate
 	show_sound = event_factions
 	is_triggered_only = yes
-
 	option = {
 		name = OK
 		hidden_effect = {
@@ -430,10 +423,7 @@ planet_event = {
 
 	immediate = {
 		owner = {
-			set_timed_country_flag = {
-				flag = recent_factions_event
-				days = @RecentFactionsEventTimer
-			}
+			set_timed_country_flag = { flag = recent_factions_event days = @RecentFactionsEventTimer }
 			set_country_flag = factions_political_frontier
 		}
 	}
@@ -506,9 +496,7 @@ planet_event = {
 				resource_stockpile_compare = { resource = unity value >= 250 }
 			}
 		}
-		owner = {
-			add_resource = { unity = -250 }
-		}
+		owner = { add_resource = { unity = -250 } }
 		add_modifier = { modifier = planet_political_crackdown years = 40 }
 	}
 }
@@ -518,7 +506,6 @@ planet_event = {
 planet_event = {
 	id = factions.3005
 	title = factions.3005.name
-
 	desc = {
 		trigger = {
 			NOR = {
@@ -528,17 +515,14 @@ planet_event = {
 		}
 		text = factions.3005.desc.1
 	}
-
 	desc = {
 		trigger = { has_planet_flag = frontier_egalitarianism }
 		text = factions.3005.desc.2
 	}
-
 	desc = {
 		trigger = { has_planet_flag = frontier_alternatives }
 		text = factions.3005.desc.3
 	}
-
 	picture = {
 		trigger = {
 			NOR = {
@@ -548,7 +532,6 @@ planet_event = {
 		}
 		picture = GFX_evt_spymaster
 	}
-
 	picture = {
 		trigger = {
 			OR = {
@@ -687,7 +670,6 @@ planet_event = {
 			years = 30
 		}
 	}
-
 	after = {
 		remove_planet_flag = frontier_egalitarianism
 		remove_planet_flag = frontier_alternatives
@@ -699,7 +681,6 @@ planet_event = {
 planet_event = {
 	id = factions.3010
 	title = factions.3005.name
-
 	desc = {
 		trigger = {
 			NOR = {
@@ -709,24 +690,20 @@ planet_event = {
 		}
 		text = factions.3010.desc.1
 	}
-
 	desc = {
 		trigger = { has_planet_flag = frontier_authoritarianism }
 		text = factions.3010.desc.2
 	}
-
 	desc = {
 		trigger = { has_planet_flag = frontier_discourse }
 		text = factions.3010.desc.3
 	}
-
 	picture = {
 		trigger = {
 			NOT = { has_planet_flag = frontier_authoritarianism }
 		}
 		picture = GFX_evt_civil_action
 	}
-
 	picture = {
 		trigger = { has_planet_flag = frontier_authoritarianism }
 		picture = GFX_evt_space_monster # tendrils
@@ -846,7 +823,6 @@ planet_event = {
 			years = 20
 		}
 	}
-
 	after = {
 		remove_planet_flag = frontier_authoritarianism
 		remove_planet_flag = frontier_discourse
@@ -857,6 +833,7 @@ planet_event = {
 # Manifesti Destiny
 # By Gemma Thomson
 ####################
+
 namespace = manifesti
 # Triggered by chance from on_five_year_pulse = {}
 planet_event = {
@@ -918,7 +895,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = { # Take no action
 		name = manifesti.1.a
 		begin_event_chain = { event_chain = manifesti_chain target = owner }
@@ -927,7 +903,6 @@ planet_event = {
 			planet_event = { id = manifesti.5 days = 59 }
 		}
 	}
-
 	option = { # Encourage participation
 		name = manifesti.1.b
 		begin_event_chain = { event_chain = manifesti_chain target = owner }
@@ -944,7 +919,6 @@ planet_event = {
 			planet_event = { id = manifesti.5 days = 59 }
 		}
 	}
-
 	option = { # Pacify the dissenters
 		name = manifesti.1.c
 		trigger = {
@@ -960,7 +934,6 @@ planet_event = {
 		}
 		custom_tooltip = manifesti.1.tt
 	}
-
 	option = { # Authorize brute force
 		name = manifesti.1.d
 		trigger = {
@@ -976,7 +949,6 @@ planet_event = {
 		}
 		custom_tooltip = manifesti.1.tt
 	}
-
 	option = { # Organize a counter protest
 		name = manifesti.1.e
 		trigger = {
@@ -994,7 +966,6 @@ planet_event = {
 		}
 		custom_tooltip = manifesti.1.tt
 	}
-
 	option = { # Flood the streets with unity rallies
 		name = manifesti.1.f
 		trigger = {
@@ -1012,7 +983,6 @@ planet_event = {
 		}
 		custom_tooltip = manifesti.1.tt
 	}
-
 	option = { # Organize a counter protest
 		name = manifesti.1.g
 		trigger = {
@@ -1028,7 +998,6 @@ planet_event = {
 		}
 		custom_tooltip = manifesti.1.tt
 	}
-
 	option = { # Frame it as a distraction
 		name = manifesti.1.h
 		trigger = {
@@ -1117,13 +1086,10 @@ planet_event = {
 			}
 		}
 	}
-
 	option = { # Let them have their fun
 		name = manifesti.5.a
 		if = {
-			limit = {
-				owner = { is_egalitarian = yes }
-			}
+			limit = { owner = { is_egalitarian = yes } }
 			event_target:manifesti_world = {
 				add_modifier = {
 					modifier = planet_manifesti_egalitarian_attraction
@@ -1138,9 +1104,7 @@ planet_event = {
 			}
 		}
 		if = {
-			limit = {
-				owner = { is_xenophile = yes }
-			}
+			limit = { owner = { is_xenophile = yes } }
 			event_target:manifesti_world = {
 				add_modifier = { modifier = planet_manifesti_xenophile_attraction years = 3 }
 			}
@@ -1151,12 +1115,9 @@ planet_event = {
 			}
 		}
 	}
-
 	option = { # Declare Martial Law
 		name = manifesti.5.b
-		trigger = {
-			owner = { is_militarist = yes }
-		}
+		trigger = { owner = { is_militarist = yes } }
 		allow = {
 			NOT = { has_modifier = martial_law }
 			owner = {
@@ -1173,7 +1134,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = { # Melt down the projects for resources
 		name = manifesti.5.c
 		trigger = {
@@ -1194,7 +1154,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = { # Declare them messengers of the void
 		name = manifesti.5.d
 		trigger = {
@@ -1215,12 +1174,9 @@ planet_event = {
 			}
 		}
 	}
-
 	option = { # Disrupt planet wide communications
 		name = manifesti.5.e
-		trigger = {
-			owner = { is_xenophobe = yes }
-		}
+		trigger = { owner = { is_xenophobe = yes } }
 		allow = {
 			owner = {
 				has_resource = { type = influence amount > 50 }
@@ -1236,7 +1192,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = { # Locate and detain their families
 		name = manifesti.5.f
 		allow = {
@@ -1253,9 +1208,7 @@ planet_event = {
 					factor = 100
 					owner = { is_authoritarian = yes }
 				}
-				event_target:manifesti_world = {
-					set_planet_flag = manifesti_authoritarian_successful
-				}
+				event_target:manifesti_world = { set_planet_flag = manifesti_authoritarian_successful }
 				custom_tooltip = manifesti.5.f.tt1
 			}
 			75 = {
@@ -1275,37 +1228,30 @@ planet_event = {
 planet_event = {
 	id = manifesti.10
 	title = manifesti.10.name
-
 	desc = {
 		trigger = { has_planet_flag = manifesti_militarist_successful }
 		text = manifesti.10.desc_militarist
 	}
-
 	desc = {
 		trigger = { has_planet_flag = manifesti_materialist_successful }
 		text = manifesti.10.desc_materialist
 	}
-
 	desc = {
 		trigger = { has_planet_flag = manifesti_spiritualist_successful }
 		text = manifesti.10.desc_spiritualist
 	}
-
 	desc = {
 		trigger = { has_planet_flag = manifesti_xenophobe_successful }
 		text = manifesti.10.desc_xenophobe
 	}
-
 	desc = {
 		trigger = { has_planet_flag = manifesti_authoritarian_successful }
 		text = manifesti.10.desc_authoritarian
 	}
-
 	desc = {
 		trigger = { has_planet_flag = manifesti_dismantled_exhibition }
 		text = manifesti.10.desc_dismantled_exhibition
 	}
-
 	desc = {
 		trigger = { has_planet_flag = manifesti_violent_protests }
 		text = manifesti.10.desc_violent_protests
@@ -1335,7 +1281,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = manifesti.10.a
 		trigger = {
@@ -1376,7 +1321,9 @@ planet_event = {
 						randomize_traits = no
 						background_ethic = ethic_xenophobe
 						custom_description = manifesti_leader_desc
-						traits = { 1 = leader_trait_lavish_lifestyle }
+						traits = {
+							1 = leader_trait_lavish_lifestyle
+						}
 						effect = {
 							set_skill = 6
 							save_global_event_target_as = manifesti_leader
@@ -1399,7 +1346,6 @@ planet_event = {
 		remove_modifier = planet_manifesti_joy
 		owner = { end_event_chain = manifesti_chain }
 	}
-
 	option = {
 		name = manifesti.10.b
 		trigger = { has_planet_flag = manifesti_violent_protests }
@@ -1448,7 +1394,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = { # Buy their silence
 		name = manifesti.15.a
 		allow = {
@@ -1466,7 +1411,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = { # Withhold pay from nonconformists
 		name = manifesti.15.b
 		tooltip = {
@@ -1480,7 +1424,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = { # Partake in the trend
 		name = manifesti.15.c
 		trigger = {
@@ -1492,24 +1435,18 @@ planet_event = {
 			}
 		}
 	}
-
 	option = { # Celebrate linguistic diversity
 		name = manifesti.15.d
-		trigger = {
-			owner = { is_xenophile = yes }
-		}
+		trigger = { owner = { is_xenophile = yes } }
 		hidden_effect = {
 			event_target:manifesti_world = {
 				planet_event = { id = manifesti.20 days = 145 }
 			}
 		}
 	}
-
 	option = { # Foster dialogue, not division
 		name = manifesti.15.e
-		trigger = {
-			owner = { is_pacifist = yes }
-		}
+		trigger = { owner = { is_pacifist = yes } }
 		hidden_effect = {
 			event_target:manifesti_world = {
 				planet_event = { id = manifesti.20 days = 145 }
@@ -1552,7 +1489,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = { # Let them continue
 		name = manifesti.20.a
 		owner = {
@@ -1563,7 +1499,6 @@ planet_event = {
 			planet_event = { id = manifesti.25 days = 156 }
 		}
 	}
-
 	option = { # exhibition dismantled
 		name = manifesti.20.b
 		set_planet_flag = manifesti_dismantled_exhibition
@@ -1591,7 +1526,6 @@ planet_event = {
 
 	immediate = {
 	}
-
 	option = { # It was inevitable
 		name = manifesti.25.a
 		hidden_effect = {
@@ -1601,7 +1535,6 @@ planet_event = {
 		}
 		custom_tooltip = manifesti.25.tt
 	}
-
 	option = { # Embrace it
 		name = manifesti.25.b
 		owner = {
@@ -1614,7 +1547,6 @@ planet_event = {
 		}
 		custom_tooltip = manifesti.25.tt
 	}
-
 	option = { # Declare them outlaws
 		name = manifesti.25.c
 		owner = {
@@ -1623,7 +1555,6 @@ planet_event = {
 			}
 		}
 	}
-
 	after = {
 		owner = {
 			set_timed_country_flag = { flag = manifesti_faction days = 955 } # Matches faction on_create, plus some of the evaluation event delay above
@@ -1676,14 +1607,12 @@ country_event = {
 			set_pop_group_flag = manifesti_bored
 		}
 	}
-
 	option = {
 		name = manifesti.30.a
 		add_modifier = { modifier = manifesti_sweet_dreams_mod years = 8 }
 		add_resource = { society_research = 1800 }
 		end_event_chain = manifesti_chain
 	}
-
 	option = {
 		name = manifesti.30.b
 		exclusive_trigger = {
@@ -1698,4 +1627,3 @@ country_event = {
 		end_event_chain = manifesti_chain
 	}
 }
-

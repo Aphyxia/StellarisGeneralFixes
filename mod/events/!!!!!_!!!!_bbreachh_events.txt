@@ -97,4 +97,3 @@ country_event = {
 		remove_modifier = sship_build_speed_mult_crisiss
 	}
 }
-

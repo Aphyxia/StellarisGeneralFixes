@@ -13,7 +13,6 @@ cyberization_standards = {
 	# Fires when the policy group first becomes available
 	on_activate = {
 	}
-
 	option = {
 		name = cyberization_standards_full
 		policy_flags = { cyberization_standards_full }
@@ -74,7 +73,6 @@ cyberization_standards = {
 		}
 		AI_weight = { weight = 1 }
 	}
-
 	option = {
 		name = cyberization_standards_limited
 		policy_flags = { cyberization_standards_limited }

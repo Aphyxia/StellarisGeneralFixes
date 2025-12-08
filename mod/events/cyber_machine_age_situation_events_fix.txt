@@ -101,9 +101,7 @@ situation_event = {
 					NOT = { has_situation_flag = cyberization_final }
 				}
 				if = {
-					limit = {
-						owner = { is_hive_empire = yes }
-					}
+					limit = { owner = { is_hive_empire = yes } }
 					set_situation_flag = cyber_2005_stage_3_fire
 				}
 				else = {
@@ -196,7 +194,9 @@ situation_event = {
 				# }
 				if = {
 					limit = { is_hive_empire = yes }
-					cyberize_pops_effect = { LIMITED = yes }
+					cyberize_pops_effect = {
+						LIMITED = yes
+					}
 					# cyberspecies gets automatically limited
 					assimilate_leaders = {
 						SOURCE = event_target:changing_species
@@ -204,7 +204,10 @@ situation_event = {
 					}
 				}
 				else = {
-					cyberize_pops_effect = { SPIRITUALIST = yes LIMITED = yes }
+					cyberize_pops_effect = {
+						SPIRITUALIST = yes
+						LIMITED = yes
+					}
 					# cyberspecies gets automatically limited
 					cyberize_leaders_limited_effect = yes
 				}
@@ -283,7 +286,9 @@ situation_event = {
 						}
 					}
 				}
-				cyberize_pops_effect = { SPIRITUALIST = yes }
+				cyberize_pops_effect = {
+					SPIRITUALIST = yes
+				}
 				# cyberize_leaders_effect = yes
 				# cyberize_colony_ships_effect = yes
 				# cyberize_armies_effect = yes
@@ -391,7 +396,9 @@ situation_event = {
 				# 		}
 				# 	}
 				# }
-				cyberize_pops_effect = { LIMITED = yes }
+				cyberize_pops_effect = {
+					LIMITED = yes
+				}
 			}
 			# Check if there are any pops left to cyberize, otherwise remove the cyberization flag to unpause the situation.
 			if = {
@@ -545,7 +552,6 @@ country_event = {
 	picture = GFX_evt_hive_cyberization
 	show_sound = event_the_flesh_is_weak
 	is_triggered_only = yes
-
 	option = {
 		name = cyber.2015.a
 		set_country_flag = driven_memory_aggregator
@@ -555,7 +561,6 @@ country_event = {
 		}
 		ai_chance = { factor = 1 }
 	}
-
 	option = {
 		name = cyber.2015.b
 		set_country_flag = driven_neural_chorus
@@ -565,13 +570,11 @@ country_event = {
 		}
 		ai_chance = { factor = 1 }
 	}
-
 	option = {
 		name = cyber.2015.c
 		custom_tooltip = cyber.2015.c.tt
 		trigger = { is_ai = no }
 	}
-
 	after = {
 		ruler = {
 			add_trait = { trait = leader_trait_cyborg }
@@ -586,4 +589,3 @@ country_event = {
 		}
 	}
 }
-

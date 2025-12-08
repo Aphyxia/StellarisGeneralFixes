@@ -1,11 +1,11 @@
 ############################
-
 #
 # Anomaly Events
 #
 # Written by Niclas Karlsson
 #
 ############################
+
 namespace = anomaly
 # ROOT = ship scope
 # FROM = planet scope
@@ -28,7 +28,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		from = {
@@ -63,7 +62,6 @@ ship_event = {
 			from = { clear_deposits = yes }
 		}
 	}
-
 	option = {
 		name = AMAZING
 		custom_tooltip = "anomaly.4005.a.tooltip"
@@ -77,6 +75,7 @@ ship_event = {
 }
 
 ### Derelict Ship #########################################################################################
+
 ship_event = {
 	id = anomaly.4010
 	title = "anomaly.4010.name"
@@ -94,7 +93,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = INTRIGUING
 		hidden_effect = {
@@ -111,7 +109,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = NOTIME
 	}
@@ -130,7 +127,6 @@ ship_event = {
 	immediate = {
 		fromfrom = { save_event_target_as = derelict_ship_location }
 	}
-
 	option = {
 		name = OK
 		owner = {
@@ -145,7 +141,6 @@ ship_event = {
 			fromfrom = { destroy_ambient_object = this }
 		}
 	}
-
 	option = {
 		exclusive_trigger = {
 			owner = { has_origin = origin_evolutionary_predators }
@@ -199,21 +194,13 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = anomaly.4012.a
 		custom_tooltip = anomaly.4012.a.tooltip
 		hidden_effect = {
 			event_target:contact_empire = {
-				set_timed_relation_flag = {
-					flag = no_coms
-					who = event_target:MyCountry
-					days = 90
-				}
-				add_opinion_modifier = {
-					who = event_target:MyCountry
-					modifier = opinion_crew_saved
-				}
+				set_timed_relation_flag = { flag = no_coms who = event_target:MyCountry days = 90 }
+				add_opinion_modifier = { who = event_target:MyCountry modifier = opinion_crew_saved }
 			}
 			owner = {
 				set_timed_country_flag = { flag = day_0 days = 7 }
@@ -225,7 +212,6 @@ ship_event = {
 		}
 		ai_chance = { factor = 10 }
 	}
-
 	option = {
 		name = anomaly.4012.b
 		hidden_effect = {
@@ -244,7 +230,6 @@ ship_event = {
 	show_sound = event_airlock
 	location = from
 	is_triggered_only = yes
-
 	after = {
 		hidden_effect = {
 			owner = {
@@ -252,7 +237,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "anomaly.4015.a"
 		owner = {
@@ -264,7 +248,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
 			owner = {
@@ -302,7 +285,6 @@ ship_event = {
 		}
 		ai_chance = { factor = 20 }
 	}
-
 	option = {
 		trigger = {
 			owner = {
@@ -341,7 +323,6 @@ ship_event = {
 		}
 		ai_chance = { factor = 30 }
 	}
-
 	option = {
 		trigger = {
 			owner = { has_origin = origin_evolutionary_predators }
@@ -441,7 +422,6 @@ country_event = {
 	location = from
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:DefiledCountry
 		planet_background = event_target:DefiledCountry
@@ -451,7 +431,6 @@ country_event = {
 	}
 
 	specimen = first_defiled_astronaut
-
 	option = {
 		name = "anomaly.4016.a"
 		custom_tooltip = "anomaly.4016.tooltip"
@@ -464,7 +443,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "anomaly.4016.c.spirit"
 		custom_tooltip = "anomaly.4016.tooltip"
@@ -477,7 +455,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "anomaly.4016.b"
 		custom_tooltip = "anomaly.4016.tooltip"
@@ -490,7 +467,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "anomaly.4016.d.phobe"
 		custom_tooltip = "anomaly.4016.tooltip"
@@ -510,7 +486,6 @@ country_event = {
 ship_event = {
 	id = anomaly.4020
 	title = "anomaly.4020.name"
-
 	inline_script = {
 		script = events/biogenesis_event_art
 		OWNER = owner
@@ -520,7 +495,6 @@ ship_event = {
 
 	show_sound = event_mystic_reveal
 	location = from
-
 	desc = {
 		text = "anomaly.4020.rocket.desc"
 		trigger = {
@@ -534,7 +508,6 @@ ship_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = "anomaly.4020.rocket.desc.mach"
 		trigger = {
@@ -548,7 +521,6 @@ ship_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = "anomaly.4020.desc"
 		trigger = {
@@ -564,7 +536,6 @@ ship_event = {
 
 	is_triggered_only = yes
 	specimen = decayed_megathrusters
-
 	after = {
 		hidden_effect = {
 			owner = {
@@ -572,7 +543,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
 			leader = {
@@ -585,9 +555,7 @@ ship_event = {
 		}
 		name = anomaly.4020.b
 		if = {
-			limit = {
-				from = { is_colonizable = no }
-			}
+			limit = { from = { is_colonizable = no } }
 			custom_tooltip = "anomaly.4020.a.tooltip"
 			hidden_effect = {
 				from = { add_deposit = d_alloys_2 }
@@ -603,7 +571,6 @@ ship_event = {
 		}
 		owner = { pop_lcluster_event = yes }
 	}
-
 	option = {
 		trigger = {
 			leader = {
@@ -616,9 +583,7 @@ ship_event = {
 		}
 		name = anomaly.4020.a
 		if = {
-			limit = {
-				from = { is_colonizable = no }
-			}
+			limit = { from = { is_colonizable = no } }
 			custom_tooltip = "anomaly.4020.a.tooltip"
 			hidden_effect = {
 				from = { add_deposit = d_alloys_2 }
@@ -709,19 +674,15 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "anomaly.4030.a"
 		allow = {
-			NOT = {
-				owner = { has_policy_flag = ai_outlawed }
-			}
+			NOT = { owner = { has_policy_flag = ai_outlawed } }
 		}
 		from = {
 			enable_special_project = { name = "AI_ADMIRAL_PROJECT" owner = root }
 		}
 	}
-
 	option = {
 		name = "anomaly.4030.b"
 		custom_tooltip = "anomaly.4030.b.tooltip"
@@ -743,7 +704,6 @@ ship_event = {
 	show_sound = event_sensor_ping
 	location = fromfromfrom
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		owner = {
@@ -758,15 +718,21 @@ ship_event = {
 				species = last_created_species
 				name = "NAME_0101010111"
 				skill = 3
-				traits = { 1 = leader_trait_aggressive 2 = leader_trait_fleet_logistician }
+				traits = {
+					1 = leader_trait_aggressive
+					2 = leader_trait_fleet_logistician
+				}
 				event_leader = yes
-				effect = { set_age = 1 }
+				effect = {
+					set_age = 1
+				}
 			}
 		}
 	}
 }
 
 ### Odd Star ##############################################################################################
+
 ship_event = {
 	id = anomaly.4035
 	title = "anomaly.4035.name"
@@ -782,7 +748,6 @@ ship_event = {
 			begin_event_chain = { event_chain = "star_power_chain" target = root }
 		}
 	}
-
 	option = {
 		name = "anomaly.4035.a"
 		owner = {
@@ -849,7 +814,6 @@ ship_event = {
 			solar_system = { remove_star_flag = current_system }
 		}
 	}
-
 	option = {
 		name = NOTIME
 		hidden_effect = {
@@ -885,9 +849,7 @@ fleet_event = {
 			owner = { remove_point_of_interest = anomaly.4035.poi.1 }
 			random_list = {
 				40 = {
-					event_target:ship_for_fleet_event = {
-						ship_event = { id = anomaly.4037 }
-					}
+					event_target:ship_for_fleet_event = { ship_event = { id = anomaly.4037 } }
 					random_system = {
 						limit = { has_star_flag = some_system_2 }
 						remove_star_flag = some_system_2
@@ -909,31 +871,21 @@ fleet_event = {
 						limit = {
 							NOT = {
 								owner = {
-									has_completed_event_chain_counter = {
-										event_chain = star_power_chain
-										counter = systems_visited_poi
-									}
+									has_completed_event_chain_counter = { event_chain = star_power_chain counter = systems_visited_poi }
 								}
 							}
 						}
-						event_target:ship_for_fleet_event = {
-							ship_event = { id = anomaly_failure.4037 }
-						}
+						event_target:ship_for_fleet_event = { ship_event = { id = anomaly_failure.4037 } }
 					}
 					if = {
 						limit = {
 							owner = {
 								NOT = { has_country_flag = finished_star_power_chain }
-								has_completed_event_chain_counter = {
-									event_chain = star_power_chain
-									counter = systems_visited_poi
-								}
+								has_completed_event_chain_counter = { event_chain = star_power_chain counter = systems_visited_poi }
 							}
 						}
 						owner = { set_country_flag = finished_star_power_chain }
-						event_target:ship_for_fleet_event = {
-							ship_event = { id = anomaly.4037 }
-						}
+						event_target:ship_for_fleet_event = { ship_event = { id = anomaly.4037 } }
 					}
 				}
 			}
@@ -946,9 +898,7 @@ fleet_event = {
 			owner = { remove_point_of_interest = anomaly.4035.poi.2 }
 			random_list = {
 				40 = {
-					event_target:ship_for_fleet_event = {
-						ship_event = { id = anomaly.4037 }
-					}
+					event_target:ship_for_fleet_event = { ship_event = { id = anomaly.4037 } }
 					random_system = {
 						limit = { has_star_flag = some_system_1 }
 						remove_star_flag = some_system_1
@@ -970,31 +920,21 @@ fleet_event = {
 						limit = {
 							NOT = {
 								owner = {
-									has_completed_event_chain_counter = {
-										event_chain = star_power_chain
-										counter = systems_visited_poi
-									}
+									has_completed_event_chain_counter = { event_chain = star_power_chain counter = systems_visited_poi }
 								}
 							}
 						}
-						event_target:ship_for_fleet_event = {
-							ship_event = { id = anomaly_failure.4037 }
-						}
+						event_target:ship_for_fleet_event = { ship_event = { id = anomaly_failure.4037 } }
 					}
 					if = {
 						limit = {
 							owner = {
 								NOT = { has_country_flag = finished_star_power_chain }
-								has_completed_event_chain_counter = {
-									event_chain = star_power_chain
-									counter = systems_visited_poi
-								}
+								has_completed_event_chain_counter = { event_chain = star_power_chain counter = systems_visited_poi }
 							}
 						}
 						owner = { set_country_flag = finished_star_power_chain }
-						event_target:ship_for_fleet_event = {
-							ship_event = { id = anomaly.4037 }
-						}
+						event_target:ship_for_fleet_event = { ship_event = { id = anomaly.4037 } }
 					}
 				}
 			}
@@ -1018,7 +958,6 @@ ship_event = {
 			star = { save_event_target_as = planet_1 }
 		}
 	}
-
 	option = {
 		name = "OK"
 		event_target:planet_1 = {
@@ -1031,7 +970,6 @@ ship_event = {
 ship_event = {
 	id = anomaly.4038
 	title = "anomaly.4035.name"
-
 	desc = {
 		trigger = {
 			hidden:owner = {
@@ -1048,7 +986,6 @@ ship_event = {
 	show_sound = event_ship_thrusters
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = "anomaly.4038.a"
 		trigger = {
@@ -1067,13 +1004,10 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "anomaly.4038.b"
 		trigger = {
-			NOT = {
-				owner = { has_technology = tech_fission_power }
-			}
+			NOT = { owner = { has_technology = tech_fission_power } }
 		}
 		owner = {
 			end_event_chain = "star_power_chain"
@@ -1090,7 +1024,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "anomaly.4038.b"
 		trigger = {
@@ -1114,7 +1047,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "anomaly.4038.b"
 		trigger = {
@@ -1138,7 +1070,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "anomaly.4038.b"
 		trigger = {
@@ -1162,7 +1093,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "anomaly.4038.b"
 		trigger = {
@@ -1189,6 +1119,7 @@ ship_event = {
 }
 
 ### Sins of a Sun ##########################################################################################
+
 ship_event = {
 	id = anomaly.4040
 	title = "anomaly.4040.name"
@@ -1197,7 +1128,6 @@ ship_event = {
 	show_sound = event_super_explosion
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = CURIOUS
 		custom_tooltip = "anomaly.4040.a.tooltip"
@@ -1216,6 +1146,7 @@ ship_event = {
 }
 
 ### Echoes from the Deep #################################################################################
+
 ship_event = {
 	id = anomaly.4045
 	title = "anomaly.4045.name"
@@ -1224,7 +1155,6 @@ ship_event = {
 	show_sound = event_ship_bridge
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		trigger = {
 			leader = {
@@ -1241,7 +1171,6 @@ ship_event = {
 			ship_event = { id = anomaly.4046 }
 		}
 	}
-
 	option = {
 		trigger = {
 			leader = {
@@ -1253,14 +1182,12 @@ ship_event = {
 			ship_event = { id = anomaly.4049 }
 		}
 	}
-
 	option = {
 		name = "anomaly.4045.c"
 		hidden_effect = {
 			ship_event = { id = anomaly.4051 }
 		}
 	}
-
 	option = {
 		name = "anomaly.4045.d"
 		hidden_effect = {
@@ -1339,7 +1266,6 @@ ship_event = {
 			###############################################
 		}
 	}
-
 	option = { # contact the beast
 		name = "anomaly.4046.a"
 		hidden_effect = {
@@ -1349,7 +1275,6 @@ ship_event = {
 			fromfrom = { remove_modifier = "hostile_environment" }
 		}
 	}
-
 	option = { # try to kill the beast
 		name = "anomaly.4046.b"
 		hidden_effect = {
@@ -1357,7 +1282,6 @@ ship_event = {
 			ship_event = { id = anomaly.4048 }
 		}
 	}
-
 	option = { # leave it alone
 		name = "anomaly.4046.c"
 		custom_tooltip = "anomaly.4046.c.tooltip_new"
@@ -1375,7 +1299,6 @@ ship_event = {
 	show_sound = event_mystic_reveal
 	location = fromfromfrom
 	is_triggered_only = yes
-
 	option = {
 		name = anomaly.4047.a
 		custom_tooltip = "anomaly.4047.a.tooltip_new"
@@ -1401,7 +1324,6 @@ ship_event = {
 			fromfrom = { change_pc = pc_toxic reset_planet = yes }
 		}
 	}
-
 	option = {
 		name = "anomaly.4048.a"
 		custom_tooltip = "anomaly.4048.a.tooltip"
@@ -1431,10 +1353,11 @@ ship_event = {
 			}
 		}
 		leader = {
-			add_or_level_up_veteran_trait_effect = { TRAIT = leader_trait_maniacal }
+			add_or_level_up_veteran_trait_effect = {
+				TRAIT = leader_trait_maniacal
+			}
 		}
 	}
-
 	option = {
 		name = "anomaly.4049.a"
 		custom_tooltip = "anomaly.4049.a.tooltip"
@@ -1443,7 +1366,6 @@ ship_event = {
 			set_disabled = no
 		}
 	}
-
 	option = {
 		name = "anomaly.4049.b"
 		custom_tooltip = "anomaly.4049.b.tooltip"
@@ -1475,12 +1397,10 @@ ship_event = {
 			leader = { add_experience = 100 }
 		}
 	}
-
 	option = {
 		name = "anomaly.4050.a"
 		custom_tooltip = "anomaly.4050.a.tooltip"
 	}
-
 	option = {
 		name = "anomaly.4050.b"
 		custom_tooltip = "anomaly.4050.a.tooltip"
@@ -1574,7 +1494,6 @@ ship_event = {
 		##### End of Gain POSITIVE Press Coverage #####
 		###############################################
 	}
-
 	option = {
 		name = "anomaly.4051.a"
 		custom_tooltip = "anomaly.4051.a.tooltip"
@@ -1582,20 +1501,16 @@ ship_event = {
 			owner = { has_country_flag = edict_improved_work_environment }
 		}
 	}
-
 	option = {
 		name = "anomaly.4051.a"
 		custom_tooltip = "anomaly.4051.b.tooltip"
 		trigger = {
-			NOT = {
-				owner = { has_country_flag = edict_improved_work_environment }
-			}
+			NOT = { owner = { has_country_flag = edict_improved_work_environment } }
 		}
 		hidden_effect = {
 			owner = { set_country_flag = edict_improved_work_environment }
 		}
 	}
-
 	option = {
 		name = "anomaly.4051.b"
 		custom_tooltip = "anomaly.4051.a.tooltip"
@@ -1603,14 +1518,11 @@ ship_event = {
 			owner = { has_country_flag = edict_improved_work_environment }
 		}
 	}
-
 	option = {
 		name = "anomaly.4051.b"
 		custom_tooltip = "anomaly.4051.b.tooltip"
 		trigger = {
-			NOT = {
-				owner = { has_country_flag = edict_improved_work_environment }
-			}
+			NOT = { owner = { has_country_flag = edict_improved_work_environment } }
 		}
 		hidden_effect = {
 			owner = { set_country_flag = edict_improved_work_environment }
@@ -1711,7 +1623,6 @@ ship_event = {
 		##### End of Gain NEGATIVE Press Coverage #####
 		###############################################
 	}
-
 	option = {
 		name = OK
 		custom_tooltip = "anomaly.4052.a.tooltip"
@@ -1727,6 +1638,7 @@ ship_event = {
 }
 
 ### Diamond in the Rough ##################################################################################
+
 ship_event = {
 	id = anomaly.4055
 	title = "anomaly.4055.name"
@@ -1739,7 +1651,6 @@ ship_event = {
 	immediate = {
 		from = { clear_deposits = yes }
 	}
-
 	option = {
 		name = anomaly.4055.a
 		custom_tooltip = "anomaly.4055.a.tooltip"
@@ -1767,7 +1678,6 @@ ship_event = {
 			from = { add_deposit = d_minerals_6 }
 		}
 	}
-
 	option = {
 		name = anomaly.4055.b
 		hidden_effect = {
@@ -1779,6 +1689,7 @@ ship_event = {
 }
 
 ### Improbable Teapot ####################################################################################
+
 ship_event = {
 	id = anomaly.4060
 	title = "anomaly.4060.name"
@@ -1792,7 +1703,6 @@ ship_event = {
 	immediate = {
 		owner = { set_country_flag = teapot_divination_flag }
 	}
-
 	option = {
 		name = anomaly.4060.a
 		enable_special_project = {
@@ -1801,7 +1711,6 @@ ship_event = {
 			location = from
 		}
 	}
-
 	option = {
 		name = anomaly.4060.b
 		trigger = {
@@ -1816,7 +1725,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = anomaly.4060.spirit.b
 		trigger = {
@@ -1837,14 +1745,12 @@ ship_event = {
 ship_event = {
 	id = anomaly.4061
 	title = PROJECT_COMPLETE
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = no }
 		}
 		text = anomaly.4061.desc
 	}
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = yes }
@@ -1856,7 +1762,6 @@ ship_event = {
 	show_sound = event_solar_fusion
 	location = fromfrom
 	is_triggered_only = yes
-
 	option = {
 		trigger = {
 			owner = { is_machine_empire = no }
@@ -1872,7 +1777,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
 			owner = { is_machine_empire = yes }
@@ -1888,13 +1792,9 @@ ship_event = {
 			}
 		}
 	}
-
 	after = {
 		owner = {
-			give_specimen = {
-				key = extradimensional_ceramic_pot
-				origin = IMPROBABLE_TEAPOT_PROJECT
-			}
+			give_specimen = { key = extradimensional_ceramic_pot origin = IMPROBABLE_TEAPOT_PROJECT }
 		}
 	}
 }
@@ -1903,7 +1803,6 @@ ship_event = {
 ship_event = {
 	id = anomaly.4062
 	title = PROJECT_COMPLETE
-
 	desc = {
 		trigger = {
 			hidden:owner = {
@@ -1930,7 +1829,6 @@ ship_event = {
 	show_sound = event_solar_fusion
 	location = fromfrom
 	is_triggered_only = yes
-
 	option = {
 		name = BREAKTHROUGH
 		trigger = {
@@ -1940,7 +1838,6 @@ ship_event = {
 			add_modifier = { modifier = forth_dimension_knowledge years = 20 }
 		}
 	}
-
 	option = {
 		name = anomaly.4062.spirit.a
 		trigger = {
@@ -1950,13 +1847,9 @@ ship_event = {
 			add_modifier = { modifier = forth_dimension_knowledge years = 20 }
 		}
 	}
-
 	after = {
 		owner = {
-			give_specimen = {
-				key = extradimensional_ceramic_pot
-				origin = IMPROBABLE_TEAPOT_PROJECT
-			}
+			give_specimen = { key = extradimensional_ceramic_pot origin = IMPROBABLE_TEAPOT_PROJECT }
 		}
 	}
 }
@@ -1972,7 +1865,6 @@ ship_event = {
 	location = from
 	trackable = yes
 	is_triggered_only = yes
-
 	after = {
 		hidden_effect = {
 			owner = {
@@ -1980,7 +1872,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = anomaly.4065.a
 		enable_special_project = {
@@ -1989,7 +1880,6 @@ ship_event = {
 			location = from
 		}
 	}
-
 	option = {
 		name = SCRAPIT
 		owner = {
@@ -2007,7 +1897,6 @@ ship_event = {
 ship_event = {
 	id = anomaly.4066
 	title = PROJECT_COMPLETE
-
 	desc = {
 		trigger = {
 			hidden:owner = {
@@ -2024,13 +1913,10 @@ ship_event = {
 	show_sound = event_scanner
 	location = fromfrom
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		trigger = {
-			NOT = {
-				owner = { has_technology = tech_mining_1 }
-			}
+			NOT = { owner = { has_technology = tech_mining_1 } }
 		}
 		owner = {
 			if = {
@@ -2043,7 +1929,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		trigger = {
@@ -2063,7 +1948,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = OK
 		custom_tooltip = "anomaly.4066.b.tooltip"
@@ -2081,6 +1965,7 @@ ship_event = {
 }
 
 ### Nutricious Fruit #####################################################################################
+
 ship_event = {
 	id = anomaly.4070
 	title = "anomaly.4070.name"
@@ -2090,7 +1975,6 @@ ship_event = {
 	location = from
 	is_triggered_only = yes
 	specimen = manna_fruit
-
 	option = {
 		name = "anomaly.4070.a"
 		from = {
@@ -2117,7 +2001,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = anomaly.4075.a
 		custom_tooltip = "anomaly.4075.a.tooltip"
@@ -2127,14 +2010,11 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = anomaly.4075.b
 		custom_tooltip = "anomaly.4075.a.tooltip"
 		trigger = {
-			NOT = {
-				owner = { has_technology = tech_shields_4 }
-			}
+			NOT = { owner = { has_technology = tech_shields_4 } }
 		}
 		hidden_effect = {
 			owner = {
@@ -2152,7 +2032,6 @@ country_event = {
 	show_sound = event_default
 	location = fromfrom
 	is_triggered_only = yes
-
 	option = {
 		name = MARVELOUS
 		root = {
@@ -2169,13 +2048,10 @@ country_event = {
 	show_sound = event_default
 	location = fromfrom
 	is_triggered_only = yes
-
 	option = {
 		name = MARVELOUS
 		trigger = {
-			NOT = {
-				root = { has_technology = tech_shields_1 }
-			}
+			NOT = { root = { has_technology = tech_shields_1 } }
 		}
 		root = {
 			if = {
@@ -2188,7 +2064,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = MARVELOUS
 		trigger = {
@@ -2208,7 +2083,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = MARVELOUS
 		trigger = {
@@ -2228,7 +2102,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = MARVELOUS
 		trigger = {
@@ -2261,7 +2134,6 @@ ship_event = {
 	location = from
 	trackable = yes
 	is_triggered_only = yes
-
 	after = {
 		hidden_effect = {
 			owner = {
@@ -2269,7 +2141,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = anomaly.4080.a
 		enable_special_project = {
@@ -2278,7 +2149,6 @@ ship_event = {
 			location = from
 		}
 	}
-
 	option = {
 		name = SCRAPIT
 		owner = {
@@ -2290,7 +2160,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = anomaly.4080.c
 		trigger = {
@@ -2322,7 +2191,6 @@ ship_event = {
 	show_sound = event_sensor_ping
 	location = fromfromfrom
 	is_triggered_only = yes
-
 	option = {
 		trigger = {
 			owner = { has_country_flag = edict_super_sensors }
@@ -2337,12 +2205,9 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
-			NOT = {
-				owner = { has_country_flag = edict_super_sensors }
-			}
+			NOT = { owner = { has_country_flag = edict_super_sensors } }
 		}
 		name = SPLENDID
 		custom_tooltip = anomaly.4081.b.tooltip
@@ -2368,7 +2233,6 @@ ship_event = {
 	location = from
 	trackable = yes
 	is_triggered_only = yes
-
 	after = {
 		hidden_effect = {
 			owner = {
@@ -2376,7 +2240,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = INTRIGUING
 		enable_special_project = {
@@ -2385,7 +2248,6 @@ ship_event = {
 			location = from
 		}
 	}
-
 	option = {
 		name = SCRAPIT
 		owner = {
@@ -2408,7 +2270,6 @@ ship_event = {
 	show_sound = event_ship_thrusters
 	location = fromfromfrom
 	is_triggered_only = yes
-
 	option = {
 		name = "anomaly.4086.a"
 		custom_tooltip = "anomaly.4086.a.tooltip"
@@ -2432,7 +2293,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "anomaly.4086.b"
 		# custom_tooltip = "anomaly.4086.b.tooltip"
@@ -2443,6 +2303,7 @@ ship_event = {
 }
 
 ### Lush Planet #############################################################################################
+
 ship_event = {
 	id = anomaly.4095
 	title = "anomaly.4095.name"
@@ -2452,7 +2313,6 @@ ship_event = {
 	location = from
 	is_triggered_only = yes
 	specimen = planet_super_roots
-
 	option = {
 		name = EXCELLENT
 		custom_tooltip = "anomaly.4095.a.tooltip"
@@ -2469,7 +2329,6 @@ ship_event = {
 ship_event = {
 	id = anomaly.4100
 	title = "anomaly.4100.name"
-
 	desc = {
 		text = "anomaly.4100.desc"
 		trigger = {
@@ -2485,7 +2344,6 @@ ship_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = "anomaly.4100.expert.desc"
 		trigger = {
@@ -2539,9 +2397,7 @@ ship_event = {
 	option = {
 		name = anomaly.4100.b
 		trigger = {
-			NOT = {
-				owner = { has_policy_flag = interference_not_allowed }
-			}
+			NOT = { owner = { has_policy_flag = interference_not_allowed } }
 		}
 		hidden_effect = {
 			if = {
@@ -2597,7 +2453,6 @@ ship_event = {
 	show_sound = event_alien_nature
 	location = fromfromfrom
 	is_triggered_only = yes
-
 	option = {
 		name = anomaly.4101.a
 		# custom_tooltip = "anomaly.4100.a.tooltip"
@@ -2618,7 +2473,6 @@ ship_event = {
 	show_sound = event_alien_nature
 	location = fromfrom
 	is_triggered_only = yes
-
 	option = {
 		name = SPLENDID
 		fromfromfrom = {
@@ -2697,7 +2551,6 @@ ship_event = {
 		##### End of Gain POSITIVE Press Coverage #####
 		###############################################
 	}
-
 	option = {
 		name = anomaly.4102.b
 		######## Gain POSITIVE Press Coverage ########
@@ -2785,7 +2638,6 @@ country_event = {
 	show_sound = event_alien_nature
 	location = fromfrom
 	is_triggered_only = yes
-
 	option = {
 		name = anomaly.4103.a
 		fromfrom = {
@@ -2804,7 +2656,6 @@ country_event = {
 	show_sound = event_alien_nature
 	location = fromfrom
 	is_triggered_only = yes
-
 	option = {
 		name = anomaly.4104.a
 		fromfrom = {
@@ -2864,14 +2715,12 @@ country_event = {
 ship_event = {
 	id = anomaly.4105
 	title = "anomaly.4105.name"
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = no }
 		}
 		text = anomaly.4105.desc
 	}
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = yes }
@@ -2890,7 +2739,6 @@ ship_event = {
 		}
 		from = { clear_deposits = yes }
 	}
-
 	after = {
 		hidden_effect = {
 			owner = {
@@ -2898,7 +2746,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
 			owner = { has_country_flag = edict_renewable_energy }
@@ -2912,7 +2759,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
 			owner = {
@@ -2932,7 +2778,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
 			owner = {
@@ -2950,7 +2795,6 @@ ship_event = {
 			}
 		}
 	}
-
 	after = {
 		tooltip = {
 			add_expertise_trait_to_leader_or_research_node_effect = {
@@ -2958,7 +2802,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = { # Risa fix: reenable this option
 		trigger = {
 			leader = {
@@ -3000,7 +2843,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = AMAZING
 		custom_tooltip = "anomaly.4106.a.tooltip"
@@ -3008,14 +2850,11 @@ ship_event = {
 			owner = { has_country_flag = edict_renewable_energy }
 		}
 	}
-
 	option = {
 		name = AMAZING
 		custom_tooltip = "anomaly.4106.b.tooltip"
 		trigger = {
-			NOT = {
-				owner = { has_country_flag = edict_renewable_energy }
-			}
+			NOT = { owner = { has_country_flag = edict_renewable_energy } }
 		}
 		hidden_effect = {
 			owner = { set_country_flag = edict_renewable_energy }
@@ -3024,10 +2863,10 @@ ship_event = {
 }
 
 ### Shifting Sands ##########################################################################################
+
 ship_event = {
 	id = anomaly.4110
 	title = "anomaly.4110.name"
-
 	desc = {
 		trigger = {
 			leader = {
@@ -3042,7 +2881,6 @@ ship_event = {
 		}
 		text = "anomaly.4110.success.desc"
 	}
-
 	desc = {
 		trigger = {
 			leader = {
@@ -3062,7 +2900,6 @@ ship_event = {
 	show_sound = event_construction
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		trigger = {
 			leader = {
@@ -3082,7 +2919,6 @@ ship_event = {
 			add_deposit = d_quicksand_basin
 		}
 	}
-
 	option = {
 		trigger = {
 			leader = {
@@ -3111,14 +2947,12 @@ ship_event = {
 ship_event = {
 	id = anomaly.4115
 	title = "anomaly.4115.name"
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = no }
 		}
 		text = anomaly.4115.desc
 	}
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = yes }
@@ -3145,7 +2979,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = anomaly.4115.a
 		enable_special_project = {
@@ -3154,7 +2987,6 @@ ship_event = {
 			location = root
 		}
 	}
-
 	option = {
 		name = anomaly.4115.b
 		custom_tooltip = "anomaly.4115.b.tooltip"
@@ -3171,21 +3003,18 @@ ship_event = {
 ship_event = {
 	id = anomaly.4116
 	title = "anomaly.4115.name"
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = no }
 		}
 		text = anomaly.4116.desc
 	}
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = yes }
 		}
 		text = anomaly.4116.desc.mach
 	}
-
 	inline_script = {
 		script = events/biogenesis_event_art
 		OWNER = owner
@@ -3196,7 +3025,6 @@ ship_event = {
 	show_sound = event_ground_battle
 	location = fromfrom
 	is_triggered_only = yes
-
 	option = {
 		trigger = {
 			owner = { is_machine_empire = no }
@@ -3216,7 +3044,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
 			owner = { is_machine_empire = yes }
@@ -3241,14 +3068,12 @@ ship_event = {
 ship_event = {
 	id = anomaly.4117
 	title = "anomaly.4115.name"
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = no }
 		}
 		text = anomaly.4117.desc
 	}
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = yes }
@@ -3260,7 +3085,6 @@ ship_event = {
 	show_sound = event_ground_battle
 	location = fromfrom
 	is_triggered_only = yes
-
 	option = {
 		trigger = {
 			owner = { is_machine_empire = no }
@@ -3281,7 +3105,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
 			owner = { is_machine_empire = yes }
@@ -3305,6 +3128,7 @@ ship_event = {
 }
 
 ### Explosions in the Sky ###############################################################################
+
 ship_event = {
 	id = anomaly.4120
 	title = "anomaly.4120.name"
@@ -3313,7 +3137,6 @@ ship_event = {
 	show_sound = event_sensor_ping
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = AMAZING
 		owner = {
@@ -3417,6 +3240,7 @@ ship_event = {
 #	}
 # }
 ### Fountain of Youth #############################################################################
+
 ship_event = {
 	id = anomaly.4130
 	title = "anomaly.4130.name"
@@ -3452,9 +3276,7 @@ ship_event = {
 						every_country = {
 							limit = { has_country_flag = amoeba_encountered }
 							establish_communications_no_message = prev
-							establish_communication_with_subjects_and_federation = {
-								FLAG = amoeba_encountered
-							}
+							establish_communication_with_subjects_and_federation = { FLAG = amoeba_encountered }
 						}
 						create_fleet = {
 							name = "NAME_Life_Tree_Protector_plural"
@@ -3509,7 +3331,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = anomaly.4130.a
 		# custom_tooltip = "anomaly.4130.a.tooltip"
@@ -3530,7 +3351,6 @@ ship_event = {
 	show_sound = event_mystic_reveal
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = anomaly.4131.a
 		owner = {
@@ -3543,7 +3363,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = anomaly.4131.b
 		owner = {
@@ -3556,7 +3375,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = anomaly.4131.c
 		owner = {
@@ -3592,7 +3410,6 @@ ship_event = {
 			}
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			owner = {
@@ -3600,14 +3417,12 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = RESEARCHIT
 		event_target:HomePlanet = {
 			enable_special_project = { name = "MASTERS_WRITINGS_POLITICS" owner = root }
 		}
 	}
-
 	option = {
 		name = anomaly.4135.b
 		owner = {
@@ -3631,7 +3446,6 @@ ship_event = {
 country_event = {
 	id = anomaly.4136
 	title = "PROJECT_COMPLETE"
-
 	desc = {
 		text = "anomaly.4136.found.desc"
 		trigger = {
@@ -3642,7 +3456,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = "anomaly.4136.desc"
 		trigger = {
@@ -3657,7 +3470,6 @@ country_event = {
 	picture = GFX_evt_star_chart
 	show_sound = event_administrative_work
 	is_triggered_only = yes
-
 	option = {
 		name = SPLENDID
 		custom_tooltip = "anomaly.4136.a.tooltip"
@@ -3695,7 +3507,6 @@ ship_event = {
 			}
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			owner = {
@@ -3703,14 +3514,12 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = RESEARCHIT
 		event_target:HomePlanet = {
 			enable_special_project = { name = "MASTERS_WRITINGS_PHILOSOPHY" owner = root }
 		}
 	}
-
 	option = {
 		name = anomaly.4135.b
 		owner = {
@@ -3729,7 +3538,6 @@ ship_event = {
 country_event = {
 	id = anomaly.4141
 	title = "PROJECT_COMPLETE"
-
 	desc = {
 		text = "anomaly.4141.found.desc"
 		trigger = {
@@ -3740,7 +3548,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = "anomaly.4141.desc"
 		trigger = {
@@ -3755,7 +3562,6 @@ country_event = {
 	picture = GFX_evt_star_chart
 	show_sound = event_administrative_work
 	is_triggered_only = yes
-
 	option = {
 		name = SPLENDID
 		custom_tooltip = "anomaly.4141.a.tooltip"
@@ -3796,7 +3602,6 @@ ship_event = {
 			}
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			owner = {
@@ -3804,14 +3609,12 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = RESEARCHIT
 		event_target:HomePlanet = {
 			enable_special_project = { name = "MASTERS_WRITINGS_DIPLOMACY" owner = root }
 		}
 	}
-
 	option = {
 		name = anomaly.4135.b
 		owner = {
@@ -3835,7 +3638,6 @@ ship_event = {
 country_event = {
 	id = anomaly.4151
 	title = "PROJECT_COMPLETE"
-
 	desc = {
 		text = "anomaly.4151.found.desc"
 		trigger = {
@@ -3846,7 +3648,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = "anomaly.4151.desc"
 		trigger = {
@@ -3862,7 +3663,6 @@ country_event = {
 	show_sound = event_administrative_work
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = SPLENDID
 		custom_tooltip = "anomaly.4151.a.tooltip"
@@ -3873,6 +3673,7 @@ country_event = {
 }
 
 ### Underground Vault #####################################################################################
+
 ship_event = {
 	id = anomaly.4155
 	title = "anomaly.4155.name"
@@ -3882,7 +3683,6 @@ ship_event = {
 	location = from
 	trackable = yes
 	is_triggered_only = yes
-
 	option = {
 		name = anomaly.4155.a
 		from = {
@@ -3892,7 +3692,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = anomaly.4155.b
 		trigger = {
@@ -3934,14 +3733,12 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = RESEARCHIT
 		event_target:HomePlanet = {
 			enable_special_project = { name = "CRYOPOD_OPENING_PROJECT" owner = root }
 		}
 	}
-
 	option = {
 		name = anomaly.4156.b
 		owner = {
@@ -3985,7 +3782,6 @@ country_event = {
 		}
 		last_created_species = { save_event_target_as = AlienWarriorSpecies }
 	}
-
 	picture_event_data = {
 		portrait = event_target:AlienWarriorSpecies
 		planet_background = event_target:HomePlanet
@@ -3993,7 +3789,6 @@ country_event = {
 		city_level = event_target:HomePlanet
 		room = event_target:AlienWarriorSpecies.ruler
 	}
-
 	option = {
 		name = anomaly.4157.a
 		hidden_effect = {
@@ -4010,14 +3805,12 @@ country_event = {
 			is_militarist = no
 		}
 	}
-
 	option = {
 		name = anomaly.4157.b
 		hidden_effect = {
 			country_event = { id = anomaly.4158 }
 		}
 	}
-
 	option = {
 		name = anomaly.4157.c
 		hidden_effect = {
@@ -4045,7 +3838,6 @@ country_event = {
 	location = event_target:HomePlanet
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:AlienWarriorSpecies
 		planet_background = event_target:HomePlanet
@@ -4053,13 +3845,11 @@ country_event = {
 		city_level = event_target:HomePlanet
 		room = event_target:AlienWarriorSpecies.ruler
 	}
-
 	option = {
 		name = anomaly.4158.a
 		response_text = anomaly.4158.a.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = anomaly.4158.b
 		response_text = anomaly.4158.b.response
@@ -4072,7 +3862,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = anomaly.4158.militant.b
 		response_text = anomaly.4158.b.response
@@ -4083,7 +3872,6 @@ country_event = {
 			is_xenophobe = no
 		}
 	}
-
 	option = {
 		name = anomaly.4158.spiritual.b
 		response_text = anomaly.4158.b.response
@@ -4094,14 +3882,12 @@ country_event = {
 			is_xenophobe = no
 		}
 	}
-
 	option = {
 		name = anomaly.4158.c
 		response_text = anomaly.4158.c.response
 		is_dialog_only = yes
 		trigger = { is_xenophobe = no }
 	}
-
 	option = { # Rejecting
 		name = anomaly.4158.d
 		trigger = {
@@ -4116,7 +3902,6 @@ country_event = {
 			country_event = { id = anomaly.4161 }
 		}
 	}
-
 	option = { # Joins you
 		name = anomaly.4158.d
 		trigger = {
@@ -4139,7 +3924,6 @@ country_event = {
 			country_event = { id = anomaly.4160 }
 		}
 	}
-
 	option = { # Kills researcher
 		name = anomaly.4158.d
 		trigger = {
@@ -4158,7 +3942,6 @@ country_event = {
 			country_event = { id = anomaly.4162 }
 		}
 	}
-
 	option = {
 		name = anomaly.4158.f
 		trigger = { is_fanatic_xenophobe = no }
@@ -4166,7 +3949,6 @@ country_event = {
 			country_event = { id = anomaly.4163 }
 		}
 	}
-
 	option = {
 		name = anomaly.4158.xenophobe.f
 		trigger = { is_fanatic_xenophobe = yes }
@@ -4185,7 +3967,6 @@ country_event = {
 	location = event_target:HomePlanet
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:AlienWarriorSpecies
 		planet_background = event_target:HomePlanet
@@ -4193,13 +3974,11 @@ country_event = {
 		city_level = event_target:HomePlanet
 		room = event_target:AlienWarriorSpecies.ruler
 	}
-
 	option = {
 		name = anomaly.4158.a
 		response_text = anomaly.4158.a.response
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = anomaly.4158.b
 		response_text = anomaly.4158.b.response
@@ -4212,7 +3991,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = anomaly.4158.militant.b
 		response_text = anomaly.4158.b.response
@@ -4223,7 +4001,6 @@ country_event = {
 			is_xenophobe = no
 		}
 	}
-
 	option = {
 		name = anomaly.4158.spiritual.b
 		response_text = anomaly.4158.b.response
@@ -4234,14 +4011,12 @@ country_event = {
 			is_xenophobe = no
 		}
 	}
-
 	option = {
 		name = anomaly.4158.c
 		response_text = anomaly.4158.c.response
 		is_dialog_only = yes
 		trigger = { is_xenophobe = no }
 	}
-
 	option = { # Rejecting
 		name = anomaly.4158.d
 		trigger = {
@@ -4256,7 +4031,6 @@ country_event = {
 			country_event = { id = anomaly.4161 }
 		}
 	}
-
 	option = { # Joins you
 		name = anomaly.4158.d
 		trigger = {
@@ -4279,7 +4053,6 @@ country_event = {
 			country_event = { id = anomaly.4160 }
 		}
 	}
-
 	option = { # Kills researcher
 		name = anomaly.4158.d
 		trigger = {
@@ -4298,7 +4071,6 @@ country_event = {
 			country_event = { id = anomaly.4162 }
 		}
 	}
-
 	option = {
 		name = anomaly.4158.f
 		trigger = { is_fanatic_xenophobe = no }
@@ -4306,7 +4078,6 @@ country_event = {
 			country_event = { id = anomaly.4163 }
 		}
 	}
-
 	option = {
 		name = anomaly.4158.xenophobe.f
 		trigger = { is_fanatic_xenophobe = yes }
@@ -4325,7 +4096,6 @@ country_event = {
 	location = event_target:HomePlanet
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:AlienWarriorSpecies
 		planet_background = event_target:HomePlanet
@@ -4333,7 +4103,6 @@ country_event = {
 		city_level = event_target:HomePlanet
 		room = event_target:AlienWarriorSpecies.ruler
 	}
-
 	immediate = {
 		hidden_effect = {
 			random_galaxy_planet = {
@@ -4342,7 +4111,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		create_leader = {
@@ -4350,7 +4118,9 @@ country_event = {
 			species = event_target:AlienWarriorSpecies
 			name = "NAME_Majula_the_Bearer"
 			skill = 5
-			traits = { 1 = leader_trait_butcher }
+			traits = {
+				1 = leader_trait_butcher
+			}
 			event_leader = yes
 		}
 	}
@@ -4365,7 +4135,6 @@ country_event = {
 	location = event_target:HomePlanet
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:AlienWarriorSpecies
 		planet_background = event_target:HomePlanet
@@ -4373,7 +4142,6 @@ country_event = {
 		city_level = event_target:HomePlanet
 		room = event_target:AlienWarriorSpecies.ruler
 	}
-
 	immediate = {
 		hidden_effect = {
 			random_galaxy_planet = {
@@ -4384,17 +4152,12 @@ country_event = {
 			remove_country_flag = suspected_angels
 		}
 	}
-
 	option = {
 		name = anomaly.4161.a
 	}
-
 	option = {
 		name = anomaly.4161.b
-		trigger = {
-			is_pacifist = no
-			is_xenophile = no
-		}
+		trigger = { is_pacifist = no is_xenophile = no }
 	}
 }
 
@@ -4407,7 +4170,6 @@ country_event = {
 	location = event_target:HomePlanet
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:AlienWarriorSpecies
 		planet_background = event_target:HomePlanet
@@ -4415,7 +4177,6 @@ country_event = {
 		city_level = event_target:HomePlanet
 		room = event_target:AlienWarriorSpecies.ruler
 	}
-
 	immediate = {
 		random_owned_leader = {
 			limit = {
@@ -4432,7 +4193,6 @@ country_event = {
 			remove_country_flag = suspected_angels
 		}
 	}
-
 	option = {
 		name = CURSES
 	}
@@ -4447,7 +4207,6 @@ country_event = {
 	location = event_target:HomePlanet
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:AlienWarriorSpecies
 		planet_background = event_target:HomePlanet
@@ -4455,7 +4214,6 @@ country_event = {
 		city_level = event_target:HomePlanet
 		room = event_target:AlienWarriorSpecies.ruler
 	}
-
 	immediate = {
 		hidden_effect = {
 			random_galaxy_planet = {
@@ -4466,12 +4224,10 @@ country_event = {
 			remove_country_flag = suspected_angels
 		}
 	}
-
 	option = {
 		name = anomaly.4163.a
 		trigger = { is_xenophobe = no }
 	}
-
 	option = {
 		name = anomaly.4163.b
 		trigger = { is_xenophobe = yes }
@@ -4479,6 +4235,7 @@ country_event = {
 }
 
 #### Master's Teachings - War ######################################################################################
+
 ship_event = {
 	id = anomaly.4165
 	title = "anomaly.4165.name"
@@ -4504,14 +4261,12 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = RESEARCHIT
 		event_target:HomePlanet = {
 			enable_special_project = { name = "MASTERS_WRITINGS_WAR" owner = root }
 		}
 	}
-
 	option = {
 		name = anomaly.4135.b
 		owner = {
@@ -4529,7 +4284,6 @@ ship_event = {
 country_event = {
 	id = anomaly.4166
 	title = "PROJECT_COMPLETE"
-
 	desc = {
 		text = "anomaly.4166.found.desc"
 		trigger = {
@@ -4540,7 +4294,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = "anomaly.4166.desc"
 		trigger = {
@@ -4556,7 +4309,6 @@ country_event = {
 	show_sound = event_administrative_work
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		trigger = { is_militarist = yes }
 		name = SPLENDID
@@ -4565,7 +4317,6 @@ country_event = {
 			set_country_flag = edict_masters_writings_war
 		}
 	}
-
 	option = {
 		trigger = { is_militarist = yes }
 		name = anomaly.4166.a
@@ -4577,25 +4328,20 @@ country_event = {
 }
 
 #### Rich Gas Mining ##########################################################################################
+
 ship_event = {
 	id = anomaly.4170
 	title = "anomaly.4170.name"
-
 	desc = {
 		text = "anomaly.4170.material.desc"
 		trigger = {
-			root = {
-				owner = { is_materialist = yes }
-			}
+			root = { owner = { is_materialist = yes } }
 		}
 	}
-
 	desc = {
 		text = "anomaly.4170.basic.desc"
 		trigger = {
-			root = {
-				owner = { is_materialist = no }
-			}
+			root = { owner = { is_materialist = no } }
 		}
 	}
 
@@ -4616,7 +4362,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = anomaly.4170.a
 		custom_tooltip = anomaly.4170.a.tooltip
@@ -4684,20 +4429,16 @@ planet_event = {
 planet_event = {
 	id = anomaly.4172
 	title = "anomaly.4170.name"
-
 	desc = {
 		text = "anomaly.4172.owner.desc"
 		trigger = {
 			owner = { has_country_flag = limited_modifier_gas_rich_planet }
 		}
 	}
-
 	desc = {
 		text = "anomaly.4172.conqueror.desc"
 		trigger = {
-			NOT = {
-				owner = { has_country_flag = limited_modifier_gas_rich_planet }
-			}
+			NOT = { owner = { has_country_flag = limited_modifier_gas_rich_planet } }
 		}
 	}
 
@@ -4705,7 +4446,6 @@ planet_event = {
 	show_sound = event_default
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = OK
 		trigger = {
@@ -4713,13 +4453,10 @@ planet_event = {
 		}
 		owner = { remove_country_flag = limited_modifier_gas_rich_planet }
 	}
-
 	option = {
 		name = OK
 		trigger = {
-			NOT = {
-				owner = { has_country_flag = limited_modifier_gas_rich_planet }
-			}
+			NOT = { owner = { has_country_flag = limited_modifier_gas_rich_planet } }
 		}
 	}
 }

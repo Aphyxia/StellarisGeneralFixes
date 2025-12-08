@@ -3,15 +3,14 @@
 @jumps = 3
 
 ### Deneb System
+
 deneb_system = {
 	name = "NAME_Deneb"
 	class = "sc_a"
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 90
 	}
-
 	init_effect = {
 		every_neighbor_system = {
 			set_star_flag = empire_cluster
@@ -19,11 +18,9 @@ deneb_system = {
 		}
 		generate_home_system_resources = yes
 	}
-
 	flags = { empire_home_system deneb_system }
 
 	usage = custom_empire
-
 	planet = {
 		name = "NAME_Deneb"
 		class = "pc_a_star"
@@ -32,7 +29,6 @@ deneb_system = {
 		size = 32
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_Inferno"
 		class = "pc_molten"
@@ -41,7 +37,6 @@ deneb_system = {
 		size = 10
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_DT4-298"
 		class = "pc_asteroid"
@@ -50,7 +45,6 @@ deneb_system = {
 		size = 5
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_LR-2129"
 		class = "pc_asteroid"
@@ -59,7 +53,6 @@ deneb_system = {
 		size = 5
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_GR-345"
 		class = "pc_asteroid"
@@ -68,7 +61,6 @@ deneb_system = {
 		size = 5
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_Olympus"
 		class = "pc_gas_giant"
@@ -105,7 +97,6 @@ deneb_system = {
 			}
 		}
 	}
-
 	planet = {
 		name = "NAME_Marble"
 		class = "pc_barren_cold"
@@ -114,7 +105,6 @@ deneb_system = {
 		size = 10
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_Hyperion"
 		class = "pc_gas_giant"
@@ -132,7 +122,6 @@ deneb_system = {
 			has_ring = no
 		}
 	}
-
 	planet = {
 		name = "NAME_Tumbleweed"
 		class = "pc_barren"
@@ -141,7 +130,6 @@ deneb_system = {
 		size = 15
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_Jackson's_Planet"
 		class = "pc_frozen"
@@ -150,13 +138,11 @@ deneb_system = {
 		size = 20
 		has_ring = no
 	}
-
 	neighbor_system = {
 		trigger = { num_guaranteed_colonies >= 2 }
 		hyperlane_jumps = { min = 1 max = @jumps }
 		initializer = "neighbor_t1"
 	}
-
 	neighbor_system = {
 		trigger = { num_guaranteed_colonies >= 1 }
 		hyperlane_jumps = { min = 1 max = @jumps }
@@ -165,15 +151,14 @@ deneb_system = {
 }
 
 ### Deneb System - UNE start
+
 une_deneb_system = {
 	name = "NAME_Deneb"
 	class = "sc_a"
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 90
 	}
-
 	init_effect = {
 		every_neighbor_system = {
 			set_star_flag = empire_cluster
@@ -181,11 +166,9 @@ une_deneb_system = {
 		}
 		generate_home_system_resources = yes
 	}
-
 	flags = { empire_home_system deneb_system }
 
 	usage = misc_system_init
-
 	usage_odds = {
 		base = 0
 		modifier = {
@@ -210,7 +193,6 @@ une_deneb_system = {
 	}
 
 	max_instances = 1
-
 	planet = {
 		name = "NAME_Deneb"
 		class = "pc_a_star"
@@ -219,7 +201,6 @@ une_deneb_system = {
 		size = 40
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_Inferno"
 		class = "pc_molten"
@@ -228,7 +209,6 @@ une_deneb_system = {
 		size = 10
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_DT4-298"
 		class = "pc_asteroid"
@@ -237,7 +217,6 @@ une_deneb_system = {
 		size = 5
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_LR-2129"
 		class = "pc_asteroid"
@@ -246,7 +225,6 @@ une_deneb_system = {
 		size = 5
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_GR-345"
 		class = "pc_asteroid"
@@ -255,7 +233,6 @@ une_deneb_system = {
 		size = 5
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_Olympus"
 		class = "pc_gas_giant"
@@ -354,7 +331,6 @@ une_deneb_system = {
 			}
 		}
 	}
-
 	planet = {
 		name = "NAME_Marble"
 		class = "pc_barren_cold"
@@ -363,7 +339,6 @@ une_deneb_system = {
 		size = 10
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_Hyperion"
 		class = "pc_gas_giant"
@@ -381,7 +356,6 @@ une_deneb_system = {
 			has_ring = no
 		}
 	}
-
 	planet = {
 		name = "NAME_Tumbleweed"
 		class = "pc_barren"
@@ -390,7 +364,6 @@ une_deneb_system = {
 		size = 15
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_Jackson's_Planet"
 		class = "pc_frozen"
@@ -399,7 +372,6 @@ une_deneb_system = {
 		size = 20
 		has_ring = no
 	}
-
 	init_effect = {
 		create_starbase = {
 			size = starbase_starport
@@ -411,13 +383,11 @@ une_deneb_system = {
 			}
 		}
 	}
-
 	neighbor_system = {
 		trigger = { num_guaranteed_colonies >= 2 }
 		hyperlane_jumps = { min = 1 max = @jumps }
 		initializer = "deneb_neighbor_t1"
 	}
-
 	neighbor_system = {
 		trigger = { num_guaranteed_colonies >= 1 }
 		hyperlane_jumps = { min = 1 max = @jumps }
@@ -428,13 +398,10 @@ une_deneb_system = {
 # Neighbor Tier 1
 deneb_neighbor_t1 = {
 	class = "rl_standard_stars"
-
 	flags = { neighbor_t1 }
-
 	init_effect = {
 		every_neighbor_system = { set_star_flag = empire_cluster }
 	}
-
 	planet = {
 		count = 1
 		class = star
@@ -445,7 +412,6 @@ deneb_neighbor_t1 = {
 	}
 
 	change_orbit = 45
-
 	planet = {
 		count = { min = 0 max = 2 }
 		orbit_distance = 20
@@ -455,12 +421,10 @@ deneb_neighbor_t1 = {
 			orbit_distance = 5
 		}
 	}
-
 	planet = {
 		count = { min = 2 max = 5 }
 		orbit_distance = 20
 	}
-
 	neighbor_system = {
 		hyperlane_jumps = { min = 1 max = @jumps }
 		initializer = "deneb_neighbor_t2_second_colony"
@@ -470,13 +434,10 @@ deneb_neighbor_t1 = {
 # Neighbor Tier 1 First Colony
 deneb_neighbor_t1_first_colony = {
 	class = "rl_standard_stars"
-
 	flags = { neighbor_t1_first_colony }
-
 	init_effect = {
 		every_neighbor_system = { set_star_flag = empire_cluster }
 	}
-
 	planet = {
 		count = 1
 		class = star
@@ -487,7 +448,6 @@ deneb_neighbor_t1_first_colony = {
 	}
 
 	change_orbit = 45
-
 	planet = {
 		count = { min = 0 max = 2 }
 		orbit_distance = 20
@@ -497,7 +457,6 @@ deneb_neighbor_t1_first_colony = {
 			orbit_distance = 5
 		}
 	}
-
 	planet = {
 		count = 1
 		orbit_distance = 25
@@ -507,7 +466,6 @@ deneb_neighbor_t1_first_colony = {
 		orbit_angle = { min = 90 max = 270 }
 		size = { min = 12 max = 18 }
 	}
-
 	planet = {
 		count = { min = 2 max = 5 }
 		orbit_distance = 25
@@ -517,7 +475,6 @@ deneb_neighbor_t1_first_colony = {
 			orbit_distance = 5
 		}
 	}
-
 	neighbor_system = {
 		hyperlane_jumps = { min = 1 max = @jumps }
 		initializer = "neighbor_t2"
@@ -527,13 +484,10 @@ deneb_neighbor_t1_first_colony = {
 # Neighbor Tier 2 Second Colony
 deneb_neighbor_t2_second_colony = {
 	class = "rl_standard_stars"
-
 	flags = { neighbor_t2_second_colony }
-
 	init_effect = {
 		every_neighbor_system = { set_star_flag = empire_cluster }
 	}
-
 	planet = {
 		count = 1
 		class = star
@@ -544,13 +498,11 @@ deneb_neighbor_t2_second_colony = {
 	}
 
 	change_orbit = 25
-
 	planet = {
 		count = 2
 		orbit_angle = { min = 90 max = 270 }
 		orbit_distance = 20
 	}
-
 	planet = {
 		count = 1
 		orbit_distance = 25
@@ -567,7 +519,6 @@ deneb_neighbor_t2_second_colony = {
 			orbit_distance = 5
 		}
 	}
-
 	planet = {
 		count = 2
 		orbit_angle = { min = 90 max = 270 }
@@ -580,7 +531,6 @@ deneb_neighbor_t2_second_colony = {
 			orbit_distance = 5
 		}
 	}
-
 	planet = {
 		count = { min = 0 max = 2 }
 		orbit_angle = { min = 90 max = 270 }
@@ -589,12 +539,11 @@ deneb_neighbor_t2_second_colony = {
 }
 
 ### Vultaum Home System
+
 vultaumar_system = {
 	name = "NAME_Vultaumar"
 	class = "sc_b"
-
 	flags = { vultaumar precursor_system }
-
 	planet = {
 		name = "NAME_Vultaumar"
 		class = "pc_b_star"
@@ -603,7 +552,6 @@ vultaumar_system = {
 		size = 35
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_Vultaumar_Prime"
 		class = "pc_broken"
@@ -614,7 +562,7 @@ vultaumar_system = {
 		flags = { vultaum_homeworld }
 		init_effect = {
 			prevent_anomaly = yes
-			create_ambient_object = { type = "medium_debris_01_object" location = THIS }
+			create_ambient_object = { type = "medium_debris_01_object" location = this }
 			add_modifier = { modifier = "vultaum_homeworld" days = -1 }
 			clear_deposits = yes
 			add_deposit = d_engineering_10
@@ -638,7 +586,6 @@ vultaumar_system = {
 			has_ring = no
 		}
 	}
-
 	planet = {
 		name = "NAME_Vultaumar_II"
 		class = "pc_toxic"
@@ -655,7 +602,6 @@ vultaumar_system = {
 			has_ring = no
 		}
 	}
-
 	planet = {
 		name = "NAME_Vultaumar_III"
 		class = "pc_toxic"
@@ -670,7 +616,6 @@ vultaumar_system = {
 			add_deposit = d_alloys_5
 		}
 	}
-
 	planet = {
 		name = "NAME_Vultaumar_IV"
 		class = "pc_gas_giant"
@@ -693,7 +638,6 @@ vultaumar_system = {
 			has_ring = no
 		}
 	}
-
 	planet = {
 		name = "NAME_Vultaumar_V"
 		class = "pc_gas_giant"
@@ -705,17 +649,15 @@ vultaumar_system = {
 }
 
 ### Yuht Home System
+
 yuhtaan_system = {
 	name = "NAME_Yuhtaan"
 	class = "sc_m"
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 125
 	}
-
 	flags = { yuhtaan precursor_system }
-
 	planet = {
 		name = "NAME_Yuhtaan"
 		class = "pc_m_star"
@@ -724,7 +666,6 @@ yuhtaan_system = {
 		size = 25
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_Yuhtaan_Majoris"
 		class = "pc_broken"
@@ -735,11 +676,11 @@ yuhtaan_system = {
 		flags = { yuht_homeworld }
 		init_effect = {
 			prevent_anomaly = yes
-			create_ambient_object = { type = "large_debris_object" location = THIS }
+			create_ambient_object = { type = "large_debris_object" location = this }
 			create_ambient_object = { type = "abandoned_starbase_01_object" }
 			last_created_ambient_object = {
 				set_location = {
-					target = THIS
+					target = this
 					distance = 5
 					angle = random
 				}
@@ -759,7 +700,6 @@ yuhtaan_system = {
 			has_ring = no
 		}
 	}
-
 	planet = {
 		name = "NAME_Yuhtaan_II"
 		class = "pc_barren"
@@ -768,7 +708,6 @@ yuhtaan_system = {
 		size = 20
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_Yuhtaan_III"
 		class = "pc_barren_cold"
@@ -777,7 +716,6 @@ yuhtaan_system = {
 		size = 15
 		has_ring = yes
 	}
-
 	planet = {
 		class = "pc_asteroid"
 		orbit_distance = 30
@@ -786,7 +724,6 @@ yuhtaan_system = {
 		has_ring = no
 		flags = { jabbardeeni_cache }
 	}
-
 	planet = {
 		class = "pc_asteroid"
 		orbit_distance = 0
@@ -800,7 +737,6 @@ yuhtaan_system = {
 			add_deposit = d_alloys_5
 		}
 	}
-
 	planet = {
 		class = "pc_asteroid"
 		orbit_distance = 0
@@ -808,7 +744,6 @@ yuhtaan_system = {
 		size = 5
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_Yuhtaan_IV"
 		class = "pc_gas_giant"
@@ -842,7 +777,6 @@ yuhtaan_system = {
 			has_ring = no
 		}
 	}
-
 	planet = {
 		name = "NAME_Yuhtaan_V"
 		class = "pc_gas_giant"
@@ -866,7 +800,6 @@ yuhtaan_system = {
 			has_ring = no
 		}
 	}
-
 	init_effect = {
 		spawn_megastructure = {
 			type = "hyper_relay_ruined"
@@ -877,17 +810,15 @@ yuhtaan_system = {
 }
 
 ### First League Home System
+
 fen_habbanis_system = {
 	name = "NAME_Fen_Habbanis"
 	class = "sc_g"
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 85
 	}
-
 	flags = { fen_habbanis precursor_system }
-
 	planet = {
 		name = "NAME_Fen_Habbanis"
 		class = "pc_g_star"
@@ -896,7 +827,6 @@ fen_habbanis_system = {
 		size = 30
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_Fen_Habbanis_I"
 		class = "pc_molten"
@@ -905,7 +835,6 @@ fen_habbanis_system = {
 		size = 15
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_Fen_Habbanis_II"
 		class = "pc_molten"
@@ -914,7 +843,6 @@ fen_habbanis_system = {
 		size = 10
 		has_ring = no
 	}
-
 	planet = {
 		class = "pc_asteroid"
 		orbit_distance = 25
@@ -927,7 +855,6 @@ fen_habbanis_system = {
 			set_deposit = d_minerals_10
 		}
 	}
-
 	planet = {
 		class = "pc_asteroid"
 		orbit_distance = 0
@@ -935,7 +862,6 @@ fen_habbanis_system = {
 		size = 5
 		has_ring = no
 	}
-
 	planet = {
 		class = "pc_asteroid"
 		orbit_distance = 0
@@ -943,7 +869,6 @@ fen_habbanis_system = {
 		size = 5
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_Fen_Habbanis_III"
 		class = "pc_relic"
@@ -973,7 +898,6 @@ fen_habbanis_system = {
 			add_deposit = d_relic_metal_boneyard
 		}
 	}
-
 	planet = {
 		name = "NAME_Fen_Habbanis_IV"
 		class = "pc_toxic"
@@ -982,7 +906,6 @@ fen_habbanis_system = {
 		size = 20
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_Fen_Habbanis_V"
 		class = "pc_barren"
@@ -991,7 +914,6 @@ fen_habbanis_system = {
 		size = 20
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_Fen_Habbanis_VI"
 		class = "pc_gas_giant"
@@ -1008,22 +930,19 @@ fen_habbanis_system = {
 }
 
 ### Irassian Home System
+
 irass_system = {
 	name = "NAME_Irass"
 	class = "sc_f"
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 125
 	}
-
 	flags = { irass precursor_system }
-
 	planet = {
 		class = star
 		orbit_distance = 0
 	}
-
 	planet = {
 		name = "NAME_Irass_I"
 		class = "pc_molten"
@@ -1032,7 +951,6 @@ irass_system = {
 		size = 15
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_Irass_II"
 		class = "pc_molten"
@@ -1041,7 +959,6 @@ irass_system = {
 		size = 25
 		has_ring = yes
 	}
-
 	planet = {
 		name = "NAME_Irass_III"
 		class = "pc_toxic"
@@ -1056,7 +973,6 @@ irass_system = {
 			add_deposit = d_alloys_5
 		}
 	}
-
 	planet = {
 		name = "NAME_Irass_IV"
 		class = "pc_barren"
@@ -1065,7 +981,6 @@ irass_system = {
 		size = 15
 		has_ring = no
 	}
-
 	planet = {
 		class = "pc_asteroid"
 		orbit_distance = 30
@@ -1073,7 +988,6 @@ irass_system = {
 		size = 5
 		has_ring = no
 	}
-
 	planet = {
 		class = "pc_asteroid"
 		orbit_distance = 0
@@ -1081,7 +995,6 @@ irass_system = {
 		size = 5
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_Irass_V"
 		class = "pc_barren"
@@ -1090,7 +1003,6 @@ irass_system = {
 		size = 20
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_Irass_VI"
 		class = "pc_gas_giant"
@@ -1117,7 +1029,6 @@ irass_system = {
 			}
 		}
 	}
-
 	planet = {
 		name = "NAME_Irass_VII"
 		class = "pc_gas_giant"
@@ -1142,7 +1053,6 @@ irass_system = {
 			has_ring = no
 		}
 	}
-
 	planet = {
 		name = "NAME_Irass_VIII"
 		class = "pc_gas_giant"
@@ -1157,7 +1067,6 @@ irass_system = {
 			add_deposit = d_exotic_gases_5
 		}
 	}
-
 	planet = {
 		name = "NAME_Irass_IX"
 		class = "pc_barren_cold"
@@ -1169,12 +1078,11 @@ irass_system = {
 }
 
 ### Cybrex Home System
+
 cybrex_system = {
 	name = "NAME_Cybrex_Alpha"
 	class = "sc_g"
-
 	flags = { cybrex precursor_system }
-
 	planet = {
 		class = star
 		orbit_distance = 0
@@ -1291,7 +1199,6 @@ cybrex_system = {
 	}
 
 	change_orbit = 45
-
 	init_effect = {
 		spawn_megastructure = {
 			type = "ring_world_ruined"
@@ -1316,22 +1223,10 @@ cybrex_system = {
 		create_ambient_object = { type = "large_debris_object" location = solar_system }
 		create_ambient_object = { type = "large_debris_object" location = solar_system }
 		create_ambient_object = { type = "large_debris_object" location = solar_system }
-		create_ambient_object = {
-			type = "medium_debris_01_object"
-			location = solar_system
-		}
-		create_ambient_object = {
-			type = "medium_debris_02_object"
-			location = solar_system
-		}
-		create_ambient_object = {
-			type = "medium_debris_01_object"
-			location = solar_system
-		}
-		create_ambient_object = {
-			type = "medium_debris_02_object"
-			location = solar_system
-		}
+		create_ambient_object = { type = "medium_debris_01_object" location = solar_system }
+		create_ambient_object = { type = "medium_debris_02_object" location = solar_system }
+		create_ambient_object = { type = "medium_debris_01_object" location = solar_system }
+		create_ambient_object = { type = "medium_debris_02_object" location = solar_system }
 		create_ambient_object = { type = "small_debris_object" location = solar_system }
 	}
 }
@@ -1341,14 +1236,11 @@ ai_titawin_init = {
 	class = "rl_binary_starting_stars"
 	name = "NAME_Titawin"
 	usage = misc_system_init
-
 	flags = { empire_home_system theian_system }
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 160
 	}
-
 	planet = {
 		count = 1
 		class = pc_f_star
@@ -1407,7 +1299,6 @@ ai_titawin_init = {
 			change_orbit = 4
 		}
 	}
-
 	planet = {
 		name = "NAME_PHS_03"
 		class = "pc_asteroid"
@@ -1416,7 +1307,6 @@ ai_titawin_init = {
 		size = 5
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_PHS_02"
 		class = "pc_asteroid"
@@ -1425,7 +1315,6 @@ ai_titawin_init = {
 		size = 5
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_PHS_04"
 		class = "pc_asteroid"
@@ -1434,7 +1323,6 @@ ai_titawin_init = {
 		size = 5
 		has_ring = no
 	}
-
 	planet = {
 		name = "NAME_PHS_01"
 		class = "pc_asteroid"
@@ -1443,7 +1331,6 @@ ai_titawin_init = {
 		size = 5
 		has_ring = no
 	}
-
 	planet = {
 		count = 1
 		name = "NAME_Titawin_B"
@@ -1546,17 +1433,14 @@ ai_titawin_init = {
 	}
 
 	change_orbit = -245
-
 	neighbor_system = {
 		trigger = { num_guaranteed_colonies >= 2 }
 		hyperlane_jumps = { min = 1 max = @jumps }
 		initializer = "neighbor_t1"
 	}
-
 	neighbor_system = {
 		trigger = { num_guaranteed_colonies >= 1 }
 		hyperlane_jumps = { min = 1 max = @jumps }
 		initializer = "neighbor_t1_first_colony"
 	}
 }
-

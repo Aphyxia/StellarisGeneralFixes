@@ -1,11 +1,11 @@
 ############################
-
 #
 # Necroids Events
 #
 # Written by Pierre du Plessis
 #
 ############################
+
 namespace = necroids
 # Consumption event for necrophage
 planet_event = {
@@ -37,11 +37,7 @@ planet_event = {
 			}
 			species = { save_event_target_as = necrophage_pop_species }
 		}
-		export_trigger_value_to_variable = {
-			trigger = num_assigned_jobs
-			parameters = { job = necro_apprentice }
-			variable = var_necrophaged_pops
-		}
+		export_trigger_value_to_variable = { trigger = num_assigned_jobs parameters = { job = necro_apprentice } variable = var_necrophaged_pops }
 		set_variable = { which = var_necrophaged_pops_100 value = var_necrophaged_pops }
 		divide_variable = { which = var_necrophaged_pops_100 value = 100 }
 		while = {
@@ -76,14 +72,18 @@ planet_event = {
 			create_pop_group = {
 				species = event_target:necrophage_pop_species
 				size = var_necrophaged_pops
-				effect = { save_event_target_as = last_created_pop_group }
+				effect = {
+					save_event_target_as = last_created_pop_group
+				}
 			}
 		}
 		else = {
 			create_pop_group = {
 				species = owner_species
 				size = var_necrophaged_pops
-				effect = { save_event_target_as = last_created_pop_group }
+				effect = {
+					save_event_target_as = last_created_pop_group
+				}
 			}
 		}
 		if = {
@@ -140,12 +140,10 @@ planet_event = {
 country_event = {
 	id = necroids.2
 	title = necroids.2.name
-
 	desc = {
 		trigger = { is_hive_empire = no }
 		text = necroids.2.desc
 	}
-
 	desc = {
 		trigger = { is_hive_empire = yes }
 		text = necroids.2.desc.gestalt
@@ -171,7 +169,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = necroids.2.A
 		custom_tooltip = necroids.2.A.tooltip
@@ -192,9 +189,7 @@ planet_event = {
 			has_trait = trait_necrophage
 			any_owned_species = {
 				species_can_be_necrophaged = yes
-				NOT = {
-					has_citizenship_type = { type = citizenship_purge country = root.owner }
-				}
+				NOT = { has_citizenship_type = { type = citizenship_purge country = root.owner } }
 			}
 		}
 		OR = {
@@ -229,18 +224,14 @@ planet_event = {
 					limit = {
 						any_owned_species = {
 							species_can_be_necrophaged = yes
-							NOT = {
-								has_citizenship_type = { type = citizenship_purge country = root.owner }
-							}
+							NOT = { has_citizenship_type = { type = citizenship_purge country = root.owner } }
 						}
 						count_owned_pop_amount = {
 							count >= 200
 							limit = {
 								species = {
 									species_can_be_necrophaged = yes
-									NOT = {
-										has_citizenship_type = { type = citizenship_purge country = root.owner }
-									}
+									NOT = { has_citizenship_type = { type = citizenship_purge country = root.owner } }
 								}
 							}
 						}
@@ -249,9 +240,7 @@ planet_event = {
 						limit = {
 							species = {
 								species_can_be_necrophaged = yes
-								NOT = {
-									has_citizenship_type = { type = citizenship_purge country = root.owner }
-								}
+								NOT = { has_citizenship_type = { type = citizenship_purge country = root.owner } }
 							}
 						}
 						resettle_pop_group = {
@@ -313,9 +302,7 @@ country_event = {
 						has_planet_flag = prescripted_ideal
 					}
 					if = {
-						limit = {
-							root = { is_hive_empire = no }
-						}
+						limit = { root = { is_hive_empire = no } }
 						generate_very_early_pre_ftls_on_planet = yes
 						set_name = random
 						change_colony_foundation_date = -461
@@ -355,9 +342,7 @@ country_event = {
 						has_planet_flag = prescripted_ideal
 					}
 					if = {
-						limit = {
-							root = { is_hive_empire = no }
-						}
+						limit = { root = { is_hive_empire = no } }
 						set_planet_flag = pre_ftl_hive_mind
 						generate_very_early_pre_ftls_on_planet = yes
 						set_name = random
@@ -418,14 +403,18 @@ planet_event = {
 			create_pop_group = {
 				species = event_target:necrophage_pop_species
 				size = 0
-				effect = { save_event_target_as = last_created_pop_group }
+				effect = {
+					save_event_target_as = last_created_pop_group
+				}
 			}
 		}
 		else = {
 			create_pop_group = {
 				species = owner_species
 				size = 0
-				effect = { save_event_target_as = last_created_pop_group }
+				effect = {
+					save_event_target_as = last_created_pop_group
+				}
 			}
 		}
 		if = {
@@ -475,10 +464,10 @@ planet_event = {
 		}
 		every_country = {
 			limit = {
-				has_communications = FROM
+				has_communications = from
 				NOR = {
-					is_same_empire = FROM
-					is_same_species = FROMFROM
+					is_same_empire = from
+					is_same_species = fromfrom
 					has_ai_personality_behaviour = purger
 					has_origin = origin_necrophage
 					is_gestalt = yes
@@ -489,30 +478,30 @@ planet_event = {
 					has_ai_personality = awakened_fallen_empire_xenophile
 				}
 				has_intel_level = {
-					who = FROM
+					who = from
 					category = economy
 					level >= 2
 				}
 			}
 			while = {
 				count = root.local_pop_amount
-				add_opinion_modifier = { who = FROM modifier = opinion_necrophage }
+				add_opinion_modifier = { who = from modifier = opinion_necrophage }
 			}
 		}
 		every_country = {
 			limit = {
-				has_communications = FROM
-				NOT = { is_same_empire = FROM }
-				is_same_species = FROMFROM
+				has_communications = from
+				NOT = { is_same_empire = from }
+				is_same_species = fromfrom
 				has_intel_level = {
-					who = FROM
+					who = from
 					category = economy
 					level >= 1 # lower because you'd hear from a friend of a friend
 				}
 			}
 			while = {
 				count = root.local_pop_amount
-				add_opinion_modifier = { who = FROM modifier = opinion_necrophage_our_species }
+				add_opinion_modifier = { who = from modifier = opinion_necrophage_our_species }
 			}
 		}
 	}
@@ -572,12 +561,12 @@ country_event = {
 				observation_outpost = { dismantle = yes }
 			}
 			add_modifier = { modifier = planet_culture_shock years = 10 }
-			set_owner = ROOT
+			set_owner = root
 			# From Starnet. Replicate events. Placed before making
 			# new pops as action.140 triggers constructions off of it.
 			planet_event = { # Crisis Menace Objective: Conquer a Colony
 				id = crisis.5010
-				scopes = { from = ROOT }
+				scopes = { from = root }
 			}
 			planet_event = { id = action.84 } # Imperialists are pleased
 			# Vfix ARIPHAOS_PATCH_PRIMITIVE_WORLD_CONQUERED
@@ -774,7 +763,6 @@ country_event = {
 	picture = GFX_evt_mechromancy
 	is_triggered_only = yes
 	desc = necroids.20.desc
-
 	option = {
 		name = necroids.20.a
 	}
@@ -835,7 +823,10 @@ planet_event = {
 						homeworld = this
 						namelist = this
 						gender = this
-						traits = { trait = trait_zombie trait = trait_cybernetic }
+						traits = {
+							trait = trait_zombie
+							trait = trait_cybernetic
+						}
 						effect = {
 							modify_species = {
 								species = this
@@ -887,4 +878,3 @@ planet_event = {
 		}
 	}
 }
-

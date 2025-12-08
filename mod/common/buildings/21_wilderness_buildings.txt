@@ -31,21 +31,17 @@ building_colony_shelter_wilderness = {
 	position_priority = 0
 	capital_tier = 1
 	category = government
-
 	building_sets = {
 		government
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no }
 	}
-
 	convert_to = {
 		building_hive_capital
 		building_deployment_post
@@ -55,26 +51,21 @@ building_colony_shelter_wilderness = {
 		building_ancient_palace
 		building_colony_shelter
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	inline_script = {
 		script = buildings/on_all_capital_buildings
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
-
 	planet_modifier = {
 		planet_housing_add = 300
 		planet_amenities_add = 300
 		job_patrol_drone_add = 100
 		job_logistics_drone_add = 200
 	}
-
 	resources = {
 		category = planet_buildings
 		upkeep = {
@@ -82,7 +73,6 @@ building_colony_shelter_wilderness = {
 			food = 1
 		}
 	}
-
 	upgrades = {
 		building_capital_wilderness
 	}
@@ -104,29 +94,23 @@ building_capital_wilderness = {
 	position_priority = 0
 	capital_tier = 2
 	category = government
-
 	building_sets = {
 		government
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	prerequisites = {
 		"tech_planetary_government"
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no }
 	}
-
 	convert_to = {
 		building_hive_capital
 		building_machine_capital
@@ -136,12 +120,10 @@ building_capital_wilderness = {
 		building_ancient_palace
 		building_capital
 	}
-
 	allow = {
 		is_occupied_flag = no
 		num_free_districts = { type = any value <= 10 }
 	}
-
 	planet_modifier = {
 		planet_housing_add = 1000
 		planet_amenities_add = 1000
@@ -150,11 +132,9 @@ building_capital_wilderness = {
 		job_patrol_drone_add = 100
 		planet_defense_armies_add = @tier_2_capital_defense_armies
 	}
-
 	upgrades = {
 		"building_major_capital_wilderness"
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -165,11 +145,9 @@ building_capital_wilderness = {
 			food = @b2_upkeep
 		}
 	}
-
 	inline_script = {
 		script = buildings/on_all_capital_buildings
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -200,24 +178,19 @@ building_major_capital_wilderness = {
 	position_priority = 0
 	capital_tier = 3
 	category = government
-
 	building_sets = {
 		government
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	prerequisites = {
 		"tech_colonial_centralization"
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
 	}
-
 	convert_to = {
 		building_hive_major_capital
 		building_machine_major_capital
@@ -227,12 +200,10 @@ building_major_capital_wilderness = {
 		building_ancient_palace
 		building_major_capital
 	}
-
 	allow = {
 		is_occupied_flag = no
 		num_free_districts = { type = any value <= 5 }
 	}
-
 	planet_modifier = {
 		planet_housing_add = 1500
 		planet_amenities_add = 1500
@@ -241,15 +212,12 @@ building_major_capital_wilderness = {
 		job_patrol_drone_add = 200
 		planet_defense_armies_add = @tier_3_capital_defense_armies
 	}
-
 	inline_script = {
 		script = buildings/on_all_capital_buildings
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -272,7 +240,6 @@ building_major_capital_wilderness = {
 		}
 		pop_bonus_workforce_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -280,7 +247,6 @@ building_major_capital_wilderness = {
 		}
 		pop_bonus_workforce_mult = 0.2
 	}
-
 	upgrades = {
 		"building_system_capital_wilderness"
 	}
@@ -301,24 +267,19 @@ building_system_capital_wilderness = {
 	position_priority = 0
 	capital_tier = 4
 	category = government
-
 	building_sets = {
 		government
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	prerequisites = {
 		"tech_galactic_administration"
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
 	}
-
 	convert_to = {
 		building_hive_major_capital
 		building_machine_major_capital
@@ -329,12 +290,10 @@ building_system_capital_wilderness = {
 		building_ancient_palace
 		building_system_capital
 	}
-
 	allow = {
 		is_occupied_flag = no
 		num_free_districts = { type = any value = 0 }
 	}
-
 	planet_modifier = {
 		planet_housing_add = 2000
 		planet_amenities_add = 2000
@@ -343,7 +302,6 @@ building_system_capital_wilderness = {
 		job_patrol_drone_add = 300
 		planet_defense_armies_add = @tier_4_capital_defense_armies
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -354,11 +312,9 @@ building_system_capital_wilderness = {
 			food = @b4_upkeep
 		}
 	}
-
 	inline_script = {
 		script = buildings/on_all_capital_buildings
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -374,7 +330,6 @@ building_system_capital_wilderness = {
 		}
 		pop_bonus_workforce_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -385,7 +340,6 @@ building_system_capital_wilderness = {
 		}
 		pop_bonus_workforce_mult = 0.2
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -411,20 +365,16 @@ building_imperial_capital_wilderness = {
 	position_priority = 0
 	capital_tier = 5
 	category = government
-
 	building_sets = {
 		government
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_galactic_emperor = yes is_wilderness_empire = yes }
 		is_capital = yes
 	}
-
 	prerequisites = {
 	}
-
 	convert_to = { # downgrades if Emperorship is lost
 		building_hive_major_capital
 		building_machine_system_capital
@@ -433,12 +383,10 @@ building_imperial_capital_wilderness = {
 		building_ancient_control_center
 		building_ancient_palace
 	}
-
 	allow = {
 		is_occupied_flag = no
 		num_free_districts = { type = any value = 0 }
 	}
-
 	planet_modifier = {
 		planet_housing_add = 3000
 		planet_amenities_add = 3000
@@ -446,15 +394,12 @@ building_imperial_capital_wilderness = {
 		job_logistics_drone_add = 700
 		planet_defense_armies_add = @tier_4_capital_defense_armies
 	}
-
 	inline_script = {
 		script = buildings/on_all_capital_buildings
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -477,7 +422,6 @@ building_imperial_capital_wilderness = {
 		}
 		pop_bonus_workforce_mult = 0.1
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -488,7 +432,6 @@ building_imperial_capital_wilderness = {
 		}
 		pop_bonus_workforce_mult = 0.2
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -507,30 +450,24 @@ building_cradle_of_rebirth = {
 	can_build = yes
 	can_demolish = yes
 	can_be_ruined = yes
-
 	building_sets = {
 		government
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no }
 	}
-
 	inline_script = {
 		script = jobs/spawning_drone_add
 		AMOUNT = @building_static_jobs_low
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -541,7 +478,6 @@ building_cradle_of_rebirth = {
 			food = @b1_upkeep
 		}
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -559,26 +495,21 @@ building_tendril_cradle_1 = {
 	category = trade
 	can_build = yes
 	can_demolish = yes
-
 	building_sets = {
 		government
 		trade
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no }
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -589,15 +520,12 @@ building_tendril_cradle_1 = {
 			minerals = @b1_upkeep
 		}
 	}
-
 	upgrades = {
 		building_tendril_cradle_2
 	}
-
 	planet_modifier = {
 		job_logistics_drone_add = @building_static_jobs_low
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -612,27 +540,22 @@ building_tendril_cradle_2 = {
 	category = trade
 	can_build = no
 	can_demolish = yes
-
 	building_sets = {
 		government
 		trade
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no }
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -643,15 +566,12 @@ building_tendril_cradle_2 = {
 			minerals = @b2_upkeep
 		}
 	}
-
 	upgrades = {
 		building_tendril_cradle_3
 	}
-
 	planet_modifier = {
 		job_logistics_drone_add = @building_static_jobs
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -666,7 +586,6 @@ building_tendril_cradle_3 = {
 	category = trade
 	can_build = no
 	can_demolish = yes
-
 	building_sets = {
 		government
 		trade
@@ -678,17 +597,14 @@ building_tendril_cradle_3 = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_major_upgraded_capital = yes
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no }
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -701,16 +617,13 @@ building_tendril_cradle_3 = {
 			rare_crystals = @b2_rare_upkeep
 		}
 	}
-
 	upgrades = {
 		building_tendril_cradle_4
 	}
-
 	planet_modifier = {
 		job_logistics_drone_add = @building_static_jobs_high
 		planet_pops_trade_produces_mult = 0.20
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -725,7 +638,6 @@ building_tendril_cradle_4 = {
 	category = trade
 	can_build = no
 	can_demolish = yes
-
 	building_sets = {
 		government
 		trade
@@ -737,17 +649,14 @@ building_tendril_cradle_4 = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_fully_upgraded_capital = yes
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no }
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -760,12 +669,10 @@ building_tendril_cradle_4 = {
 			rare_crystals = @b3_rare_upkeep
 		}
 	}
-
 	planet_modifier = {
 		job_logistics_drone_add = @building_static_jobs_high
 		planet_pops_trade_produces_mult = 0.30
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -784,16 +691,13 @@ building_brain_node_1 = {
 	category = research
 	can_build = yes
 	can_demolish = yes
-
 	building_sets = {
 		government
 		research
 	}
-
 	inline_script = {
 		script = buildings/wilderness_buildings_potential_destroy
 	}
-
 	resources = {
 		category = planet_research_buildings
 		cost = {
@@ -808,22 +712,18 @@ building_brain_node_1 = {
 			energy = 1
 		}
 	}
-
 	upgrades = {
 		building_brain_node_2
 	}
-
 	inline_script = {
 		script = jobs/researchers_add
 		AMOUNT = @building_static_jobs_low_3
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
 
 	ai_estimate_without_unemployment = yes
-
 	allow = {
 		is_occupied_flag = no
 	}
@@ -836,21 +736,17 @@ building_brain_node_2 = {
 	category = research
 	can_build = no
 	can_demolish = yes
-
 	building_sets = {
 		government
 		research
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
-
 	inline_script = {
 		script = buildings/wilderness_buildings_potential_destroy
 	}
-
 	resources = {
 		category = planet_research_buildings
 		cost = {
@@ -865,16 +761,13 @@ building_brain_node_2 = {
 			energy = 1
 		}
 	}
-
 	upgrades = {
 		building_brain_node_3
 	}
-
 	inline_script = {
 		script = jobs/researchers_add
 		AMOUNT = @building_static_jobs_3
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -889,7 +782,6 @@ building_brain_node_3 = {
 	category = research
 	can_build = no
 	can_demolish = yes
-
 	building_sets = {
 		government
 		research
@@ -901,17 +793,14 @@ building_brain_node_3 = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_major_upgraded_capital = yes
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no }
 	}
-
 	resources = {
 		category = planet_research_buildings
 		cost = {
@@ -928,32 +817,26 @@ building_brain_node_3 = {
 			energy = 2
 		}
 	}
-
 	prerequisites = {
 		"tech_basic_science_lab_2"
 	}
-
 	upgrades = {
 		building_brain_node_4
 	}
-
 	planet_modifier = {
 		planet_physicists_physics_research_produces_add = 1
 		planet_biologists_society_research_produces_add = 1
 		planet_engineers_engineering_research_produces_add = 1
 	}
-
 	inline_script = {
 		script = jobs/researchers_add
 		AMOUNT = @building_static_jobs_high_3
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
 
 	ai_estimate_without_unemployment = yes
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
 	}
@@ -966,7 +849,6 @@ building_brain_node_4 = {
 	category = research
 	can_build = no
 	can_demolish = yes
-
 	building_sets = {
 		government
 		research
@@ -978,17 +860,14 @@ building_brain_node_4 = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_fully_upgraded_capital = yes
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no }
 	}
-
 	resources = {
 		category = planet_research_buildings
 		cost = {
@@ -1006,11 +885,9 @@ building_brain_node_4 = {
 			food = 1
 		}
 	}
-
 	prerequisites = {
 		"tech_basic_science_lab_3"
 	}
-
 	planet_modifier = {
 		planet_physicists_physics_research_produces_add = 1
 		planet_biologists_society_research_produces_add = 1
@@ -1019,18 +896,15 @@ building_brain_node_4 = {
 		pop_calculator_biologist_bonus_workforce_mult = 0.15
 		pop_calculator_engineer_bonus_workforce_mult = 0.15
 	}
-
 	inline_script = {
 		script = jobs/researchers_add
 		AMOUNT = @building_static_jobs_high_3
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
 
 	ai_estimate_without_unemployment = yes
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
 	}
@@ -1044,16 +918,13 @@ building_commensal_clearing_1 = {
 	category = unity
 	can_build = yes
 	can_demolish = yes
-
 	building_sets = {
 		government
 		unity
 	}
-
 	inline_script = {
 		script = buildings/wilderness_buildings_potential_destroy
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1064,22 +935,18 @@ building_commensal_clearing_1 = {
 			energy = @b0_upkeep
 		}
 	}
-
 	upgrades = {
 		building_commensal_clearing_2
 	}
-
 	inline_script = {
 		script = jobs/unity_jobs_add
 		AMOUNT = @building_static_jobs_low
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
 
 	ai_estimate_without_unemployment = yes
-
 	allow = {
 		is_occupied_flag = no
 	}
@@ -1093,28 +960,23 @@ building_commensal_clearing_2 = {
 	category = unity
 	can_build = no
 	can_demolish = yes
-
 	building_sets = {
 		government
 		unity
 	}
-
 	inline_script = {
 		script = buildings/wilderness_buildings_potential_destroy
 	}
-
 	convert_to = {
 		building_bureaucratic_1
 		building_temple
 		building_hive_node
 		building_uplink_node
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1125,24 +987,19 @@ building_commensal_clearing_2 = {
 			energy = @b1_upkeep
 		}
 	}
-
 	upgrades = {
 		building_commensal_clearing_3
 	}
-
 	prerequisites = {
 		tech_wilderness_node
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
 	}
-
 	inline_script = {
 		script = jobs/unity_jobs_add
 		AMOUNT = @building_static_jobs
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -1158,7 +1015,6 @@ building_commensal_clearing_3 = {
 	category = unity
 	can_build = no
 	can_demolish = yes
-
 	building_sets = {
 		government
 		unity
@@ -1170,24 +1026,20 @@ building_commensal_clearing_3 = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no }
 	}
-
 	convert_to = {
 		building_bureaucratic_2
 		building_holotemple
 		building_hive_cluster
 		building_network_junction
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_major_upgraded_capital = yes
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1200,30 +1052,24 @@ building_commensal_clearing_3 = {
 			rare_crystals = @b2_rare_upkeep
 		}
 	}
-
 	upgrades = {
 		building_commensal_clearing_4
 	}
-
 	prerequisites = {
 		tech_wilderness_cluster
 	}
-
 	convert_to = {
 		building_bureaucratic_2
 		building_holotemple
 		building_hive_cluster
 	}
-
 	planet_modifier = {
 		planet_bureaucrats_unity_produces_add = 1
 	}
-
 	inline_script = {
 		script = jobs/unity_jobs_add
 		AMOUNT = @building_static_jobs_high
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -1239,7 +1085,6 @@ building_commensal_clearing_4 = {
 	category = unity
 	can_build = no
 	can_demolish = yes
-
 	building_sets = {
 		government
 		unity
@@ -1251,24 +1096,20 @@ building_commensal_clearing_4 = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no }
 	}
-
 	convert_to = {
 		building_bureaucratic_3
 		building_sacred_nexus
 		building_hive_confluence
 		building_system_conflux
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_fully_upgraded_capital = yes
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1281,21 +1122,17 @@ building_commensal_clearing_4 = {
 			rare_crystals = @b3_rare_upkeep
 		}
 	}
-
 	prerequisites = {
 		tech_wilderness_confluence
 	}
-
 	inline_script = {
 		script = jobs/unity_jobs_add
 		AMOUNT = @building_static_jobs_high
 	}
-
 	planet_modifier = {
 		planet_bureaucrats_unity_produces_add = 1
 		pop_bureaucrat_bonus_workforce_mult = 0.15
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -1311,15 +1148,12 @@ building_massive_growth_1 = {
 	category = resource
 	can_build = yes
 	can_demolish = yes
-
 	building_sets = {
 		farming
 	}
-
 	inline_script = {
 		script = buildings/wilderness_buildings_potential_destroy
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1330,22 +1164,18 @@ building_massive_growth_1 = {
 			minerals = @b1_upkeep
 		}
 	}
-
 	upgrades = {
 		building_massive_growth_2
 	}
-
 	inline_script = {
 		script = jobs/farmers_add
 		AMOUNT = @building_static_jobs_low
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
 
 	ai_estimate_without_unemployment = yes
-
 	allow = {
 		is_occupied_flag = no
 	}
@@ -1358,20 +1188,16 @@ building_massive_growth_2 = {
 	category = resource
 	can_build = no
 	can_demolish = yes
-
 	building_sets = {
 		farming
 	}
-
 	inline_script = {
 		script = buildings/wilderness_buildings_potential_destroy
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1382,16 +1208,13 @@ building_massive_growth_2 = {
 			minerals = @b2_upkeep
 		}
 	}
-
 	upgrades = {
 		building_massive_growth_3
 	}
-
 	inline_script = {
 		script = jobs/farmers_add
 		AMOUNT = @building_static_jobs
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -1407,7 +1230,6 @@ building_massive_growth_3 = {
 	category = resource
 	can_build = no
 	can_demolish = yes
-
 	building_sets = {
 		farming
 	}
@@ -1418,12 +1240,10 @@ building_massive_growth_3 = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_major_upgraded_capital = yes
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		OR = {
@@ -1440,7 +1260,6 @@ building_massive_growth_3 = {
 			}
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1453,28 +1272,22 @@ building_massive_growth_3 = {
 			exotic_gases = @b2_rare_upkeep
 		}
 	}
-
 	prerequisites = {
 		"tech_food_processing_1"
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
 	}
-
 	upgrades = {
 		building_massive_growth_4
 	}
-
 	planet_modifier = {
 		planet_farmers_food_produces_add = 2
 	}
-
 	inline_script = {
 		script = jobs/farmers_add
 		AMOUNT = @building_static_jobs_high
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -1490,7 +1303,6 @@ building_massive_growth_4 = {
 	category = resource
 	can_build = no
 	can_demolish = yes
-
 	building_sets = {
 		farming
 	}
@@ -1501,12 +1313,10 @@ building_massive_growth_4 = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_fully_upgraded_capital = yes
 	}
-
 	destroy_trigger = {
 		OR = {
 			AND = {
@@ -1527,15 +1337,12 @@ building_massive_growth_4 = {
 			has_modifier = resort_colony
 		}
 	}
-
 	prerequisites = {
 		"tech_food_processing_2"
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1548,17 +1355,14 @@ building_massive_growth_4 = {
 			exotic_gases = @b3_rare_upkeep
 		}
 	}
-
 	planet_modifier = {
 		planet_farmers_food_produces_add = 2
 		pop_agri_drone_bonus_workforce_mult = 0.15
 	}
-
 	inline_script = {
 		script = jobs/farmers_add
 		AMOUNT = @building_static_jobs_high
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -1574,15 +1378,12 @@ building_bioelectric_stimulator_1 = {
 	category = resource
 	can_build = yes
 	can_demolish = yes
-
 	building_sets = {
 		generator
 	}
-
 	inline_script = {
 		script = buildings/wilderness_buildings_potential_destroy
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1593,22 +1394,18 @@ building_bioelectric_stimulator_1 = {
 			minerals = @b1_upkeep
 		}
 	}
-
 	upgrades = {
 		building_bioelectric_stimulator_2
 	}
-
 	inline_script = {
 		script = jobs/technicians_add
 		AMOUNT = @building_static_jobs_low
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
 
 	ai_estimate_without_unemployment = yes
-
 	allow = {
 		is_occupied_flag = no
 	}
@@ -1621,20 +1418,16 @@ building_bioelectric_stimulator_2 = {
 	category = resource
 	can_build = no
 	can_demolish = yes
-
 	building_sets = {
 		generator
 	}
-
 	inline_script = {
 		script = buildings/wilderness_buildings_potential_destroy
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1645,16 +1438,13 @@ building_bioelectric_stimulator_2 = {
 			minerals = @b2_upkeep
 		}
 	}
-
 	upgrades = {
 		building_bioelectric_stimulator_3
 	}
-
 	inline_script = {
 		script = jobs/technicians_add
 		AMOUNT = @building_static_jobs
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -1670,7 +1460,6 @@ building_bioelectric_stimulator_3 = {
 	category = resource
 	can_build = no
 	can_demolish = yes
-
 	building_sets = {
 		generator
 	}
@@ -1681,12 +1470,10 @@ building_bioelectric_stimulator_3 = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_major_upgraded_capital = yes
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		OR = {
@@ -1698,7 +1485,6 @@ building_bioelectric_stimulator_3 = {
 			owner = { is_wilderness_empire = no }
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1711,28 +1497,22 @@ building_bioelectric_stimulator_3 = {
 			rare_crystals = @b2_rare_upkeep
 		}
 	}
-
 	prerequisites = {
 		tech_power_hub_1
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
 	}
-
 	upgrades = {
 		building_bioelectric_stimulator_4
 	}
-
 	planet_modifier = {
 		planet_technician_energy_produces_add = 2
 	}
-
 	inline_script = {
 		script = jobs/technicians_add
 		AMOUNT = @building_static_jobs_high
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -1748,7 +1528,6 @@ building_bioelectric_stimulator_4 = {
 	category = resource
 	can_build = no
 	can_demolish = yes
-
 	building_sets = {
 		generator
 	}
@@ -1759,12 +1538,10 @@ building_bioelectric_stimulator_4 = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_fully_upgraded_capital = yes
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		OR = {
@@ -1776,7 +1553,6 @@ building_bioelectric_stimulator_4 = {
 			owner = { is_wilderness_empire = no }
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1789,25 +1565,20 @@ building_bioelectric_stimulator_4 = {
 			rare_crystals = @b3_rare_upkeep
 		}
 	}
-
 	prerequisites = {
 		tech_power_hub_2
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
 	}
-
 	planet_modifier = {
 		planet_technician_energy_produces_add = 2
 		pop_technician_drone_bonus_workforce_mult = 0.15
 	}
-
 	inline_script = {
 		script = jobs/technicians_add
 		AMOUNT = @building_static_jobs_high
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -1823,15 +1594,12 @@ building_churning_tunnels_1 = {
 	category = resource
 	can_build = yes
 	can_demolish = yes
-
 	building_sets = {
 		mining
 	}
-
 	inline_script = {
 		script = buildings/wilderness_buildings_potential_destroy
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1842,22 +1610,18 @@ building_churning_tunnels_1 = {
 			minerals = @b1_upkeep
 		}
 	}
-
 	inline_script = {
 		script = jobs/miners_add
 		AMOUNT = @building_static_jobs_low
 	}
-
 	upgrades = {
 		building_churning_tunnels_2
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
 
 	ai_estimate_without_unemployment = yes
-
 	allow = {
 		is_occupied_flag = no
 	}
@@ -1870,20 +1634,16 @@ building_churning_tunnels_2 = {
 	category = resource
 	can_build = no
 	can_demolish = yes
-
 	building_sets = {
 		mining
 	}
-
 	inline_script = {
 		script = buildings/wilderness_buildings_potential_destroy
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1894,16 +1654,13 @@ building_churning_tunnels_2 = {
 			minerals = @b2_upkeep
 		}
 	}
-
 	upgrades = {
 		building_churning_tunnels_3
 	}
-
 	inline_script = {
 		script = jobs/miners_add
 		AMOUNT = @building_static_jobs
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -1919,7 +1676,6 @@ building_churning_tunnels_3 = {
 	category = resource
 	can_build = no
 	can_demolish = yes
-
 	building_sets = {
 		mining
 	}
@@ -1930,12 +1686,10 @@ building_churning_tunnels_3 = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_major_upgraded_capital = yes
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		OR = {
@@ -1947,7 +1701,6 @@ building_churning_tunnels_3 = {
 			owner = { is_wilderness_empire = no }
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1960,28 +1713,22 @@ building_churning_tunnels_3 = {
 			volatile_motes = @b2_rare_upkeep
 		}
 	}
-
 	prerequisites = {
 		"tech_mineral_purification_1"
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
 	}
-
 	upgrades = {
 		building_churning_tunnels_4
 	}
-
 	planet_modifier = {
 		planet_miners_minerals_produces_add = 2
 	}
-
 	inline_script = {
 		script = jobs/miners_add
 		AMOUNT = @building_static_jobs_high
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -1997,7 +1744,6 @@ building_churning_tunnels_4 = {
 	category = resource
 	can_build = no
 	can_demolish = yes
-
 	building_sets = {
 		mining
 	}
@@ -2008,12 +1754,10 @@ building_churning_tunnels_4 = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_fully_upgraded_capital = yes
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		OR = {
@@ -2025,7 +1769,6 @@ building_churning_tunnels_4 = {
 			owner = { is_wilderness_empire = no }
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -2038,27 +1781,22 @@ building_churning_tunnels_4 = {
 			volatile_motes = @b3_rare_upkeep
 		}
 	}
-
 	planet_modifier = {
 		planet_miners_minerals_produces_add = 2
 		pop_mining_drone_bonus_workforce_mult = 0.15
 	}
-
 	inline_script = {
 		script = jobs/miners_add
 		AMOUNT = @building_static_jobs_high
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
-
 	prerequisites = {
 		"tech_mineral_purification_2"
 	}
 
 	ai_estimate_without_unemployment = yes
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
 	}
@@ -2072,16 +1810,13 @@ building_natural_furnace_0 = {
 	category = resource
 	can_build = yes
 	can_demolish = yes
-
 	building_sets = {
 		government
 		foundry
 	}
-
 	inline_script = {
 		script = buildings/wilderness_buildings_potential_destroy
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -2092,22 +1827,18 @@ building_natural_furnace_0 = {
 			energy = @b1_upkeep
 		}
 	}
-
 	upgrades = {
 		building_natural_furnace_1
 	}
-
 	inline_script = {
 		script = jobs/foundry_add
 		AMOUNT = @building_static_jobs_low
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
 
 	ai_estimate_without_unemployment = yes
-
 	allow = {
 		is_occupied_flag = no
 	}
@@ -2121,29 +1852,23 @@ building_natural_furnace_1 = {
 	category = resource
 	can_build = no
 	can_demolish = yes
-
 	building_sets = {
 		government
 		foundry
 	}
-
 	inline_script = {
 		script = buildings/wilderness_buildings_potential_destroy
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_major_upgraded_capital = yes
 	}
-
 	prerequisites = {
 		tech_basic_industry
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -2154,16 +1879,13 @@ building_natural_furnace_1 = {
 			energy = @b2_upkeep
 		}
 	}
-
 	upgrades = {
 		building_natural_furnace_2
 	}
-
 	inline_script = {
 		script = jobs/foundry_add
 		AMOUNT = @building_static_jobs
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -2179,7 +1901,6 @@ building_natural_furnace_2 = {
 	category = resource
 	can_build = no
 	can_demolish = yes
-
 	building_sets = {
 		government
 		foundry
@@ -2191,17 +1912,14 @@ building_natural_furnace_2 = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_major_upgraded_capital = yes
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no }
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -2214,29 +1932,23 @@ building_natural_furnace_2 = {
 			volatile_motes = @b2_rare_upkeep
 		}
 	}
-
 	upgrades = {
 		building_natural_furnace_3
 	}
-
 	prerequisites = {
 		tech_alloys_1
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
 	}
-
 	planet_modifier = {
 		planet_metallurgists_alloys_produces_add = 2
 		planet_metallurgists_minerals_upkeep_add = 4
 	}
-
 	inline_script = {
 		script = jobs/foundry_add
 		AMOUNT = @building_static_jobs_high
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -2252,7 +1964,6 @@ building_natural_furnace_3 = {
 	category = resource
 	can_build = no
 	can_demolish = yes
-
 	building_sets = {
 		government
 		foundry
@@ -2264,12 +1975,10 @@ building_natural_furnace_3 = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_fully_upgraded_capital = yes
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		OR = {
@@ -2278,7 +1987,6 @@ building_natural_furnace_3 = {
 			owner = { is_wilderness_empire = no }
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -2291,26 +1999,21 @@ building_natural_furnace_3 = {
 			volatile_motes = @b3_rare_upkeep
 		}
 	}
-
 	prerequisites = {
 		tech_alloys_2
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
 	}
-
 	planet_modifier = {
 		pop_foundry_bonus_workforce_mult = 0.15
 		planet_metallurgists_alloys_produces_add = 2
 		planet_metallurgists_minerals_upkeep_add = 4
 	}
-
 	inline_script = {
 		script = jobs/foundry_add
 		AMOUNT = @building_static_jobs_high
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -2326,22 +2029,18 @@ building_avatar_chamber_1 = {
 	category = amenities
 	can_build = yes
 	can_demolish = yes
-
 	building_sets = {
 		government
 		unity
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no }
 	}
-
 	convert_to = {
 		building_autochthon_monument
 		building_corporate_monument
@@ -2349,15 +2048,12 @@ building_avatar_chamber_1 = {
 		building_simulation_1
 		building_sensorium_1
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	prerequisites = {
 		tech_wilderness_node
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -2368,31 +2064,25 @@ building_avatar_chamber_1 = {
 			food = @b1_upkeep
 		}
 	}
-
 	upgrades = {
 		building_avatar_chamber_2
 	}
-
 	planet_modifier = {
 		planet_housing_add = 300
 		planet_amenities_no_happiness_add = 400
 	}
-
 	triggered_planet_modifier = {
 		potential = { has_building = building_avatar_chamber_2 }
 		planet_amenities_no_happiness_add = 200
 	}
-
 	triggered_planet_modifier = {
 		potential = { has_building = building_avatar_chamber_3 }
 		planet_amenities_no_happiness_add = 400
 	}
-
 	triggered_planet_modifier = {
 		potential = { has_building = building_avatar_chamber_4 }
 		planet_amenities_no_happiness_add = 800
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -2413,7 +2103,6 @@ building_avatar_chamber_2 = {
 		government
 		unity
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
@@ -2423,12 +2112,10 @@ building_avatar_chamber_2 = {
 			has_building = building_avatar_chamber_4
 		}
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no }
 	}
-
 	convert_to = {
 		building_autochthon_monument
 		building_corporate_monument
@@ -2436,16 +2123,13 @@ building_avatar_chamber_2 = {
 		building_simulation_1
 		building_sensorium_1
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
-
 	prerequisites = {
 		tech_wilderness_node
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -2461,25 +2145,20 @@ building_avatar_chamber_2 = {
 			multiplier = owner.trigger:num_ascension_perks
 		}
 	}
-
 	upgrades = {
 		building_avatar_chamber_3
 	}
-
 	planet_modifier = {
 		planet_housing_add = 300
 		planet_amenities_no_happiness_add = 600
 		planet_bureaucrats_produces_mult = 0.20
 	}
-
 	triggered_desc = {
 		text = building_avatar_chamber_2_effect
 	}
-
 	triggered_desc = {
 		text = building_autochthon_monument_effect
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -2495,7 +2174,6 @@ building_avatar_chamber_3 = {
 	category = amenities
 	can_build = no
 	can_demolish = yes
-
 	building_sets = {
 		government
 		unity
@@ -2507,7 +2185,6 @@ building_avatar_chamber_3 = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		OR = {
@@ -2515,7 +2192,6 @@ building_avatar_chamber_3 = {
 			owner = { is_wilderness_empire = no }
 		}
 	}
-
 	convert_to = {
 		building_corporate_site
 		building_heritage_site
@@ -2523,16 +2199,13 @@ building_avatar_chamber_3 = {
 		building_simulation_2
 		building_sensorium_2
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_major_upgraded_capital = yes
 	}
-
 	prerequisites = {
 		tech_wilderness_cluster
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -2550,25 +2223,20 @@ building_avatar_chamber_3 = {
 			multiplier = owner.trigger:num_ascension_perks
 		}
 	}
-
 	upgrades = {
 		building_avatar_chamber_4
 	}
-
 	planet_modifier = {
 		planet_housing_add = 300
 		planet_amenities_no_happiness_add = 800
 		planet_bureaucrats_produces_mult = 0.20
 	}
-
 	triggered_desc = {
 		text = building_avatar_chamber_3_effect
 	}
-
 	triggered_desc = {
 		text = building_heritage_site_effect
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -2584,7 +2252,6 @@ building_avatar_chamber_4 = {
 	category = amenities
 	can_build = no
 	can_demolish = yes
-
 	building_sets = {
 		government
 		unity
@@ -2596,7 +2263,6 @@ building_avatar_chamber_4 = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		OR = {
@@ -2604,7 +2270,6 @@ building_avatar_chamber_4 = {
 			owner = { is_wilderness_empire = no }
 		}
 	}
-
 	convert_to = {
 		building_corporate_forum
 		building_hypercomms_forum
@@ -2612,16 +2277,13 @@ building_avatar_chamber_4 = {
 		building_simulation_3
 		building_sensorium_3
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_fully_upgraded_capital = yes
 	}
-
 	prerequisites = {
 		tech_wilderness_confluence
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -2639,21 +2301,17 @@ building_avatar_chamber_4 = {
 			multiplier = owner.trigger:num_ascension_perks
 		}
 	}
-
 	planet_modifier = {
 		planet_housing_add = 300
 		planet_amenities_no_happiness_add = 1200
 		planet_bureaucrats_produces_mult = 0.20
 	}
-
 	triggered_desc = {
 		text = building_avatar_chamber_4_effect
 	}
-
 	triggered_desc = {
 		text = building_hypercomms_forum_effect
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -2670,28 +2328,22 @@ building_mote_aggravator = {
 	category = resource
 	can_build = yes
 	can_demolish = yes
-
 	building_sets = {
 		government
 		foundry
 	}
-
 	inline_script = {
 		script = buildings/wilderness_buildings_potential_destroy
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	prerequisites = {
 		"tech_volatile_motes"
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -2702,11 +2354,9 @@ building_mote_aggravator = {
 			energy = @b2_upkeep
 		}
 	}
-
 	planet_modifier = {
 		job_chemist_drone_add = @building_static_jobs
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -2723,28 +2373,22 @@ building_churning_stomach = {
 	category = resource
 	can_build = yes
 	can_demolish = yes
-
 	building_sets = {
 		government
 		foundry
 	}
-
 	inline_script = {
 		script = buildings/wilderness_buildings_potential_destroy
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	prerequisites = {
 		"tech_exotic_gases"
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -2755,11 +2399,9 @@ building_churning_stomach = {
 			energy = @b2_upkeep
 		}
 	}
-
 	planet_modifier = {
 		job_gas_refiner_drone_add = @building_static_jobs
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -2776,28 +2418,22 @@ building_crystal_growth = {
 	category = resource
 	can_build = yes
 	can_demolish = yes
-
 	building_sets = {
 		government
 		foundry
 	}
-
 	inline_script = {
 		script = buildings/wilderness_buildings_potential_destroy
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	prerequisites = {
 		"tech_rare_crystals"
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -2808,11 +2444,9 @@ building_crystal_growth = {
 			energy = @b2_upkeep
 		}
 	}
-
 	planet_modifier = {
 		job_translucer_drone_add = @building_static_jobs
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -2831,28 +2465,22 @@ building_planetary_carapace = {
 	category = army
 	can_build = yes
 	can_demolish = yes
-
 	building_sets = {
 		government
 		fortress
 	}
-
 	inline_script = {
 		script = buildings/wilderness_buildings_potential_destroy
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	prerequisites = {
 		"tech_planetary_defenses"
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -2863,16 +2491,13 @@ building_planetary_carapace = {
 			minerals = @b2_upkeep
 		}
 	}
-
 	inline_script = {
 		script = jobs/soldiers_add
 		AMOUNT = @building_static_jobs_low
 	}
-
 	upgrades = {
 		building_planetary_carapace_2
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -2889,29 +2514,23 @@ building_planetary_carapace_2 = {
 	can_build = no
 	can_demolish = yes
 	planetary_ftl_inhibitor = yes
-
 	building_sets = {
 		government
 		fortress
 	}
-
 	inline_script = {
 		script = buildings/wilderness_buildings_potential_destroy
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
-
 	prerequisites = {
 		"tech_global_defense_grid"
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -2924,12 +2543,10 @@ building_planetary_carapace_2 = {
 			volatile_motes = @b2_rare_upkeep
 		}
 	}
-
 	inline_script = {
 		script = jobs/soldiers_add
 		AMOUNT = @building_static_jobs
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
@@ -2946,17 +2563,14 @@ building_ozone_thickener = {
 	can_build = yes
 	can_demolish = yes
 	planet_limit = 1
-
 	building_sets = {
 		government
 		fortress
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_upgraded_capital = yes
@@ -2973,28 +2587,22 @@ building_ozone_thickener = {
 			}
 		}
 	}
-
 	prerequisites = {
 		"tech_planetary_shield_generator"
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
 	}
-
 	planet_modifier = {
 		planet_orbital_bombardment_damage = -0.5
 	}
-
 	triggered_planet_modifier = {
 		potential = { has_cosmic_storms_dlc = yes }
 		planet_storm_devastation_mult = -0.5
 	}
-
 	inline_script = { # on_built & on_destroy behaviors
 		script = cosmic_storms/PlanetaryShieldOnBuiltDestroy
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -3005,11 +2613,9 @@ building_ozone_thickener = {
 			energy = @b2_upkeep
 		}
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
-
 	custom_storm_ai_weight = {
 		weight = 5
 		modifier = {
@@ -3031,11 +2637,9 @@ building_wilderness_storm_relief = {
 	base_buildtime = @b1_time
 	planet_limit = 1
 	category = resource
-
 	building_sets = {
 		government
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
@@ -3044,25 +2648,20 @@ building_wilderness_storm_relief = {
 			solar_system = { system_has_storm_repelling_tech = yes }
 		}
 	}
-
 	allow = {
 		is_occupied_flag = no
 	}
-
 	destroy_trigger = {
 		has_owner = yes
 		owner = { is_wilderness_empire = no }
 		influence_building_destruction_trigger = yes
 	}
-
 	prerequisites = {
 		"tech_industrial_storm_protection"
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
 	}
-
 	resources = {
 		category = planet_buildings_storm_tech
 		# Basic Building costs (inherited from 'building_storm_resistant_production')
@@ -3086,7 +2685,6 @@ building_wilderness_storm_relief = {
 		planet_amenities_no_happiness_add = 800
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = planet.orbital_defence
@@ -3110,13 +2708,11 @@ building_wilderness_storm_relief = {
 		planet_technician_produces_mult = 1
 		mult = value:storm_building_production_multiplier
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
 
 	custom_tooltip = "building_wilderness_storm_relief_tt"
-
 	custom_storm_ai_weight = {
 		weight = 0
 		modifier = {
@@ -3138,7 +2734,6 @@ building_subterranean_cache = {
 	category = resource
 	can_build = yes
 	can_demolish = yes
-
 	building_sets = {
 		government
 		mining
@@ -3146,12 +2741,10 @@ building_subterranean_cache = {
 		generator
 		urban
 	}
-
 	potential = {
 		has_owner = yes
 		owner = { is_wilderness_empire = yes }
 	}
-
 	allow = {
 		is_occupied_flag = no
 		has_owner = yes
@@ -3176,7 +2769,6 @@ building_subterranean_cache = {
 			}
 		}
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -3187,11 +2779,9 @@ building_subterranean_cache = {
 			minerals = @b1_upkeep
 		}
 	}
-
 	country_modifier = {
 		country_resource_max_add = 5000
 	}
-
 	triggered_country_modifier = {
 		potential = {
 			has_owner = yes
@@ -3199,19 +2789,15 @@ building_subterranean_cache = {
 		}
 		country_resource_max_add = 5000
 	}
-
 	inline_script = {
 		script = buildings/on_all_wilderness_buildings_districts
 	}
-
 	prerequisites = {
 		"tech_basic_industry"
 	}
-
 	show_tech_unlock_if = {
 		is_wilderness_empire = yes
 	}
 
 	ai_estimate_without_unemployment = yes
 }
-

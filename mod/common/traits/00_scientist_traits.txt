@@ -3,6 +3,7 @@
 ####################################
 # SHARED TRAITS BLOCKED IN PARAGON #
 ####################################
+
 trait_ruler_space_miner = {
 	inline_script = {
 		script = trait/icon
@@ -12,20 +13,16 @@ trait_ruler_space_miner = {
 		COUNCIL = yes
 		TIER = none
 	}
-
 	councilor_modifier = {
 		station_gatherers_produces_mult = 0.10
 		station_gatherers_cost_mult = -0.25
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = no
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	selectable_weight = {
 		weight = @class_trait_weight
 		inline_script = paragon/council_weight_mult
@@ -41,20 +38,16 @@ trait_ruler_home_in_the_sky = {
 		COUNCIL = yes
 		TIER = none
 	}
-
 	councilor_modifier = {
 		starbase_modules_cost_mult = -0.2
 		starbase_upgrade_cost_mult = -0.10
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = no
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	selectable_weight = {
 		weight = @class_trait_weight
 		inline_script = paragon/council_weight_mult
@@ -64,6 +57,7 @@ trait_ruler_home_in_the_sky = {
 #################
 # SHARED TRAITS #
 #################
+
 leader_trait_carefree = {
 	inline_script = {
 		script = trait/icon
@@ -73,33 +67,25 @@ leader_trait_carefree = {
 		COUNCIL = no
 		TIER = 1
 	}
-
 	modifier = {
 		ship_anomaly_research_speed_mult = 0.20
 	}
-
 	leader_potential_add = {
 		is_ruler = no
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	opposites = {
 		leader_trait_meticulous
 		leader_trait_meticulous_2
 		leader_trait_neurotic
 		leader_trait_neurotic_2
 	}
-
 	selectable_weight = {
 		weight = @class_trait_weight
 		inline_script = paragon/pilot_weight_mult
-		inline_script = {
-			script = paragon/subclass_weight_mult
-			SUBCLASS = scientist_scholar
-		}
+		inline_script = { script = paragon/subclass_weight_mult SUBCLASS = scientist_scholar }
 	}
 
 	ai_weight = 50
@@ -109,7 +95,6 @@ leader_trait_carefree_2 = {
 	replace_traits = {
 		"leader_trait_carefree"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -118,15 +103,12 @@ leader_trait_carefree_2 = {
 		COUNCIL = no
 		TIER = 2
 	}
-
 	modifier = {
 		ship_anomaly_research_speed_mult = 0.35
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	opposites = {
 		leader_trait_meticulous
 		leader_trait_meticulous_2
@@ -138,6 +120,7 @@ leader_trait_carefree_2 = {
 }
 
 ###################
+
 leader_trait_roamer = {
 	inline_script = {
 		script = trait/icon
@@ -147,31 +130,23 @@ leader_trait_roamer = {
 		COUNCIL = no
 		TIER = 1
 	}
-
 	modifier = {
 		science_ship_survey_speed = 0.20
 	}
-
 	leader_potential_add = {
 		is_ruler = no
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	opposites = {
 		leader_trait_neurotic
 		leader_trait_neurotic_2
 	}
-
 	selectable_weight = {
 		weight = @class_trait_weight
 		inline_script = paragon/pilot_weight_mult
-		inline_script = {
-			script = paragon/subclass_weight_mult
-			SUBCLASS = scientist_explorer
-		}
+		inline_script = { script = paragon/subclass_weight_mult SUBCLASS = scientist_explorer }
 	}
 
 	ai_weight = 100
@@ -181,7 +156,6 @@ leader_trait_roamer_2 = {
 	replace_traits = {
 		"leader_trait_roamer"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -190,15 +164,12 @@ leader_trait_roamer_2 = {
 		COUNCIL = no
 		TIER = 2
 	}
-
 	modifier = {
 		science_ship_survey_speed = 0.35
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	opposites = {
 		leader_trait_neurotic
 		leader_trait_neurotic_2
@@ -208,6 +179,7 @@ leader_trait_roamer_2 = {
 }
 
 ###################
+
 leader_trait_archaeologist = {
 	inline_script = {
 		script = trait/icon
@@ -217,22 +189,16 @@ leader_trait_archaeologist = {
 		COUNCIL = no
 		TIER = 1
 	}
-
 	modifier = {
 		ship_archaeological_site_excavation_speed_mult = 0.20
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	selectable_weight = {
 		weight = @class_trait_weight
 		inline_script = paragon/pilot_weight_mult
-		inline_script = {
-			script = paragon/subclass_weight_mult
-			SUBCLASS = scientist_scholar
-		}
+		inline_script = { script = paragon/subclass_weight_mult SUBCLASS = scientist_scholar }
 	}
 
 	ai_weight = 100
@@ -242,7 +208,6 @@ leader_trait_archaeologist_2 = {
 	replace_traits = {
 		"leader_trait_archaeologist"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -251,11 +216,9 @@ leader_trait_archaeologist_2 = {
 		COUNCIL = no
 		TIER = 2
 	}
-
 	modifier = {
 		ship_archaeological_site_excavation_speed_mult = 0.35
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -264,6 +227,7 @@ leader_trait_archaeologist_2 = {
 }
 
 ###################
+
 leader_trait_meticulous = {
 	inline_script = {
 		script = trait/icon
@@ -273,31 +237,23 @@ leader_trait_meticulous = {
 		COUNCIL = no
 		TIER = 1
 	}
-
 	modifier = {
 		ship_anomaly_generation_chance_mult = 0.1
 	}
-
 	leader_potential_add = {
 		is_ruler = no
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	opposites = {
 		leader_trait_carefree
 		leader_trait_carefree_2
 	}
-
 	selectable_weight = {
 		weight = @class_trait_weight
 		inline_script = paragon/pilot_weight_mult
-		inline_script = {
-			script = paragon/subclass_weight_mult
-			SUBCLASS = scientist_explorer
-		}
+		inline_script = { script = paragon/subclass_weight_mult SUBCLASS = scientist_explorer }
 	}
 
 	ai_weight = 50
@@ -307,7 +263,6 @@ leader_trait_meticulous_2 = {
 	replace_traits = {
 		"leader_trait_meticulous"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -316,15 +271,12 @@ leader_trait_meticulous_2 = {
 		COUNCIL = no
 		TIER = 2
 	}
-
 	modifier = {
 		ship_anomaly_generation_chance_mult = 0.15
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	opposites = {
 		leader_trait_carefree
 		leader_trait_carefree_2
@@ -334,6 +286,7 @@ leader_trait_meticulous_2 = {
 }
 
 ###################
+
 leader_trait_custom_AI_assistant = {
 	inline_script = {
 		script = trait/icon
@@ -343,24 +296,19 @@ leader_trait_custom_AI_assistant = {
 		COUNCIL = no
 		TIER = none
 	}
-
 	modifier = {
 		science_ship_survey_speed = 0.10
 		ship_anomaly_research_speed_mult = 0.10
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	prerequisites = {
 		tech_self_aware_logic
 	}
-
 	opposites = {
 		"leader_trait_sapient_AI_assistant"
 	}
-
 	selectable_weight = {
 		weight = @class_trait_weight
 		inline_script = paragon/pilot_weight_mult
@@ -375,6 +323,7 @@ leader_trait_custom_AI_assistant = {
 }
 
 ###################
+
 leader_trait_sapient_AI_assistant = {
 	inline_script = {
 		script = trait/icon
@@ -384,30 +333,22 @@ leader_trait_sapient_AI_assistant = {
 		COUNCIL = no
 		TIER = none
 	}
-
 	modifier = {
 		science_ship_survey_speed = 0.15
 		ship_anomaly_research_speed_mult = 0.15
 	}
-
 	leader_potential_add = {
-		NOT = {
-			from = { has_policy_flag = ai_outlawed }
-		}
+		NOT = { from = { has_policy_flag = ai_outlawed } }
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	prerequisites = {
 		tech_sapient_ai
 	}
-
 	opposites = {
 		"leader_trait_custom_AI_assistant"
 	}
-
 	selectable_weight = {
 		weight = @class_trait_weight
 		inline_script = paragon/pilot_weight_mult
@@ -424,9 +365,9 @@ leader_trait_sapient_AI_assistant = {
 ############
 # EXPLORER #
 ############
+
 leader_trait_slippery = {
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -435,39 +376,30 @@ leader_trait_slippery = {
 		COUNCIL = no
 		TIER = 1
 	}
-
 	modifier = {
 		ship_disengage_chance_mult = 0.5
 		ship_disengage_opportunities_add = 1
 		ship_hull_mult = 0.5
 	}
-
 	leader_potential_add = {
 		has_trait = subclass_scientist_explorer
 		has_paragon_dlc = yes
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/pilot_weight_mult
-		inline_script = {
-			script = paragon/subclass_weight_mult
-			SUBCLASS = scientist_explorer
-		}
+		inline_script = { script = paragon/subclass_weight_mult SUBCLASS = scientist_explorer }
 	}
 }
 
 leader_trait_slippery_2 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_slippery"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -476,22 +408,20 @@ leader_trait_slippery_2 = {
 		COUNCIL = no
 		TIER = 2
 	}
-
 	modifier = {
 		ship_disengage_chance_mult = 1
 		ship_disengage_opportunities_add = 2
 		ship_hull_mult = 1
 	}
-
 	leader_class = {
 		scientist
 	}
 }
 
 ###################
+
 leader_trait_prospector = {
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -508,28 +438,21 @@ leader_trait_prospector = {
 	}
 
 	custom_tooltip = leader_trait_prospector_effect
-
 	leader_class = {
 		scientist
 	}
-
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/pilot_weight_mult
-		inline_script = {
-			script = paragon/subclass_weight_mult
-			SUBCLASS = scientist_explorer
-		}
+		inline_script = { script = paragon/subclass_weight_mult SUBCLASS = scientist_explorer }
 	}
 }
 
 leader_trait_prospector_2 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_prospector"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -541,7 +464,6 @@ leader_trait_prospector_2 = {
 
 	# Trait effects in paragon_events_2.txt
 	custom_tooltip = leader_trait_prospector_2_effect
-
 	leader_class = {
 		scientist
 	}
@@ -549,11 +471,9 @@ leader_trait_prospector_2 = {
 
 leader_trait_prospector_3 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_prospector_2"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -565,16 +485,15 @@ leader_trait_prospector_3 = {
 
 	# Trait effects in paragon_events_2.txt
 	custom_tooltip_with_modifiers = leader_trait_prospector_3_effect
-
 	leader_class = {
 		scientist
 	}
 }
 
 ###################
+
 leader_trait_observant = {
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon
 		CLASS = leader
@@ -583,7 +502,6 @@ leader_trait_observant = {
 		COUNCIL = no
 		TIER = 1
 	}
-
 	leader_potential_add = {
 		OR = {
 			has_trait = subclass_scientist_explorer
@@ -591,18 +509,15 @@ leader_trait_observant = {
 		}
 		has_paragon_dlc = yes
 	}
-
 	modifier = {
 		ship_sensor_range_add = 2
 		ship_hyperlane_range_add = 3
 		ship_windup_mult = -0.15
 	}
-
 	leader_class = {
 		commander
 		scientist
 	}
-
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/pilot_weight_mult
@@ -616,11 +531,9 @@ leader_trait_observant = {
 
 leader_trait_observant_2 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_observant"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = leader
@@ -629,13 +542,11 @@ leader_trait_observant_2 = {
 		COUNCIL = no
 		TIER = 2
 	}
-
 	modifier = {
 		ship_sensor_range_add = 3
 		ship_hyperlane_range_add = 4
 		ship_windup_mult = -0.25
 	}
-
 	leader_class = {
 		commander
 		scientist
@@ -643,9 +554,9 @@ leader_trait_observant_2 = {
 }
 
 ###################
+
 leader_trait_academic_dig_site_expert = {
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -654,39 +565,30 @@ leader_trait_academic_dig_site_expert = {
 		COUNCIL = no
 		TIER = 1
 	}
-
 	modifier = {
 		ship_archaeological_site_clues_add = 1
 	}
-
 	leader_potential_add = {
 		OR = {
 			has_paragon_dlc = no
 			has_trait = subclass_scientist_scholar
 		}
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	selectable_weight = {
 		inline_script = paragon/subclass_free_trait_weight
 		inline_script = paragon/pilot_weight_mult
-		inline_script = {
-			script = paragon/subclass_weight_mult
-			SUBCLASS = scientist_scholar
-		}
+		inline_script = { script = paragon/subclass_weight_mult SUBCLASS = scientist_scholar }
 	}
 }
 
 leader_trait_academic_dig_site_expert_2 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_academic_dig_site_expert"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -695,11 +597,9 @@ leader_trait_academic_dig_site_expert_2 = {
 		COUNCIL = no
 		TIER = 2
 	}
-
 	modifier = {
 		ship_archaeological_site_clues_add = 2
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -707,11 +607,9 @@ leader_trait_academic_dig_site_expert_2 = {
 
 leader_trait_academic_dig_site_expert_3 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_academic_dig_site_expert_2"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -720,24 +618,21 @@ leader_trait_academic_dig_site_expert_3 = {
 		COUNCIL = no
 		TIER = 3
 	}
-
 	modifier = {
 		ship_archaeological_site_clues_add = 3
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 	}
-
 	leader_class = {
 		scientist
 	}
 }
 
 ###################
+
 leader_trait_academic_minor_artifacts_expert = {
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -748,7 +643,6 @@ leader_trait_academic_minor_artifacts_expert = {
 	}
 
 	custom_tooltip = leader_trait_academic_minor_artifacts_expert_tt
-
 	leader_potential_add = {
 		has_ancrel = yes
 		OR = {
@@ -756,22 +650,16 @@ leader_trait_academic_minor_artifacts_expert = {
 			has_trait = subclass_scientist_scholar
 		}
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	prerequisites = {
 		tech_archaeostudies
 	}
-
 	selectable_weight = {
 		inline_script = paragon/subclass_free_trait_weight
 		inline_script = paragon/pilot_weight_mult
-		inline_script = {
-			script = paragon/subclass_weight_mult
-			SUBCLASS = scientist_scholar
-		}
+		inline_script = { script = paragon/subclass_weight_mult SUBCLASS = scientist_scholar }
 		modifier = {
 			from = { has_ascension_perk = ap_archaeoengineers }
 			factor = @synergy_weight_mult
@@ -781,11 +669,9 @@ leader_trait_academic_minor_artifacts_expert = {
 
 leader_trait_academic_minor_artifacts_expert_2 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_academic_minor_artifacts_expert"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -796,7 +682,6 @@ leader_trait_academic_minor_artifacts_expert_2 = {
 	}
 
 	custom_tooltip = leader_trait_academic_minor_artifacts_expert_2_tt
-
 	leader_class = {
 		scientist
 	}
@@ -804,11 +689,9 @@ leader_trait_academic_minor_artifacts_expert_2 = {
 
 leader_trait_academic_minor_artifacts_expert_3 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_academic_minor_artifacts_expert_2"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -819,20 +702,18 @@ leader_trait_academic_minor_artifacts_expert_3 = {
 	}
 
 	custom_tooltip = leader_trait_academic_minor_artifacts_expert_3_tt
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 	}
-
 	leader_class = {
 		scientist
 	}
 }
 
 ###################
+
 leader_trait_tuner = {
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -841,37 +722,28 @@ leader_trait_tuner = {
 		COUNCIL = no
 		TIER = 1
 	}
-
 	modifier = {
 		ship_speed_mult = 0.35
 	}
-
 	leader_potential_add = {
 		has_trait = subclass_scientist_explorer
 		has_paragon_dlc = yes
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/pilot_weight_mult
-		inline_script = {
-			script = paragon/subclass_weight_mult
-			SUBCLASS = scientist_explorer
-		}
+		inline_script = { script = paragon/subclass_weight_mult SUBCLASS = scientist_explorer }
 	}
 }
 
 leader_trait_tuner_2 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_tuner"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -880,20 +752,18 @@ leader_trait_tuner_2 = {
 		COUNCIL = no
 		TIER = 2
 	}
-
 	modifier = {
 		ship_speed_mult = 0.5
 	}
-
 	leader_class = {
 		scientist
 	}
 }
 
 ###################
+
 leader_trait_explorer_cloaking_focus = {
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -902,41 +772,31 @@ leader_trait_explorer_cloaking_focus = {
 		COUNCIL = no
 		TIER = 1
 	}
-
 	modifier = {
 		ship_cloaking_strength_add = 2
 	}
-
 	prerequisites = {
 		tech_cloaking_1
 	}
-
 	leader_potential_add = {
 		has_trait = subclass_scientist_explorer
 		has_paragon_dlc = yes
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/pilot_weight_mult
-		inline_script = {
-			script = paragon/subclass_weight_mult
-			SUBCLASS = scientist_explorer
-		}
+		inline_script = { script = paragon/subclass_weight_mult SUBCLASS = scientist_explorer }
 	}
 }
 
 leader_trait_explorer_cloaking_focus_2 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_explorer_cloaking_focus"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -945,15 +805,12 @@ leader_trait_explorer_cloaking_focus_2 = {
 		COUNCIL = no
 		TIER = 2
 	}
-
 	modifier = {
 		ship_cloaking_strength_add = 3
 	}
-
 	prerequisites = {
 		tech_cloaking_1
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -961,11 +818,9 @@ leader_trait_explorer_cloaking_focus_2 = {
 
 leader_trait_explorer_cloaking_focus_3 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_explorer_cloaking_focus_2"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -974,17 +829,14 @@ leader_trait_explorer_cloaking_focus_3 = {
 		COUNCIL = no
 		TIER = 3
 	}
-
 	modifier = {
 		ship_cloaking_strength_add = 3
 	}
 
 	custom_tooltip_with_modifiers = leader_trait_explorer_cloaking_focus_3_tt
-
 	prerequisites = {
 		tech_cloaking_1
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -993,9 +845,9 @@ leader_trait_explorer_cloaking_focus_3 = {
 ###########
 # ANALYST #
 ###########
+
 leader_trait_collaborator = {
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -1004,33 +856,27 @@ leader_trait_collaborator = {
 		COUNCIL = no
 		TIER = 1
 	}
-
 	planet_modifier = {
 		planet_jobs_physics_research_produces_mult = 0.05
 		planet_jobs_society_research_produces_mult = 0.05
 		planet_jobs_engineering_research_produces_mult = 0.05
 	}
-
 	sector_modifier = {
 		planet_jobs_physics_research_produces_mult = 0.025
 		planet_jobs_society_research_produces_mult = 0.025
 		planet_jobs_engineering_research_produces_mult = 0.025
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 		has_trait = subclass_scientist_governor
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	opposites = {
 		leader_trait_opinionated
 		leader_trait_opinionated_2
 	}
-
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/governor_weight_mult
@@ -1039,11 +885,9 @@ leader_trait_collaborator = {
 
 leader_trait_collaborator_2 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_collaborator"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -1052,23 +896,19 @@ leader_trait_collaborator_2 = {
 		COUNCIL = no
 		TIER = 2
 	}
-
 	planet_modifier = {
 		planet_jobs_physics_research_produces_mult = 0.075
 		planet_jobs_society_research_produces_mult = 0.075
 		planet_jobs_engineering_research_produces_mult = 0.075
 	}
-
 	sector_modifier = {
 		planet_jobs_physics_research_produces_mult = 0.0375
 		planet_jobs_society_research_produces_mult = 0.0375
 		planet_jobs_engineering_research_produces_mult = 0.0375
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	opposites = {
 		leader_trait_opinionated
 		leader_trait_opinionated_2
@@ -1077,11 +917,9 @@ leader_trait_collaborator_2 = {
 
 leader_trait_collaborator_3 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_collaborator_2"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -1090,23 +928,19 @@ leader_trait_collaborator_3 = {
 		COUNCIL = no
 		TIER = 3
 	}
-
 	planet_modifier = {
 		planet_jobs_physics_research_produces_mult = 0.10
 		planet_jobs_society_research_produces_mult = 0.10
 		planet_jobs_engineering_research_produces_mult = 0.10
 	}
-
 	sector_modifier = {
 		planet_jobs_physics_research_produces_mult = 0.05
 		planet_jobs_society_research_produces_mult = 0.05
 		planet_jobs_engineering_research_produces_mult = 0.05
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	opposites = {
 		leader_trait_opinionated
 		leader_trait_opinionated_2
@@ -1114,9 +948,9 @@ leader_trait_collaborator_3 = {
 }
 
 ###################
+
 leader_trait_manufacturer = {
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon
 		CLASS = leader
@@ -1125,7 +959,6 @@ leader_trait_manufacturer = {
 		COUNCIL = no
 		TIER = 1
 	}
-
 	leader_potential_add = {
 		OR = {
 			has_trait = subclass_scientist_governor
@@ -1133,20 +966,16 @@ leader_trait_manufacturer = {
 		}
 		has_paragon_dlc = yes
 	}
-
 	planet_modifier = {
 		planet_amenities_add = 1000
 	}
-
 	sector_modifier = {
 		planet_amenities_add = 500
 	}
-
 	leader_class = {
 		scientist
 		official
 	}
-
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/governor_weight_mult
@@ -1155,11 +984,9 @@ leader_trait_manufacturer = {
 
 leader_trait_manufacturer_2 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_manufacturer"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = leader
@@ -1168,15 +995,12 @@ leader_trait_manufacturer_2 = {
 		COUNCIL = no
 		TIER = 2
 	}
-
 	planet_modifier = {
 		planet_amenities_add = 2000
 	}
-
 	sector_modifier = {
 		planet_amenities_add = 1000
 	}
-
 	leader_class = {
 		scientist
 		official
@@ -1185,11 +1009,9 @@ leader_trait_manufacturer_2 = {
 
 leader_trait_manufacturer_3 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_manufacturer_2"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = leader
@@ -1198,15 +1020,12 @@ leader_trait_manufacturer_3 = {
 		COUNCIL = no
 		TIER = 3
 	}
-
 	planet_modifier = {
 		planet_amenities_add = 4000
 	}
-
 	sector_modifier = {
 		planet_amenities_add = 2000
 	}
-
 	leader_class = {
 		scientist
 		official
@@ -1214,9 +1033,9 @@ leader_trait_manufacturer_3 = {
 }
 
 ###################
+
 leader_trait_salvager = {
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -1225,39 +1044,30 @@ leader_trait_salvager = {
 		COUNCIL = no
 		TIER = 1
 	}
-
 	modifier = {
 		ship_speed_mult = 0.05
 	}
-
 	leader_potential_add = {
 		has_trait = subclass_scientist_scholar
 		has_paragon_dlc = yes
 	}
-
 	leader_class = {
 		scientist
 	}
 
 	custom_tooltip_with_modifiers = leader_trait_salvager_effect
-
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/pilot_weight_mult
-		inline_script = {
-			script = paragon/subclass_weight_mult
-			SUBCLASS = scientist_scholar
-		}
+		inline_script = { script = paragon/subclass_weight_mult SUBCLASS = scientist_scholar }
 	}
 }
 
 leader_trait_salvager_2 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_salvager"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -1266,11 +1076,9 @@ leader_trait_salvager_2 = {
 		COUNCIL = no
 		TIER = 2
 	}
-
 	modifier = {
 		ship_speed_mult = 0.15
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -1280,11 +1088,9 @@ leader_trait_salvager_2 = {
 
 leader_trait_salvager_3 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_salvager_2"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -1293,11 +1099,9 @@ leader_trait_salvager_3 = {
 		COUNCIL = no
 		TIER = 3
 	}
-
 	modifier = {
 		ship_speed_mult = 0.25
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -1306,9 +1110,9 @@ leader_trait_salvager_3 = {
 }
 
 ###################
+
 leader_trait_space_miner = {
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon
 		CLASS = leader
@@ -1317,38 +1121,31 @@ leader_trait_space_miner = {
 		COUNCIL = no
 		TIER = 1
 	}
-
 	triggered_planet_modifier = {
 		potential = { trait_is_wilderness_check = no }
 		planet_miners_minerals_produces_add = 0.25
 	}
-
 	triggered_planet_modifier = {
 		potential = { trait_is_wilderness_check = yes }
 		planet_jobs_minerals_produces_mult = 0.025
 	}
-
 	triggered_sector_modifier = {
 		potential = { trait_is_wilderness_check = no }
 		planet_miners_minerals_produces_add = 0.125
 	}
-
 	triggered_sector_modifier = {
 		potential = { trait_is_wilderness_check = yes }
 		planet_jobs_minerals_produces_mult = 0.015
 	}
-
 	leader_potential_add = {
 		has_governor_subclass = yes
 		has_paragon_dlc = yes
 	}
-
 	leader_class = {
 		scientist
 		official
 		commander
 	}
-
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/governor_weight_mult
@@ -1357,11 +1154,9 @@ leader_trait_space_miner = {
 
 leader_trait_space_miner_2 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_space_miner"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = leader
@@ -1370,27 +1165,22 @@ leader_trait_space_miner_2 = {
 		COUNCIL = no
 		TIER = 2
 	}
-
 	triggered_planet_modifier = {
 		potential = { trait_is_wilderness_check = no }
 		planet_miners_minerals_produces_add = 0.5
 	}
-
 	triggered_planet_modifier = {
 		potential = { trait_is_wilderness_check = yes }
 		planet_jobs_minerals_produces_mult = 0.05
 	}
-
 	triggered_sector_modifier = {
 		potential = { trait_is_wilderness_check = no }
 		planet_miners_minerals_produces_add = 0.25
 	}
-
 	triggered_sector_modifier = {
 		potential = { trait_is_wilderness_check = yes }
 		planet_jobs_minerals_produces_mult = 0.03
 	}
-
 	leader_class = {
 		scientist
 		official
@@ -1400,11 +1190,9 @@ leader_trait_space_miner_2 = {
 
 leader_trait_space_miner_3 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_space_miner_2"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = leader
@@ -1413,27 +1201,22 @@ leader_trait_space_miner_3 = {
 		COUNCIL = no
 		TIER = 3
 	}
-
 	triggered_planet_modifier = {
 		potential = { trait_is_wilderness_check = no }
 		planet_miners_minerals_produces_add = 1
 	}
-
 	triggered_planet_modifier = {
 		potential = { trait_is_wilderness_check = yes }
 		planet_jobs_minerals_produces_mult = 0.075
 	}
-
 	triggered_sector_modifier = {
 		potential = { trait_is_wilderness_check = no }
 		planet_miners_minerals_produces_add = 0.5
 	}
-
 	triggered_sector_modifier = {
 		potential = { trait_is_wilderness_check = yes }
 		planet_jobs_minerals_produces_mult = 0.045
 	}
-
 	leader_class = {
 		scientist
 		official
@@ -1444,9 +1227,9 @@ leader_trait_space_miner_3 = {
 ##############
 # RESEARCHER #
 ##############
+
 leader_trait_inquisitive = {
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -1455,28 +1238,23 @@ leader_trait_inquisitive = {
 		COUNCIL = yes
 		TIER = 1
 	}
-
 	councilor_modifier = {
 		all_technology_research_speed = 0.02
 		num_tech_alternatives_add = 1
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 		has_trait = subclass_scientist_councilor
 	}
-
 	leader_class = {
 		scientist
 	}
 
 	ai_weight = 100
-
 	opposites = {
 		leader_trait_narrow_minded
 		leader_trait_narrow_minded_2
 	}
-
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/council_weight_mult
@@ -1485,11 +1263,9 @@ leader_trait_inquisitive = {
 
 leader_trait_inquisitive_2 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_inquisitive"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -1498,18 +1274,15 @@ leader_trait_inquisitive_2 = {
 		COUNCIL = yes
 		TIER = 2
 	}
-
 	councilor_modifier = {
 		all_technology_research_speed = 0.04
 		num_tech_alternatives_add = 1
 	}
-
 	leader_class = {
 		scientist
 	}
 
 	ai_weight = 100
-
 	opposites = {
 		leader_trait_narrow_minded
 		leader_trait_narrow_minded_2
@@ -1518,11 +1291,9 @@ leader_trait_inquisitive_2 = {
 
 leader_trait_inquisitive_3 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_inquisitive_2"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -1531,18 +1302,15 @@ leader_trait_inquisitive_3 = {
 		COUNCIL = yes
 		TIER = 3
 	}
-
 	councilor_modifier = {
 		all_technology_research_speed = 0.06
 		num_tech_alternatives_add = 1
 	}
-
 	leader_class = {
 		scientist
 	}
 
 	ai_weight = 100
-
 	opposites = {
 		leader_trait_narrow_minded
 		leader_trait_narrow_minded_2
@@ -1550,9 +1318,9 @@ leader_trait_inquisitive_3 = {
 }
 
 ###################
+
 leader_trait_maniacal = {
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -1561,28 +1329,23 @@ leader_trait_maniacal = {
 		COUNCIL = yes
 		TIER = 1
 	}
-
 	councilor_modifier = {
 		all_technology_research_speed = 0.05
 		# increased chance to discover risky techs (weighted in tech-script)
 	}
-
 	leader_potential_add = {
 		OR = {
 			has_paragon_dlc = no
 			has_trait = subclass_scientist_councilor
 		}
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	opposites = {
 		leader_trait_paranoid
 		leader_trait_paranoid_2
 	}
-
 	selectable_weight = {
 		inline_script = paragon/subclass_free_trait_weight
 		inline_script = paragon/council_weight_mult
@@ -1593,11 +1356,9 @@ leader_trait_maniacal = {
 
 leader_trait_maniacal_2 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		leader_trait_maniacal
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -1606,16 +1367,13 @@ leader_trait_maniacal_2 = {
 		COUNCIL = yes
 		TIER = 2
 	}
-
 	councilor_modifier = {
 		all_technology_research_speed = 0.08
 		# increased chance to discover risky techs (weighted in tech-script)
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	opposites = {
 		leader_trait_paranoid
 		leader_trait_paranoid_2
@@ -1626,11 +1384,9 @@ leader_trait_maniacal_2 = {
 
 leader_trait_maniacal_3 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		leader_trait_maniacal_2
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -1639,12 +1395,10 @@ leader_trait_maniacal_3 = {
 		COUNCIL = yes
 		TIER = 3
 	}
-
 	councilor_modifier = {
 		all_technology_research_speed = 0.10
 		# increased chance to discover risky techs (weighted in tech-script)
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 		OR = {
@@ -1652,12 +1406,10 @@ leader_trait_maniacal_3 = {
 			has_leader_flag = renowned_materialist1
 		}
 	}
-
 	leader_class = {
 		commander
 		scientist
 	}
-
 	opposites = {
 		leader_trait_paranoid
 		leader_trait_paranoid_2
@@ -1667,9 +1419,9 @@ leader_trait_maniacal_3 = {
 }
 
 ###################
+
 trait_ruler_expansionist = {
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -1678,23 +1430,19 @@ trait_ruler_expansionist = {
 		COUNCIL = yes
 		TIER = 1
 	}
-
 	councilor_modifier = {
 		starbase_outpost_cost_mult = -0.05
 		country_starbase_influence_cost_mult = -0.05
 	}
-
 	leader_potential_add = {
 		OR = {
 			has_paragon_dlc = no
 			has_trait = subclass_scientist_councilor
 		}
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	selectable_weight = {
 		inline_script = paragon/subclass_free_trait_weight
 		inline_script = paragon/council_weight_mult
@@ -1703,11 +1451,9 @@ trait_ruler_expansionist = {
 
 trait_ruler_expansionist_2 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"trait_ruler_expansionist"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -1716,12 +1462,10 @@ trait_ruler_expansionist_2 = {
 		COUNCIL = yes
 		TIER = 2
 	}
-
 	councilor_modifier = {
 		starbase_outpost_cost_mult = -0.075
 		country_starbase_influence_cost_mult = -0.075
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -1729,11 +1473,9 @@ trait_ruler_expansionist_2 = {
 
 trait_ruler_expansionist_3 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"trait_ruler_expansionist_2"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -1742,25 +1484,22 @@ trait_ruler_expansionist_3 = {
 		COUNCIL = yes
 		TIER = 3
 	}
-
 	councilor_modifier = {
 		starbase_outpost_cost_mult = -0.10
 		country_starbase_influence_cost_mult = -0.10
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 	}
-
 	leader_class = {
 		scientist
 	}
 }
 
 ###################
+
 leader_trait_science_communicator = {
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -1769,21 +1508,17 @@ leader_trait_science_communicator = {
 		COUNCIL = yes
 		TIER = 1
 	}
-
 	councilor_modifier = {
 		scientist_exp_gain = 0.05
 		ship_archaeological_site_clues_add = 1
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 		has_trait = subclass_scientist_councilor
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/council_weight_mult
@@ -1792,11 +1527,9 @@ leader_trait_science_communicator = {
 
 leader_trait_science_communicator_2 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_science_communicator"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -1805,12 +1538,10 @@ leader_trait_science_communicator_2 = {
 		COUNCIL = yes
 		TIER = 2
 	}
-
 	councilor_modifier = {
 		scientist_exp_gain = 0.15
 		ship_archaeological_site_clues_add = 1
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -1818,11 +1549,9 @@ leader_trait_science_communicator_2 = {
 
 leader_trait_science_communicator_3 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_science_communicator_2"
 	}
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -1831,12 +1560,10 @@ leader_trait_science_communicator_3 = {
 		COUNCIL = yes
 		TIER = 3
 	}
-
 	councilor_modifier = {
 		scientist_exp_gain = 0.25
 		ship_archaeological_site_clues_add = 2
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -1845,9 +1572,9 @@ leader_trait_science_communicator_3 = {
 ####################
 # RESEARCHER FOCUS #
 ####################
+
 leader_trait_engineering_focus = {
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_engineering
 		CLASS = scientist
@@ -1856,31 +1583,25 @@ leader_trait_engineering_focus = {
 		COUNCIL = no
 		TIER = 1
 	}
-
 	planet_modifier = {
 		planet_jobs_engineering_research_produces_mult = 0.1
 	}
-
 	sector_modifier = {
 		planet_jobs_engineering_research_produces_mult = 0.05
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 		has_trait = subclass_scientist_governor
 		has_scientist_focus = no
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	triggered_desc = {
 		text = only_one_scientist_focus
 	}
 
 	ai_weight = 100
-
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/governor_weight_mult
@@ -1889,11 +1610,9 @@ leader_trait_engineering_focus = {
 
 leader_trait_engineering_focus_2 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_engineering_focus"
 	}
-
 	inline_script = {
 		script = trait/icon_engineering
 		CLASS = scientist
@@ -1902,19 +1621,15 @@ leader_trait_engineering_focus_2 = {
 		COUNCIL = no
 		TIER = 2
 	}
-
 	planet_modifier = {
 		planet_jobs_engineering_research_produces_mult = 0.2
 	}
-
 	sector_modifier = {
 		planet_jobs_engineering_research_produces_mult = 0.1
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	triggered_desc = {
 		text = only_one_scientist_focus
 	}
@@ -1924,11 +1639,9 @@ leader_trait_engineering_focus_2 = {
 
 leader_trait_engineering_focus_3 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_engineering_focus_2"
 	}
-
 	inline_script = {
 		script = trait/icon_engineering
 		CLASS = scientist
@@ -1937,19 +1650,15 @@ leader_trait_engineering_focus_3 = {
 		COUNCIL = no
 		TIER = 3
 	}
-
 	planet_modifier = {
 		planet_jobs_engineering_research_produces_mult = 0.3
 	}
-
 	sector_modifier = {
 		planet_jobs_engineering_research_produces_mult = 0.15
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	triggered_desc = {
 		text = only_one_scientist_focus
 	}
@@ -1958,9 +1667,9 @@ leader_trait_engineering_focus_3 = {
 }
 
 ###################
+
 leader_trait_physics_focus = {
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_physics
 		CLASS = scientist
@@ -1969,31 +1678,25 @@ leader_trait_physics_focus = {
 		COUNCIL = no
 		TIER = 1
 	}
-
 	planet_modifier = {
 		planet_jobs_physics_research_produces_mult = 0.1
 	}
-
 	sector_modifier = {
 		planet_jobs_physics_research_produces_mult = 0.05
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 		has_trait = subclass_scientist_governor
 		has_scientist_focus = no
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	triggered_desc = {
 		text = only_one_scientist_focus
 	}
 
 	ai_weight = 100
-
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/governor_weight_mult
@@ -2002,11 +1705,9 @@ leader_trait_physics_focus = {
 
 leader_trait_physics_focus_2 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_physics_focus"
 	}
-
 	inline_script = {
 		script = trait/icon_physics
 		CLASS = scientist
@@ -2015,19 +1716,15 @@ leader_trait_physics_focus_2 = {
 		COUNCIL = no
 		TIER = 2
 	}
-
 	planet_modifier = {
 		planet_jobs_physics_research_produces_mult = 0.2
 	}
-
 	sector_modifier = {
 		planet_jobs_physics_research_produces_mult = 0.1
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	triggered_desc = {
 		text = only_one_scientist_focus
 	}
@@ -2037,11 +1734,9 @@ leader_trait_physics_focus_2 = {
 
 leader_trait_physics_focus_3 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_physics_focus_2"
 	}
-
 	inline_script = {
 		script = trait/icon_physics
 		CLASS = scientist
@@ -2050,19 +1745,15 @@ leader_trait_physics_focus_3 = {
 		COUNCIL = no
 		TIER = 3
 	}
-
 	planet_modifier = {
 		planet_jobs_physics_research_produces_mult = 0.3
 	}
-
 	sector_modifier = {
 		planet_jobs_physics_research_produces_mult = 0.15
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	triggered_desc = {
 		text = only_one_scientist_focus
 	}
@@ -2071,9 +1762,9 @@ leader_trait_physics_focus_3 = {
 }
 
 ###################
+
 leader_trait_society_focus = {
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_society
 		CLASS = scientist
@@ -2082,31 +1773,25 @@ leader_trait_society_focus = {
 		COUNCIL = no
 		TIER = 1
 	}
-
 	planet_modifier = {
 		planet_jobs_society_research_produces_mult = 0.1
 	}
-
 	sector_modifier = {
 		planet_jobs_society_research_produces_mult = 0.05
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 		has_trait = subclass_scientist_governor
 		has_scientist_focus = no
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	triggered_desc = {
 		text = only_one_scientist_focus
 	}
 
 	ai_weight = 100
-
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/governor_weight_mult
@@ -2115,11 +1800,9 @@ leader_trait_society_focus = {
 
 leader_trait_society_focus_2 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_society_focus"
 	}
-
 	inline_script = {
 		script = trait/icon_society
 		CLASS = scientist
@@ -2128,19 +1811,15 @@ leader_trait_society_focus_2 = {
 		COUNCIL = no # Vfix
 		TIER = 2
 	}
-
 	planet_modifier = {
 		planet_jobs_society_research_produces_mult = 0.2
 	}
-
 	sector_modifier = {
 		planet_jobs_society_research_produces_mult = 0.1
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	triggered_desc = {
 		text = only_one_scientist_focus
 	}
@@ -2150,11 +1829,9 @@ leader_trait_society_focus_2 = {
 
 leader_trait_society_focus_3 = {
 	leader_trait_type = veteran
-
 	replace_traits = {
 		"leader_trait_society_focus_2"
 	}
-
 	inline_script = {
 		script = trait/icon_society
 		CLASS = scientist
@@ -2163,19 +1840,15 @@ leader_trait_society_focus_3 = {
 		COUNCIL = no # Vfix
 		TIER = 3
 	}
-
 	planet_modifier = {
 		planet_jobs_society_research_produces_mult = 0.3
 	}
-
 	sector_modifier = {
 		planet_jobs_society_research_produces_mult = 0.15
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	triggered_desc = {
 		text = only_one_scientist_focus
 	}
@@ -2194,7 +1867,6 @@ leader_trait_expertise_materials = {
 	# This is needed due to the technocracy effects
 	force_councilor_trait = yes
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_engineering
 		CLASS = scientist
@@ -2203,18 +1875,15 @@ leader_trait_expertise_materials = {
 		COUNCIL = yes
 		TIER = 1
 	}
-
 	councilor_modifier = {
 		category_materials_research_speed_mult = @expertise_tier_1_mult
 		category_materials_draw_chance_mult = 0.25
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = engineering
 		TIER = 1
 	}
-
 	leader_potential_add = {
 		is_specialist_researcher_engineering = no
 		can_leader_get_council_trait_trigger = yes
@@ -2223,13 +1892,11 @@ leader_trait_expertise_materials = {
 			has_trait = subclass_scientist_councilor
 		}
 	}
-
 	leader_class = {
 		scientist
 	}
 
 	ai_weight = 100
-
 	selectable_weight = {
 		inline_script = paragon/subclass_free_trait_weight
 		inline_script = paragon/council_weight_mult
@@ -2242,7 +1909,6 @@ leader_trait_expertise_materials_2 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_engineering
 		CLASS = scientist
@@ -2251,18 +1917,15 @@ leader_trait_expertise_materials_2 = {
 		COUNCIL = yes
 		TIER = 2
 	}
-
 	councilor_modifier = {
 		category_materials_research_speed_mult = @expertise_tier_2_mult
 		category_materials_draw_chance_mult = 0.35
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = engineering
 		TIER = 2
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -2276,7 +1939,6 @@ leader_trait_expertise_materials_3 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_engineering
 		CLASS = scientist
@@ -2285,22 +1947,18 @@ leader_trait_expertise_materials_3 = {
 		COUNCIL = yes
 		TIER = 3
 	}
-
 	councilor_modifier = {
 		category_materials_research_speed_mult = @expertise_tier_3_mult
 		category_materials_draw_chance_mult = 0.75
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = engineering
 		TIER = 3
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -2309,11 +1967,11 @@ leader_trait_expertise_materials_3 = {
 }
 
 ###################
+
 leader_trait_expertise_propulsion = {
 	# This is needed due to the technocracy effects
 	force_councilor_trait = yes
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_engineering
 		CLASS = scientist
@@ -2322,18 +1980,15 @@ leader_trait_expertise_propulsion = {
 		COUNCIL = yes
 		TIER = 1
 	}
-
 	councilor_modifier = {
 		category_propulsion_research_speed_mult = @expertise_tier_1_mult
 		category_propulsion_draw_chance_mult = 0.25
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = engineering
 		TIER = 1
 	}
-
 	leader_potential_add = {
 		is_specialist_researcher_engineering = no
 		can_leader_get_council_trait_trigger = yes
@@ -2342,13 +1997,11 @@ leader_trait_expertise_propulsion = {
 			has_trait = subclass_scientist_councilor
 		}
 	}
-
 	leader_class = {
 		scientist
 	}
 
 	ai_weight = 100
-
 	selectable_weight = {
 		inline_script = paragon/subclass_free_trait_weight
 		inline_script = paragon/council_weight_mult
@@ -2361,7 +2014,6 @@ leader_trait_expertise_propulsion_2 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_engineering
 		CLASS = scientist
@@ -2370,18 +2022,15 @@ leader_trait_expertise_propulsion_2 = {
 		COUNCIL = yes
 		TIER = 2
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = engineering
 		TIER = 2
 	}
-
 	councilor_modifier = {
 		category_propulsion_research_speed_mult = @expertise_tier_2_mult
 		category_propulsion_draw_chance_mult = 0.35
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -2395,7 +2044,6 @@ leader_trait_expertise_propulsion_3 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_engineering
 		CLASS = scientist
@@ -2404,22 +2052,18 @@ leader_trait_expertise_propulsion_3 = {
 		COUNCIL = yes
 		TIER = 3
 	}
-
 	councilor_modifier = {
 		category_propulsion_research_speed_mult = @expertise_tier_3_mult
 		category_propulsion_draw_chance_mult = 0.75
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = engineering
 		TIER = 3
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -2428,11 +2072,11 @@ leader_trait_expertise_propulsion_3 = {
 }
 
 ###################
+
 leader_trait_expertise_voidcraft = {
 	# This is needed due to the technocracy effects
 	force_councilor_trait = yes
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_engineering
 		CLASS = scientist
@@ -2441,18 +2085,15 @@ leader_trait_expertise_voidcraft = {
 		COUNCIL = yes
 		TIER = 1
 	}
-
 	councilor_modifier = {
 		category_voidcraft_research_speed_mult = @expertise_tier_1_mult
 		category_voidcraft_draw_chance_mult = 0.25
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = engineering
 		TIER = 1
 	}
-
 	leader_potential_add = {
 		is_specialist_researcher_engineering = no
 		can_leader_get_council_trait_trigger = yes
@@ -2461,13 +2102,11 @@ leader_trait_expertise_voidcraft = {
 			has_trait = subclass_scientist_councilor
 		}
 	}
-
 	leader_class = {
 		scientist
 	}
 
 	ai_weight = 70
-
 	selectable_weight = {
 		inline_script = paragon/subclass_free_trait_weight
 		inline_script = paragon/council_weight_mult
@@ -2480,7 +2119,6 @@ leader_trait_expertise_voidcraft_2 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_engineering
 		CLASS = scientist
@@ -2489,18 +2127,15 @@ leader_trait_expertise_voidcraft_2 = {
 		COUNCIL = yes
 		TIER = 2
 	}
-
 	councilor_modifier = {
 		category_voidcraft_research_speed_mult = @expertise_tier_2_mult
 		category_voidcraft_draw_chance_mult = 0.35
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = engineering
 		TIER = 2
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -2514,7 +2149,6 @@ leader_trait_expertise_voidcraft_3 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_engineering
 		CLASS = scientist
@@ -2523,22 +2157,18 @@ leader_trait_expertise_voidcraft_3 = {
 		COUNCIL = yes
 		TIER = 3
 	}
-
 	councilor_modifier = {
 		category_voidcraft_research_speed_mult = @expertise_tier_3_mult
 		category_voidcraft_draw_chance_mult = 0.75
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = engineering
 		TIER = 3
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -2547,11 +2177,11 @@ leader_trait_expertise_voidcraft_3 = {
 }
 
 ###################
+
 leader_trait_expertise_industry = {
 	# This is needed due to the technocracy effects
 	force_councilor_trait = yes
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_engineering
 		CLASS = scientist
@@ -2560,18 +2190,15 @@ leader_trait_expertise_industry = {
 		COUNCIL = yes
 		TIER = 1
 	}
-
 	councilor_modifier = {
 		category_industry_research_speed_mult = @expertise_tier_1_mult
 		category_industry_draw_chance_mult = 0.25
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = engineering
 		TIER = 1
 	}
-
 	leader_potential_add = {
 		is_specialist_researcher_engineering = no
 		can_leader_get_council_trait_trigger = yes
@@ -2580,13 +2207,11 @@ leader_trait_expertise_industry = {
 			has_trait = subclass_scientist_councilor
 		}
 	}
-
 	leader_class = {
 		scientist
 	}
 
 	ai_weight = 70
-
 	selectable_weight = {
 		inline_script = paragon/subclass_free_trait_weight
 		inline_script = paragon/council_weight_mult
@@ -2599,7 +2224,6 @@ leader_trait_expertise_industry_2 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_engineering
 		CLASS = scientist
@@ -2608,18 +2232,15 @@ leader_trait_expertise_industry_2 = {
 		COUNCIL = yes
 		TIER = 2
 	}
-
 	councilor_modifier = {
 		category_industry_research_speed_mult = @expertise_tier_2_mult
 		category_industry_draw_chance_mult = 0.35
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = engineering
 		TIER = 2
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -2633,7 +2254,6 @@ leader_trait_expertise_industry_3 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_engineering
 		CLASS = scientist
@@ -2642,22 +2262,18 @@ leader_trait_expertise_industry_3 = {
 		COUNCIL = yes
 		TIER = 3
 	}
-
 	councilor_modifier = {
 		category_industry_research_speed_mult = @expertise_tier_3_mult
 		category_industry_draw_chance_mult = 0.75
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = engineering
 		TIER = 3
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -2666,11 +2282,11 @@ leader_trait_expertise_industry_3 = {
 }
 
 ###################
+
 leader_trait_expertise_field_manipulation = {
 	# This is needed due to the technocracy effects
 	force_councilor_trait = yes
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_physics
 		CLASS = scientist
@@ -2679,18 +2295,15 @@ leader_trait_expertise_field_manipulation = {
 		COUNCIL = yes
 		TIER = 1
 	}
-
 	councilor_modifier = {
 		category_field_manipulation_research_speed_mult = @expertise_tier_1_mult
 		category_field_manipulation_draw_chance_mult = 0.25
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = physics
 		TIER = 1
 	}
-
 	leader_potential_add = {
 		is_specialist_researcher_physics = no
 		can_leader_get_council_trait_trigger = yes
@@ -2699,13 +2312,11 @@ leader_trait_expertise_field_manipulation = {
 			has_trait = subclass_scientist_councilor
 		}
 	}
-
 	leader_class = {
 		scientist
 	}
 
 	ai_weight = 100
-
 	selectable_weight = {
 		inline_script = paragon/subclass_free_trait_weight
 		inline_script = paragon/council_weight_mult
@@ -2718,7 +2329,6 @@ leader_trait_expertise_field_manipulation_2 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_physics
 		CLASS = scientist
@@ -2727,18 +2337,15 @@ leader_trait_expertise_field_manipulation_2 = {
 		COUNCIL = yes
 		TIER = 2
 	}
-
 	councilor_modifier = {
 		category_field_manipulation_research_speed_mult = @expertise_tier_2_mult
 		category_field_manipulation_draw_chance_mult = 0.35
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = physics
 		TIER = 2
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -2752,7 +2359,6 @@ leader_trait_expertise_field_manipulation_3 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_physics
 		CLASS = scientist
@@ -2761,22 +2367,18 @@ leader_trait_expertise_field_manipulation_3 = {
 		COUNCIL = yes
 		TIER = 3
 	}
-
 	councilor_modifier = {
 		category_field_manipulation_research_speed_mult = @expertise_tier_3_mult
 		category_field_manipulation_draw_chance_mult = 0.75
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = physics
 		TIER = 3
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -2785,11 +2387,11 @@ leader_trait_expertise_field_manipulation_3 = {
 }
 
 ###################
+
 leader_trait_expertise_particles = {
 	# This is needed due to the technocracy effects
 	force_councilor_trait = yes
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_physics
 		CLASS = scientist
@@ -2798,18 +2400,15 @@ leader_trait_expertise_particles = {
 		COUNCIL = yes
 		TIER = 1
 	}
-
 	councilor_modifier = {
 		category_particles_research_speed_mult = @expertise_tier_1_mult
 		category_particles_draw_chance_mult = 0.25
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = physics
 		TIER = 1
 	}
-
 	leader_potential_add = {
 		is_specialist_researcher_physics = no
 		can_leader_get_council_trait_trigger = yes
@@ -2818,13 +2417,11 @@ leader_trait_expertise_particles = {
 			has_trait = subclass_scientist_councilor
 		}
 	}
-
 	leader_class = {
 		scientist
 	}
 
 	ai_weight = 100
-
 	selectable_weight = {
 		inline_script = paragon/subclass_free_trait_weight
 		inline_script = paragon/council_weight_mult
@@ -2837,7 +2434,6 @@ leader_trait_expertise_particles_2 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_physics
 		CLASS = scientist
@@ -2846,18 +2442,15 @@ leader_trait_expertise_particles_2 = {
 		COUNCIL = yes
 		TIER = 2
 	}
-
 	councilor_modifier = {
 		category_particles_research_speed_mult = @expertise_tier_2_mult
 		category_particles_draw_chance_mult = 0.35
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = physics
 		TIER = 2
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -2871,7 +2464,6 @@ leader_trait_expertise_particles_3 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_physics
 		CLASS = scientist
@@ -2880,22 +2472,18 @@ leader_trait_expertise_particles_3 = {
 		COUNCIL = yes
 		TIER = 3
 	}
-
 	councilor_modifier = {
 		category_particles_research_speed_mult = @expertise_tier_3_mult
 		category_particles_draw_chance_mult = 0.75
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = physics
 		TIER = 3
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -2904,11 +2492,11 @@ leader_trait_expertise_particles_3 = {
 }
 
 ###################
+
 leader_trait_expertise_computing = {
 	# This is needed due to the technocracy effects
 	force_councilor_trait = yes
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_physics
 		CLASS = scientist
@@ -2917,18 +2505,15 @@ leader_trait_expertise_computing = {
 		COUNCIL = yes
 		TIER = 1
 	}
-
 	councilor_modifier = {
 		category_computing_research_speed_mult = @expertise_tier_1_mult
 		category_computing_draw_chance_mult = 0.25
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = physics
 		TIER = 1
 	}
-
 	leader_potential_add = {
 		is_specialist_researcher_physics = no
 		can_leader_get_council_trait_trigger = yes
@@ -2937,13 +2522,11 @@ leader_trait_expertise_computing = {
 			has_trait = subclass_scientist_councilor
 		}
 	}
-
 	leader_class = {
 		scientist
 	}
 
 	ai_weight = 100
-
 	selectable_weight = {
 		inline_script = paragon/subclass_free_trait_weight
 		inline_script = paragon/council_weight_mult
@@ -2956,7 +2539,6 @@ leader_trait_expertise_computing_2 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_physics
 		CLASS = scientist
@@ -2965,18 +2547,15 @@ leader_trait_expertise_computing_2 = {
 		COUNCIL = yes
 		TIER = 2
 	}
-
 	councilor_modifier = {
 		category_computing_research_speed_mult = @expertise_tier_2_mult
 		category_computing_draw_chance_mult = 0.35
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = physics
 		TIER = 2
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -2990,7 +2569,6 @@ leader_trait_expertise_computing_3 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_physics
 		CLASS = scientist
@@ -2999,22 +2577,18 @@ leader_trait_expertise_computing_3 = {
 		COUNCIL = yes
 		TIER = 3
 	}
-
 	councilor_modifier = {
 		category_computing_research_speed_mult = @expertise_tier_3_mult
 		category_computing_draw_chance_mult = 0.75
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = physics
 		TIER = 3
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -3023,11 +2597,11 @@ leader_trait_expertise_computing_3 = {
 }
 
 ###################
+
 leader_trait_expertise_psionics = {
 	# This is needed due to the technocracy effects
 	force_councilor_trait = yes
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_psionic
 		CLASS = scientist
@@ -3036,18 +2610,15 @@ leader_trait_expertise_psionics = {
 		COUNCIL = yes
 		TIER = 1
 	}
-
 	councilor_modifier = {
 		category_psionics_research_speed_mult = @expertise_tier_1_mult
 		category_psionics_draw_chance_mult = 0.5
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = society
 		TIER = 1
 	}
-
 	leader_potential_add = {
 		is_specialist_researcher_society = no
 		can_leader_get_council_trait_trigger = yes
@@ -3069,13 +2640,11 @@ leader_trait_expertise_psionics = {
 			species = { has_psionic_species_trait = yes }
 		}
 	}
-
 	leader_class = {
 		scientist
 	}
 
 	ai_weight = 100
-
 	selectable_weight = {
 		inline_script = paragon/subclass_free_trait_weight
 		inline_script = paragon/council_weight_mult
@@ -3088,7 +2657,6 @@ leader_trait_expertise_psionics_2 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_psionic
 		CLASS = scientist
@@ -3097,18 +2665,15 @@ leader_trait_expertise_psionics_2 = {
 		COUNCIL = yes
 		TIER = 2
 	}
-
 	councilor_modifier = {
 		category_psionics_research_speed_mult = @expertise_tier_2_mult
 		category_psionics_draw_chance_mult = 1.00
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = society
 		TIER = 2
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -3122,7 +2687,6 @@ leader_trait_expertise_psionics_3 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_psionic
 		CLASS = scientist
@@ -3131,22 +2695,18 @@ leader_trait_expertise_psionics_3 = {
 		COUNCIL = yes
 		TIER = 3
 	}
-
 	councilor_modifier = {
 		category_psionics_research_speed_mult = @expertise_tier_3_mult
 		category_psionics_draw_chance_mult = 2.00
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = society
 		TIER = 3
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -3155,11 +2715,11 @@ leader_trait_expertise_psionics_3 = {
 }
 
 ###################
+
 leader_trait_expertise_new_worlds = {
 	# This is needed due to the technocracy effects
 	force_councilor_trait = yes
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_society
 		CLASS = scientist
@@ -3168,18 +2728,15 @@ leader_trait_expertise_new_worlds = {
 		COUNCIL = yes
 		TIER = 1
 	}
-
 	councilor_modifier = {
 		category_new_worlds_research_speed_mult = @expertise_tier_1_mult
 		category_new_worlds_draw_chance_mult = 0.25
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = society
 		TIER = 1
 	}
-
 	leader_potential_add = {
 		is_specialist_researcher_society = no
 		can_leader_get_council_trait_trigger = yes
@@ -3188,13 +2745,11 @@ leader_trait_expertise_new_worlds = {
 			has_trait = subclass_scientist_councilor
 		}
 	}
-
 	leader_class = {
 		scientist
 	}
 
 	ai_weight = 100
-
 	selectable_weight = {
 		inline_script = paragon/subclass_free_trait_weight
 		inline_script = paragon/council_weight_mult
@@ -3207,7 +2762,6 @@ leader_trait_expertise_new_worlds_2 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_society
 		CLASS = scientist
@@ -3216,18 +2770,15 @@ leader_trait_expertise_new_worlds_2 = {
 		COUNCIL = yes
 		TIER = 2
 	}
-
 	councilor_modifier = {
 		category_new_worlds_research_speed_mult = @expertise_tier_2_mult
 		category_new_worlds_draw_chance_mult = 0.35
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = society
 		TIER = 2
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -3241,7 +2792,6 @@ leader_trait_expertise_new_worlds_3 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_society
 		CLASS = scientist
@@ -3250,22 +2800,18 @@ leader_trait_expertise_new_worlds_3 = {
 		COUNCIL = yes
 		TIER = 3
 	}
-
 	councilor_modifier = {
 		category_new_worlds_research_speed_mult = @expertise_tier_3_mult
 		category_new_worlds_draw_chance_mult = 0.75
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = society
 		TIER = 3
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -3274,11 +2820,11 @@ leader_trait_expertise_new_worlds_3 = {
 }
 
 ###################
+
 leader_trait_expertise_statecraft = {
 	# This is needed due to the technocracy effects
 	force_councilor_trait = yes
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_society
 		CLASS = scientist
@@ -3287,18 +2833,15 @@ leader_trait_expertise_statecraft = {
 		COUNCIL = yes
 		TIER = 1
 	}
-
 	councilor_modifier = {
 		category_statecraft_research_speed_mult = @expertise_tier_1_mult
 		category_statecraft_draw_chance_mult = 0.25
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = society
 		TIER = 1
 	}
-
 	leader_potential_add = {
 		is_specialist_researcher_society = no
 		can_leader_get_council_trait_trigger = yes
@@ -3307,13 +2850,11 @@ leader_trait_expertise_statecraft = {
 			has_trait = subclass_scientist_councilor
 		}
 	}
-
 	leader_class = {
 		scientist
 	}
 
 	ai_weight = 100
-
 	selectable_weight = {
 		inline_script = paragon/subclass_free_trait_weight
 		inline_script = paragon/council_weight_mult
@@ -3326,7 +2867,6 @@ leader_trait_expertise_statecraft_2 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_society
 		CLASS = scientist
@@ -3335,18 +2875,15 @@ leader_trait_expertise_statecraft_2 = {
 		COUNCIL = yes
 		TIER = 2
 	}
-
 	councilor_modifier = {
 		category_statecraft_research_speed_mult = @expertise_tier_2_mult
 		category_statecraft_draw_chance_mult = 0.35
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = society
 		TIER = 2
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -3360,7 +2897,6 @@ leader_trait_expertise_statecraft_3 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_society
 		CLASS = scientist
@@ -3369,22 +2905,18 @@ leader_trait_expertise_statecraft_3 = {
 		COUNCIL = yes
 		TIER = 3
 	}
-
 	councilor_modifier = {
 		category_statecraft_research_speed_mult = @expertise_tier_3_mult
 		category_statecraft_draw_chance_mult = 0.75
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = society
 		TIER = 3
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -3393,11 +2925,11 @@ leader_trait_expertise_statecraft_3 = {
 }
 
 ###################
+
 leader_trait_expertise_biology = {
 	# This is needed due to the technocracy effects
 	force_councilor_trait = yes
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_society
 		CLASS = scientist
@@ -3406,18 +2938,15 @@ leader_trait_expertise_biology = {
 		COUNCIL = yes
 		TIER = 1
 	}
-
 	councilor_modifier = {
 		category_biology_research_speed_mult = @expertise_tier_1_mult
 		category_biology_draw_chance_mult = 0.25
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = society
 		TIER = 1
 	}
-
 	leader_potential_add = {
 		is_specialist_researcher_society = no
 		can_leader_get_council_trait_trigger = yes
@@ -3426,13 +2955,11 @@ leader_trait_expertise_biology = {
 			has_trait = subclass_scientist_councilor
 		}
 	}
-
 	leader_class = {
 		scientist
 	}
 
 	ai_weight = 100
-
 	selectable_weight = {
 		inline_script = paragon/subclass_free_trait_weight
 		inline_script = paragon/council_weight_mult
@@ -3445,7 +2972,6 @@ leader_trait_expertise_biology_2 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_society
 		CLASS = scientist
@@ -3454,18 +2980,15 @@ leader_trait_expertise_biology_2 = {
 		COUNCIL = yes
 		TIER = 2
 	}
-
 	councilor_modifier = {
 		category_biology_research_speed_mult = @expertise_tier_2_mult
 		category_biology_draw_chance_mult = 0.35
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = society
 		TIER = 2
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -3479,7 +3002,6 @@ leader_trait_expertise_biology_3 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_society
 		CLASS = scientist
@@ -3488,22 +3010,18 @@ leader_trait_expertise_biology_3 = {
 		COUNCIL = yes
 		TIER = 3
 	}
-
 	councilor_modifier = {
 		category_biology_research_speed_mult = @expertise_tier_3_mult
 		category_biology_draw_chance_mult = 0.75
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = society
 		TIER = 3
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -3512,11 +3030,11 @@ leader_trait_expertise_biology_3 = {
 }
 
 ###################
+
 leader_trait_expertise_military_theory = {
 	# This is needed due to the technocracy effects
 	force_councilor_trait = yes
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_society
 		CLASS = scientist
@@ -3525,18 +3043,15 @@ leader_trait_expertise_military_theory = {
 		COUNCIL = yes
 		TIER = 1
 	}
-
 	councilor_modifier = {
 		category_military_theory_research_speed_mult = @expertise_tier_1_mult
 		category_military_theory_draw_chance_mult = 0.25
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = society
 		TIER = 1
 	}
-
 	leader_potential_add = {
 		is_specialist_researcher_society = no
 		can_leader_get_council_trait_trigger = yes
@@ -3545,13 +3060,11 @@ leader_trait_expertise_military_theory = {
 			has_trait = subclass_scientist_councilor
 		}
 	}
-
 	leader_class = {
 		scientist
 	}
 
 	ai_weight = 100
-
 	selectable_weight = {
 		inline_script = paragon/subclass_free_trait_weight
 		inline_script = paragon/council_weight_mult
@@ -3564,7 +3077,6 @@ leader_trait_expertise_military_theory_2 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_society
 		CLASS = scientist
@@ -3573,18 +3085,15 @@ leader_trait_expertise_military_theory_2 = {
 		COUNCIL = yes
 		TIER = 2
 	}
-
 	councilor_modifier = {
 		category_military_theory_research_speed_mult = @expertise_tier_2_mult
 		category_military_theory_draw_chance_mult = 0.35
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = society
 		TIER = 2
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -3598,7 +3107,6 @@ leader_trait_expertise_military_theory_3 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_society
 		CLASS = scientist
@@ -3607,22 +3115,18 @@ leader_trait_expertise_military_theory_3 = {
 		COUNCIL = yes
 		TIER = 3
 	}
-
 	councilor_modifier = {
 		category_military_theory_research_speed_mult = @expertise_tier_3_mult
 		category_military_theory_draw_chance_mult = 0.75
 	}
-
 	inline_script = {
 		script = traits/technocracy_expertise_effects
 		FIELD = society
 		TIER = 3
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -3631,11 +3135,11 @@ leader_trait_expertise_military_theory_3 = {
 }
 
 ###################
+
 leader_trait_expertise_archaeostudies = {
 	# This is needed due to the technocracy effects
 	force_councilor_trait = yes
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_society
 		CLASS = scientist
@@ -3644,13 +3148,11 @@ leader_trait_expertise_archaeostudies = {
 		COUNCIL = yes
 		TIER = 1
 	}
-
 	councilor_modifier = {
 		category_archaeostudies_research_speed_mult = @expertise_tier_1_mult
 		category_archaeostudies_draw_chance_mult = 0.15
 		starbase_shipyard_build_minor_artifacts_cost_mult = -0.05
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -3658,7 +3160,6 @@ leader_trait_expertise_archaeostudies = {
 		}
 		planet_jobs_minor_artifacts_produces_mult = 0.10
 	}
-
 	triggered_sector_modifier = {
 		potential = {
 			exists = owner
@@ -3666,7 +3167,6 @@ leader_trait_expertise_archaeostudies = {
 		}
 		planet_jobs_minor_artifacts_produces_mult = 0.05
 	}
-
 	leader_potential_add = {
 		is_specialist_researcher_society = no
 		can_leader_get_council_trait_trigger = yes
@@ -3687,11 +3187,9 @@ leader_trait_expertise_archaeostudies = {
 			}
 		}
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	ai_weight = {
 		weight = 100
 		modifier = {
@@ -3706,7 +3204,6 @@ leader_trait_expertise_archaeostudies = {
 			}
 		}
 	}
-
 	selectable_weight = {
 		inline_script = paragon/subclass_free_trait_weight
 		inline_script = paragon/council_weight_mult
@@ -3719,7 +3216,6 @@ leader_trait_expertise_archaeostudies_2 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_society
 		CLASS = scientist
@@ -3728,13 +3224,11 @@ leader_trait_expertise_archaeostudies_2 = {
 		COUNCIL = yes
 		TIER = 2
 	}
-
 	councilor_modifier = {
 		category_archaeostudies_research_speed_mult = @expertise_tier_2_mult
 		category_archaeostudies_draw_chance_mult = 0.20
 		starbase_shipyard_build_minor_artifacts_cost_mult = -0.075
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -3742,7 +3236,6 @@ leader_trait_expertise_archaeostudies_2 = {
 		}
 		planet_jobs_minor_artifacts_produces_mult = 0.20
 	}
-
 	triggered_sector_modifier = {
 		potential = {
 			exists = owner
@@ -3750,11 +3243,9 @@ leader_trait_expertise_archaeostudies_2 = {
 		}
 		planet_jobs_minor_artifacts_produces_mult = 0.10
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	ai_weight = {
 		weight = 100
 		modifier = {
@@ -3777,7 +3268,6 @@ leader_trait_expertise_archaeostudies_3 = {
 	}
 
 	leader_trait_type = veteran
-
 	inline_script = {
 		script = trait/icon_society
 		CLASS = scientist
@@ -3786,13 +3276,11 @@ leader_trait_expertise_archaeostudies_3 = {
 		COUNCIL = yes
 		TIER = 3
 	}
-
 	councilor_modifier = {
 		category_archaeostudies_research_speed_mult = @expertise_tier_3_mult
 		category_archaeostudies_draw_chance_mult = 0.35
 		starbase_shipyard_build_minor_artifacts_cost_mult = -0.10
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -3800,7 +3288,6 @@ leader_trait_expertise_archaeostudies_3 = {
 		}
 		planet_jobs_minor_artifacts_produces_mult = 0.30
 	}
-
 	triggered_sector_modifier = {
 		potential = {
 			exists = owner
@@ -3808,15 +3295,12 @@ leader_trait_expertise_archaeostudies_3 = {
 		}
 		planet_jobs_minor_artifacts_produces_mult = 0.15
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	ai_weight = {
 		weight = 100
 		modifier = {
@@ -3836,9 +3320,9 @@ leader_trait_expertise_archaeostudies_3 = {
 ###################
 # DESTINY TRAITS  #
 ###################
+
 leader_trait_surveyor = {
 	leader_trait_type = destiny
-
 	inline_script = {
 		script = trait/icon
 		CLASS = leader
@@ -3847,35 +3331,29 @@ leader_trait_surveyor = {
 		COUNCIL = no
 		TIER = none
 	}
-
 	on_gained_effect = {
 		owner = {
 			country_event = { id = timeline.50 } # Timeline First Leader with Destiny Trait
 		}
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 		has_governor_subclass = yes
 	}
-
 	planet_modifier = {
 		planet_technician_physics_research_produces_add = @trait_surveyor_amt
 		planet_farmers_society_research_produces_add = @trait_surveyor_amt
 		planet_miners_engineering_research_produces_add = @trait_surveyor_amt
 	}
-
 	sector_modifier = {
 		planet_technician_physics_research_produces_add = @trait_surveyor_sector_amt
 		planet_farmers_society_research_produces_add = @trait_surveyor_sector_amt
 		planet_miners_engineering_research_produces_add = @trait_surveyor_sector_amt
 	}
-
 	leader_class = {
 		commander
 		scientist
 	}
-
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/governor_weight_mult
@@ -3886,7 +3364,6 @@ leader_trait_surveyor = {
 
 leader_trait_midas_touch = {
 	leader_trait_type = destiny
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -3895,7 +3372,6 @@ leader_trait_midas_touch = {
 		COUNCIL = no
 		TIER = none
 	}
-
 	on_gained_effect = {
 		owner = {
 			country_event = { id = timeline.50 } # Timeline First Leader with Destiny Trait
@@ -3906,34 +3382,28 @@ leader_trait_midas_touch = {
 	modifier = {
 		ship_anomaly_research_speed_mult = 0.25
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 		has_trait = subclass_scientist_scholar
 	}
 
 	custom_tooltip_with_modifiers = leader_trait_midas_touch_effect
-
 	leader_class = {
 		scientist
 	}
-
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/pilot_weight_mult
-		inline_script = {
-			script = paragon/subclass_weight_mult
-			SUBCLASS = scientist_scholar
-		}
+		inline_script = { script = paragon/subclass_weight_mult SUBCLASS = scientist_scholar }
 	}
 
 	background_icon = "GFX_leader_background_destiny_1"
 }
 
 ###################
+
 leader_trait_collective_wisdom = {
 	leader_trait_type = destiny
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -3942,58 +3412,43 @@ leader_trait_collective_wisdom = {
 		COUNCIL = no
 		TIER = none
 	}
-
 	on_gained_effect = {
 		owner = {
 			country_event = { id = timeline.50 } # Timeline First Leader with Destiny Trait
 		}
 	}
-
 	leader_potential_add = {
 		OR = {
 			has_paragon_dlc = no
 			has_trait = subclass_scientist_scholar
 		}
 	}
-
 	modifier = {
 		ship_archaeological_site_excavation_speed_mult = -0.15
 	}
-
 	triggered_self_modifier = {
 		potential = { is_currently_excavating_site = yes }
 		leader_scientists_society_research_produces_add = @trait_collective_wisdom_soc_amt
 	}
-
 	triggered_self_modifier = {
 		potential = { has_ancrel = yes is_currently_excavating_site = yes }
 		leader_scientists_minor_artifacts_produces_add = @trait_collective_wisdom_ma_amt
 	}
-
 	triggered_desc = {
-		trigger = {
-			has_ancrel = no
-			is_currently_excavating_site = no
-		}
+		trigger = { has_ancrel = no is_currently_excavating_site = no }
 		text = leader_trait_collective_wisdom_effect
 	}
-
 	triggered_desc = {
 		trigger = { has_ancrel = yes is_currently_excavating_site = no }
 		text = leader_trait_collective_wisdom_ancrel_effect
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/pilot_weight_mult
-		inline_script = {
-			script = paragon/subclass_weight_mult
-			SUBCLASS = scientist_scholar
-		}
+		inline_script = { script = paragon/subclass_weight_mult SUBCLASS = scientist_scholar }
 	}
 
 	background_icon = "GFX_leader_background_destiny_1"
@@ -4002,7 +3457,6 @@ leader_trait_collective_wisdom = {
 leader_trait_knowledge_for_the_masses = {
 	leader_trait_type = destiny
 	ethic_destiny_trait = yes
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -4011,28 +3465,23 @@ leader_trait_knowledge_for_the_masses = {
 		COUNCIL = yes
 		TIER = none
 	}
-
 	on_gained_effect = {
 		owner = {
 			country_event = { id = timeline.50 } # Timeline First Leader with Destiny Trait
 		}
 	}
-
 	councilor_modifier = {
 		species_leader_exp_gain = 0.25
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 		has_trait = subclass_scientist_councilor
 	}
-
 	leader_class = {
 		scientist
 	}
 
 	ai_weight = 100
-
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/council_weight_mult
@@ -4044,7 +3493,6 @@ leader_trait_knowledge_for_the_masses = {
 leader_trait_robotist = {
 	leader_trait_type = destiny
 	ethic_destiny_trait = yes
-
 	inline_script = {
 		script = trait/icon
 		CLASS = leader
@@ -4053,13 +3501,11 @@ leader_trait_robotist = {
 		COUNCIL = no
 		TIER = none
 	}
-
 	on_gained_effect = {
 		owner = {
 			country_event = { id = timeline.50 } # Timeline First Leader with Destiny Trait
 		}
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 		OR = {
@@ -4076,27 +3522,23 @@ leader_trait_robotist = {
 			}
 		}
 	}
-
 	planet_modifier = {
 		robotic_pop_bonus_workforce_mult = 0.2
 		planet_pops_robotics_upkeep_mult = -0.2
 		cyborg_pop_bonus_workforce_mult = 0.2
 		planet_pops_cyborgs_upkeep_mult = -0.2
 	}
-
 	sector_modifier = {
 		robotic_pop_bonus_workforce_mult = 0.1
 		planet_pops_robotics_upkeep_mult = -0.1
 		cyborg_pop_bonus_workforce_mult = 0.1
 		planet_pops_cyborgs_upkeep_mult = -0.1
 	}
-
 	leader_class = {
 		official
 		scientist
 		commander
 	}
-
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/governor_weight_mult
@@ -4118,7 +3560,6 @@ leader_trait_robotist = {
 
 leader_trait_great_researcher = {
 	leader_trait_type = destiny
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -4127,26 +3568,21 @@ leader_trait_great_researcher = {
 		COUNCIL = yes
 		TIER = none
 	}
-
 	on_gained_effect = {
 		owner = {
 			country_event = { id = timeline.50 } # Timeline First Leader with Destiny Trait
 		}
 	}
-
 	councilor_modifier = {
 		all_technology_research_speed = 0.10
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 		has_trait = subclass_scientist_councilor
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/council_weight_mult
@@ -4157,7 +3593,6 @@ leader_trait_great_researcher = {
 
 leader_trait_xeno_cataloger = {
 	leader_trait_type = destiny
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -4166,35 +3601,27 @@ leader_trait_xeno_cataloger = {
 		COUNCIL = no
 		TIER = none
 	}
-
 	on_gained_effect = {
 		owner = {
 			country_event = { id = timeline.50 } # Timeline First Leader with Destiny Trait
 		}
 	}
-
 	modifier = {
 		science_ship_survey_speed = 0.50
 		ship_speed_mult = 0.50
 		ship_anomaly_generation_chance_mult = 0.15
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 		has_trait = subclass_scientist_explorer
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/pilot_weight_mult
-		inline_script = {
-			script = paragon/subclass_weight_mult
-			SUBCLASS = scientist_explorer
-		}
+		inline_script = { script = paragon/subclass_weight_mult SUBCLASS = scientist_explorer }
 	}
 
 	background_icon = "GFX_leader_background_destiny_1"
@@ -4202,7 +3629,6 @@ leader_trait_xeno_cataloger = {
 
 leader_trait_frontier_adventurer = {
 	leader_trait_type = destiny
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -4211,42 +3637,33 @@ leader_trait_frontier_adventurer = {
 		COUNCIL = no
 		TIER = none
 	}
-
 	on_gained_effect = {
 		owner = {
 			country_event = { id = timeline.50 } # Timeline First Leader with Destiny Trait
 		}
 	}
-
 	inline_script = {
 		script = paragon/leader_resource_produces
 		RESOURCE = minor_artifacts
 		AMOUNT = 1
 	}
-
 	modifier = {
 		science_ship_survey_speed = 0.25
 		ship_speed_mult = 0.25
 		ship_evasion_add = 15
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 		has_ancrel = yes
 		has_trait = subclass_scientist_explorer
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/pilot_weight_mult
-		inline_script = {
-			script = paragon/subclass_weight_mult
-			SUBCLASS = scientist_explorer
-		}
+		inline_script = { script = paragon/subclass_weight_mult SUBCLASS = scientist_explorer }
 	}
 
 	background_icon = "GFX_leader_background_destiny_1"
@@ -4254,7 +3671,6 @@ leader_trait_frontier_adventurer = {
 
 leader_trait_brilliant_shipwright = {
 	leader_trait_type = destiny
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -4263,28 +3679,23 @@ leader_trait_brilliant_shipwright = {
 		COUNCIL = yes
 		TIER = none
 	}
-
 	on_gained_effect = {
 		owner = {
 			country_event = { id = timeline.50 } # Timeline First Leader with Destiny Trait
 		}
 	}
-
 	councilor_modifier = {
 		category_voidcraft_draw_chance_mult = 1
 		category_voidcraft_research_speed_mult = 0.15
 		starbase_shipyard_build_speed_mult = 0.33
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 		has_trait = subclass_scientist_councilor
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/council_weight_mult
@@ -4295,7 +3706,6 @@ leader_trait_brilliant_shipwright = {
 
 leader_trait_truth_seeker = {
 	leader_trait_type = destiny
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -4304,34 +3714,28 @@ leader_trait_truth_seeker = {
 		COUNCIL = no
 		TIER = none
 	}
-
 	on_gained_effect = {
 		owner = {
 			country_event = { id = timeline.50 } # Timeline First Leader with Destiny Trait
 		}
 	}
-
 	planet_modifier = {
 		psionic_pop_bonus_workforce_mult = 0.25
 		pop_job_amenities_mult = 0.20
 		pop_ethic_spiritualist_attraction_mult = 0.50
 	}
-
 	sector_modifier = {
 		psionic_pop_bonus_workforce_mult = 0.125
 		pop_job_amenities_mult = 0.10
 		pop_ethic_spiritualist_attraction_mult = 0.25
 	}
-
 	leader_potential_add = {
 		has_paragon_dlc = yes
 		has_trait = subclass_scientist_governor
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	selectable_weight = {
 		weight = @subclass_trait_weight
 		inline_script = paragon/governor_weight_mult
@@ -4361,24 +3765,21 @@ leader_trait_truth_seeker = {
 ###################
 # NEGATIVE TRAITS #
 ###################
+
 leader_trait_paranoid = {
 	leader_trait_type = negative
-
 	inline_script = {
 		script = trait/icon_negative
 		ICON = "GFX_leader_trait_paranoid"
 		COUNCIL = yes
 		TIER = 1
 	}
-
 	councilor_modifier = {
 		all_technology_research_speed = -0.05
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	opposites = {
 		leader_trait_spark_of_genius
 		leader_trait_spark_of_genius_2
@@ -4386,7 +3787,6 @@ leader_trait_paranoid = {
 		leader_trait_maniacal_2
 		leader_trait_maniacal_3
 	}
-
 	selectable_weight = {
 		weight = @class_negative_trait_weight
 		inline_script = paragon/council_weight_mult
@@ -4395,26 +3795,21 @@ leader_trait_paranoid = {
 
 leader_trait_paranoid_2 = {
 	leader_trait_type = negative
-
 	replace_traits = {
 		"leader_trait_paranoid"
 	}
-
 	inline_script = {
 		script = trait/icon_negative
 		ICON = "GFX_leader_trait_paranoid"
 		COUNCIL = yes
 		TIER = 2
 	}
-
 	councilor_modifier = {
 		all_technology_research_speed = -0.10
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	opposites = {
 		leader_trait_spark_of_genius
 		leader_trait_spark_of_genius_2
@@ -4427,31 +3822,27 @@ leader_trait_paranoid_2 = {
 }
 
 ###################
+
 leader_trait_narrow_minded = {
 	leader_trait_type = negative
-
 	inline_script = {
 		script = trait/icon_negative
 		ICON = "GFX_leader_trait_narrow_minded"
 		COUNCIL = yes
 		TIER = 1
 	}
-
 	councilor_modifier = {
 		# Consider changing to reduced chance to draw Rare tech.
 		all_technology_research_speed = -0.05
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	opposites = {
 		leader_trait_inquisitive
 		leader_trait_inquisitive_2
 		leader_trait_inquisitive_3
 	}
-
 	selectable_weight = {
 		weight = @class_negative_trait_weight
 		inline_script = paragon/council_weight_mult
@@ -4464,27 +3855,22 @@ leader_trait_narrow_minded = {
 
 leader_trait_narrow_minded_2 = {
 	leader_trait_type = negative
-
 	replace_traits = {
 		"leader_trait_narrow_minded"
 	}
-
 	inline_script = {
 		script = trait/icon_negative
 		ICON = "GFX_leader_trait_narrow_minded"
 		COUNCIL = yes
 		TIER = 2
 	}
-
 	councilor_modifier = {
 		all_technology_research_speed = -0.05
 		num_tech_alternatives_add = -1
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	opposites = {
 		leader_trait_inquisitive
 		leader_trait_inquisitive_2
@@ -4495,32 +3881,28 @@ leader_trait_narrow_minded_2 = {
 }
 
 ###################
+
 leader_trait_neurotic = {
 	leader_trait_type = negative
-
 	inline_script = {
 		script = trait/icon_negative
 		ICON = "GFX_leader_trait_neurotic"
 		COUNCIL = no
 		TIER = 1
 	}
-
 	modifier = {
 		science_ship_survey_speed = -0.05
 		ship_anomaly_research_speed_mult = -0.05
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	opposites = {
 		leader_trait_carefree
 		leader_trait_carefree_2
 		leader_trait_roamer
 		leader_trait_roamer_2
 	}
-
 	selectable_weight = {
 		weight = @class_negative_trait_weight
 		inline_script = paragon/pilot_weight_mult
@@ -4529,27 +3911,22 @@ leader_trait_neurotic = {
 
 leader_trait_neurotic_2 = {
 	leader_trait_type = negative
-
 	replace_traits = {
 		"leader_trait_neurotic"
 	}
-
 	inline_script = {
 		script = trait/icon_negative
 		ICON = "GFX_leader_trait_neurotic"
 		COUNCIL = no
 		TIER = 2
 	}
-
 	modifier = {
 		science_ship_survey_speed = -0.20
 		ship_anomaly_research_speed_mult = -0.20
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	opposites = {
 		leader_trait_carefree
 		leader_trait_carefree_2
@@ -4561,38 +3938,33 @@ leader_trait_neurotic_2 = {
 }
 
 ###################
+
 leader_trait_opinionated = {
 	leader_trait_type = negative
-
 	inline_script = {
 		script = trait/icon_negative
 		ICON = "GFX_leader_trait_opinionated"
 		COUNCIL = no
 		TIER = 1
 	}
-
 	planet_modifier = {
 		planet_jobs_physics_research_produces_mult = -0.05
 		planet_jobs_society_research_produces_mult = -0.05
 		planet_jobs_engineering_research_produces_mult = -0.05
 	}
-
 	sector_modifier = {
 		planet_jobs_physics_research_produces_mult = -0.025
 		planet_jobs_society_research_produces_mult = -0.025
 		planet_jobs_engineering_research_produces_mult = -0.025
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	opposites = {
 		leader_trait_collaborator
 		leader_trait_collaborator_2
 		leader_trait_collaborator_3
 	}
-
 	selectable_weight = {
 		weight = @class_negative_trait_weight
 		inline_script = paragon/governor_weight_mult
@@ -4610,34 +3982,28 @@ leader_trait_opinionated = {
 
 leader_trait_opinionated_2 = {
 	leader_trait_type = negative
-
 	replace_traits = {
 		"leader_trait_opinionated"
 	}
-
 	inline_script = {
 		script = trait/icon_negative
 		ICON = "GFX_leader_trait_opinionated"
 		COUNCIL = no
 		TIER = 2
 	}
-
 	planet_modifier = {
 		planet_jobs_physics_research_produces_mult = -0.075
 		planet_jobs_society_research_produces_mult = -0.075
 		planet_jobs_engineering_research_produces_mult = -0.075
 	}
-
 	sector_modifier = {
 		planet_jobs_physics_research_produces_mult = -0.0375
 		planet_jobs_society_research_produces_mult = -0.0375
 		planet_jobs_engineering_research_produces_mult = -0.0375
 	}
-
 	leader_class = {
 		scientist
 	}
-
 	opposites = {
 		leader_trait_collaborator
 		leader_trait_collaborator_2
@@ -4648,28 +4014,25 @@ leader_trait_opinionated_2 = {
 }
 
 ###################
+
 leader_trait_destructive = {
 	leader_trait_type = negative
-
 	inline_script = {
 		script = trait/icon_negative
 		ICON = "GFX_leader_trait_destructive"
 		COUNCIL = no
 		TIER = 1
 	}
-
 	inline_script = {
 		script = paragon/leader_resource_upkeep
 		RESOURCE = alloys
 		AMOUNT = 5
 	}
-
 	leader_class = {
 		scientist
 		official
 		commander
 	}
-
 	selectable_weight = {
 		weight = @class_negative_trait_weight
 		modifier = {
@@ -4686,24 +4049,20 @@ leader_trait_destructive = {
 
 leader_trait_destructive_2 = {
 	leader_trait_type = negative
-
 	replace_traits = {
 		"leader_trait_destructive"
 	}
-
 	inline_script = {
 		script = trait/icon_negative
 		ICON = "GFX_leader_trait_destructive"
 		COUNCIL = no
 		TIER = 2
 	}
-
 	inline_script = {
 		script = paragon/leader_resource_upkeep
 		RESOURCE = alloys
 		AMOUNT = 10
 	}
-
 	leader_class = {
 		scientist
 		official
@@ -4716,9 +4075,9 @@ leader_trait_destructive_2 = {
 ##################
 # SPECIAL TRAITS #
 ##################
+
 leader_trait_towel = {
 	cost = 0
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -4727,11 +4086,9 @@ leader_trait_towel = {
 		COUNCIL = no
 		TIER = none
 	}
-
 	modifier = {
 		science_ship_survey_speed = 0.42
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -4743,7 +4100,6 @@ leader_trait_towel = {
 
 leader_trait_percussive_maintainer = {
 	cost = 0
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -4752,13 +4108,11 @@ leader_trait_percussive_maintainer = {
 		COUNCIL = yes
 		TIER = none
 	}
-
 	councilor_modifier = {
 		category_computing_research_speed_mult = 0.1
 		ship_archaeological_site_excavation_speed_mult = 0.1
 		species_leader_exp_gain = -0.1
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -4770,7 +4124,6 @@ leader_trait_percussive_maintainer = {
 
 leader_trait_guided = {
 	cost = 0
-
 	inline_script = {
 		script = trait/icon
 		CLASS = scientist
@@ -4779,13 +4132,11 @@ leader_trait_guided = {
 		COUNCIL = no
 		TIER = none
 	}
-
 	modifier = {
 		science_ship_survey_speed = 0.2
 		ship_anomaly_research_speed_mult = 0.1
 		ship_anomaly_generation_chance_mult = 0.05
 	}
-
 	leader_class = {
 		scientist
 	}
@@ -4794,4 +4145,3 @@ leader_trait_guided = {
 	randomized = no
 	ai_weight = 100
 }
-

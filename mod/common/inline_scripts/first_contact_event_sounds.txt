@@ -1,9 +1,7 @@
-
-trigger = {
-	is_scope_valid = yes
-	exists = contact_country # Does not help (for whater ever reason)
-}
-
+# trigger = {
+# 	is_scope_valid = yes
+# 	exists = contact_country # Does not help (for whater ever reason)
+# }
 # TODO REQUEST: why simply this is not working
 # show_sound = {
 # 	trigger = {
@@ -17,6 +15,7 @@ trigger = {
 # 		}
 # 	}
 # }
+
 show_sound = {
 	sound = event_first_contact_aquatic
 

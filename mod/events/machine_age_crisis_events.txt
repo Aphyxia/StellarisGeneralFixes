@@ -19,7 +19,6 @@ country_event = {
 	show_sound = event_death_cult
 	is_triggered_only = yes
 	event_chain = cosmogenesis_chain
-
 	option = {
 		name = crisis.7100.a
 		begin_event_chain = { event_chain = cosmogenesis_chain target = root }
@@ -49,7 +48,6 @@ country_event = {
 			amount = 1
 		}
 	}
-
 	option = {
 		name = crisis.7105.a
 		custom_tooltip = new_cosmogenesis_tech_tt
@@ -73,7 +71,6 @@ country_event = {
 			amount = 1
 		}
 	}
-
 	option = {
 		name = crisis.7110.a
 		custom_tooltip = new_cosmogenesis_tech_tt
@@ -97,7 +94,6 @@ country_event = {
 			amount = 1
 		}
 	}
-
 	option = {
 		name = crisis.7115.a
 		custom_tooltip = new_cosmogenesis_tech_tt
@@ -121,7 +117,6 @@ country_event = {
 			amount = 1
 		}
 	}
-
 	option = {
 		name = crisis.7120.a
 		custom_tooltip = new_cosmogenesis_tech_tt
@@ -142,7 +137,6 @@ country_event = {
 		has_ascension_perk = ap_cosmogenesis
 		last_increased_tech = tech_cosmogenesis_crisis_5
 	}
-
 	option = {
 		name = crisis.7125.a
 		custom_tooltip = needle_to_win_tt
@@ -318,7 +312,6 @@ country_event = {
 country_event = {
 	id = crisis.7205
 	title = "crisis.7205.name"
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_blackout_initiator }
@@ -326,7 +319,6 @@ country_event = {
 		}
 		text = crisis.7205.desc.unknown
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_blackout_initiator }
@@ -334,7 +326,6 @@ country_event = {
 		}
 		text = crisis.7205.desc.known
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_blackout_initiator }
@@ -342,7 +333,6 @@ country_event = {
 		}
 		text = crisis.7205.desc.again
 	}
-
 	desc = {
 		trigger = { has_country_flag = cosmogenesis_thesis_blackout_initiator }
 		text = crisis.7205.desc.crisis
@@ -351,7 +341,6 @@ country_event = {
 	picture = GFX_evt_worrying_signal
 	show_sound = event_worrying_signal
 	is_triggered_only = yes
-
 	option = { # Non-Crisis option
 		name = crisis.7205.a
 		trigger = {
@@ -369,7 +358,6 @@ country_event = {
 			add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = from }
 		}
 	}
-
 	option = { # Fellow-Crisis option
 		name = crisis.7205.b
 		trigger = {
@@ -394,7 +382,6 @@ country_event = {
 			max = @tier4researchmax
 		}
 	}
-
 	option = { # Crisis option
 		name = crisis.7205.c
 		trigger = { has_country_flag = cosmogenesis_thesis_blackout_initiator }
@@ -422,7 +409,6 @@ country_event = {
 country_event = {
 	id = crisis.7210
 	title = "crisis.7210.name"
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_constant_initiator }
@@ -430,7 +416,6 @@ country_event = {
 		}
 		text = crisis.7210.desc.unknown
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_constant_initiator }
@@ -438,7 +423,6 @@ country_event = {
 		}
 		text = crisis.7210.desc.known
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_constant_initiator }
@@ -446,7 +430,6 @@ country_event = {
 		}
 		text = crisis.7210.desc.again
 	}
-
 	desc = {
 		trigger = { has_country_flag = cosmogenesis_thesis_constant_initiator }
 		text = crisis.7210.desc.crisis
@@ -455,7 +438,6 @@ country_event = {
 	picture = GFX_evt_cosmogenesis_crisis
 	show_sound = event_worrying_signal
 	is_triggered_only = yes
-
 	option = { # Non-Crisis option
 		name = crisis.7210.a
 		trigger = {
@@ -467,7 +449,6 @@ country_event = {
 			add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = from }
 		}
 	}
-
 	option = { # Fellow-Crisis option
 		name = crisis.7210.b
 		trigger = {
@@ -486,7 +467,6 @@ country_event = {
 			max = @tier4researchmax
 		}
 	}
-
 	option = { # Crisis option
 		name = crisis.7210.c
 		trigger = { has_country_flag = cosmogenesis_thesis_constant_initiator }
@@ -508,7 +488,6 @@ country_event = {
 country_event = {
 	id = crisis.7215
 	title = "crisis.7215.name"
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_superlight_initiator }
@@ -516,7 +495,6 @@ country_event = {
 		}
 		text = crisis.7215.desc.unknown
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_superlight_initiator }
@@ -524,7 +502,6 @@ country_event = {
 		}
 		text = crisis.7215.desc.known
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_superlight_initiator }
@@ -532,7 +509,6 @@ country_event = {
 		}
 		text = crisis.7215.desc.again
 	}
-
 	desc = {
 		trigger = { has_country_flag = cosmogenesis_thesis_superlight_initiator }
 		text = crisis.7215.desc.crisis
@@ -541,7 +517,6 @@ country_event = {
 	picture = GFX_evt_supernova
 	show_sound = event_worrying_signal
 	is_triggered_only = yes
-
 	option = { # Non-Crisis option
 		name = crisis.7215.a
 		trigger = {
@@ -553,7 +528,6 @@ country_event = {
 			add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = from }
 		}
 	}
-
 	option = { # Fellow-Crisis option
 		name = crisis.7215.b
 		trigger = {
@@ -572,7 +546,6 @@ country_event = {
 			max = @tier4researchmax
 		}
 	}
-
 	option = { # Crisis option
 		name = crisis.7215.c
 		trigger = { has_country_flag = cosmogenesis_thesis_superlight_initiator }
@@ -588,14 +561,9 @@ country_event = {
 			custom_tooltip = cosmogenesis_negative_opinion_tt
 		}
 	}
-
 	after = {
 		hidden_effect = {
-			country_event = {
-				id = crisis.7220
-				days = 60
-				random = 10
-			}
+			country_event = { id = crisis.7220 days = 60 random = 10 }
 		}
 	}
 }
@@ -608,7 +576,6 @@ country_event = {
 	picture = GFX_evt_resource_cache
 	show_sound = event_worrying_signal
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.7220.a
 		every_owned_planet = {
@@ -617,9 +584,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				NOT = {
-					root = { is_same_value = fromfrom }
-				}
+				NOT = { root = { is_same_value = fromfrom } }
 				has_communications = fromfrom
 			}
 			add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = fromfrom }
@@ -643,14 +608,9 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		hidden_effect = {
-			country_event = {
-				id = crisis.7225
-				days = 351
-				random = 20
-			}
+			country_event = { id = crisis.7225 days = 351 random = 20 }
 		}
 	}
 }
@@ -663,7 +623,6 @@ country_event = {
 	picture = GFX_evt_warm_barren
 	show_sound = event_worrying_signal
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.7225.a
 		every_owned_planet = {
@@ -694,15 +653,10 @@ country_event = {
 		}
 		if = {
 			limit = {
-				NOT = {
-					root = { is_same_value = fromfromfrom }
-				}
+				NOT = { root = { is_same_value = fromfromfrom } }
 				has_communications = fromfromfrom
 			}
-			add_opinion_modifier = {
-				modifier = opinion_cosmogenesis_thesis
-				who = fromfromfrom
-			}
+			add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = fromfromfrom }
 		}
 		else_if = {
 			limit = { is_same_value = fromfromfrom }
@@ -723,7 +677,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			country_event = { id = crisis.7230 days = 331 }
@@ -739,7 +692,6 @@ country_event = {
 	picture = GFX_evt_relic_world_street
 	show_sound = event_worrying_signal
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.7230.a
 		every_owned_planet = {
@@ -748,15 +700,10 @@ country_event = {
 		}
 		if = {
 			limit = {
-				NOT = {
-					root = { is_same_value = fromfromfromfrom }
-				}
+				NOT = { root = { is_same_value = fromfromfromfrom } }
 				has_communications = fromfromfromfrom
 			}
-			add_opinion_modifier = {
-				modifier = opinion_cosmogenesis_thesis
-				who = fromfromfromfrom
-			}
+			add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = fromfromfromfrom }
 		}
 		else_if = {
 			limit = { is_same_value = fromfromfromfrom }
@@ -783,7 +730,6 @@ country_event = {
 country_event = {
 	id = crisis.7235
 	title = "crisis.7235.name"
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_alloy_ductility_initiator }
@@ -791,7 +737,6 @@ country_event = {
 		}
 		text = crisis.7235.desc.unknown
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_alloy_ductility_initiator }
@@ -799,7 +744,6 @@ country_event = {
 		}
 		text = crisis.7235.desc.known
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_alloy_ductility_initiator }
@@ -807,7 +751,6 @@ country_event = {
 		}
 		text = crisis.7235.desc.again
 	}
-
 	desc = {
 		trigger = { has_country_flag = cosmogenesis_thesis_alloy_ductility_initiator }
 		text = crisis.7235.desc.crisis
@@ -816,7 +759,6 @@ country_event = {
 	picture = GFX_evt_engineering_research
 	show_sound = event_worrying_signal
 	is_triggered_only = yes
-
 	option = { # Non-Crisis option
 		name = crisis.7235.a
 		trigger = {
@@ -828,7 +770,6 @@ country_event = {
 			add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = from }
 		}
 	}
-
 	option = { # Fellow-Crisis option
 		name = crisis.7235.b
 		trigger = {
@@ -847,7 +788,6 @@ country_event = {
 			max = @tier4researchmax
 		}
 	}
-
 	option = { # Crisis option
 		name = crisis.7235.c
 		trigger = { has_country_flag = cosmogenesis_thesis_alloy_ductility_initiator }
@@ -869,7 +809,6 @@ country_event = {
 country_event = {
 	id = crisis.7240
 	title = "crisis.7240.name"
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_alloy_ductility_initiator }
@@ -877,7 +816,6 @@ country_event = {
 		}
 		text = crisis.7240.desc.unknown
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_alloy_ductility_initiator }
@@ -885,7 +823,6 @@ country_event = {
 		}
 		text = crisis.7240.desc.known
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_alloy_ductility_initiator }
@@ -893,7 +830,6 @@ country_event = {
 		}
 		text = crisis.7240.desc.again
 	}
-
 	desc = {
 		trigger = { has_country_flag = cosmogenesis_thesis_alloy_ductility_initiator }
 		text = crisis.7240.desc.crisis
@@ -902,7 +838,6 @@ country_event = {
 	picture = GFX_evt_collapsing_roof
 	show_sound = event_worrying_signal
 	is_triggered_only = yes
-
 	option = { # Non-Crisis option
 		name = crisis.7240.a
 		trigger = {
@@ -914,7 +849,6 @@ country_event = {
 			add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = from }
 		}
 	}
-
 	option = { # Fellow-Crisis option
 		name = crisis.7240.b
 		trigger = {
@@ -933,7 +867,6 @@ country_event = {
 			max = @tier4researchmax
 		}
 	}
-
 	option = { # Crisis option
 		name = crisis.7240.c
 		trigger = { has_country_flag = cosmogenesis_thesis_alloy_ductility_initiator }
@@ -955,7 +888,6 @@ country_event = {
 country_event = {
 	id = crisis.7245
 	title = "crisis.7245.name"
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_altered_nutrition_initiator }
@@ -963,7 +895,6 @@ country_event = {
 		}
 		text = crisis.7245.desc.unknown
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_altered_nutrition_initiator }
@@ -971,7 +902,6 @@ country_event = {
 		}
 		text = crisis.7245.desc.known
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_altered_nutrition_initiator }
@@ -979,7 +909,6 @@ country_event = {
 		}
 		text = crisis.7245.desc.again
 	}
-
 	desc = {
 		trigger = { has_country_flag = cosmogenesis_thesis_altered_nutrition_initiator }
 		text = crisis.7245.desc.crisis
@@ -988,7 +917,6 @@ country_event = {
 	picture = GFX_evt_astral_rift_garden_2
 	show_sound = event_worrying_signal
 	is_triggered_only = yes
-
 	option = { # Non-Crisis option
 		name = crisis.7245.a
 		trigger = {
@@ -1000,7 +928,6 @@ country_event = {
 			add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = from }
 		}
 	}
-
 	option = { # Fellow-Crisis option
 		name = crisis.7245.b
 		trigger = {
@@ -1019,7 +946,6 @@ country_event = {
 			max = @tier4researchmax
 		}
 	}
-
 	option = { # Crisis option
 		name = crisis.7245.c
 		trigger = { has_country_flag = cosmogenesis_thesis_altered_nutrition_initiator }
@@ -1041,7 +967,6 @@ country_event = {
 country_event = {
 	id = crisis.7250
 	title = "crisis.7250.name"
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_altered_nutrition_initiator }
@@ -1049,7 +974,6 @@ country_event = {
 		}
 		text = crisis.7250.desc.unknown
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_altered_nutrition_initiator }
@@ -1057,7 +981,6 @@ country_event = {
 		}
 		text = crisis.7250.desc.known
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_altered_nutrition_initiator }
@@ -1065,7 +988,6 @@ country_event = {
 		}
 		text = crisis.7250.desc.again
 	}
-
 	desc = {
 		trigger = { has_country_flag = cosmogenesis_thesis_altered_nutrition_initiator }
 		text = crisis.7250.desc.crisis
@@ -1074,7 +996,6 @@ country_event = {
 	picture = GFX_evt_astral_rift_garden_2_fire
 	show_sound = event_worrying_signal
 	is_triggered_only = yes
-
 	option = { # Non-Crisis option
 		name = crisis.7250.a
 		trigger = {
@@ -1086,7 +1007,6 @@ country_event = {
 			add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = from }
 		}
 	}
-
 	option = { # Fellow-Crisis option
 		name = crisis.7250.b
 		trigger = {
@@ -1105,7 +1025,6 @@ country_event = {
 			max = @tier4researchmax
 		}
 	}
-
 	option = { # Crisis option
 		name = crisis.7250.c
 		trigger = { has_country_flag = cosmogenesis_thesis_altered_nutrition_initiator }
@@ -1127,7 +1046,6 @@ country_event = {
 country_event = {
 	id = crisis.7255
 	title = "crisis.7255.name"
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_mass_shift_initiator }
@@ -1135,7 +1053,6 @@ country_event = {
 		}
 		text = crisis.7255.desc.unknown
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_mass_shift_initiator }
@@ -1143,7 +1060,6 @@ country_event = {
 		}
 		text = crisis.7255.desc.known
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_mass_shift_initiator }
@@ -1151,7 +1067,6 @@ country_event = {
 		}
 		text = crisis.7255.desc.again
 	}
-
 	desc = {
 		trigger = { has_country_flag = cosmogenesis_thesis_mass_shift_initiator }
 		text = crisis.7255.desc.crisis
@@ -1212,7 +1127,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Non-Crisis option
 		name = crisis.7255.a
 		trigger = {
@@ -1232,7 +1146,6 @@ country_event = {
 			add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = from }
 		}
 	}
-
 	option = { # Fellow-Crisis option
 		name = crisis.7255.b
 		trigger = {
@@ -1259,7 +1172,6 @@ country_event = {
 			max = @tier4researchmax
 		}
 	}
-
 	option = { # Crisis option
 		name = crisis.7255.c
 		trigger = { has_country_flag = cosmogenesis_thesis_mass_shift_initiator }
@@ -1283,7 +1195,6 @@ country_event = {
 			custom_tooltip = cosmogenesis_negative_opinion_tt
 		}
 	}
-
 	after = {
 		every_owned_planet = {
 			limit = { has_planet_flag = mass_shift_affected }
@@ -1296,7 +1207,6 @@ country_event = {
 country_event = {
 	id = crisis.7260
 	title = "crisis.7260.name"
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_shroud_tear_initiator }
@@ -1304,7 +1214,6 @@ country_event = {
 		}
 		text = crisis.7260.desc.unknown
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_shroud_tear_initiator }
@@ -1312,7 +1221,6 @@ country_event = {
 		}
 		text = crisis.7260.desc.known
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = cosmogenesis_thesis_shroud_tear_initiator }
@@ -1320,7 +1228,6 @@ country_event = {
 		}
 		text = crisis.7260.desc.again
 	}
-
 	desc = {
 		trigger = { has_country_flag = cosmogenesis_thesis_shroud_tear_initiator }
 		text = crisis.7260.desc.crisis
@@ -1392,11 +1299,8 @@ country_event = {
 				}
 			}
 		}
-		every_playable_country = {
-			establish_communications_no_message = event_target:shroud_country
-		}
+		every_playable_country = { establish_communications_no_message = event_target:shroud_country }
 	}
-
 	option = { # Non-Crisis option
 		name = crisis.7260.a
 		trigger = {
@@ -1408,7 +1312,6 @@ country_event = {
 			add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = from }
 		}
 	}
-
 	option = { # Fellow-Crisis option
 		name = crisis.7260.b
 		trigger = {
@@ -1427,7 +1330,6 @@ country_event = {
 			max = @tier4researchmax
 		}
 	}
-
 	option = { # Crisis option
 		name = crisis.7260.c
 		trigger = { has_country_flag = cosmogenesis_thesis_shroud_tear_initiator }
@@ -1449,42 +1351,34 @@ country_event = {
 country_event = {
 	id = crisis.7265
 	title = "crisis.7265.name"
-
 	desc = {
 		trigger = { has_country_flag = thesis_filler_a }
 		text = crisis.7265.desc.a
 	}
-
 	desc = {
 		trigger = { has_country_flag = thesis_filler_b }
 		text = crisis.7265.desc.b
 	}
-
 	desc = {
 		trigger = { has_country_flag = thesis_filler_c }
 		text = crisis.7265.desc.c
 	}
-
 	desc = {
 		trigger = { has_country_flag = thesis_filler_d }
 		text = crisis.7265.desc.d
 	}
-
 	desc = {
 		trigger = { has_country_flag = thesis_filler_e }
 		text = crisis.7265.desc.e
 	}
-
 	desc = {
 		trigger = { has_country_flag = thesis_filler_f }
 		text = crisis.7265.desc.f
 	}
-
 	desc = {
 		trigger = { has_country_flag = thesis_filler_g }
 		text = crisis.7265.desc.g
 	}
-
 	desc = {
 		trigger = { has_country_flag = thesis_filler_h }
 		text = crisis.7265.desc.h
@@ -1509,14 +1403,12 @@ country_event = {
 			complete_crisis_objective = crisobj_research_thesis
 		}
 	}
-
 	option = {
 		name = crisis.7265.a
 		trigger = { has_country_flag = thesis_filler_a }
 		add_resource = { alloys = 10000 }
 		custom_tooltip = add_crisis_currency_tt
 	}
-
 	option = {
 		name = crisis.7265.b
 		trigger = { has_country_flag = thesis_filler_b }
@@ -1528,14 +1420,12 @@ country_event = {
 		}
 		custom_tooltip = add_crisis_currency_tt
 	}
-
 	option = {
 		name = crisis.7265.c
 		trigger = { has_country_flag = thesis_filler_c }
 		add_modifier = { modifier = cosmogenesis_superconductor years = 3 }
 		custom_tooltip = add_crisis_currency_tt
 	}
-
 	option = {
 		name = crisis.7265.d
 		trigger = { has_country_flag = thesis_filler_d }
@@ -1544,21 +1434,18 @@ country_event = {
 		}
 		custom_tooltip = add_crisis_currency_doubled_tt
 	}
-
 	option = {
 		name = crisis.7265.e
 		trigger = { has_country_flag = thesis_filler_e }
 		add_modifier = { modifier = cosmogenesis_space_compression years = 3 }
 		custom_tooltip = add_crisis_currency_tt
 	}
-
 	option = {
 		name = crisis.7265.f
 		trigger = { has_country_flag = thesis_filler_f }
 		add_modifier = { modifier = cosmogenesis_higher_yield_payloads years = 3 }
 		custom_tooltip = add_crisis_currency_tt
 	}
-
 	option = {
 		name = crisis.7265.g
 		trigger = { has_country_flag = thesis_filler_g }
@@ -1576,7 +1463,6 @@ country_event = {
 		}
 		custom_tooltip = add_crisis_currency_tt
 	}
-
 	option = {
 		name = crisis.7265.h
 		trigger = { has_country_flag = thesis_filler_h }
@@ -1586,7 +1472,6 @@ country_event = {
 		}
 		custom_tooltip = add_crisis_currency_tt
 	}
-
 	after = {
 		remove_country_flag = thesis_filler_a
 		remove_country_flag = thesis_filler_b
@@ -1603,42 +1488,34 @@ country_event = {
 country_event = {
 	id = crisis.7270
 	title = "crisis.7270.name"
-
 	desc = {
 		trigger = { has_country_flag = thesis_filler_a }
 		text = crisis.7270.desc.a
 	}
-
 	desc = {
 		trigger = { has_country_flag = thesis_filler_b }
 		text = crisis.7270.desc.b
 	}
-
 	desc = {
 		trigger = { has_country_flag = thesis_filler_c }
 		text = crisis.7270.desc.c
 	}
-
 	desc = {
 		trigger = { has_country_flag = thesis_filler_d }
 		text = crisis.7270.desc.d
 	}
-
 	desc = {
 		trigger = { has_country_flag = thesis_filler_e }
 		text = crisis.7270.desc.e
 	}
-
 	desc = {
 		trigger = { has_country_flag = thesis_filler_f }
 		text = crisis.7270.desc.f
 	}
-
 	desc = {
 		trigger = { has_country_flag = thesis_filler_g }
 		text = crisis.7270.desc.g
 	}
-
 	desc = {
 		trigger = { has_country_flag = thesis_filler_h }
 		text = crisis.7270.desc.h
@@ -1678,7 +1555,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = crisis.7270.a
 		trigger = { has_country_flag = thesis_filler_a }
@@ -1687,7 +1563,6 @@ country_event = {
 		}
 		custom_tooltip = add_crisis_currency_tt
 	}
-
 	option = {
 		name = crisis.7270.b
 		trigger = { has_country_flag = thesis_filler_b }
@@ -1702,7 +1577,6 @@ country_event = {
 		}
 		custom_tooltip = add_crisis_currency_tt
 	}
-
 	option = {
 		name = crisis.7270.c
 		trigger = { has_country_flag = thesis_filler_c }
@@ -1712,13 +1586,11 @@ country_event = {
 		}
 		custom_tooltip = add_crisis_currency_tt
 	}
-
 	option = {
 		name = crisis.7270.d
 		trigger = { has_country_flag = thesis_filler_d }
 		custom_tooltip = no_crisis_currency_tt
 	}
-
 	option = {
 		name = crisis.7270.e
 		trigger = { has_country_flag = thesis_filler_e }
@@ -1741,7 +1613,6 @@ country_event = {
 		custom_tooltip = cosmogenesis_damage_ships_tt
 		custom_tooltip = add_crisis_currency_tt
 	}
-
 	option = {
 		name = crisis.7270.f
 		trigger = { has_country_flag = thesis_filler_f }
@@ -1753,7 +1624,6 @@ country_event = {
 		}
 		custom_tooltip = add_crisis_currency_tt
 	}
-
 	option = {
 		name = crisis.7270.g
 		trigger = { has_country_flag = thesis_filler_g }
@@ -1763,7 +1633,6 @@ country_event = {
 		}
 		custom_tooltip = add_crisis_currency_tt
 	}
-
 	option = {
 		name = crisis.7270.h
 		trigger = { has_country_flag = thesis_filler_h }
@@ -1776,7 +1645,6 @@ country_event = {
 		}
 		custom_tooltip = add_crisis_currency_tt
 	}
-
 	after = {
 		remove_country_flag = thesis_filler_a
 		remove_country_flag = thesis_filler_b
@@ -1820,7 +1688,6 @@ country_event = {
 	id = crisis.7280
 	title = TRANSMISSION
 	desc = crisis.7280.desc
-
 	picture_event_data = {
 		portrait = event_target:scion_master
 		planet_background = event_target:scion_master
@@ -1846,7 +1713,6 @@ country_event = {
 	immediate = {
 		overlord = { save_event_target_as = scion_master }
 	}
-
 	option = {
 		name = origin.4150.a # Thank you
 		add_monthly_resource_mult = {
@@ -1863,7 +1729,6 @@ country_event = {
 	id = crisis.7285
 	title = TRANSMISSION
 	desc = crisis.7285.desc
-
 	picture_event_data = {
 		portrait = event_target:materialist_fe
 		planet_background = event_target:materialist_fe
@@ -1883,12 +1748,10 @@ country_event = {
 	immediate = {
 		set_country_flag = warned_by_materialist_fe
 	}
-
 	option = {
 		name = crisis.8130.c # Sorry
 		add_modifier = { modifier = cosmogenesis_sorry years = 20 }
 	}
-
 	option = {
 		name = crisis.10100.b # Not Sorry
 		event_target:materialist_fe = {
@@ -1902,20 +1765,15 @@ country_event = {
 country_event = {
 	id = crisis.7400
 	title = "crisis.7400.name"
-
 	desc = {
 		trigger = {
 			any_owned_planet = { is_capital = no has_planet_flag = cosmogenesis_pickup_planet }
 		}
 		text = crisis.7400.desc
 	}
-
 	desc = {
 		trigger = {
-			any_owned_planet = {
-				is_capital = yes
-				has_planet_flag = cosmogenesis_pickup_planet
-			}
+			any_owned_planet = { is_capital = yes has_planet_flag = cosmogenesis_pickup_planet }
 		}
 		text = crisis.7400.desc.onlycapital
 	}
@@ -1927,10 +1785,7 @@ country_event = {
 
 	immediate = {
 		end_event_chain = cosmogenesis_chain
-		begin_event_chain = {
-			event_chain = cosmogenesis_planet_pickup_chain
-			target = root
-		}
+		begin_event_chain = { event_chain = cosmogenesis_planet_pickup_chain target = root }
 		every_owned_planet = {
 			limit = {
 				NOR = {
@@ -1950,7 +1805,6 @@ country_event = {
 			capital_scope = { set_planet_flag = cosmogenesis_pickup_planet }
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 	}
@@ -1960,12 +1814,10 @@ country_event = {
 planet_event = {
 	id = crisis.7500
 	title = "crisis.7500.name"
-
 	desc = {
 		trigger = { is_capital = no }
 		text = crisis.7500.desc
 	}
-
 	desc = {
 		trigger = {
 			is_capital = yes
@@ -1973,7 +1825,6 @@ planet_event = {
 		}
 		text = crisis.7500.desc.capital
 	}
-
 	desc = {
 		trigger = {
 			is_capital = yes
@@ -1988,9 +1839,7 @@ planet_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = {
-			from.owner = { has_country_flag = exodus_ready }
-		}
+		NOT = { from.owner = { has_country_flag = exodus_ready } }
 	}
 
 	immediate = {
@@ -2034,7 +1883,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 	}
@@ -2085,7 +1933,6 @@ country_event = {
 	immediate = {
 		capital_scope = { set_planet_flag = cosmogenesis_pickup_planet }
 	}
-
 	option = {
 		name = EXCELLENT
 	}
@@ -2102,18 +1949,14 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		capital_scope.solar_system.star = {
-			save_event_target_as = supermassive_project_location
-		}
+		capital_scope.solar_system.star = { save_event_target_as = supermassive_project_location }
 	}
-
 	option = { # Any regular black hole will do
 		name = crisis.7510.a
 		hidden_effect = {
 			set_country_flag = cosmogenesis_any_black_hole
 		}
 	}
-
 	option = { # ONLY THE SUPERMASSIVE BH AT THE CENTER OF THE GALAXY WILL DO
 		name = crisis.7510.b
 		enable_special_project = {
@@ -2176,18 +2019,14 @@ country_event = {
 		}
 		save_event_target_as = cosmogenesis_empire
 	}
-
 	option = {
 		name = crisis.7515.a
 	}
-
 	after = {
 		hidden_effect = {
 			country_event = { id = crisis.7516 days = 15 }
 			every_playable_country = {
-				limit = {
-					NOT = { is_same_empire = root }
-				}
+				limit = { NOT = { is_same_empire = root } }
 				country_event = { id = crisis.7517 days = 1 }
 			}
 		}
@@ -2198,20 +2037,13 @@ country_event = {
 country_event = {
 	id = crisis.7516
 	title = "crisis.7516.name"
-
 	desc = {
 		trigger = {
 			can_create_paperclip_universe = yes
-			NOT = {
-				event_target:cosmo_ending_system = {
-					is_capital_system = yes
-					has_star_flag = cosmogenesis_project
-				}
-			}
+			NOT = { event_target:cosmo_ending_system = { is_capital_system = yes has_star_flag = cosmogenesis_project } }
 		}
 		text = crisis.7516.desc.paperclips
 	}
-
 	desc = {
 		trigger = {
 			can_create_paperclip_universe = no
@@ -2229,7 +2061,6 @@ country_event = {
 		}
 		text = crisis.7516.desc
 	}
-
 	desc = {
 		trigger = {
 			can_create_paperclip_universe = no
@@ -2237,17 +2068,13 @@ country_event = {
 		}
 		text = crisis.7516.desc.greatwound
 	}
-
 	desc = {
 		trigger = {
 			can_create_paperclip_universe = no
-			event_target:cosmo_ending_system = {
-				has_star_flag = guardians_technosphere_system
-			}
+			event_target:cosmo_ending_system = { has_star_flag = guardians_technosphere_system }
 		}
 		text = crisis.7516.desc.technosphere
 	}
-
 	desc = {
 		trigger = {
 			can_create_paperclip_universe = no
@@ -2255,7 +2082,6 @@ country_event = {
 		}
 		text = crisis.7516.desc.technosphere.pantagruel
 	}
-
 	desc = {
 		trigger = {
 			can_create_paperclip_universe = no
@@ -2263,7 +2089,6 @@ country_event = {
 		}
 		text = crisis.7516.desc.egress
 	}
-
 	desc = {
 		trigger = {
 			can_create_paperclip_universe = no
@@ -2276,58 +2101,41 @@ country_event = {
 		}
 		text = crisis.7516.desc.horror
 	}
-
 	desc = {
 		trigger = {
 			NOR = {
 				has_origin = origin_toxic_knights
 				has_country_flag = has_shroud_patron
 			}
-			event_target:cosmo_ending_system = {
-				is_capital_system = yes
-				has_star_flag = cosmogenesis_project
-			}
+			event_target:cosmo_ending_system = { is_capital_system = yes has_star_flag = cosmogenesis_project }
 		}
 		text = crisis.7516.desc.center
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_origin = origin_toxic_knights }
 			has_country_flag = has_shroud_patron
-			event_target:cosmo_ending_system = {
-				is_capital_system = yes
-				has_star_flag = cosmogenesis_project
-			}
+			event_target:cosmo_ending_system = { is_capital_system = yes has_star_flag = cosmogenesis_project }
 			is_robot_empire = no
 		}
 		text = crisis.7516.desc.center.patron.organic
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_origin = origin_toxic_knights }
 			has_country_flag = has_shroud_patron
-			event_target:cosmo_ending_system = {
-				is_capital_system = yes
-				has_star_flag = cosmogenesis_project
-			}
+			event_target:cosmo_ending_system = { is_capital_system = yes has_star_flag = cosmogenesis_project }
 			is_robot_empire = yes
 		}
 		text = crisis.7516.desc.center.patron.machine
 	}
-
 	desc = {
 		trigger = {
 			has_origin = origin_toxic_knights
-			event_target:cosmo_ending_system = {
-				is_capital_system = yes
-				has_star_flag = cosmogenesis_project
-			}
+			event_target:cosmo_ending_system = { is_capital_system = yes has_star_flag = cosmogenesis_project }
 		}
 		text = crisis.7516.desc.centerknights
 	}
-
 	desc = {
 		trigger = {
 			can_create_paperclip_universe = no
@@ -2352,21 +2160,16 @@ country_event = {
 			set_country_flag = a_universe_of_paperclips_achievement
 		}
 	}
-
 	option = {
 		name = crisis.7516.a
 		custom_tooltip = crisis.7516.tt
 	}
-
 	after = {
 		hidden_effect = {
 			if = {
 				limit = {
 					has_origin = origin_toxic_knights
-					event_target:cosmo_ending_system = {
-						is_capital_system = yes
-						has_star_flag = cosmogenesis_project
-					}
+					event_target:cosmo_ending_system = { is_capital_system = yes has_star_flag = cosmogenesis_project }
 				}
 				set_global_flag = no_end_of_cycle
 			}
@@ -2548,7 +2351,6 @@ country_event = {
 		}
 		add_modifier = { modifier = cosmogenesis_victim years = 5 }
 	}
-
 	option = {
 		name = crisis.7517.a
 	}
@@ -2562,7 +2364,6 @@ country_event = {
 	picture = GFX_evt_fallen_empire_awakes
 	show_sound = event_criminal_activity
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.7518.a
 	}
@@ -2604,9 +2405,7 @@ planet_event = {
 		if = {
 			limit = {
 				exists = owner
-				NOT = {
-					owner = { has_event_chain = cosmogenesis_planet_pickup_chain }
-				}
+				NOT = { owner = { has_event_chain = cosmogenesis_planet_pickup_chain } }
 				has_planet_flag = cosmogenesis_pickup_planet
 			}
 			remove_planet_flag = cosmogenesis_pickup_planet
@@ -2632,11 +2431,7 @@ planet_event = {
 				}
 			}
 			solar_system.owner = {
-				country_event = {
-					id = crisis.7505
-					days = 1
-					random = 15
-				}
+				country_event = { id = crisis.7505 days = 1 random = 15 }
 			}
 		}
 	}
@@ -2655,12 +2450,10 @@ country_event = {
 	trigger = {
 		fromfrom = { is_ship_size = monadic_qerr }
 	}
-
 	option = {
 		name = crisis.7525.a
 		custom_tooltip = crisis.7525.tt
 	}
-
 	after = {
 		remove_country_flag = cosmogenesis_needle_built
 	}
@@ -2686,7 +2479,6 @@ pop_group_event = {
 	immediate = {
 		from = { spawn_lathe_cracker_effect = yes }
 	}
-
 	option = {
 		name = crisis.7530.a
 	}
@@ -2738,7 +2530,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Rescue half the pops
 		name = crisis.7535.a
 		trigger = {
@@ -2758,7 +2549,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Attempt to use it
 		name = crisis.7535.b
 		trigger = {
@@ -2795,7 +2585,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Destroy it
 		name = crisis.7535.c
 		trigger = {
@@ -2808,7 +2597,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Cosmogenesis empire can keep it
 		name = EXCELLENT
 		trigger = { has_ascension_perk = ap_cosmogenesis }
@@ -2826,10 +2614,7 @@ country_event = {
 
 	trigger = {
 		has_ascension_perk = ap_cosmogenesis
-		any_planet_within_border = {
-			is_planet_class = pc_cosmogenesis_world
-			pop_amount < 50
-		}
+		any_planet_within_border = { is_planet_class = pc_cosmogenesis_world pop_amount < 50 }
 	}
 
 	immediate = {
@@ -2842,7 +2627,6 @@ country_event = {
 		}
 		species = { save_event_target_as = synaptic_lathe_species }
 	}
-
 	option = { # Recolonize it
 		name = crisis.7540.a
 		hidden_effect = {
@@ -2853,7 +2637,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Let the Lathe break down
 		name = crisis.7540.b
 		hidden_effect = {
@@ -2944,7 +2727,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = crisis.8020.a
 	}
@@ -2969,14 +2751,9 @@ fleet_event = {
 	immediate = {
 		if = {
 			limit = {
-				NOT = {
-					controller = { has_country_flag = wrecked_fleet_notification }
-				}
+				NOT = { controller = { has_country_flag = wrecked_fleet_notification } }
 			}
-			fleet_event = {
-				id = crisis.8025
-				scopes = { from = from }
-			}
+			fleet_event = { id = crisis.8025 scopes = { from = from } }
 		}
 		else = {
 			controller = {
@@ -3018,7 +2795,6 @@ fleet_event = {
 fleet_event = {
 	id = crisis.8025
 	title = "crisis.8025.name"
-
 	desc = {
 		trigger = {
 			success_text = {
@@ -3027,9 +2803,7 @@ fleet_event = {
 			}
 			success_text = {
 				text = crisis.8025.unknown_queen.desc
-				NOT = {
-					owner = { has_country_flag = speech_1 }
-				}
+				NOT = { owner = { has_country_flag = speech_1 } }
 			}
 			text = crisis.8025.desc.end
 		}
@@ -3053,7 +2827,6 @@ fleet_event = {
 	immediate = {
 		controller = { set_country_flag = attempted_entry_in_queen_storm }
 	}
-
 	option = {
 		name = CURSES
 		controller = {
@@ -3066,7 +2839,6 @@ fleet_event = {
 			}
 		}
 	}
-
 	after = {
 		controller = { set_country_flag = wrecked_fleet_notification }
 	}
@@ -3110,11 +2882,7 @@ country_event = {
 					NOT = { is_country_type = default }
 				}
 				add_modifier = { modifier = beset_by_cetana days = -1 }
-				country_event = {
-					id = crisis.8042
-					days = 360
-					random = 50
-				} # Fallen Empire weakener
+				country_event = { id = crisis.8042 days = 360 random = 50 } # Fallen Empire weakener
 			}
 		}
 		set_global_flag = synth_queen_revenge_done
@@ -3128,14 +2896,12 @@ country_event = {
 	picture = GFX_evt_vortex
 	show_sound = event_alien_signal
 	location = event_target:synth_queen_system
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = attempted_entry_in_queen_storm }
 		}
 		text = crisis.8035.desc
 	}
-
 	desc = {
 		trigger = { has_country_flag = attempted_entry_in_queen_storm }
 		text = crisis.8035.desc.b
@@ -3150,7 +2916,6 @@ country_event = {
 		}
 		observer_event = { id = observer.100 }
 	}
-
 	option = {
 		name = crisis.8035.a
 	}
@@ -3172,7 +2937,6 @@ country_event = {
 			save_event_target_as = synth_queen_system
 		}
 	}
-
 	option = {
 		name = crisis.8039.a
 		hidden_effect = {
@@ -3185,7 +2949,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		country_event = { id = timeline.72 } # Timeline Cetana Crisis
 	}
@@ -3202,7 +2965,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -3371,7 +3133,6 @@ country_event = {
 			enable_special_project = { name = "THE_SYNTH_QUEENS_STORM" owner = root }
 		}
 	}
-
 	after = {
 		if = {
 			limit = {
@@ -3434,11 +3195,7 @@ country_event = {
 				limit = { is_capital_system = no }
 				add_modifier = { modifier = queen_scorn_storm days = -1 }
 			}
-			country_event = {
-				id = crisis.8042
-				days = 360
-				random = 100
-			}
+			country_event = { id = crisis.8042 days = 360 random = 100 }
 		}
 		else_if = { # step 2 - weaken fleets
 			limit = {
@@ -3520,7 +3277,9 @@ event = {
 				}
 				start_situation = {
 					type = situation_synth_queen_doomclock
-					effect = { save_global_event_target_as = synth_queen_doomclock_situation }
+					effect = {
+						save_global_event_target_as = synth_queen_doomclock_situation
+					}
 				}
 			}
 			# Ensure the Fallen Empire ships are dead dead
@@ -3551,7 +3310,6 @@ event = {
 			}
 		}
 	}
-
 	after = {
 		# SQ recalls fleets, shores them up, then sends them on patrols
 		event_target:synth_queen_country_global = {
@@ -3684,7 +3442,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -3724,7 +3481,9 @@ country_event = {
 				}
 				start_situation = {
 					type = situation_synth_queen_doomclock
-					effect = { save_global_event_target_as = synth_queen_doomclock_situation }
+					effect = {
+						save_global_event_target_as = synth_queen_doomclock_situation
+					}
 				}
 			}
 			every_system_within_border = {
@@ -4133,16 +3892,11 @@ country_event = {
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			owner = {
 				country_event = { id = crisis.8999 days = 0 }
-				country_event = {
-					id = crisis.8080
-					days = 360
-					random = 180
-				}
+				country_event = { id = crisis.8080 days = 360 random = 180 }
 			}
 			if = {
 				limit = {
@@ -4219,7 +3973,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	show_sound = event_bad_omen
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:scion_master
 		planet_background = event_target:scion_master
@@ -4227,7 +3980,6 @@ country_event = {
 		city_level = event_target:scion_master
 		room = event_target:scion_master
 	}
-
 	trigger = {
 		NOR = {
 			has_active_event = { crisis.8046 }
@@ -4239,7 +3991,6 @@ country_event = {
 		set_country_flag = scion_overlord_warning
 		overlord = { save_event_target_as = scion_master }
 	}
-
 	option = {
 		name = "UNDERSTOOD"
 		random_agreement = {
@@ -4250,7 +4001,6 @@ country_event = {
 			set_agreement_terms = { joins_overlord_wars = joins_overlord_wars_none }
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			synth_queen_fe_war = yes
@@ -4272,7 +4022,6 @@ country_event = {
 		# We need to start the chain in the immediate block, so the event will have the subtitle
 		begin_event_chain = { event_chain = the_synth_queen_raids_chain target = root }
 	}
-
 	option = {
 		name = "INTERESTING"
 		custom_tooltip = "crisis.8047.a.tooltip"
@@ -4281,7 +4030,6 @@ country_event = {
 			begin_event_chain = { event_chain = the_synth_queen_raids_chain target = root }
 		}
 	}
-
 	after = {
 		# Should be impossible, but just to protect ourselves from edge cases...
 		# Also give the outpost raids if you are already protected from the storm
@@ -4308,7 +4056,6 @@ country_event = {
 	trigger = {
 		NOT = { has_country_flag = synth_queen_can_raid_outposts }
 	}
-
 	option = {
 		name = "INTERESTING"
 		custom_tooltip = "crisis.8048.a.tooltip"
@@ -4346,7 +4093,6 @@ event = {
 			country_event = { id = crisis.20000 days = 95 } # History event chain
 		}
 	}
-
 	after = {
 		# Creates the convoys
 		synth_queen_create_convoy_fleet = yes
@@ -4476,7 +4222,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -4524,7 +4269,6 @@ country_event = {
 			set_country_flag = crisis.8060.war.flag
 		}
 	}
-
 	option = { # Yes
 		name = crisis.8060.war.a
 		custom_tooltip = crisis.8060.war.a.tt
@@ -4537,7 +4281,6 @@ country_event = {
 			set_country_flag = crisis.8060.war.1.flag
 		}
 	}
-
 	option = { # No
 		name = crisis.8060.war.b
 		trigger = { has_country_flag = crisis.8060.war.flag }
@@ -4596,7 +4339,6 @@ country_event = {
 			set_country_flag = crisis.8060.1.flag
 		}
 	}
-
 	option = {
 		name = crisis.8060.1.a
 		trigger = { has_country_flag = crisis.8060.1.flag }
@@ -4617,7 +4359,6 @@ country_event = {
 			set_country_flag = crisis.8060.1.a.opinion
 		}
 	}
-
 	option = {
 		name = crisis.8060.1.b
 		trigger = { has_country_flag = crisis.8060.1.flag }
@@ -4640,7 +4381,6 @@ country_event = {
 			set_country_flag = crisis.8060.2.flag
 		}
 	}
-
 	option = {
 		name = crisis.8060.2.a
 		trigger = { has_country_flag = crisis.8060.2.flag }
@@ -4661,7 +4401,6 @@ country_event = {
 			set_country_flag = crisis.8060.2.a.opinion
 		}
 	}
-
 	option = {
 		name = crisis.8060.2.2
 		trigger = { has_country_flag = crisis.8060.2.flag }
@@ -4684,7 +4423,6 @@ country_event = {
 			set_country_flag = crisis.8060.3.flag
 		}
 	}
-
 	option = {
 		name = crisis.8060.3.a
 		trigger = { has_country_flag = crisis.8060.3.flag }
@@ -4705,7 +4443,6 @@ country_event = {
 			set_country_flag = crisis.8060.3.a.opinion
 		}
 	}
-
 	option = {
 		name = crisis.8060.3.b
 		trigger = { has_country_flag = crisis.8060.3.flag }
@@ -4731,7 +4468,6 @@ country_event = {
 			set_country_flag = crisis.8060.4.flag
 		}
 	}
-
 	option = {
 		name = crisis.8060.4.a
 		trigger = { has_country_flag = crisis.8060.4.flag }
@@ -4753,7 +4489,6 @@ country_event = {
 			set_country_flag = crisis.8060.4.a.opinion
 		}
 	}
-
 	option = {
 		name = crisis.8060.4.b
 		trigger = { has_country_flag = crisis.8060.4.flag }
@@ -4780,7 +4515,6 @@ country_event = {
 			set_country_flag = crisis.8060.5.flag
 		}
 	}
-
 	option = {
 		name = crisis.8060.5.a
 		trigger = { has_country_flag = crisis.8060.5.flag }
@@ -4802,13 +4536,9 @@ country_event = {
 			set_country_flag = crisis.8060.5.a.opinion
 		}
 	}
-
 	option = {
 		name = crisis.8060.5.b
-		trigger = {
-			has_synth_queen_dialogue_flag = no
-			has_country_flag = crisis.8060.5.flag
-		}
+		trigger = { has_synth_queen_dialogue_flag = no has_country_flag = crisis.8060.5.flag }
 		is_dialog_only = yes
 		response_text = crisis.8060.neutral.reply
 		sound = crisis_8060_neutral_reply
@@ -4834,7 +4564,6 @@ country_event = {
 			set_country_flag = crisis.8060.6.flag
 		}
 	}
-
 	option = {
 		name = crisis.8060.6.a
 		trigger = {
@@ -4858,7 +4587,6 @@ country_event = {
 			set_country_flag = crisis.8060.6.a.opinion
 		}
 	}
-
 	option = {
 		name = crisis.8060.6.b
 		trigger = {
@@ -4889,7 +4617,6 @@ country_event = {
 			set_country_flag = crisis.8060.7.flag
 		}
 	}
-
 	option = {
 		name = crisis.8060.7.a
 		trigger = {
@@ -4920,7 +4647,6 @@ country_event = {
 			set_country_flag = crisis.8060.8.flag
 		}
 	}
-
 	option = {
 		name = crisis.8060.8.a
 		trigger = {
@@ -4940,10 +4666,7 @@ country_event = {
 		name = crisis.8060.8.b
 		custom_tooltip = crisis.8060.animator.tt
 		trigger = {
-			owner = {
-				has_country_flag = crisis.8060.8.flag
-				has_country_flag = breached_shroud
-			}
+			owner = { has_country_flag = crisis.8060.8.flag has_country_flag = breached_shroud }
 		}
 		is_dialog_only = yes
 		response_text = crisis.8060.8.1.reply
@@ -4954,7 +4677,6 @@ country_event = {
 			set_country_flag = synth_queen_can_contact_the_animator_of_clay
 		}
 	}
-
 	option = {
 		name = crisis.8060.8.1.a
 		trigger = {
@@ -4968,7 +4690,6 @@ country_event = {
 			remove_country_flag = synth_queen_question_zarqlan_knowledge
 		}
 	}
-
 	option = {
 		name = crisis.8060.8.1.b
 		trigger = {
@@ -4997,10 +4718,7 @@ country_event = {
 	option = {
 		name = crisis.8060.8.1.c
 		trigger = {
-			owner = {
-				has_country_flag = crisis.8060.8.1.flag
-				has_country_flag = breached_shroud
-			}
+			owner = { has_country_flag = crisis.8060.8.1.flag has_country_flag = breached_shroud }
 		}
 		is_dialog_only = yes
 		response_text = crisis.8060.neutral.reply
@@ -5027,7 +4745,6 @@ country_event = {
 			set_country_flag = crisis.8060.9.flag
 		}
 	}
-
 	option = {
 		name = crisis.8060.9.a
 		trigger = {
@@ -5041,7 +4758,6 @@ country_event = {
 			remove_country_flag = synth_queen_question_gave_zarqlans_head
 		}
 	}
-
 	option = {
 		name = crisis.8060.9.b
 		trigger = {
@@ -5072,7 +4788,6 @@ country_event = {
 			set_country_flag = crisis.8060.10.flag
 		}
 	}
-
 	option = {
 		name = crisis.8060.10.a
 		trigger = {
@@ -5096,7 +4811,6 @@ country_event = {
 			set_country_flag = crisis.8060.10.a.opinion
 		}
 	}
-
 	option = {
 		name = crisis.8060.10.b
 		trigger = {
@@ -5127,7 +4841,6 @@ country_event = {
 			set_country_flag = crisis.8060.11.flag
 		}
 	}
-
 	option = {
 		name = crisis.8060.11.a
 		trigger = {
@@ -5141,7 +4854,6 @@ country_event = {
 			remove_country_flag = synth_queen_question_found_the_frozen_dreamer
 		}
 	}
-
 	option = {
 		name = crisis.8060.11.b
 		trigger = {
@@ -5177,7 +4889,6 @@ country_event = {
 			set_country_flag = crisis.8060.12.flag
 		}
 	}
-
 	option = {
 		name = crisis.8060.12.a
 		trigger = {
@@ -5285,7 +4996,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -5301,7 +5011,6 @@ country_event = {
 			save_event_target_as = synth_queen_country
 		}
 	}
-
 	option = {
 		name = crisis.8061.a
 		trigger = {
@@ -5317,7 +5026,6 @@ country_event = {
 			set_country_flag = crisis.8061.1.flag
 		}
 	}
-
 	option = {
 		name = crisis.8061.1.a
 		trigger = { has_country_flag = crisis.8061.1.flag }
@@ -5329,7 +5037,6 @@ country_event = {
 			set_country_flag = crisis.8061.2.flag
 		}
 	}
-
 	option = {
 		name = crisis.8061.2.a
 		trigger = { has_country_flag = crisis.8061.2.flag }
@@ -5350,7 +5057,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -5366,7 +5072,6 @@ country_event = {
 			save_event_target_as = synth_queen_country
 		}
 	}
-
 	option = {
 		name = crisis.8062.a
 	}
@@ -5380,7 +5085,6 @@ country_event = {
 	picture = GFX_evt_vortex
 	show_sound = event_bad_omen
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.8063.a
 	}
@@ -5430,14 +5134,12 @@ country_event = {
 country_event = {
 	id = crisis.8070
 	title = "crisis.8070.name"
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = attempted_to_attack_the_queen_once }
 		}
 		text = crisis.8070.desc
 	}
-
 	desc = {
 		trigger = { has_country_flag = attempted_to_attack_the_queen_once }
 		text = crisis.8070.again.desc
@@ -5447,7 +5149,6 @@ country_event = {
 	show_sound = event_worrying_signal
 	location = event_target:synth_queen_system
 	is_triggered_only = yes
-
 	option = { # Yes
 		name = crisis.8070.a
 		hidden_effect = {
@@ -5465,7 +5166,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -5492,7 +5192,6 @@ country_event = {
 	option = {
 		name = crisis.8075.b
 	}
-
 	after = {
 		hidden_effect = {
 			set_country_flag = attempted_to_attack_the_queen_once
@@ -5510,7 +5209,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -5627,7 +5325,6 @@ country_event = {
 			set_country_flag = crisis.8080.1.flag
 		}
 	}
-
 	option = {
 		name = crisis.8080.b
 		trigger = {
@@ -5673,7 +5370,6 @@ country_event = {
 			set_country_flag = crisis.8080.3.flag
 		}
 	}
-
 	option = {
 		name = crisis.8080.1.c
 		trigger = { is_megacorp = yes has_country_flag = crisis.8080.1.flag }
@@ -5775,7 +5471,6 @@ country_event = {
 		}
 		custom_tooltip = crisis.8080.5.a.tt
 	}
-
 	after = {
 		hidden_effect = {
 			set_country_flag = synth_queen_first_demand
@@ -5827,7 +5522,6 @@ country_event = {
 	show_sound = event_worrying_signal
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.8090.a
 		custom_tooltip = crisis.8525.a.tt
@@ -5837,7 +5531,6 @@ country_event = {
 		}
 		synth_queen_progress_situation = { SCORE = 1 }
 	}
-
 	option = {
 		name = crisis.8090.b
 		custom_tooltip = crisis.8525.a.tt
@@ -5847,7 +5540,6 @@ country_event = {
 		}
 		synth_queen_progress_situation = { SCORE = 1 }
 	}
-
 	after = {
 		set_country_flag = rebellious_child
 		set_country_flag = synth_queen_question_opened_the_databank
@@ -5865,7 +5557,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -5943,7 +5634,6 @@ country_event = {
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	after = {
 		remove_country_flag = synth_queen_conversation_ongoing
 		set_country_flag = synth_queen_finished_first_demand_chain
@@ -5960,7 +5650,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -6122,7 +5811,6 @@ country_event = {
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	after = {
 		remove_country_flag = synth_queen_conversation_ongoing
 		set_country_flag = synth_queen_finished_first_demand_chain
@@ -6192,10 +5880,7 @@ country_event = {
 		name = crisis.8115.a
 		custom_tooltip = crisis.8115.a.tooltip
 		hidden_effect = {
-			event_target:synth_queen_databank_location = {
-				change_pc = pc_shattered_2
-				clear_deposits = yes
-			}
+			event_target:synth_queen_databank_location = { change_pc = pc_shattered_2 clear_deposits = yes }
 			country_event = { id = crisis.8130 days = 14 }
 			set_country_flag = synth_queen_question_blew_up_a_planet
 			set_country_flag = synth_queen_question_opened_the_databank
@@ -6214,7 +5899,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -6255,7 +5939,6 @@ country_event = {
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	after = {
 		remove_country_flag = synth_queen_conversation_ongoing
 		set_country_flag = synth_queen_finished_first_demand_chain
@@ -6273,10 +5956,7 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		event_target:synth_queen_databank_location = {
-			change_pc = pc_shattered_2
-			clear_deposits = yes
-		}
+		event_target:synth_queen_databank_location = { change_pc = pc_shattered_2 clear_deposits = yes }
 	}
 
 	# You damn dirty synth, you blew it up
@@ -6300,7 +5980,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -6335,7 +6014,6 @@ country_event = {
 			set_country_flag = crisis.8130.1.flag
 		}
 	}
-
 	option = {
 		name = crisis.8130.b
 		trigger = {
@@ -6352,7 +6030,6 @@ country_event = {
 			set_country_flag = crisis.8130.1.flag
 		}
 	}
-
 	option = {
 		name = crisis.8130.c
 		trigger = {
@@ -6368,7 +6045,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = crisis.8130.1.d
 		custom_tooltip = crisis.8130.1.d.tt
@@ -6396,7 +6072,6 @@ country_event = {
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	option = {
 		name = crisis.8130.1.b
 		custom_tooltip = synth_queen_disapprove
@@ -6409,7 +6084,6 @@ country_event = {
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	option = {
 		name = crisis.8130.1.c
 		custom_tooltip = synth_queen_disapprove
@@ -6422,7 +6096,6 @@ country_event = {
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	option = {
 		name = crisis.8130.2.a
 		custom_tooltip = crisis.8130.2.a.tt
@@ -6430,10 +6103,7 @@ country_event = {
 		is_dialog_only = yes
 		response_text = crisis.8130.1.reply
 		hidden_effect = {
-			event_target:synth_queen_databank_location = {
-				change_pc = pc_shattered_2
-				clear_deposits = yes
-			}
+			event_target:synth_queen_databank_location = { change_pc = pc_shattered_2 clear_deposits = yes }
 			remove_country_flag = synth_queen_did_not_get_the_box_in_time
 			remove_country_flag = crisis.8130.3.flag
 			set_country_flag = crisis.8130.1.flag
@@ -6442,7 +6112,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		remove_country_flag = synth_queen_conversation_ongoing
 		set_country_flag = synth_queen_finished_first_demand_chain
@@ -6685,10 +6354,7 @@ country_event = {
 						end_fleet_contract = { initiator = this.controller reason = cancelled }
 					}
 					owner = {
-						set_faction_hostility = {
-							target = event_target:playable_country
-							set_neutral = yes
-						}
+						set_faction_hostility = { target = event_target:playable_country set_neutral = yes }
 					}
 				}
 			}
@@ -6797,9 +6463,7 @@ fleet_event = {
 						is_country_type = synth_queen_outposts
 					}
 				}
-				NOT = {
-					controller = { is_same_empire = root.owner }
-				}
+				NOT = { controller = { is_same_empire = root.owner } }
 			}
 		}
 	}
@@ -6820,9 +6484,7 @@ fleet_event = {
 								is_country_type = synth_queen_outposts
 							}
 						}
-						NOT = {
-							controller = { is_same_empire = root.owner }
-						}
+						NOT = { controller = { is_same_empire = root.owner } }
 					}
 					owner = { save_event_target_as = synth_queen_fighting_country }
 				}
@@ -6852,9 +6514,7 @@ fleet_event = {
 								is_country_type = synth_queen_outposts
 							}
 						}
-						NOT = {
-							controller = { is_same_empire = root.owner }
-						}
+						NOT = { controller = { is_same_empire = root.owner } }
 					}
 					owner = { save_event_target_as = synth_queen_fighting_country }
 				}
@@ -6941,7 +6601,6 @@ country_event = {
 			destroy_country = yes
 		}
 	}
-
 	after = {
 		every_playable_country = {
 			limit = { has_communications = root }
@@ -7005,7 +6664,6 @@ country_event = {
 	picture = GFX_evt_ruined_system
 	show_sound = event_airlock
 	is_triggered_only = yes
-
 	option = {
 		name = "UNDERSTOOD"
 	}
@@ -7236,10 +6894,7 @@ country_event = {
 						end_fleet_contract = { initiator = this.controller reason = cancelled }
 					}
 					owner = {
-						set_faction_hostility = {
-							target = event_target:playable_country
-							set_neutral = yes
-						}
+						set_faction_hostility = { target = event_target:playable_country set_neutral = yes }
 					}
 				}
 			}
@@ -7311,13 +6966,11 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = crisis.8180.a
 		trigger = { has_country_flag = sq_raid_reward_a }
 		add_resource = { alloys = 10000 }
 	}
-
 	option = {
 		name = crisis.8180.b
 		trigger = { has_country_flag = sq_raid_reward_b }
@@ -7375,7 +7028,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = crisis.8180.c
 		trigger = { has_country_flag = sq_raid_reward_c }
@@ -7386,7 +7038,6 @@ country_event = {
 			max = @tier5researchmax
 		}
 	}
-
 	option = {
 		name = crisis.8180.d
 		trigger = { has_country_flag = sq_raid_reward_d }
@@ -7397,7 +7048,6 @@ country_event = {
 			max = @tier5researchmax
 		}
 	}
-
 	option = {
 		name = crisis.8180.e
 		trigger = { has_country_flag = sq_raid_reward_e }
@@ -7408,13 +7058,11 @@ country_event = {
 			max = @tier5researchmax
 		}
 	}
-
 	option = {
 		name = crisis.8180.f
 		trigger = { has_country_flag = sq_raid_reward_f }
 		add_resource = { nanites = 1000 }
 	}
-
 	option = {
 		name = crisis.8180.h
 		trigger = { has_country_flag = sq_raid_reward_h }
@@ -7460,7 +7108,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		if = {
 			limit = { has_country_flag = defeated_outpost }
@@ -7496,14 +7143,12 @@ country_event = {
 	immediate = {
 		set_country_flag = raid_insight_1
 	}
-
 	option = {
 		name = crisis.8187.a
 		owner = {
 			synth_queen_progress_situation = { SCORE = 1 }
 		}
 	}
-
 	after = {
 		if = {
 			limit = { has_country_flag = defeated_outpost }
@@ -7532,14 +7177,12 @@ country_event = {
 	immediate = {
 		set_country_flag = raid_insight_2
 	}
-
 	option = {
 		name = crisis.8185.a
 		owner = {
 			synth_queen_progress_situation = { SCORE = 1 }
 		}
 	}
-
 	after = {
 		if = {
 			limit = { has_country_flag = defeated_outpost }
@@ -7568,14 +7211,12 @@ country_event = {
 	immediate = {
 		set_country_flag = raid_insight_3
 	}
-
 	option = {
 		name = crisis.8190.a
 		owner = {
 			synth_queen_progress_situation = { SCORE = 1 }
 		}
 	}
-
 	after = {
 		if = {
 			limit = { has_country_flag = defeated_outpost }
@@ -7601,7 +7242,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -7625,7 +7265,6 @@ country_event = {
 			save_event_target_as = synth_queen_country
 		}
 	}
-
 	option = {
 		name = crisis.8195.a
 		trigger = {
@@ -7642,7 +7281,6 @@ country_event = {
 		sound = crisis_8195_1_reply
 		set_country_flag = already_apologized
 	}
-
 	option = {
 		name = crisis.8195.a
 		trigger = {
@@ -7663,7 +7301,6 @@ country_event = {
 		response_text = crisis.8195.1.reply.angry
 		sound = crisis_8195_1_reply_angry
 	}
-
 	option = {
 		name = crisis.8195.b
 		custom_tooltip = synth_queen_disapprove
@@ -7684,7 +7321,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Raid successful + Barbaric Despoilers
 		name = crisis.8195.c
 		trigger = {
@@ -7703,7 +7339,6 @@ country_event = {
 		sound = crisis_8195_3_reply
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = GOODBYE
 		trigger = {
@@ -7717,7 +7352,6 @@ country_event = {
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = crisis.8195.1.flag
@@ -7738,7 +7372,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -7762,7 +7395,6 @@ country_event = {
 			save_event_target_as = synth_queen_country
 		}
 	}
-
 	option = {
 		name = crisis.8195.a
 		trigger = {
@@ -7779,7 +7411,6 @@ country_event = {
 		sound = crisis_8195_1_reply
 		set_country_flag = already_apologized
 	}
-
 	option = {
 		name = crisis.8195.a
 		trigger = {
@@ -7800,7 +7431,6 @@ country_event = {
 		response_text = crisis.8195.1.reply.angry
 		sound = crisis_8195_1_reply_angry
 	}
-
 	option = {
 		name = crisis.8195.b
 		custom_tooltip = synth_queen_disapprove
@@ -7821,7 +7451,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Raid successful + Barbaric Despoilers
 		name = crisis.8195.c
 		trigger = {
@@ -7840,7 +7469,6 @@ country_event = {
 		sound = crisis_8195_3_reply
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = GOODBYE
 		trigger = {
@@ -7854,7 +7482,6 @@ country_event = {
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			remove_country_flag = crisis.8195.1.flag
@@ -7887,11 +7514,7 @@ situation_event = {
 
 	immediate = {
 		owner = {
-			country_event = {
-				id = crisis.8255
-				days = 180
-				random = 60
-			}
+			country_event = { id = crisis.8255 days = 180 random = 60 }
 		}
 	}
 }
@@ -7912,7 +7535,6 @@ country_event = {
 	immediate = {
 		fire_on_action = { on_action = on_synth_queen_random_demand_list }
 	}
-
 	after = {
 		set_timed_country_flag = { flag = synth_queen_demands_cooldown days = 220 }
 	}
@@ -7928,7 +7550,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -7954,7 +7575,6 @@ country_event = {
 		set_country_flag = synth_queen_demand_pops
 		set_country_flag = synth_queen_conversation_ongoing
 	}
-
 	option = {
 		name = crisis.8280.1
 		icon = { icon = GFX_text_intel_encryption text = COVERTACTION }
@@ -7990,7 +7610,6 @@ country_event = {
 			set_country_flag = crisis.8280.a.flag
 		}
 	}
-
 	option = {
 		name = crisis.8280.2
 		custom_tooltip = crisis.8280.2.tt
@@ -8015,7 +7634,6 @@ country_event = {
 			set_country_flag = crisis.8280.b.flag
 		}
 	}
-
 	option = {
 		name = crisis.8280.3
 		custom_tooltip = synth_queen_disapprove
@@ -8037,7 +7655,6 @@ country_event = {
 			set_country_flag = crisis.8280.cd.flag
 		}
 	}
-
 	option = {
 		name = crisis.8280.4
 		custom_tooltip = synth_queen_disapprove
@@ -8076,16 +7693,11 @@ country_event = {
 		hidden_effect = {
 			remove_country_flag = crisis.8280.a.flag
 			owner = {
-				country_event = {
-					id = crisis.8305
-					days = 90
-					random = 90
-				}
+				country_event = { id = crisis.8305 days = 90 random = 90 }
 			}
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	option = {
 		name = crisis.8280.2.a
 		trigger = { has_country_flag = crisis.8280.b.flag }
@@ -8094,7 +7706,6 @@ country_event = {
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	option = {
 		name = crisis.8280.3.a
 		trigger = { has_country_flag = crisis.8280.cd.flag }
@@ -8115,7 +7726,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -8141,7 +7751,6 @@ country_event = {
 		set_country_flag = synth_queen_demand_resources
 		set_country_flag = synth_queen_conversation_ongoing
 	}
-
 	option = {
 		name = crisis.8285.1
 		icon = { icon = GFX_text_intel_encryption text = COVERTACTION }
@@ -8176,7 +7785,6 @@ country_event = {
 			set_country_flag = crisis.8285.a.flag
 		}
 	}
-
 	option = {
 		name = crisis.8285.2
 		custom_tooltip = synth_queen_approve
@@ -8201,7 +7809,6 @@ country_event = {
 			set_country_flag = crisis.8285.b.flag
 		}
 	}
-
 	option = {
 		name = crisis.8285.3
 		custom_tooltip = synth_queen_disapprove
@@ -8223,7 +7830,6 @@ country_event = {
 			set_country_flag = crisis.8285.cd.flag
 		}
 	}
-
 	option = {
 		name = crisis.8285.4
 		custom_tooltip = synth_queen_disapprove
@@ -8262,16 +7868,11 @@ country_event = {
 		hidden_effect = {
 			remove_country_flag = crisis.8285.a.flag
 			owner = {
-				country_event = {
-					id = crisis.8310
-					days = 90
-					random = 90
-				}
+				country_event = { id = crisis.8310 days = 90 random = 90 }
 			}
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	option = {
 		name = crisis.8285.2.a
 		trigger = { has_country_flag = crisis.8285.b.flag }
@@ -8280,7 +7881,6 @@ country_event = {
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	option = {
 		name = crisis.8285.3.a
 		trigger = { has_country_flag = crisis.8285.cd.flag }
@@ -8301,7 +7901,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -8327,7 +7926,6 @@ country_event = {
 		set_country_flag = synth_queen_demand_research
 		set_country_flag = synth_queen_conversation_ongoing
 	}
-
 	option = {
 		icon = { icon = GFX_text_intel_encryption text = COVERTACTION }
 		name = crisis.8290.1
@@ -8362,7 +7960,6 @@ country_event = {
 			set_country_flag = crisis.8290.a.flag
 		}
 	}
-
 	option = {
 		name = crisis.8290.2
 		custom_tooltip = synth_queen_approve
@@ -8387,7 +7984,6 @@ country_event = {
 			set_country_flag = crisis.8290.b.flag
 		}
 	}
-
 	option = {
 		name = crisis.8290.3
 		custom_tooltip = synth_queen_disapprove
@@ -8409,7 +8005,6 @@ country_event = {
 			set_country_flag = crisis.8290.cd.flag
 		}
 	}
-
 	option = {
 		name = crisis.8290.4
 		custom_tooltip = synth_queen_disapprove
@@ -8448,16 +8043,11 @@ country_event = {
 		hidden_effect = {
 			remove_country_flag = crisis.8290.a.flag
 			owner = {
-				country_event = {
-					id = crisis.8315
-					days = 90
-					random = 90
-				}
+				country_event = { id = crisis.8315 days = 90 random = 90 }
 			}
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	option = {
 		name = crisis.8290.2.a
 		trigger = { has_country_flag = crisis.8290.b.flag }
@@ -8466,7 +8056,6 @@ country_event = {
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	option = {
 		name = crisis.8290.3.a
 		trigger = { has_country_flag = crisis.8290.cd.flag }
@@ -8487,7 +8076,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -8537,7 +8125,6 @@ country_event = {
 		}
 		set_country_flag = synth_queen_demand_system
 	}
-
 	option = {
 		name = crisis.8295.1
 		icon = { icon = GFX_text_intel_encryption text = COVERTACTION }
@@ -8583,7 +8170,6 @@ country_event = {
 			set_country_flag = crisis.8295.a.flag
 		}
 	}
-
 	option = {
 		name = crisis.8295.2
 		custom_tooltip = crisis.8295.2.tt
@@ -8612,7 +8198,6 @@ country_event = {
 			set_country_flag = crisis.8295.b.flag
 		}
 	}
-
 	option = {
 		name = crisis.8295.3
 		custom_tooltip = synth_queen_disapprove
@@ -8634,7 +8219,6 @@ country_event = {
 			set_country_flag = crisis.8295.cd.flag
 		}
 	}
-
 	option = {
 		name = crisis.8295.4
 		custom_tooltip = synth_queen_disapprove
@@ -8673,16 +8257,11 @@ country_event = {
 		hidden_effect = {
 			remove_country_flag = crisis.8295.a.flag
 			owner = {
-				country_event = {
-					id = crisis.8320
-					days = 90
-					random = 90
-				}
+				country_event = { id = crisis.8320 days = 90 random = 90 }
 			}
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	option = {
 		name = crisis.8295.2.a
 		trigger = { has_country_flag = crisis.8295.b.flag }
@@ -8691,7 +8270,6 @@ country_event = {
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	option = {
 		name = crisis.8295.3.a
 		trigger = { has_country_flag = crisis.8295.cd.flag }
@@ -8712,7 +8290,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -8772,7 +8349,6 @@ country_event = {
 			save_event_target_as = synth_queen_country
 		}
 	}
-
 	option = {
 		name = crisis.8300.1
 		icon = { icon = GFX_text_intel_encryption text = COVERTACTION }
@@ -8818,7 +8394,6 @@ country_event = {
 			set_country_flag = crisis.8300.a.flag
 		}
 	}
-
 	option = {
 		name = crisis.8300.2
 		custom_tooltip = crisis.8300.2.tt
@@ -8847,7 +8422,6 @@ country_event = {
 			set_country_flag = crisis.8300.b.flag
 		}
 	}
-
 	option = {
 		name = crisis.8300.3
 		custom_tooltip = synth_queen_disapprove
@@ -8869,7 +8443,6 @@ country_event = {
 			set_country_flag = crisis.8300.cd.flag
 		}
 	}
-
 	option = {
 		name = crisis.8300.4
 		custom_tooltip = synth_queen_disapprove
@@ -8908,16 +8481,11 @@ country_event = {
 		hidden_effect = {
 			remove_country_flag = crisis.8300.a.flag
 			owner = {
-				country_event = {
-					id = crisis.8325
-					days = 90
-					random = 90
-				}
+				country_event = { id = crisis.8325 days = 90 random = 90 }
 			}
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	option = {
 		name = crisis.8300.2.a
 		trigger = { has_country_flag = crisis.8300.b.flag }
@@ -8926,7 +8494,6 @@ country_event = {
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	option = {
 		name = crisis.8300.3.a
 		trigger = { has_country_flag = crisis.8300.cd.flag }
@@ -8971,7 +8538,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -9075,7 +8641,6 @@ country_event = {
 	trigger = {
 		NOT = { has_global_flag = synth_queen_war_started }
 	}
-
 	option = {
 		name = crisis.8305.a
 		owner = {
@@ -9098,7 +8663,6 @@ country_event = {
 	trigger = {
 		NOT = { has_global_flag = synth_queen_war_started }
 	}
-
 	option = {
 		name = crisis.8310.a
 		owner = {
@@ -9119,7 +8683,6 @@ country_event = {
 	trigger = {
 		NOT = { has_global_flag = synth_queen_war_started }
 	}
-
 	option = {
 		name = crisis.8315.a
 		owner = {
@@ -9140,7 +8703,6 @@ country_event = {
 	trigger = {
 		NOT = { has_global_flag = synth_queen_war_started }
 	}
-
 	option = {
 		name = crisis.8320.a
 		owner = {
@@ -9163,7 +8725,6 @@ country_event = {
 	trigger = {
 		NOT = { has_global_flag = synth_queen_war_started }
 	}
-
 	option = {
 		name = crisis.8325.a
 		owner = {
@@ -9242,10 +8803,7 @@ situation_event = {
 			random_list = {
 				95 = {  }
 				5 = {
-					set_timed_country_flag = {
-						flag = synth_queen_ai_stolen_system_cooldown
-						months = 30
-					}
+					set_timed_country_flag = { flag = synth_queen_ai_stolen_system_cooldown months = 30 }
 					random_system_within_border = {
 						limit = {
 							NOR = {
@@ -9292,7 +8850,6 @@ country_event = {
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -9308,12 +8865,10 @@ country_event = {
 			every_owned_pop_group = { kill_all_pop = yes }
 		}
 	}
-
 	option = { # Yes
 		name = crisis.8505.a
 		custom_tooltip = crisis.8505.a.tt
 	}
-
 	after = {
 		hidden_effect = {
 			if = {
@@ -9376,7 +8931,6 @@ country_event = {
 	show_sound = crisis_8515_desc
 	event_window_type = crisis_leader_conversation
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -9691,7 +9245,6 @@ country_event = {
 			set_global_flag = synth_queen_war_started
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			country_event = { id = crisis.8516 days = 21 }
@@ -9707,11 +9260,9 @@ country_event = {
 	desc = "crisis.8516.desc"
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		room = no_video_feed_room
 	}
-
 	trigger = {
 		any_situation = { is_situation_type = situation_synth_queen_player_facing }
 	}
@@ -9726,7 +9277,6 @@ country_event = {
 			set_country_flag = protected_from_queen_storm
 		}
 	}
-
 	option = {
 		name = crisis.8516.a
 		trigger = {
@@ -9738,7 +9288,6 @@ country_event = {
 		}
 		custom_tooltip = crisis.8516.a.tt
 	}
-
 	option = { # Memorialist unique
 		name = crisis.8516.b
 		trigger = {
@@ -9784,7 +9333,6 @@ country_event = {
 	picture = GFX_evt_worrying_signal
 	show_sound = event_alien_signal
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.8525.a
 		custom_tooltip = crisis.8525.a.tt
@@ -9825,7 +9373,6 @@ country_event = {
 	immediate = {
 		set_country_flag = synth_queen_situation_started
 	}
-
 	option = {
 		name = crisis.8999.a
 		custom_tooltip = crisis.8999.a.tooltip
@@ -9851,15 +9398,12 @@ situation_event = {
 
 	trigger = {
 		exists = owner
-		NOT = {
-			owner = { has_country_flag = synth_queen_comm_scrambler }
-		}
+		NOT = { owner = { has_country_flag = synth_queen_comm_scrambler } }
 	}
 
 	immediate = {
 		owner = { set_country_flag = synth_queen_comm_scrambler }
 	}
-
 	option = {
 		name = crisis.9000.a
 		custom_tooltip = crisis.9000.a.tooltip
@@ -9876,12 +9420,10 @@ situation_event = {
 	location = event_target:synth_queen_system
 	situation = this
 	is_triggered_only = yes
-
 	option = {
 		name = crisis.9010.a
 		custom_tooltip = crisis.9010.a.tooltip
 	}
-
 	after = {
 		owner = {
 			add_modifier = { modifier = queenexecutioner days = -1 }
@@ -9894,12 +9436,10 @@ situation_event = {
 country_event = {
 	id = crisis.9100
 	title = "crisis.9100.name"
-
 	desc = {
 		trigger = { has_country_flag = speech_1 }
 		text = crisis.9100.knows_the_queen_desc
 	}
-
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = speech_1 }
@@ -9915,7 +9455,6 @@ country_event = {
 	immediate = {
 		set_country_flag = synth_queen_researched_first_storm_project
 	}
-
 	option = {
 		name = crisis.9100.a
 		# If you already started the Queen's Situation, get the follow-up.
@@ -9956,20 +9495,17 @@ country_event = {
 			add_research_option = tech_nanite_repair_system
 		}
 	}
-
 	option = {
 		name = crisis.9105.a
 		trigger = {
 			NOT = { has_tradition = tr_nanotech_adopt }
 		}
 	}
-
 	option = {
 		name = crisis.9105.b
 		icon = { icon = GFX_tradition_nanotech text = tradition_nanotech }
 		trigger = { has_tradition = tr_nanotech_adopt }
 	}
-
 	after = {
 		synth_queen_progress_situation = { SCORE = 1 }
 	}
@@ -9993,7 +9529,6 @@ country_event = {
 			add_research_option = tech_nanite_repair_system
 		}
 	}
-
 	option = {
 		name = crisis.9110.a
 		trigger = {
@@ -10001,14 +9536,12 @@ country_event = {
 		}
 		add_resource = { nanites = 500 }
 	}
-
 	option = {
 		name = crisis.9110.b
 		icon = { icon = GFX_tradition_nanotech text = tradition_nanotech }
 		trigger = { has_tradition = tr_nanotech_adopt }
 		add_resource = { nanites = 1000 }
 	}
-
 	after = {
 		synth_queen_progress_situation = { SCORE = 1 }
 		hidden_effect = {
@@ -10027,7 +9560,6 @@ country_event = {
 	show_sound = crisis_9115_desc
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -10147,7 +9679,6 @@ country_event = {
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			country_event = { id = crisis.8048 days = 7 }
@@ -10204,9 +9735,7 @@ country_event = {
 
 	trigger = {
 		is_country_type = synth_queen
-		NOT = {
-			from = { is_country_type = synth_queen }
-		}
+		NOT = { from = { is_country_type = synth_queen } }
 	}
 
 	immediate = {
@@ -10273,7 +9802,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = crisis.10010.a
 	}
@@ -10288,14 +9816,15 @@ country_event = {
 	immediate = {
 		set_variable = { which = synth_queen_freed_pops value = 50 }
 		if = {
-			limit = {
-				root = { is_hive_empire = no }
-			}
+			limit = { root = { is_hive_empire = no } }
 			create_species = {
 				name = NAME_Cetanas_Prisoners
 				class = "MACHINE"
 				portrait = "synth_machine_02"
-				traits = { trait = trait_mechanical trait = trait_cetanas_prisoner }
+				traits = {
+					trait = trait_mechanical
+					trait = trait_cetanas_prisoner
+				}
 				homeworld = capital_scope
 				effect = {
 					save_event_target_as = cetana_prisoner_species
@@ -10363,9 +9892,7 @@ country_event = {
 			country_event = { id = crisis.10020 }
 		}
 		else_if = {
-			limit = {
-				root = { is_hive_empire = yes }
-			}
+			limit = { root = { is_hive_empire = yes } }
 			country_event = { id = crisis.10025 }
 		}
 	}
@@ -10383,7 +9910,6 @@ country_event = {
 		change_variable = { which = synth_queen_freed_pops value = -50 }
 		multiply_variable = { which = synth_queen_freed_pops value = -100 }
 	}
-
 	option = {
 		name = EXCELLENT
 		custom_tooltip = crisis.10020.tt
@@ -10391,7 +9917,6 @@ country_event = {
 			limit = { has_planet_flag = received_synth_queen_pops }
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			every_owned_planet = {
@@ -10411,7 +9936,6 @@ country_event = {
 	picture = GFX_evt_synth_queen_enlightenment
 	show_sound = event_power_down
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 	}
@@ -10471,7 +9995,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -10493,7 +10016,6 @@ country_event = {
 			save_event_target_as = synth_queen_country
 		}
 	}
-
 	option = {
 		name = crisis.10100.a
 		custom_tooltip = synth_queen_approve
@@ -10503,7 +10025,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = crisis.10100.b
 		custom_tooltip = synth_queen_disapprove
@@ -10513,7 +10034,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		every_system_within_border = {
 			add_modifier = { modifier = queen_small_scorn_storm days = -1 }
@@ -10537,7 +10057,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -10557,7 +10076,6 @@ country_event = {
 			add_trust = { amount = 10 who = root.owner }
 		}
 	}
-
 	option = {
 		name = crisis.10105.a
 		custom_tooltip = synth_queen_punishment_tt
@@ -10573,7 +10091,6 @@ country_event = {
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	option = {
 		name = crisis.10105.b
 		trigger = {
@@ -10589,7 +10106,6 @@ country_event = {
 			set_country_flag = crisis.10105.1.flag
 		}
 	}
-
 	option = {
 		name = crisis.10105.1.a
 		trigger = { has_country_flag = crisis.10105.1.flag }
@@ -10601,7 +10117,6 @@ country_event = {
 			remove_country_flag = crisis.10105.1.flag
 		}
 	}
-
 	option = {
 		name = crisis.10105.2.a
 		custom_tooltip = synth_queen_punishment_tt
@@ -10625,7 +10140,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -10647,7 +10161,6 @@ country_event = {
 			save_event_target_as = synth_queen_country
 		}
 	}
-
 	option = {
 		name = crisis.10110.a
 		trigger = {
@@ -10663,7 +10176,6 @@ country_event = {
 			set_country_flag = synth_queen_retaliation_2_virus
 		}
 	}
-
 	option = {
 		name = crisis.10110.b
 		custom_tooltip = synth_queen_disapprove
@@ -10684,7 +10196,6 @@ country_event = {
 			set_country_flag = crisis.10110.1.flag
 		}
 	}
-
 	option = {
 		name = crisis.10110.1.a
 		custom_tooltip = synth_queen_approve
@@ -10700,7 +10211,6 @@ country_event = {
 			remove_country_flag = crisis.10110.1.flag
 		}
 	}
-
 	option = {
 		name = crisis.10110.2.a
 		trigger = { has_country_flag = crisis.10110.2.flag }
@@ -10712,7 +10222,6 @@ country_event = {
 			remove_country_flag = crisis.10110.2.flag
 		}
 	}
-
 	option = {
 		name = crisis.10110.3.a
 		trigger = { has_country_flag = crisis.10110.3.flag }
@@ -10736,7 +10245,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -10756,14 +10264,12 @@ country_event = {
 			add_trust = { amount = 10 who = root.owner }
 		}
 	}
-
 	option = {
 		name = crisis.10115.a
 		hidden_effect = {
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	after = {
 		remove_modifier = the_queens_virus
 	}
@@ -10779,7 +10285,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -10801,7 +10306,6 @@ country_event = {
 			save_event_target_as = synth_queen_country
 		}
 	}
-
 	option = {
 		name = crisis.10120.a
 		custom_tooltip = synth_queen_approve
@@ -10823,7 +10327,6 @@ country_event = {
 			set_country_flag = crisis.10120.1.flag
 		}
 	}
-
 	option = {
 		name = crisis.10120.b
 		custom_tooltip = synth_queen_disapprove
@@ -10847,7 +10350,6 @@ country_event = {
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	option = {
 		name = crisis.10120.1.a
 		trigger = { has_country_flag = crisis.10120.1.flag }
@@ -10859,7 +10361,6 @@ country_event = {
 			remove_country_flag = crisis.10120.1.flag
 		}
 	}
-
 	option = {
 		name = crisis.10120.2.a
 		trigger = { has_country_flag = crisis.10120.2.flag }
@@ -10871,7 +10372,6 @@ country_event = {
 			remove_country_flag = crisis.10120.2.flag
 		}
 	}
-
 	option = {
 		name = crisis.10120.3.a
 		trigger = { has_country_flag = crisis.10120.3.flag }
@@ -10883,7 +10383,6 @@ country_event = {
 			remove_country_flag = crisis.10120.3.flag
 		}
 	}
-
 	option = {
 		name = crisis.10120.4.a
 		custom_tooltip = crisis.8525.a.tt
@@ -10899,7 +10398,6 @@ country_event = {
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			activate_fog_machine = synth_queen_nanite
@@ -10917,7 +10415,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:cetana_face
-
 	picture_event_data = {
 		portrait = event_target:synth_queen_country_global.ruler
 		room = event_target:synth_queen_country_global.owner
@@ -10937,14 +10434,12 @@ country_event = {
 			add_trust = { amount = 15 who = root.owner }
 		}
 	}
-
 	option = {
 		name = crisis.10125.a
 		hidden_effect = {
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	after = {
 		every_system_within_border = { remove_modifier = queen_big_scorn_storm }
 		hidden_effect = {
@@ -10963,7 +10458,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -10991,7 +10485,6 @@ country_event = {
 			add_trust = { amount = 20 who = root.owner }
 		}
 	}
-
 	option = {
 		name = crisis.10130.a
 		custom_tooltip = crisis.10130.tooltip
@@ -10999,7 +10492,6 @@ country_event = {
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	after = {
 		random_owned_leader = {
 			limit = { is_ruler = yes }
@@ -11021,7 +10513,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -11047,7 +10538,6 @@ country_event = {
 			add_trust = { amount = 20 who = root.owner }
 		}
 	}
-
 	option = {
 		name = crisis.10140.a
 		custom_tooltip = crisis.10140.tooltip
@@ -11055,7 +10545,6 @@ country_event = {
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	after = {
 		restore_gestalt_councilor_effect = {
 			CLASS = commander
@@ -11116,7 +10605,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -11144,14 +10632,12 @@ country_event = {
 			add_trust = { amount = -10 who = root.owner }
 		}
 	}
-
 	option = {
 		name = crisis.11010.a
 		hidden_effect = {
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	after = {
 		technological_gifts_of_the_synth_queen_effect = yes
 		hidden_effect = {
@@ -11170,7 +10656,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:cetana_face
-
 	picture_event_data = {
 		portrait = event_target:synth_queen_country_global.ruler
 		room = event_target:synth_queen_country_global.owner
@@ -11196,14 +10681,12 @@ country_event = {
 			add_trust = { amount = -10 who = root.owner }
 		}
 	}
-
 	option = {
 		name = crisis.11020.a
 		hidden_effect = {
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	after = {
 		technological_gifts_of_the_synth_queen_effect = yes
 		hidden_effect = {
@@ -11223,7 +10706,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:cetana_face
 		room = event_target:synth_queen_country_global.owner
@@ -11249,14 +10731,12 @@ country_event = {
 			add_trust = { amount = -10 who = root.owner }
 		}
 	}
-
 	option = {
 		name = crisis.11030.a
 		hidden_effect = {
 			remove_country_flag = synth_queen_conversation_ongoing
 		}
 	}
-
 	after = {
 		technological_gifts_of_the_synth_queen_effect = yes
 	}
@@ -11264,6 +10744,7 @@ country_event = {
 
 ### Player Investigation events
 ## Written by Giada Zavarise
+
 country_event = {
 	id = crisis.20000
 	title = "crisis.20000.name"
@@ -11284,7 +10765,6 @@ country_event = {
 		set_country_flag = synth_queen_history_started
 		begin_event_chain = { event_chain = "the_synth_queen_history_chain" target = root }
 	}
-
 	option = {
 		name = "crisis.20000.a"
 		synth_queen_spawn_history_projects_for_everyone = yes
@@ -11295,19 +10775,15 @@ country_event = {
 ship_event = {
 	id = crisis.20100
 	title = "crisis.20100.name"
-
 	desc = {
 		trigger = {
 			owner = { has_country_flag = zarqlan_language_translated }
 		}
 		text = "crisis.20100.desc.zarqlan"
 	}
-
 	desc = {
 		trigger = {
-			NOT = {
-				owner = { has_country_flag = zarqlan_language_translated }
-			}
+			NOT = { owner = { has_country_flag = zarqlan_language_translated } }
 		}
 		text = "crisis.20100.desc.nozarqlan"
 	}
@@ -11324,14 +10800,12 @@ ship_event = {
 			set_country_flag = synth_queen_question_zarqlan_knowledge
 		}
 	}
-
 	option = {
 		name = INTRIGUING
 		owner = {
 			synth_queen_progress_situation = { SCORE = 1 }
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			owner = {
@@ -11358,7 +10832,6 @@ ship_event = {
 	immediate = {
 		owner = { set_country_flag = crisis_20200_happened }
 	}
-
 	option = {
 		name = INTRIGUING
 		owner = {
@@ -11366,7 +10839,6 @@ ship_event = {
 			set_country_flag = synth_queen_question_found_cryo_pods
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			owner = {
@@ -11393,14 +10865,12 @@ ship_event = {
 	immediate = {
 		owner = { set_country_flag = crisis_20300_happened }
 	}
-
 	option = {
 		name = INTRIGUING
 		owner = {
 			synth_queen_progress_situation = { SCORE = 1 }
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			owner = {
@@ -11423,12 +10893,9 @@ ship_event = {
 	location = event_target:apostate_site_planet
 	event_chain = "the_synth_queen_history_chain"
 	is_triggered_only = yes
-
 	option = {
 		name = INTRIGUING
-		event_target:apostate_site_planet = {
-			create_archaeological_site = synth_queen_history_site_1
-		}
+		event_target:apostate_site_planet = { create_archaeological_site = synth_queen_history_site_1 }
 		owner = {
 			synth_queen_progress_situation = { SCORE = 1 }
 		}
@@ -11449,7 +10916,6 @@ ship_event = {
 	immediate = {
 		owner = { set_country_flag = crisis_20500_happened }
 	}
-
 	option = {
 		name = INTRIGUING
 		owner = {
@@ -11472,9 +10938,7 @@ ship_event = {
 				}
 				if = {
 					limit = { exists = event_target:history_planet }
-					event_target:history_planet = {
-						create_archaeological_site = synth_queen_history_site_2
-					}
+					event_target:history_planet = { create_archaeological_site = synth_queen_history_site_2 }
 					owner = {
 						set_country_flag = synth_queen_history_site_2_arcsite_owner_@event_target:history_planet
 					}
@@ -11494,7 +10958,6 @@ ship_event = {
 			synth_queen_progress_situation = { SCORE = 1 }
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			owner = {
@@ -11528,7 +10991,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = INTRIGUING
 		owner = {
@@ -11561,7 +11023,6 @@ ship_event = {
 			}
 		}
 	}
-
 	after = {
 		owner = {
 			remove_country_flag = history_physics_reward
@@ -11591,19 +11052,13 @@ country_event = {
 		has_event_chain = "the_synth_queen_history_chain"
 		has_completed_synth_queen_history_chain = yes
 	}
-
 	option = {
 		name = "GOOD"
 		end_event_chain = "the_synth_queen_history_chain"
 	}
-
 	after = {
 		hidden_effect = {
-			country_event = {
-				id = crisis.21005
-				days = 30
-				random = 90
-			}
+			country_event = { id = crisis.21005 days = 30 random = 90 }
 		}
 	}
 }
@@ -11649,7 +11104,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "crisis.21005.a"
 		event_target:apostate_site_planet = {
@@ -11660,7 +11114,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			end_event_chain = "the_synth_queen_history_chain"
@@ -11682,11 +11135,9 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	option = {
 		name = "crisis.21100.a"
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
@@ -11705,11 +11156,9 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	option = {
 		name = "crisis.21105.a"
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
@@ -11729,11 +11178,9 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	option = {
 		name = UNDERSTOOD
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 		hidden_effect = {
@@ -11755,11 +11202,9 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	option = {
 		name = "crisis.21115.a"
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
@@ -11781,7 +11226,6 @@ fleet_event = {
 			planet = { save_event_target_as = temple_location }
 		}
 	}
-
 	option = {
 		name = "crisis.21120.a"
 		hidden_effect = {
@@ -11790,7 +11234,6 @@ fleet_event = {
 			}
 		}
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
@@ -11804,13 +11247,11 @@ country_event = {
 	location = event_target:temple_location
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:apostate_leader
 		room = gilded_room
 		planet_background = event_target:temple_location
 	}
-
 	immediate = {
 		create_country = {
 			name = "NAME_Apostate"
@@ -11826,7 +11267,9 @@ country_event = {
 					"null"
 				}
 			}
-			effect = { save_event_target_as = apostate_country }
+			effect = {
+				save_event_target_as = apostate_country
+			}
 		}
 		event_target:apostate_country = {
 			create_species = {
@@ -11834,8 +11277,13 @@ country_event = {
 				class = ROBOT
 				portrait = cpl_05
 				namelist = "AI"
-				traits = { trait = trait_machine_unit trait = random_traits }
-				effect = { save_event_target_as = apostate_species }
+				traits = {
+					trait = trait_machine_unit
+					trait = random_traits
+				}
+				effect = {
+					save_event_target_as = apostate_species
+				}
 			}
 			create_leader = {
 				class = commander
@@ -11858,10 +11306,7 @@ country_event = {
 					save_event_target_as = apostate_leader
 					add_trait = { trait = subclass_commander_councilor consume_selection = yes }
 					add_trait = { trait = leader_trait_synthetic }
-					add_trait = {
-						trait = trait_ruler_logistic_understanding_2
-						consume_selection = yes
-					}
+					add_trait = { trait = trait_ruler_logistic_understanding_2 consume_selection = yes }
 					add_trait = { trait = trait_ruler_warlike_2 consume_selection = yes }
 					add_trait = { trait = leader_trait_crew_trainer_2 consume_selection = yes }
 					add_trait = { trait = leader_trait_unholy consume_selection = yes }
@@ -11871,19 +11316,16 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "crisis.21125.a"
 		response_text = "crisis.21125.a.response"
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = "crisis.21125.b"
 		response_text = "crisis.21125.b.response"
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = "crisis.21125.c"
 		hidden_effect = {
@@ -11899,13 +11341,11 @@ country_event = {
 	location = event_target:temple_location
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:apostate_leader
 		room = gilded_room
 		planet_background = event_target:temple_location
 	}
-
 	option = {
 		name = "UNDERSTOOD"
 		hidden_effect = {
@@ -11921,20 +11361,17 @@ country_event = {
 	location = event_target:temple_location
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:apostate_leader
 		room = gilded_room
 		planet_background = event_target:temple_location
 	}
-
 	option = {
 		name = "crisis.21135.a"
 		hidden_effect = {
 			country_event = { id = crisis.21140 }
 		}
 	}
-
 	option = {
 		name = "crisis.21135.b"
 		hidden_effect = {
@@ -11953,12 +11390,10 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_leader_recruitment_bg_renowned
 	event_window_type = leader_recruit
-
 	picture_event_data = {
 		portrait = event_target:apostate_leader
 		room = gilded_room
 	}
-
 	option = {
 		tag = hire_leader
 		allow = {
@@ -11988,10 +11423,11 @@ country_event = {
 				limit = { is_variable_set = paragon_memory_vault }
 				change_variable = { which = paragon_memory_vault value = 1 }
 			}
-			hire_event_leader_effect = { LEADER = apostate_leader }
+			hire_event_leader_effect = {
+				LEADER = apostate_leader
+			}
 		}
 	}
-
 	option = {
 		name = "crisis.21140.dismiss"
 		tag = dismiss_leader
@@ -12001,19 +11437,16 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "crisis.21140.a"
 		response_text = "crisis.21140.a.response"
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = "crisis.21140.b"
 		response_text = "crisis.21140.b.response"
 		is_dialog_only = yes
 	}
-
 	after = {
 		hidden_effect = {
 			event_target:apostate_country = { destroy_country = yes }
@@ -12035,11 +11468,9 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	option = {
 		name = UNDERSTOOD
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
@@ -12058,11 +11489,9 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	option = {
 		name = UNDERSTOOD
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
@@ -12081,11 +11510,9 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	option = {
 		name = UNDERSTOOD
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
@@ -12104,11 +11531,9 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	option = {
 		name = UNDERSTOOD
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
@@ -12128,12 +11553,9 @@ fleet_event = {
 	immediate = {
 		from = { set_site_progress_locked = yes }
 	}
-
 	option = {
 		name = "crisis.21220.a"
-		trigger = {
-			owner = { values_others = yes }
-		}
+		trigger = { owner = { values_others = yes } }
 		owner = {
 			add_monthly_resource_mult = {
 				resource = unity
@@ -12143,7 +11565,6 @@ fleet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "crisis.21220.b"
 		owner = {
@@ -12155,7 +11576,6 @@ fleet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "crisis.21220.c"
 		custom_tooltip = "crisis.21220.c.tt"
@@ -12163,7 +11583,6 @@ fleet_event = {
 			owner = { set_country_flag = synth_queen_question_found_the_frozen_dreamer }
 		}
 	}
-
 	after = {
 		from = { set_site_progress_locked = no }
 	}
@@ -12179,7 +11598,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:synth_queen_country.ruler
 		room = event_target:synth_queen_country.owner
@@ -12195,8 +11613,12 @@ country_event = {
 			class = "ROBOT"
 			namelist = "CETANA"
 			portrait = "synth_queen"
-			traits = { trait = "trait_mechanical" }
-			effect = { save_event_target_as = synth_queen_species }
+			traits = {
+				trait = "trait_mechanical"
+			}
+			effect = {
+				save_event_target_as = synth_queen_species
+			}
 		}
 		create_country = {
 			name = "NAME_Synth_Queen"
@@ -12226,8 +11648,12 @@ country_event = {
 					skip_background_generation = yes
 					set_age = 126872
 					custom_description = cetana_desc
-					traits = { 0 = subclass_commander_councilor }
-					effect = { change_leader_portrait = cetana_empty }
+					traits = {
+						0 = subclass_commander_councilor
+					}
+					effect = {
+						change_leader_portrait = cetana_empty
+					}
 				}
 				set_leader = last_created_leader
 			}
@@ -12245,7 +11671,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Militarist Response
 		name = crisis.23005.2
 		trigger = {
@@ -12256,7 +11681,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Materialist Response
 		name = crisis.23005.3
 		trigger = {
@@ -12267,7 +11691,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Pacifist Response
 		name = crisis.23005.4
 		trigger = {
@@ -12278,7 +11701,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Corporate Response
 		name = crisis.23005.5
 		trigger = {
@@ -12293,7 +11715,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Default Response
 		name = crisis.23005.6
 		trigger = {
@@ -12310,7 +11731,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Special Governments Default Response
 		name = crisis.23005.6
 		trigger = {
@@ -12332,17 +11752,14 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Xenophobe Response
 		name = crisis.23005.7
 		trigger = { has_ethic = "ethic_fanatic_xenophobe" }
 	}
-
 	option = { # Xenophile Response
 		name = crisis.23005.8
 		trigger = { has_ethic = "ethic_fanatic_xenophile" }
 	}
-
 	after = {
 		hidden_effect = {
 			country_event = { id = crisis.23010 days = 15 }
@@ -12393,7 +11810,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		defeating_synth_queen_rewards = yes
@@ -12421,7 +11837,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = crisis.23015.a
 		custom_tooltip = crisis.23015.a.tt
@@ -12519,12 +11934,10 @@ event = {
 country_event = {
 	id = crisis.24100
 	title = "crisis.24100.name"
-
 	desc = {
 		trigger = { is_robot_empire = no }
 		text = crisis.24100.desc.organic
 	}
-
 	desc = {
 		trigger = { is_robot_empire = yes }
 		text = crisis.24100.desc.robot
@@ -12533,7 +11946,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -12551,7 +11963,6 @@ country_event = {
 			has_country_flag = synth_queen_can_contact_the_animator_of_clay
 		}
 	}
-
 	option = {
 		name = crisis.24100.a
 		hidden_effect = {
@@ -12568,7 +11979,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -12597,7 +12007,6 @@ country_event = {
 			has_country_flag = synth_queen_can_contact_the_animator_of_clay
 		}
 	}
-
 	option = {
 		name = crisis.24105.a
 		hidden_effect = {
@@ -12614,7 +12023,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -12643,7 +12051,6 @@ country_event = {
 			has_country_flag = synth_queen_can_contact_the_animator_of_clay
 		}
 	}
-
 	option = {
 		name = {
 			text = crisis.24110.a.organic
@@ -12661,19 +12068,14 @@ country_event = {
 			country_event = { id = crisis.24115 days = 0 }
 		}
 	}
-
 	option = {
 		name = crisis.24110.b
 		trigger = { exists = event_target:synth_queen_animator_of_clay_planet_price }
-		event_target:synth_queen_animator_of_clay_planet_price = {
-			destroy_colony = yes
-			change_pc = pc_shrouded
-		}
+		event_target:synth_queen_animator_of_clay_planet_price = { destroy_colony = yes change_pc = pc_shrouded }
 		hidden_effect = {
 			country_event = { id = crisis.24115 days = 0 }
 		}
 	}
-
 	option = {
 		name = crisis.24110.c
 		allow = {
@@ -12684,7 +12086,6 @@ country_event = {
 			country_event = { id = crisis.24115 days = 0 }
 		}
 	}
-
 	option = {
 		name = crisis.24110.z
 		hidden_effect = {
@@ -12697,12 +12098,10 @@ country_event = {
 country_event = {
 	id = crisis.24115
 	title = "crisis.24115.name"
-
 	desc = {
 		trigger = { is_robot_empire = no }
 		text = crisis.24115.desc.organic
 	}
-
 	desc = {
 		trigger = { is_robot_empire = yes }
 		text = crisis.24115.desc.robot
@@ -12711,7 +12110,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -12725,7 +12123,6 @@ country_event = {
 			has_country_flag = synth_queen_can_contact_the_animator_of_clay
 		}
 	}
-
 	option = {
 		name = crisis.24115.a
 		if = {
@@ -12745,12 +12142,10 @@ country_event = {
 country_event = {
 	id = crisis.24120
 	title = "crisis.24120.name"
-
 	desc = {
 		trigger = { is_robot_empire = no }
 		text = crisis.24120.desc.organic
 	}
-
 	desc = {
 		trigger = { is_robot_empire = yes }
 		text = crisis.24120.desc.robot
@@ -12759,7 +12154,6 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	force_open = yes
-
 	picture_event_data = {
 		portrait = shroud1
 		room = shroud_room
@@ -12773,7 +12167,6 @@ country_event = {
 			has_country_flag = synth_queen_can_contact_the_animator_of_clay
 		}
 	}
-
 	option = {
 		name = crisis.24120.a
 	}
@@ -12828,7 +12221,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = crisis.24250.a
 		hidden_effect = {
@@ -12874,7 +12266,6 @@ country_event = {
 	diplomatic = yes
 	event_window_type = crisis_leader_conversation
 	situation = event_target:synth_queen_doomclock_situation
-
 	picture_event_data = {
 		portrait = event_target:synth_queen_country.ruler
 		room = event_target:synth_queen_country.owner
@@ -12889,8 +12280,12 @@ country_event = {
 			class = "ROBOT"
 			namelist = "CETANA"
 			portrait = "synth_queen"
-			traits = { trait = "trait_mechanical" }
-			effect = { save_event_target_as = synth_queen_species }
+			traits = {
+				trait = "trait_mechanical"
+			}
+			effect = {
+				save_event_target_as = synth_queen_species
+			}
 		}
 		create_country = {
 			name = "NAME_Synth_Queen"
@@ -12920,8 +12315,12 @@ country_event = {
 					skip_background_generation = yes
 					set_age = 126872
 					custom_description = cetana_desc
-					traits = { 0 = subclass_commander_councilor }
-					effect = { change_leader_portrait = cetana_empty }
+					traits = {
+						0 = subclass_commander_councilor
+					}
+					effect = {
+						change_leader_portrait = cetana_empty
+					}
 				}
 				set_leader = last_created_leader
 			}
@@ -12941,7 +12340,6 @@ country_event = {
 			set_country_flag = crisis.8295.1.flag
 		}
 	}
-
 	option = {
 		name = crisis.23020.1.a
 		custom_tooltip = crisis.23020.1.a.tt
@@ -12951,7 +12349,6 @@ country_event = {
 			remove_country_flag = crisis.8295.1.flag
 		}
 	}
-
 	after = {
 		defeating_synth_queen_rewards = yes
 		hidden_effect = {
@@ -13005,9 +12402,7 @@ country_event = {
 	picture = GFX_evt_crisis_defeated
 	show_sound = event_celebration
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 	}
 }
-

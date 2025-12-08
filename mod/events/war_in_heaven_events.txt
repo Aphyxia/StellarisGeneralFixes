@@ -75,7 +75,6 @@ country_event = {
 			has_country_flag = sleepers_awake_first_sleeper
 		}
 	}
-
 	mean_time_to_happen = {
 		years = 5
 		# modifier = {
@@ -86,7 +85,6 @@ country_event = {
 		# 	}
 		# }
 	}
-
 	immediate = {
 		every_playable_country = {
 			set_timed_country_flag = { flag = ai_no_wars years = 15 }
@@ -108,10 +106,7 @@ country_event = {
 		if = {
 			limit = { is_hive_empire = no }
 			change_government = {
-				civics = {
-					civic = civic_revanchist_fervor
-					civic = civic_ancient_caches_of_technology
-				}
+				civics = { civic = civic_revanchist_fervor civic = civic_ancient_caches_of_technology }
 			}
 			if = {
 				limit = { has_paragon_dlc = yes }
@@ -166,7 +161,9 @@ country_event = {
 			}
 			every_country = {
 				limit = { has_ai_personality = fallen_empire_hive_mind }
-				integrate_country_effect = { OWNER = root }
+				integrate_country_effect = {
+					OWNER = root
+				}
 			}
 		}
 		# Changing country type resets resources, so give them full stores
@@ -198,25 +195,18 @@ country_event = {
 	id = war_in_heaven.2
 	title = war_in_heaven.2.name
 	desc = war_in_heaven.2.desc
-
 	picture = {
-		trigger = {
-			from = { is_hive_empire = no }
-		}
+		trigger = { from = { is_hive_empire = no } }
 		picture = GFX_evt_fallen_empire
 	}
-
 	picture = {
-		trigger = {
-			from = { is_hive_empire = yes }
-		}
+		trigger = { from = { is_hive_empire = yes } }
 		picture = GFX_evt_hive_mind_fallen_empire
 	}
 
 	show_sound = event_alien_signal
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = war_in_heaven.2.a
 	}
@@ -249,7 +239,6 @@ country_event = {
 			}
 		}
 	}
-
 	mean_time_to_happen = {
 		years = 1
 		# modifier = {
@@ -260,7 +249,6 @@ country_event = {
 		# 	}
 		# }
 	}
-
 	immediate = {
 		remove_country_flag = ai_no_wars
 		event_target:FirstSleeper = { remove_country_flag = ai_no_wars }
@@ -300,7 +288,6 @@ country_event = {
 	id = war_in_heaven.4
 	title = war_in_heaven.4.name
 	desc = war_in_heaven.4.desc
-
 	picture = {
 		trigger = {
 			count_country = {
@@ -313,7 +300,6 @@ country_event = {
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}
-
 	picture = {
 		trigger = {
 			any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes }
@@ -324,7 +310,6 @@ country_event = {
 	show_sound = event_alien_signal
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = war_in_heaven.4.a
 		trigger = {
@@ -486,10 +471,7 @@ country_event = {
 			}
 			custom_tooltip = war_in_heaven.4.a.political_client.tt
 			hidden_effect = {
-				set_subject_of = {
-					who = event_target:FirstSleeper
-					preset = preset_political_client
-				}
+				set_subject_of = { who = event_target:FirstSleeper preset = preset_political_client }
 			}
 		}
 		if = {
@@ -502,10 +484,7 @@ country_event = {
 			}
 		}
 		hidden_effect = { # Vfix double
-			add_opinion_modifier = {
-				who = event_target:FirstSleeper
-				modifier = opinion_war_in_heaven_ally
-			}
+			add_opinion_modifier = { who = event_target:FirstSleeper modifier = opinion_war_in_heaven_ally }
 			event_target:FirstSleeper = {
 				add_opinion_modifier = { who = root modifier = opinion_war_in_heaven_ally }
 			}
@@ -516,7 +495,6 @@ country_event = {
 		}
 		join_war = event_target:FirstSleeper
 	}
-
 	option = {
 		name = war_in_heaven.4.b
 		trigger = {
@@ -695,17 +673,13 @@ country_event = {
 			from = {
 				add_opinion_modifier = { who = root modifier = opinion_war_in_heaven_ally }
 			}
-			add_opinion_modifier = {
-				who = event_target:FirstSleeper
-				modifier = opinion_war_in_heaven_enemy
-			}
+			add_opinion_modifier = { who = event_target:FirstSleeper modifier = opinion_war_in_heaven_enemy }
 			event_target:FirstSleeper = {
 				add_opinion_modifier = { who = root modifier = opinion_war_in_heaven_enemy }
 			}
 		}
 		join_war = from
 	}
-
 	option = {
 		name = war_in_heaven.4.c
 		trigger = { is_subject = no has_been_declared_crisis = no }
@@ -727,13 +701,11 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = war_in_heaven.4.c.2
 		trigger = { is_subject = no }
 		ai_chance = { factor = 0 }
 	}
-
 	option = {
 		name = war_in_heaven.4.d
 		trigger = { is_subject = yes }
@@ -755,7 +727,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		country_event = { id = timeline.76 } # Timeline War in Heaven
 	}
@@ -766,7 +737,6 @@ country_event = {
 	id = war_in_heaven.5
 	title = war_in_heaven.5.name
 	desc = war_in_heaven.5.desc
-
 	picture = {
 		trigger = {
 			count_country = {
@@ -779,7 +749,6 @@ country_event = {
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}
-
 	picture = {
 		trigger = {
 			any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes }
@@ -794,7 +763,6 @@ country_event = {
 	trigger = {
 		is_subject = no
 	}
-
 	option = {
 		name = war_in_heaven.5.a
 	}
@@ -805,7 +773,6 @@ country_event = {
 	id = war_in_heaven.6
 	title = war_in_heaven.6.name
 	desc = war_in_heaven.6.desc
-
 	picture = {
 		trigger = {
 			count_country = {
@@ -818,7 +785,6 @@ country_event = {
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}
-
 	picture = {
 		trigger = {
 			any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes }
@@ -829,7 +795,6 @@ country_event = {
 	show_sound = event_alien_signal
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = war_in_heaven.6.a
 	}
@@ -840,7 +805,6 @@ country_event = {
 	id = war_in_heaven.7
 	title = war_in_heaven.4.name
 	desc = war_in_heaven.7.desc
-
 	picture = {
 		trigger = {
 			count_country = {
@@ -853,7 +817,6 @@ country_event = {
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}
-
 	picture = {
 		trigger = {
 			any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes }
@@ -872,7 +835,6 @@ country_event = {
 			every_war = { remove_war_participant = prev }
 		}
 	}
-
 	option = {
 		name = war_in_heaven.7.a
 		trigger = { is_galactic_emperor = yes }
@@ -904,7 +866,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = war_in_heaven.7.b
 		trigger = { is_galactic_emperor = no }
@@ -1029,7 +990,6 @@ country_event = {
 	id = war_in_heaven.11
 	title = war_in_heaven.11.name
 	desc = war_in_heaven.11.desc
-
 	picture = {
 		trigger = {
 			count_country = {
@@ -1042,7 +1002,6 @@ country_event = {
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}
-
 	picture = {
 		trigger = {
 			any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes }
@@ -1053,7 +1012,6 @@ country_event = {
 	show_sound = event_alien_signal
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = war_in_heaven.11.a
 	}
@@ -1097,11 +1055,9 @@ country_event = {
 			}
 		}
 	}
-
 	mean_time_to_happen = {
 		months = 1
 	}
-
 	immediate = {
 		# Custodian is asked first, if one exists
 		if = {
@@ -1263,7 +1219,6 @@ country_event = {
 country_event = {
 	id = war_in_heaven.13
 	title = war_in_heaven.13.name
-
 	desc = {
 		text = war_in_heaven.13.desc
 		trigger = {
@@ -1274,7 +1229,6 @@ country_event = {
 			}
 		}
 	}
-
 	desc = {
 		text = war_in_heaven.13.desc2
 		trigger = {
@@ -1283,12 +1237,10 @@ country_event = {
 			is_federation_leader = yes
 		}
 	}
-
 	desc = {
 		text = war_in_heaven.13.desc3
 		trigger = { is_galactic_custodian = yes }
 	}
-
 	picture = {
 		trigger = {
 			count_country = {
@@ -1301,7 +1253,6 @@ country_event = {
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}
-
 	picture = {
 		trigger = {
 			any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes }
@@ -1316,7 +1267,6 @@ country_event = {
 	immediate = {
 		set_country_flag = war_in_heaven_nonaligned_league_check
 	}
-
 	option = {
 		name = war_in_heaven.13.a
 		ai_chance = { factor = 100 }
@@ -1348,10 +1298,7 @@ country_event = {
 			leave_alliance = { override_requirements = yes }
 		}
 		hidden_effect = {
-			set_timed_country_flag = {
-				flag = war_in_heaven_nonaligned_league_timer
-				months = 6
-			}
+			set_timed_country_flag = { flag = war_in_heaven_nonaligned_league_timer months = 6 }
 			set_country_flag = war_in_heaven_league_leader
 			set_global_flag = war_in_heaven_nonaligned_league
 			remove_global_flag = war_in_heaven_seeking_league_leader
@@ -1400,7 +1347,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = war_in_heaven.13.b
 		ai_chance = { factor = 1 }
@@ -1457,11 +1403,9 @@ country_event = {
 			}
 		}
 	}
-
 	mean_time_to_happen = {
 		months = 1
 	}
-
 	immediate = {
 		set_country_flag = war_in_heaven_nonaligned_league_check
 		random_playable_country = {
@@ -1479,7 +1423,6 @@ country_event = {
 	id = war_in_heaven.15
 	title = war_in_heaven.15.name
 	desc = war_in_heaven.15.desc
-
 	picture = {
 		trigger = {
 			count_country = {
@@ -1492,7 +1435,6 @@ country_event = {
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}
-
 	picture = {
 		trigger = {
 			any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes }
@@ -1510,7 +1452,6 @@ country_event = {
 			NOT = { has_country_flag = formed_nonaligned_league }
 		}
 	}
-
 	option = {
 		name = war_in_heaven.15.a
 		ai_chance = { factor = 100 }
@@ -1630,7 +1571,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = war_in_heaven.15.b
 		ai_chance = {
@@ -1657,10 +1597,7 @@ country_event = {
 		}
 		hidden_effect = {
 			from = {
-				add_opinion_modifier = {
-					who = root
-					modifier = opinion_non_aligned_league_declined
-				}
+				add_opinion_modifier = { who = root modifier = opinion_non_aligned_league_declined }
 			}
 			from = {
 				if = {
@@ -1676,7 +1613,6 @@ country_event = {
 	id = war_in_heaven.16
 	title = war_in_heaven.16.name
 	desc = war_in_heaven.16.desc
-
 	picture = {
 		trigger = {
 			count_country = {
@@ -1689,7 +1625,6 @@ country_event = {
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}
-
 	picture = {
 		trigger = {
 			any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes }
@@ -1719,15 +1654,12 @@ country_event = {
 			has_country_flag = sleepers_awake_ancient_rival
 		}
 	}
-
 	mean_time_to_happen = {
 		months = 3
 	}
-
 	immediate = {
 		set_global_flag = war_in_heaven_nonaligned_league_war
 	}
-
 	option = {
 		name = war_in_heaven.16.a
 		every_country = {
@@ -1817,7 +1749,6 @@ country_event = {
 	id = war_in_heaven.18
 	title = war_in_heaven.18.name
 	desc = war_in_heaven.18.desc
-
 	picture = {
 		trigger = {
 			count_country = {
@@ -1830,7 +1761,6 @@ country_event = {
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}
-
 	picture = {
 		trigger = {
 			any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes }
@@ -1841,7 +1771,6 @@ country_event = {
 	show_sound = event_alien_signal
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = war_in_heaven.18.a
 	}
@@ -1850,14 +1779,10 @@ country_event = {
 country_event = {
 	id = war_in_heaven.19
 	title = war_in_heaven.19.name
-
 	desc = {
 		text = war_in_heaven.19.desc
-		trigger = {
-			from = { has_federation = no }
-		}
+		trigger = { from = { has_federation = no } }
 	}
-
 	desc = {
 		text = war_in_heaven.19.desc3
 		trigger = {
@@ -1865,12 +1790,10 @@ country_event = {
 			NOT = { is_in_federation_with = from }
 		}
 	}
-
 	desc = {
 		text = war_in_heaven.19.desc2
 		trigger = { is_in_federation_with = from }
 	}
-
 	picture = {
 		trigger = {
 			count_country = {
@@ -1883,7 +1806,6 @@ country_event = {
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}
-
 	picture = {
 		trigger = {
 			any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes }
@@ -1898,7 +1820,6 @@ country_event = {
 	immediate = {
 		set_country_flag = war_in_heaven_nonaligned_league_check
 	}
-
 	option = {
 		name = war_in_heaven.19.a
 		trigger = {
@@ -1910,7 +1831,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = { is_in_federation_with = from }
 		name = war_in_heaven.19.a2
@@ -1920,14 +1840,12 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		trigger = {
 			NOT = { is_in_federation_with = from }
 		}
 		name = war_in_heaven.19.b
 	}
-
 	option = {
 		trigger = { is_in_federation_with = from is_subject = no }
 		name = war_in_heaven.19.b2
@@ -1940,7 +1858,6 @@ country_event = {
 	id = war_in_heaven.20
 	title = war_in_heaven.20.name
 	desc = war_in_heaven.20.desc
-
 	picture = {
 		trigger = {
 			count_country = {
@@ -1953,7 +1870,6 @@ country_event = {
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}
-
 	picture = {
 		trigger = {
 			any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes }
@@ -1964,7 +1880,6 @@ country_event = {
 	show_sound = event_alien_signal
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = war_in_heaven.20.a
 	}
@@ -1974,7 +1889,6 @@ country_event = {
 	id = war_in_heaven.21
 	title = war_in_heaven.21.name
 	desc = war_in_heaven.21.desc
-
 	picture = {
 		trigger = {
 			count_country = {
@@ -1987,7 +1901,6 @@ country_event = {
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}
-
 	picture = {
 		trigger = {
 			any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes }
@@ -1998,7 +1911,6 @@ country_event = {
 	show_sound = event_alien_signal
 	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = war_in_heaven.21.a
 	}
@@ -2007,21 +1919,14 @@ country_event = {
 country_event = {
 	id = war_in_heaven.22
 	title = war_in_heaven.22.name
-
 	desc = {
 		text = war_in_heaven.22.desc
-		trigger = {
-			from = { has_federation = no }
-		}
+		trigger = { from = { has_federation = no } }
 	}
-
 	desc = {
 		text = war_in_heaven.22.desc2
-		trigger = {
-			from = { has_federation = yes }
-		}
+		trigger = { from = { has_federation = yes } }
 	}
-
 	picture = {
 		trigger = {
 			count_country = {
@@ -2034,7 +1939,6 @@ country_event = {
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}
-
 	picture = {
 		trigger = {
 			any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes }
@@ -2049,9 +1953,7 @@ country_event = {
 	immediate = {
 		set_country_flag = war_in_heaven_nonaligned_league_check
 	}
-
 	option = {
 		name = war_in_heaven.22.a
 	}
 }
-

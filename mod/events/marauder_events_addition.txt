@@ -290,11 +290,7 @@ country_event = {
 						}
 					}
 					else = {
-						fleet_event = {
-							id = marauder.29
-							scopes = { from = event_target:marauder_target }
-							days = 1
-						}
+						fleet_event = { id = marauder.29 scopes = { from = event_target:marauder_target } days = 1 }
 					}
 					prev = {
 						set_faction_hostility = {
@@ -538,24 +534,14 @@ fleet_event = {
 								arrival_effect = marauder_path_attack
 							}
 						}
-						fleet_event = {
-							id = marauder.29
-							days = 100
-							random = 25
-							scopes = { from = from }
-						}
+						fleet_event = { id = marauder.29 days = 100 random = 25 scopes = { from = from } }
 					}
 					log = "\\[Root.Owner.GetName] take new raid target [This.GetName]"
 				}
 			}
 		}
 		else = {
-			fleet_event = {
-				id = marauder.27
-				days = 100
-				random = 25
-				scopes = { from = from }
-			}
+			fleet_event = { id = marauder.27 days = 100 random = 25 scopes = { from = from } }
 			log = "Fallback jump marauder fleet [This.GetName]"
 		}
 	}
@@ -619,18 +605,12 @@ planet_event = {
 				}
 				from = { is_default_or_fallen = yes }
 			}
-			planet_event = {
-				id = marauder.103
-				days = 7
-				scopes = { from = event_target:marauder_country }
-			}
+			planet_event = { id = marauder.103 days = 7 scopes = { from = event_target:marauder_country } }
 		}
 		else_if = {
 			limit = {
 				OR = {
-					NOT = {
-						from = { has_country_flag = under_marauder_attack }
-					}
+					NOT = { from = { has_country_flag = under_marauder_attack } }
 					AND = {
 						is_occupied_flag = yes
 						exists = fromfrom
@@ -684,10 +664,7 @@ planet_event = {
 					has_global_flag = gf_great_khan_active
 				}
 				event_target:marauder_country = {
-					country_event = {
-						id = khan.308
-						scopes = { from = event_target:marauder_employer }
-					}
+					country_event = { id = khan.308 scopes = { from = event_target:marauder_employer } }
 				}
 			}
 			### Search New Target
@@ -712,10 +689,7 @@ planet_event = {
 							NOR = {
 								has_country_flag = under_marauder_attack
 								has_country_flag = raid_target_of@event_target:marauder_country
-								has_relation_flag = {
-									who = event_target:marauder_country
-									flag = current_hired_target
-								}
+								has_relation_flag = { who = event_target:marauder_country flag = current_hired_target }
 							}
 						}
 						AND = {
@@ -739,10 +713,7 @@ planet_event = {
 						is_default_or_fallen = yes
 						has_country_flag = under_marauder_attack
 						has_country_flag = raid_target_of@event_target:marauder_country
-						has_relation_flag = {
-							who = event_target:marauder_country
-							flag = current_hired_target
-						}
+						has_relation_flag = { who = event_target:marauder_country flag = current_hired_target }
 					}
 					save_event_target_as = raid_victim
 				}
@@ -854,10 +825,7 @@ planet_event = {
 								}
 							}
 							else = {
-								fleet_event = {
-									id = marauder.29
-									scopes = { from = event_target:raid_victim }
-								}
+								fleet_event = { id = marauder.29 scopes = { from = event_target:raid_victim } }
 							}
 						}
 					}
@@ -871,11 +839,7 @@ planet_event = {
 					}
 					log = "No new Marauder Raid Target found, return home"
 					event_target:raiding_fleet = {
-						fleet_event = {
-							id = marauder.110
-							days = 14
-							scopes = { from = event_target:raid_victim }
-						}
+						fleet_event = { id = marauder.110 days = 14 scopes = { from = event_target:raid_victim } }
 					}
 				}
 				# break = yes				# Target not valid anymore
@@ -902,6 +866,7 @@ planet_event = {
 
 # Vfix: distance source scope
 ### Pirates: The Bemat Thalassocracy (by Gemma Thomson) ###
+
 namespace = pirate
 # Take pirate starbase (on_ship_disabled - otherwise cannot be conquered).
 # This = Ship

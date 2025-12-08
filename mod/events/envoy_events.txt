@@ -62,10 +62,7 @@ country_event = {
 					}
 				}
 			}
-			country_event = {
-				id = envoy_events.1
-				scopes = { from = from } # i.e. don't push back one From. That would break EVERYTHING.
-			}
+			country_event = { id = envoy_events.1 scopes = { from = from } } # i.e. don't push back one From. That would break EVERYTHING.
 			save_event_target_as = offended_party
 		}
 		set_espionage_diplo_incident_success_flag = { FLAG = insulting_envoy }
@@ -136,15 +133,11 @@ country_event = {
 		}
 		ruler.species = { save_event_target_as = ruler_species }
 	}
-
 	option = {
 		name = envoy_events.1.A
 		add_resource = { influence = 30 }
 		tooltip = {
-			add_opinion_modifier = {
-				who = event_target:envoy_source
-				modifier = opinion_envoy_insult_taken
-			}
+			add_opinion_modifier = { who = event_target:envoy_source modifier = opinion_envoy_insult_taken }
 		}
 		hidden_effect = {
 			set_country_flag = envoy_insult_taken
@@ -169,21 +162,16 @@ country_event = {
 			modifier = { factor = 2 is_rival = event_target:envoy_source }
 		}
 	}
-
 	option = {
 		name = envoy_events.1.B
 		add_modifier = { modifier = xeno_comedy_envoy years = 10 }
 		tooltip = {
-			add_opinion_modifier = {
-				who = event_target:envoy_source
-				modifier = opinion_envoy_insult_laughed_at
-			}
+			add_opinion_modifier = { who = event_target:envoy_source modifier = opinion_envoy_insult_laughed_at }
 		}
 		hidden_effect = {
 			set_country_flag = envoy_insult_laughed_at
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			event_target:envoy_source = {
@@ -197,14 +185,12 @@ country_event = {
 country_event = {
 	id = envoy_events.2
 	title = envoy_events.2.name
-
 	desc = {
 		text = envoy_events.2.desc.neg
 		trigger = {
 			from = { has_country_flag = envoy_insult_taken }
 		}
 	}
-
 	desc = {
 		text = envoy_events.2.desc.pos
 		trigger = {
@@ -215,7 +201,6 @@ country_event = {
 	picture = GFX_evt_assembly_fight
 	show_sound = event_assembly_fight
 	is_triggered_only = yes
-
 	option = {
 		name = UNFORTUNATE
 		trigger = {
@@ -226,7 +211,6 @@ country_event = {
 		}
 		add_intel = { who = from amount = -10 }
 	}
-
 	option = {
 		name = envoy_events.2.B
 		trigger = {
@@ -237,7 +221,6 @@ country_event = {
 		}
 		add_intel = { who = from amount = 10 }
 	}
-
 	after = {
 		hidden_effect = {
 			from = {
@@ -252,17 +235,14 @@ country_event = {
 country_event = {
 	id = envoy_events.3
 	title = envoy_events.3.name
-
 	desc = {
 		text = envoy_events.3.desc
 		trigger = { is_gestalt = no }
 	}
-
 	desc = {
 		text = envoy_events.3.desc.hive
 		trigger = { is_hive_empire = yes }
 	}
-
 	desc = {
 		text = envoy_events.3.desc.machine
 		trigger = { is_machine_empire = yes }
@@ -353,7 +333,6 @@ country_event = {
 		}
 		set_espionage_diplo_incident_success_flag = { FLAG = galactic_comedy }
 	}
-
 	option = {
 		name = {
 			text = envoy_events.3.A
@@ -386,7 +365,6 @@ country_event = {
 			years = 10
 		}
 	}
-
 	option = {
 		name = {
 			text = envoy_events.3.C1
@@ -411,17 +389,14 @@ country_event = {
 country_event = {
 	id = envoy_events.4
 	title = envoy_events.4.name
-
 	desc = {
 		text = envoy_events.4.desc
 		trigger = { is_gestalt = no }
 	}
-
 	desc = {
 		text = envoy_events.4.desc.hive
 		trigger = { is_hive_empire = yes }
 	}
-
 	desc = {
 		text = envoy_events.4.desc.machine
 		trigger = { is_machine_empire = yes }
@@ -464,7 +439,6 @@ country_event = {
 			set_leader_flag = respected_envoy
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		add_modifier = {
@@ -533,7 +507,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = envoy_events.5.A
 		add_resource = { influence = -30 }
@@ -549,7 +522,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = envoy_events.5.B
 		tooltip = {
@@ -607,7 +579,6 @@ country_event = {
 	picture = GFX_evt_assembly_fight
 	show_sound = event_assembly_fight
 	is_triggered_only = yes
-
 	option = {
 		name = envoy_events.6.A
 		add_opinion_modifier = { who = from modifier = opinion_kills_envoys }
@@ -640,9 +611,7 @@ country_event = {
 			has_country_flag = recent_envoy_event
 		}
 		any_envoy = {
-			NOT = {
-				has_envoy_task = { task = none }
-			}
+			NOT = { has_envoy_task = { task = none } }
 			OR = {
 				has_envoy_task = { task = harm_relations }
 				has_envoy_task = { task = improve_relations }
@@ -674,9 +643,7 @@ country_event = {
 		set_timed_country_flag = { flag = recent_envoy_event years = 15 }
 		random_envoy = {
 			limit = {
-				NOT = {
-					has_envoy_task = { task = none }
-				}
+				NOT = { has_envoy_task = { task = none } }
 				OR = {
 					has_envoy_task = { task = harm_relations }
 					has_envoy_task = { task = improve_relations }
@@ -747,7 +714,6 @@ country_event = {
 		}
 		set_espionage_diplo_incident_success_flag = { FLAG = eloping_envoy }
 	}
-
 	option = {
 		name = envoy_events.7.A
 		trigger = {
@@ -776,7 +742,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = envoy_events.7.B
 		custom_tooltip = envoy_events.7.B.tooltip
@@ -801,7 +766,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = envoy_events.7.D
 		add_modifier = { modifier = diplo_corps_lost_control years = 10 }
@@ -816,7 +780,6 @@ country_event = {
 	desc = envoy_events.8.desc
 	show_sound = event_default
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = from
 		planet_background = from
@@ -830,7 +793,6 @@ country_event = {
 	trigger = {
 		exists = from
 	}
-
 	option = {
 		name = envoy_events.8.A
 		tooltip = {
@@ -862,7 +824,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = envoy_events.8.B
 		from = {
@@ -883,7 +844,6 @@ country_event = {
 	desc = envoy_events.9.desc
 	show_sound = event_default
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = from
 		planet_background = from
@@ -893,7 +853,6 @@ country_event = {
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = envoy_events.9.A
 		from = {
@@ -909,7 +868,6 @@ country_event = {
 	desc = envoy_events.10.desc
 	show_sound = event_default
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = from
 		planet_background = from
@@ -919,13 +877,11 @@ country_event = {
 	}
 
 	is_triggered_only = yes
-
 	option = { # ah well
 		name = envoy_events.10.A
 		add_modifier = { modifier = diplo_corps_lost_control years = 10 }
 		ai_chance = { factor = 2 }
 	}
-
 	option = { # send in the special ops
 		name = envoy_events.10.B
 		custom_tooltip = envoy_events.10.B.tooltip1
@@ -1032,7 +988,6 @@ country_event = {
 	picture = GFX_evt_operative_chase
 	show_sound = event_default
 	is_triggered_only = yes
-
 	option = {
 		name = envoy_events.11.A
 		add_modifier = { modifier = cannot_protect_asylum years = 10 }
@@ -1053,7 +1008,6 @@ country_event = {
 	picture = GFX_evt_operative_chase
 	show_sound = event_celebration
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		add_resource = { influence = 30 }
@@ -1071,7 +1025,6 @@ country_event = {
 	picture = GFX_evt_operative_chase
 	show_sound = event_default
 	is_triggered_only = yes
-
 	option = {
 		name = envoy_events.13.A
 		tooltip = {
@@ -1095,7 +1048,6 @@ country_event = {
 	picture = GFX_evt_operative_chase
 	show_sound = event_air_raid_siren
 	is_triggered_only = yes
-
 	option = {
 		name = UNFORTUNATE
 		add_modifier = { modifier = failed_special_ops_mission years = 10 }
@@ -1152,7 +1104,6 @@ country_event = {
 			save_event_target_as = event_envoy
 		}
 	}
-
 	option = {
 		name = envoy_events.15.A
 		every_playable_country = {
@@ -1296,7 +1247,6 @@ country_event = {
 country_event = {
 	id = envoy_events.17
 	title = envoy_events.17.name
-
 	desc = {
 		text = envoy_events.17.desc.militarist
 		trigger = {
@@ -1304,7 +1254,6 @@ country_event = {
 			event_target:dispute_winner = { is_pacifist = yes }
 		}
 	}
-
 	desc = {
 		text = envoy_events.17.desc.pacifist
 		trigger = {
@@ -1312,7 +1261,6 @@ country_event = {
 			event_target:dispute_winner = { is_militarist = yes }
 		}
 	}
-
 	desc = {
 		text = envoy_events.17.desc.spiritualist
 		trigger = {
@@ -1320,7 +1268,6 @@ country_event = {
 			event_target:dispute_winner = { is_materialist = yes }
 		}
 	}
-
 	desc = {
 		text = envoy_events.17.desc.materialist
 		trigger = {
@@ -1328,7 +1275,6 @@ country_event = {
 			event_target:dispute_winner = { is_spiritualist = yes }
 		}
 	}
-
 	desc = {
 		text = envoy_events.17.desc.xenophile
 		trigger = {
@@ -1336,7 +1282,6 @@ country_event = {
 			event_target:dispute_winner = { is_xenophobe = yes }
 		}
 	}
-
 	desc = {
 		text = envoy_events.17.desc.xenophobe
 		trigger = {
@@ -1344,7 +1289,6 @@ country_event = {
 			event_target:dispute_winner = { is_xenophile = yes }
 		}
 	}
-
 	desc = {
 		text = envoy_events.17.desc.egalitarian
 		trigger = {
@@ -1352,7 +1296,6 @@ country_event = {
 			event_target:dispute_winner = { is_authoritarian = yes }
 		}
 	}
-
 	desc = {
 		text = envoy_events.17.desc.authoritarian
 		trigger = {
@@ -1364,7 +1307,6 @@ country_event = {
 	picture = GFX_evt_voting
 	show_sound = event_assembly_fight
 	is_triggered_only = yes
-
 	option = {
 		name = envoy_events.17.A
 		tooltip = {
@@ -1376,7 +1318,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = envoy_events.17.B
 		federation = { add_cohesion = 25 }
@@ -1442,7 +1383,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = {
 			text = envoy_events.17.C1
@@ -1466,7 +1406,6 @@ country_event = {
 country_event = {
 	id = envoy_events.18
 	title = envoy_events.18.name
-
 	desc = {
 		text = envoy_events.18.desc.militarist
 		trigger = {
@@ -1474,7 +1413,6 @@ country_event = {
 			event_target:dispute_loser = { is_pacifist = yes }
 		}
 	}
-
 	desc = {
 		text = envoy_events.18.desc.pacifist
 		trigger = {
@@ -1482,7 +1420,6 @@ country_event = {
 			event_target:dispute_loser = { is_militarist = yes }
 		}
 	}
-
 	desc = {
 		text = envoy_events.18.desc.spiritualist
 		trigger = {
@@ -1490,7 +1427,6 @@ country_event = {
 			event_target:dispute_loser = { is_materialist = yes }
 		}
 	}
-
 	desc = {
 		text = envoy_events.18.desc.materialist
 		trigger = {
@@ -1498,7 +1434,6 @@ country_event = {
 			event_target:dispute_loser = { is_spiritualist = yes }
 		}
 	}
-
 	desc = {
 		text = envoy_events.18.desc.xenophile
 		trigger = {
@@ -1506,7 +1441,6 @@ country_event = {
 			event_target:dispute_loser = { is_xenophobe = yes }
 		}
 	}
-
 	desc = {
 		text = envoy_events.18.desc.xenophobe
 		trigger = {
@@ -1514,7 +1448,6 @@ country_event = {
 			event_target:dispute_loser = { is_xenophile = yes }
 		}
 	}
-
 	desc = {
 		text = envoy_events.18.desc.egalitarian
 		trigger = {
@@ -1522,7 +1455,6 @@ country_event = {
 			event_target:dispute_loser = { is_authoritarian = yes }
 		}
 	}
-
 	desc = {
 		text = envoy_events.18.desc.authoritarian
 		trigger = {
@@ -1534,7 +1466,6 @@ country_event = {
 	picture = GFX_evt_voting
 	show_sound = event_assembly_fight
 	is_triggered_only = yes
-
 	option = {
 		name = envoy_events.18.A
 		from = {
@@ -1547,7 +1478,6 @@ country_event = {
 country_event = {
 	id = envoy_events.19
 	title = envoy_events.19.name
-
 	desc = {
 		text = envoy_events.19.desc.militarist
 		trigger = {
@@ -1555,7 +1485,6 @@ country_event = {
 			event_target:dispute_loser = { is_pacifist = yes }
 		}
 	}
-
 	desc = {
 		text = envoy_events.19.desc.pacifist
 		trigger = {
@@ -1563,7 +1492,6 @@ country_event = {
 			event_target:dispute_loser = { is_militarist = yes }
 		}
 	}
-
 	desc = {
 		text = envoy_events.19.desc.spiritualist
 		trigger = {
@@ -1571,7 +1499,6 @@ country_event = {
 			event_target:dispute_loser = { is_materialist = yes }
 		}
 	}
-
 	desc = {
 		text = envoy_events.19.desc.materialist
 		trigger = {
@@ -1579,7 +1506,6 @@ country_event = {
 			event_target:dispute_loser = { is_spiritualist = yes }
 		}
 	}
-
 	desc = {
 		text = envoy_events.19.desc.xenophile
 		trigger = {
@@ -1587,7 +1513,6 @@ country_event = {
 			event_target:dispute_loser = { is_xenophobe = yes }
 		}
 	}
-
 	desc = {
 		text = envoy_events.19.desc.xenophobe
 		trigger = {
@@ -1595,7 +1520,6 @@ country_event = {
 			event_target:dispute_loser = { is_xenophile = yes }
 		}
 	}
-
 	desc = {
 		text = envoy_events.19.desc.egalitarian
 		trigger = {
@@ -1603,7 +1527,6 @@ country_event = {
 			event_target:dispute_loser = { is_authoritarian = yes }
 		}
 	}
-
 	desc = {
 		text = envoy_events.19.desc.authoritarian
 		trigger = {
@@ -1615,7 +1538,6 @@ country_event = {
 	picture = GFX_evt_voting
 	show_sound = event_assembly_fight
 	is_triggered_only = yes
-
 	option = {
 		name = envoy_events.19.A
 		add_resource = { influence = 25 }
@@ -1687,7 +1609,6 @@ country_event = {
 country_event = {
 	id = envoy_events.100
 	title = envoy_events.100.name
-
 	desc = {
 		text = envoy_events.100.desc.regular
 		trigger = {
@@ -1699,7 +1620,6 @@ country_event = {
 			event_target:scandalous_insult_country = { is_gestalt = no }
 		}
 	}
-
 	desc = {
 		text = envoy_events.100.desc.gestalt
 		trigger = {
@@ -1711,7 +1631,6 @@ country_event = {
 			event_target:scandalous_insult_country = { is_gestalt = yes }
 		}
 	}
-
 	desc = {
 		text = envoy_events.100.desc.hostile
 		trigger = {
@@ -1788,13 +1707,9 @@ country_event = {
 		set_timed_country_flag = { flag = recent_envoy_event years = 6 }
 		set_espionage_diplo_incident_success_flag = { FLAG = insulting_envoy }
 	}
-
 	option = { # Take offence (mirrors operation.3011)
 		name = envoy_events.100.a
-		add_opinion_modifier = {
-			who = event_target:scandalous_insult_country
-			modifier = opinion_smear_campaign_insulted
-		}
+		add_opinion_modifier = { who = event_target:scandalous_insult_country modifier = opinion_smear_campaign_insulted }
 		if = {
 			limit = {
 				event_target:scandalous_insult_country = {
@@ -1834,7 +1749,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Ignore
 		name = {
 			text = envoy_events.100.b
@@ -1874,7 +1788,6 @@ country_event = {
 	trigger = {
 		exists = from
 	}
-
 	option = {
 		name = {
 			text = envoy_events.101.a
@@ -1890,9 +1803,7 @@ country_event = {
 			}
 		}
 		if = {
-			limit = {
-				root = { is_overlord_to = from }
-			}
+			limit = { root = { is_overlord_to = from } }
 			tooltip = {
 				random_agreement = {
 					limit = {
@@ -1904,9 +1815,7 @@ country_event = {
 			}
 		}
 		if = {
-			limit = {
-				from = { is_overlord_to = root }
-			}
+			limit = { from = { is_overlord_to = root } }
 			tooltip = {
 				random_agreement = {
 					limit = {
@@ -1953,7 +1862,6 @@ country_event = {
 		}
 		set_espionage_diplo_incident_success_flag = { FLAG = galcom_lobbying }
 	}
-
 	option = {
 		name = envoy_events.200.A
 		add_monthly_resource_mult = {
@@ -1963,7 +1871,6 @@ country_event = {
 		}
 		add_modifier = { modifier = beholden_to_special_interests years = 10 }
 	}
-
 	option = {
 		name = envoy_events.3.C1
 		trigger = { # Vfix: Unable to add trait for?
@@ -2039,7 +1946,6 @@ country_event = {
 		}
 		set_espionage_diplo_incident_success_flag = { FLAG = insulting_envoy }
 	}
-
 	option = {
 		name = {
 			trigger = { is_xenophobe = no is_gestalt = no }
@@ -2079,13 +1985,9 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = envoy_events.3.C1
-		event_target:event_envoy = {
-			unassign_leader = this
-			set_cooldown = @envoy_punishment_cooldown
-		}
+		event_target:event_envoy = { unassign_leader = this set_cooldown = @envoy_punishment_cooldown }
 	}
 }
 
@@ -2093,7 +1995,6 @@ country_event = {
 country_event = {
 	id = envoy_events.210
 	title = envoy_events.210.name
-
 	desc = {
 		trigger = {
 			switch = {
@@ -2333,7 +2234,6 @@ country_event = {
 		}
 		set_espionage_diplo_incident_success_flag = { FLAG = wayward_envoy }
 	}
-
 	option = {
 		name = envoy_events.210.A
 		switch = {
@@ -2394,15 +2294,10 @@ country_event = {
 		}
 		ai_chance = { factor = 0 }
 	}
-
 	option = {
 		name = envoy_events.3.C1
-		event_target:event_envoy = {
-			unassign_leader = this
-			set_cooldown = @envoy_punishment_cooldown
-		}
+		event_target:event_envoy = { unassign_leader = this set_cooldown = @envoy_punishment_cooldown }
 	}
-
 	after = {
 		remove_country_flag = envoy_event_authoritarian
 		remove_country_flag = envoy_event_egalitarian
@@ -2526,7 +2421,6 @@ country_event = {
 		}
 		set_espionage_diplo_incident_success_flag = { FLAG = substance_abuse }
 	}
-
 	option = {
 		name = envoy_events.215.A
 		custom_tooltip = envoy_events.215.A.tooltip
@@ -2537,7 +2431,6 @@ country_event = {
 		}
 		add_modifier = { modifier = diplo_corps_lost_control years = 10 }
 	}
-
 	option = {
 		name = envoy_events.3.C1
 		event_target:event_envoy = {
@@ -2551,7 +2444,6 @@ country_event = {
 country_event = {
 	id = envoy_events.220
 	title = envoy_events.220.name
-
 	desc = {
 		trigger = {
 			hidden:event_target:offended_party = {
@@ -2630,7 +2522,6 @@ country_event = {
 		}
 		set_espionage_diplo_incident_success_flag = { FLAG = insulting_envoy }
 	}
-
 	option = {
 		name = {
 			trigger = { is_xenophobe = no is_gestalt = no }
@@ -2670,13 +2561,9 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = envoy_events.3.C1
-		event_target:event_envoy = {
-			unassign_leader = this
-			set_cooldown = @envoy_punishment_cooldown
-		}
+		event_target:event_envoy = { unassign_leader = this set_cooldown = @envoy_punishment_cooldown }
 	}
 }
 
@@ -2738,7 +2625,6 @@ country_event = {
 		}
 		set_espionage_diplo_incident_success_flag = { FLAG = salacious_affair }
 	}
-
 	option = {
 		name = envoy_events.225.A
 		custom_tooltip = envoy_events.225.A.tooltip
@@ -2761,7 +2647,6 @@ country_event = {
 		}
 		ai_chance = { factor = 3 }
 	}
-
 	option = {
 		name = envoy_events.225.B
 		event_target:event_envoy = {
@@ -2799,7 +2684,6 @@ leader_event = {
 			save_event_target_as = event_envoy
 		}
 	} # Vfix
-
 	option = {
 		name = envoy_events.230.A
 		custom_tooltip = envoy_events.225.A.tooltip
@@ -2822,4 +2706,3 @@ leader_event = {
 		}
 	}
 }
-

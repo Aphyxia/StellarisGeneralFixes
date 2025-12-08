@@ -9,17 +9,16 @@
 namespace = galactic_features
 
 ### Guardians of Zanaam
+
 ship_event = {
 	id = galactic_features.2
 	title = "galactic_features.2.name"
 	desc = "galactic_features.2.desc"
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		room = no_video_feed_room
 	}
-
 	trigger = {
 		from = { has_star_flag = guardians_of_zanaam }
 		NOT = { has_global_flag = guardians_zanaam_destroyed }
@@ -35,7 +34,6 @@ ship_event = {
 			establish_communications_no_message = root.owner
 		}
 	}
-
 	option = {
 		name = "galactic_features.2.a"
 	}
@@ -63,9 +61,8 @@ country_event = {
 	title = "preftl.1.name"
 	desc = "galactic_features.101.desc"
 	picture = GFX_evt_medieval_alien_civilization
-	location = FROM
+	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = INTERESTING
 	}
@@ -77,9 +74,8 @@ country_event = {
 	title = "preftl.1.name"
 	desc = "galactic_features.102.desc"
 	picture = GFX_evt_metropolis
-	location = FROM
+	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = INTERESTING
 	}
@@ -91,9 +87,8 @@ country_event = {
 	title = "preftl.1.name"
 	desc = "galactic_features.103.desc"
 	picture = GFX_evt_metropolis
-	location = FROM
+	location = from
 	is_triggered_only = yes
-
 	option = {
 		name = INTERESTING
 	}
@@ -105,7 +100,7 @@ ship_event = {
 	title = "anomaly.670.name"
 	desc = "galactic_features.104.desc"
 	picture = GFX_evt_city_ruins
-	location = FROM
+	location = from
 	is_triggered_only = yes
 
 	immediate = {
@@ -119,7 +114,7 @@ ship_event = {
 				trait = trait_adaptive
 				trait = random_presapient_trait
 			}
-			homeworld = FROM
+			homeworld = from
 			sapient = no
 		}
 		from = {
@@ -129,7 +124,6 @@ ship_event = {
 		}
 		owner = { set_country_flag = found_presapients }
 	}
-
 	option = {
 		name = INTERESTING
 	}
@@ -144,10 +138,7 @@ country_event = {
 	trigger = {
 		years_passed > 0 # On-action will cause errors running at game start
 		from = {
-			any_system_planet = {
-				is_planet_class = pc_shielded
-				has_planet_flag = fallen_shield_world
-			}
+			any_system_planet = { is_planet_class = pc_shielded has_planet_flag = fallen_shield_world }
 		}
 		NOT = { has_special_project = FALLEN_SHIELD_PROJECT }
 	}
@@ -185,7 +176,7 @@ ship_event = {
 	title = "galactic_features.300"
 	desc = "galactic_features.300.desc"
 	picture = GFX_evt_shielded_planet
-	location = FROM
+	location = from
 	trackable = yes
 	is_triggered_only = yes
 
@@ -196,7 +187,6 @@ ship_event = {
 	immediate = {
 		from = { save_event_target_as = shielded_planet }
 	}
-
 	option = {
 		name = "galactic_features.300.a"
 		from = {
@@ -207,7 +197,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "galactic_features.300.b"
 	}
@@ -219,7 +208,7 @@ ship_event = {
 	title = "galactic_features.301"
 	desc = "galactic_features.301.desc"
 	picture = GFX_evt_federation_fleet
-	location = FROMFROM
+	location = fromfrom
 	is_triggered_only = yes
 
 	immediate = {
@@ -231,7 +220,6 @@ ship_event = {
 			reset_planet = yes
 		}
 	}
-
 	option = {
 		name = "galactic_features.301.a"
 		hidden_effect = {
@@ -255,7 +243,7 @@ ship_event = {
 								graphical_culture = "fallen_empire_01"
 							}
 						}
-						set_location = FROMFROM
+						set_location = fromfrom
 					}
 				}
 			}
@@ -269,7 +257,7 @@ ship_event = {
 	title = "galactic_features.302"
 	desc = "galactic_features.302.desc"
 	picture = GFX_evt_outpost
-	location = FROMFROM
+	location = fromfrom
 	is_triggered_only = yes
 
 	immediate = {
@@ -288,7 +276,6 @@ ship_event = {
 			reset_planet = yes
 		}
 	}
-
 	option = {
 		name = "galactic_features.302.a"
 		owner = {
@@ -307,7 +294,7 @@ ship_event = {
 	title = "galactic_features.303"
 	desc = "galactic_features.303.desc"
 	picture = GFX_evt_alien_planet
-	location = FROMFROM
+	location = fromfrom
 	is_triggered_only = yes
 
 	immediate = {
@@ -329,7 +316,6 @@ ship_event = {
 		}
 		set_global_flag = met_tuborek
 	}
-
 	option = {
 		name = "galactic_features.303.a"
 		hidden_effect = {
@@ -347,7 +333,9 @@ ship_event = {
 						"null"
 					}
 				}
-				effect = { save_event_target_as = tuborek_country }
+				effect = {
+					save_event_target_as = tuborek_country
+				}
 			}
 			event_target:tuborek_country = {
 				create_leader = {
@@ -393,26 +381,22 @@ country_event = {
 	picture = GFX_leader_recruitment_bg_renowned
 	event_window_type = leader_recruit
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:tuborek_leader
 		room = ethic_spaceship_room
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = "galactic_features.304.a"
 		response_text = "galactic_features.304.a.response"
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = "galactic_features.304.b"
 		response_text = "galactic_features.304.b.response"
 		is_dialog_only = yes
 	}
-
 	option = {
 		tag = hire_leader
 		name = "galactic_features.304.c"
@@ -421,10 +405,11 @@ country_event = {
 				limit = { is_variable_set = paragon_memory_vault }
 				change_variable = { which = paragon_memory_vault value = 1 }
 			}
-			hire_event_leader_effect = { LEADER = tuborek_leader }
+			hire_event_leader_effect = {
+				LEADER = tuborek_leader
+			}
 		}
 	}
-
 	option = {
 		name = galactic_features.304.notinterested
 		custom_tooltip = "galactic_features.304.d"
@@ -439,14 +424,12 @@ country_event = {
 ship_event = {
 	id = galactic_features.305
 	title = "galactic_features.305"
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = no }
 		}
 		text = "galactic_features.305.desc"
 	}
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = yes }
@@ -455,7 +438,7 @@ ship_event = {
 	}
 
 	picture = GFX_evt_alien_planet
-	location = FROMFROM
+	location = fromfrom
 	is_triggered_only = yes
 
 	immediate = {
@@ -480,9 +463,9 @@ ship_event = {
 				create_fleet = {
 					name = "NAME_Exiled_One"
 					effect = {
-						set_owner = PREV
+						set_owner = prev
 						create_ship = { name = "NAME_XELMAGGUS" design = "NAME_Cloud_Entity" }
-						set_location = FROMFROM
+						set_location = fromfrom
 						queue_actions = {
 							repeat = {
 								find_random_system = {
@@ -490,20 +473,17 @@ ship_event = {
 										id = "galactic_features.305.trigger.1"
 										has_planet_class = "pc_gas_giant"
 										distance = {
-											source = FROMFROM
+											source = fromfrom
 											max_distance <= 200
 											min_distance >= 100
 										}
 									}
-									found_system = { move_to = THIS }
+									found_system = { move_to = this }
 								}
 								find_closest_planet = {
-									trigger = {
-										id = "galactic_features.305.trigger.2"
-										is_planet_class = "pc_gas_giant"
-									}
+									trigger = { id = "galactic_features.305.trigger.2" is_planet_class = "pc_gas_giant" }
 									found_planet = {
-										orbit_planet = THIS
+										orbit_planet = this
 										wait = { duration = 200 random = 150 }
 									}
 								}
@@ -514,9 +494,9 @@ ship_event = {
 				create_fleet = {
 					name = "NAME_Exiled_One"
 					effect = {
-						set_owner = PREV
+						set_owner = prev
 						create_ship = { name = "NAME_XILNIAK" design = "NAME_Cloud_Entity" }
-						set_location = FROMFROM
+						set_location = fromfrom
 						queue_actions = {
 							repeat = {
 								find_random_system = {
@@ -524,20 +504,17 @@ ship_event = {
 										id = "galactic_features.305.trigger.3"
 										has_planet_class = "pc_gas_giant"
 										distance = {
-											source = FROMFROMFROM
+											source = fromfromfrom
 											max_distance <= 200
 											min_distance >= 100
 										}
 									}
-									found_system = { move_to = THIS }
+									found_system = { move_to = this }
 								}
 								find_closest_planet = {
-									trigger = {
-										id = "galactic_features.305.trigger.4"
-										is_planet_class = "pc_gas_giant"
-									}
+									trigger = { id = "galactic_features.305.trigger.4" is_planet_class = "pc_gas_giant" }
 									found_planet = {
-										orbit_planet = THIS
+										orbit_planet = this
 										wait = { duration = 200 random = 150 }
 									}
 								}
@@ -548,9 +525,9 @@ ship_event = {
 				create_fleet = {
 					name = "NAME_Exiled_One"
 					effect = {
-						set_owner = PREV
+						set_owner = prev
 						create_ship = { name = "NAME_XADRA" design = "NAME_Cloud_Entity" }
-						set_location = FROMFROM
+						set_location = fromfrom
 						queue_actions = {
 							repeat = {
 								find_random_system = {
@@ -558,20 +535,17 @@ ship_event = {
 										id = "galactic_features.305.trigger.5"
 										has_planet_class = "pc_gas_giant"
 										distance = {
-											source = FROMFROM
+											source = fromfrom
 											max_distance <= 200
 											min_distance >= 100
 										}
 									}
-									found_system = { move_to = THIS }
+									found_system = { move_to = this }
 								}
 								find_closest_planet = {
-									trigger = {
-										id = "galactic_features.305.trigger.6"
-										is_planet_class = "pc_gas_giant"
-									}
+									trigger = { id = "galactic_features.305.trigger.6" is_planet_class = "pc_gas_giant" }
 									found_planet = {
-										orbit_planet = THIS
+										orbit_planet = this
 										wait = { duration = 200 random = 150 }
 									}
 								}
@@ -582,9 +556,9 @@ ship_event = {
 				create_fleet = {
 					name = "NAME_Exiled_One"
 					effect = {
-						set_owner = PREV
+						set_owner = prev
 						create_ship = { name = "NAME_XUNIA" design = "NAME_Cloud_Entity" }
-						set_location = FROMFROM
+						set_location = fromfrom
 						queue_actions = {
 							repeat = {
 								find_random_system = {
@@ -592,20 +566,17 @@ ship_event = {
 										id = "galactic_features.305.trigger.7"
 										has_planet_class = "pc_gas_giant"
 										distance = {
-											source = FROMFROM
+											source = fromfrom
 											max_distance <= 200
 											min_distance >= 100
 										}
 									}
-									found_system = { move_to = THIS }
+									found_system = { move_to = this }
 								}
 								find_closest_planet = {
-									trigger = {
-										id = "galactic_features.305.trigger.8"
-										is_planet_class = "pc_gas_giant"
-									}
+									trigger = { id = "galactic_features.305.trigger.8" is_planet_class = "pc_gas_giant" }
 									found_planet = {
-										orbit_planet = THIS
+										orbit_planet = this
 										wait = { duration = 200 random = 150 }
 									}
 								}
@@ -616,7 +587,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "galactic_features.305.a"
 	}
@@ -628,7 +598,7 @@ ship_event = {
 	title = "galactic_features.350"
 	desc = "galactic_features.350.desc"
 	picture = GFX_evt_star_chart
-	location = ROOT
+	location = root
 	is_triggered_only = yes
 
 	trigger = {
@@ -645,7 +615,6 @@ ship_event = {
 	immediate = {
 		owner = { establish_communications_no_message = event_target:sanctuary }
 	}
-
 	option = {
 		name = "ONSCREEN"
 		hidden_effect = {
@@ -654,7 +623,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "galactic_features.350.b"
 	}
@@ -666,25 +634,21 @@ country_event = {
 	title = "TRANSMISSION"
 	desc = "galactic_features.351.desc"
 	diplomatic = yes
-
 	picture_event_data = {
 		room = no_video_feed_room
 	}
 
 	is_triggered_only = yes
-
 	option = {
 		name = "galactic_features.351.a"
 		response_text = "galactic_features.351.a.response"
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = "galactic_features.351.b"
 		response_text = "galactic_features.351.b.response"
 		is_dialog_only = yes
 	}
-
 	option = {
 		name = "galactic_features.351.c"
 		response_text = "galactic_features.351.c.response"
@@ -794,7 +758,6 @@ country_event = {
 		is_ai = no
 		has_communications = from
 	}
-
 	option = {
 		name = galactic_features.361.a
 		trigger = {
@@ -804,12 +767,10 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = galactic_features.361.a.milit
 		trigger = { is_fanatic_militarist = yes }
 	}
-
 	option = {
 		name = galactic_features.361.a.phobe
 		trigger = {
@@ -819,17 +780,14 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = galactic_features.361.a.phile
 		trigger = { is_fanatic_xenophile = yes }
 	}
-
 	option = {
 		name = galactic_features.361.a.spiri
 		trigger = { is_fanatic_spiritualist = yes }
 	}
-
 	option = {
 		name = galactic_features.361.a.mater
 		trigger = {
@@ -1020,15 +978,15 @@ event = {
 								repeat = {
 									find_closest_planet = {
 										trigger = { id = "greenC.x1.trigger.1" is_planet = event_target:green_trigger_1 }
-										found_planet = { orbit_planet = THIS }
+										found_planet = { orbit_planet = this }
 									}
 									find_closest_planet = {
 										trigger = { id = "greenC.x1.trigger.2" is_planet = event_target:green_trigger_2 }
-										found_planet = { orbit_planet = THIS }
+										found_planet = { orbit_planet = this }
 									}
 									find_closest_planet = {
 										trigger = { id = "greenC.x1.trigger.3" is_planet = event_target:green_trigger_3 }
-										found_planet = { orbit_planet = THIS }
+										found_planet = { orbit_planet = this }
 									}
 								}
 							}
@@ -1090,15 +1048,15 @@ event = {
 								repeat = {
 									find_closest_planet = {
 										trigger = { id = "greenC2.x1.trigger.1" is_planet = event_target:green2_trigger_1 }
-										found_planet = { orbit_planet = THIS }
+										found_planet = { orbit_planet = this }
 									}
 									find_closest_planet = {
 										trigger = { id = "greenC2.x1.trigger.2" is_planet = event_target:green2_trigger_2 }
-										found_planet = { orbit_planet = THIS }
+										found_planet = { orbit_planet = this }
 									}
 									find_closest_planet = {
 										trigger = { id = "greenC2.x1.trigger.3" is_planet = event_target:green2_trigger_3 }
-										found_planet = { orbit_planet = THIS }
+										found_planet = { orbit_planet = this }
 									}
 								}
 							}
@@ -1119,15 +1077,15 @@ event = {
 								repeat = {
 									find_closest_planet = {
 										trigger = { id = "greenC2.x2.trigger.2" is_planet = event_target:green2_trigger_2 }
-										found_planet = { orbit_planet = THIS }
+										found_planet = { orbit_planet = this }
 									}
 									find_closest_planet = {
 										trigger = { id = "greenC2.x2.trigger.3" is_planet = event_target:green2_trigger_3 }
-										found_planet = { orbit_planet = THIS }
+										found_planet = { orbit_planet = this }
 									}
 									find_closest_planet = {
 										trigger = { id = "greenC2.x2.trigger.1" is_planet = event_target:green2_trigger_1 }
-										found_planet = { orbit_planet = THIS }
+										found_planet = { orbit_planet = this }
 									}
 								}
 							}
@@ -1148,15 +1106,15 @@ event = {
 								repeat = {
 									find_closest_planet = {
 										trigger = { id = "greenC2.x3.trigger.3" is_planet = event_target:green2_trigger_3 }
-										found_planet = { orbit_planet = THIS }
+										found_planet = { orbit_planet = this }
 									}
 									find_closest_planet = {
 										trigger = { id = "greenC2.x3.trigger.1" is_planet = event_target:green2_trigger_1 }
-										found_planet = { orbit_planet = THIS }
+										found_planet = { orbit_planet = this }
 									}
 									find_closest_planet = {
 										trigger = { id = "greenC2.x3.trigger.2" is_planet = event_target:green2_trigger_2 }
-										found_planet = { orbit_planet = THIS }
+										found_planet = { orbit_planet = this }
 									}
 								}
 							}
@@ -1430,22 +1388,13 @@ event = {
 						name = "NAME_Crystalline_Elites"
 						effect = {
 							set_owner = event_target:crystal_country
-							create_ship = {
-								name = "NAME_Delta"
-								design = "NAME_Large_Crystal_Entity_Red_Elite"
-							}
-							create_ship = {
-								name = "NAME_Epsilon"
-								design = "NAME_Medium_Crystal_Entity_Blue_Elite"
-							}
+							create_ship = { name = "NAME_Delta" design = "NAME_Large_Crystal_Entity_Red_Elite" }
+							create_ship = { name = "NAME_Epsilon" design = "NAME_Medium_Crystal_Entity_Blue_Elite" }
 							create_ship = {
 								name = "NAME_Omega"
 								design = "NAME_Small_Crystal_Entity_Yellow_Elite"
 							}
-							create_ship = {
-								name = "NAME_Beta"
-								design = "NAME_Large_Crystal_Entity_Blue_Elite"
-							}
+							create_ship = { name = "NAME_Beta" design = "NAME_Large_Crystal_Entity_Blue_Elite" }
 							create_ship = {
 								name = "NAME_Gamma"
 								design = "NAME_Medium_Crystal_Entity_Yellow_Elite"
@@ -1465,14 +1414,8 @@ event = {
 								name = "NAME_Delta"
 								design = "NAME_Large_Crystal_Entity_Yellow_Elite"
 							}
-							create_ship = {
-								name = "NAME_Epsilon"
-								design = "NAME_Medium_Crystal_Entity_Red_Elite"
-							}
-							create_ship = {
-								name = "NAME_Omega"
-								design = "NAME_Small_Crystal_Entity_Blue_Elite"
-							}
+							create_ship = { name = "NAME_Epsilon" design = "NAME_Medium_Crystal_Entity_Red_Elite" }
+							create_ship = { name = "NAME_Omega" design = "NAME_Small_Crystal_Entity_Blue_Elite" }
 							create_ship = { name = "NAME_Beta" design = "NAME_Large_Crystal_Entity_Red_Elite" }
 							create_ship = {
 								name = "NAME_Gamma"
@@ -1489,14 +1432,8 @@ event = {
 						name = "NAME_Crystalline_Elites"
 						effect = {
 							set_owner = event_target:crystal_country
-							create_ship = {
-								name = "NAME_Delta"
-								design = "NAME_Large_Crystal_Entity_Blue_Elite"
-							}
-							create_ship = {
-								name = "NAME_Epsilon"
-								design = "NAME_Medium_Crystal_Entity_Red_Elite"
-							}
+							create_ship = { name = "NAME_Delta" design = "NAME_Large_Crystal_Entity_Blue_Elite" }
+							create_ship = { name = "NAME_Epsilon" design = "NAME_Medium_Crystal_Entity_Red_Elite" }
 							create_ship = {
 								name = "NAME_Omega"
 								design = "NAME_Small_Crystal_Entity_Yellow_Elite"
@@ -1505,10 +1442,7 @@ event = {
 								name = "NAME_Beta"
 								design = "NAME_Large_Crystal_Entity_Yellow_Elite"
 							}
-							create_ship = {
-								name = "NAME_Gamma"
-								design = "NAME_Medium_Crystal_Entity_Blue_Elite"
-							}
+							create_ship = { name = "NAME_Gamma" design = "NAME_Medium_Crystal_Entity_Blue_Elite" }
 							create_ship = { name = "NAME_Psi" design = "NAME_Small_Crystal_Entity_Red_Elite" }
 							set_location = PREVPREV
 							set_fleet_stance = aggressive
@@ -2047,9 +1981,7 @@ event = {
 						count_fleet_in_system = {
 							count = 0
 							limit = {
-								NOT = {
-									owner = { is_country_type = amoeba_garrison }
-								}
+								NOT = { owner = { is_country_type = amoeba_garrison } }
 							}
 						}
 					}
@@ -2200,9 +2132,7 @@ event = {
 	trigger = {
 		NOT = { has_global_flag = tiyanki_home_cleared }
 		exists = event_target:tiyanki_spawn_system
-		event_target:global_event_country = {
-			is_variable_set = general_patch_systems_critters
-		}
+		event_target:global_event_country = { is_variable_set = general_patch_systems_critters }
 		any_country = {
 			is_tiyanki_country_type = yes
 			num_fleets < event_target:global_event_country.general_patch_systems_critters
@@ -2276,19 +2206,16 @@ country_event = {
 country_event = {
 	id = galactic_features.367
 	title = "galactic_features.367.name"
-
 	desc = {
 		trigger = {
 			any_country = { is_country_type = tiyanki num_fleets > 0 }
 		}
 		text = "galactic_features.367.a.desc"
 	}
-
 	desc = {
 		trigger = { has_global_flag = tiyanki_extinct }
 		text = "galactic_features.367.b.desc"
 	}
-
 	desc = {
 		trigger = {
 			count_country = {
@@ -2366,12 +2293,10 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = galactic_features.367.a
 		trigger = { is_same_value = event_target:tiyanki_killer }
 	}
-
 	option = {
 		name = galactic_features.367.b
 		trigger = {
@@ -2379,7 +2304,6 @@ country_event = {
 			is_xenophile = yes
 		}
 	}
-
 	option = {
 		name = galactic_features.367.c
 		trigger = {
@@ -2387,7 +2311,6 @@ country_event = {
 			is_xenophobe = yes
 		}
 	}
-
 	option = {
 		name = UNFORTUNATE
 		trigger = {
@@ -2404,7 +2327,6 @@ country_event = {
 ship_event = {
 	id = galactic_features.368
 	title = "galactic_features.368.name"
-
 	desc = {
 		trigger = {
 			owner = {
@@ -2416,7 +2338,6 @@ ship_event = {
 		}
 		text = "galactic_features.368.desc"
 	}
-
 	desc = {
 		trigger = {
 			owner = {
@@ -2458,7 +2379,6 @@ ship_event = {
 			solar_system = { save_event_target_as = tiyanki_system }
 		}
 	}
-
 	option = {
 		name = FASCINATING
 	}
@@ -2504,7 +2424,6 @@ country_event = {
 country_event = {
 	id = galactic_features.370
 	title = "galactic_features.370.name"
-
 	desc = {
 		trigger = {
 			NOR = {
@@ -2515,7 +2434,6 @@ country_event = {
 		}
 		text = "galactic_features.370.a.desc"
 	}
-
 	desc = {
 		trigger = {
 			any_system = { has_star_flag = elderly_tiyanki_system }
@@ -2566,12 +2484,10 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = galactic_features.367.a
 		trigger = { is_same_value = event_target:tiyanki_killer }
 	}
-
 	option = {
 		name = galactic_features.367.b
 		trigger = {
@@ -2579,7 +2495,6 @@ country_event = {
 			is_xenophile = yes
 		}
 	}
-
 	option = {
 		name = galactic_features.367.c
 		trigger = {
@@ -2587,7 +2502,6 @@ country_event = {
 			is_xenophobe = yes
 		}
 	}
-
 	option = {
 		name = UNFORTUNATE
 		trigger = {
@@ -2607,7 +2521,6 @@ country_event = {
 	desc = "galactic_features.371.desc"
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:upset_elders
 		planet_background = event_target:upset_elders
@@ -2615,7 +2528,6 @@ country_event = {
 		city_level = event_target:upset_elders
 		room = event_target:upset_elders
 	}
-
 	immediate = {
 		if = {
 			limit = {
@@ -2627,17 +2539,14 @@ country_event = {
 			add_opinion_modifier = { who = root modifier = opinion_killed_all_tiyanki_3 }
 		}
 	}
-
 	option = {
 		name = galactic_features.371.a
 		trigger = { is_xenophile = yes }
 	}
-
 	option = {
 		name = galactic_features.371.b
 		trigger = { is_xenophobe = yes }
 	}
-
 	option = {
 		name = galactic_features.371.c
 		trigger = { is_xenophobe = no is_xenophile = no }
@@ -2728,9 +2637,7 @@ country_event = {
 		}
 		else_if = {
 			limit = {
-				NOT = {
-					has_active_event = { galactic_features.385 }
-				}
+				NOT = { has_active_event = { galactic_features.385 } }
 			}
 			country_event = { id = galactic_features.385 days = 1 }
 		}
@@ -2771,7 +2678,6 @@ country_event = {
 			}
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			clear_variable = tiyanki_cow_kills
@@ -2783,7 +2689,6 @@ country_event = {
 			set_faction_hostility = { target = event_target:tiyanki_country set_neutral = yes }
 		}
 	}
-
 	option = {
 		name = galactic_features.385.a
 		custom_tooltip = harvested_tiyanki
@@ -2911,7 +2816,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Kill them
 		name = galactic_features.387.a
 		custom_tooltip = "tiyanki_graveyard_poi_desc"
@@ -2925,12 +2829,9 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # Build lure
 		name = galactic_features.387.b
-		trigger = {
-			owner = { is_homicidal = no }
-		}
+		trigger = { owner = { is_homicidal = no } }
 		enable_special_project = {
 			name = "TIYANKI_LURE"
 			location = event_target:tiyanki_graveyard_asteroid
@@ -2972,7 +2873,6 @@ country_event = {
 	immediate = {
 		remove_point_of_interest = tiyanki_gravekeepers
 	}
-
 	option = {
 		name = INTERESTING
 		hidden_effect = {
@@ -2994,9 +2894,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = {
-			owner = { has_global_flag = tiyanki_graveyard_access }
-		}
+		NOT = { owner = { has_global_flag = tiyanki_graveyard_access } }
 	}
 
 	immediate = {
@@ -3007,7 +2905,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = INTERESTING
 		owner = { end_event_chain = tiyanki_graveyard_chain }
@@ -3050,7 +2947,6 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = INTERESTING
 		custom_tooltip = galactic_features.384.tooltip
@@ -3059,6 +2955,7 @@ ship_event = {
 
 # Cosmic Storms
 ### Debug spawn a random cosmic storm in a random system
+
 event = {
 	id = galactic_features.409
 	hide_window = yes
@@ -3074,6 +2971,7 @@ event = {
 }
 
 ### Spawn Random Cosmic Storm Repeated Yearly (adakkaria_patriotic_institute)
+
 planet_event = {
 	id = galactic_features.411
 	hide_window = yes
@@ -3231,7 +3129,6 @@ country_event = {
 	immediate = {
 		establish_communications_no_message = from
 	}
-
 	option = {
 		name = galactic_features.421.a
 	}
@@ -3310,7 +3207,6 @@ country_event = {
 	show_sound = event_super_explosion
 	location = event_target:vluur_system
 	is_triggered_only = yes
-
 	option = {
 		name = galactic_features.423.a
 		add_resource = { sr_dark_matter = 100 }
@@ -3377,7 +3273,6 @@ fleet_event = {
 ship_event = {
 	id = galactic_features.500
 	title = galactic_features.500.name
-
 	desc = {
 		trigger = {
 			owner = {
@@ -3389,14 +3284,12 @@ ship_event = {
 		}
 		text = galactic_features.500.desc
 	}
-
 	desc = {
 		trigger = {
 			owner = { has_modifier = pacified_amoebas }
 		}
 		text = galactic_features.500.desc.peaceful
 	}
-
 	desc = {
 		trigger = {
 			owner = {
@@ -3424,14 +3317,11 @@ ship_event = {
 			}
 		}
 	}
-
 	option = {
 		name = {
 			text = BATTLESTATIONS
 			trigger = {
-				NOT = {
-					owner = { has_modifier = pacified_amoebas }
-				}
+				NOT = { owner = { has_modifier = pacified_amoebas } }
 			}
 		}
 		name = {
@@ -3468,7 +3358,6 @@ fleet_event = {
 country_event = {
 	id = galactic_features.502
 	title = galactic_features.502.name
-
 	desc = {
 		trigger = {
 			OR = {
@@ -3478,12 +3367,10 @@ country_event = {
 		}
 		text = galactic_features.502.desc
 	}
-
 	desc = {
 		trigger = { has_modifier = pacified_amoebas }
 		text = galactic_features.502.desc.peaceful
 	}
-
 	desc = {
 		trigger = {
 			NOR = {
@@ -3502,7 +3389,6 @@ country_event = {
 	trigger = {
 		intel_level = { level > none system = event_target:amoeba_home_system }
 	}
-
 	option = {
 		name = {
 			text = BATTLESTATIONS
@@ -3526,7 +3412,6 @@ country_event = {
 	picture = GFX_evt_friendly_amoeba
 	show_sound = event_vote
 	is_triggered_only = yes
-
 	option = { # of course
 		name = galactic_features.505.A
 		custom_tooltip = story.107.a.tooltip
@@ -3565,7 +3450,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = { # we will not protect vermin
 		name = galactic_features.505.B
 		custom_tooltip = galactic_features.505.B.tt
@@ -3654,4 +3538,3 @@ fleet_event = {
 		}
 	}
 }
-

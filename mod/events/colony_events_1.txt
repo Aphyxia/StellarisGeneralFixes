@@ -9,6 +9,7 @@
 namespace = colony
 
 ### Migrating Forests
+
 planet_event = {
 	id = colony.1
 	title = "colony.1.name"
@@ -55,7 +56,6 @@ planet_event = {
 		add_modifier = { modifier = "migrating_forests" days = -1 }
 		begin_event_chain = { event_chain = "migrating_forests_chain" target = root }
 	}
-
 	option = {
 		name = colony.1.a
 		tooltip = {
@@ -69,9 +69,7 @@ planet_event = {
 		}
 		if = {
 			limit = {
-				NOT = {
-					owner = { has_civic = civic_environmentalist }
-				}
+				NOT = { owner = { has_civic = civic_environmentalist } }
 			}
 			enable_special_project = {
 				name = "MIGRATING_FORESTS_2_PROJECT"
@@ -80,13 +78,8 @@ planet_event = {
 			}
 		}
 	}
-
 	after = {
-		planet_event = {
-			id = colony.12
-			days = 180
-			random = 2400
-		}
+		planet_event = { id = colony.12 days = 180 random = 2400 }
 	}
 }
 
@@ -100,7 +93,6 @@ planet_event = {
 	location = root
 	event_chain = migrating_forests_chain
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		remove_modifier = "migrating_forests"
@@ -124,24 +116,11 @@ planet_event = {
 			add_modifier = { modifier = "migrating_forests_2" days = -1 }
 		}
 	}
-
 	after = {
 		hidden_effect = {
-			planet_event = {
-				id = colony.9
-				days = 1800
-				random = 5400
-			} # previously MTTH 240 months (20 years)
-			planet_event = {
-				id = colony.10
-				days = 1800
-				random = 5400
-			} # previously MTTH 240 months (20 years)
-			planet_event = {
-				id = colony.11
-				days = 1800
-				random = 5400
-			} # previously MTTH 240 months (20 years)
+			planet_event = { id = colony.9 days = 1800 random = 5400 } # previously MTTH 240 months (20 years)
+			planet_event = { id = colony.10 days = 1800 random = 5400 } # previously MTTH 240 months (20 years)
+			planet_event = { id = colony.11 days = 1800 random = 5400 } # previously MTTH 240 months (20 years)
 		}
 	}
 }
@@ -156,7 +135,6 @@ planet_event = {
 	location = root
 	event_chain = migrating_forests_chain
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		set_planet_flag = burned_forests
@@ -165,29 +143,12 @@ planet_event = {
 			remove_deposit = d_migrating_forests
 		}
 	}
-
 	after = {
 		hidden_effect = {
-			planet_event = {
-				id = colony.4
-				days = 1800
-				random = 5400
-			} # previously MTTH 240 months (20 years)
-			planet_event = {
-				id = colony.6
-				days = 1800
-				random = 5400
-			} # previously MTTH 240 months (20 years)
-			planet_event = {
-				id = colony.7
-				days = 1800
-				random = 5400
-			} # previously MTTH 240 months (20 years)
-			planet_event = {
-				id = colony.8
-				days = 1800
-				random = 5400
-			} # previously MTTH 240 months (20 years)
+			planet_event = { id = colony.4 days = 1800 random = 5400 } # previously MTTH 240 months (20 years)
+			planet_event = { id = colony.6 days = 1800 random = 5400 } # previously MTTH 240 months (20 years)
+			planet_event = { id = colony.7 days = 1800 random = 5400 } # previously MTTH 240 months (20 years)
+			planet_event = { id = colony.8 days = 1800 random = 5400 } # previously MTTH 240 months (20 years)
 		}
 	}
 }
@@ -255,7 +216,6 @@ planet_event = {
 		}
 		set_planet_purge_type = purge_displacement
 	}
-
 	option = {
 		name = colony.4.a
 		custom_tooltip = tree_armies
@@ -283,7 +243,6 @@ country_event = {
 		remove_country_flag = burned_forests_rampaged_country
 		fromfrom = { remove_planet_flag = burned_forests_rampaged_planet }
 	}
-
 	option = {
 		name = colony.5.a
 	}
@@ -319,7 +278,6 @@ planet_event = {
 	immediate = {
 		set_planet_flag = burned_forest_minerals
 	}
-
 	option = {
 		name = EXCELLENT
 		owner = {
@@ -364,7 +322,6 @@ planet_event = {
 	immediate = {
 		set_planet_flag = burned_forest_precious
 	}
-
 	option = {
 		name = EXCELLENT
 		owner = {
@@ -407,7 +364,6 @@ planet_event = {
 	immediate = {
 		set_planet_flag = burned_forest_damage
 	}
-
 	option = {
 		name = UNFORTUNATE
 		add_modifier = { modifier = "damaged_ecology" years = 10 }
@@ -443,7 +399,6 @@ planet_event = {
 	immediate = {
 		set_planet_flag = forest_pheremones_adaptation
 	}
-
 	option = {
 		name = EXCELLENT
 		add_modifier = { modifier = "friendly_trees" years = 10 }
@@ -479,7 +434,6 @@ planet_event = {
 	immediate = {
 		set_planet_flag = forest_pheremones_studies
 	}
-
 	option = {
 		name = EXCELLENT
 		owner = {
@@ -522,7 +476,6 @@ planet_event = {
 	immediate = {
 		set_planet_flag = forest_pheremones_fire
 	}
-
 	option = {
 		name = UNFORTUNATE
 		add_modifier = { modifier = "forest_fire" years = 10 }
@@ -548,27 +501,21 @@ planet_event = {
 	immediate = {
 		set_timed_planet_flag = { flag = recent_migrating_forests_movement years = 1 }
 	}
-
 	option = {
 		name = PECULIAR
 		add_planet_devastation = 10
 	}
-
 	after = {
 		# recursively firing itself until the player finishes one of the special projects
-		planet_event = {
-			id = colony.12
-			days = 720
-			random = 1680
-		}
+		planet_event = { id = colony.12 days = 720 random = 1680 }
 	}
 }
 
 ### Seismic Disturbances
+
 planet_event = {
 	id = colony.50
 	title = "colony.50.name"
-
 	desc = {
 		trigger = {
 			owner = { is_subterranean_empire = no }
@@ -627,19 +574,12 @@ planet_event = {
 		add_deposit = d_underground_mine_blocked
 		add_deposit = d_underground_generator_blocked
 		create_subterranean_nation = { FLAG = subterranean_nation }
-		begin_event_chain = {
-			event_chain = "subterranean_civilization_chain"
-			target = root
-		}
+		begin_event_chain = { event_chain = "subterranean_civilization_chain" target = root }
 	}
-
 	option = {
 		name = colony.50.a
 		tooltip = {
-			begin_event_chain = {
-				event_chain = "subterranean_civilization_chain"
-				target = root
-			}
+			begin_event_chain = { event_chain = "subterranean_civilization_chain" target = root }
 		}
 		enable_special_project = {
 			name = "SEISMIC_DISTURBANCE_1_PROJECT" # Establish Communications
@@ -659,10 +599,7 @@ planet_event = {
 			owner = { is_homicidal = yes }
 		}
 		tooltip = {
-			begin_event_chain = {
-				event_chain = "subterranean_civilization_chain"
-				target = root
-			}
+			begin_event_chain = { event_chain = "subterranean_civilization_chain" target = root }
 		}
 		enable_special_project = {
 			name = "SEISMIC_DISTURBANCE_2_PROJECT" # Preemptive Strike
@@ -688,7 +625,6 @@ planet_event = {
 		set_planet_flag = seismic_disturbance_friendly
 		create_subterranean_nation = { FLAG = subterranean_nation }
 	}
-
 	option = {
 		name = colony.51.a
 		hidden_effect = {
@@ -721,7 +657,6 @@ planet_event = {
 		add_deposit = d_underground_generator_dead
 		remove_deposit = d_underground_contact_zone
 	}
-
 	option = {
 		name = colony.52.a
 		custom_tooltip = underground_expansion_tooltip
@@ -732,7 +667,6 @@ planet_event = {
 country_event = {
 	id = colony.53
 	title = "colony.53.name"
-
 	desc = {
 		trigger = { is_subterranean_empire = no }
 		text = "colony.53.desc"
@@ -744,11 +678,9 @@ country_event = {
 
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		room = no_video_feed_room
 	}
-
 	option = {
 		name = colony.53.a
 		response_text = colony.53.a.response
@@ -793,11 +725,7 @@ country_event = {
 		response_text = colony.53.c.response
 		hidden_effect = {
 			from = {
-				planet_event = {
-					id = colony.54
-					days = 35
-					random = 40
-				}
+				planet_event = { id = colony.54 days = 35 random = 40 }
 			}
 		}
 		ai_chance = {
@@ -811,7 +739,6 @@ country_event = {
 planet_event = {
 	id = colony.54
 	title = "colony.54.name"
-
 	desc = {
 		trigger = {
 			owner = { is_subterranean_empire = no }
@@ -848,9 +775,7 @@ planet_event = {
 		}
 		if = {
 			limit = {
-				NOT = {
-					event_target:subterranean_nation = { has_country_flag = tech_request_approved }
-				}
+				NOT = { event_target:subterranean_nation = { has_country_flag = tech_request_approved } }
 			}
 			while = {
 				count = 6
@@ -879,11 +804,9 @@ planet_event = {
 			}
 		}
 	}
-
 	after = {
 		remove_deposit = d_underground_contact_zone
 	}
-
 	option = {
 		name = colony.54.a
 		custom_tooltip = subterranean_invasion
@@ -894,7 +817,6 @@ planet_event = {
 country_event = {
 	id = colony.56
 	title = "colony.56.name"
-
 	desc = {
 		trigger = { is_subterranean_empire = no }
 		text = "colony.56.desc"
@@ -925,7 +847,6 @@ country_event = {
 			remove_planet_flag = subterranean_invasion_planet
 		}
 	}
-
 	option = {
 		name = colony.56.a
 		enable_special_project = {
@@ -1028,7 +949,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = "ONSCREEN"
 		end_event_chain = "subterranean_civilization_chain"
@@ -1040,7 +960,6 @@ country_event = {
 country_event = {
 	id = colony.58
 	title = TRANSMISSION
-
 	desc = {
 		trigger = { is_subterranean_empire = no }
 		text = "colony.58.desc"
@@ -1052,12 +971,10 @@ country_event = {
 
 	diplomatic = yes
 	is_triggered_only = yes
-
 	picture_event_data = {
 		portrait = event_target:subterranean_empire
 		room = event_target:subterranean_empire.ruler
 	}
-
 	option = {
 		name = colony.58.a
 	}
@@ -1067,7 +984,6 @@ country_event = {
 planet_event = {
 	id = colony.59
 	title = "colony.59.name"
-
 	desc = {
 		trigger = {
 			owner = { is_subterranean_empire = no }
@@ -1095,7 +1011,6 @@ planet_event = {
 		has_owner = yes
 		owner = { is_guided_sapience_empire = no }
 	}
-
 	option = {
 		name = colony.59.a
 		owner = {
@@ -1125,11 +1040,9 @@ planet_event = {
 		has_planet_flag = seismic_disturbance_war
 		pop_amount > 0
 	}
-
 	mean_time_to_happen = {
 		years = 20
 	}
-
 	immediate = {
 		owner = { set_country_flag = subterranean_invasion_country }
 		set_planet_flag = subterranean_invasion_planet
@@ -1149,9 +1062,7 @@ planet_event = {
 		}
 		if = {
 			limit = {
-				NOT = {
-					event_target:subterranean_nation = { has_country_flag = tech_request_approved }
-				}
+				NOT = { event_target:subterranean_nation = { has_country_flag = tech_request_approved } }
 			}
 			create_army = {
 				name = "NAME_Invading_Horde"
@@ -1274,7 +1185,6 @@ planet_event = {
 			break = yes
 		}
 	}
-
 	option = {
 		name = colony.60.a
 		custom_tooltip = subterranean_invasion_2
@@ -1304,15 +1214,12 @@ planet_event = {
 		has_army = yes
 		pop_amount > 0
 	}
-
 	mean_time_to_happen = {
 		years = 20
 	}
-
 	immediate = {
 		set_planet_flag = seismic_disturbance_collapse
 	}
-
 	option = {
 		name = colony.61.a
 		add_deposit = d_sinkhole_subterraneans
@@ -1347,16 +1254,13 @@ planet_event = {
 			pop_amount <= 0
 		}
 	}
-
 	mean_time_to_happen = {
 		years = 20
 	}
-
 	immediate = {
 		set_planet_flag = seismic_disturbance_raid
 		add_planet_devastation = 10
 	}
-
 	option = {
 		name = colony.62.a
 		tooltip = { add_planet_devastation = 10 }
@@ -1387,15 +1291,12 @@ planet_event = {
 			pop_amount <= 100
 		}
 	}
-
 	mean_time_to_happen = {
 		years = 20
 	}
-
 	immediate = {
 		set_planet_flag = seismic_disturbance_attack
 	}
-
 	option = {
 		name = colony.63.a
 		add_planet_devastation = 10
@@ -1429,11 +1330,9 @@ planet_event = {
 			pop_amount <= 0
 		}
 	}
-
 	mean_time_to_happen = {
 		years = 20
 	}
-
 	immediate = {
 		set_planet_flag = seismic_disturbance_pocket
 		create_species = {
@@ -1445,7 +1344,6 @@ planet_event = {
 		}
 		last_created_species = { save_event_target_as = subterranean_species }
 	}
-
 	option = {
 		name = colony.64.a
 	}
@@ -1479,7 +1377,9 @@ planet_event = {
 			create_pop_group = {
 				species = event_target:subterranean_species
 				ethos = { ethic = "ethic_spiritualist" }
-				effect = { save_event_target_as = subterranean_species_pop_group }
+				effect = {
+					save_event_target_as = subterranean_species_pop_group
+				}
 			}
 			event_target:subterranean_species_pop_group = {
 				set_citizenship_type = { type = citizenship_slavery cooldown = yes }
@@ -1515,15 +1415,12 @@ planet_event = {
 		}
 		# planet_size < 25
 	}
-
 	mean_time_to_happen = {
 		years = 20
 	}
-
 	immediate = {
 		set_planet_flag = seismic_disturbance_expansion
 	}
-
 	option = {
 		name = EXCELLENT
 		add_modifier = { modifier = "subterranean_expansion" days = -1 }
@@ -1535,7 +1432,6 @@ planet_event = {
 planet_event = {
 	id = colony.66
 	title = "colony.66.name"
-
 	desc = {
 		trigger = {
 			owner = { is_subterranean_empire = no }
@@ -1568,17 +1464,14 @@ planet_event = {
 			pop_amount <= 0
 		}
 	}
-
 	mean_time_to_happen = {
 		years = 20
 	}
-
 	immediate = {
 		hidden_effect = {
 			set_planet_flag = seismic_disturbance_gold
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		owner = {
@@ -1616,15 +1509,12 @@ planet_event = {
 			pop_amount <= 0
 		}
 	}
-
 	mean_time_to_happen = {
 		years = 20
 	}
-
 	immediate = {
 		set_planet_flag = seismic_disturbance_treasury
 	}
-
 	option = {
 		name = EXCELLENT
 		owner = {
@@ -1662,16 +1552,13 @@ planet_event = {
 			pop_amount <= 0
 		}
 	}
-
 	mean_time_to_happen = {
 		years = 20
 	}
-
 	immediate = {
 		set_planet_flag = seismic_disturbance_quake
 		add_planet_devastation = 10
 	}
-
 	option = {
 		name = UNFORTUNATE
 		tooltip = { add_planet_devastation = 10 }
@@ -1702,15 +1589,12 @@ planet_event = {
 			pop_amount <= 0
 		}
 	}
-
 	mean_time_to_happen = {
 		years = 20
 	}
-
 	immediate = {
 		set_planet_flag = seismic_disturbance_famine
 	}
-
 	option = {
 		name = colony.69.a
 		allow = {
@@ -1737,7 +1621,6 @@ planet_event = {
 planet_event = {
 	id = colony.70
 	title = "colony.70.name"
-
 	desc = {
 		trigger = {
 			owner = { is_subterranean_empire = no }
@@ -1771,15 +1654,12 @@ planet_event = {
 		}
 		check_variable = { which = "angry_subterraneans" value < 1 }
 	}
-
 	mean_time_to_happen = {
 		years = 20
 	}
-
 	immediate = {
 		set_planet_flag = seismic_disturbance_gift
 	}
-
 	option = {
 		name = colony.70.a
 		owner = {
@@ -1797,7 +1677,6 @@ planet_event = {
 planet_event = {
 	id = colony.71
 	title = "colony.71.name"
-
 	desc = {
 		trigger = {
 			owner = { is_subterranean_empire = no }
@@ -1831,11 +1710,9 @@ planet_event = {
 		}
 		# free_housing > 0
 	}
-
 	mean_time_to_happen = {
 		years = 20
 	}
-
 	immediate = {
 		set_planet_flag = seismic_disturbance_refugees
 		random_country = {
@@ -1846,7 +1723,6 @@ planet_event = {
 			owner_species = { save_event_target_as = subterranean_species }
 		}
 	}
-
 	option = {
 		name = colony.71.a
 		trigger = {
@@ -1895,15 +1771,12 @@ planet_event = {
 		}
 		check_variable = { which = "angry_subterraneans" value < 1 }
 	}
-
 	mean_time_to_happen = {
 		years = 20
 	}
-
 	immediate = {
 		set_planet_flag = seismic_disturbance_anthropologists
 	}
-
 	option = {
 		name = EXCELLENT
 		owner = {
@@ -1941,16 +1814,13 @@ planet_event = {
 			pop_amount <= 0
 		}
 	}
-
 	mean_time_to_happen = {
 		years = 20
 	}
-
 	immediate = {
 		set_planet_flag = seismic_disturbance_quake2
 		add_planet_devastation = 10
 	}
-
 	option = {
 		name = colony.73.a
 		tooltip = { add_planet_devastation = 10 }
@@ -1993,15 +1863,12 @@ planet_event = {
 			pop_amount <= 0
 		}
 	}
-
 	mean_time_to_happen = {
 		years = 20
 	}
-
 	immediate = {
 		set_planet_flag = seismic_disturbance_tech
 	}
-
 	option = {
 		name = colony.74.a
 		hidden_effect = {
@@ -2049,17 +1916,14 @@ planet_event = {
 		has_planet_flag = seismic_disturbance_friendly
 		check_variable = { which = "angry_subterraneans" value > 2 }
 	}
-
 	mean_time_to_happen = {
 		days = 20
 	}
-
 	immediate = {
 		hidden_effect = {
 			remove_planet_flag = seismic_disturbance_friendly
 		}
 	}
-
 	option = {
 		name = colony.75.a
 		owner = {
@@ -2072,7 +1936,6 @@ planet_event = {
 country_event = {
 	id = colony.76
 	title = "colony.76.name"
-
 	desc = {
 		trigger = {
 			owner = { is_subterranean_empire = no }
@@ -2088,11 +1951,9 @@ country_event = {
 
 	is_triggered_only = yes
 	diplomatic = yes
-
 	picture_event_data = {
 		room = no_video_feed_room
 	}
-
 	immediate = {
 		random_country = {
 			limit = {
@@ -2102,23 +1963,19 @@ country_event = {
 			save_event_target_as = subterranean_nation
 		}
 	}
-
 	option = {
 		name = colony.76.a
 		from = { remove_modifier = "subterranean_civilization" }
 		hidden_effect = {
 			from = {
-				planet_event = {
-					id = colony.54
-					days = 35
-					random = 40
-				}
+				planet_event = { id = colony.54 days = 35 random = 40 }
 			}
 		}
 	}
 }
 
 ### Abandoned Terraforming Equipment
+
 planet_event = {
 	id = colony.100
 	title = "colony.100.name"
@@ -2207,7 +2064,6 @@ planet_event = {
 		set_planet_flag = colony_event
 		owner = { set_country_flag = abandoned_terraforming_country }
 	}
-
 	option = {
 		name = colony.100.a
 		hidden_effect = {
@@ -2241,14 +2097,11 @@ planet_event = {
 	immediate = {
 		set_planet_flag = did_not_terraform
 	}
-
 	option = {
 		name = EXCELLENT
 		if = {
 			limit = {
-				NOT = {
-					owner = { has_technology = tech_terrestrial_sculpting }
-				}
+				NOT = { owner = { has_technology = tech_terrestrial_sculpting } }
 			}
 			owner = {
 				give_technology = { tech = tech_terrestrial_sculpting }
@@ -2295,16 +2148,13 @@ planet_event = {
 			pop_amount <= 0
 		}
 	}
-
 	mean_time_to_happen = {
 		years = 20
 	}
-
 	immediate = {
 		set_planet_flag = terraforming_unstable_weather
 		add_planet_devastation = 10
 	}
-
 	option = {
 		name = UNFORTUNATE
 		tooltip = { add_planet_devastation = 10 }
@@ -2334,15 +2184,12 @@ planet_event = {
 			pop_amount <= 0
 		}
 	}
-
 	mean_time_to_happen = {
 		years = 20
 	}
-
 	immediate = {
 		set_planet_flag = terraforming_drought
 	}
-
 	option = {
 		name = colony.103.a
 		every_owned_pop_group = {
@@ -2360,9 +2207,7 @@ planet_event = {
 				resource_stockpile_compare = { resource = energy value >= 150 }
 			}
 		}
-		owner = {
-			add_resource = { energy = -150 }
-		}
+		owner = { add_resource = { energy = -150 } }
 		ai_chance = { factor = 2 }
 	}
 	option = {
@@ -2380,9 +2225,7 @@ planet_event = {
 				resource_stockpile_compare = { resource = energy value >= 375 }
 			}
 		}
-		owner = {
-			add_resource = { energy = -375 }
-		}
+		owner = { add_resource = { energy = -375 } }
 		ai_chance = { factor = 2 }
 	}
 	option = {
@@ -2396,9 +2239,7 @@ planet_event = {
 				resource_stockpile_compare = { resource = energy value >= 650 }
 			}
 		}
-		owner = {
-			add_resource = { energy = -600 }
-		}
+		owner = { add_resource = { energy = -600 } }
 		ai_chance = { factor = 2 }
 	}
 }
@@ -2412,7 +2253,6 @@ planet_event = {
 	show_sound = event_activating_unknown_technology
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = colony.104.a
 		custom_tooltip = abandoned_terraforming_completed
@@ -2688,7 +2528,9 @@ planet_event = {
 			create_country = {
 				name = "NAME_Deformed_Creatures"
 				type = faction
-				effect = { establish_communications_no_message = root.owner }
+				effect = {
+					establish_communications_no_message = root.owner
+				}
 			}
 			create_army = {
 				name = "NAME_Deformed_Creatures"
@@ -2708,7 +2550,6 @@ planet_event = {
 		}
 		set_planet_purge_type = purge_displacement
 	}
-
 	option = {
 		name = colony.105.a
 		custom_tooltip = terraforming_mutants_attack
@@ -2724,7 +2565,6 @@ planet_event = {
 	show_sound = event_activating_unknown_technology
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = MARVELOUS
 		change_pc = pc_gaia
@@ -2739,7 +2579,6 @@ planet_event = {
 planet_event = {
 	id = colony.107
 	title = "PROJECT_COMPLETE"
-
 	desc = {
 		trigger = {
 			NOR = {
@@ -2763,7 +2602,6 @@ planet_event = {
 	show_sound = event_activating_unknown_technology
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		trigger = {
 			NOR = {
@@ -2855,7 +2693,6 @@ country_event = {
 			remove_planet_flag = terraforming_mutants_invade_planet
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		fromfrom = { add_deposit = d_mutant_landfill }
@@ -2886,16 +2723,13 @@ planet_event = {
 			pop_amount <= 0
 		}
 	}
-
 	mean_time_to_happen = {
 		years = 20
 	}
-
 	immediate = {
 		set_planet_flag = terraforming_mutant_stalker
 		add_modifier = { modifier = "mutant_stalker" days = -1 }
 	}
-
 	option = {
 		name = colony.109.a
 		tooltip = {
@@ -2918,7 +2752,6 @@ planet_event = {
 	show_sound = event_radio_chatter
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = MARVELOUS
 		remove_modifier = "mutant_stalker"
@@ -2938,7 +2771,6 @@ planet_event = {
 	show_sound = event_alien_nature
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = colony.111.a
 		remove_modifier = "mutant_stalker"
@@ -2963,7 +2795,9 @@ planet_event = {
 		create_country = {
 			name = "NAME_Marauding_Creatures"
 			type = faction
-			effect = { establish_communications_no_message = root.owner }
+			effect = {
+				establish_communications_no_message = root.owner
+			}
 		}
 		create_army = {
 			name = "NAME_Marauding_Swarms"
@@ -2977,7 +2811,6 @@ planet_event = {
 		}
 		set_planet_purge_type = purge_displacement
 	}
-
 	option = {
 		name = colony.112.a
 		custom_tooltip = terraforming_mutants_attack
@@ -3023,7 +2856,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = colony.113.a
 	}
@@ -3053,7 +2885,9 @@ country_event = {
 			create_pop_group = {
 				species = owner_species
 				category = civilian
-				effect = { save_event_target_as = non_purge_pop_group }
+				effect = {
+					save_event_target_as = non_purge_pop_group
+				}
 			}
 			every_owned_pop_group = {
 				limit = {
@@ -3072,13 +2906,13 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = colony.114.a
 	}
 }
 
 ### Underground Vault
+
 planet_event = {
 	id = colony.150
 	title = "colony.150.name"
@@ -3122,7 +2956,6 @@ planet_event = {
 		set_planet_flag = underground_vault_planet
 		set_global_flag = underground_vault_global
 	}
-
 	option = {
 		name = colony.150.a
 		enable_special_project = {
@@ -3145,7 +2978,6 @@ planet_event = {
 	show_sound = event_airlock
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = INTERESTING
 		add_deposit = d_underground_vault
@@ -3157,10 +2989,7 @@ planet_event = {
 		}
 		add_deposit = d_underground_vault
 		owner = {
-			give_evolutionary_predator_situation_progress_and_dna = {
-				AMOUNT = large
-				TYPE = mammalian
-			}
+			give_evolutionary_predator_situation_progress_and_dna = { AMOUNT = large TYPE = mammalian }
 		}
 	}
 }
@@ -3195,7 +3024,9 @@ planet_event = {
 					trait = "trait_nomadic"
 					trait = "trait_wasteful"
 				}
-				effect = { save_event_target_as = vault_survivor_species }
+				effect = {
+					save_event_target_as = vault_survivor_species
+				}
 			}
 		}
 		else = {
@@ -3205,11 +3036,12 @@ planet_event = {
 				portrait = random
 				traits = random
 				homeworld = root
-				effect = { save_event_target_as = vault_survivor_species }
+				effect = {
+					save_event_target_as = vault_survivor_species
+				}
 			}
 		}
 	}
-
 	option = {
 		name = colony.152.a
 		add_deposit = d_underground_vault_2
@@ -3232,7 +3064,9 @@ planet_event = {
 		create_pop_group = { species = event_target:vault_survivor_species }
 		create_pop_group = {
 			species = event_target:vault_survivor_species
-			effect = { save_event_target_as = vault_survivor_species_pop_group }
+			effect = {
+				save_event_target_as = vault_survivor_species_pop_group
+			}
 		}
 		custom_tooltip = colony.152.b.tooltip
 		hidden_effect = {
@@ -3243,9 +3077,7 @@ planet_event = {
 	}
 	option = {
 		name = colony.152.c
-		trigger = {
-			owner = { is_xenophobe = yes }
-		}
+		trigger = { owner = { is_xenophobe = yes } }
 	}
 }
 
@@ -3289,7 +3121,6 @@ planet_event = {
 			type = "mutant_army"
 		}
 	}
-
 	option = {
 		name = colony.153.a
 	}
@@ -3334,7 +3165,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = colony.113.a
 	}
@@ -3363,7 +3193,9 @@ country_event = {
 			create_pop_group = {
 				species = owner_species
 				category = civilian
-				effect = { save_event_target_as = non_purge_pop_group }
+				effect = {
+					save_event_target_as = non_purge_pop_group
+				}
 			}
 			every_owned_pop_group = {
 				limit = {
@@ -3382,7 +3214,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = colony.114.a
 	}
@@ -3436,7 +3267,6 @@ planet_event = {
 			owner = { set_country_flag = had_colony_155 }
 		}
 	}
-
 	option = {
 		name = colony.155.a
 		enable_special_project = {
@@ -3456,7 +3286,6 @@ planet_event = {
 	show_sound = event_activating_unknown_technology
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = colony.156.a
 		owner = {
@@ -3474,7 +3303,6 @@ planet_event = {
 	show_sound = event_super_explosion
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = colony.157.a
 		random_owned_pop_group = { kill_single_pop = yes }
@@ -3527,7 +3355,6 @@ planet_event = {
 		set_planet_flag = wasteland_particle_accelerator
 		owner = { set_country_flag = had_colony_160 }
 	}
-
 	option = {
 		name = FASCINATING
 		add_deposit = d_ancient_particle_accelerator
@@ -3581,7 +3408,6 @@ planet_event = {
 			owner = { set_country_flag = had_colony_161 }
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		add_modifier = { modifier = "wasteland_infrastructure" days = -1 }
@@ -3633,7 +3459,6 @@ planet_event = {
 			owner = { set_country_flag = had_colony_162 }
 		}
 	}
-
 	option = {
 		name = INTRIGUING
 		owner = {
@@ -3708,7 +3533,6 @@ planet_event = {
 			owner = { set_country_flag = had_colony_163 }
 		}
 	}
-
 	option = {
 		name = UNFORTUNATE
 		add_modifier = { modifier = "wasteland_radiation" years = 10 }
@@ -3758,9 +3582,7 @@ planet_event = {
 			}
 			can_think = yes
 		}
-		NOT = {
-			owner = { has_country_flag = had_colony_164 }
-		}
+		NOT = { owner = { has_country_flag = had_colony_164 } }
 	}
 
 	is_triggered_only = yes
@@ -3773,7 +3595,6 @@ planet_event = {
 			owner = { set_country_flag = had_colony_164 }
 		}
 	}
-
 	option = {
 		name = colony.164.a
 		custom_tooltip = colony.164.a.tooltip
@@ -3784,18 +3605,13 @@ planet_event = {
 	option = {
 		name = colony.164.b
 		custom_tooltip = colony.164.a.tooltip
-		trigger = {
-			owner = { is_militarist = yes }
-		}
+		trigger = { owner = { is_militarist = yes } }
 	}
 	option = {
 		name = colony.164.c
 		custom_tooltip = colony.164.a.tooltip
-		trigger = {
-			owner = { is_pacifist = yes }
-		}
+		trigger = { owner = { is_pacifist = yes } }
 	}
-
 	after = {
 		while = {
 			count = 3
@@ -3850,7 +3666,6 @@ planet_event = {
 			owner = { set_country_flag = had_colony_170 }
 		}
 	}
-
 	option = {
 		name = colony.170.a
 		add_modifier = { modifier = "wasteland_orbital_debris" days = -1 }
@@ -3860,19 +3675,10 @@ planet_event = {
 			owner = root
 		}
 	}
-
 	after = {
 		hidden_effect = {
-			planet_event = {
-				id = colony.171
-				days = 200
-				random = 7000
-			} # previously MTTH 240 months (20 years)
-			planet_event = {
-				id = colony.172
-				days = 200
-				random = 7000
-			} # previously MTTH 240 months (20 years)
+			planet_event = { id = colony.171 days = 200 random = 7000 } # previously MTTH 240 months (20 years)
+			planet_event = { id = colony.172 days = 200 random = 7000 } # previously MTTH 240 months (20 years)
 		}
 	}
 }
@@ -3881,7 +3687,6 @@ planet_event = {
 planet_event = {
 	id = colony.171
 	title = "colony.171.name"
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = no }
@@ -3915,7 +3720,6 @@ planet_event = {
 	immediate = {
 		set_planet_flag = wasteland_freighter_crash
 	}
-
 	option = {
 		name = colony.171.a
 		add_deposit = d_crater
@@ -3949,7 +3753,6 @@ planet_event = {
 			set_planet_flag = wasteland_debris_impact
 		}
 	}
-
 	option = {
 		name = colony.172.a
 		random_owned_pop_group = { kill_single_pop = yes }
@@ -3961,7 +3764,6 @@ ship_event = {
 	id = colony.173
 	title = "PROJECT_COMPLETE"
 	desc = "colony.173.desc"
-
 	inline_script = {
 		script = events/biogenesis_event_art
 		OWNER = owner
@@ -3972,7 +3774,6 @@ ship_event = {
 	show_sound = event_radio_chatter
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		fromfrom = { remove_modifier = "wasteland_orbital_debris" }
@@ -3987,7 +3788,6 @@ ship_event = {
 	id = colony.174
 	title = "PROJECT_COMPLETE"
 	desc = "colony.174.desc"
-
 	inline_script = {
 		script = events/biogenesis_event_art
 		OWNER = owner
@@ -3998,7 +3798,6 @@ ship_event = {
 	show_sound = event_radio_chatter
 	location = root
 	is_triggered_only = yes
-
 	option = {
 		name = EXCELLENT
 		fromfrom = {
@@ -4017,6 +3816,7 @@ ship_event = {
 }
 
 ### Asteroid Sighted
+
 planet_event = {
 	id = colony.180
 	title = "colony.180.name"
@@ -4072,7 +3872,9 @@ planet_event = {
 					"null"
 				}
 			}
-			effect = { establish_communications_no_message = root.owner }
+			effect = {
+				establish_communications_no_message = root.owner
+			}
 		}
 		last_created_country = {
 			set_country_flag = incoming_asteroid
@@ -4106,7 +3908,6 @@ planet_event = {
 			set_relation_flag = { who = root.owner flag = asteroid_enemy }
 		}
 	}
-
 	option = {
 		trigger = {
 			owner = { is_machine_empire = no }
@@ -4166,7 +3967,6 @@ country_event = {
 planet_event = {
 	id = colony.182
 	title = "colony.182.name"
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = no }
@@ -4201,7 +4001,6 @@ planet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = EXCELLENT
 		owner = {
@@ -4220,7 +4019,6 @@ planet_event = {
 planet_event = {
 	id = colony.183
 	title = "colony.183.name"
-
 	desc = {
 		trigger = {
 			owner = { is_machine_empire = no }
@@ -4249,7 +4047,6 @@ planet_event = {
 		add_deposit = d_crater
 		owner = { end_event_chain = "asteroid_sighted_chain" }
 	}
-
 	option = {
 		name = colony.183.a
 		if = {
@@ -4340,7 +4137,6 @@ situation_event = {
 			clear_deposits = yes
 		}
 	}
-
 	option = {
 		name = colony.185.a
 		custom_tooltip = colony.185.a.tooltip
@@ -4412,4 +4208,3 @@ situation_event = {
 		destroy_situation = this
 	}
 }
-
