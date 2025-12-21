@@ -103,11 +103,15 @@ ship_event = {
 			}
 			AND = {
 				exists = event_target:origin_unplugged_creators_planet
-				from = { is_same_value = event_target:origin_unplugged_creators_planet }
+				from = {
+					is_same_value = event_target:origin_unplugged_creators_planet
+				}
 			}
 			AND = {
 				exists = event_target:origin_unplugged_machine_legacy_core_planet
-				from = { is_same_value = event_target:origin_unplugged_machine_legacy_core_planet }
+				from = {
+					is_same_value = event_target:origin_unplugged_machine_legacy_core_planet
+				}
 			}
 		}
 	}
@@ -124,7 +128,10 @@ ship_event = {
 					limit = {
 						root.controller = { has_origin = origin_unplugged }
 					}
-					add_anomaly = { category = MACHINE_LEGACY_MAKERS_UNPLUGGED_CAT target = root.controller }
+					add_anomaly = {
+						category = MACHINE_LEGACY_MAKERS_UNPLUGGED_CAT
+						target = root.controller
+					}
 				}
 				else = {
 					add_anomaly = { category = MACHINE_LEGACY_MAKERS_CAT target = root.controller }
@@ -153,7 +160,9 @@ ship_event = {
 				POI = unplugged_machine_legacy_creators_poi
 			}
 			if = {
-				limit = { is_same_value = event_target:origin_unplugged_creators_planet }
+				limit = {
+					is_same_value = event_target:origin_unplugged_creators_planet
+				}
 				if = {
 					limit = {
 						root.controller = { has_origin = origin_unplugged }
@@ -385,7 +394,9 @@ fleet_event = {
 		trigger = {
 			controller = {
 				has_origin = origin_unplugged
-				NOT = { has_country_flag = unplugged_has_started_identity_situation_flag }
+				NOT = {
+					has_country_flag = unplugged_has_started_identity_situation_flag
+				}
 			}
 		}
 		name = unplugged.2010.b
@@ -741,7 +752,9 @@ ship_event = {
 
 	option = {
 		name = unplugged.2100.a
-		event_target:origin_unplugged_taken_planet = { create_archaeological_site = machine_legacy_taken_site }
+		event_target:origin_unplugged_taken_planet = {
+			create_archaeological_site = machine_legacy_taken_site
+		}
 	}
 }
 
@@ -1060,7 +1073,9 @@ fleet_event = {
 
 	after = {
 		hidden_effect = {
-			controller = { remove_point_of_interest = unplugged_machine_legacy_taken_poi }
+			controller = {
+				remove_point_of_interest = unplugged_machine_legacy_taken_poi
+			}
 		}
 	}
 }
@@ -1166,7 +1181,9 @@ ship_event = {
 
 	after = {
 		hidden_effect = {
-			controller = { remove_point_of_interest = unplugged_machine_legacy_creators_poi }
+			controller = {
+				remove_point_of_interest = unplugged_machine_legacy_creators_poi
+			}
 		}
 	}
 }
@@ -1184,7 +1201,9 @@ ship_event = {
 		}
 		from = {
 			has_star_flag = unplugged_machine_legacy_flag
-			any_system_planet = { is_same_value = event_target:origin_unplugged_creators_planet }
+			any_system_planet = {
+				is_same_value = event_target:origin_unplugged_creators_planet
+			}
 		}
 		exists = event_target:origin_unplugged_unplugged_planet_@fromfrom
 	}
@@ -1369,7 +1388,9 @@ ship_event = {
 
 	immediate = {
 		if = {
-			limit = { exists = event_target:origin_unplugged_unplugged_planet_@controller }
+			limit = {
+				exists = event_target:origin_unplugged_unplugged_planet_@controller
+			}
 			controller = {
 				set_country_flag = unplugged_visible_site_@event_target:origin_unplugged_unplugged_planet_@this
 			}
@@ -1786,7 +1807,10 @@ country_event = {
 	}
 	desc = {
 		text = unplugged.2405.desc.unplugged_synth
-		trigger = { has_origin = origin_unplugged is_synthetic_empire = yes }
+		trigger = {
+			has_origin = origin_unplugged
+			is_synthetic_empire = yes
+		}
 	}
 	desc = {
 		text = unplugged.2405.desc.other
@@ -1818,7 +1842,10 @@ country_event = {
 	}
 	option = {
 		name = unplugged.2405.b
-		trigger = { has_origin = origin_unplugged has_ascension_perk = ap_synthetic_evolution }
+		trigger = {
+			has_origin = origin_unplugged
+			has_ascension_perk = ap_synthetic_evolution
+		}
 		is_dialog_only = yes
 		response_text = unplugged.2405.response_text.unplugged1
 	}
@@ -1904,7 +1931,9 @@ country_event = {
 		}
 		trigger = {
 			event_target:unplugged_empire = {
-				NOT = { is_same_value = event_target:origin_unplugged_assimilator_empire }
+				NOT = {
+					is_same_value = event_target:origin_unplugged_assimilator_empire
+				}
 			}
 		}
 	}
@@ -2031,7 +2060,9 @@ ship_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		controller = { has_country_flag = machine_legacy_creators_arc_site_complete }
+		controller = {
+			has_country_flag = machine_legacy_creators_arc_site_complete
+		}
 	}
 
 	option = {
@@ -2289,7 +2320,9 @@ country_event = {
 	trigger = {
 		has_origin = origin_unplugged
 		any_pop_faction = { is_scope_valid = yes }
-		NOT = { has_country_flag = unplugged_has_started_identity_situation_flag }
+		NOT = {
+			has_country_flag = unplugged_has_started_identity_situation_flag
+		}
 	}
 
 	immediate = {
@@ -2443,7 +2476,9 @@ situation_event = {
 	situation = this
 
 	immediate = {
-		owner = { set_country_flag = unplugged_has_finished_identity_situation_flag }
+		owner = {
+			set_country_flag = unplugged_has_finished_identity_situation_flag
+		}
 		if = {
 			limit = {
 				target = {
@@ -2491,10 +2526,7 @@ country_event = {
 		# Start the "Embodied Identity" Situation if it's not already in progress
 		if = {
 			limit = {
-				count_situation = {
-					count = 0
-					limit = { is_situation_type = situation_unplugged_identity }
-				}
+				NOT = { any_situation = { is_situation_type = situation_unplugged_identity } }
 			}
 			country_event = { id = unplugged.3000 days = 90 }
 		}

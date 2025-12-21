@@ -308,3 +308,76 @@ triggered_country_modifier = {
 	country_energy_produces_mult = 0.0001
 	mult = value:count_owned_pop_mult
 }
+
+#Storm Chasers get Storm Shelter effects for free
+
+triggered_planet_modifier = { #basic shelter
+	potential = {
+		exists = owner
+		owner = {
+			AND = {
+				has_origin = origin_storm_chasers
+				has_technology = tech_industrial_storm_protection
+			}
+		}
+		solar_system = {
+			has_star_flag = storm_system
+		}
+	}
+	modifier = {
+		planet_miners_minerals_produces_add = 1
+		planet_farmers_food_produces_add = 1
+		planet_technician_energy_produces_add = 1
+	}
+}
+
+triggered_planet_modifier = { #add advanced shelter effect
+	potential = {
+		exists = owner
+		owner = {
+			AND = {
+				has_origin = origin_storm_chasers
+				has_technology = tech_advanced_industrial_storm_protection
+			}
+		}
+		solar_system = {
+			has_star_flag = storm_system
+		}
+	}
+	modifier = {
+		planet_miners_minerals_produces_add = 1
+		planet_farmers_food_produces_add = 1
+		planet_technician_energy_produces_add = 1
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_galactic_community_member = yes
+			AND = {
+				has_origin = origin_storm_chasers
+				has_technology = tech_industrial_storm_protection
+			}
+		}
+	}
+	modifier = {
+		planet_miners_produces_mult = 1
+		planet_farmers_produces_mult = 1
+		planet_technician_produces_mult = 1
+	}
+	mult = value:storm_building_production_multiplier
+}
+
+triggered_planet_modifier = {
+	potential = {
+		has_cosmic_storms_dlc = yes
+		exists = owner
+		owner = {
+			has_origin = origin_storm_chasers
+		}
+	}
+
+	planet_jobs_unity_produces_mult = @storm_chasers_storm_building_unity_produces_mult
+}

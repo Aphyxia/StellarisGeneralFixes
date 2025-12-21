@@ -1409,11 +1409,17 @@ country_event = {
 	desc = utopia.2605.desc.gestalt
 
 	picture = {
-		trigger = { has_shroud_dlc = yes is_hive_empire = yes }
+		trigger = {
+			has_shroud_dlc = yes
+			is_hive_empire = yes
+		}
 		picture = GFX_evt_shroud_psionic_hive_mind
 	}
 	picture = {
-		trigger = { has_shroud_dlc = yes is_robot_empire = yes }
+		trigger = {
+			has_shroud_dlc = yes
+			is_robot_empire = yes
+		}
 		picture = GFX_evt_machine_sapience
 	}
 	picture = {
@@ -1430,7 +1436,10 @@ country_event = {
 	}
 
 	show_sound = {
-		trigger = { has_shroud_dlc = yes is_robot_empire = yes }
+		trigger = {
+			has_shroud_dlc = yes
+			is_robot_empire = yes
+		}
 		sound = event_psionic_robot
 	}
 	show_sound = {
@@ -1653,7 +1662,10 @@ country_event = {
 	picture = GFX_evt_psionics
 
 	show_sound = {
-		trigger = { has_shroud_dlc = yes is_robot_empire = yes }
+		trigger = {
+			has_shroud_dlc = yes
+			is_robot_empire = yes
+		}
 		sound = event_psionic_robot
 	}
 	show_sound = {
@@ -1696,7 +1708,10 @@ country_event = {
 	picture = GFX_evt_psionics
 
 	show_sound = {
-		trigger = { has_shroud_dlc = yes is_robot_empire = yes }
+		trigger = {
+			has_shroud_dlc = yes
+			is_robot_empire = yes
+		}
 		sound = event_psionic_robot
 	}
 	show_sound = {
@@ -1739,7 +1754,10 @@ country_event = {
 	picture = GFX_evt_shroudwalker_enclave
 
 	show_sound = {
-		trigger = { has_shroud_dlc = yes is_robot_empire = yes }
+		trigger = {
+			has_shroud_dlc = yes
+			is_robot_empire = yes
+		}
 		sound = event_psionic_robot
 	}
 	show_sound = {
@@ -1802,7 +1820,10 @@ country_event = {
 	picture = GFX_evt_shroudwalker_enclave
 
 	show_sound = {
-		trigger = { has_shroud_dlc = yes is_robot_empire = yes }
+		trigger = {
+			has_shroud_dlc = yes
+			is_robot_empire = yes
+		}
 		sound = event_psionic_robot
 	}
 	show_sound = {
@@ -1893,7 +1914,10 @@ country_event = {
 	picture = GFX_evt_shrouded_planet
 
 	show_sound = {
-		trigger = { has_shroud_dlc = yes is_robot_empire = yes }
+		trigger = {
+			has_shroud_dlc = yes
+			is_robot_empire = yes
+		}
 		sound = event_psionic_robot
 	}
 	show_sound = {
@@ -2354,7 +2378,10 @@ country_event = {
 	picture = GFX_evt_shroudwalker_enclave
 
 	show_sound = {
-		trigger = { has_shroud_dlc = yes is_robot_empire = yes }
+		trigger = {
+			has_shroud_dlc = yes
+			is_robot_empire = yes
+		}
 		sound = event_psionic_robot
 	}
 	show_sound = {
@@ -2459,7 +2486,10 @@ country_event = {
 	picture = GFX_evt_shroudwalker_enclave
 
 	show_sound = {
-		trigger = { has_shroud_dlc = yes is_robot_empire = yes }
+		trigger = {
+			has_shroud_dlc = yes
+			is_robot_empire = yes
+		}
 		sound = event_psionic_robot
 	}
 	show_sound = {
@@ -2616,7 +2646,10 @@ country_event = {
 	picture = GFX_evt_shroudwalker_enclave
 
 	show_sound = {
-		trigger = { has_shroud_dlc = yes is_robot_empire = yes }
+		trigger = {
+			has_shroud_dlc = yes
+			is_robot_empire = yes
+		}
 		sound = event_psionic_robot
 	}
 	show_sound = {
@@ -2811,7 +2844,10 @@ country_event = {
 	picture = GFX_evt_chosen_leader
 
 	show_sound = {
-		trigger = { has_shroud_dlc = yes is_robot_empire = yes }
+		trigger = {
+			has_shroud_dlc = yes
+			is_robot_empire = yes
+		}
 		sound = event_psionic_robot
 	}
 	show_sound = {
@@ -3028,7 +3064,10 @@ country_event = {
 	picture = GFX_evt_shroudwalker_enclave
 
 	show_sound = {
-		trigger = { has_shroud_dlc = yes is_robot_empire = yes }
+		trigger = {
+			has_shroud_dlc = yes
+			is_robot_empire = yes
+		}
 		sound = event_psionic_robot
 	}
 	show_sound = {

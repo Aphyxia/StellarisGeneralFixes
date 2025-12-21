@@ -45,7 +45,6 @@ tech_gravity_wells = {
 	}
 
 	weight = @tier2weight1
-
 	feature_flags = { unlock_gravity_snares }
 
 	potential = {
@@ -301,7 +300,6 @@ tech_alien_cloning = {
 			can_research_technology = tech_genome_mapping
 		}
 	}
-
 	feature_flags = { alien_cloning_unlocked }
 
 	technology_swap = {
@@ -473,7 +471,6 @@ tech_controlled_mutations = {
 			has_any_dna = yes
 		}
 	}
-
 	feature_flags = { mutations }
 
 	modifier = {

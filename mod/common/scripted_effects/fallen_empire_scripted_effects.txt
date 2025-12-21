@@ -1,15 +1,12 @@
+
 fallen_empire_humiliate_effect = {
 	hidden_effect = {
 		if = {
-			limit = {
-				has_ascension_perk = ap_cosmogenesis
-			}
+			limit = { has_ascension_perk = ap_cosmogenesis }
 			add_modifier = { modifier = humiliated_cosmogenesis years = 10 }
 			if = {
 				limit = {
-					event_target:fallen_empire_humiliator = {
-						has_country_flag = fallen_empire_1
-					}
+					event_target:fallen_empire_humiliator = { has_country_flag = fallen_empire_1 }
 				}
 				set_policy = {
 					policy = research_restriction_policy
@@ -21,7 +18,6 @@ fallen_empire_humiliate_effect = {
 		else = {
 			add_modifier = { modifier = humiliated years = 10 }
 		}
-
 		if = {
 			limit = { has_policy_flag = diplo_stance_supremacist }
 			set_policy = {
@@ -37,20 +33,30 @@ fallen_empire_humiliate_effect = {
 			remove_opinion_modifier = { who = event_target:fallen_empire_humiliated modifier = opinion_refused_fallen_empire_demand }
 			remove_opinion_modifier = { who = event_target:fallen_empire_humiliated modifier = opinion_refused_fallen_empire_task }
 			remove_opinion_modifier = { who = event_target:fallen_empire_humiliated modifier = opinion_failed_fallen_empire_task }
-			remove_opinion_modifier = { who = event_target:fallen_empire_humiliated modifier = opinion_majorly_failed_fallen_empire_task }
-			remove_opinion_modifier = { who = event_target:fallen_empire_humiliated modifier = opinion_refused_fallen_empire_request }
+			remove_opinion_modifier = {
+				who = event_target:fallen_empire_humiliated
+				modifier = opinion_majorly_failed_fallen_empire_task
+			}
+			remove_opinion_modifier = {
+				who = event_target:fallen_empire_humiliated
+				modifier = opinion_refused_fallen_empire_request
+			}
 			remove_opinion_modifier = { who = event_target:fallen_empire_humiliated modifier = opinion_spurned_fallen_empire_gift }
 			if = {
-				limit = {
-					has_origin = origin_fallen_empire_hive
-				}
+				limit = { has_origin = origin_fallen_empire_hive }
 				event_target:fallen_empire_hive_war = {
 					remove_opinion_modifier = { who = event_target:fallen_empire_humiliated modifier = opinion_insult }
 					remove_opinion_modifier = { who = event_target:fallen_empire_humiliated modifier = opinion_refused_fallen_empire_demand }
 					remove_opinion_modifier = { who = event_target:fallen_empire_humiliated modifier = opinion_refused_fallen_empire_task }
 					remove_opinion_modifier = { who = event_target:fallen_empire_humiliated modifier = opinion_failed_fallen_empire_task }
-					remove_opinion_modifier = { who = event_target:fallen_empire_humiliated modifier = opinion_majorly_failed_fallen_empire_task }
-					remove_opinion_modifier = { who = event_target:fallen_empire_humiliated modifier = opinion_refused_fallen_empire_request }
+					remove_opinion_modifier = {
+						who = event_target:fallen_empire_humiliated
+						modifier = opinion_majorly_failed_fallen_empire_task
+					}
+					remove_opinion_modifier = {
+						who = event_target:fallen_empire_humiliated
+						modifier = opinion_refused_fallen_empire_request
+					}
 					remove_opinion_modifier = { who = event_target:fallen_empire_humiliated modifier = opinion_spurned_fallen_empire_gift }
 				}
 				event_target:fallen_empire_hive_growth = {
@@ -58,8 +64,14 @@ fallen_empire_humiliate_effect = {
 					remove_opinion_modifier = { who = event_target:fallen_empire_humiliated modifier = opinion_refused_fallen_empire_demand }
 					remove_opinion_modifier = { who = event_target:fallen_empire_humiliated modifier = opinion_refused_fallen_empire_task }
 					remove_opinion_modifier = { who = event_target:fallen_empire_humiliated modifier = opinion_failed_fallen_empire_task }
-					remove_opinion_modifier = { who = event_target:fallen_empire_humiliated modifier = opinion_majorly_failed_fallen_empire_task }
-					remove_opinion_modifier = { who = event_target:fallen_empire_humiliated modifier = opinion_refused_fallen_empire_request }
+					remove_opinion_modifier = {
+						who = event_target:fallen_empire_humiliated
+						modifier = opinion_majorly_failed_fallen_empire_task
+					}
+					remove_opinion_modifier = {
+						who = event_target:fallen_empire_humiliated
+						modifier = opinion_refused_fallen_empire_request
+					}
 					remove_opinion_modifier = { who = event_target:fallen_empire_humiliated modifier = opinion_spurned_fallen_empire_gift }
 				}
 				event_target:fallen_empire_hive_control = {
@@ -67,13 +79,18 @@ fallen_empire_humiliate_effect = {
 					remove_opinion_modifier = { who = event_target:fallen_empire_humiliated modifier = opinion_refused_fallen_empire_demand }
 					remove_opinion_modifier = { who = event_target:fallen_empire_humiliated modifier = opinion_refused_fallen_empire_task }
 					remove_opinion_modifier = { who = event_target:fallen_empire_humiliated modifier = opinion_failed_fallen_empire_task }
-					remove_opinion_modifier = { who = event_target:fallen_empire_humiliated modifier = opinion_majorly_failed_fallen_empire_task }
-					remove_opinion_modifier = { who = event_target:fallen_empire_humiliated modifier = opinion_refused_fallen_empire_request }
+					remove_opinion_modifier = {
+						who = event_target:fallen_empire_humiliated
+						modifier = opinion_majorly_failed_fallen_empire_task
+					}
+					remove_opinion_modifier = {
+						who = event_target:fallen_empire_humiliated
+						modifier = opinion_refused_fallen_empire_request
+					}
 					remove_opinion_modifier = { who = event_target:fallen_empire_humiliated modifier = opinion_spurned_fallen_empire_gift }
 				}
 			}
 		}
-
 		event_target:fallen_empire_humiliator = {
 			every_system_within_border = {
 				limit = {
@@ -87,7 +104,9 @@ fallen_empire_humiliate_effect = {
 				event_target:fallen_empire_humiliated = {
 					if = {
 						limit = { has_claim = prev }
-						prev = { remove_claims = { who = event_target:fallen_empire_humiliated } }
+						prev = {
+							remove_claims = { who = event_target:fallen_empire_humiliated }
+						}
 					}
 					every_subject = {
 						limit = { has_claim = prevprev }
@@ -175,9 +194,7 @@ fallen_empire_stop_ai_effect = {
 
 fallen_empire_cleanse_holy_worlds_effect = {
 	every_owned_planet = {
-		limit = {
-			has_modifier = "holy_planet"
-		}
+		limit = { has_modifier = "holy_planet" }
 		destroy_colony = yes
 	}
 }
@@ -186,37 +203,31 @@ fallen_empire_cleanse_border_worlds_effect = {
 	every_owned_planet = {
 		limit = {
 			is_capital = no
-			solar_system = {
-				has_hyperlane_to = event_target:fallen_empire_humiliator
-			}
+			solar_system = { has_hyperlane_to = event_target:fallen_empire_humiliator }
 		}
 		destroy_colony = yes
 	}
+
 	every_controlled_fleet = {
 		limit = {
 			is_ship_class = shipclass_starbase
-			solar_system = {
-				has_hyperlane_to = event_target:fallen_empire_humiliator
-			}
+			solar_system = { has_hyperlane_to = event_target:fallen_empire_humiliator }
 		}
 		destroy_fleet = this
 	}
+
 	every_subject = {
 		every_owned_planet = {
 			limit = {
 				is_capital = no
-				solar_system = {
-					has_hyperlane_to = event_target:fallen_empire_humiliator
-				}
+				solar_system = { has_hyperlane_to = event_target:fallen_empire_humiliator }
 			}
 			destroy_colony = yes
 		}
 		every_controlled_fleet = {
 			limit = {
 				is_ship_class = shipclass_starbase
-				solar_system = {
-					has_hyperlane_to = event_target:fallen_empire_humiliator
-				}
+				solar_system = { has_hyperlane_to = event_target:fallen_empire_humiliator }
 			}
 			destroy_fleet = this
 		}
@@ -226,19 +237,16 @@ fallen_empire_cleanse_border_worlds_effect = {
 create_fe_home_citadel = {
 	create_starbase = {
 		size = "starbase_citadel"
-
 		module = "shipyard"
 		module = "shipyard"
 		module = "shipyard"
 		module = "hangar_bay"
 		module = "gun_battery"
 		module = "gun_battery"
-
 		building = "target_uplink_computer"
 		building = "defense_grid"
 		building = "colossus_yards"
 		building = "titan_yards"
-
 		effect = {
 			while = {
 				count = 10
@@ -251,19 +259,16 @@ create_fe_home_citadel = {
 create_fe_citadel = {
 	create_starbase = {
 		size = "starbase_citadel"
-
 		module = "shipyard"
 		module = "anchorage"
 		module = "anchorage"
 		module = "hangar_bay"
 		module = "gun_battery"
 		module = "gun_battery"
-
 		building = "crew_quarters"
 		building = "command_center"
 		building = "target_uplink_computer"
 		building = "dark_matter_listening_post"
-
 		effect = {
 			while = {
 				count = 4
@@ -272,23 +277,21 @@ create_fe_citadel = {
 		}
 	}
 }
+
 create_hive_fe_citadel = {
 	create_starbase = {
 		size = "starbase_citadel"
 		owner = event_target:fallen_empire_hive_$FRAGMENT$
-
 		module = "shipyard"
 		module = "anchorage"
 		module = "anchorage"
 		module = "hangar_bay"
 		module = "gun_battery"
 		module = "gun_battery"
-
 		building = "growth_chamber"
 		building = "command_center"
 		building = "target_uplink_computer"
 		building = "dark_matter_listening_post"
-
 		effect = {
 			while = {
 				count = 4
@@ -332,25 +335,25 @@ create_broken_fe_outpost = {
 	create_ambient_object = {
 		type = broken_holy_world_outpost
 	}
+
 	last_created_ambient_object = {
-		set_location = {
-			target = prev
-			distance = 10
-		}
+		set_location = { target = prev distance = 10 }
 		save_event_target_as = broken_outpost
 	}
-	#create_ambient_object = {
+
+	# create_ambient_object = {
 	#	type = large_debris_object
-	#}
-	#last_created_ambient_object = {
+	# }
+	# last_created_ambient_object = {
 	#	set_location = {
 	#		target = event_target:broken_outpost
 	#		distance = 0
 	#	}
-	#}
+	# }
 	create_ambient_object = {
 		type = small_debris_object
 	}
+
 	last_created_ambient_object = {
 		set_location = {
 			target = event_target:broken_outpost
@@ -358,9 +361,11 @@ create_broken_fe_outpost = {
 			angle = 0
 		}
 	}
+
 	create_ambient_object = {
 		type = small_debris_object
 	}
+
 	last_created_ambient_object = {
 		set_location = {
 			target = event_target:broken_outpost
@@ -368,9 +373,11 @@ create_broken_fe_outpost = {
 			angle = 90
 		}
 	}
+
 	create_ambient_object = {
 		type = small_debris_object
 	}
+
 	last_created_ambient_object = {
 		set_location = {
 			target = event_target:broken_outpost
@@ -378,9 +385,11 @@ create_broken_fe_outpost = {
 			angle = 180
 		}
 	}
+
 	create_ambient_object = {
 		type = small_debris_object
 	}
+
 	last_created_ambient_object = {
 		set_location = {
 			target = event_target:broken_outpost
@@ -388,9 +397,11 @@ create_broken_fe_outpost = {
 			angle = 270
 		}
 	}
+
 	create_ambient_object = {
 		type = medium_debris_02_object
 	}
+
 	last_created_ambient_object = {
 		set_location = {
 			target = event_target:broken_outpost
@@ -398,9 +409,11 @@ create_broken_fe_outpost = {
 			angle = 5
 		}
 	}
+
 	create_ambient_object = {
 		type = medium_debris_02_object
 	}
+
 	last_created_ambient_object = {
 		set_location = {
 			target = event_target:broken_outpost
@@ -408,9 +421,11 @@ create_broken_fe_outpost = {
 			angle = 120
 		}
 	}
+
 	create_ambient_object = {
 		type = medium_debris_01_object
 	}
+
 	last_created_ambient_object = {
 		set_location = {
 			target = event_target:broken_outpost
@@ -434,17 +449,11 @@ create_fe_servant_species = {
 		}
 		effect = {
 			if = {
-				limit = {
-					is_archetype = LITHOID
-				}
-				change_species_characteristics = {
-					add_trait = "trait_lithoid"
-				}
+				limit = { is_archetype = LITHOID }
+				change_species_characteristics = { add_trait = "trait_lithoid" }
 			}
 			else = {
-				change_species_characteristics = {
-					add_trait = "trait_organic"
-				}
+				change_species_characteristics = { add_trait = "trait_organic" }
 			}
 		}
 	}
@@ -462,7 +471,6 @@ create_fe_servant_robots = {
 			trait = "trait_robot_luxurious"
 			trait = "trait_robot_domestic_protocols"
 		}
-
 		effect = {
 			set_synth_or_robot_portrait_effect = yes
 		}
@@ -480,11 +488,9 @@ create_fe_fringe_colony = {
 	add_building = building_fe_dome
 	while = {
 		count = 5
-		add_district = {
-			district_type = district_city
-			ignore_cap = yes
-		}
+		add_district = { district_type = district_city ignore_cap = yes }
 	}
+
 	create_pop_group = {
 		size = 800
 		species = owner_species
@@ -526,6 +532,7 @@ create_fe_spiritualist_fringe_colony = {
 			district = district_farming
 		}
 	}
+
 	create_pop_group = {
 		size = 2000
 		species = owner_species
@@ -538,7 +545,6 @@ awaken_fallen_machine_empire = {
 			is_country_type = fallen_empire
 			is_machine_empire = yes
 		}
-
 		country_event = { id = fallen_machine_empire.1 days = 30 random = 30 }
 	}
 }
@@ -551,16 +557,12 @@ awaken_guardians_of_the_galaxy = {
 			modifier = {
 				factor = 0
 				exists = root
-				root = {
-					last_increased_tech = tech_cosmogenesis_thesis
-				}
+				root = { last_increased_tech = tech_cosmogenesis_thesis }
 			}
 			# awaken_guardians_of_the_galaxy_one_random
 			random_country = {
 				limit = {
-					NOT = {
-						has_country_flag = awakening_not_allowed
-					}
+					NOT = { has_country_flag = awakening_not_allowed }
 					is_country_type = fallen_empire
 					OR = {
 						is_fanatic_materialist = yes
@@ -570,14 +572,8 @@ awaken_guardians_of_the_galaxy = {
 					fleet_power > 60000
 				}
 				set_country_flag = guardians_of_the_galaxy
-				set_timed_country_flag = {
-					flag = timed_guardians_of_the_galaxy
-					years = 5
-				}
-				set_timed_country_flag = {
-					flag = timed_guardians_of_the_galaxy_2
-					years = 10
-				}
+				set_timed_country_flag = { flag = timed_guardians_of_the_galaxy years = 5 }
+				set_timed_country_flag = { flag = timed_guardians_of_the_galaxy_2 years = 10 }
 			}
 		}
 		0 = {
@@ -585,29 +581,19 @@ awaken_guardians_of_the_galaxy = {
 				# Materialists are supposed to have 1/100 chance of awakening every time you research Infinity Thesis. This chance should not be modified.
 				add = 99999
 				exists = root
-				root = {
-					last_increased_tech = tech_cosmogenesis_thesis
-				}
+				root = { last_increased_tech = tech_cosmogenesis_thesis }
 			}
 			# awaken_guardians_of_the_galaxy_one_random_materialist
 			random_country = {
 				limit = {
-					NOT = {
-						has_country_flag = awakening_not_allowed
-					}
+					NOT = { has_country_flag = awakening_not_allowed }
 					is_country_type = fallen_empire
 					is_fanatic_materialist = yes
 					fleet_power > 60000
 				}
 				set_country_flag = guardians_of_the_galaxy
-				set_timed_country_flag = {
-					flag = timed_guardians_of_the_galaxy
-					years = 5
-				}
-				set_timed_country_flag = {
-					flag = timed_guardians_of_the_galaxy_2
-					years = 10
-				}
+				set_timed_country_flag = { flag = timed_guardians_of_the_galaxy years = 5 }
+				set_timed_country_flag = { flag = timed_guardians_of_the_galaxy_2 years = 10 }
 			}
 		}
 		15 = {
@@ -615,16 +601,12 @@ awaken_guardians_of_the_galaxy = {
 			modifier = {
 				factor = 0
 				exists = root
-				root = {
-					last_increased_tech = tech_cosmogenesis_thesis
-				}
+				root = { last_increased_tech = tech_cosmogenesis_thesis }
 			}
 			# awaken_guardians_of_the_galaxy_all
 			every_country = {
 				limit = {
-					NOT = {
-						has_country_flag = awakening_not_allowed
-					}
+					NOT = { has_country_flag = awakening_not_allowed }
 					is_country_type = fallen_empire
 					OR = {
 						is_fanatic_materialist = yes
@@ -635,14 +617,8 @@ awaken_guardians_of_the_galaxy = {
 				}
 				set_country_flag = guardians_of_the_galaxy
 				set_country_flag = guardians_of_the_galaxy_twin
-				set_timed_country_flag = {
-					flag = timed_guardians_of_the_galaxy
-					years = 5
-				}
-				set_timed_country_flag = {
-					flag = timed_guardians_of_the_galaxy_2
-					years = 10
-				}
+				set_timed_country_flag = { flag = timed_guardians_of_the_galaxy years = 5 }
+				set_timed_country_flag = { flag = timed_guardians_of_the_galaxy_2 years = 10 }
 			}
 		}
 		25 = {
@@ -650,14 +626,10 @@ awaken_guardians_of_the_galaxy = {
 			modifier = {
 				factor = 0
 				OR = {
-					any_country = {
-						is_synth_queen_country_type = yes
-					}
+					any_country = { is_synth_queen_country_type = yes }
 					AND = {
 						exists = root
-						root = {
-							last_increased_tech = tech_cosmogenesis_thesis
-						}
+						root = { last_increased_tech = tech_cosmogenesis_thesis }
 					}
 				}
 			}
@@ -1078,10 +1050,7 @@ create_fallen_empire_large_ship = {
 						graphical_culture = owner
 					}
 				}
-				modifier = {
-					factor = 2
-					has_country_flag = fallen_empire_hive_war
-				}
+				modifier = { factor = 2 has_country_flag = fallen_empire_hive_war }
 			}
 			10 = {
 				# Growth
@@ -1093,10 +1062,7 @@ create_fallen_empire_large_ship = {
 						graphical_culture = owner
 					}
 				}
-				modifier = {
-					factor = 2
-					has_country_flag = fallen_empire_hive_growth
-				}
+				modifier = { factor = 2 has_country_flag = fallen_empire_hive_growth }
 			}
 			10 = {
 				# Control
@@ -1108,10 +1074,7 @@ create_fallen_empire_large_ship = {
 						graphical_culture = owner
 					}
 				}
-				modifier = {
-					factor = 2
-					has_country_flag = fallen_empire_hive_control
-				}
+				modifier = { factor = 2 has_country_flag = fallen_empire_hive_control }
 			}
 		}
 	}
@@ -1240,10 +1203,7 @@ create_fallen_empire_small_ship = {
 					design = "NAME_HIVE_FE_Small_Weaver_War"
 					graphical_culture = owner
 				}
-				modifier = {
-					factor = 2
-					has_country_flag = fallen_empire_hive_war
-				}
+				modifier = { factor = 2 has_country_flag = fallen_empire_hive_war }
 			}
 			10 = {
 				# Growth
@@ -1252,10 +1212,7 @@ create_fallen_empire_small_ship = {
 					design = "NAME_HIVE_FE_Small_Weaver_Growth"
 					graphical_culture = owner
 				}
-				modifier = {
-					factor = 2
-					has_country_flag = fallen_empire_hive_growth
-				}
+				modifier = { factor = 2 has_country_flag = fallen_empire_hive_growth }
 			}
 			10 = {
 				# Control
@@ -1264,10 +1221,7 @@ create_fallen_empire_small_ship = {
 					design = "NAME_HIVE_FE_Small_Weaver_Control"
 					graphical_culture = owner
 				}
-				modifier = {
-					factor = 2
-					has_country_flag = fallen_empire_hive_control
-				}
+				modifier = { factor = 2 has_country_flag = fallen_empire_hive_control }
 			}
 		}
 	}
@@ -1338,12 +1292,8 @@ create_fallen_empire_construction_ship = {
 
 create_fallen_empire_reinforcements = {
 	random_list = {
-		75 = {
-			create_fallen_empire_reinforcement_fleet = yes
-		}
-		25 = {
-			create_fallen_empire_titan_fleet = yes
-		}
+		75 = { create_fallen_empire_reinforcement_fleet = yes }
+		25 = { create_fallen_empire_titan_fleet = yes }
 	}
 }
 
@@ -1402,13 +1352,12 @@ create_fallen_empire_fleet = {
 			leader_age_min = 25
 			leader_age_max = 45
 			effect = {
-				add_trait = {
-					trait = subclass_commander_admiral
-				}
+				add_trait = { trait = subclass_commander_admiral }
 				add_skill = 9
 			}
 		}
 	}
+
 	create_fleet = {
 		effect = {
 			set_owner = prev.owner
@@ -1452,7 +1401,10 @@ create_fallen_empire_fleet = {
 			}
 		}
 	}
-	last_created_fleet = { assign_leader = last_created_leader }
+
+	last_created_fleet = {
+		assign_leader = last_created_leader
+	}
 }
 
 create_fallen_empire_titan_fleet = {
@@ -1465,12 +1417,12 @@ create_fallen_empire_titan_fleet = {
 			leader_age_max = 45
 		}
 	}
+
 	last_created_leader = {
-		add_trait = {
-			trait = subclass_commander_admiral
-		}
+		add_trait = { trait = subclass_commander_admiral }
 		add_skill = 9
 	}
+
 	create_fleet = {
 		effect = {
 			set_owner = prev.owner
@@ -1482,20 +1434,22 @@ create_fallen_empire_titan_fleet = {
 			}
 		}
 	}
-	last_created_fleet = { assign_leader = last_created_leader }
+
+	last_created_fleet = {
+		assign_leader = last_created_leader
+	}
 }
 
 create_fallen_empire_starting_navy = {
 	create_fallen_empire_fleet = yes
 	create_fallen_empire_fleet = yes
+
 	random = {
 		chance = 33
 		create_fallen_empire_fleet = yes
 	}
 	if = {
-		limit = {
-			has_apocalypse_dlc = yes
-		}
+		limit = { has_apocalypse_dlc = yes }
 		random = {
 			chance = 10
 			create_fleet = {
@@ -1511,10 +1465,12 @@ create_fallen_empire_starting_navy = {
 			}
 		}
 	}
+
 	random = {
 		chance = 25
 		create_fallen_empire_titan_fleet = yes
 	}
+
 	create_fleet = {
 		effect = {
 			set_owner = prev.owner
@@ -1559,16 +1515,11 @@ add_awakened_fallen_empire_fleet = {
 					fleet_power > 120000
 					AND = {
 						has_federation = yes
-						federation = {
-							fleet_power > 150000
-						}
+						federation = { fleet_power > 150000 }
 					}
 					AND = {
 						fleet_power > 75000
-						any_country = {
-							has_defensive_pact = prev
-							fleet_power > 75000
-						}
+						any_country = { has_defensive_pact = prev fleet_power > 75000 }
 					}
 				}
 			}
@@ -1582,16 +1533,11 @@ add_awakened_fallen_empire_fleet = {
 					fleet_power > 200000
 					AND = {
 						has_federation = yes
-						federation = {
-							fleet_power > 200000
-						}
+						federation = { fleet_power > 200000 }
 					}
 					AND = {
 						fleet_power > 120000
-						any_country = {
-							has_defensive_pact = prev
-							fleet_power > 120000
-						}
+						any_country = { has_defensive_pact = prev fleet_power > 120000 }
 					}
 				}
 			}
@@ -1626,20 +1572,23 @@ add_awakened_fallen_empire_resources = {
 # this = country joining league; prev = federation leader
 add_non_aligned_league_opinions = {
 	add_opinion_modifier = { who = prev modifier = opinion_non_aligned_league }
-	prev = { add_opinion_modifier = { who = prev modifier = opinion_non_aligned_league } }
+
+	prev = {
+		add_opinion_modifier = { who = prev modifier = opinion_non_aligned_league }
+	}
+
 	every_country = {
 		limit = {
 			is_in_federation_with = prevprev
-			NOT = { is_same_value = prev }
-			NOT = {
-				has_opinion_modifier = {
-					who = prev
-					modifier = opinion_non_aligned_league
-				}
+			NOR = {
+				is_same_value = prev
+				has_opinion_modifier = { who = prev modifier = opinion_non_aligned_league }
 			}
 		}
 		add_opinion_modifier = { who = prev modifier = opinion_non_aligned_league }
-		prev = { add_opinion_modifier = { who = prev modifier = opinion_non_aligned_league } }
+		prev = {
+			add_opinion_modifier = { who = prev modifier = opinion_non_aligned_league }
+		}
 	}
 	every_country = {
 		limit = {
@@ -1650,18 +1599,22 @@ add_non_aligned_league_opinions = {
 			}
 		}
 		add_opinion_modifier = { who = prev modifier = opinion_non_aligned_league_fe }
-		prev = { add_opinion_modifier = { who = prev modifier = opinion_non_aligned_league_fe } }
+		prev = {
+			add_opinion_modifier = { who = prev modifier = opinion_non_aligned_league_fe }
+		}
 	}
 }
 
-#scope = scion
+# scope = scion
 create_scion_wormhole_link = {
 	capital_scope = {
 		solar_system = { save_event_target_as = home_system }
 	}
+
 	event_target:scion_master = {
 		random_system_within_border = { save_event_target_as = fe_target_system }
 	}
+
 	event_target:home_system = {
 		event_target:fe_target_system = {
 			prev = { # done this way to ensure we don't spawn "orphan wormholes (wormholes that aren't linked to anything)
@@ -1679,6 +1632,7 @@ create_scion_wormhole_link = {
 			link_wormholes = prev
 		}
 	}
+
 	set_country_flag = encountered_first_wormhole
 	add_seen_bypass_type = wormhole
 }
@@ -1747,25 +1701,12 @@ create_hive_fe_fragment_war = {
 			civic = civic_hyper_aggressive_drones
 		}
 		species = event_target:hive_fe_species
-		ethos = {
-			ethic = ethic_gestalt_consciousness
-		}
+		ethos = { ethic = ethic_gestalt_consciousness }
 		graphical_culture = biogenesis_01_fallen_empire
 		flag = {
-			icon = {
-				category = "special"
-				file = "hive_fe_flag_1.dds"
-			}
-			background = {
-				category = "backgrounds"
-				file = "flag_BG_39.dds"
-			}
-			colors = {
-				"light_orange"
-				"dark_orange"
-				"black"
-				"null"
-			}
+			icon = { category = "special" file = "hive_fe_flag_1.dds" }
+			background = { category = "backgrounds" file = "flag_BG_39.dds" }
+			colors = { "light_orange" "dark_orange" "black" "null" }
 		}
 		origin = "origin_fallen_empire_hive"
 		effect = {
@@ -1779,10 +1720,7 @@ create_hive_fe_fragment_war = {
 			}
 			if = {
 				limit = { has_apocalypse_dlc = yes }
-				give_technology = {
-					tech = tech_colossus
-					message = no
-				}
+				give_technology = { tech = tech_colossus message = no }
 			}
 			add_ascension_perk = ap_hive_worlds
 			# must initialize global designs here
@@ -1801,9 +1739,7 @@ create_hive_fe_fragment_war = {
 			add_global_ship_design = "NAME_HIVE_Citadel_1"
 			add_global_ship_design = "NAME_HIVE_Citadel_2"
 			add_global_ship_design = "NAME_HIVE_Citadel_3"
-			ruler = {
-				add_skill = 9
-			}
+			ruler = { add_skill = 9 }
 			set_variable = { # The Variable which will be used to figure out which fragment is the most influential
 				which = hive_fe_influence
 				value = 1
@@ -1829,25 +1765,12 @@ create_hive_fe_fragment_growth = {
 			civic = civic_unstable_drones
 		}
 		species = event_target:hive_fe_species
-		ethos = {
-			ethic = ethic_gestalt_consciousness
-		}
+		ethos = { ethic = ethic_gestalt_consciousness }
 		graphical_culture = biogenesis_01_fallen_empire
 		flag = {
-			icon = {
-				category = "special"
-				file = "hive_fe_flag_3.dds"
-			}
-			background = {
-				category = "backgrounds"
-				file = "flag_BG_39.dds"
-			}
-			colors = {
-				"light_orange"
-				"dark_orange"
-				"black"
-				"null"
-			}
+			icon = { category = "special" file = "hive_fe_flag_3.dds" }
+			background = { category = "backgrounds" file = "flag_BG_39.dds" }
+			colors = { "light_orange" "dark_orange" "black" "null" }
 		}
 		origin = "origin_fallen_empire_hive"
 		effect = {
@@ -1861,10 +1784,7 @@ create_hive_fe_fragment_growth = {
 			}
 			if = {
 				limit = { has_apocalypse_dlc = yes }
-				give_technology = {
-					tech = tech_colossus
-					message = no
-				}
+				give_technology = { tech = tech_colossus message = no }
 			}
 			add_ascension_perk = ap_hive_worlds
 			# must initialize global designs here
@@ -1883,9 +1803,7 @@ create_hive_fe_fragment_growth = {
 			add_global_ship_design = "NAME_HIVE_Citadel_1"
 			add_global_ship_design = "NAME_HIVE_Citadel_2"
 			add_global_ship_design = "NAME_HIVE_Citadel_3"
-			ruler = {
-				add_skill = 9
-			}
+			ruler = { add_skill = 9 }
 			set_variable = { # The Variable which will be used to figure out which fragment is the most influential
 				which = hive_fe_influence
 				value = 1
@@ -1911,25 +1829,12 @@ create_hive_fe_fragment_control = {
 			civic = civic_stunted_drones
 		}
 		species = event_target:hive_fe_species
-		ethos = {
-			ethic = ethic_gestalt_consciousness
-		}
+		ethos = { ethic = ethic_gestalt_consciousness }
 		graphical_culture = biogenesis_01_fallen_empire
 		flag = {
-			icon = {
-				category = "special"
-				file = "hive_fe_flag_2.dds"
-			}
-			background = {
-				category = "backgrounds"
-				file = "flag_BG_39.dds"
-			}
-			colors = {
-				"light_orange"
-				"dark_orange"
-				"black"
-				"null"
-			}
+			icon = { category = "special" file = "hive_fe_flag_2.dds" }
+			background = { category = "backgrounds" file = "flag_BG_39.dds" }
+			colors = { "light_orange" "dark_orange" "black" "null" }
 		}
 		origin = "origin_fallen_empire_hive"
 		effect = {
@@ -1943,10 +1848,7 @@ create_hive_fe_fragment_control = {
 			}
 			if = {
 				limit = { has_apocalypse_dlc = yes }
-				give_technology = {
-					tech = tech_colossus
-					message = no
-				}
+				give_technology = { tech = tech_colossus message = no }
 			}
 			add_ascension_perk = ap_hive_worlds
 			# must initialize global designs here
@@ -1965,9 +1867,7 @@ create_hive_fe_fragment_control = {
 			add_global_ship_design = "NAME_HIVE_Citadel_1"
 			add_global_ship_design = "NAME_HIVE_Citadel_2"
 			add_global_ship_design = "NAME_HIVE_Citadel_3"
-			ruler = {
-				add_skill = 9
-			}
+			ruler = { add_skill = 9 }
 			set_variable = { # The Variable which will be used to figure out which fragment is the most influential
 				which = hive_fe_influence
 				value = 1
@@ -1985,17 +1885,11 @@ create_hive_fe_fragment_control = {
 create_random_fe_fragment = {
 	random_list = {
 		1 = { # War
-			modifier = {
-				factor = 0
-				exists = event_target:fallen_empire_hive_war
-			}
+			modifier = { factor = 0 exists = event_target:fallen_empire_hive_war }
 			create_hive_fe_fragment_war = yes
 		}
 		1 = { # Growth
-			modifier = {
-				factor = 0
-				exists = event_target:fallen_empire_hive_growth
-			}
+			modifier = { factor = 0 exists = event_target:fallen_empire_hive_growth }
 			create_hive_fe_fragment_growth = yes
 		}
 		1 = { # Control
@@ -2006,6 +1900,7 @@ create_random_fe_fragment = {
 			create_hive_fe_fragment_control = yes
 		}
 	}
+
 	last_created_country = {
 		create_hive_fe_federation = yes
 	}
@@ -2014,13 +1909,9 @@ create_random_fe_fragment = {
 create_hive_fe_federation = {
 	# Form federation if it doesn't exist yet
 	random_country = {
-		limit = {
-			has_country_flag = first_hive_fe_fragment
-		}
+		limit = { has_country_flag = first_hive_fe_fragment }
 		if = {
-			limit = {
-				has_federation = no
-			}
+			limit = { has_federation = no }
 			prev = {
 				join_alliance = {
 					who = prev
@@ -2035,7 +1926,6 @@ create_hive_fe_federation = {
 				add_federation_experience = 420000
 			}
 		}
-
 		# Join existing federation
 		else = {
 			prev = {
@@ -2053,21 +1943,15 @@ awaken_strongest_fe_fragment = {
 }
 
 increase_fe_influence = {
-	change_variable = {
-		which = hive_fe_influence
-		value = 1
-	}
+	change_variable = { which = hive_fe_influence value = 1 }
 	if = {
-		limit = {
-			has_country_flag = fallen_empire_hive_growth
-		}
+		limit = { has_country_flag = fallen_empire_hive_growth }
 		random_planet_within_border = {
-			limit = {
-				is_terraforming_candidate = yes
-			}
+			limit = { is_terraforming_candidate = yes }
 			start_terraform_process = pc_hive
 		}
 	}
+
 	ordered_country = {
 		limit = { has_origin = origin_fallen_empire_hive }
 		position = 0
@@ -2077,10 +1961,8 @@ increase_fe_influence = {
 }
 
 decrease_fe_influence = {
-	change_variable = {
-		which = hive_fe_influence
-		value = -1
-	}
+	change_variable = { which = hive_fe_influence value = -1 }
+
 	ordered_country = {
 		limit = { has_origin = origin_fallen_empire_hive }
 		position = 0
@@ -2105,9 +1987,7 @@ generate_new_species_and_pop = {
 		$TARGET$ = {
 			while = {
 				count = $AMOUNT$
-				create_pop_group = {
-					species = event_target:new_pop_species
-				}
+				create_pop_group = { species = event_target:new_pop_species }
 			}
 		}
 		if = {
@@ -2123,7 +2003,9 @@ generate_new_species_and_pop = {
 			}
 		}
 	}
+
 	[[TRAIT]
+
 	modify_species = {
 		species = event_target:new_pop_species
 		add_trait = $TRAIT$
@@ -2131,14 +2013,14 @@ generate_new_species_and_pop = {
 			save_event_target_as = new_pop_species
 		}
 	}
+
 	]
 	[[CITIZEN_COUNTRY]
+
 	event_target:new_pop_species = {
-		set_citizenship_type = {
-			country = $CITIZEN_COUNTRY$
-			type = citizenship_full
-		}
+		set_citizenship_type = { country = $CITIZEN_COUNTRY$ type = citizenship_full }
 	}
+
 	]
 }
 
@@ -2322,10 +2204,7 @@ generate_boring_species_choices = {
 grant_random_fe_building = {
 	random_list = {
 		1 = {
-			modifier = {
-				factor = 0
-				has_country_flag = micro_forge_can_build
-			}
+			modifier = { factor = 0 has_country_flag = micro_forge_can_build }
 			grant_fe_building = { BUILDING = micro_forge }
 		}
 		1 = {
@@ -2363,17 +2242,11 @@ grant_random_fe_building = {
 			grant_fe_building = { BUILDING = class_3_singularity }
 		}
 		1 = {
-			modifier = {
-				factor = 0
-				has_country_flag = fe_sky_dome_can_build
-			}
+			modifier = { factor = 0 has_country_flag = fe_sky_dome_can_build }
 			grant_fe_building = { BUILDING = fe_sky_dome }
 		}
 		1 = {
-			modifier = {
-				factor = 0
-				has_country_flag = fe_fortress_can_build
-			}
+			modifier = { factor = 0 has_country_flag = fe_fortress_can_build }
 			grant_fe_building = { BUILDING = fe_fortress }
 		}
 		1 = {
@@ -2431,10 +2304,7 @@ grant_random_fe_building = {
 			grant_fe_building = { BUILDING = fe_clinic_1 }
 		}
 		1 = {
-			modifier = {
-				factor = 0
-				has_country_flag = fe_security_1_can_build
-			}
+			modifier = { factor = 0 has_country_flag = fe_security_1_can_build }
 			grant_fe_building = { BUILDING = fe_security_1 }
 		}
 		1 = {
@@ -2448,10 +2318,7 @@ grant_random_fe_building = {
 			grant_fe_building = { BUILDING = fe_market_1 }
 		}
 		1 = {
-			modifier = {
-				factor = 0
-				has_country_flag = fe_silo_1_can_build
-			}
+			modifier = { factor = 0 has_country_flag = fe_silo_1_can_build }
 			grant_fe_building = { BUILDING = fe_silo_1 }
 		}
 		1 = {
@@ -2465,17 +2332,11 @@ grant_random_fe_building = {
 			grant_fe_building = { BUILDING = fe_entertainment_1 }
 		}
 		1 = {
-			modifier = {
-				factor = 0
-				has_country_flag = fe_lab_1_can_build
-			}
+			modifier = { factor = 0 has_country_flag = fe_lab_1_can_build }
 			grant_fe_building = { BUILDING = fe_lab_1 }
 		}
 		1 = {
-			modifier = {
-				factor = 0
-				has_country_flag = fe_mine_1_can_build
-			}
+			modifier = { factor = 0 has_country_flag = fe_mine_1_can_build }
 			grant_fe_building = { BUILDING = fe_mine_1 }
 		}
 	}
@@ -2484,8 +2345,10 @@ grant_random_fe_building = {
 grant_fe_building = {
 	change_variable = { which = $BUILDING$_build_count value = 1 }
 	change_variable = { which = $BUILDING$_upgrade_count value = 1 }
+
 	set_country_flag = $BUILDING$_can_build
 	set_timed_country_flag = { flag = recently_got_$BUILDING$ days = 10 }
+
 	create_message = {
 		type = FALLEN_EMPIRE_BUILDING_GAINED
 		localization = MESSAGE_FALLEN_EMPIRE_BUILDING_GAINED
@@ -2504,7 +2367,10 @@ create_mad_hive_fe_task_message = {
 			scope = $FALLEN_EMPIRE$
 		}
 	}
-	$FALLEN_EMPIRE$ = { add_opinion_modifier = { who = prev modifier = opinion_failed_fallen_empire_task } }
+
+	$FALLEN_EMPIRE$ = {
+		add_opinion_modifier = { who = prev modifier = opinion_failed_fallen_empire_task }
+	}
 }
 
 create_happy_hive_fe_task_message = {
@@ -2518,6 +2384,7 @@ create_happy_hive_fe_task_message = {
 			scope = $FALLEN_EMPIRE$
 		}
 	}
+
 	$FALLEN_EMPIRE$ = {
 		add_opinion_modifier = { who = prev modifier = opinion_completed_fallen_empire_task }
 		increase_fe_influence = yes
@@ -2527,9 +2394,7 @@ create_happy_hive_fe_task_message = {
 generate_ae_entertainment_reward = {
 	from = {
 		if = {
-			limit = {
-				country_uses_bio_ships = no
-			}
+			limit = { country_uses_bio_ships = no }
 			add_monthly_resource_mult = {
 				resource = engineering_research
 				value = @tier4researchreward

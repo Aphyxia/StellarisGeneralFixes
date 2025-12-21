@@ -403,7 +403,10 @@ building_shroud_observatory_1 = {
 
 	allow = {
 		is_occupied_flag = no
-		custom_tooltip = { fail_text = SHROUD_RIFT_MISSING_TT has_deposit = d_shroud_rift_deposit }
+		custom_tooltip = {
+			fail_text = SHROUD_RIFT_MISSING_TT
+			has_deposit = d_shroud_rift_deposit
+		}
 	}
 
 	destroy_trigger = {

@@ -920,7 +920,10 @@ country_event = {
 				type = default
 				auto_delete = yes
 				origin = origin_subterranean
-				ethos = { ethic = ethic_fanatic_militarist ethic = ethic_authoritarian }
+				ethos = {
+					ethic = ethic_fanatic_militarist
+					ethic = ethic_authoritarian
+				}
 				authority = random
 				civics = random
 				flag = {
@@ -1716,8 +1719,8 @@ planet_event = {
 		NOR = {
 			has_planet_flag = seismic_disturbance_gift
 			pop_amount < 1
+			check_variable = { which = "angry_subterraneans" value >= 1 }
 		}
-		check_variable = { which = "angry_subterraneans" value < 1 }
 	}
 
 	mean_time_to_happen = {
@@ -1840,8 +1843,8 @@ planet_event = {
 		NOR = {
 			has_planet_flag = seismic_disturbance_anthropologists
 			pop_amount < 1
+			check_variable = { which = "angry_subterraneans" value >= 1 }
 		}
-		check_variable = { which = "angry_subterraneans" value < 1 }
 	}
 
 	mean_time_to_happen = {
@@ -2303,7 +2306,9 @@ planet_event = {
 				resource_stockpile_compare = { resource = energy value >= 150 }
 			}
 		}
-		owner = { add_resource = { energy = -150 } }
+		owner = {
+			add_resource = { energy = -150 }
+		}
 		ai_chance = { factor = 2 }
 	}
 	option = {
@@ -2321,7 +2326,9 @@ planet_event = {
 				resource_stockpile_compare = { resource = energy value >= 375 }
 			}
 		}
-		owner = { add_resource = { energy = -375 } }
+		owner = {
+			add_resource = { energy = -375 }
+		}
 		ai_chance = { factor = 2 }
 	}
 	option = {
@@ -2335,7 +2342,9 @@ planet_event = {
 				resource_stockpile_compare = { resource = energy value >= 650 }
 			}
 		}
-		owner = { add_resource = { energy = -600 } }
+		owner = {
+			add_resource = { energy = -600 }
+		}
 		ai_chance = { factor = 2 }
 	}
 }
@@ -3120,10 +3129,7 @@ planet_event = {
 		if = {
 			limit = {
 				has_planet_flag = nuked_earth
-				count_galaxy_species = {
-					count = 0
-					limit = { is_human_species = yes }
-				}
+				NOT = { any_galaxy_species = { is_human_species = yes } }
 			}
 			create_species = {
 				name = NAME_Human
@@ -3640,7 +3646,10 @@ planet_event = {
 			has_planet_flag = wasteland_radiation
 			solar_system = { is_capital_system = yes }
 		}
-		owner = { empire_has_good_habitability_on_tomb_worlds = no is_gestalt = no }
+		owner = {
+			empire_has_good_habitability_on_tomb_worlds = no
+			is_gestalt = no
+		}
 		NOR = {
 			pop_amount < 1
 			owner = { has_country_flag = had_colony_163 }
@@ -3729,7 +3738,9 @@ planet_event = {
 	option = {
 		name = colony.164.b
 		custom_tooltip = colony.164.a.tooltip
-		trigger = { owner = { is_militarist = yes } }
+		trigger = {
+			owner = { is_militarist = yes }
+		}
 	}
 	option = {
 		name = colony.164.c

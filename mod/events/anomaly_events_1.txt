@@ -314,10 +314,7 @@ ship_event = {
 		name = EXCELLENT
 		trigger = {
 			owner = {
-				count_planet_within_border = {
-					count = 0
-					limit = { is_same_value = event_target:MiningPlanet }
-				}
+				NOT = { any_planet_within_border = { is_same_value = event_target:MiningPlanet } }
 			}
 			from = {
 				has_resource = { type = minerals amount > 0 }
@@ -336,10 +333,7 @@ ship_event = {
 		name = EXCELLENT
 		trigger = {
 			owner = {
-				count_planet_within_border = {
-					count = 0
-					limit = { is_same_value = event_target:MiningPlanet }
-				}
+				NOT = { any_planet_within_border = { is_same_value = event_target:MiningPlanet } }
 			}
 			from = {
 				has_resource = { type = energy amount > 0 }
@@ -2005,7 +1999,10 @@ ship_event = {
 			owner = {
 				if = {
 					limit = {
-						has_completed_event_chain_counter = { event_chain = "old_gods_chain" counter = "shrines_searched" }
+						has_completed_event_chain_counter = {
+							event_chain = "old_gods_chain"
+							counter = "shrines_searched"
+						}
 					}
 					country_event = { id = anomaly.168 }
 				}
@@ -2956,7 +2953,9 @@ ship_event = {
 		}
 		name = anomaly.230.b
 		custom_tooltip = anomaly.230.b.tooltip
-		owner = { add_resource = { energy = -200 } }
+		owner = {
+			add_resource = { energy = -200 }
+		}
 		hidden_effect = {
 			random_list = {
 				50 = { ship_event = { id = anomaly.231 days = 5 } }
@@ -4976,9 +4975,7 @@ country_event = {
 					class = ROBOT
 					namelist = FUN3
 					portrait = "default_robot"
-					traits = {
-						trait = "trait_mechanical"
-					}
+					traits = { trait = "trait_mechanical" }
 				}
 				create_pop_group = { species = last_created_species size = 300 }
 			}
@@ -5107,16 +5104,17 @@ country_event = {
 						class = ROBOT
 						namelist = FUN3
 						portrait = "default_robot"
-						traits = {
-							trait = "trait_mechanical"
-						}
+						traits = { trait = "trait_mechanical" }
 					}
 					create_country = {
 						name = "NAME_Awoken"
 						name_list = FUN3
 						species = last_created_species
 						type = default
-						ethos = { ethic = ethic_fanatic_materialist ethic = ethic_xenophile }
+						ethos = {
+							ethic = ethic_fanatic_materialist
+							ethic = ethic_xenophile
+						}
 						authority = random
 						civics = random
 						flag = {
@@ -5461,9 +5459,7 @@ country_event = {
 					class = ROBOT
 					namelist = FUN3
 					portrait = "default_robot"
-					traits = {
-						trait = "trait_mechanical"
-					}
+					traits = { trait = "trait_mechanical" }
 				}
 				create_pop_group = { species = last_created_species size = 300 }
 			}
@@ -5591,16 +5587,17 @@ country_event = {
 						class = ROBOT
 						namelist = FUN3
 						portrait = "default_robot"
-						traits = {
-							trait = "trait_mechanical"
-						}
+						traits = { trait = "trait_mechanical" }
 					}
 					create_country = {
 						name = "NAME_Awoken"
 						name_list = FUN3
 						species = last_created_species
 						type = default
-						ethos = { ethic = ethic_fanatic_materialist ethic = ethic_xenophile }
+						ethos = {
+							ethic = ethic_fanatic_materialist
+							ethic = ethic_xenophile
+						}
 						authority = random
 						civics = random
 						auto_delete = no

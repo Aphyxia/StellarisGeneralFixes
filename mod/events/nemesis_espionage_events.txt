@@ -2034,7 +2034,9 @@ country_event = {
 			}
 		}
 		if = {
-			limit = { root = { is_overlord_to = from } }
+			limit = {
+				root = { is_overlord_to = from }
+			}
 			tooltip = {
 				random_agreement = {
 					limit = {
@@ -2046,7 +2048,9 @@ country_event = {
 			}
 		}
 		if = {
-			limit = { from = { is_overlord_to = root } }
+			limit = {
+				from = { is_overlord_to = root }
+			}
 			tooltip = {
 				random_agreement = {
 					limit = {
@@ -2101,11 +2105,9 @@ country_event = {
 
 	trigger = {
 		has_active_spynetwork = yes
-		NAND = { # shouldn't appear in endgame, unless triggered by Smear Campaign
-			NOR = {
-				end_game_years_passed <= 0
-				exists = event_target:insidious_plot_country
-			}
+		OR = { # Vfix
+			end_game_years_passed > 0 # shouldn't appear in endgame, unless triggered by Smear Campaign
+			exists = event_target:insidious_plot_country
 		}
 	}
 
@@ -2175,7 +2177,9 @@ country_event = {
 						NOT = {
 							root = {
 								has_federation = yes
-								federation = { is_same_value = event_target:insidious_plot_spynetwork.federation }
+								federation = {
+									is_same_value = event_target:insidious_plot_spynetwork.federation
+								}
 							}
 						}
 						federation = {
@@ -2613,7 +2617,9 @@ country_event = {
 			}
 		}
 		if = {
-			limit = { root = { is_overlord_to = from } }
+			limit = {
+				root = { is_overlord_to = from }
+			}
 			tooltip = {
 				random_agreement = {
 					limit = {
@@ -2625,7 +2631,9 @@ country_event = {
 			}
 		}
 		if = {
-			limit = { from = { is_overlord_to = root } }
+			limit = {
+				from = { is_overlord_to = root }
+			}
 			tooltip = {
 				random_agreement = {
 					limit = {
@@ -2651,7 +2659,9 @@ country_event = {
 			}
 		}
 		if = {
-			limit = { root = { is_overlord_to = from } }
+			limit = {
+				root = { is_overlord_to = from }
+			}
 			tooltip = {
 				random_agreement = {
 					limit = {
@@ -2663,7 +2673,9 @@ country_event = {
 			}
 		}
 		if = {
-			limit = { from = { is_overlord_to = root } }
+			limit = {
+				from = { is_overlord_to = root }
+			}
 			tooltip = {
 				random_agreement = {
 					limit = {

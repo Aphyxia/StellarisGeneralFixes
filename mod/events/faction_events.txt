@@ -418,8 +418,8 @@ planet_event = {
 			NOR = {
 				has_country_flag = recent_factions_event
 				has_country_flag = factions_political_frontier
+				count_pop_faction = { count <= 1 }
 			}
-			count_pop_faction = { count > 1 }
 		}
 	}
 
@@ -561,7 +561,7 @@ planet_event = {
 		if = { # Egalitarianism has taken root
 			limit = {
 				count_owned_pop_amount = {
-					count > 0
+					count >= 1
 					limit = { is_egalitarian = yes }
 				}
 			}
@@ -731,7 +731,7 @@ planet_event = {
 		if = { # Authoritarianism has taken root
 			limit = {
 				count_owned_pop_amount = {
-					count > 0
+					count >= 1
 					limit = { is_authoritarian = yes }
 				}
 			}
@@ -1099,7 +1099,9 @@ planet_event = {
 	option = { # Let them have their fun
 		name = manifesti.5.a
 		if = {
-			limit = { owner = { is_egalitarian = yes } }
+			limit = {
+				owner = { is_egalitarian = yes }
+			}
 			event_target:manifesti_world = {
 				add_modifier = {
 					modifier = planet_manifesti_egalitarian_attraction
@@ -1116,7 +1118,10 @@ planet_event = {
 		if = {
 			limit = { owner = { is_xenophile = yes } }
 			event_target:manifesti_world = {
-				add_modifier = { modifier = planet_manifesti_xenophile_attraction years = 3 }
+				add_modifier = {
+					modifier = planet_manifesti_xenophile_attraction
+					years = 3
+				}
 			}
 		}
 		hidden_effect = {
@@ -1127,7 +1132,9 @@ planet_event = {
 	}
 	option = { # Declare Martial Law
 		name = manifesti.5.b
-		trigger = { owner = { is_militarist = yes } }
+		trigger = {
+			owner = { is_militarist = yes }
+		}
 		allow = {
 			NOT = { has_modifier = martial_law }
 			owner = {
@@ -1333,9 +1340,7 @@ planet_event = {
 						randomize_traits = no
 						background_ethic = ethic_xenophobe
 						custom_description = manifesti_leader_desc
-						traits = {
-							1 = leader_trait_lavish_lifestyle
-						}
+						traits = { 1 = leader_trait_lavish_lifestyle }
 						effect = {
 							set_skill = 6
 							save_global_event_target_as = manifesti_leader
@@ -1601,10 +1606,7 @@ country_event = {
 
 	trigger = {
 		OR = {
-			count_pop_faction = {
-				count = 0
-				limit = { is_pop_faction_type = manifesti }
-			}
+			NOT = { any_pop_faction = { is_pop_faction_type = manifesti } }
 			any_pop_faction = { is_pop_faction_type = manifesti faction_approval < 0.35 }
 		}
 		NOT = { has_country_flag = manifesti_decline }

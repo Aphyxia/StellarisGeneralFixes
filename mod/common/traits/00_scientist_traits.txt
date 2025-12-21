@@ -3964,11 +3964,17 @@ leader_trait_collective_wisdom = {
 	}
 
 	triggered_desc = {
-		trigger = { has_ancrel = no is_currently_excavating_site = no }
+		trigger = {
+			has_ancrel = no
+			is_currently_excavating_site = no
+		}
 		text = leader_trait_collective_wisdom_effect
 	}
 	triggered_desc = {
-		trigger = { has_ancrel = yes is_currently_excavating_site = no }
+		trigger = {
+			has_ancrel = yes
+			is_currently_excavating_site = no
+		}
 		text = leader_trait_collective_wisdom_ancrel_effect
 	}
 

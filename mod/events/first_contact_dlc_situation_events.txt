@@ -161,10 +161,7 @@ country_event = {
 
 	trigger = {
 		is_primitive = yes
-		count_situation = {
-			count = 0
-			limit = { is_situation_type = pre_ftl_tech_progress_situation }
-		}
+		NOT = { any_situation = { is_situation_type = pre_ftl_tech_progress_situation } }
 	}
 
 	immediate = {
@@ -283,7 +280,9 @@ situation_event = {
 			fire_on_action = { on_action = on_monthly_pulse_pre_ftl_observation }
 		}
 		else = {
-			fire_on_action = { on_action = on_monthly_pulse_pre_ftl_observation_broken_shackles }
+			fire_on_action = {
+				on_action = on_monthly_pulse_pre_ftl_observation_broken_shackles
+			}
 		}
 	}
 }
@@ -1180,7 +1179,10 @@ country_event = {
 	}
 	option = {
 		name = preftl.1020.spiritualist
-		trigger = { is_individual_machine = no is_spiritualist = yes }
+		trigger = {
+			is_individual_machine = no
+			is_spiritualist = yes
+		}
 	}
 	option = {
 		name = preftl.1020.machine
@@ -1483,7 +1485,10 @@ country_event = {
 	}
 	option = {
 		name = preftl.1035.b.spiritualist
-		trigger = { is_individual_machine = no is_spiritualist = yes }
+		trigger = {
+			is_individual_machine = no
+			is_spiritualist = yes
+		}
 		add_observation_insight_effect = {
 			VALUE = 20
 			OUTPOST = from.capital_scope.observation_outpost
@@ -1505,7 +1510,10 @@ country_event = {
 	}
 	option = {
 		name = preftl.1035.b.machine.terminator
-		trigger = { is_machine_empire = yes has_valid_civic = civic_machine_terminator }
+		trigger = {
+			is_machine_empire = yes
+			has_valid_civic = civic_machine_terminator
+		}
 		add_observation_insight_effect = {
 			VALUE = 20
 			OUTPOST = from.capital_scope.observation_outpost
@@ -1879,7 +1887,10 @@ country_event = {
 	}
 	option = {
 		name = preftl.1110.b.spiritualist
-		trigger = { is_individual_machine = no is_spiritualist = yes }
+		trigger = {
+			is_individual_machine = no
+			is_spiritualist = yes
+		}
 		add_observation_insight_effect = {
 			VALUE = 20
 			OUTPOST = from.capital_scope.observation_outpost
@@ -3068,9 +3079,7 @@ situation_event = {
 				limit = {
 					NOT = { species = { has_trait = trait_extremely_adaptive } }
 				}
-				modify_species = {
-					add_trait = trait_extremely_adaptive
-				}
+				modify_species = { add_trait = trait_extremely_adaptive }
 			}
 			weighted_random_owned_pop_group = {
 				limit = { is_robot_pop_group = no }
@@ -3301,9 +3310,7 @@ situation_event = {
 				species = root.target.owner_species
 				name = random
 				skill = 5
-				traits = {
-					trait = leader_trait_zealot
-				}
+				traits = { trait = leader_trait_zealot }
 				event_leader = yes
 				effect = {
 					set_leader_flag = true_prophet
@@ -3388,9 +3395,7 @@ situation_event = {
 				species = root.target.owner_species
 				name = random
 				skill = 5
-				traits = {
-					1 = leader_trait_plague_hardened
-				}
+				traits = { 1 = leader_trait_plague_hardened }
 				event_leader = yes
 			}
 			add_observation_insight_effect = {
@@ -3426,7 +3431,10 @@ situation_event = {
 	situation = this
 
 	immediate = {
-		owner = { set_country_flag = apocalypse_now remove_country_flag = rampant_contagion }
+		owner = {
+			set_country_flag = apocalypse_now
+			remove_country_flag = rampant_contagion
+		}
 	}
 
 	option = {
@@ -3909,7 +3917,9 @@ situation_event = {
 		}
 	}
 	option = {
-		trigger = { owner = { is_militarist = yes } }
+		trigger = {
+			owner = { is_militarist = yes }
+		}
 		name = preftl.2031.a
 		owner = {
 			add_observation_insight_effect = {
@@ -5478,9 +5488,7 @@ country_event = {
 				name = random
 				skill = 4
 				set_age = 1 # Vfix opt
-				traits = {
-					trait = leader_trait_iron_fist
-				}
+				traits = { trait = leader_trait_iron_fist }
 			}
 			set_leader = last_created_leader
 		}
@@ -6373,7 +6381,10 @@ country_event = {
 	}
 	option = {
 		name = FED_WE_WILL_RETAIN
-		trigger = { is_xenophobe = no is_materialist = no }
+		trigger = {
+			is_xenophobe = no
+			is_materialist = no
+		}
 		add_monthly_resource_mult = {
 			resource = unity
 			value = @tier1unityreward
@@ -6443,7 +6454,9 @@ country_event = {
 		is_galactic_community_formed = yes
 		is_galactic_community_member = yes
 		is_active_resolution = resolution_pre_ftl_stances_equal_standing
-		NOT = { has_country_flag = resolution_breached_pre_ftl_stances_equal_standing }
+		NOT = {
+			has_country_flag = resolution_breached_pre_ftl_stances_equal_standing
+		}
 	}
 
 	immediate = {
@@ -6478,7 +6491,9 @@ country_event = {
 		is_galactic_community_formed = yes
 		is_galactic_community_member = yes
 		is_active_resolution = resolution_pre_ftl_stances_equal_standing
-		NOT = { has_country_flag = resolution_breached_pre_ftl_stances_equal_standing }
+		NOT = {
+			has_country_flag = resolution_breached_pre_ftl_stances_equal_standing
+		}
 		exists = event_target:pre_ftl_country
 	}
 
@@ -6519,7 +6534,10 @@ country_event = {
 	}
 	option = {
 		name = FED_WE_WILL_RETAIN
-		trigger = { is_xenophobe = no is_materialist = no }
+		trigger = {
+			is_xenophobe = no
+			is_materialist = no
+		}
 		add_monthly_resource_mult = {
 			resource = unity
 			value = @tier1unityreward
@@ -6592,7 +6610,9 @@ country_event = {
 		is_galactic_community_formed = yes
 		is_galactic_community_member = yes
 		is_active_resolution = resolution_pre_ftl_stances_non_interference
-		NOT = { has_country_flag = resolution_breached_pre_ftl_stances_non_interference }
+		NOT = {
+			has_country_flag = resolution_breached_pre_ftl_stances_non_interference
+		}
 	}
 
 	immediate = {
@@ -6645,7 +6665,9 @@ country_event = {
 		is_galactic_community_formed = yes
 		is_galactic_community_member = yes
 		is_active_resolution = resolution_pre_ftl_stances_non_interference
-		NOT = { has_country_flag = resolution_breached_pre_ftl_stances_non_interference }
+		NOT = {
+			has_country_flag = resolution_breached_pre_ftl_stances_non_interference
+		}
 		exists = event_target:pre_ftl_country
 	}
 
@@ -6816,7 +6838,10 @@ country_event = {
 	}
 	option = {
 		name = FED_WE_WILL_RETAIN
-		trigger = { is_xenophile = no is_egalitarian = no }
+		trigger = {
+			is_xenophile = no
+			is_egalitarian = no
+		}
 		add_monthly_resource_mult = {
 			resource = unity
 			value = @tier1unityreward
@@ -6882,7 +6907,9 @@ country_event = {
 		is_galactic_community_formed = yes
 		is_galactic_community_member = yes
 		is_active_resolution = resolution_pre_ftl_stances_exploitation
-		NOT = { has_country_flag = resolution_breached_pre_ftl_stances_exploitation }
+		NOT = {
+			has_country_flag = resolution_breached_pre_ftl_stances_exploitation
+		}
 	}
 
 	immediate = {

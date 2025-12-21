@@ -5,6 +5,7 @@
 ######################
 # DICE ROLL FUNCTIONS
 ######################
+
 standard_archaeological_site_on_roll_failed_range_entry = {
 	custom_tooltip_with_params = {
 		description = "ARCHAEOLOGICAL_SITE_ON_ROLL_FAILED_RANGE"
@@ -43,46 +44,74 @@ standard_archaeological_site_on_roll_failed_less_than_eq_entry = {
 
 standard_archaeological_site_on_roll_failed_case = {
 	optimize_memory
+
 	custom_tooltip_with_params = {
 		description = archaeology_roll_header
-		description_parameters = {
-			"SCORE" = $SCORE$
-		}
+		description_parameters = { "SCORE" = $SCORE$ }
 	}
-	standard_archaeological_site_on_roll_failed_less_than_eq_entry = { MAX=5 CLUES=0 SCORE=$SCORE$ DIE_MIN=1 DIE_MAX=10 }
-	standard_archaeological_site_on_roll_failed_range_entry = { MIN=6 MAX=10 CLUES=1 SCORE=$SCORE$ DIE_MIN=1 DIE_MAX=10 }
-	standard_archaeological_site_on_roll_failed_range_entry = { MIN=11 MAX=13 CLUES=2 SCORE=$SCORE$ DIE_MIN=1 DIE_MAX=10 }
-	standard_archaeological_site_on_roll_failed_greater_than_eq_entry = { MIN=14 SCORE=$SCORE$ DIE_MIN=1 DIE_MAX=10 }
+
+	standard_archaeological_site_on_roll_failed_less_than_eq_entry = {
+		MAX = 5
+		CLUES = 0
+		SCORE = $SCORE$
+		DIE_MIN = 1
+		DIE_MAX = 10
+	}
+
+	standard_archaeological_site_on_roll_failed_range_entry = {
+		MIN = 6
+		MAX = 10
+		CLUES = 1
+		SCORE = $SCORE$
+		DIE_MIN = 1
+		DIE_MAX = 10
+	}
+	standard_archaeological_site_on_roll_failed_range_entry = {
+		MIN = 11
+		MAX = 13
+		CLUES = 2
+		SCORE = $SCORE$
+		DIE_MIN = 1
+		DIE_MAX = 10
+	}
+
+	standard_archaeological_site_on_roll_failed_greater_than_eq_entry = {
+		MIN = 14
+		SCORE = $SCORE$
+		DIE_MIN = 1
+		DIE_MAX = 10
+	}
 }
 
 standard_archaeological_site_on_roll_failed = {
 	optimize_memory
 	switch = {
 		trigger = is_site_current_stage_score_no_die
-		-8 = { standard_archaeological_site_on_roll_failed_case = { SCORE=-8 } }
-		-7 = { standard_archaeological_site_on_roll_failed_case = { SCORE=-7 } }
-		-6 = { standard_archaeological_site_on_roll_failed_case = { SCORE=-6 } }
-		-5 = { standard_archaeological_site_on_roll_failed_case = { SCORE=-5 } }
-		-4 = { standard_archaeological_site_on_roll_failed_case = { SCORE=-4 } }
-		-3 = { standard_archaeological_site_on_roll_failed_case = { SCORE=-3 } }
-		-2 = { standard_archaeological_site_on_roll_failed_case = { SCORE=-2 } }
-		-1 = { standard_archaeological_site_on_roll_failed_case = { SCORE=-1 } }
-		0 = { standard_archaeological_site_on_roll_failed_case = { SCORE=0 } }
-		1 = { standard_archaeological_site_on_roll_failed_case = { SCORE=1 } }
-		2 = { standard_archaeological_site_on_roll_failed_case = { SCORE=2 } }
-		3 = { standard_archaeological_site_on_roll_failed_case = { SCORE=3 } }
-		4 = { standard_archaeological_site_on_roll_failed_case = { SCORE=4 } }
-		5 = { standard_archaeological_site_on_roll_failed_case = { SCORE=5 } }
-		6 = { standard_archaeological_site_on_roll_failed_case = { SCORE=6 } }
-		7 = { standard_archaeological_site_on_roll_failed_case = { SCORE=7 } }
-		8 = { standard_archaeological_site_on_roll_failed_case = { SCORE=8 } }
-		9 = { standard_archaeological_site_on_roll_failed_case = { SCORE=9 } }
-		10 = { standard_archaeological_site_on_roll_failed_case = { SCORE=10 } }
-		11 = { standard_archaeological_site_on_roll_failed_case = { SCORE=11 } }
-		12 = { standard_archaeological_site_on_roll_failed_case = { SCORE=12 } }
-		13 = { standard_archaeological_site_on_roll_failed_case = { SCORE=13 } }
-		14 >= { standard_archaeological_site_on_roll_failed_case = { SCORE=14 } }
+		-8 = { standard_archaeological_site_on_roll_failed_case = { SCORE = -8 } }
+		-7 = { standard_archaeological_site_on_roll_failed_case = { SCORE = -7 } }
+		-6 = { standard_archaeological_site_on_roll_failed_case = { SCORE = -6 } }
+		-5 = { standard_archaeological_site_on_roll_failed_case = { SCORE = -5 } }
+		-4 = { standard_archaeological_site_on_roll_failed_case = { SCORE = -4 } }
+		-3 = { standard_archaeological_site_on_roll_failed_case = { SCORE = -3 } }
+		-2 = { standard_archaeological_site_on_roll_failed_case = { SCORE = -2 } }
+		-1 = { standard_archaeological_site_on_roll_failed_case = { SCORE = -1 } }
+		0 = { standard_archaeological_site_on_roll_failed_case = { SCORE = 0 } }
+		1 = { standard_archaeological_site_on_roll_failed_case = { SCORE = 1 } }
+		2 = { standard_archaeological_site_on_roll_failed_case = { SCORE = 2 } }
+		3 = { standard_archaeological_site_on_roll_failed_case = { SCORE = 3 } }
+		4 = { standard_archaeological_site_on_roll_failed_case = { SCORE = 4 } }
+		5 = { standard_archaeological_site_on_roll_failed_case = { SCORE = 5 } }
+		6 = { standard_archaeological_site_on_roll_failed_case = { SCORE = 6 } }
+		7 = { standard_archaeological_site_on_roll_failed_case = { SCORE = 7 } }
+		8 = { standard_archaeological_site_on_roll_failed_case = { SCORE = 8 } }
+		9 = { standard_archaeological_site_on_roll_failed_case = { SCORE = 9 } }
+		10 = { standard_archaeological_site_on_roll_failed_case = { SCORE = 10 } }
+		11 = { standard_archaeological_site_on_roll_failed_case = { SCORE = 11 } }
+		12 = { standard_archaeological_site_on_roll_failed_case = { SCORE = 12 } }
+		13 = { standard_archaeological_site_on_roll_failed_case = { SCORE = 13 } }
+		14 >= { standard_archaeological_site_on_roll_failed_case = { SCORE = 14 } }
 	}
+
 	hidden_effect = {
 		switch = {
 			trigger = is_site_current_stage_score
@@ -90,21 +119,29 @@ standard_archaeological_site_on_roll_failed = {
 				prev = {
 					leader = { add_experience = @ARCHAEOLOGICAL_SITE_XP_0_CLUE }
 					random_list = {
-						120 = {}
+						120 = {  }
 						10 = {
 							modifier = {
 								factor = 0
-								from = {
-									is_current_stage_clues = 0
-								}
+								from = { is_current_stage_clues = 0 }
 							}
 							$RANDOM_EVENTS$ = yes
 						}
 					}
 				}
 			}
-			10 <= { add_stage_clues = 1 prev = { leader = { add_experience = @ARCHAEOLOGICAL_SITE_XP_1_CLUE } } }
-			13 <= { add_stage_clues = 2 prev = { leader = { add_experience = @ARCHAEOLOGICAL_SITE_XP_2_CLUE } } }
+			10 <= {
+				add_stage_clues = 1
+				prev = {
+					leader = { add_experience = @ARCHAEOLOGICAL_SITE_XP_1_CLUE }
+				}
+			}
+			13 <= {
+				add_stage_clues = 2
+				prev = {
+					leader = { add_experience = @ARCHAEOLOGICAL_SITE_XP_2_CLUE }
+				}
+			}
 		}
 	}
 }
@@ -112,23 +149,32 @@ standard_archaeological_site_on_roll_failed = {
 ##########
 # REWARDS
 ##########
+
 small_artifact_reward = {
 	if = {
 		limit = { has_ancrel = yes }
 		custom_tooltip = minor_artifacts_found
 		locked_random_list = {
 			33 = {
-				owner = { add_resource = { minor_artifacts = 50 } }
+				owner = {
+					add_resource = { minor_artifacts = 50 }
+				}
 			}
 			33 = {
-				owner = { add_resource = { minor_artifacts = 150 } }
+				owner = {
+					add_resource = { minor_artifacts = 150 }
+				}
 			}
 			33 = {
-				owner = { add_resource = { minor_artifacts = 250 } }
+				owner = {
+					add_resource = { minor_artifacts = 250 }
+				}
 			}
 		}
 		hidden_effect = {
-			owner = { country_event = { id = tutorial.1337 days = 5 } }
+			owner = {
+				country_event = { id = tutorial.1337 days = 5 }
+			}
 		}
 	}
 }
@@ -139,17 +185,25 @@ medium_artifact_reward = {
 		custom_tooltip = minor_artifacts_found
 		locked_random_list = {
 			33 = {
-				owner = { add_resource = { minor_artifacts = 300 } }
+				owner = {
+					add_resource = { minor_artifacts = 300 }
+				}
 			}
 			33 = {
-				owner = { add_resource = { minor_artifacts = 400 } }
+				owner = {
+					add_resource = { minor_artifacts = 400 }
+				}
 			}
 			33 = {
-				owner = { add_resource = { minor_artifacts = 500 } }
+				owner = {
+					add_resource = { minor_artifacts = 500 }
+				}
 			}
 		}
 		hidden_effect = {
-			owner = { country_event = { id = tutorial.1337 days = 5 } }
+			owner = {
+				country_event = { id = tutorial.1337 days = 5 }
+			}
 		}
 	}
 }
@@ -160,17 +214,25 @@ large_artifact_reward = {
 		custom_tooltip = minor_artifacts_found
 		locked_random_list = {
 			33 = {
-				owner = { add_resource = { minor_artifacts = 750 } }
+				owner = {
+					add_resource = { minor_artifacts = 750 }
+				}
 			}
 			33 = {
-				owner = { add_resource = { minor_artifacts = 1000 } }
+				owner = {
+					add_resource = { minor_artifacts = 1000 }
+				}
 			}
 			33 = {
-				owner = { add_resource = { minor_artifacts = 1500 } }
+				owner = {
+					add_resource = { minor_artifacts = 1500 }
+				}
 			}
 		}
 		hidden_effect = {
-			owner = { country_event = { id = tutorial.1337 days = 5 } }
+			owner = {
+				country_event = { id = tutorial.1337 days = 5 }
+			}
 		}
 	}
 }
@@ -181,17 +243,25 @@ great_artifact_reward = {
 		custom_tooltip = minor_artifacts_found
 		locked_random_list = {
 			33 = {
-				owner = { add_resource = { minor_artifacts = 2500 } }
+				owner = {
+					add_resource = { minor_artifacts = 2500 }
+				}
 			}
 			33 = {
-				owner = { add_resource = { minor_artifacts = 3750 } }
+				owner = {
+					add_resource = { minor_artifacts = 3750 }
+				}
 			}
 			33 = {
-				owner = { add_resource = { minor_artifacts = 5000 } }
+				owner = {
+					add_resource = { minor_artifacts = 5000 }
+				}
 			}
 		}
 		hidden_effect = {
-			owner = { country_event = { id = tutorial.1337 days = 5 } }
+			owner = {
+				country_event = { id = tutorial.1337 days = 5 }
+			}
 		}
 	}
 }
@@ -199,6 +269,7 @@ great_artifact_reward = {
 ###################
 # SCRIPTED EFFECTS
 ###################
+
 relic_world_deposits = {
 	reset_planet = yes
 	clear_deposits = yes
@@ -214,18 +285,15 @@ relic_world_deposits = {
 
 create_grand_herald = {
 	custom_tooltip = get_herald
+
 	hidden_effect = {
 		owner = {
 			create_fleet = {
 				name = "NAME_Grand_Herald"
 				effect = {
 					set_owner = prev
-					create_ship_design = {
-						design = "NAME_Herald"
-					}
-					create_ship_with_random_graphical_culture = {
-						EFFECT_NAME = create_grand_herald_ship
-					}
+					create_ship_design = { design = "NAME_Herald" }
+					create_ship_with_random_graphical_culture = { EFFECT_NAME = create_grand_herald_ship }
 					set_location = fromfrom.planet
 					set_herald_damage = yes
 				}
@@ -253,36 +321,21 @@ set_herald_damage = {
 			#
 		}
 		25 = {
-			add_modifier = {
-				modifier = herald_75
-				days = -1
-			}
+			add_modifier = { modifier = herald_75 days = -1 }
 			owner = {
-				enable_special_project = {
-					name = "Herald_repair"
-				}
+				enable_special_project = { name = "Herald_repair" }
 			}
 		}
 		50 = {
-			add_modifier = {
-				modifier = herald_50
-				days = -1
-			}
+			add_modifier = { modifier = herald_50 days = -1 }
 			owner = {
-				enable_special_project = {
-					name = "Herald_repair"
-				}
+				enable_special_project = { name = "Herald_repair" }
 			}
 		}
 		20 = {
-			add_modifier = {
-				modifier = herald_25
-				days = -1
-			}
+			add_modifier = { modifier = herald_25 days = -1 }
 			owner = {
-				enable_special_project = {
-					name = "Herald_repair"
-				}
+				enable_special_project = { name = "Herald_repair" }
 			}
 		}
 	}
@@ -366,9 +419,7 @@ all_random_events = {
 				factor = 0
 				OR = {
 					NOT = { from.planet = { is_planet_class = pc_nuked } }
-					leader.species = {
-						has_trait = trait_pc_nuked_preference
-					}
+					leader.species = { has_trait = trait_pc_nuked_preference }
 					owner = { is_machine_empire = yes }
 				}
 			}
@@ -398,14 +449,8 @@ all_random_events = {
 		20 = { # Whispers in the Stone
 			modifier = {
 				factor = 0
-				NOT = {
-					from = {
-						is_site_type = lithoids_digsite
-					}
-				}
-				owner = {
-					has_country_flag = triggered_lithoids_special_event
-				}
+				NOT = { from = { is_site_type = lithoids_digsite } }
+				owner = { has_country_flag = triggered_lithoids_special_event }
 			}
 			modifier = {
 				factor = 0
@@ -416,14 +461,8 @@ all_random_events = {
 		20 = { # The Rubricator
 			modifier = {
 				factor = 0
-				NOT = {
-					from = {
-						is_site_type = rubricator_digsite
-					}
-				}
-				owner = {
-					has_country_flag = triggered_rubricator_random_event
-				}
+				NOT = { from = { is_site_type = rubricator_digsite } }
+				owner = { has_country_flag = triggered_rubricator_random_event }
 			}
 			fleet_event = { id = ancrel.4021 }
 		}
@@ -485,7 +524,8 @@ site_wildlife = {
 	}
 }
 
-site_collapsed_roof = { # Unstable Ruins
+# Unstable Ruins
+site_collapsed_roof = {
 	random_list = {
 		5 = { fleet_event = { id = ancrel.8100 } }
 		25 = { fleet_event = { id = ancrel.8101 } }
@@ -498,7 +538,7 @@ site_ocean_sites_random_events = {
 	random_list = {
 		10 = { fleet_event = { id = ancrel.8055 } }
 		10 = { fleet_event = { id = ancrel.8075 } }
-		#Hostile Wildlife
+		# Hostile Wildlife
 		10 = { fleet_event = { id = ancrel.8090 } }
 		10 = { fleet_event = { id = ancrel.8091 } }
 		10 = { fleet_event = { id = ancrel.8092 } }
@@ -519,10 +559,7 @@ space_station_random_events = {
 		}
 		10 = { site_explosive_decompression = yes }
 		10 = {
-			modifier = {
-				factor = 0
-				has_ancrel = no
-			}
+			modifier = { factor = 0 has_ancrel = no }
 			fleet_event = { id = ancrel.8210 } # Minor Artifacts Discovered
 		}
 		10 = { fleet_event = { id = ancrel.8215 } }
@@ -577,10 +614,7 @@ site_from_gateway_sent_random_events = {
 		}
 		10 = { fleet_event = { id = ancrel.8075 } }
 		10 = {
-			modifier = {
-				factor = 0
-				has_ancrel = no
-			}
+			modifier = { factor = 0 has_ancrel = no }
 			fleet_event = { id = ancrel.8080 } # Minor Artifacts Discovered
 		}
 		10 = { fleet_event = { id = ancrel.8100 } }
@@ -621,10 +655,7 @@ site_something_waiting_random_events = {
 		}
 		10 = { fleet_event = { id = ancrel.8075 } }
 		10 = {
-			modifier = {
-				factor = 0
-				has_ancrel = no
-			}
+			modifier = { factor = 0 has_ancrel = no }
 			fleet_event = { id = ancrel.8080 } # Minor Artifacts Discovered
 		}
 		10 = { fleet_event = { id = ancrel.8100 } }
@@ -660,10 +691,7 @@ site_in_memoriam_random_events = {
 		10 = { fleet_event = { id = ancrel.8060 } }
 		10 = { fleet_event = { id = ancrel.8075 } }
 		10 = {
-			modifier = {
-				factor = 0
-				has_ancrel = no
-			}
+			modifier = { factor = 0 has_ancrel = no }
 			fleet_event = { id = ancrel.8080 } # Minor Artifacts Discovered
 		}
 		10 = { fleet_event = { id = ancrel.8100 } }
@@ -690,10 +718,7 @@ site_the_last_stand_random_events = {
 		}
 		10 = { fleet_event = { id = ancrel.8075 } }
 		10 = {
-			modifier = {
-				factor = 0
-				has_ancrel = no
-			}
+			modifier = { factor = 0 has_ancrel = no }
 			fleet_event = { id = ancrel.8080 } # Minor Artifacts Discovered
 		}
 		10 = { fleet_event = { id = ancrel.8110 } }
@@ -721,7 +746,8 @@ site_dark_secret_random_events = {
 ###################################
 # ARCSITE RANDOM EVENTS (SPECIFIC)
 ###################################
-site_moon_bump_random_events = { # AncRel
+# AncRel
+site_moon_bump_random_events = {
 	random_list = {
 		10 = { fleet_event = { id = ancrel.8040 } }
 		10 = { fleet_event = { id = ancrel.8080 } }
@@ -739,7 +765,8 @@ site_moon_bump_random_events = { # AncRel
 	}
 }
 
-site_echoes_inside_random_events = { # AncRel
+# AncRel
+site_echoes_inside_random_events = {
 	random_list = {
 		10 = { fleet_event = { id = ancrel.8050 } }
 		10 = { fleet_event = { id = ancrel.8055 } }
@@ -747,24 +774,25 @@ site_echoes_inside_random_events = { # AncRel
 	}
 }
 
-site_target_from_orbit_random_events = { # AncRel
+# AncRel
+site_target_from_orbit_random_events = {
 	random_list = {
-		#Laser Grid
+		# Laser Grid
 		10 = { fleet_event = { id = ancrel.8000 } }
 		10 = { fleet_event = { id = ancrel.8001 } }
 		10 = { fleet_event = { id = ancrel.8002 } }
 		10 = { fleet_event = { id = ancrel.8003 } }
-		#Sentinel Droids
+		# Sentinel Droids
 		10 = { fleet_event = { id = ancrel.8030 } }
 		10 = { fleet_event = { id = ancrel.8031 } }
 		10 = { fleet_event = { id = ancrel.8032 } }
 		10 = { fleet_event = { id = ancrel.8033 } }
-		#Unstable Ruins
+		# Unstable Ruins
 		10 = { fleet_event = { id = ancrel.8100 } }
 		10 = { fleet_event = { id = ancrel.8101 } }
 		10 = { fleet_event = { id = ancrel.8102 } }
 		10 = { fleet_event = { id = ancrel.8103 } }
-		#Other
+		# Other
 		10 = { fleet_event = { id = ancrel.8040 } }
 		10 = { fleet_event = { id = ancrel.8045 } }
 		10 = { fleet_event = { id = ancrel.8050 } }
@@ -783,7 +811,8 @@ site_target_from_orbit_random_events = { # AncRel
 	}
 }
 
-site_shot_into_the_ground_random_events = { # AncRel
+# AncRel
+site_shot_into_the_ground_random_events = {
 	random_list = {
 		10 = { fleet_event = { id = ancrel.8100 } }
 		10 = { fleet_event = { id = ancrel.8101 } }
@@ -793,7 +822,8 @@ site_shot_into_the_ground_random_events = { # AncRel
 	}
 }
 
-site_cut_to_fit_random_events = { # AncRel
+# AncRel
+site_cut_to_fit_random_events = {
 	random_list = {
 		10 = {
 			fleet_event = { id = ancrel.8070 }
@@ -805,7 +835,8 @@ site_cut_to_fit_random_events = { # AncRel
 	}
 }
 
-site_deja_vu_dig_random_events = { # AncRel
+# AncRel
+site_deja_vu_dig_random_events = {
 	random_list = {
 		10 = { fleet_event = { id = ancrel.8030 } }
 		10 = { fleet_event = { id = ancrel.8031 } }
@@ -826,7 +857,8 @@ site_deja_vu_dig_random_events = { # AncRel
 	}
 }
 
-site_trench_world_random_events = { # AncRel
+# AncRel
+site_trench_world_random_events = {
 	random_list = {
 		10 = { fleet_event = { id = ancrel.8090 } }
 		10 = { fleet_event = { id = ancrel.8091 } }
@@ -835,7 +867,8 @@ site_trench_world_random_events = { # AncRel
 	}
 }
 
-site_ebb_and_flow_random_events = { # AncRel
+# AncRel
+site_ebb_and_flow_random_events = {
 	random_list = {
 		10 = { fleet_event = { id = ancrel.8040 } }
 		10 = { fleet_event = { id = ancrel.8045 } }
@@ -859,54 +892,11 @@ site_ebb_and_flow_random_events = { # AncRel
 	}
 }
 
-site_sky_glow_hymn_random_events = { # AncRel
+# AncRel
+site_sky_glow_hymn_random_events = {
 	random_list = {
 		10 = { fleet_event = { id = ancrel.8040 } }
 		10 = { fleet_event = { id = ancrel.8045 } }
-		10 = { fleet_event = { id = ancrel.8080 } }
-		10 = { fleet_event = { id = ancrel.8090 } }
-		10 = { fleet_event = { id = ancrel.8091 } }
-		10 = { fleet_event = { id = ancrel.8092 } }
-		10 = { fleet_event = { id = ancrel.8093 } }
-		10 = { fleet_event = { id = ancrel.8110 } }
-	}
-}
-
-site_warmer_climates_random_events = { # AncRel
-	random_list = {
-		10 = { fleet_event = { id = ancrel.8040 } }
-		10 = { fleet_event = { id = ancrel.8045 } }
-		10 = { fleet_event = { id = ancrel.8060 } }
-		10 = {
-			fleet_event = { id = ancrel.8070 }
-			modifier = {
-				factor = 2
-				leader = { has_trait = leader_trait_percussive_maintainer }
-			}
-		}
-		10 = { fleet_event = { id = ancrel.8075 } }
-		10 = { fleet_event = { id = ancrel.8080 } }
-		10 = { fleet_event = { id = ancrel.8100 } }
-		10 = { fleet_event = { id = ancrel.8101 } }
-		10 = { fleet_event = { id = ancrel.8102 } }
-		10 = { fleet_event = { id = ancrel.8103 } }
-		10 = { fleet_event = { id = ancrel.8110 } }
-	}
-}
-
-site_phoenix_collective_random_events = { # AncRel
-	random_list = {
-		10 = { fleet_event = { id = ancrel.8040 } }
-		10 = { fleet_event = { id = ancrel.8055 } }
-		10 = { fleet_event = { id = ancrel.8060 } }
-		10 = {
-			fleet_event = { id = ancrel.8070 }
-			modifier = {
-				factor = 2
-				leader = { has_trait = leader_trait_percussive_maintainer }
-			}
-		}
-		10 = { fleet_event = { id = ancrel.8075 } }
 		10 = { fleet_event = { id = ancrel.8080 } }
 		10 = { fleet_event = { id = ancrel.8090 } }
 		10 = { fleet_event = { id = ancrel.8091 } }
@@ -916,7 +906,54 @@ site_phoenix_collective_random_events = { # AncRel
 	}
 }
 
-site_grand_herald_random_events = { # AncRel
+# AncRel
+site_warmer_climates_random_events = {
+	random_list = {
+		10 = { fleet_event = { id = ancrel.8040 } }
+		10 = { fleet_event = { id = ancrel.8045 } }
+		10 = { fleet_event = { id = ancrel.8060 } }
+		10 = {
+			fleet_event = { id = ancrel.8070 }
+			modifier = {
+				factor = 2
+				leader = { has_trait = leader_trait_percussive_maintainer }
+			}
+		}
+		10 = { fleet_event = { id = ancrel.8075 } }
+		10 = { fleet_event = { id = ancrel.8080 } }
+		10 = { fleet_event = { id = ancrel.8100 } }
+		10 = { fleet_event = { id = ancrel.8101 } }
+		10 = { fleet_event = { id = ancrel.8102 } }
+		10 = { fleet_event = { id = ancrel.8103 } }
+		10 = { fleet_event = { id = ancrel.8110 } }
+	}
+}
+
+# AncRel
+site_phoenix_collective_random_events = {
+	random_list = {
+		10 = { fleet_event = { id = ancrel.8040 } }
+		10 = { fleet_event = { id = ancrel.8055 } }
+		10 = { fleet_event = { id = ancrel.8060 } }
+		10 = {
+			fleet_event = { id = ancrel.8070 }
+			modifier = {
+				factor = 2
+				leader = { has_trait = leader_trait_percussive_maintainer }
+			}
+		}
+		10 = { fleet_event = { id = ancrel.8075 } }
+		10 = { fleet_event = { id = ancrel.8080 } }
+		10 = { fleet_event = { id = ancrel.8090 } }
+		10 = { fleet_event = { id = ancrel.8091 } }
+		10 = { fleet_event = { id = ancrel.8092 } }
+		10 = { fleet_event = { id = ancrel.8093 } }
+		10 = { fleet_event = { id = ancrel.8110 } }
+	}
+}
+
+# AncRel
+site_grand_herald_random_events = {
 	random_list = {
 		10 = { fleet_event = { id = ancrel.8040 } }
 		10 = { fleet_event = { id = ancrel.8045 } }
@@ -935,7 +972,8 @@ site_grand_herald_random_events = { # AncRel
 	}
 }
 
-site_popular_rock_random_events = { # AncRel
+# AncRel
+site_popular_rock_random_events = {
 	random_list = {
 		10 = { fleet_event = { id = ancrel.8030 } }
 		10 = { fleet_event = { id = ancrel.8031 } }
@@ -955,7 +993,8 @@ site_popular_rock_random_events = { # AncRel
 	}
 }
 
-site_strange_flows_random_events = { # AncRel
+# AncRel
+site_strange_flows_random_events = {
 	random_list = {
 		10 = { fleet_event = { id = ancrel.8055 } }
 		10 = {
@@ -982,10 +1021,7 @@ site_ruins_of_shallash_random_events = {
 		}
 		2 = { fleet_event = { id = ancrel.8075 } }
 		10 = {
-			modifier = {
-				factor = 0
-				has_ancrel = no
-			}
+			modifier = { factor = 0 has_ancrel = no }
 			fleet_event = { id = ancrel.8080 } # Minor Artifacts Discovered
 		}
 		10 = { fleet_event = { id = ancrel.8100 } }
@@ -995,9 +1031,7 @@ site_ruins_of_shallash_random_events = {
 				factor = 0
 				OR = {
 					NOT = { from.planet = { is_planet_class = pc_nuked } }
-					leader.species = {
-						has_trait = trait_pc_nuked_preference
-					}
+					leader.species = { has_trait = trait_pc_nuked_preference }
 					owner = { is_machine_empire = yes }
 				}
 			}
@@ -1009,22 +1043,22 @@ site_ruins_of_shallash_random_events = {
 
 site_fumongus_random_events = {
 	random_list = {
-		#Hostile Wildlife
+		# Hostile Wildlife
 		5 = { fleet_event = { id = ancrel.8090 } }
 		25 = { fleet_event = { id = ancrel.8091 } }
 		25 = { fleet_event = { id = ancrel.8092 } }
 		25 = { fleet_event = { id = ancrel.8093 } }
-		#Fungal Zombies
+		# Fungal Zombies
 		5 = { fleet_event = { id = ancrel.8300 } }
 		25 = { fleet_event = { id = ancrel.8305 } }
 		25 = { fleet_event = { id = ancrel.8310 } }
 		25 = { fleet_event = { id = ancrel.8315 } }
-
 		30 = { fleet_event = { id = ancrel.8040 } } # Resource Cache
 	}
 }
 
-site_relicrails_random_events = { # AncRel
+# AncRel
+site_relicrails_random_events = {
 	random_list = {
 		10 = { fleet_event = { id = ancrel.8040 } }
 		10 = { fleet_event = { id = ancrel.8055 } }
@@ -1040,7 +1074,8 @@ site_relicrails_random_events = { # AncRel
 	}
 }
 
-clone_army_random_events = { # Humanoids species pack
+# Humanoids species pack
+clone_army_random_events = {
 	random_list = {
 		10 = { site_wildlife = yes }
 		10 = { site_collapsed_roof = yes }
@@ -1071,10 +1106,7 @@ site_spaceship_random_events = {
 		10 = { fleet_event = { id = ancrel.8055 } }
 		10 = { site_explosive_decompression = yes }
 		10 = {
-			modifier = {
-				factor = 0
-				has_ancrel = no
-			}
+			modifier = { factor = 0 has_ancrel = no }
 			fleet_event = { id = ancrel.8210 } # Minor Artifacts Discovered
 		}
 		10 = { fleet_event = { id = ancrel.8215 } }
@@ -1145,24 +1177,15 @@ site_genius_caeli_random_events = {
 			fleet_event = { id = ancrel.4078 } # Fire (food shortage)
 		}
 		10 = {
-			modifier = {
-				factor = 0
-				is_organic_species = no
-			}
+			modifier = { factor = 0 is_organic_species = no }
 			fleet_event = { id = ancrel.8065 } # Spreading Illness
 		}
 		10 = {
-			modifier = {
-				factor = 0
-				is_organic_species = no
-			}
+			modifier = { factor = 0 is_organic_species = no }
 			fleet_event = { id = ancrel.13030 } # Disturbing Vision
 		}
 		20 = {
-			modifier = {
-				factor = 0
-				has_ancrel = no
-			}
+			modifier = { factor = 0 has_ancrel = no }
 			fleet_event = { id = ancrel.8210 } # Minor Artifacts Discovered
 		}
 	}
@@ -1186,10 +1209,7 @@ site_engineered_species_random_events = {
 			fleet_event = { id = ancrel.4078 } # Fire (food shortage)
 		}
 		10 = {
-			modifier = {
-				factor = 0
-				has_ancrel = no
-			}
+			modifier = { factor = 0 has_ancrel = no }
 			fleet_event = { id = ancrel.8210 } # Minor Artifacts Discovered
 		}
 	}
@@ -1201,9 +1221,7 @@ site_krazura_random_events = {
 		20 = {
 			modifier = {
 				factor = 50
-				owner = {
-					is_species_class = AVI
-				}
+				owner = { is_species_class = AVI }
 			}
 			fleet_event = { id = arcsite.3060 } # Feather Rot
 		}

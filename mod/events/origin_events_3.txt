@@ -726,9 +726,8 @@ country_event = {
 		fromfrom = {
 			has_component = SHIP_AURA_OFFSPRING
 			solar_system = {
-				count_ship_in_system = {
-					count = 0
-					limit = {
+				NOT = {
+					any_ship_in_system = {
 						NOT = { is_same_value = fromfrom }
 						is_owned_by = root
 						has_component = SHIP_AURA_OFFSPRING
@@ -1119,11 +1118,9 @@ country_event = {
 							has_anomaly = yes
 						}
 					}
-					NOT = {
-						count_system_planet = {
-							count = 2
-							limit = { is_planet_class = pc_shrouded }
-						}
+					count_system_planet = {
+						count < 2 # Vfix
+						limit = { is_planet_class = pc_shrouded }
 					}
 				}
 				min_steps = 1
@@ -2366,9 +2363,7 @@ country_event = {
 			class = scientist
 			species = event_target:fotd_habitants.species
 			skill = 5
-			traits = {
-				0 = leader_trait_fotd_scientist
-			}
+			traits = { 0 = leader_trait_fotd_scientist }
 			effect = {
 				add_trait = { trait = leader_trait_fotd_scientist show_message = no }
 				save_event_target_as = fotd_Leader
@@ -2443,9 +2438,7 @@ country_event = {
 			class = commander
 			species = event_target:fotd_habitants.species
 			skill = 5
-			traits = {
-				0 = leader_trait_fotd_commander
-			}
+			traits = { 0 = leader_trait_fotd_commander }
 			effect = {
 				add_trait = { trait = leader_trait_fotd_commander show_message = no }
 				save_event_target_as = fotd_Leader
@@ -2624,7 +2617,9 @@ country_event = {
 				kill_leader = { show_notification = no }
 			}
 		}
-		owner = { add_resource = { unity = -2000 } }
+		owner = {
+			add_resource = { unity = -2000 }
+		}
 	}
 }
 
@@ -2653,9 +2648,8 @@ country_event = {
 			5 = {
 				modifier = {
 					factor = 0
-					count_system = {
-						count = 0
-						limit = {
+					NOT = {
+						any_system = {
 							is_surveyed = { who = root status = no }
 							distance = {
 								source = root.capital_scope
@@ -2670,10 +2664,7 @@ country_event = {
 			5 = {
 				modifier = {
 					factor = 0
-					count_active_first_contact = {
-						count = 0
-						limit = { is_scope_valid = yes }
-					}
+					NOT = { any_active_first_contact = { is_scope_valid = yes } }
 				}
 				set_country_flag = slowed_first_contact
 			}
@@ -2859,9 +2850,8 @@ country_event = {
 				5 = {
 					modifier = {
 						factor = 0
-						count_system = {
-							count = 0
-							limit = {
+						NOT = {
+							any_system = {
 								is_surveyed = { who = root status = no }
 								distance = {
 									source = root.capital_scope
@@ -2876,10 +2866,7 @@ country_event = {
 				5 = {
 					modifier = {
 						factor = 0
-						count_active_first_contact = {
-							count = 0
-							limit = { is_scope_valid = yes }
-						}
+						NOT = { any_active_first_contact = { is_scope_valid = yes } }
 					}
 					set_country_flag = slowed_first_contact
 				}
@@ -4002,7 +3989,10 @@ country_event = {
 								civic = civic_increasing_urbanization
 							}
 							species = last_created_species
-							ethos = { ethic = ethic_militarist ethic = ethic_fanatic_xenophobe }
+							ethos = {
+								ethic = ethic_militarist
+								ethic = ethic_fanatic_xenophobe
+							}
 							flag = random
 							origin = origin_default_pre_ftl
 							type = primitive
@@ -4441,8 +4431,14 @@ situation_event = {
 			name = "FOTD_REVERSED_THRUSTERS"
 			location = event_target:fotd_divider
 		}
-		enable_special_project = { name = "FOTD_COUNTER_SHOT" location = event_target:fotd_asteroid }
-		enable_special_project = { name = "FOTD_CONTROLLED_SHATTERING" location = owner.home_planet }
+		enable_special_project = {
+			name = "FOTD_COUNTER_SHOT"
+			location = event_target:fotd_asteroid
+		}
+		enable_special_project = {
+			name = "FOTD_CONTROLLED_SHATTERING"
+			location = owner.home_planet
+		}
 	}
 }
 
@@ -4898,16 +4894,14 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		from = { is_at_war = no }
-		capital_scope.solar_system = {
-			count_fleet_in_system = {
-				count = 0
-				limit = { owner = { is_hostile_to = from } }
+		NOR = {
+			from = { is_at_war = yes }
+			capital_scope.solar_system = {
+				any_fleet_in_system = {
+					owner = { is_hostile_to = from }
+				}
 			}
-		}
-		count_owned_fleet = {
-			count = 0
-			limit = { is_leased = yes }
+			any_owned_fleet = { is_leased = yes }
 		}
 	}
 
@@ -5081,7 +5075,10 @@ country_event = {
 			fleet_event = { id = origin.6251 days = 100 }
 			queue_actions = {
 				find_closest_planet = {
-					trigger = { id = fotd.patrol.1@root has_planet_flag = divider_flag }
+					trigger = {
+						id = fotd.patrol.1@root
+						has_planet_flag = divider_flag
+					}
 					found_planet = {
 						move_to = this
 						orbit_planet = this
@@ -5089,7 +5086,10 @@ country_event = {
 					}
 				}
 				find_closest_planet = {
-					trigger = { id = fotd.patrol.2@root is_star = yes }
+					trigger = {
+						id = fotd.patrol.2@root
+						is_star = yes
+					}
 					found_planet = {
 						move_to = this
 						orbit_planet = this
@@ -5097,7 +5097,10 @@ country_event = {
 					}
 				}
 				find_closest_planet = {
-					trigger = { id = fotd.patrol.3@root has_planet_flag = haven_flag }
+					trigger = {
+						id = fotd.patrol.3@root
+						has_planet_flag = haven_flag
+					}
 					found_planet = {
 						move_to = this
 						orbit_planet = this

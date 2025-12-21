@@ -919,7 +919,9 @@ ship_event = {
 		exclusive_trigger = {
 			from = { has_planet_flag = aliens_site_junk }
 		}
-		owner = { add_resource = { alloys = 1000 } }
+		owner = {
+			add_resource = { alloys = 1000 }
+		}
 		name = EXCELLENT
 	}
 	option = {
@@ -2051,7 +2053,9 @@ planet_event = {
 		ai_chance = { factor = 10 }
 	}
 	option = {
-		trigger = { owner = { is_hive_empire = no } }
+		trigger = {
+			owner = { is_hive_empire = no }
+		}
 		name = INCREDIBLE
 	}
 }
@@ -2729,7 +2733,10 @@ country_event = {
 	}
 	option = {
 		name = "ancrel.2056.spiri"
-		trigger = { is_individual_machine = no is_spiritualist = yes }
+		trigger = {
+			is_individual_machine = no
+			is_spiritualist = yes
+		}
 		hidden_effect = {
 			country_event = { id = ancrel.2064 }
 		}
@@ -3037,16 +3044,13 @@ country_event = {
 		}
 		last_increased_tech = tech_mining_3
 		any_owned_planet = {
-			num_districts = { type = district_mining value > 1 }
 			NOR = {
+				num_districts = { type = district_mining value <= 1 }
 				exists = archaeological_site
 				has_planet_flag = suppress_archaeological_sites
 			}
 		}
-		count_country = {
-			count = 0
-			limit = { has_country_flag = discovered_lithoids_arc_site }
-		}
+		NOT = { any_country = { has_country_flag = discovered_lithoids_arc_site } }
 	}
 
 	immediate = {
@@ -3054,8 +3058,8 @@ country_event = {
 			5 = {
 				random_owned_planet = {
 					limit = {
-						num_districts = { type = district_mining value > 1 }
 						NOR = {
+							num_districts = { type = district_mining value <= 1 }
 							exists = archaeological_site
 							has_planet_flag = suppress_archaeological_sites
 						}
@@ -3337,10 +3341,9 @@ ship_event = {
 							max_jumps = 4
 						}
 						has_access_fleet = root.owner
-						has_owner = no
-						count_fleet_in_system = {
-							count = 0
-							limit = {
+						NOR = {
+							has_owner = yes
+							any_fleet_in_system = {
 								owner = { is_hostile = root.owner }
 							}
 						}
@@ -3351,10 +3354,9 @@ ship_event = {
 					max_steps = 4
 					limit = {
 						has_access_fleet = root.owner
-						has_owner = no
-						count_fleet_in_system = {
-							count = 0
-							limit = {
+						NOR = {
+							has_owner = yes
+							any_fleet_in_system = {
 								owner = { is_hostile = root.owner }
 							}
 						}
@@ -3377,9 +3379,8 @@ ship_event = {
 							max_jumps = 4
 						}
 						has_access_fleet = root.owner
-						count_fleet_in_system = {
-							count = 0
-							limit = {
+						NOT = {
+							any_fleet_in_system = {
 								owner = { is_hostile = root.owner }
 							}
 						}
@@ -3390,9 +3391,8 @@ ship_event = {
 					max_steps = 4
 					limit = {
 						has_access_fleet = root.owner
-						count_fleet_in_system = {
-							count = 0
-							limit = {
+						NOT = {
+							any_fleet_in_system = {
 								owner = { is_hostile = root.owner }
 							}
 						}
@@ -3781,10 +3781,9 @@ planet_event = {
 		name = UNFORTUNATE
 		if = {
 			limit = {
-				NOT = { owner = { has_policy_flag = ai_full_rights } }
-				count_owned_pop_group = {
-					count = 0
-					limit = {
+				NOR = {
+					owner = { has_policy_flag = ai_full_rights }
+					any_owned_pop_group = {
 						species = {
 							NOR = {
 								is_archetype = MACHINE
@@ -4230,7 +4229,10 @@ country_event = {
 		text = "ancrel.4026.desc.regular"
 	}
 	desc = {
-		trigger = { is_hive_empire = yes is_machine_empire = no }
+		trigger = {
+			is_hive_empire = yes
+			is_machine_empire = no
+		}
 		text = "ancrel.4026.desc.hive"
 	}
 	desc = {
@@ -4247,7 +4249,10 @@ country_event = {
 	is_triggered_only = yes
 
 	picture = {
-		trigger = { is_machine_empire = no is_individual_machine = no }
+		trigger = {
+			is_machine_empire = no
+			is_individual_machine = no
+		}
 		picture = GFX_evt_necromancy
 	}
 	picture = {

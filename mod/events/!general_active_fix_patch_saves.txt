@@ -24,13 +24,7 @@ event = {
 				}
 				if = {	# Just backward compat. from 4.0 to 4.1
 					limit = {
-						count_country = {
-							count = 0
-							limit = {
-								is_country_type = shroud
-								has_country_flag = shroud_country_flag
-							}
-						}
+						NOT = { any_country = { is_country_type = shroud has_country_flag = shroud_country_flag } }
 					}
 					random_country = {
 						limit = {

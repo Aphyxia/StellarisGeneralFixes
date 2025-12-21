@@ -701,7 +701,9 @@ country_event = {
 			random_owned_pop_group = {
 				limit = {
 					is_elite_category = yes
-					NOT = { is_same_value = event_target:rulers_get_a_real_job_pop_group }
+					NOT = {
+						is_same_value = event_target:rulers_get_a_real_job_pop_group
+					}
 				}
 				transfer_pop_amount = {
 					source = this
@@ -1182,10 +1184,7 @@ country_event = {
 		}
 		ruler = { has_leader_flag = paragon_origin_legendary_leader }
 		OR = {
-			count_country = {
-				count = 0
-				limit = { has_country_flag = rebel_empire_@root }
-			}
+			NOT = { any_country = { has_country_flag = rebel_empire_@root } }
 			has_country_flag = won_civil_war
 		}
 	}
@@ -1249,10 +1248,7 @@ country_event = {
 		}
 		ruler = { has_leader_flag = paragon_origin_legendary_leader }
 		OR = {
-			count_country = {
-				count = 0
-				limit = { has_country_flag = rebel_empire_@root }
-			}
+			NOT = { any_country = { has_country_flag = rebel_empire_@root } }
 			has_country_flag = won_civil_war
 		}
 	}
@@ -3414,7 +3410,9 @@ country_event = {
 		custom_tooltip = paragon.5340.tt
 		hidden_effect = {
 			owner = {
-				capital_scope = { set_planetary_ascension_tier = value:add_planet_ascension_tier }
+				capital_scope = {
+					set_planetary_ascension_tier = value:add_planet_ascension_tier
+				}
 			}
 		}
 	}
@@ -3953,12 +3951,11 @@ situation_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = {
-			owner = {
-				OR = {
-					any_owned_planet = { has_modifier = paragon_origin_reformists }
-					any_owned_pop_group = { has_ethic = ethic_egalitarian }
-				}
+		exists = owner
+		owner = {
+			NOR = {
+				any_owned_planet = { has_modifier = paragon_origin_reformists }
+				any_owned_pop_group = { has_ethic = ethic_egalitarian }
 			}
 		}
 	}
@@ -3976,7 +3973,9 @@ situation_event = {
 
 	trigger = {
 		exists = owner
-		owner = { is_variable_set = paragon_origin_reformists_negotiation_value }
+		owner = {
+			is_variable_set = paragon_origin_reformists_negotiation_value
+		}
 		current_situation_approach = situation_paragon_origin_reformists_struggle_accept
 	}
 
@@ -4187,7 +4186,9 @@ country_event = {
 				resource_stockpile_compare = { resource = sr_zro value >= 250 }
 			}
 		}
-		owner = { add_resource = { sr_zro = -250 } }
+		owner = {
+			add_resource = { sr_zro = -250 }
+		}
 		hidden_effect = {
 			country_event = { id = paragon.6015 days = 90 }
 		}
@@ -4201,7 +4202,9 @@ country_event = {
 				resource_stockpile_compare = { resource = alloys value >= 500 }
 			}
 		}
-		owner = { add_resource = { alloys = -500 } }
+		owner = {
+			add_resource = { alloys = -500 }
+		}
 		hidden_effect = {
 			country_event = { id = paragon.6020 days = 90 }
 		}

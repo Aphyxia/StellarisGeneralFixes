@@ -1,7 +1,7 @@
 # Shadows of the Shroud scripted effects #
-
 breach_shroud = {
 	set_country_flag = breached_shroud
+
 	fire_on_action = {
 		on_action = on_shroud_breached
 	}
@@ -73,6 +73,7 @@ add_psionic_trait = {
 
 turn_main_species_to_psionic = {
 	country_event = { id = timeline.81 }
+
 	every_owned_species = {
 		limit = {
 			OR = {
@@ -86,7 +87,6 @@ turn_main_species_to_psionic = {
 		}
 		save_event_target_as = changing_species
 		add_psionic_trait = yes
-
 		prev = {
 			if = {
 				limit = {
@@ -94,7 +94,6 @@ turn_main_species_to_psionic = {
 				}
 				change_dominant_species = { species = event_target:psionic_species }
 			}
-
 			every_owned_pop_group = {
 				limit = { is_exact_same_species = event_target:changing_species }
 				change_species = event_target:psionic_species
@@ -131,65 +130,39 @@ turn_main_species_to_psionic = {
 
 update_every_leader_from_psionic_countries = {
 	every_country = {
-		limit = {
-			is_default_or_fallen = yes
-		}
+		limit = { is_default_or_fallen = yes }
 		every_owned_leader = {
 			limit = {
-				species = {
-					is_same_species = event_target:psionic_species
-				}
+				species = { is_same_species = event_target:psionic_species }
 				can_receive_psionic_leader_trait = yes
 			}
-			add_trait = {
-				trait = leader_trait_psionic
-				show_message = no
-			}
+			add_trait = { trait = leader_trait_psionic show_message = no }
 			owner = {
 				if = {
 					limit = {
-						NOT = {
-							has_country_flag = psionic_leader_toast
-						}
+						NOT = { has_country_flag = psionic_leader_toast }
 					}
-					set_timed_country_flag = {
-						flag = psionic_leader_toast
-						months = 1
-					}
+					set_timed_country_flag = { flag = psionic_leader_toast months = 1 }
 				}
 			}
 		}
-
 		every_pool_leader = {
 			limit = {
-				species = {
-					is_same_species = event_target:psionic_species
-				}
+				species = { is_same_species = event_target:psionic_species }
 				NOT = { has_trait = leader_trait_psionic }
 			}
-			add_trait = {
-				trait = leader_trait_psionic
-				show_message = no
-			}
+			add_trait = { trait = leader_trait_psionic show_message = no }
 			owner = {
 				if = {
 					limit = {
-						NOT = {
-							has_country_flag = psionic_leader_toast
-						}
+						NOT = { has_country_flag = psionic_leader_toast }
 					}
-					set_timed_country_flag = {
-						flag = psionic_leader_toast
-						months = 1
-					}
+					set_timed_country_flag = { flag = psionic_leader_toast months = 1 }
 				}
 			}
 		}
-
 		if = {
-			limit = {
-				has_country_flag = psionic_leader_toast
-			}
+			limit = { has_country_flag = psionic_leader_toast }
 			create_message = {
 				type = MESSAGE_ALL_GAINED_TRAIT
 				localization = MESSAGE_ALL_GAINED_TRAIT_DESC
@@ -199,19 +172,15 @@ update_every_leader_from_psionic_countries = {
 					value = leader_trait_psionic
 					localization = TRAIT
 				}
-				variable = {
-					key = TRAIT_KEY
-					value = leader_trait_psionic
-				}
-				variable = {
-					key = "border"
-					value = "GFX_invisible"
-				}
+				variable = { key = TRAIT_KEY value = leader_trait_psionic }
+				variable = { key = "border" value = "GFX_invisible" }
 			}
 		}
 	}
+
 	# Notify rest of the galaxy about it
 	observer_event = { id = observer.6 }
+
 	every_playable_country = {
 		limit = {
 			is_ai = no
@@ -223,33 +192,19 @@ update_every_leader_from_psionic_countries = {
 }
 
 reckoning_consume_world = {
-	export_trigger_value_to_variable = {
-		trigger = pop_amount
-		variable = consumed_pops_planet
-	}
+	export_trigger_value_to_variable = { trigger = pop_amount variable = consumed_pops_planet }
 	if = {
 		limit = {
-			check_variable = {
-				which = consumed_pops_planet
-				value > 0
-			}
+			check_variable = { which = consumed_pops_planet value > 0 }
 		}
 		event_target:the_end_of_the_cycle@$OWNER$ = {
-			change_variable = {
-				which = consumed_pops
-				value = prev.consumed_pops_planet
-			}
-			change_variable = {
-				which = end_power
-				value = prev.consumed_pops_planet
-			}
+			change_variable = { which = consumed_pops value = prev.consumed_pops_planet }
+			change_variable = { which = end_power value = prev.consumed_pops_planet }
 		}
 	}
+
 	event_target:the_end_of_the_cycle@$OWNER$ = {
-		change_variable = {
-			which = consumed_worlds
-			value = 1
-		}
+		change_variable = { which = consumed_worlds value = 1 }
 	}
 
 	update_reckoning_event_chains = {
@@ -258,24 +213,18 @@ reckoning_consume_world = {
 
 	remove_all_armies = yes
 	if = {
-		limit = {
-			is_planet_class = pc_habitat
-		}
+		limit = { is_planet_class = pc_habitat }
 		destroy_colony = yes
 		remove_planet = yes
 	}
 	else_if = {
-		limit = {
-			has_ringworld_output_boost = yes
-		}
+		limit = { has_ringworld_output_boost = yes }
 		change_pc = pc_ringworld_habitable_damaged
 		clear_planet_modifiers = yes
 		clear_deposits = yes
 	}
 	else_if = {
-		limit = {
-			is_star = yes
-		}
+		limit = { is_star = yes }
 		change_pc = pc_black_hole
 	}
 	else = {
@@ -286,29 +235,22 @@ reckoning_consume_world = {
 
 	event_target:the_end_of_the_cycle@$OWNER$ = {
 		# Reckoning healing via pop consumption
-		set_variable = {
-			which = heal_percentage
-			value = prev.consumed_pops_planet
-		}
-		multiply_variable = {
-			which = heal_percentage
-			value = 0.00005
-		}
+		set_variable = { which = heal_percentage value = prev.consumed_pops_planet }
+		multiply_variable = { which = heal_percentage value = 0.00005 }
 		repair_percentage = heal_percentage
 		repair_shield_percentage = heal_percentage
-
 		# Reckoning intensification
 		if = {
 			limit = {
-				NOT = { has_modifier = absorbed_consciousness_intensification_1 }
-				check_variable = {
-					which = end_power
-					value >= @reckoning_intensification_devoured_pops_1
+				NOR = {
+					has_modifier = absorbed_consciousness_intensification_1
+					check_variable = {
+						which = end_power
+						value < @reckoning_intensification_devoured_pops_1
+					}
 				}
 			}
-			add_modifier = {
-				modifier = absorbed_consciousness_intensification_1
-			}
+			add_modifier = { modifier = absorbed_consciousness_intensification_1 }
 			set_variable = {
 				which = next_intensification_cap
 				value = @reckoning_intensification_devoured_pops_2
@@ -316,15 +258,15 @@ reckoning_consume_world = {
 		}
 		if = {
 			limit = {
-				NOT = { has_modifier = absorbed_consciousness_intensification_2 }
-				check_variable = {
-					which = end_power
-					value >= @reckoning_intensification_devoured_pops_2
+				NOR = {
+					has_modifier = absorbed_consciousness_intensification_2
+					check_variable = {
+						which = end_power
+						value < @reckoning_intensification_devoured_pops_2
+					}
 				}
 			}
-			add_modifier = {
-				modifier = absorbed_consciousness_intensification_2
-			}
+			add_modifier = { modifier = absorbed_consciousness_intensification_2 }
 			set_variable = {
 				which = next_intensification_cap
 				value = @reckoning_intensification_devoured_pops_3
@@ -332,15 +274,15 @@ reckoning_consume_world = {
 		}
 		if = {
 			limit = {
-				NOT = { has_modifier = absorbed_consciousness_intensification_3 }
-				check_variable = {
-					which = end_power
-					value >= @reckoning_intensification_devoured_pops_3
+				NOR = {
+					has_modifier = absorbed_consciousness_intensification_3
+					check_variable = {
+						which = end_power
+						value < @reckoning_intensification_devoured_pops_3
+					}
 				}
 			}
-			add_modifier = {
-				modifier = absorbed_consciousness_intensification_3
-			}
+			add_modifier = { modifier = absorbed_consciousness_intensification_3 }
 			set_variable = {
 				which = next_intensification_cap
 				value = @reckoning_intensification_devoured_pops_4
@@ -348,23 +290,20 @@ reckoning_consume_world = {
 		}
 		if = {
 			limit = {
-				NOT = { has_modifier = absorbed_consciousness_intensification_4 }
-				check_variable = {
-					which = end_power
-					value >= @reckoning_intensification_devoured_pops_4
+				NOR = {
+					has_modifier = absorbed_consciousness_intensification_4
+					check_variable = {
+						which = end_power
+						value < @reckoning_intensification_devoured_pops_4
+					}
 				}
 			}
-			add_modifier = {
-				modifier = absorbed_consciousness_intensification_4
-			}
+			add_modifier = { modifier = absorbed_consciousness_intensification_4 }
 			clear_variable = next_intensification_cap
 		}
-
 		clear_variable = remaining_pops_until_next_intensification
 		if = {
-			limit = {
-				is_variable_set = next_intensification_cap
-			}
+			limit = { is_variable_set = next_intensification_cap }
 			set_variable = {
 				which = remaining_pops_until_next_intensification
 				value = next_intensification_cap
@@ -384,7 +323,6 @@ reckoning_consume_world = {
 			}
 		}
 		country_event = { id = shroud.11230 } # recalculate reckoning stats
-
 		# Update next intensification stat
 		reset_event_chain_counter = {
 			event_chain = the_reckoning_chain
@@ -406,17 +344,13 @@ reckoning_consume_world = {
 	every_playable_country = {
 		limit = {
 			has_event_chain = the_reckoning_observer_chain
-			OR = {
-				NOT = { exists = event_target:the_end_of_the_cycle@this }
-				AND = {
-					exists = event_target:the_end_of_the_cycle@this
-					event_target:the_end_of_the_cycle@$OWNER$ = {
-						NOT = { is_same_value = event_target:the_end_of_the_cycle@prev }
-					}
+			NAND = {
+				exists = event_target:the_end_of_the_cycle@this
+				event_target:the_end_of_the_cycle@$OWNER$ = {
+					is_same_value = event_target:the_end_of_the_cycle@prev
 				}
 			}
 		}
-
 		# Update next intensification stat
 		reset_event_chain_counter = {
 			event_chain = the_reckoning_observer_chain
@@ -446,26 +380,16 @@ update_reckoning_event_chains = {
 	every_playable_country = {
 		limit = {
 			has_event_chain = the_reckoning_chain
-			$RECKONING$ = {
-				is_same_value = event_target:the_end_of_the_cycle@prev
-			}
+			$RECKONING$ = { is_same_value = event_target:the_end_of_the_cycle@prev }
 		}
-		update_reckoning_event_chain = {
-			EVENT_CHAIN = the_reckoning_chain
-			RECKONING = $RECKONING$
-		}
+		update_reckoning_event_chain = { EVENT_CHAIN = the_reckoning_chain RECKONING = $RECKONING$ }
 	}
 	every_playable_country = {
 		limit = {
 			has_event_chain = the_reckoning_observer_chain
-			OR = {
-				NOT = { exists = event_target:the_end_of_the_cycle@this }
-				AND = {
-					exists = event_target:the_end_of_the_cycle@this
-					$RECKONING$ = {
-						NOT = { is_same_value = event_target:the_end_of_the_cycle@prev }
-					}
-				}
+			NAND = {
+				exists = event_target:the_end_of_the_cycle@this
+				$RECKONING$ = { is_same_value = event_target:the_end_of_the_cycle@prev }
 			}
 		}
 		update_reckoning_event_chain = {
@@ -476,14 +400,9 @@ update_reckoning_event_chains = {
 	every_playable_country = {
 		limit = {
 			has_event_chain = multiple_reckoning_observer_chain
-			OR = {
-				NOT = { exists = event_target:the_end_of_the_cycle@this }
-				AND = {
-					exists = event_target:the_end_of_the_cycle@this
-					$RECKONING$ = {
-						NOT = { is_same_value = event_target:the_end_of_the_cycle@prev }
-					}
-				}
+			NAND = {
+				exists = event_target:the_end_of_the_cycle@this
+				$RECKONING$ = { is_same_value = event_target:the_end_of_the_cycle@prev }
 			}
 		}
 		reset_event_chain_counter = {
@@ -529,24 +448,29 @@ update_reckoning_event_chain = {
 		event_chain = $EVENT_CHAIN$
 		counter = reckoning_consumed_worlds
 	}
+
 	add_event_chain_counter = {
 		event_chain = $EVENT_CHAIN$
 		counter = reckoning_consumed_worlds
 		amount = $RECKONING$.consumed_worlds
 	}
+
 	reset_event_chain_counter = {
 		event_chain = $EVENT_CHAIN$
 		counter = reckoning_consumed_pops
 	}
+
 	add_event_chain_counter = {
 		event_chain = $EVENT_CHAIN$
 		counter = reckoning_consumed_pops
 		amount = $RECKONING$.consumed_pops
 	}
+
 	reset_event_chain_counter = {
 		event_chain = $EVENT_CHAIN$
 		counter = reckoning_destroyed_ships
 	}
+
 	add_event_chain_counter = {
 		event_chain = $EVENT_CHAIN$
 		counter = reckoning_destroyed_ships
@@ -585,6 +509,7 @@ clear_covenant_flags = {
 ###################
 # Secret Factions #
 ###################
+
 roll_secret_faction_internal = {
 	random_list = {
 		0 = {
@@ -593,10 +518,7 @@ roll_secret_faction_internal = {
 				NOT = { has_country_flag = $FACTION$_pacifist_picked }
 				is_pacifist = yes
 			}
-			modifier = {
-				factor = 10
-				is_fanatic_pacifist = yes
-			}
+			modifier = { factor = 10 is_fanatic_pacifist = yes }
 			set_country_flag = $FACTION$_pacifist_picked
 			set_country_flag = $FACTION$_pacifist_selected
 		}
@@ -606,10 +528,7 @@ roll_secret_faction_internal = {
 				NOT = { has_country_flag = $FACTION$_militarist_picked }
 				is_militarist = yes
 			}
-			modifier = {
-				factor = 10
-				is_fanatic_militarist = yes
-			}
+			modifier = { factor = 10 is_fanatic_militarist = yes }
 			set_country_flag = $FACTION$_militarist_picked
 			set_country_flag = $FACTION$_militarist_selected
 		}
@@ -619,10 +538,7 @@ roll_secret_faction_internal = {
 				NOT = { has_country_flag = $FACTION$_materialist_picked }
 				is_materialist = yes
 			}
-			modifier = {
-				factor = 10
-				is_fanatic_materialist = yes
-			}
+			modifier = { factor = 10 is_fanatic_materialist = yes }
 			set_country_flag = $FACTION$_materialist_picked
 			set_country_flag = $FACTION$_materialist_selected
 		}
@@ -633,24 +549,17 @@ roll_secret_faction_internal = {
 				NOT = { has_country_flag = $FACTION$_spiritualist_picked }
 				is_spiritualist = yes
 			}
-			modifier = {
-				factor = 10
-				is_fanatic_spiritualist = yes
-			}
+			modifier = { factor = 10 is_fanatic_spiritualist = yes }
 			set_country_flag = $FACTION$_spiritualist_picked
 			set_country_flag = $FACTION$_spiritualist_selected
-		}
-		]
+		} ]
 		0 = {
 			modifier = {
 				add = 1
 				NOT = { has_country_flag = $FACTION$_egalitarian_picked }
 				is_egalitarian = yes
 			}
-			modifier = {
-				factor = 10
-				is_fanatic_egalitarian = yes
-			}
+			modifier = { factor = 10 is_fanatic_egalitarian = yes }
 			set_country_flag = $FACTION$_egalitarian_picked
 			set_country_flag = $FACTION$_egalitarian_selected
 		}
@@ -660,10 +569,7 @@ roll_secret_faction_internal = {
 				NOT = { has_country_flag = $FACTION$_authoritarian_picked }
 				is_authoritarian = yes
 			}
-			modifier = {
-				factor = 10
-				is_fanatic_authoritarian = yes
-			}
+			modifier = { factor = 10 is_fanatic_authoritarian = yes }
 			set_country_flag = $FACTION$_authoritarian_picked
 			set_country_flag = $FACTION$_authoritarian_selected
 		}
@@ -674,10 +580,7 @@ roll_secret_faction_internal = {
 				NOT = { has_country_flag = $FACTION$_xenophile_picked }
 				is_xenophile = yes
 			}
-			modifier = {
-				factor = 10
-				is_fanatic_xenophile = yes
-			}
+			modifier = { factor = 10 is_fanatic_xenophile = yes }
 			set_country_flag = $FACTION$_xenophile_picked
 			set_country_flag = $FACTION$_xenophile_selected
 		}
@@ -689,10 +592,7 @@ roll_secret_faction_internal = {
 				NOT = { has_country_flag = $FACTION$_xenophobe_picked }
 				is_xenophobe = yes
 			}
-			modifier = {
-				factor = 10
-				is_fanatic_xenophobe = yes
-			}
+			modifier = { factor = 10 is_fanatic_xenophobe = yes }
 			set_country_flag = $FACTION$_xenophobe_picked
 			set_country_flag = $FACTION$_xenophobe_selected
 		}
@@ -730,8 +630,10 @@ roll_secret_factions = {
 ##############
 # Boon Rolls #
 ##############
+
 bestow_modifier_and_flag = {
 	set_country_flag = bestow_$MODIFIER$
+
 	add_modifier = {
 		modifier = $MODIFIER$
 		days = 1800
@@ -740,6 +642,7 @@ bestow_modifier_and_flag = {
 
 roll_boon = {
 	optimize_memory
+
 	random_list = {
 		$GOOD$ = {
 			modifier = { add = value:delve_success_chance_from_techs }
@@ -779,12 +682,9 @@ roll_boon = {
 				1 = { set_country_flag = shroud_bestowed_boon_text_15 }
 			}
 		}
-		$NEUTRAL$ = {}
+		$NEUTRAL$ = {  }
 		$BAD$ = {
-			modifier = {
-				factor = 0.5
-				has_relic = r_zro_crystal
-			}
+			modifier = { factor = 0.5 has_relic = r_zro_crystal }
 			set_country_flag = shroud_bestowed_curse
 			random_list = {
 				1 = { bestow_modifier_and_flag = { MODIFIER = shroud_neg_happiness } }
@@ -820,20 +720,33 @@ roll_boon = {
 }
 
 roll_boon_high = {
-	roll_boon = { GOOD = 70 NEUTRAL = 20 BAD = 10 }
+	roll_boon = {
+		GOOD = 70
+		NEUTRAL = 20
+		BAD = 10
+	}
 }
+
 roll_boon_medium = {
-	roll_boon = { GOOD = 50 NEUTRAL = 30 BAD = 20 }
+	roll_boon = {
+		GOOD = 50
+		NEUTRAL = 30
+		BAD = 20
+	}
 }
+
 roll_boon_low = {
-	roll_boon = { GOOD = 30 NEUTRAL = 40 BAD = 30 }
+	roll_boon = {
+		GOOD = 30
+		NEUTRAL = 40
+		BAD = 30
+	}
 }
 
 remove_bestowed_flags = {
 	if = {
 		limit = { has_country_flag = shroud_bestowed_boon }
 		remove_country_flag = shroud_bestowed_boon
-
 		remove_country_flag = bestow_shroud_happiness
 		remove_country_flag = bestow_shroud_ship_upkeep
 		remove_country_flag = bestow_shroud_research_speed
@@ -848,7 +761,6 @@ remove_bestowed_flags = {
 		remove_country_flag = bestow_shroud_speed
 		remove_country_flag = bestow_shroud_morale
 		remove_country_flag = bestow_shroud_sensors
-
 		remove_country_flag = shroud_bestowed_boon_text_1
 		remove_country_flag = shroud_bestowed_boon_text_2
 		remove_country_flag = shroud_bestowed_boon_text_3
@@ -868,7 +780,6 @@ remove_bestowed_flags = {
 	else_if = {
 		limit = { has_country_flag = shroud_bestowed_curse }
 		remove_country_flag = shroud_bestowed_curse
-
 		remove_country_flag = bestow_shroud_neg_happiness
 		remove_country_flag = bestow_shroud_neg_ethic
 		remove_country_flag = bestow_shroud_neg_armor
@@ -879,7 +790,6 @@ remove_bestowed_flags = {
 		remove_country_flag = bestow_shroud_neg_speed
 		remove_country_flag = bestow_shroud_neg_morale
 		remove_country_flag = bestow_shroud_neg_sensors
-
 		remove_country_flag = shroud_bestowed_curse_text_1
 		remove_country_flag = shroud_bestowed_curse_text_2
 		remove_country_flag = shroud_bestowed_curse_text_3
@@ -902,36 +812,133 @@ custom_bestowed_tooltip = {
 	optimize_memory
 	switch = {
 		trigger = has_country_flag
-		bestow_shroud_happiness = { tooltip = { add_modifier = { modifier = shroud_happiness years = 5 } } }
-		bestow_shroud_ship_upkeep = { tooltip = { add_modifier = { modifier = shroud_ship_upkeep years = 5 } } }
-		bestow_shroud_research_speed = { tooltip = { add_modifier = { modifier = shroud_research_speed years = 5 } } }
-		bestow_shroud_shield_boost = { tooltip = { add_modifier = { modifier = shroud_shield_boost years = 5 } } }
-		bestow_shroud_weapon_boost = { tooltip = { add_modifier = { modifier = shroud_weapon_boost years = 5 } } }
-		bestow_shroud_firing_rate = { tooltip = { add_modifier = { modifier = shroud_firing_rate years = 5 } } }
-		bestow_shroud_ethic_boost = { tooltip = { add_modifier = { modifier = shroud_ethic_boost years = 5 } } }
-		bestow_shroud_influence_boost = { tooltip = { add_modifier = { modifier = shroud_influence_boost years = 5 } } }
-		bestow_shroud_unity_boost = { tooltip = { add_modifier = { modifier = shroud_unity_boost years = 5 } } }
-		bestow_shroud_evasion = { tooltip = { add_modifier = { modifier = shroud_evasion years = 5 } } }
-		bestow_shroud_repair = { tooltip = { add_modifier = { modifier = shroud_repair years = 5 } } }
-		bestow_shroud_speed = { tooltip = { add_modifier = { modifier = shroud_speed years = 5 } } }
-		bestow_shroud_morale = { tooltip = { add_modifier = { modifier = shroud_morale years = 5 } } }
-		bestow_shroud_sensors = { tooltip = { add_modifier = { modifier = shroud_sensors years = 5 } } }
-		bestow_shroud_neg_happiness = { tooltip = { add_modifier = { modifier = shroud_neg_happiness years = 5 } } }
-		bestow_shroud_neg_ethic = { tooltip = { add_modifier = { modifier = shroud_neg_ethic years = 5 } } }
-		bestow_shroud_neg_armor = { tooltip = { add_modifier = { modifier = shroud_neg_armor years = 5 } } }
-		bestow_shroud_neg_growth = { tooltip = { add_modifier = { modifier = shroud_neg_growth years = 5 } } }
-		bestow_shroud_neg_research = { tooltip = { add_modifier = { modifier = shroud_neg_research years = 5 } } }
-		bestow_shroud_neg_influence = { tooltip = { add_modifier = { modifier = shroud_neg_influence years = 5 } } }
-		bestow_shroud_neg_unity = { tooltip = { add_modifier = { modifier = shroud_neg_unity years = 5 } } }
-		bestow_shroud_neg_speed = { tooltip = { add_modifier = { modifier = shroud_neg_speed years = 5 } } }
-		bestow_shroud_neg_morale = { tooltip = { add_modifier = { modifier = shroud_neg_morale years = 5 } } }
-		bestow_shroud_neg_sensors = { tooltip = { add_modifier = { modifier = shroud_neg_sensors years = 5 } } }
+		bestow_shroud_happiness = {
+			tooltip = {
+				add_modifier = { modifier = shroud_happiness years = 5 }
+			}
+		}
+		bestow_shroud_ship_upkeep = {
+			tooltip = {
+				add_modifier = { modifier = shroud_ship_upkeep years = 5 }
+			}
+		}
+		bestow_shroud_research_speed = {
+			tooltip = {
+				add_modifier = { modifier = shroud_research_speed years = 5 }
+			}
+		}
+		bestow_shroud_shield_boost = {
+			tooltip = {
+				add_modifier = { modifier = shroud_shield_boost years = 5 }
+			}
+		}
+		bestow_shroud_weapon_boost = {
+			tooltip = {
+				add_modifier = { modifier = shroud_weapon_boost years = 5 }
+			}
+		}
+		bestow_shroud_firing_rate = {
+			tooltip = {
+				add_modifier = { modifier = shroud_firing_rate years = 5 }
+			}
+		}
+		bestow_shroud_ethic_boost = {
+			tooltip = {
+				add_modifier = { modifier = shroud_ethic_boost years = 5 }
+			}
+		}
+		bestow_shroud_influence_boost = {
+			tooltip = {
+				add_modifier = { modifier = shroud_influence_boost years = 5 }
+			}
+		}
+		bestow_shroud_unity_boost = {
+			tooltip = {
+				add_modifier = { modifier = shroud_unity_boost years = 5 }
+			}
+		}
+		bestow_shroud_evasion = {
+			tooltip = {
+				add_modifier = { modifier = shroud_evasion years = 5 }
+			}
+		}
+		bestow_shroud_repair = {
+			tooltip = {
+				add_modifier = { modifier = shroud_repair years = 5 }
+			}
+		}
+		bestow_shroud_speed = {
+			tooltip = {
+				add_modifier = { modifier = shroud_speed years = 5 }
+			}
+		}
+		bestow_shroud_morale = {
+			tooltip = {
+				add_modifier = { modifier = shroud_morale years = 5 }
+			}
+		}
+		bestow_shroud_sensors = {
+			tooltip = {
+				add_modifier = { modifier = shroud_sensors years = 5 }
+			}
+		}
+		bestow_shroud_neg_happiness = {
+			tooltip = {
+				add_modifier = { modifier = shroud_neg_happiness years = 5 }
+			}
+		}
+		bestow_shroud_neg_ethic = {
+			tooltip = {
+				add_modifier = { modifier = shroud_neg_ethic years = 5 }
+			}
+		}
+		bestow_shroud_neg_armor = {
+			tooltip = {
+				add_modifier = { modifier = shroud_neg_armor years = 5 }
+			}
+		}
+		bestow_shroud_neg_growth = {
+			tooltip = {
+				add_modifier = { modifier = shroud_neg_growth years = 5 }
+			}
+		}
+		bestow_shroud_neg_research = {
+			tooltip = {
+				add_modifier = { modifier = shroud_neg_research years = 5 }
+			}
+		}
+		bestow_shroud_neg_influence = {
+			tooltip = {
+				add_modifier = { modifier = shroud_neg_influence years = 5 }
+			}
+		}
+		bestow_shroud_neg_unity = {
+			tooltip = {
+				add_modifier = { modifier = shroud_neg_unity years = 5 }
+			}
+		}
+		bestow_shroud_neg_speed = {
+			tooltip = {
+				add_modifier = { modifier = shroud_neg_speed years = 5 }
+			}
+		}
+		bestow_shroud_neg_morale = {
+			tooltip = {
+				add_modifier = { modifier = shroud_neg_morale years = 5 }
+			}
+		}
+		bestow_shroud_neg_sensors = {
+			tooltip = {
+				add_modifier = { modifier = shroud_neg_sensors years = 5 }
+			}
+		}
 	}
 }
 
 #########################
 # Superstitious Beliefs #
 #########################
+
 break_cycles = {
 	break_cycle_of_fortune = yes
 	break_cycle_of_omens = yes
@@ -1030,7 +1037,9 @@ break_cycle_of_knowledge = {
 		remove_modifier = cycle_of_knowledge_additional_negative
 	}
 	if = {
-		limit = { has_modifier = cycle_of_knowledge_additional_negative_gestalt }
+		limit = {
+			has_modifier = cycle_of_knowledge_additional_negative_gestalt
+		}
 		remove_modifier = cycle_of_knowledge_additional_negative_gestalt
 	}
 }
@@ -1140,34 +1149,22 @@ clear_cycle_rolled_flags = {
 
 roll_superstitious_event_high = {
 	random_list = {
-		75 = {
-			country_event = { id = shroud.410 }
-		}
-		25 = {
-			country_event = { id = shroud.415 }
-		}
+		75 = { country_event = { id = shroud.410 } }
+		25 = { country_event = { id = shroud.415 } }
 	}
 }
 
 roll_superstitious_event_medium = {
 	random_list = {
-		50 = {
-			country_event = { id = shroud.410 }
-		}
-		50 = {
-			country_event = { id = shroud.415 }
-		}
+		50 = { country_event = { id = shroud.410 } }
+		50 = { country_event = { id = shroud.415 } }
 	}
 }
 
 roll_superstitious_event_low = {
 	random_list = {
-		25 = {
-			country_event = { id = shroud.410 }
-		}
-		75 = {
-			country_event = { id = shroud.415 }
-		}
+		25 = { country_event = { id = shroud.410 } }
+		75 = { country_event = { id = shroud.415 } }
 	}
 }
 
@@ -1217,8 +1214,10 @@ create_well_found_cruiser_ship = {
 ###########################
 # Experimental Sentencing #
 ###########################
+
 give_twisted_experimenters_physics_tech_insight = {
 	optimize_memory
+
 	random_list = {
 		45 = {
 			inline_script = {
@@ -1244,7 +1243,6 @@ give_twisted_experimenters_physics_tech_insight = {
 				TECH = tech_lasers_2
 			}
 		}
-
 		98 = {
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
@@ -1263,7 +1261,6 @@ give_twisted_experimenters_physics_tech_insight = {
 				TECH = tech_consumer_good_refinement_1
 			}
 		}
-
 		44 = {
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
@@ -1288,7 +1285,6 @@ give_twisted_experimenters_physics_tech_insight = {
 				TECH = tech_shields_2
 			}
 		}
-
 		45 = {
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
@@ -1319,7 +1315,6 @@ give_twisted_experimenters_physics_tech_insight = {
 				TECH = tech_energy_lance_1
 			}
 		}
-
 		45 = {
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
@@ -1350,7 +1345,6 @@ give_twisted_experimenters_physics_tech_insight = {
 				TECH = tech_arc_emitter_1
 			}
 		}
-
 		40 = {
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
@@ -1363,7 +1357,6 @@ give_twisted_experimenters_physics_tech_insight = {
 				TECH = tech_energy_torpedoes_1
 			}
 		}
-
 		75 = {
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
@@ -1388,7 +1381,6 @@ give_twisted_experimenters_physics_tech_insight = {
 				TECH = tech_administrative_ai
 			}
 		}
-
 		20 = {
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
@@ -1422,6 +1414,7 @@ give_twisted_experimenters_physics_tech_insight = {
 
 give_twisted_experimenters_society_tech_insight = {
 	optimize_memory
+
 	random_list = {
 		35 = {
 			inline_script = {
@@ -1447,7 +1440,6 @@ give_twisted_experimenters_society_tech_insight = {
 				TECH = tech_eco_simulation
 			}
 		}
-
 		130 = {
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
@@ -1466,7 +1458,6 @@ give_twisted_experimenters_society_tech_insight = {
 				TECH = tech_hydroponics
 			}
 		}
-
 		33 = {
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
@@ -1497,7 +1488,6 @@ give_twisted_experimenters_society_tech_insight = {
 				TECH = tech_colonization_2
 			}
 		}
-
 		70 = {
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
@@ -1510,7 +1500,6 @@ give_twisted_experimenters_society_tech_insight = {
 				TECH = tech_frontier_health
 			}
 		}
-
 		113 = {
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
@@ -1535,7 +1524,6 @@ give_twisted_experimenters_society_tech_insight = {
 				TECH = tech_genome_mapping
 			}
 		}
-
 		75 = {
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
@@ -1566,55 +1554,40 @@ give_twisted_experimenters_society_tech_insight = {
 				TECH = tech_gene_banks
 			}
 		}
-
 		50 = {
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
 				TECH = tech_gene_expressions
 			}
 		}
-
 		20 = {
-			modifier = {
-				factor = 0
-				is_hive_empire = yes
-			}
+			modifier = { factor = 0 is_hive_empire = yes }
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
 				TECH = tech_thought_enforcement
 			}
 		}
 		20 = {
-			modifier = {
-				factor = 0
-				is_hive_empire = yes
-			}
+			modifier = { factor = 0 is_hive_empire = yes }
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
 				TECH = tech_precognition_interface
 			}
 		}
 		25 = {
-			modifier = {
-				factor = 0
-				is_hive_empire = yes
-			}
+			modifier = { factor = 0 is_hive_empire = yes }
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
 				TECH = tech_telepathy
 			}
 		}
 		33 = {
-			modifier = {
-				factor = 0
-				is_hive_empire = yes
-			}
+			modifier = { factor = 0 is_hive_empire = yes }
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
 				TECH = tech_psionic_theory
 			}
 		}
-
 		20 = {
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
@@ -1627,7 +1600,6 @@ give_twisted_experimenters_society_tech_insight = {
 				TECH = tech_subdermal_stimulation
 			}
 		}
-
 		75 = {
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
@@ -1655,6 +1627,7 @@ give_twisted_experimenters_society_tech_insight = {
 
 give_twisted_experimenters_engineering_tech_insight = {
 	optimize_memory
+
 	random_list = {
 		50 = {
 			inline_script = {
@@ -1680,14 +1653,12 @@ give_twisted_experimenters_engineering_tech_insight = {
 				TECH = tech_ship_armor_2
 			}
 		}
-
 		150 = {
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
 				TECH = tech_powered_exoskeletons
 			}
 		}
-
 		35 = {
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
@@ -1712,14 +1683,12 @@ give_twisted_experimenters_engineering_tech_insight = {
 				TECH = tech_robotic_workers
 			}
 		}
-
 		105 = {
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
 				TECH = tech_integrated_cybernetics
 			}
 		}
-
 		98 = {
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
@@ -1732,7 +1701,6 @@ give_twisted_experimenters_engineering_tech_insight = {
 				TECH = tech_housing_1
 			}
 		}
-
 		50 = {
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
@@ -1763,7 +1731,6 @@ give_twisted_experimenters_engineering_tech_insight = {
 				TECH = tech_mass_drivers_2
 			}
 		}
-
 		65 = {
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
@@ -1794,7 +1761,6 @@ give_twisted_experimenters_engineering_tech_insight = {
 				TECH = tech_kinetic_artillery_2
 			}
 		}
-
 		95 = {
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
@@ -1819,7 +1785,6 @@ give_twisted_experimenters_engineering_tech_insight = {
 				TECH = tech_autocannons_3
 			}
 		}
-
 		40 = {
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
@@ -1850,7 +1815,6 @@ give_twisted_experimenters_engineering_tech_insight = {
 				TECH = tech_missiles_3
 			}
 		}
-
 		40 = {
 			inline_script = {
 				script = technologies/add_experimental_testing_tech_progress
@@ -1879,7 +1843,7 @@ give_twisted_experimenters_engineering_tech_insight = {
 check_insight_given_by_experimental_testing = {
 	if = {
 		limit = {
-			NOT = {	has_country_flag = experimental_testing_insight_given }
+			NOT = { has_country_flag = experimental_testing_insight_given }
 		}
 		add_monthly_resource_mult = {
 			resource = $CATEGORY$_research
@@ -1912,8 +1876,8 @@ check_insight_given_by_experimental_testing = {
 try_remove_penal_experimental_mod = {
 	if = {
 		limit = {
-			count_owned_planet = { count = 0
-				limit = {
+			NOT = {
+				any_owned_planet = {
 					NOT = { is_same_value = prevprev }
 					has_modifier = penal_colony
 				}
@@ -1926,6 +1890,7 @@ try_remove_penal_experimental_mod = {
 ##########
 # Chosen #
 ##########
+
 force_remove_chosen_civic = {
 	# Removing civic
 	if = {
@@ -1944,6 +1909,7 @@ force_remove_chosen_civic = {
 		limit = { has_civic = civic_corporate_chosen }
 		force_remove_civic = civic_corporate_chosen
 	}
+
 	set_government_cooldown = no
 	# Removing Blessing and flags
 	if = {
@@ -1966,7 +1932,9 @@ force_remove_chosen_civic = {
 		remove_country_flag = the_cradle_of_souls_as_chosen_patron
 	}
 	if = {
-		limit = { has_country_flag = the_instrument_of_desire_as_chosen_patron }
+		limit = {
+			has_country_flag = the_instrument_of_desire_as_chosen_patron
+		}
 		remove_modifier = the_instrument_of_desire_blessing
 		remove_country_flag = the_instrument_of_desire_as_chosen_patron
 	}
@@ -1975,8 +1943,10 @@ force_remove_chosen_civic = {
 ###########
 # Patrons #
 ###########
+
 whisperers_in_the_void_replace_patron = {
 	custom_tooltip = $CHAIN$_end
+
 	hidden_effect = {
 		if = {
 			limit = { is_robot_empire = yes }
@@ -1987,17 +1957,21 @@ whisperers_in_the_void_replace_patron = {
 		}
 		revert_accords = $PATRON$
 	}
+
 	replace_patron = {
 		new_patron = whisperers_in_the_void
 		replaced_patron = $PATRON$
 	}
+
 	remove_country_flag = contacting_great_patron
 	clear_covenant_flags = yes
 	set_country_flag = $PATRON$_betrayal
+
 	set_attunement = {
 		patron = whisperers_in_the_void
 		value = @attunement_first_accord
 	}
+
 	refresh_psionic_aura_type = yes
 	if = {
 		limit = { is_corporeal_authority = yes }
@@ -2008,23 +1982,43 @@ whisperers_in_the_void_replace_patron = {
 set_psionic_choir_policy = {
 	if = {
 		limit = { has_most_attunement = whisperers_in_the_void }
-		set_policy = { policy = psionic_choir option = song_of_knowing cooldown = no }
+		set_policy = {
+			policy = psionic_choir
+			option = song_of_knowing
+			cooldown = no
+		}
 	}
 	else_if = {
 		limit = { has_most_attunement = the_cradle_of_souls }
-		set_policy = { policy = psionic_choir option = song_of_calming cooldown = no }
+		set_policy = {
+			policy = psionic_choir
+			option = song_of_calming
+			cooldown = no
+		}
 	}
 	else_if = {
 		limit = { has_most_attunement = the_composer_of_strands }
-		set_policy = { policy = psionic_choir option = song_of_plenty cooldown = no }
+		set_policy = {
+			policy = psionic_choir
+			option = song_of_plenty
+			cooldown = no
+		}
 	}
 	else_if = {
 		limit = { has_most_attunement = the_eater_of_worlds }
-		set_policy = { policy = psionic_choir option = song_of_steel cooldown = no }
+		set_policy = {
+			policy = psionic_choir
+			option = song_of_steel
+			cooldown = no
+		}
 	}
 	else_if = {
 		limit = { has_most_attunement = the_instrument_of_desire }
-		set_policy = { policy = psionic_choir option = song_of_luxury cooldown = no }
+		set_policy = {
+			policy = psionic_choir
+			option = song_of_luxury
+			cooldown = no
+		}
 	}
 }
 
@@ -2034,6 +2028,7 @@ patron_revenge = {
 	save_event_target_as = selected_planet_for_revenge
 	change_pc = pc_shrouded
 	clear_deposits = yes
+
 	solar_system = {
 		create_ambient_object = {
 			type = "shroud_tunnel_object"
@@ -2047,6 +2042,7 @@ patron_revenge = {
 			}
 		}
 	}
+
 	root = {
 		switch = {
 			trigger = has_country_flag
@@ -2089,10 +2085,7 @@ give_assimilate_patron_objectives = {
 			can_access_shroud = yes
 			has_psionic_species_trait = yes
 		}
-		add_patron_objective_counter = {
-			counter = po_psionically_assimilate_pop
-			amount = 1
-		}
+		add_patron_objective_counter = { counter = po_psionically_assimilate_pop amount = 1 }
 	}
 }
 
@@ -2150,16 +2143,12 @@ disable_shroud_patrons = {
 
 	revert_accords = the_eater_of_worlds
 	remove_patron = the_eater_of_worlds
-
 	revert_accords = the_composer_of_strands
 	remove_patron = the_composer_of_strands
-
 	revert_accords = the_instrument_of_desire
 	remove_patron = the_instrument_of_desire
-
 	revert_accords = the_cradle_of_souls
 	remove_patron = the_cradle_of_souls
-
 	remove_patron = the_animator_of_clay
 	remove_patron = the_outsider
 	remove_patron = the_endless_tide
@@ -2185,46 +2174,38 @@ update_eotc_accords = {
 		}
 		if = {
 			limit = {
-				NOT = {
+				NOR = {
 					owner = { has_country_flag = unlock_accord_annihilation }
+					situation_progress < @\[ ( end_of_the_cycle_stage_1_end - end_of_the_cycle_start_value ) * 0.5 + end_of_the_cycle_start_value ]
 				}
-				situation_progress >= @\[ ( end_of_the_cycle_stage_1_end - end_of_the_cycle_start_value ) * 0.5 + end_of_the_cycle_start_value ]
 			}
-			owner = {
-				set_country_flag = unlock_accord_annihilation
-			}
+			owner = { set_country_flag = unlock_accord_annihilation }
 		}
 		else_if = {
 			limit = {
-				owner = { has_country_flag = unlock_accord_annihilation	}
+				owner = { has_country_flag = unlock_accord_annihilation }
 				situation_progress < @\[ ( end_of_the_cycle_stage_1_end - end_of_the_cycle_start_value ) * 0.5 + end_of_the_cycle_start_value ]
 			}
-			owner = {
-				remove_country_flag = unlock_accord_annihilation
-			}
+			owner = { remove_country_flag = unlock_accord_annihilation }
 		}
 	}
 
 	# Fractalization accord
 	if = {
 		limit = {
-			NOT = {
+			NOR = {
 				owner = { has_country_flag = unlock_accord_fractalization }
+				situation_progress < @end_of_the_cycle_stage_1_end
 			}
-			situation_progress >= @end_of_the_cycle_stage_1_end
 		}
-		owner = {
-			set_country_flag = unlock_accord_fractalization
-		}
+		owner = { set_country_flag = unlock_accord_fractalization }
 	}
 	else_if = {
 		limit = {
-			owner = { has_country_flag = unlock_accord_fractalization	}
+			owner = { has_country_flag = unlock_accord_fractalization }
 			situation_progress < @end_of_the_cycle_stage_1_end
 		}
-		owner = {
-			remove_country_flag = unlock_accord_fractalization
-		}
+		owner = { remove_country_flag = unlock_accord_fractalization }
 	}
 
 	# Extermination accord
@@ -2234,46 +2215,38 @@ update_eotc_accords = {
 		}
 		if = {
 			limit = {
-				NOT = {
+				NOR = {
 					owner = { has_country_flag = unlock_accord_extermination }
+					situation_progress < @\[ ( end_of_the_cycle_stage_2_end - end_of_the_cycle_stage_1_end ) * 0.5 + end_of_the_cycle_stage_1_end ]
 				}
-				situation_progress >= @\[ ( end_of_the_cycle_stage_2_end - end_of_the_cycle_stage_1_end ) * 0.5 + end_of_the_cycle_stage_1_end ]
 			}
-			owner = {
-				set_country_flag = unlock_accord_extermination
-			}
+			owner = { set_country_flag = unlock_accord_extermination }
 		}
 		else_if = {
 			limit = {
-				owner = { has_country_flag = unlock_accord_extermination	}
+				owner = { has_country_flag = unlock_accord_extermination }
 				situation_progress < @\[ ( end_of_the_cycle_stage_2_end - end_of_the_cycle_stage_1_end ) * 0.5 + end_of_the_cycle_stage_1_end ]
 			}
-			owner = {
-				remove_country_flag = unlock_accord_extermination
-			}
+			owner = { remove_country_flag = unlock_accord_extermination }
 		}
 	}
 
 	# Distortion accord
 	if = {
 		limit = {
-			NOT = {
+			NOR = {
 				owner = { has_country_flag = unlock_accord_distortion }
+				situation_progress < @end_of_the_cycle_stage_2_end
 			}
-			situation_progress >= @end_of_the_cycle_stage_2_end
 		}
-		owner = {
-			set_country_flag = unlock_accord_distortion
-		}
+		owner = { set_country_flag = unlock_accord_distortion }
 	}
 	else_if = {
 		limit = {
-			owner = { has_country_flag = unlock_accord_distortion	}
+			owner = { has_country_flag = unlock_accord_distortion }
 			situation_progress < @end_of_the_cycle_stage_2_end
 		}
-		owner = {
-			remove_country_flag = unlock_accord_distortion
-		}
+		owner = { remove_country_flag = unlock_accord_distortion }
 	}
 
 	# Destruction accord
@@ -2283,46 +2256,38 @@ update_eotc_accords = {
 		}
 		if = {
 			limit = {
-				NOT = {
+				NOR = {
 					owner = { has_country_flag = unlock_accord_destruction }
+					situation_progress < @\[ ( end_of_the_cycle_stage_3_end - end_of_the_cycle_stage_2_end ) * 0.5 + end_of_the_cycle_stage_2_end ]
 				}
-				situation_progress >= @\[ ( end_of_the_cycle_stage_3_end - end_of_the_cycle_stage_2_end ) * 0.5 + end_of_the_cycle_stage_2_end ]
 			}
-			owner = {
-				set_country_flag = unlock_accord_destruction
-			}
+			owner = { set_country_flag = unlock_accord_destruction }
 		}
 		else_if = {
 			limit = {
-				owner = { has_country_flag = unlock_accord_destruction	}
+				owner = { has_country_flag = unlock_accord_destruction }
 				situation_progress < @\[ ( end_of_the_cycle_stage_3_end - end_of_the_cycle_stage_2_end ) * 0.5 + end_of_the_cycle_stage_2_end ]
 			}
-			owner = {
-				remove_country_flag = unlock_accord_destruction
-			}
+			owner = { remove_country_flag = unlock_accord_destruction }
 		}
 	}
 
 	# Intensification accord
 	if = {
 		limit = {
-			NOT = {
+			NOR = {
 				owner = { has_country_flag = unlock_accord_intensification }
+				situation_progress < @end_of_the_cycle_stage_3_end
 			}
-			situation_progress >= @end_of_the_cycle_stage_3_end
 		}
-		owner = {
-			set_country_flag = unlock_accord_intensification
-		}
+		owner = { set_country_flag = unlock_accord_intensification }
 	}
 	else_if = {
 		limit = {
-			owner = { has_country_flag = unlock_accord_intensification	}
+			owner = { has_country_flag = unlock_accord_intensification }
 			situation_progress < @end_of_the_cycle_stage_3_end
 		}
-		owner = {
-			remove_country_flag = unlock_accord_intensification
-		}
+		owner = { remove_country_flag = unlock_accord_intensification }
 	}
 
 	# Eradication accord
@@ -2332,23 +2297,19 @@ update_eotc_accords = {
 		}
 		if = {
 			limit = {
-				NOT = {
+				NOR = {
 					owner = { has_country_flag = unlock_accord_eradication }
+					situation_progress < @\[ ( end_of_the_cycle_end_value - end_of_the_cycle_stage_3_end ) * 0.5 + end_of_the_cycle_stage_3_end ]
 				}
-				situation_progress >= @\[ ( end_of_the_cycle_end_value - end_of_the_cycle_stage_3_end ) * 0.5 + end_of_the_cycle_stage_3_end ]
 			}
-			owner = {
-				set_country_flag = unlock_accord_eradication
-			}
+			owner = { set_country_flag = unlock_accord_eradication }
 		}
 		else_if = {
 			limit = {
-				owner = { has_country_flag = unlock_accord_eradication	}
+				owner = { has_country_flag = unlock_accord_eradication }
 				situation_progress < @\[ ( end_of_the_cycle_end_value - end_of_the_cycle_stage_3_end ) * 0.5 + end_of_the_cycle_stage_3_end ]
 			}
-			owner = {
-				remove_country_flag = unlock_accord_eradication
-			}
+			owner = { remove_country_flag = unlock_accord_eradication }
 		}
 	}
 }
@@ -2357,22 +2318,17 @@ accept_end_of_the_cycle = {
 	# The situation must start before having the covenant with the End of the Cycle
 	if = {
 		limit = { has_origin = origin_endbringers }
-		start_situation = {
-			type = end_of_the_cycle_endbringers
-		}
+		start_situation = { type = end_of_the_cycle_endbringers }
 	}
 	else = {
-		start_situation = {
-			type = end_of_the_cycle
-		}
+		start_situation = { type = end_of_the_cycle }
 	}
+
 	hidden_effect = {
 		set_patron_first_contact_state = { patron = end_of_the_cycle state = completed }
-		set_attunement = {
-			patron = end_of_the_cycle
-			value = @max_attunement
-		}
+		set_attunement = { patron = end_of_the_cycle value = @max_attunement }
 	}
+
 	tooltip = {
 		accept_covenant = end_of_the_cycle
 		if = {
@@ -2383,29 +2339,37 @@ accept_end_of_the_cycle = {
 			start_chain_aura_suppressors = yes
 		}
 	}
+
 	hidden_effect = {
 		try_start_chain_aura_suppressors = yes
 		disable_shroud_patrons = yes
 		accept_covenant = end_of_the_cycle
-		give_tech_no_error_effect = { MESSAGE = yes TECH = tech_psionic_aura }
-		give_tech_no_error_effect = { MESSAGE = yes TECH = tech_aura_intensification }
+		give_tech_no_error_effect = {
+			MESSAGE = yes
+			TECH = tech_psionic_aura
+		}
+		give_tech_no_error_effect = {
+			MESSAGE = yes
+			TECH = tech_aura_intensification
+		}
 		accept_covenant = end_of_the_cycle
 		set_global_flag = end_of_the_cycle
 		set_global_flag = galactic_crisis_happened
-		set_timed_global_flag = {
-			flag = galactic_crisis_recently_fired
-			years = 12
-		}
+		set_timed_global_flag = { flag = galactic_crisis_recently_fired years = 12 }
 		set_country_flag = has_shroud_patron
 		set_country_flag = covenant_end_of_the_cycle
 		remove_country_flag = forging_our_own_path
 		every_owned_planet = {
-			limit = { NOT = { has_modifier = covenant_shroud_marked } }
+			limit = {
+				NOT = { has_modifier = covenant_shroud_marked }
+			}
 			add_modifier = { modifier = covenant_shroud_marked days = -1 }
 		}
 		every_subject = {
 			every_owned_planet = {
-				limit = { NOT = { has_modifier = covenant_shroud_marked } }
+				limit = {
+					NOT = { has_modifier = covenant_shroud_marked }
+				}
 				add_modifier = { modifier = covenant_shroud_marked days = -1 }
 			}
 		}
@@ -2420,33 +2384,24 @@ reckoning_spawn = {
 	set_country_flag = end_of_the_cycle_reckoning
 	remove_modifier = covenant_end_of_the_cycle
 	clear_resources = yes
+
 	add_resource = {
 		minerals = 1000
 		energy = 500
 		food = 100
 		influence = 100
 	}
-
 	if = {
-		limit = { NOT = { exists = event_target:the_reckoning_country } }
+		limit = {
+			NOT = { exists = event_target:the_reckoning_country }
+		}
 		create_country = {
 			name = "NAME_Creatures_of_the_Shroud"
 			type = the_reckoning
 			flag = {
-				icon = {
-					category = "special"
-					file = "the_shroud.dds"
-				}
-				background = {
-					category = "backgrounds"
-					file = "00_solid.dds"
-				}
-				colors = {
-					"dark_purple"
-					"black"
-					"null"
-					"null"
-				}
+				icon = { category = "special" file = "the_shroud.dds" }
+				background = { category = "backgrounds" file = "00_solid.dds" }
+				colors = { "dark_purple" "black" "null" "null" }
 			}
 		}
 		last_created_country = {
@@ -2468,10 +2423,7 @@ reckoning_spawn = {
 				variable_string = "\\[Root.GetSpeciesNamePlural\\]"
 			}
 			set_owner = event_target:the_reckoning_country
-			create_ship = {
-				name = "NAME_Reckoning"
-				design = "NAME_Warped_Consciousness"
-			}
+			create_ship = { name = "NAME_Reckoning" design = "NAME_Warped_Consciousness" }
 			set_location = event_target:former_capital
 			set_fleet_stance = aggressive
 			set_aggro_range_measure_from = return_point
@@ -2480,18 +2432,9 @@ reckoning_spawn = {
 				which = next_intensification_cap
 				value = @reckoning_intensification_devoured_pops_1
 			}
-			set_variable = {
-				which = consumed_worlds
-				value = 0
-			}
-			set_variable = {
-				which = consumed_pops
-				value = 0
-			}
-			set_variable = {
-				which = destroyed_ships
-				value = 0
-			}
+			set_variable = { which = consumed_worlds value = 0 }
+			set_variable = { which = consumed_pops value = 0 }
+			set_variable = { which = destroyed_ships value = 0 }
 		}
 		settings = {
 			spawn_debris = no
@@ -2501,67 +2444,45 @@ reckoning_spawn = {
 	}
 
 	every_subject = {
-		set_subject_of = {
-			who = none
-		}
+		set_subject_of = { who = none }
 	}
+
 	random_rim_system = {
 		limit = {
-			count_country = { count = 0
-				limit = {
-					any_system_within_border = {
-						is_same_value = prevprev
-					}
+			NOR = {
+				any_country = {
+					any_system_within_border = { is_same_value = prevprev }
 				}
-			}
-			count_fleet_in_system = { count = 0
-				limit = {
-					owner = {
-						is_hostile = root
-					}
+				any_fleet_in_system = {
+					owner = { is_hostile = root }
 				}
+				has_psionic_aura = end_aura
 			}
-			NOT = { has_psionic_aura = end_aura }
-			any_system_planet = {
-				has_owner = no
-				is_colonizable = yes
-			}
+			any_system_planet = { has_owner = no is_colonizable = yes }
 		}
-
 		reckoning_choose_planet = yes
 	}
-
 	if = {
 		limit = { NOT = { has_country_flag = exile_world } } # No planet found, spawning one
 		random_rim_system = {
 			limit = {
-				count_country = { count = 0
-					limit = {
-						any_system_within_border = {
-							is_same_value = prevprev
-						}
+				NOR = {
+					any_country = {
+						any_system_within_border = { is_same_value = prevprev }
 					}
-				}
-				count_fleet_in_system = { count = 0
-					limit = {
-						owner = {
-							is_hostile = root
-						}
+					any_fleet_in_system = {
+						owner = { is_hostile = root }
 					}
+					has_psionic_aura = end_aura
 				}
-				NOT = { has_psionic_aura = end_aura }
 			}
-
 			find_or_spawn_reckoning_planet = yes
 		}
 	}
-
 	if = {
 		limit = { NOT = { has_country_flag = exile_world } } # No system found, spawning one
 		random_rim_system = {
-			limit = {
-				is_mindwardens_story_system = no
-			}
+			limit = { is_mindwardens_story_system = no }
 			spawn_system = {
 				initializer = random
 				effect = {
@@ -2570,24 +2491,18 @@ reckoning_spawn = {
 			}
 		}
 	}
-
 	if = {
 		limit = { has_country_flag = exile_world }
 		event_target:exile_world = {
 			if = {
-				limit = {
-					is_planet_class = pc_habitat
-				}
+				limit = { is_planet_class = pc_habitat }
 				create_colony = {
 					owner = root
 					species = root.species
 					ethos = owner
 				}
 				set_name = "NAME_Exile"
-				set_timed_planet_flag = {
-					flag = ignore_ai_building_limitations
-					days = 1
-				}
+				set_timed_planet_flag = { flag = ignore_ai_building_limitations days = 1 }
 				add_district = district_hab_housing
 				add_district = district_hab_science
 				add_district = district_hab_mining
@@ -2600,9 +2515,7 @@ reckoning_spawn = {
 						pop_amount < 800
 						free_housing > 0
 					}
-					create_pop_group = {
-						species = owner
-					}
+					create_pop_group = { species = owner }
 				}
 			}
 			else = {
@@ -2612,10 +2525,7 @@ reckoning_spawn = {
 					ethos = owner
 				}
 				set_name = "NAME_Exile"
-				set_timed_planet_flag = {
-					flag = ignore_ai_building_limitations
-					days = 1
-				}
+				set_timed_planet_flag = { flag = ignore_ai_building_limitations days = 1 }
 				add_district = district_city
 				add_district = district_city
 				add_district = district_farming
@@ -2630,29 +2540,28 @@ reckoning_spawn = {
 						pop_amount < 800
 						free_housing > 0
 					}
-					create_pop_group = {
-						species = owner
-					}
+					create_pop_group = { species = owner }
 				}
 			}
 			planet_event = { id = shroud.11255 }
 		}
 	}
+
 	random_owned_leader = {
-		limit = {
-			is_heir = yes
-		}
+		limit = { is_heir = yes }
 		if = {
 			limit = { is_exploring_astral_rift = no }
 			kill_leader = { show_notification = no }
 		}
 	}
+
 	ruler = {
 		if = {
 			limit = { is_exploring_astral_rift = no }
 			kill_leader = { show_notification = no }
 		}
 	}
+
 	every_owned_leader = {
 		limit = { is_exploring_astral_rift = no }
 		kill_leader = { show_notification = no }
@@ -2667,6 +2576,7 @@ reckoning_spawn = {
 		}
 		assign_leader = last_created_leader
 	}
+
 	every_controlled_fleet = {
 		limit = {
 			NAND = {
@@ -2676,6 +2586,7 @@ reckoning_spawn = {
 		}
 		destroy_fleet = this
 	}
+
 	every_owned_planet = {
 		limit = {
 			if = {
@@ -2686,7 +2597,6 @@ reckoning_spawn = {
 			}
 		}
 		remove_modifier = covenant_shroud_marked
-
 		if = {
 			limit = {
 				has_owner = yes
@@ -2698,7 +2608,6 @@ reckoning_spawn = {
 				country_event = { id = utopia.3321 }
 			}
 		}
-
 		if = {
 			limit = {
 				NOT = { is_same_value = event_target:former_capital }
@@ -2707,10 +2616,7 @@ reckoning_spawn = {
 				name = "NAME_Shroud_Manifestation"
 				effect = {
 					set_owner = event_target:the_reckoning_country
-					create_ship = {
-						name = "NAME_Fragment"
-						design = "NAME_Shroud_Manifestation"
-					}
+					create_ship = { name = "NAME_Fragment" design = "NAME_Shroud_Manifestation" }
 					set_location = prev
 					set_fleet_stance = aggressive
 					set_aggro_range_measure_from = return_point
@@ -2722,10 +2628,7 @@ reckoning_spawn = {
 				}
 			}
 		}
-
-		reckoning_consume_world = {
-			OWNER = root
-		}
+		reckoning_consume_world = { OWNER = root }
 	}
 
 	every_system_with_aura = {
@@ -2741,36 +2644,23 @@ reckoning_spawn = {
 			else = {
 				owner = { set_country_flag = eotc_destruction_victim }
 				every_system_planet = {
-					reckoning_consume_world = {
-						OWNER = root
-					}
+					reckoning_consume_world = { OWNER = root }
 				}
-				every_system_megastructure = {
-					set_ruined_megastructure = yes
-				}
+				every_system_megastructure = { set_ruined_megastructure = yes }
 			}
 		}
 		else = {
 			every_system_planet = {
-				reckoning_consume_world = {
-					OWNER = root
-				}
+				reckoning_consume_world = { OWNER = root }
 			}
-			every_system_megastructure = {
-				set_ruined_megastructure = yes
-			}
+			every_system_megastructure = { set_ruined_megastructure = yes }
 		}
 		destroy_psionic_aura = yes
 	}
 
 	every_playable_country = {
-		limit = {
-			NOT = { is_same_value = root }
-		}
-		add_opinion_modifier = {
-			modifier = opinion_doomed_us_all
-			who = root
-		}
+		limit = { NOT = { is_same_value = root } }
+		add_opinion_modifier = { modifier = opinion_doomed_us_all who = root }
 		if = {
 			limit = {
 				has_shroud_dlc = yes
@@ -2788,18 +2678,18 @@ reckoning_spawn = {
 			country_event = { id = utopia.3321 }
 		}
 	}
-
 	every_playable_country = {
 		limit = { has_event_chain = the_reckoning_chain }
-		country_event = {
-			id = shroud.11230
-		}
+		country_event = { id = shroud.11230 }
 	}
 }
 
 # This = Planet / Root = Country
 reckoning_set_planet = {
-	root = { set_country_flag = exile_world }
+	root = {
+		set_country_flag = exile_world
+	}
+
 	set_planet_flag = exile_planet
 	save_event_target_as = exile_world
 }
@@ -2818,14 +2708,9 @@ reckoning_choose_planet = {
 # This = System
 find_or_spawn_reckoning_planet = {
 	reckoning_choose_planet = yes
-
 	if = { # No planet found
 		limit = {
-			NOT = {
-				root = {
-					has_country_flag = exile_world
-				}
-			}
+			NOT = { root = { has_country_flag = exile_world } }
 		}
 		spawn_planet = {
 			class = random_colonizable
@@ -2961,14 +2846,14 @@ create_enclave_with_country = {
 	owner = {
 		save_event_target_as = $PREFIX$_enclave_creator
 	}
+
 	# Set up the ruler and species
 	leader = {
-		species = {
-			save_event_target_as = $PREFIX$_enclave_species
-		}
+		species = { save_event_target_as = $PREFIX$_enclave_species }
 		exile_leader_as = $PREFIX$_enclave_leader
 		save_event_target_as = $PREFIX$_enclave_leader
 	}
+
 	# Set up the enclave starbase
 	solar_system = {
 		set_star_flag = enclave
@@ -2976,10 +2861,7 @@ create_enclave_with_country = {
 		# Set up on a moon only if an asteroid isn't available
 		if = {
 			limit = {
-				count_system_planet = {
-					count < 1
-					limit = { is_asteroid = yes }
-				}
+				NOT = { any_system_planet = { is_asteroid = yes } }
 			}
 			random_system_planet = {
 				limit = { is_moon = yes }
@@ -2995,9 +2877,12 @@ create_enclave_with_country = {
 			}
 		}
 	}
+
 	# Create the Enclave country, and assign a flavour ethic. Note that these are applied in priority order, so a patron who is Xenophilic, Authoritarian *and* Materialistic will found an enclave which is Fanatic Militarist and Materialist, as Materialism is listed first.
 	if = {
-		limit = { owner = { is_materialist = yes } }
+		limit = {
+			owner = { is_materialist = yes }
+		}
 		$EFFECT$ = { INHERITED_ETHIC = ethic_materialist }
 	}
 	else_if = {
@@ -3005,11 +2890,15 @@ create_enclave_with_country = {
 		$EFFECT$ = { INHERITED_ETHIC = ethic_xenophobe }
 	}
 	else_if = {
-		limit = { owner = { is_authoritarian = yes } }
+		limit = {
+			owner = { is_authoritarian = yes }
+		}
 		$EFFECT$ = { INHERITED_ETHIC = ethic_authoritarian }
 	}
 	else_if = {
-		limit = { owner = { is_egalitarian = yes } }
+		limit = {
+			owner = { is_egalitarian = yes }
+		}
 		$EFFECT$ = { INHERITED_ETHIC = ethic_egalitarian }
 	}
 	else = {
@@ -3020,18 +2909,13 @@ create_enclave_with_country = {
 	event_target:$PREFIX$_enclave_country = {
 		if = {
 			limit = {
-				event_target:$PREFIX$_enclave_creator = {
-					country_uses_bio_ships = yes
-				}
+				event_target:$PREFIX$_enclave_creator = { country_uses_bio_ships = yes }
 			}
 			give_technology = { tech = tech_maulers message = no }
 		}
 		copy_techs_from = { target = event_target:$PREFIX$_enclave_creator }
 		set_country_flag = created_by@event_target:$PREFIX$_enclave_creator
-		add_trust = {
-			who = event_target:$PREFIX$_enclave_creator
-			amount = $TRUST$
-		}
+		add_trust = { who = event_target:$PREFIX$_enclave_creator amount = $TRUST$ }
 	}
 
 	owner = {
@@ -3050,9 +2934,7 @@ create_mercenary_mindwarden_enclave_country = {
 		name = random
 		type = mindwarden_enclave
 		authority = "auth_oligarchic"
-		civics = {
-			civic = civic_mindwarden_enclave
-		}
+		civics = { civic = civic_mindwarden_enclave }
 		origin = "origin_default"
 		species = event_target:mindwarden_enclave_species
 		flag = random
@@ -3069,7 +2951,9 @@ create_mercenary_mindwarden_enclave_country = {
 			set_leader = event_target:mindwarden_enclave_leader
 			establish_communications_no_message = event_target:mindwarden_enclave_creator
 			create_fleet = {
-				settings = { spawn_debris = no }
+				settings = {
+					spawn_debris = no
+				}
 				effect = {
 					set_owner = prev
 					create_ship = {
@@ -3077,22 +2961,13 @@ create_mercenary_mindwarden_enclave_country = {
 						design = "NAME_Mindwarden_Enclave_Station"
 						graphical_culture = mindwarden_01
 					}
-					set_location = {
-						target = event_target:mindwarden_enclave_planet
-						distance = 90
-					}
+					set_location = { target = event_target:mindwarden_enclave_planet distance = 90 }
 					save_event_target_as = mindwarden_enclave_station
 				}
 			}
-			start_situation = {
-				type = mindwardens_dividends
-				target = root
-			}
+			start_situation = { type = mindwardens_dividends target = root }
 			# Set a flag to prevent the AI from instantly hiring them
-			set_timed_country_flag = {
-				flag = merc_ai_delay
-				years = 1
-			}
+			set_timed_country_flag = { flag = merc_ai_delay years = 1 }
 		}
 	}
 }
@@ -3110,9 +2985,7 @@ mercenary_refund_fleet = {
 		limit = {
 			event_target:mercenary_enclave_country = {
 				has_mercenary_enclave_reached_lvl = { LVL = 4 }
-				NOT = {
-					has_mercenary_enclave_reached_lvl = { LVL = 5 }
-				}
+				NOT = { has_mercenary_enclave_reached_lvl = { LVL = 5 } }
 			}
 		}
 		add_resource = { energy = 30000 }
@@ -3121,9 +2994,7 @@ mercenary_refund_fleet = {
 		limit = {
 			event_target:mercenary_enclave_country = {
 				has_mercenary_enclave_reached_lvl = { LVL = 3 }
-				NOT = {
-					has_mercenary_enclave_reached_lvl = { LVL = 4 }
-				}
+				NOT = { has_mercenary_enclave_reached_lvl = { LVL = 4 } }
 			}
 		}
 		add_resource = { energy = 20000 }
@@ -3132,9 +3003,7 @@ mercenary_refund_fleet = {
 		limit = {
 			event_target:mercenary_enclave_country = {
 				has_mercenary_enclave_reached_lvl = { LVL = 2 }
-				NOT = {
-					has_mercenary_enclave_reached_lvl = { LVL = 3 }
-				}
+				NOT = { has_mercenary_enclave_reached_lvl = { LVL = 3 } }
 			}
 		}
 		add_resource = { energy = 12000 }
@@ -3143,9 +3012,7 @@ mercenary_refund_fleet = {
 		limit = {
 			event_target:mercenary_enclave_country = {
 				has_mercenary_enclave_reached_lvl = { LVL = 1 }
-				NOT = {
-					has_mercenary_enclave_reached_lvl = { LVL = 2 }
-				}
+				NOT = { has_mercenary_enclave_reached_lvl = { LVL = 2 } }
 			}
 		}
 		add_resource = { energy = 6000 }
@@ -3158,6 +3025,7 @@ mercenary_refund_fleet = {
 #############
 # Buildings #
 #############
+
 upgrade_colony_shelter = {
 	if = {
 		limit = { has_building = building_colony_shelter }
@@ -3174,10 +3042,10 @@ upgrade_colony_shelter = {
 ###############
 # Mindwardens #
 ###############
+
 create_mindwarden_enclave = {
 	create_fleet = {
 		name = "NAME_Shroud_Teachers"
-		settings = { spawn_debris = no }
 		effect = {
 			set_owner = prev
 			create_ship = {
@@ -3185,11 +3053,11 @@ create_mindwarden_enclave = {
 				design = "NAME_Mindwarden_Enclave_Station_5"
 				graphical_culture = prev
 			}
-			set_location = {
-				target = event_target:mindwarden_enclave_planet
-				distance = 20
-			}
+			set_location = { target = event_target:mindwarden_enclave_planet distance = 20 }
 			save_event_target_as = CustomCapital
+		}
+		settings = {
+			spawn_debris = no
 		}
 	}
 }
@@ -3215,9 +3083,7 @@ create_mindwarden_commander = {
 		}
 		effect = {
 			set_leader_flag = mindwarden_commander
-			fire_on_action = {
-				on_action = on_leader_hired
-			}
+			fire_on_action = { on_action = on_leader_hired }
 		}
 	}
 }
@@ -3240,6 +3106,7 @@ create_mindwarden_fleet_leader = {
 
 create_mindwarden_raid_fleet = {
 	create_mindwarden_fleet_leader = yes
+
 	create_fleet = {
 		name = "NAME_Raiding_Fleet"
 		effect = {
@@ -3259,7 +3126,6 @@ create_mindwarden_raid_fleet = {
 			set_owner = event_target:mindwarden_raiding_country
 			assign_leader = event_target:mindwarden_fleet_leader
 			add_modifier = { modifier = mindwarden_raider_modifier }
-
 			closest_system = {
 				use_bypasses = yes
 				limit = {
@@ -3337,6 +3203,7 @@ create_mindwarden_raiders = {
 		}
 		set_fleet_flag = mindwarden_raider_fleet_1
 	}
+
 	# 40 years into game, less than 60
 	else_if = {
 		limit = { years_passed < 60 }
@@ -3387,6 +3254,7 @@ create_mindwarden_raiders = {
 		}
 		set_fleet_flag = mindwarden_raider_fleet_2
 	}
+
 	# 60 years into game, less than 80
 	else_if = {
 		limit = { years_passed < 80 }
@@ -3446,6 +3314,7 @@ create_mindwarden_raiders = {
 		}
 		set_fleet_flag = mindwarden_raider_fleet_3
 	}
+
 	# 80 years into game
 	else = {
 		get_max_level_mindwarden_fleet_ships = yes
@@ -3517,9 +3386,13 @@ create_mindwarden_defense_fleet = {
 			save_event_target_as = spawn_planet
 		}
 	}
+
 	create_mindwarden_fleet_leader = yes
+
 	create_fleet = {
-		settings = { spawn_debris = no }
+		settings = {
+			spawn_debris = no
+		}
 		effect = {
 			set_owner = event_target:mindwarden_enclave_country
 			get_max_level_mindwarden_fleet_ships = yes
@@ -3557,19 +3430,11 @@ close_mindwarden_diplomacy = {
 # This = Enclave / Prev = Country
 give_mindwarden_dividends_modifiers = {
 	if = {
-		limit = {
-			has_country_flag = created_by@prev
-		}
-		set_timed_country_flag = {
-			flag = $FLAG$_patron
-			years = @mindwardens_dividends_modifier_years
-		}
+		limit = { has_country_flag = created_by@prev }
+		set_timed_country_flag = { flag = $FLAG$_patron years = @mindwardens_dividends_modifier_years }
 	}
 	else = {
-		set_timed_country_flag = {
-			flag = $FLAG$
-			years = @mindwardens_dividends_modifier_years
-		}
+		set_timed_country_flag = { flag = $FLAG$ years = @mindwardens_dividends_modifier_years }
 	}
 }
 
@@ -3589,45 +3454,32 @@ mindwarden_give_logistic_assistance = {
 		limit = { exists = event_target:shroudwalker_enclave_country }
 		custom_tooltip = mindwarden_rival_opinion_tt
 	}
+
 	hidden_effect = {
 		$MINDWARDEN_COUNTRY$ = {
-			add_trust = {
-				who = root
-				amount = @positive_opinion
-			}
-			give_mindwarden_dividends_modifiers = {
-				FLAG = logistics_assistance
-			}
+			add_trust = { who = root amount = @positive_opinion }
+			give_mindwarden_dividends_modifiers = { FLAG = logistics_assistance }
 		}
 		if = {
 			limit = { exists = event_target:shroudwalker_enclave_country }
 			event_target:shroudwalker_enclave_country = {
-				add_trust = {
-					who = root
-					amount = @negative_opinion
-				}
+				add_trust = { who = root amount = @negative_opinion }
 			}
 		}
-		set_timed_country_flag = {
-			flag = mindwarden_logistics_cooldown
-			years = 10
-		}
+		set_timed_country_flag = { flag = mindwarden_logistics_cooldown years = 10 }
 		set_saved_date = {
 			key = mindwarden_logistics_timer
 			days_from_present = 3600
 			expires = 3600
 		}
-		country_event = {
-			id = shroud.4267
-			days = 3600
-			scopes = { from = $MINDWARDEN_COUNTRY$ }
-		}
+		country_event = { id = shroud.4267 days = 3600 scopes = { from = $MINDWARDEN_COUNTRY$ } }
 	}
 }
 
 #############
 # Resources #
 #############
+
 add_percentage_to_all_resources = {
 	inline_script = {
 		script = shroud/add_percentage_to_resource
@@ -3659,10 +3511,11 @@ add_percentage_to_all_resources = {
 ##########
 # Traits #
 ##########
+
 gain_leader_trait_level_max_2 = {
 	switch = {
 		trigger = has_trait
-		$LEADER_TRAIT$_2 = {}
+		$LEADER_TRAIT$_2 = {  }
 		$LEADER_TRAIT$ = {
 			add_trait = { trait = $LEADER_TRAIT$_2 }
 		}
@@ -3675,121 +3528,83 @@ gain_leader_trait_level_max_2 = {
 ###########
 # Planets #
 ###########
+
 add_shroudfall_blocker = {
 	custom_tooltip = add_shroudfall_concept
+
 	hidden_effect = {
-		add_blocker = {
-			type = d_shroudfall
-		}
+		add_blocker = { type = d_shroudfall }
 	}
 }
 
 ################
 # Shroud Songs #
 ################
+
 select_shroud_song = {
 	random_list = {
 		1 = {
-			modifier = {
-				factor = 0
-				has_country_flag = shroud_song_1_rolled
-			}
+			modifier = { factor = 0 has_country_flag = shroud_song_1_rolled }
 			set_country_flag = shroud_song_1_selected
 			set_country_flag = shroud_song_1_rolled
 		}
 		1 = {
-			modifier = {
-				factor = 0
-				has_country_flag = shroud_song_2_rolled
-			}
+			modifier = { factor = 0 has_country_flag = shroud_song_2_rolled }
 			set_country_flag = shroud_song_2_selected
 			set_country_flag = shroud_song_2_rolled
 		}
 		1 = {
-			modifier = {
-				factor = 0
-				has_country_flag = shroud_song_3_rolled
-			}
+			modifier = { factor = 0 has_country_flag = shroud_song_3_rolled }
 			set_country_flag = shroud_song_3_selected
 			set_country_flag = shroud_song_3_rolled
 		}
 		1 = {
-			modifier = {
-				factor = 0
-				has_country_flag = shroud_song_4_rolled
-			}
+			modifier = { factor = 0 has_country_flag = shroud_song_4_rolled }
 			set_country_flag = shroud_song_4_selected
 			set_country_flag = shroud_song_4_rolled
 		}
 		1 = {
-			modifier = {
-				factor = 0
-				has_country_flag = shroud_song_5_rolled
-			}
+			modifier = { factor = 0 has_country_flag = shroud_song_5_rolled }
 			set_country_flag = shroud_song_5_selected
 			set_country_flag = shroud_song_5_rolled
 		}
 		1 = {
-			modifier = {
-				factor = 0
-				has_country_flag = shroud_song_6_rolled
-			}
+			modifier = { factor = 0 has_country_flag = shroud_song_6_rolled }
 			set_country_flag = shroud_song_6_selected
 			set_country_flag = shroud_song_6_rolled
 		}
 		1 = {
-			modifier = {
-				factor = 0
-				has_country_flag = shroud_song_7_rolled
-			}
+			modifier = { factor = 0 has_country_flag = shroud_song_7_rolled }
 			set_country_flag = shroud_song_7_selected
 			set_country_flag = shroud_song_7_rolled
 		}
 		1 = {
-			modifier = {
-				factor = 0
-				has_country_flag = shroud_song_8_rolled
-			}
+			modifier = { factor = 0 has_country_flag = shroud_song_8_rolled }
 			set_country_flag = shroud_song_8_selected
 			set_country_flag = shroud_song_8_rolled
 		}
 		1 = {
-			modifier = {
-				factor = 0
-				has_country_flag = shroud_song_9_rolled
-			}
+			modifier = { factor = 0 has_country_flag = shroud_song_9_rolled }
 			set_country_flag = shroud_song_9_selected
 			set_country_flag = shroud_song_9_rolled
 		}
 		1 = {
-			modifier = {
-				factor = 0
-				has_country_flag = shroud_song_10_rolled
-			}
+			modifier = { factor = 0 has_country_flag = shroud_song_10_rolled }
 			set_country_flag = shroud_song_10_selected
 			set_country_flag = shroud_song_10_rolled
 		}
 		1 = {
-			modifier = {
-				factor = 0
-				has_country_flag = shroud_song_11_rolled
-			}
+			modifier = { factor = 0 has_country_flag = shroud_song_11_rolled }
 			set_country_flag = shroud_song_11_selected
 			set_country_flag = shroud_song_11_rolled
 		}
 		1 = {
-			modifier = {
-				factor = 0
-				has_country_flag = shroud_song_12_rolled
-			}
+			modifier = { factor = 0 has_country_flag = shroud_song_12_rolled }
 			set_country_flag = shroud_song_12_selected
 			set_country_flag = shroud_song_12_rolled
 		}
 		1 = {
-			modifier = {
-				factor = 0
-				has_country_flag = shroud_song_13_rolled
-			}
+			modifier = { factor = 0 has_country_flag = shroud_song_13_rolled }
 			set_country_flag = shroud_song_13_selected
 			set_country_flag = shroud_song_13_rolled
 		}
@@ -3818,20 +3633,15 @@ move_towards_advanced_government = {
 		limit = {
 			check_variable = { which = $TYPE$_government_weight value < 1 }
 		}
-		set_variable = {
-			which = $TYPE$_government_weight
-			value = 0
-		}
+		set_variable = { which = $TYPE$_government_weight value = 0 }
 	}
-	change_variable = {
-		which = $TYPE$_government_weight
-		value = 1
-	}
+	change_variable = { which = $TYPE$_government_weight value = 1 }
 }
 
 ######################
 # Mindwardens Origin #
 ######################
+
 create_exiled_country = {
 	if = {
 		limit = {
@@ -3853,7 +3663,9 @@ create_exiled_country = {
 				modify_species = {
 					species = this
 					ideal_planet_class = root.species
-					effect = { save_event_target_as = exiled_species }
+					effect = {
+						save_event_target_as = exiled_species
+					}
 				}
 			}
 		}
@@ -3877,11 +3689,10 @@ create_exiled_country = {
 				set_country_flag = mindwarden_exiled
 				save_event_target_as = current_exiled_country
 				save_global_event_target_as = exiled_country@root
-				root = {
-					save_global_event_target_as = mindwarden_country@prev
+				root = { save_global_event_target_as = mindwarden_country@prev }
+				ruler = {
+					add_trait = { trait = leader_trait_chosen }
 				}
-				ruler = { add_trait = { trait = leader_trait_chosen } }
-
 				# Starhold tech
 				give_technology = { tech = tech_starbase_3 }
 				# Improved Deflectors tech
@@ -3891,7 +3702,6 @@ create_exiled_country = {
 				# Cold Fusion Power tech
 				give_technology = { tech = tech_fusion_power }
 				give_technology = { tech = tech_cold_fusion_power }
-
 				# They're hostile towards their Mindwardens
 				set_hostile = root
 				root = { set_hostile = prev }
@@ -3916,6 +3726,7 @@ create_exiled_starhold = {
 ######################
 # Endbringers Origin #
 ######################
+
 refresh_endbringers_paranoia_modifier = {
 	if = {
 		limit = { is_ai = no }
@@ -3964,6 +3775,7 @@ refresh_endbringers_madness_modifier = {
 ########################
 # Breaching the Shroud #
 ########################
+
 mind_over_matter_immediate = {
 	every_owned_species = {
 		limit = {
@@ -3978,7 +3790,6 @@ mind_over_matter_immediate = {
 		}
 		save_event_target_as = changing_species
 		add_latent_psionic_trait = yes
-
 		root = {
 			if = {
 				limit = {
@@ -3986,7 +3797,6 @@ mind_over_matter_immediate = {
 				}
 				change_dominant_species = { species = event_target:latent_psionic_species }
 			}
-
 			every_owned_pop_group = {
 				limit = { is_exact_same_species = event_target:changing_species }
 				change_species = event_target:latent_psionic_species
@@ -4019,8 +3829,10 @@ mind_over_matter_immediate = {
 			}
 		}
 	}
+
 	update_node_portraits_if_gestalt_effect = yes
 	observer_event = { id = observer.5 }
+
 	every_playable_country = {
 		limit = {
 			is_ai = no
@@ -4029,14 +3841,13 @@ mind_over_matter_immediate = {
 		}
 		country_event = { id = utopia.2602 }
 	}
+
 	remove_country_flag = shroudwalker_enclave_diplomacy_engaged # Resets to fellow psionic greetings
 	if = {
 		limit = {
 			any_planet_within_border = {
 				has_planet_flag = fotd_seperatist_planet@root
-				owner = {
-					has_country_flag = fotd_seperatist_country@root
-				}
+				owner = { has_country_flag = fotd_seperatist_country@root }
 			}
 		}
 		country_event = { id = origin.6105 days = 5 random = 2 }
@@ -4045,109 +3856,60 @@ mind_over_matter_immediate = {
 
 add_modifier_psionic_migraines = {
 	if = {
-		limit = {
-			is_gestalt = yes
-		}
+		limit = { is_gestalt = yes }
 		if = {
-			limit = {
-				founder_species_is_machine = yes
-			}
-			add_modifier = {
-				modifier = psionic_migraines_machine_gestalt
-				years = $YEARS$
-			}
+			limit = { founder_species_is_machine = yes }
+			add_modifier = { modifier = psionic_migraines_machine_gestalt years = $YEARS$ }
 		}
 		else = {
-			add_modifier = {
-				modifier = psionic_migraines_gestalt
-				years = $YEARS$
-			}
+			add_modifier = { modifier = psionic_migraines_gestalt years = $YEARS$ }
 		}
 	}
 	else = {
 		if = {
-			limit = {
-				founder_species_is_machine = yes
-			}
-			add_modifier = {
-				modifier = psionic_migraines_machine
-				years = $YEARS$
-			}
+			limit = { founder_species_is_machine = yes }
+			add_modifier = { modifier = psionic_migraines_machine years = $YEARS$ }
 		}
 		else = {
-			add_modifier = {
-				modifier = psionic_migraines
-				years = $YEARS$
-			}
+			add_modifier = { modifier = psionic_migraines years = $YEARS$ }
 		}
 	}
 }
 
 add_modifier_psionic_painkillers = {
 	if = {
-		limit = {
-			is_gestalt = yes
-		}
+		limit = { is_gestalt = yes }
 		if = {
-			limit = {
-				founder_species_is_machine = yes
-			}
-			add_modifier = {
-				modifier = psionic_painkillers_machine_gestalt
-				years = $YEARS$
-			}
+			limit = { founder_species_is_machine = yes }
+			add_modifier = { modifier = psionic_painkillers_machine_gestalt years = $YEARS$ }
 		}
 		else = {
-			add_modifier = {
-				modifier = psionic_painkillers_gestalt
-				years = $YEARS$
-			}
+			add_modifier = { modifier = psionic_painkillers_gestalt years = $YEARS$ }
 		}
 	}
 	else = {
 		if = {
-			limit = {
-				founder_species_is_machine = yes
-			}
-			add_modifier = {
-				modifier = psionic_painkillers_machine
-				years = $YEARS$
-			}
+			limit = { founder_species_is_machine = yes }
+			add_modifier = { modifier = psionic_painkillers_machine years = $YEARS$ }
 		}
 		else = {
-			add_modifier = {
-				modifier = psionic_painkillers
-				years = $YEARS$
-			}
+			add_modifier = { modifier = psionic_painkillers years = $YEARS$ }
 		}
 	}
 }
 
 add_modifier_psionic_meditation = {
 	if = {
-		limit = {
-			is_megacorp = yes
-		}
-		add_modifier = {
-			modifier = psionic_training
-			years = $YEARS$
-		}
+		limit = { is_megacorp = yes }
+		add_modifier = { modifier = psionic_training years = $YEARS$ }
 	}
 	else = {
 		if = {
-			limit = {
-				founder_species_is_machine = yes
-			}
-			add_modifier = {
-				modifier = psionic_meditation_machine
-				years = $YEARS$
-			}
+			limit = { founder_species_is_machine = yes }
+			add_modifier = { modifier = psionic_meditation_machine years = $YEARS$ }
 		}
 		else = {
-			add_modifier = {
-				modifier = psionic_meditation
-				years = $YEARS$
-			}
+			add_modifier = { modifier = psionic_meditation years = $YEARS$ }
 		}
 	}
 }
@@ -4155,17 +3917,11 @@ add_modifier_psionic_meditation = {
 add_monstrous_attacks_option_cost = {
 	if = {
 		limit = {
-			resource_stockpile_compare = {
-				resource = food
-				value >= 50
-			}
+			resource_stockpile_compare = { resource = food value >= 50 }
 		}
 		if = {
 			limit = {
-				resource_stockpile_compare = {
-					resource = minerals
-					value >= 50
-				}
+				resource_stockpile_compare = { resource = minerals value >= 50 }
 			}
 			add_resource = {
 				food = -50
@@ -4173,62 +3929,48 @@ add_monstrous_attacks_option_cost = {
 			}
 		}
 		else = {
-			add_resource = {
-				food = -50
-			}
+			add_resource = { food = -50 }
 		}
 	}
 	else_if = {
 		limit = {
-			resource_stockpile_compare = {
-				resource = minerals
-				value >= 50
-			}
+			resource_stockpile_compare = { resource = minerals value >= 50 }
 		}
-		add_resource = {
-			minerals = -50
-		}
+		add_resource = { minerals = -50 }
 	}
 }
 
 ##########################
 # Shroud-Touched Enclave #
 ##########################
+
 shroud_touched_patron_first_contact = {
 	random_list = {
 		1 = {
 			modifier = {
 				factor = 0
-				has_contact_with_patron_or_no_relation = {
-					PATRON = the_eater_of_worlds
-				}
+				has_contact_with_patron_or_no_relation = { PATRON = the_eater_of_worlds }
 			}
 			country_event = { id = shroud.4000 }
 		}
 		1 = {
 			modifier = {
 				factor = 0
-				has_contact_with_patron_or_no_relation = {
-					PATRON = the_cradle_of_souls
-				}
+				has_contact_with_patron_or_no_relation = { PATRON = the_cradle_of_souls }
 			}
 			country_event = { id = shroud.4010 }
 		}
 		1 = {
 			modifier = {
 				factor = 0
-				has_contact_with_patron_or_no_relation = {
-					PATRON = the_composer_of_strands
-				}
+				has_contact_with_patron_or_no_relation = { PATRON = the_composer_of_strands }
 			}
 			country_event = { id = shroud.4020 }
 		}
 		1 = {
 			modifier = {
 				factor = 0
-				has_contact_with_patron_or_no_relation = {
-					PATRON = the_instrument_of_desire
-				}
+				has_contact_with_patron_or_no_relation = { PATRON = the_instrument_of_desire }
 			}
 			country_event = { id = shroud.4030 }
 		}
@@ -4236,9 +3978,7 @@ shroud_touched_patron_first_contact = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_contact_with_patron_or_no_relation = {
-						PATRON = the_animator_of_clay
-					}
+					has_contact_with_patron_or_no_relation = { PATRON = the_animator_of_clay }
 					has_contacted_all_major_patrons = no
 				}
 			}
@@ -4248,9 +3988,7 @@ shroud_touched_patron_first_contact = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_contact_with_patron_or_no_relation = {
-						PATRON = the_outsider
-					}
+					has_contact_with_patron_or_no_relation = { PATRON = the_outsider }
 					has_contacted_all_major_patrons = no
 				}
 			}
@@ -4260,9 +3998,7 @@ shroud_touched_patron_first_contact = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_contact_with_patron_or_no_relation = {
-						PATRON = the_endless_tide
-					}
+					has_contact_with_patron_or_no_relation = { PATRON = the_endless_tide }
 					has_contacted_all_major_patrons = no
 				}
 			}
@@ -4272,9 +4008,7 @@ shroud_touched_patron_first_contact = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_contact_with_patron_or_no_relation = {
-						PATRON = the_pale_mountain
-					}
+					has_contact_with_patron_or_no_relation = { PATRON = the_pale_mountain }
 					has_contacted_all_major_patrons = no
 				}
 			}
@@ -4284,9 +4018,7 @@ shroud_touched_patron_first_contact = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_contact_with_patron_or_no_relation = {
-						PATRON = the_golden_dream
-					}
+					has_contact_with_patron_or_no_relation = { PATRON = the_golden_dream }
 					has_contacted_all_major_patrons = no
 				}
 			}
@@ -4296,9 +4028,7 @@ shroud_touched_patron_first_contact = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_contact_with_patron_or_no_relation = {
-						PATRON = the_hollow_point
-					}
+					has_contact_with_patron_or_no_relation = { PATRON = the_hollow_point }
 					has_contacted_all_major_patrons = no
 				}
 			}
@@ -4308,9 +4038,7 @@ shroud_touched_patron_first_contact = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_contact_with_patron_or_no_relation = {
-						PATRON = the_vacant_throne
-					}
+					has_contact_with_patron_or_no_relation = { PATRON = the_vacant_throne }
 					has_contacted_all_major_patrons = no
 				}
 			}
@@ -4320,9 +4048,7 @@ shroud_touched_patron_first_contact = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_contact_with_patron_or_no_relation = {
-						PATRON = the_black_river
-					}
+					has_contact_with_patron_or_no_relation = { PATRON = the_black_river }
 					has_contacted_all_major_patrons = no
 				}
 			}
@@ -4333,6 +4059,7 @@ shroud_touched_patron_first_contact = {
 
 shroud_touched_option_cost = {
 	custom_tooltip = enclave_opinion_tt
+
 	add_resource = {
 		$RESOURCE$ = -$VALUE$
 	}
@@ -4343,30 +4070,23 @@ shroud_touched_option_cost = {
 		limit = { exists = event_target:mindwarden_enclave_country }
 		custom_tooltip = shroudwalker_rival_opinion_tt
 	}
+
 	hidden_effect = {
 		event_target:shroudwalker_enclave_country = {
-			add_trust = {
-				who = root
-				amount = @positive_opinion
-			}
+			add_trust = { who = root amount = @positive_opinion }
 		}
 		if = {
 			limit = { exists = event_target:mindwarden_enclave_country }
 			event_target:mindwarden_enclave_country = {
-				add_trust = {
-					who = root
-					amount = @negative_opinion
-				}
+				add_trust = { who = root amount = @negative_opinion }
 			}
 		}
 	}
 }
 
 shroud_touched_cooldown = {
-	set_timed_country_flag = {
-		flag = $NAME$
-		days = 3600
-	}
+	set_timed_country_flag = { flag = $NAME$ days = 3600 }
+
 	set_saved_date = {
 		key = $NAME$_timer
 		days_from_present = 3600
@@ -4377,10 +4097,7 @@ shroud_touched_cooldown = {
 # planet scope
 materiality_engine_on_built_effect = {
 	set_planet_flag = materiality_engine_construction
-	planet_event = {
-		id = shroud_forged.39
-		scopes = { from = owner }
-	}
+	planet_event = { id = shroud_forged.39 scopes = { from = owner } }
 	if = {
 		limit = {
 			exists = event_target:mindwarden_enclave_country
@@ -4389,16 +4106,10 @@ materiality_engine_on_built_effect = {
 			}
 		}
 		event_target:mindwarden_enclave_country = {
-			add_trust = {
-				who = root.owner
-				amount = @mindwarden_opinion_materiality_engine
-			}
+			add_trust = { who = root.owner amount = @mindwarden_opinion_materiality_engine }
 		}
 		owner = {
-			country_event = {
-				id = shroud.4295
-				days = 30
-			}
+			country_event = { id = shroud.4295 days = 30 }
 		}
 	}
 }
@@ -4408,33 +4119,21 @@ shroud_forge_your_own_path = {
 		name = "SHROUD_SHAPING_PROJECT"
 		owner = root
 	}
+
 	custom_tooltip = shroud.forge_our_own_path.tt
+
 	hidden_effect = {
-		refuse_covenant = {
-			patron = the_eater_of_worlds
-			reset_attunement = no
-		}
-		refuse_covenant = {
-			patron = the_composer_of_strands
-			reset_attunement = no
-		}
-		refuse_covenant = {
-			patron = the_instrument_of_desire
-			reset_attunement = no
-		}
-		refuse_covenant = {
-			patron = the_cradle_of_souls
-			reset_attunement = no
-		}
-		refuse_covenant = {
-			patron = whisperers_in_the_void
-			reset_attunement = no
-		}
+		refuse_covenant = { patron = the_eater_of_worlds reset_attunement = no }
+		refuse_covenant = { patron = the_composer_of_strands reset_attunement = no }
+		refuse_covenant = { patron = the_instrument_of_desire reset_attunement = no }
+		refuse_covenant = { patron = the_cradle_of_souls reset_attunement = no }
+		refuse_covenant = { patron = whisperers_in_the_void reset_attunement = no }
 	}
 }
 
 add_deposit_with_message = {
 	add_deposit = $DEPOSIT$
+
 	create_message = {
 		type = PLANET_DEPOSIT_DISCOVERED
 		localization = PLANET_DEPOSIT_DISCOVERED_DESC
@@ -4455,6 +4154,7 @@ add_deposit_with_message = {
 
 start_mindwarden_psionic_war = {
 	custom_tooltip = the_exiled_become_hostile
+
 	hidden_effect = {
 		event_target:exiled_country@root = {
 			save_event_target_as = exiled_country
@@ -4489,12 +4189,15 @@ initialize_psionic_war_chain_scope = {
 	event_target:exiled_country@root = {
 		save_event_target_as = exiled_country
 	}
+
 	event_target:exiled_center_system@root = {
 		save_event_target_as = exiled_center_system
 	}
+
 	event_target:exiled_planet_1@root = {
 		save_event_target_as = exiled_planet_1
 	}
+
 	event_target:exiled_planet_2@root = {
 		save_event_target_as = exiled_planet_2
 	}
@@ -4502,11 +4205,9 @@ initialize_psionic_war_chain_scope = {
 
 start_psionic_war_chain = {
 	custom_tooltip = start_psionic_war_chain
+
 	hidden_effect = {
-		begin_event_chain = {
-			event_chain = the_psionic_war_chain
-			target = this
-		}
+		begin_event_chain = { event_chain = the_psionic_war_chain target = this }
 		create_point_of_interest = {
 			id = the_psionic_war_chain_poi_1
 			name = the_psionic_war_chain_poi_1
@@ -4537,25 +4238,15 @@ shroud_leader_creator = {
 		type = faction
 		auto_delete = no
 		flag = {
-			icon = {
-				category = "special"
-				file = "unknown.dds"
-			}
-			background = {
-				category = "backgrounds"
-				file = "00_solid.dds"
-			}
-			colors = {
-				"red"
-				"red"
-				"null"
-				"null"
-			}
+			icon = { category = "special" file = "unknown.dds" }
+			background = { category = "backgrounds" file = "00_solid.dds" }
+			colors = { "red" "red" "null" "null" }
 		}
 		effect = {
 			save_event_target_as = leader_country
 		}
 	}
+
 	event_target:leader_country = {
 		create_species = {
 			name = UNKNOWN
@@ -4611,7 +4302,7 @@ shroud_leader_hire_effect = {
 
 	create_message = {
 		type = MESSAGE_RECRUITED_LEADER
-		localization =  MESSAGE_RECRUITED_LEADER_DESC
+		localization = MESSAGE_RECRUITED_LEADER_DESC
 		days = @toast_message_days
 		target = event_target:shroud_leader
 		variable = {
@@ -4619,10 +4310,7 @@ shroud_leader_hire_effect = {
 			localization = LEADER
 			scope = event_target:shroud_leader
 		}
-		variable = {
-			key = "border"
-			value = "GFX_border_veteran"
-		}
+		variable = { key = "border" value = "GFX_border_veteran" }
 	}
 
 	event_target:$GLOBAL_EVENT_TARGET$ = {
@@ -4639,9 +4327,7 @@ animator_of_clay_create_vessels = {
 	}
 	if = {
 		limit = {
-			NOT = {
-				event_target:selected_vessel_species = { has_trait = trait_shroud_forged }
-			}
+			NOT = { event_target:selected_vessel_species = { has_trait = trait_shroud_forged } }
 		}
 		random_owned_species = {
 			limit = { has_trait = trait_shroud_forged }
@@ -4671,10 +4357,9 @@ animator_of_clay_create_vessels = {
 		}
 	}
 	else = {
-		event_target:selected_vessel_species = {
-			save_event_target_as = final_vessel_species
-		}
+		event_target:selected_vessel_species = { save_event_target_as = final_vessel_species }
 	}
+
 	create_pop_group = {
 		species = event_target:final_vessel_species
 		size = @animator_of_clay_create_more_vessels
@@ -4700,15 +4385,10 @@ pay_proxy_war_additional_resources = {
 				value < event_target:victim_spynetwork.trigger:is_spynetwork_level
 			}
 		}
-		event_target:victim_spynetwork = {
-			add_spy_network_level = $VALUE$
-		}
+		event_target:victim_spynetwork = { add_spy_network_level = $VALUE$ }
 	}
 	else = {
-		add_trust = {
-			who = from
-			amount = $VALUE$
-		}
+		add_trust = { who = from amount = $VALUE$ }
 	}
 }
 
@@ -4718,6 +4398,7 @@ remove_system_aura_suppressors = {
 		remove_megastructure = this
 		solar_system = { on_shroud_seal_destroyed = yes }
 	}
+
 	every_system_colony = {
 		while = {
 			limit = { has_active_building = building_psionic_suppressor }
@@ -4734,10 +4415,9 @@ remove_system_aura_suppressors = {
 
 on_shroud_seal_destroyed = {
 	remove_modifier = shroud_seal_modifier
+
 	every_playable_country = {
-		limit = {
-			has_event_chain = mindwarden_enclave_chain
-		}
+		limit = { has_event_chain = mindwarden_enclave_chain }
 		add_event_chain_counter = {
 			event_chain = mindwarden_enclave_chain
 			counter = shroud_seals_built
@@ -4758,6 +4438,7 @@ on_shroud_seal_destroyed = {
 			amount = -1
 		}
 	}
+
 	remove_eotc_aura_shroud_seal = yes
 }
 
@@ -4786,6 +4467,7 @@ start_chain_aura_suppressors = {
 		event_chain = chain_aura_suppressors
 		target = this
 	}
+
 	hidden_effect = {
 		every_system = {
 			if = {
@@ -4819,12 +4501,14 @@ add_eotc_aura_psionic_suppressor = {
 		add_chain_aura_suppressor = { TYPE = suppressor PICTURE = GFX_evt_mindwardens }
 	}
 }
+
 add_eotc_aura_grand_ward = {
 	every_playable_country = {
 		limit = { has_event_chain = chain_aura_suppressors }
 		add_chain_aura_suppressor = { TYPE = ward PICTURE = GFX_evt_mindwardens }
 	}
 }
+
 add_eotc_aura_shroud_seal = {
 	every_playable_country = {
 		limit = { has_event_chain = chain_aura_suppressors }
@@ -4836,9 +4520,7 @@ add_eotc_aura_shroud_seal = {
 add_chain_aura_suppressor = {
 	if = {
 		limit = {
-			NOT = {
-				has_point_of_interest = { poi = chain_aura_suppressors_$TYPE$_@prev }
-			}
+			NOT = { has_point_of_interest = { poi = chain_aura_suppressors_$TYPE$_@prev } }
 		}
 		create_point_of_interest = {
 			id = chain_aura_suppressors_$TYPE$_@prev
@@ -4858,12 +4540,14 @@ remove_eotc_aura_psionic_suppressor = {
 		remove_chain_aura_suppressors = { TYPE = suppressor }
 	}
 }
+
 remove_eotc_aura_grand_ward = {
 	every_playable_country = {
 		limit = { has_event_chain = chain_aura_suppressors }
 		remove_chain_aura_suppressors = { TYPE = ward }
 	}
 }
+
 remove_eotc_aura_shroud_seal = {
 	every_playable_country = {
 		limit = { has_event_chain = chain_aura_suppressors }

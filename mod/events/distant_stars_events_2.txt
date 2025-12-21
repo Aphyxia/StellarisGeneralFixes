@@ -634,10 +634,7 @@ ship_event = {
 	trigger = {
 		exists = owner
 		owner = {
-			count_country = {
-				count = 0
-				limit = { has_country_flag = vechtar_zavonia_chain }
-			}
+			NOT = { any_country = { has_country_flag = vechtar_zavonia_chain } }
 		}
 	}
 
@@ -842,9 +839,7 @@ country_event = {
 				name = "Mardak Vol"
 				class = FUN
 				portrait = fun4
-				traits = {
-					trait = random_traits
-				}
+				traits = { trait = random_traits }
 				homeworld = this
 			}
 			create_country = {
@@ -1033,9 +1028,7 @@ country_event = {
 			name = "Vol"
 			class = MAM
 			portrait = mam5
-			traits = {
-				trait = random_traits
-			}
+			traits = { trait = random_traits }
 			effect = {
 				save_global_event_target_as = vol
 			}
@@ -1048,7 +1041,10 @@ country_event = {
 				civic = civic_fanatic_purifiers
 				civic = civic_cutthroat_politics
 			}
-			ethos = { ethic = ethic_fanatic_xenophobe ethic = ethic_militarist }
+			ethos = {
+				ethic = ethic_fanatic_xenophobe
+				ethic = ethic_militarist
+			}
 			flag = {
 				icon = { category = "domination" file = "domination_14.dds" }
 				background = { category = "backgrounds" file = "00_solid.dds" }
@@ -1243,9 +1239,7 @@ country_event = {
 				skill = 4
 				leader_age_min = 45
 				leader_age_max = 60
-				traits = {
-					0 = leader_trait_unyielding
-				}
+				traits = { 0 = leader_trait_unyielding }
 				effect = {
 					save_event_target_as = mardak_vol_haters_leader
 				}
@@ -1501,7 +1495,10 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		from = { has_fleet_flag = vol_exterminators has_fleet_flag = mardak_vol_purgers_die }
+		from = {
+			has_fleet_flag = vol_exterminators
+			has_fleet_flag = mardak_vol_purgers_die
+		}
 	}
 
 	immediate = {
@@ -2738,7 +2735,10 @@ country_event = {
 	# Get rid of them
 	option = {
 		name = distar.1081.d.evopred
-		trigger = { has_origin = origin_evolutionary_predators is_xenophile = no }
+		trigger = {
+			has_origin = origin_evolutionary_predators
+			is_xenophile = no
+		}
 		give_evolutionary_predator_situation_progress_and_dna = { AMOUNT = medium TYPE = molluscoid }
 		add_monthly_resource_mult = {
 			resource = society_research
@@ -3333,7 +3333,9 @@ ship_event = {
 	title = "distar.2020.name"
 
 	desc = {
-		trigger = { owner = { is_hive_empire = no } }
+		trigger = {
+			owner = { is_hive_empire = no }
+		}
 		text = "distar.2020.desc"
 	}
 	desc = {
@@ -3427,7 +3429,9 @@ ship_event = {
 	option = {
 		name = distar.2030.a
 		if = {
-			limit = { owner = { is_materialist = yes } }
+			limit = {
+				owner = { is_materialist = yes }
+			}
 			# custom_tooltip = distar.2030.a.tooltip.mat
 		}
 		else_if = {
@@ -3672,7 +3676,10 @@ country_event = {
 				}
 				# origin = origin_prison_escapees TODO
 				species = last_created_species
-				ethos = { ethic = ethic_fanatic_xenophobe ethic = ethic_militarist }
+				ethos = {
+					ethic = ethic_fanatic_xenophobe
+					ethic = ethic_militarist
+				}
 				flag = {
 					icon = { category = "domination" file = "domination_1.dds" }
 					background = { category = backgrounds file = "v.dds" }
@@ -4132,7 +4139,10 @@ country_event = {
 					civic = civic_cutthroat_politics
 				}
 				species = last_created_species
-				ethos = { ethic = ethic_fanatic_xenophobe ethic = ethic_militarist }
+				ethos = {
+					ethic = ethic_fanatic_xenophobe
+					ethic = ethic_militarist
+				}
 				flag = {
 					icon = { category = "domination" file = "domination_1.dds" }
 					background = { category = backgrounds file = "v.dds" }
@@ -4488,10 +4498,7 @@ event = {
 
 	trigger = {
 		has_distar = yes
-		count_system = {
-			count = 0
-			limit = { has_star_flag = enigmatic_cache_system }
-		}
+		NOT = { any_system = { has_star_flag = enigmatic_cache_system } }
 		any_playable_country = { is_ai = no }
 	}
 
@@ -4651,7 +4658,9 @@ country_event = {
 
 	immediate = {
 		if = {
-			limit = { from.orbit = { is_colony = yes } }
+			limit = {
+				from.orbit = { is_colony = yes }
+			}
 			from.orbit = {
 				if = {
 					limit = {
@@ -4816,9 +4825,8 @@ country_event = {
 									root = { is_hostile = prev }
 								}
 							}
-							count_fleet_in_system = {
-								count = 0
-								limit = {
+							NOT = {
+								any_fleet_in_system = {
 									exists = owner
 									owner = { is_hostile = root }
 								}
@@ -4935,9 +4943,8 @@ planet_event = {
 	trigger = {
 		has_owner = yes
 		has_modifier = enigmatic_cache_in_orbit
-		count_fleet_in_orbit = {
-			count = 0
-			limit = {
+		NOT = {
+			any_fleet_in_orbit = {
 				exists = owner
 				is_owned_by = event_target:enigmatic_cache_country
 			}
@@ -4952,9 +4959,8 @@ planet_event = {
 					NOT = { has_country_flag = enigmatic_cache_host_country }
 				}
 				has_modifier = enigmatic_cache_in_orbit
-				count_fleet_in_orbit = {
-					count = 0
-					limit = {
+				NOT = {
+					any_fleet_in_orbit = {
 						exists = owner
 						is_owned_by = event_target:enigmatic_cache_country
 					}
@@ -5217,10 +5223,7 @@ country_event = {
 
 	trigger = {
 		# Shouldn't trigger if the enigmatic cache country already has an enigmatic cache in rotation
-		count_controlled_ship = {
-			count = 0
-			limit = { has_ship_flag = enigmatic_cache_ship }
-		}
+		NOT = { any_controlled_ship = { has_ship_flag = enigmatic_cache_ship } }
 	}
 
 	immediate = {
@@ -5350,14 +5353,8 @@ event = {
 		NOR = {
 			has_global_flag = cache_returned
 			any_playable_country = {
-				count_owned_planet = {
-					count = 0
-					limit = {
-						is_colony = yes
-						has_planet_flag = has_been_scanned
-					}
-				}
 				NOR = {
+					any_owned_planet = { is_colony = yes has_planet_flag = has_been_scanned }
 					is_hostile = event_target:enigmatic_cache_country
 					event_target:enigmatic_cache_country = { is_hostile = prev }
 					is_at_war = yes
@@ -5394,9 +5391,8 @@ event = {
 						is_sapient = yes
 						NOT = { has_trait = trait_machine_unit }
 					}
-					count_playable_country = {
-						count = 0
-						limit = {
+					NOT = {
+						any_playable_country = {
 							relative_power = {
 								who = prev
 								category = technology
@@ -5422,9 +5418,8 @@ event = {
 						is_sapient = yes
 						NOT = { has_trait = trait_machine_unit }
 					}
-					count_playable_country = {
-						count = 0
-						limit = {
+					NOT = {
+						any_playable_country = {
 							relative_power = {
 								who = prev
 								category = technology
@@ -5449,7 +5444,10 @@ event = {
 			set_global_flag = cache_returned
 			event_target:enigmatic_cache_fleet = {
 				set_fleet_flag = cache_returning
-				auto_move_to_planet = { target = event_target:new_location clear_auto_move_on_arrival = no }
+				auto_move_to_planet = {
+					target = event_target:new_location
+					clear_auto_move_on_arrival = no
+				}
 			}
 		}
 		# Attempts to find a player empire regardless of technology level
@@ -5514,10 +5512,7 @@ country_event = {
 
 	trigger = {
 		from = { has_fleet_flag = cache_returning }
-		count_playable_country = {
-			count = 0
-			limit = { has_country_flag = caches_choice_notified }
-		}
+		NOT = { any_playable_country = { has_country_flag = caches_choice_notified } }
 	}
 
 	immediate = {
@@ -6760,7 +6755,10 @@ country_event = {
 		}
 	}
 	option = { # Excellent. Species-X society could use them.
-		trigger = { is_xenophile = no is_gestalt = no }
+		trigger = {
+			is_xenophile = no
+			is_gestalt = no
+		}
 		allow = {
 			# any_owned_planet = {
 			#	free_housing > 0
@@ -7436,7 +7434,10 @@ country_event = {
 			}
 		}
 		capital_scope = {
-			create_pop_group = { species = event_target:molluscoid_miners_species size = 600 }
+			create_pop_group = {
+				species = event_target:molluscoid_miners_species
+				size = 600
+			}
 		}
 		# else = {
 		#	set_country_flag = no_space_for_miners
@@ -7680,7 +7681,9 @@ country_event = {
 	option = { # How strange. Take it apart.
 		name = distar.3041.a
 		custom_tooltip = distar.3040.b.tooltip
-		from = { leader = { add_experience = 800 } }
+		from = {
+			leader = { add_experience = 800 }
+		}
 		add_monthly_resource_mult = {
 			resource = physics_research
 			value = @tier4researchreward
@@ -7697,7 +7700,9 @@ country_event = {
 	option = { # Intriguing. Research it further.
 		name = distar.3041.b
 		custom_tooltip = distar.3041.b.tooltip
-		from = { leader = { add_experience = 800 } }
+		from = {
+			leader = { add_experience = 800 }
+		}
 		hidden_effect = {
 			event_target:asteroid_target = { add_deposit = d_physics_7 }
 		}

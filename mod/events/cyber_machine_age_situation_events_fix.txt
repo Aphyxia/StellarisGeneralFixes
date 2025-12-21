@@ -18,17 +18,19 @@ situation_event = {
 
 	trigger = {
 		has_situation_flag = cyberization_ongoing
-		NOT = { has_situation_flag = hive_cyberization_ongoing_limited }
-		owner = {
-			num_buildings = {
-				type = building_augmentation_center
-				disabled = no
-				value > 0
+		NOR = {
+			has_situation_flag = hive_cyberization_ongoing_limited
+			owner = {
+				num_buildings = {
+					type = building_augmentation_center
+					disabled = no
+					value <= 0
+				}
+				# check_variable_arithmetic = {
+				# 	which = value:num_active_buildings|BUILDING|building_augmentation_center|
+				# 	value > 0
+				# }
 			}
-			# check_variable_arithmetic = {
-			# 	which = value:num_active_buildings|BUILDING|building_augmentation_center|
-			# 	value > 0
-			# }
 		}
 	}
 
@@ -82,9 +84,8 @@ situation_event = {
 		if = {
 			limit = {
 				owner = {
-					count_owned_pop_group = {
-						count = 0
-						limit = {
+					NOT = {
+						any_owned_pop_group = {
 							is_same_species = owner_species
 							NOR = {
 								pop_group_has_ethic = ethic_spiritualist
@@ -101,7 +102,9 @@ situation_event = {
 					NOT = { has_situation_flag = cyberization_final }
 				}
 				if = {
-					limit = { owner = { is_hive_empire = yes } }
+					limit = {
+						owner = { is_hive_empire = yes }
+					}
 					set_situation_flag = cyber_2005_stage_3_fire
 				}
 				else = {
@@ -215,9 +218,8 @@ situation_event = {
 			# Check if there are any pops left to cyberize, otherwise remove the cyberization flag to unpause the situation.
 			if = {
 				limit = {
-					count_owned_pop_group = {
-						count = 0
-						limit = {
+					NOT = {
+						any_owned_pop_group = {
 							is_same_species = owner_species
 							OR = {
 								planet_owner = { is_hive_empire = yes }
@@ -308,9 +310,8 @@ situation_event = {
 			# Check if there are any pops left to cyberize, otherwise remove the cyberization flag to unpause the situation.
 			if = {
 				limit = {
-					count_owned_pop_group = {
-						count = 0
-						limit = {
+					NOT = {
+						any_owned_pop_group = {
 							is_same_species = owner_species
 							pop_group_has_ethic = ethic_spiritualist
 							NOR = {
@@ -403,9 +404,8 @@ situation_event = {
 			# Check if there are any pops left to cyberize, otherwise remove the cyberization flag to unpause the situation.
 			if = {
 				limit = {
-					count_owned_pop_group = {
-						count = 0
-						limit = {
+					NOT = {
+						any_owned_pop_group = {
 							is_same_species = owner_species
 							NOR = {
 								pop_group_has_trait = trait_cybernetic

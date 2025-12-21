@@ -29,7 +29,6 @@ megacorp_caravaneer_init = {
 
 	max_instances = 1
 	spawn_chance = 9999
-
 	flags = { caravaneer_home }
 
 	asteroid_belt = {
@@ -104,9 +103,7 @@ megacorp_caravaneer_init = {
 				portrait = random
 				traits = random
 				effect = {
-					modify_species = {
-						ideal_planet_class = pc_habitat
-					}
+					modify_species = { ideal_planet_class = pc_habitat }
 				}
 			}
 			create_country = {
@@ -149,7 +146,9 @@ megacorp_caravaneer_init = {
 								distance = 40
 							}
 							save_global_event_target_as = CaravaneerCustomCapital
-							prev = { set_custom_capital_location = event_target:CaravaneerCustomCapital }
+							prev = {
+								set_custom_capital_location = event_target:CaravaneerCustomCapital
+							}
 						}
 						settings = {
 							spawn_debris = no
@@ -372,7 +371,10 @@ megacorp_caravaneer_init = {
 					background = { category = "backgrounds" file = "double_hemispheres.dds" }
 					colors = { "black" "dark_grey" "null" "null" }
 				}
-				ethos = { ethic = ethic_fanatic_materialist ethic = ethic_authoritarian }
+				ethos = {
+					ethic = ethic_fanatic_materialist
+					ethic = ethic_authoritarian
+				}
 				ignore_initial_colony_error = yes
 				effect = {
 					set_country_flag = caravaneer_fleet3_country
@@ -549,7 +551,6 @@ megacorp_caravaneer_init = {
 megacorp_matter_decompressor_init_01 = {
 	class = sc_black_hole
 	usage = misc_system_init
-
 	flags = { ruined_matter_decompressor_system }
 
 	usage_odds = {
@@ -622,7 +623,6 @@ megacorp_matter_decompressor_init_01 = {
 megacorp_strategic_coordination_center_init_01 = {
 	class = "rl_standard_stars"
 	usage = misc_system_init
-
 	flags = { ruined_strategic_coordination_center_system }
 
 	usage_odds = {
@@ -879,7 +879,6 @@ megacorp_strategic_coordination_center_init_01 = {
 megacorp_mega_art_installation_init_01 = {
 	class = "rl_trinary_stars"
 	usage = misc_system_init
-
 	flags = { ruined_mega_art_installation_system }
 
 	usage_odds = {
@@ -967,7 +966,6 @@ megacorp_interstellar_assembly_init_01 = {
 
 	max_instances = 1
 	scaled_spawn_chance = 4
-
 	flags = { ruined_interstellar_assembly_system }
 
 	planet = {

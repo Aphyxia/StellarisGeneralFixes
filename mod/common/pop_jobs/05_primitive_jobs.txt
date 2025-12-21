@@ -1014,9 +1014,9 @@ primitive_researcher = {
 	resources = {
 		category = planet_researchers
 		produces = {
-			physics_research = 1
-			engineering_research = 1
-			society_research = 1
+			physics_research = 0.5
+			engineering_research = 0.5
+			society_research = 0.5
 		}
 	}
 
@@ -1079,7 +1079,7 @@ primitive_priest = {
 	resources = {
 		category = planet_jobs
 		produces = {
-			unity = 1
+			unity = 0.5
 		}
 	}
 
@@ -2148,7 +2148,7 @@ primitive_hive_synapse_drone = {
 	resources = {
 		category = planet_bureaucrats
 		produces = {
-			unity = 1
+			unity = 0.5
 		}
 	}
 
@@ -2213,9 +2213,9 @@ primitive_hive_cerebellum_drone = {
 	resources = {
 		category = planet_researchers
 		produces = {
-			physics_research = 1
-			engineering_research = 1
-			society_research = 1
+			physics_research = 0.5
+			engineering_research = 0.5
+			society_research = 0.5
 		}
 	}
 

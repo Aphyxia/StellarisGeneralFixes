@@ -887,7 +887,10 @@ fleet_event = {
 						limit = {
 							NOT = {
 								owner = {
-									has_completed_event_chain_counter = { event_chain = star_power_chain counter = systems_visited_poi }
+									has_completed_event_chain_counter = {
+										event_chain = star_power_chain
+										counter = systems_visited_poi
+									}
 								}
 							}
 						}
@@ -897,7 +900,10 @@ fleet_event = {
 						limit = {
 							owner = {
 								NOT = { has_country_flag = finished_star_power_chain }
-								has_completed_event_chain_counter = { event_chain = star_power_chain counter = systems_visited_poi }
+								has_completed_event_chain_counter = {
+									event_chain = star_power_chain
+									counter = systems_visited_poi
+								}
 							}
 						}
 						owner = { set_country_flag = finished_star_power_chain }
@@ -936,7 +942,10 @@ fleet_event = {
 						limit = {
 							NOT = {
 								owner = {
-									has_completed_event_chain_counter = { event_chain = star_power_chain counter = systems_visited_poi }
+									has_completed_event_chain_counter = {
+										event_chain = star_power_chain
+										counter = systems_visited_poi
+									}
 								}
 							}
 						}
@@ -946,7 +955,10 @@ fleet_event = {
 						limit = {
 							owner = {
 								NOT = { has_country_flag = finished_star_power_chain }
-								has_completed_event_chain_counter = { event_chain = star_power_chain counter = systems_visited_poi }
+								has_completed_event_chain_counter = {
+									event_chain = star_power_chain
+									counter = systems_visited_poi
+								}
 							}
 						}
 						owner = { set_country_flag = finished_star_power_chain }
@@ -1827,7 +1839,10 @@ ship_event = {
 
 	after = {
 		owner = {
-			give_specimen = { key = extradimensional_ceramic_pot origin = IMPROBABLE_TEAPOT_PROJECT }
+			give_specimen = {
+				key = extradimensional_ceramic_pot
+				origin = IMPROBABLE_TEAPOT_PROJECT
+			}
 		}
 	}
 }
@@ -1885,7 +1900,10 @@ ship_event = {
 
 	after = {
 		owner = {
-			give_specimen = { key = extradimensional_ceramic_pot origin = IMPROBABLE_TEAPOT_PROJECT }
+			give_specimen = {
+				key = extradimensional_ceramic_pot
+				origin = IMPROBABLE_TEAPOT_PROJECT
+			}
 		}
 	}
 }
@@ -4210,9 +4228,7 @@ country_event = {
 			species = event_target:AlienWarriorSpecies
 			name = "NAME_Majula_the_Bearer"
 			skill = 5
-			traits = {
-				1 = leader_trait_butcher
-			}
+			traits = { 1 = leader_trait_butcher }
 			event_leader = yes
 		}
 	}
@@ -4252,7 +4268,10 @@ country_event = {
 	}
 	option = {
 		name = anomaly.4161.b
-		trigger = { is_pacifist = no is_xenophile = no }
+		trigger = {
+			is_pacifist = no
+			is_xenophile = no
+		}
 	}
 }
 

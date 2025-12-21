@@ -28,7 +28,9 @@ country_event = {
 			override_tooltip = "TIMELINE_EVENT_GH_START_TOOLTIP"
 			override_types = { country }
 			override_text = { "text:TIMELINE_EVENT_GH_START" }
-			override_texture = { "background:GFX_evt_inf_crisis_crucible_construction" }
+			override_texture = {
+				"background:GFX_evt_inf_crisis_crucible_construction"
+			}
 			targets = { root }
 		}
 	}
@@ -51,7 +53,9 @@ country_event = {
 		name = ACKNOWLEDGED
 		trigger = {
 			owner = { is_gestalt = yes }
-			NOT = { has_country_flag = red_giant_discovered_crystallized_entropy }
+			NOT = {
+				has_country_flag = red_giant_discovered_crystallized_entropy
+			}
 		}
 		enable_special_project = {
 			name = INF_CRISIS_ENTROPY
@@ -88,13 +92,19 @@ country_event = {
 
 	desc = {
 		trigger = {
-			NOT = { owner = { has_country_flag = red_giant_discovered_crystallized_entropy } }
+			NOT = {
+				owner = {
+					has_country_flag = red_giant_discovered_crystallized_entropy
+				}
+			}
 		}
 		text = infernals.1005.desc1
 	}
 	desc = {
 		trigger = {
-			owner = { has_country_flag = red_giant_discovered_crystallized_entropy }
+			owner = {
+				has_country_flag = red_giant_discovered_crystallized_entropy
+			}
 		}
 		text = infernals.1005.desc2
 	}
@@ -400,7 +410,10 @@ country_event = {
 	option = {
 		name = infernals.1040.a
 		custom_tooltip = infernals.1040.a.tt
-		trigger = { is_player_crisis = no is_homicidal = no }
+		trigger = {
+			is_player_crisis = no
+			is_homicidal = no
+		}
 		ai_chance = {
 			modifier = {
 				add = 5
@@ -446,7 +459,10 @@ country_event = {
 	option = {
 		name = infernals.1040.c
 		custom_tooltip = infernals.1040.c.tt
-		trigger = { is_infernal_empire = yes is_homicidal = no }
+		trigger = {
+			is_infernal_empire = yes
+			is_homicidal = no
+		}
 		ai_chance = {
 			modifier = { add = 10 is_xenophile = yes }
 			modifier = { add = 10 is_pacifist = yes }
@@ -459,7 +475,10 @@ country_event = {
 	option = {
 		name = infernals.1040.d
 		custom_tooltip = infernals.1040.d.tt
-		trigger = { is_infernal_empire = no is_homicidal = no }
+		trigger = {
+			is_infernal_empire = no
+			is_homicidal = no
+		}
 		ai_chance = {
 			modifier = { add = 10 is_pacifist = yes }
 			modifier = { add = 25 has_civic = civic_inwards_perfection }
@@ -960,7 +979,10 @@ country_event = {
 				owner_species = { has_trait = trait_organic }
 			}
 			species = {
-				change_species_characteristics = { remove_trait = trait_organic add_trait = trait_infernal }
+				change_species_characteristics = {
+					remove_trait = trait_organic
+					add_trait = trait_infernal
+				}
 			}
 		}
 		every_system = { hyperthermia_galaxy_effect = yes }
@@ -1357,11 +1379,17 @@ fleet_event = {
 			}
 			queue_actions = {
 				find_closest_system = {
-					trigger = { id = conduit.nft1@root is_same_value = event_target:friendly_target }
+					trigger = {
+						id = conduit.nft1@root
+						is_same_value = event_target:friendly_target
+					}
 					found_system = {
 						move_to = this
 						find_closest_planet = {
-							trigger = { id = conduit.nft2@root is_star = yes }
+							trigger = {
+								id = conduit.nft2@root
+								is_star = yes
+							}
 							found_planet = {
 								move_to = this
 								orbit_planet = this
@@ -1379,11 +1407,17 @@ fleet_event = {
 			}
 			queue_actions = {
 				find_closest_system = {
-					trigger = { id = conduit.nht1@root is_same_value = event_target:friendly_target }
+					trigger = {
+						id = conduit.nht1@root
+						is_same_value = event_target:friendly_target
+					}
 					found_system = {
 						move_to = this
 						find_closest_planet = {
-							trigger = { id = conduit.nht2@root is_star = yes }
+							trigger = {
+								id = conduit.nht2@root
+								is_star = yes
+							}
 							found_planet = {
 								move_to = this
 								orbit_planet = this

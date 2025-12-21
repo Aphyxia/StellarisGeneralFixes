@@ -871,7 +871,9 @@ astral_rift_event = {
 					prev = { set_astral_rift_flag = picked_tech_combat_computers_3 }
 				}
 				tech_combat_computers_autonomous = {
-					prev = { set_astral_rift_flag = picked_tech_combat_computers_autonomous }
+					prev = {
+						set_astral_rift_flag = picked_tech_combat_computers_autonomous
+					}
 				}
 				tech_dark_matter_power_core = {
 					prev = { set_astral_rift_flag = picked_tech_dark_matter_power_core }
@@ -880,7 +882,9 @@ astral_rift_event = {
 					prev = { set_astral_rift_flag = picked_tech_jump_drive_1 }
 				}
 				tech_extradimensional_weapon_1 = {
-					prev = { set_astral_rift_flag = picked_tech_extradimensional_weapon_1 }
+					prev = {
+						set_astral_rift_flag = picked_tech_extradimensional_weapon_1
+					}
 				}
 				tech_quantum_catapult = {
 					prev = { set_astral_rift_flag = picked_tech_quantum_catapult }

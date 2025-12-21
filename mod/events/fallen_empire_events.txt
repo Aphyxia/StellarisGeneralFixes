@@ -46,7 +46,9 @@ country_event = {
 		picture = GFX_evt_fallen_empire
 	}
 	picture = {
-		trigger = { from = { is_hive_empire = yes } }
+		trigger = {
+			from = { is_hive_empire = yes }
+		}
 		picture = GFX_evt_hive_mind_fallen_empire
 	}
 
@@ -97,10 +99,10 @@ situation_event = {
 			}
 			any_playable_country = {
 				has_communications = root.owner
-				root.owner = {
-					opinion = { who = prev value < -99 }
-				}
 				NOR = {
+					root.owner = {
+						opinion = { who = prev value >= -99 }
+					}
 					root.owner = {
 						has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_demand }
 					}
@@ -117,10 +119,10 @@ situation_event = {
 		random_playable_country = {
 			limit = {
 				has_communications = root.owner
-				root.owner = {
-					opinion = { who = prev value < -99 }
-				}
 				NOR = {
+					root.owner = {
+						opinion = { who = prev value >= -99 }
+					}
 					root.owner = {
 						has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_demand }
 					}
@@ -520,12 +522,11 @@ situation_event = {
 		exists = owner
 		owner = {
 			is_country_type = fallen_empire
-			is_at_war = no
-			count_controlled_ship = {
-				count < 1
-				limit = { is_ship_size = constructor }
+			NOR = {
+				is_at_war = yes
+				any_controlled_ship = { is_ship_size = constructor }
+				has_country_flag = fallen_empire_constructor_spawn
 			}
-			NOT = { has_country_flag = fallen_empire_constructor_spawn }
 		}
 	}
 

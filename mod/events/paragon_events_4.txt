@@ -2327,7 +2327,10 @@ leader_event = {
 	option = {
 		name = paragon.40620.b
 		owner = {
-			add_modifier = { modifier = aturion_criminal_reformation_programs years = 20 }
+			add_modifier = {
+				modifier = aturion_criminal_reformation_programs
+				years = 20
+			}
 		}
 	}
 }
@@ -2359,9 +2362,7 @@ leader_event = {
 					portrait = humanoid_03
 					gender = random
 					traits = random
-					traits = {
-						ideal_planet_class = capital_scope
-					}
+					traits = { ideal_planet_class = capital_scope }
 				}
 				create_leader = {
 					species = last_created_species
@@ -2796,9 +2797,7 @@ leader_event = {
 					portrait = sd_rep_robot
 					gender = indeterminable
 					traits = random
-					traits = {
-						trait = trait_robot_repurposed_hardware
-					}
+					traits = { trait = trait_robot_repurposed_hardware }
 				}
 				create_leader = {
 					species = last_created_species

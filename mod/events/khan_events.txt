@@ -249,8 +249,8 @@ starbase_event = {
 		# TODO needs free slot check somehow: "Building slot is invalid."
 		if = {
 			limit = {
-				count_starbase_modules = { count < 2 include_being_constructed = yes }
 				NOR = {
+					count_starbase_modules = { count >= 2 include_being_constructed = yes }
 					has_starbase_module = "shipyard"
 					is_starbase_building_module = "shipyard"
 				}
@@ -260,12 +260,14 @@ starbase_event = {
 		}
 		if = {
 			limit = {
-				count_starbase_modules = {
-					type = "shipyard"
-					count < 2
-					include_being_constructed = yes
+				NOR = {
+					count_starbase_modules = {
+						type = "shipyard"
+						count >= 2
+						include_being_constructed = yes
+					}
+					is_starbase_building_module = "shipyard"
 				}
-				NOT = { is_starbase_building_module = "shipyard" }
 			}
 			remove_starbase_module = { slot = 2 }
 			set_starbase_module = { slot = 2 module = "shipyard" }
@@ -273,8 +275,8 @@ starbase_event = {
 		if = {
 			limit = {
 				has_starbase_size > starbase_starport
-				count_starbase_modules = { count < 3 include_being_constructed = yes }
 				NOR = {
+					count_starbase_modules = { count >= 3 include_being_constructed = yes }
 					has_starbase_module = "gun_battery"
 					is_starbase_building_module = "gun_battery"
 				}
@@ -285,21 +287,23 @@ starbase_event = {
 		if = {
 			limit = {
 				has_starbase_size > starbase_starhold
-				count_starbase_modules = { count < 4 include_being_constructed = yes }
-				count_starbase_modules = {
-					type = "gun_battery"
-					count < 2
-					include_being_constructed = yes
+				NOR = {
+					count_starbase_modules = { count >= 4 include_being_constructed = yes }
+					count_starbase_modules = {
+						type = "gun_battery"
+						count >= 2
+						include_being_constructed = yes
+					}
+					is_starbase_building_module = "gun_battery"
 				}
-				NOT = { is_starbase_building_module = "gun_battery" }
 			}
 			remove_starbase_module = { slot = 4 }
 			set_starbase_module = { slot = 4 module = "gun_battery" }
 		}
 		if = {
 			limit = {
-				count_starbase_buildings = { count < 2 include_being_constructed = yes }
 				NOR = {
+					count_starbase_buildings = { count >= 2 include_being_constructed = yes }
 					has_starbase_building = "fleet_academy"
 					is_starbase_building_building = "fleet_academy"
 				}
@@ -310,8 +314,8 @@ starbase_event = {
 		if = {
 			limit = {
 				has_starbase_size > starbase_starport
-				count_starbase_buildings = { count < 3 include_being_constructed = yes }
 				NOR = {
+					count_starbase_buildings = { count >= 3 include_being_constructed = yes }
 					has_starbase_building = "resource_silo"
 					is_starbase_building_building = "resource_silo"
 				}
@@ -326,13 +330,15 @@ starbase_event = {
 			}
 			if = {
 				limit = {
-					count_starbase_modules = { count < 4 include_being_constructed = yes }
-					count_starbase_modules = {
-						type = "shipyard"
-						count < 3
-						include_being_constructed = yes
+					NOR = {
+						count_starbase_modules = { count >= 4 include_being_constructed = yes }
+						count_starbase_modules = {
+							type = "shipyard"
+							count >= 3
+							include_being_constructed = yes
+						}
+						is_starbase_building_module = "shipyard"
 					}
-					NOT = { is_starbase_building_module = "shipyard" }
 				}
 				remove_starbase_module = { slot = 6 }
 				set_starbase_module = { slot = 6 module = "shipyard" }
@@ -429,10 +435,7 @@ ship_event = {
 				solar_system = { # Not dead end systems
 					OR = {
 						count_neighbor_system = { count > 1 }
-						count_system_planet = {
-							count > 0
-							limit = { is_colonizable = yes }
-						}
+						any_system_planet = { is_colonizable = yes }
 					}
 				}
 			}
@@ -440,13 +443,7 @@ ship_event = {
 			solar_system = {
 				if = {
 					limit = {
-						count_system_colony = {
-							count = 0
-							limit = {
-								has_owner = yes
-								is_owned_by = from.owner
-							}
-						}
+						NOT = { any_system_colony = { has_owner = yes is_owned_by = from.owner } }
 						any_system_planet = {
 							colonizable_planet = yes
 							OR = {
@@ -665,17 +662,16 @@ country_event = {
 							has_owner = no
 							is_owned_by = root
 						}
-						count_neighbor_system = {
-							count > 1
-							limit = { has_access_fleet = root }
-						}
-						NAND = {
-							exists = starbase
-							starbase = { has_starbase_size = starbase_citadel }
-						}
-						count_fleet_in_system = {
-							count = 0
-							limit = {
+						NOR = {
+							count_neighbor_system = {
+								count <= 1
+								limit = { has_access_fleet = root }
+							}
+							AND = {
+								exists = starbase
+								starbase = { has_starbase_size = starbase_citadel }
+							}
+							any_fleet_in_system = {
 								exists = owner
 								OR = {
 									is_in_combat = yes
@@ -1284,25 +1280,37 @@ system_event = {
 			limit = {
 				event_target:former_starbase_owner = { has_existing_ship_design = starbase_citadel }
 			}
-			create_starbase = { size = "starbase_citadel" owner = event_target:former_starbase_owner }
+			create_starbase = {
+				size = "starbase_citadel"
+				owner = event_target:former_starbase_owner
+			}
 		}
 		else_if = {
 			limit = {
 				event_target:former_starbase_owner = { has_existing_ship_design = starbase_starhold }
 			}
-			create_starbase = { size = "starbase_starhold" owner = event_target:former_starbase_owner }
+			create_starbase = {
+				size = "starbase_starhold"
+				owner = event_target:former_starbase_owner
+			}
 		}
 		else_if = {
 			limit = {
 				event_target:former_starbase_owner = { has_existing_ship_design = starbase_starport }
 			}
-			create_starbase = { size = "starbase_starport" owner = event_target:former_starbase_owner }
+			create_starbase = {
+				size = "starbase_starport"
+				owner = event_target:former_starbase_owner
+			}
 		}
 		else_if = {
 			limit = {
 				event_target:former_starbase_owner = { has_existing_ship_design = starbase_outpost }
 			}
-			create_starbase = { size = "starbase_outpost" owner = event_target:former_starbase_owner }
+			create_starbase = {
+				size = "starbase_outpost"
+				owner = event_target:former_starbase_owner
+			}
 		}
 		if = {
 			limit = {
@@ -1582,7 +1590,7 @@ country_event = {
 								is_hostile = root
 							}
 						}
-						count_system_colony = { count > 0 }
+						any_system_colony = {  }
 						prev = { can_access_system = prev }
 					}
 					max_steps = 14
@@ -1954,9 +1962,8 @@ country_event = {
 			limit = { num_owned_planets > 0 }
 			if = {
 				limit = {
-					count_system_within_border = {
-						count = 0
-						limit = {
+					NOT = {
+						any_system_within_border = {
 							any_system_colony = {
 								has_owner = yes
 								is_owned_by = root
@@ -2101,9 +2108,8 @@ country_event = {
 						is_planet_class = pc_habitat
 					}
 				}
-				count_system_colony = {
-					count = 0
-					limit = {
+				NOT = {
+					any_system_colony = {
 						is_controlled_by = root
 						OR = {
 							NOT = { is_planet_class = pc_habitat }
@@ -2143,10 +2149,12 @@ country_event = {
 		from = {
 			if = {
 				limit = {
-					NOT = { has_global_flag = marauder_crisis_ongoing }
-					count_owned_fleet = {
-						count > 1
-						limit = { is_mobile = yes }
+					NOR = {
+						has_global_flag = marauder_crisis_ongoing
+						count_owned_fleet = {
+							count <= 1
+							limit = { is_mobile = yes }
+						}
 					}
 				}
 				ordered_owned_fleet = {
@@ -2729,9 +2737,8 @@ country_event = {
 			random_system_within_border = {
 				limit = {
 					exists = starbase
-					count_system_planet = {
-						count = 0
-						limit = {
+					NOT = {
+						any_system_planet = {
 							is_star = no
 							is_artificial = yes
 							OR = {
@@ -2844,10 +2851,12 @@ system_event = {
 
 	trigger = {
 		exists = from # space_owner
-		from = {
-			check_variable = { which = marauder_habitat_count value > 0 }
+		NOR = {
+			from = {
+				check_variable = { which = marauder_habitat_count value <= 0 }
+			}
+			has_star_flag = ring_world_built
 		}
-		NOT = { has_star_flag = ring_world_built }
 	}
 
 	immediate = { # log = "---Attempting habitat construction in [This.GetName]"
@@ -2965,7 +2974,10 @@ system_event = {
 						create_colony = { # Needed to generate colony_age
 							owner = from
 							species = from.owner_species
-							ethos = { ethic = "ethic_militarist" ethic = "ethic_egalitarian" }
+							ethos = {
+								ethic = "ethic_militarist"
+								ethic = "ethic_egalitarian"
+							}
 						}
 						create_pop_group = {
 							species = from.owner_species

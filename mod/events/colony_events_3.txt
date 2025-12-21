@@ -2270,7 +2270,10 @@ country_event = {
 				civic = civic_scavengers
 			}
 			species = last_created_species
-			ethos = { ethic = ethic_fanatic_xenophobe ethic = ethic_militarist }
+			ethos = {
+				ethic = ethic_fanatic_xenophobe
+				ethic = ethic_militarist
+			}
 			flag = {
 				icon = { category = "toxoid" file = "toxoid_03.dds" }
 				background = { category = "backgrounds" file = "flag_BG_24.dds" }
@@ -2387,7 +2390,10 @@ country_event = {
 		fromfrom = {
 			set_owner = event_target:demonic_incursion_country
 			set_capital = yes
-			create_pop_group = { species = event_target:demonic_incursion_species size = 2800 }
+			create_pop_group = {
+				species = event_target:demonic_incursion_species
+				size = 2800
+			}
 			# Reformat the planet
 			remove_all_districts = yes
 			remove_all_buildings = yes
@@ -3074,7 +3080,9 @@ planet_event = {
 	option = { # Embrace option
 		name = colony_fed.105.b
 		trigger = { owner = { is_gestalt = no } }
-		owner = { add_resource = { energy = -420 } }
+		owner = {
+			add_resource = { energy = -420 }
+		}
 		add_deposit = d_bluelotus
 		hidden_effect = {
 			planet_event = { id = colony_fed.110 days = 55 }
@@ -7058,7 +7066,10 @@ country_event = {
 			text = colony.9840.c.phobe
 		}
 		name = {
-			trigger = { is_xenophobe = no is_gestalt = no }
+			trigger = {
+				is_xenophobe = no
+				is_gestalt = no
+			}
 			text = colony.9840.c
 		}
 		custom_tooltip = colony.9840.c.tooltip
@@ -7832,7 +7843,10 @@ country_event = {
 		custom_tooltip = colony.9885.a.machine.tooltip
 	}
 	option = {
-		trigger = { is_hive_empire = yes has_country_flag = calmed_b_world }
+		trigger = {
+			is_hive_empire = yes
+			has_country_flag = calmed_b_world
+		}
 		name = colony.9885.b.hive
 		random_situation = {
 			limit = { is_situation_type = situation_negative_mass }
@@ -7840,7 +7854,10 @@ country_event = {
 		}
 	}
 	option = {
-		trigger = { is_machine_empire = yes has_country_flag = calmed_b_world }
+		trigger = {
+			is_machine_empire = yes
+			has_country_flag = calmed_b_world
+		}
 		name = colony.9885.b.machine
 		random_situation = {
 			limit = { is_situation_type = situation_negative_mass }
@@ -7970,7 +7987,9 @@ planet_event = {
 				resource_stockpile_compare = { resource = energy value >= 500 }
 			}
 		}
-		owner = { add_resource = { energy = -500 } }
+		owner = {
+			add_resource = { energy = -500 }
+		}
 		custom_tooltip = colony.9900.a.tooltip
 		add_modifier = { modifier = "reassured_tracking" days = -1 }
 		hidden_effect = {
@@ -8401,7 +8420,9 @@ planet_event = {
 		}
 		remove_modifier = "stratovent_world_modifier_tourism"
 		add_modifier = { modifier = "stratovent_world_modifier_tourism_boost" }
-		owner = { add_resource = { alloys = -200 } }
+		owner = {
+			add_resource = { alloys = -200 }
+		}
 	}
 	option = { # IGNORE
 		name = colony.9960.b
@@ -8842,10 +8863,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		count_owned_planet = {
-			count = 0
-			limit = { has_planet_flag = rampant_desertlings }
-		}
+		NOT = { any_owned_planet = { has_planet_flag = rampant_desertlings } }
 	}
 
 	immediate = {
@@ -8926,7 +8944,9 @@ planet_event = {
 				resource_stockpile_compare = { resource = energy value > 500 }
 			}
 		}
-		owner = { add_resource = { energy = 1000 } }
+		owner = {
+			add_resource = { energy = 1000 }
+		}
 		owner = {
 			random_owned_planet = {
 				limit = { has_planet_flag = desertling_target }
@@ -8978,7 +8998,9 @@ planet_event = {
 				resource_stockpile_compare = { resource = energy value > 500 }
 			}
 		}
-		owner = { add_resource = { energy = 1000 } }
+		owner = {
+			add_resource = { energy = 1000 }
+		}
 		add_deposit = d_alien_sanctuary
 	}
 }
@@ -9228,7 +9250,9 @@ planet_event = {
 				resource_stockpile_compare = { resource = energy value >= 100 }
 			}
 		}
-		owner = { add_resource = { energy = -100 } }
+		owner = {
+			add_resource = { energy = -100 }
+		}
 	}
 	option = { # ignore
 		name = colony.10000.b
@@ -9304,7 +9328,9 @@ planet_event = {
 				resource_stockpile_compare = { resource = energy value >= 150 }
 			}
 		}
-		owner = { add_resource = { energy = -150 } }
+		owner = {
+			add_resource = { energy = -150 }
+		}
 	}
 	option = { # Getting either a good or bad final ending
 		name = colony.10010.b
@@ -9561,7 +9587,9 @@ planet_event = {
 				resource_stockpile_compare = { resource = energy value >= 250 }
 			}
 		}
-		owner = { add_resource = { energy = -250 } }
+		owner = {
+			add_resource = { energy = -250 }
+		}
 	}
 }
 
@@ -9659,7 +9687,9 @@ planet_event = {
 	}
 	option = {
 		name = colony.10040.a.militarist
-		trigger = { owner = { is_militarist = yes } }
+		trigger = {
+			owner = { is_militarist = yes }
+		}
 		hidden_effect = {
 			random_list = {
 				95 = { planet_event = { id = colony.10045 days = 1 random = 3 } } # Success

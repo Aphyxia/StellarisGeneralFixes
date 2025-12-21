@@ -1303,7 +1303,10 @@ building_private_security = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			branch_office_owner = { has_valid_civic = civic_indentured_assets is_illegal_criminal = yes }
+			branch_office_owner = {
+				has_valid_civic = civic_indentured_assets
+				is_illegal_criminal = yes
+			}
 		}
 		planet_criminals_trade_produces_add = @med_trade_from_jobs
 	}
@@ -3161,9 +3164,8 @@ building_ai_emporium = {
 		custom_tooltip = {
 			fail_text = building_ai_emporium_fail_tt
 			owner = {
-				count_owned_planet = {
-					count = 0
-					limit = {
+				NOT = {
+					any_owned_planet = {
 						has_branch_office = yes
 						has_holding = { holding = building_ai_emporium owner = root.branch_office_owner }
 					}
@@ -3296,9 +3298,8 @@ building_clear_thought_clinic = {
 		if = { # Vfix opt
 			limit = {
 				event_target:owner = {
-					count_owned_planet = {
-						count = 0
-						limit = {
+					NOT = {
+						any_owned_planet = {
 							NOT = { is_same_value = event_target:planet }
 							has_branch_office = yes
 							branch_office_owner = { is_same_empire = event_target:branch_office_owner }

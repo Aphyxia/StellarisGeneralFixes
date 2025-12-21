@@ -1558,7 +1558,10 @@ holding_franchise_headquarters = {
 
 	allow = {
 		is_occupied_flag = no
-		custom_tooltip = { fail_text = no_branch_office has_branch_office = owner.overlord }
+		custom_tooltip = {
+			fail_text = no_branch_office
+			has_branch_office = owner.overlord
+		}
 	}
 
 	destroy_trigger = {

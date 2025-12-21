@@ -929,16 +929,22 @@ country_event = {
 				limit = {
 					from = { has_astral_rift_flag = used_astral_thread_against_invasion }
 				}
-				add_modifier = { modifier = spirit_of_ancestors_militarist_alloys_modifier_01 }
+				add_modifier = {
+					modifier = spirit_of_ancestors_militarist_alloys_modifier_01
+				}
 			}
 			else_if = {
 				limit = {
 					from = { has_astral_rift_flag = used_energy_against_invasion }
 				}
-				add_modifier = { modifier = spirit_of_ancestors_militarist_alloys_modifier_02 }
+				add_modifier = {
+					modifier = spirit_of_ancestors_militarist_alloys_modifier_02
+				}
 			}
 			else = {
-				add_modifier = { modifier = spirit_of_ancestors_militarist_alloys_modifier_03 }
+				add_modifier = {
+					modifier = spirit_of_ancestors_militarist_alloys_modifier_03
+				}
 			}
 		}
 		else_if = {
@@ -949,16 +955,22 @@ country_event = {
 				limit = {
 					from = { has_astral_rift_flag = used_astral_thread_against_invasion }
 				}
-				add_modifier = { modifier = spirit_of_ancestors_militarist_astral_thread_modifier_01 }
+				add_modifier = {
+					modifier = spirit_of_ancestors_militarist_astral_thread_modifier_01
+				}
 			}
 			else_if = {
 				limit = {
 					from = { has_astral_rift_flag = used_energy_against_invasion }
 				}
-				add_modifier = { modifier = spirit_of_ancestors_militarist_astral_thread_modifier_02 }
+				add_modifier = {
+					modifier = spirit_of_ancestors_militarist_astral_thread_modifier_02
+				}
 			}
 			else = {
-				add_modifier = { modifier = spirit_of_ancestors_militarist_astral_thread_modifier_03 }
+				add_modifier = {
+					modifier = spirit_of_ancestors_militarist_astral_thread_modifier_03
+				}
 			}
 		}
 		else_if = {
@@ -1031,7 +1043,9 @@ country_event = {
 		}
 		else_if = {
 			limit = {
-				from = { has_astral_rift_flag = offered_astral_thread_to_preservationists }
+				from = {
+					has_astral_rift_flag = offered_astral_thread_to_preservationists
+				}
 			}
 			if = {
 				limit = {
@@ -1874,12 +1888,10 @@ astral_rift_event = {
 	option = {
 		name = astral_rift.505.b
 		trigger = {
-			NOT = {
-				explorer = {
-					OR = {
-						has_trait = trait_aquatic
-						has_trait = trait_robot_aquatic
-					}
+			explorer = {
+				NOR = {
+					has_trait = trait_aquatic
+					has_trait = trait_robot_aquatic
 				}
 			}
 		}
@@ -1947,7 +1959,9 @@ astral_rift_event = {
 		text = astral_rift.515.desc.aquatic
 	}
 	desc = {
-		trigger = { explorer = { is_gestalt = yes } }
+		trigger = {
+			explorer = { is_gestalt = yes }
+		}
 		text = astral_rift.515.desc.default
 	}
 

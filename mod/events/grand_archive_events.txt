@@ -322,7 +322,9 @@ first_contact_event = {
 				if = {
 					limit = {
 						exists = event_target:voidworms_treasure_hunters
-						NOT = { has_communications = event_target:voidworms_treasure_hunters }
+						NOT = {
+							has_communications = event_target:voidworms_treasure_hunters
+						}
 					}
 					establish_communications_no_message = event_target:voidworms_treasure_hunters
 				}
@@ -467,9 +469,8 @@ country_event = {
 	trigger = {
 		from = {
 			is_voidworms_hostile_country_type = yes
-			count_owned_fleet = {
-				count = 0
-				limit = {
+			NOT = {
+				any_owned_fleet = {
 					NOT = { is_same_value = root.fromfromfrom }
 				}
 			}
@@ -498,9 +499,8 @@ country_event = {
 			is_ship_size = voidworm_nest
 			solar_system = {
 				has_star_flag = voidworms_system
-				count_ship_in_system = {
-					count = 0
-					limit = {
+				NOT = {
+					any_ship_in_system = {
 						NOT = { is_same_value = prev }
 						is_ship_size = voidworm_nest
 					}
@@ -516,10 +516,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				count_system = {
-					count <= 0
-					limit = { has_star_flag = voidworms_system }
-				}
+				NOT = { any_system = { has_star_flag = voidworms_system } }
 			}
 			every_playable_country = {
 				if = {
@@ -727,7 +724,10 @@ situation_event = {
 				has_situation_flag = approach_set
 				NOT = { has_situation_flag = path_locked }
 			}
-			set_timed_situation_flag = { flag = path_locked years = @voidworm_plague_approach_cooldown_years }
+			set_timed_situation_flag = {
+				flag = path_locked
+				years = @voidworm_plague_approach_cooldown_years
+			}
 		}
 		else_if = {
 			limit = {
@@ -776,9 +776,8 @@ country_event = {
 		every_playable_country = {
 			limit = {
 				has_country_flag = resolution_breached_voidworms_inside_borders
-				count_system_within_border = {
-					count = 0
-					limit = {
+				NOT = {
+					any_system_within_border = {
 						any_fleet_in_system = {
 							owner = { is_voidworms_country_type = yes }
 						}
@@ -811,7 +810,9 @@ fleet_event = {
 				from = {
 					owner = {
 						is_galactic_community_member = yes
-						NOT = { has_country_flag = resolution_breached_voidworms_inside_borders }
+						NOT = {
+							has_country_flag = resolution_breached_voidworms_inside_borders
+						}
 					}
 				}
 			}
@@ -826,9 +827,8 @@ fleet_event = {
 			limit = {
 				any_galcom_member = {
 					has_country_flag = resolution_breached_voidworms_inside_borders
-					count_system_within_border = {
-						count = 0
-						limit = {
+					NOT = {
+						any_system_within_border = {
 							any_fleet_in_system = {
 								owner = { is_voidworms_country_type = yes }
 							}
@@ -839,9 +839,8 @@ fleet_event = {
 			every_galcom_member = {
 				limit = {
 					has_country_flag = resolution_breached_voidworms_inside_borders
-					count_system_within_border = {
-						count = 0
-						limit = {
+					NOT = {
+						any_system_within_border = {
 							any_fleet_in_system = {
 								owner = { is_voidworms_country_type = yes }
 							}
@@ -909,7 +908,9 @@ event = {
 	trigger = {
 		is_galactic_community_formed = yes
 		is_active_resolution = "resolution_voidworm_eradication"
-		any_playable_country = { has_country_flag = resolution_breached_voidworms_inside_borders }
+		any_playable_country = {
+			has_country_flag = resolution_breached_voidworms_inside_borders
+		}
 	}
 
 	immediate = {
@@ -917,9 +918,8 @@ event = {
 			limit = {
 				any_playable_country = {
 					has_country_flag = resolution_breached_voidworms_inside_borders
-					count_system_within_border = {
-						count = 0
-						limit = {
+					NOT = {
+						any_system_within_border = {
 							any_fleet_in_system = {
 								owner = { is_voidworms_country_type = yes }
 							}
@@ -930,9 +930,8 @@ event = {
 			every_playable_country = {
 				limit = {
 					has_country_flag = resolution_breached_voidworms_inside_borders
-					count_system_within_border = {
-						count = 0
-						limit = {
+					NOT = {
+						any_system_within_border = {
 							any_fleet_in_system = {
 								owner = { is_voidworms_country_type = yes }
 							}
@@ -969,7 +968,9 @@ event = {
 		is_galactic_community_formed = yes
 		is_active_resolution = "resolution_voidworm_eradication"
 		any_playable_country = {
-			NOT = { has_country_flag = resolution_breached_voidworms_inside_borders }
+			NOT = {
+				has_country_flag = resolution_breached_voidworms_inside_borders
+			}
 			any_system_within_border = {
 				any_fleet_in_system = {
 					exists = owner
@@ -982,7 +983,9 @@ event = {
 	immediate = {
 		random_playable_country = {
 			limit = {
-				NOT = { has_country_flag = resolution_breached_voidworms_inside_borders }
+				NOT = {
+					has_country_flag = resolution_breached_voidworms_inside_borders
+				}
 				any_system_within_border = {
 					any_fleet_in_system = {
 						exists = owner
@@ -1342,8 +1345,10 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_global_flag = voidworms_plague_crisis_ended }
-		check_variable_arithmetic = { which = value:voidworm_nest_owned value > 0 }
+		NOR = {
+			has_global_flag = voidworms_plague_crisis_ended
+			check_variable_arithmetic = { which = value:voidworm_nest_owned value <= 0 }
+		}
 		is_voidworm_crisis_eligible_for_respawn = yes
 	}
 
@@ -1837,7 +1842,9 @@ country_event = {
 			add_tech_progress = { tech = tech_crystal_armor_2 progress = @front_line_progress }
 		}
 		else_if = {
-			limit = { can_research_technology = tech_repeatable_improved_armor_output }
+			limit = {
+				can_research_technology = tech_repeatable_improved_armor_output
+			}
 			if = {
 				limit = {
 					NOT = { has_tech_option = tech_repeatable_improved_armor_output }
@@ -1850,7 +1857,9 @@ country_event = {
 			}
 		}
 		else_if = {
-			limit = { can_research_technology = tech_repeatable_improved_shield_output }
+			limit = {
+				can_research_technology = tech_repeatable_improved_shield_output
+			}
 			if = {
 				limit = {
 					NOT = { has_tech_option = tech_repeatable_improved_shield_output }
@@ -2249,8 +2258,10 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_global_flag = voidworms_plague_crisis_started }
-		check_variable_arithmetic = { which = value:voidworm_nest_owned value > 0 }
+		NOR = {
+			has_global_flag = voidworms_plague_crisis_started
+			check_variable_arithmetic = { which = value:voidworm_nest_owned value <= 0 }
+		}
 		is_voidworm_eligible_for_respawn = yes
 	}
 
@@ -2551,18 +2562,12 @@ event = {
 					}
 					modifier = {
 						factor = 0.01
-						count_system_planet = {
-							count > 0
-							limit = { is_planet_class = pc_cutholoid }
-						}
+						any_system_planet = { is_planet_class = pc_cutholoid }
 					}
 					modifier = {
 						factor = 0.1
 						any_neighbor_system = {
-							count_system_planet = {
-								count > 0
-								limit = { is_planet_class = pc_cutholoid }
-							}
+							any_system_planet = { is_planet_class = pc_cutholoid }
 						}
 					}
 				}
@@ -2608,10 +2613,9 @@ event = {
 				has_asteroid_belt = yes
 				any_system_planet = {
 					is_planet_class = pc_asteroid
-					has_any_flag = no
-					count_playable_country = {
-						count = 0
-						limit = {
+					NOR = {
+						has_any_flag = yes
+						any_playable_country = {
 							prev = {
 								is_surveyed = { status = yes who = prev }
 							}
@@ -2623,28 +2627,21 @@ event = {
 				base = 1
 				modifier = {
 					factor = 0.1
-					count_system_planet = {
-						count > 0
-						limit = { is_planet_class = pc_cutholoid }
-					}
+					any_system_planet = { is_planet_class = pc_cutholoid }
 				}
 				modifier = {
 					factor = 0.5
 					any_neighbor_system = {
-						count_system_planet = {
-							count > 0
-							limit = { is_planet_class = pc_cutholoid }
-						}
+						any_system_planet = { is_planet_class = pc_cutholoid }
 					}
 				}
 			}
 			random_system_planet = {
 				limit = {
 					is_planet_class = pc_asteroid
-					has_any_flag = no
-					count_playable_country = {
-						count = 0
-						limit = {
+					NOR = {
+						has_any_flag = yes
+						any_playable_country = {
 							prev = {
 								is_surveyed = { status = yes who = prev }
 							}
@@ -2751,7 +2748,9 @@ ship_event = {
 			}
 			from = {
 				set_planet_flag = cutholoid_is_eating
-				solar_system = { save_global_event_target_as = cutholoid_system_for@root.controller }
+				solar_system = {
+					save_global_event_target_as = cutholoid_system_for@root.controller
+				}
 			}
 			ship_event = { id = grand_archive.3008 days = 1 scopes = { from = from } }
 		}
@@ -3155,9 +3154,8 @@ country_event = {
 		every_playable_country = {
 			limit = {
 				has_country_flag = resolution_breached_cutholoids_inside_borders
-				count_system_within_border = {
-					count = 0
-					limit = {
+				NOT = {
+					any_system_within_border = {
 						any_fleet_in_system = {
 							owner = { is_cutholoids_country_type = yes }
 						}
@@ -3190,7 +3188,9 @@ fleet_event = {
 				from = {
 					owner = {
 						is_galactic_community_member = yes
-						NOT = { has_country_flag = resolution_breached_cutholoids_inside_borders }
+						NOT = {
+							has_country_flag = resolution_breached_cutholoids_inside_borders
+						}
 					}
 				}
 			}
@@ -3205,9 +3205,8 @@ fleet_event = {
 			limit = {
 				any_galcom_member = {
 					has_country_flag = resolution_breached_cutholoids_inside_borders
-					count_system_within_border = {
-						count = 0
-						limit = {
+					NOT = {
+						any_system_within_border = {
 							any_fleet_in_system = {
 								owner = { is_cutholoids_country_type = yes }
 							}
@@ -3218,9 +3217,8 @@ fleet_event = {
 			every_galcom_member = {
 				limit = {
 					has_country_flag = resolution_breached_cutholoids_inside_borders
-					count_system_within_border = {
-						count = 0
-						limit = {
+					NOT = {
+						any_system_within_border = {
 							any_fleet_in_system = {
 								owner = { is_cutholoids_country_type = yes }
 							}
@@ -3288,7 +3286,9 @@ event = {
 	trigger = {
 		is_galactic_community_formed = yes
 		is_active_resolution = "resolution_cutholoid_eradication"
-		any_playable_country = { has_country_flag = resolution_breached_cutholoids_inside_borders }
+		any_playable_country = {
+			has_country_flag = resolution_breached_cutholoids_inside_borders
+		}
 	}
 
 	immediate = {
@@ -3296,9 +3296,8 @@ event = {
 			limit = {
 				any_playable_country = {
 					has_country_flag = resolution_breached_cutholoids_inside_borders
-					count_system_within_border = {
-						count = 0
-						limit = {
+					NOT = {
+						any_system_within_border = {
 							any_fleet_in_system = {
 								owner = { is_cutholoids_country_type = yes }
 							}
@@ -3309,9 +3308,8 @@ event = {
 			every_playable_country = {
 				limit = {
 					has_country_flag = resolution_breached_cutholoids_inside_borders
-					count_system_within_border = {
-						count = 0
-						limit = {
+					NOT = {
+						any_system_within_border = {
 							any_fleet_in_system = {
 								owner = { is_cutholoids_country_type = yes }
 							}
@@ -3348,7 +3346,9 @@ event = {
 		is_galactic_community_formed = yes
 		is_active_resolution = "resolution_cutholoid_eradication"
 		any_playable_country = {
-			NOT = { has_country_flag = resolution_breached_cutholoids_inside_borders }
+			NOT = {
+				has_country_flag = resolution_breached_cutholoids_inside_borders
+			}
 			any_system_within_border = {
 				any_fleet_in_system = {
 					exists = owner
@@ -3361,7 +3361,9 @@ event = {
 	immediate = {
 		random_playable_country = {
 			limit = {
-				NOT = { has_country_flag = resolution_breached_cutholoids_inside_borders }
+				NOT = {
+					has_country_flag = resolution_breached_cutholoids_inside_borders
+				}
 				any_system_within_border = {
 					any_fleet_in_system = {
 						exists = owner
@@ -3712,7 +3714,7 @@ country_event = {
 	trigger = {
 		has_grand_archive_dlc = yes
 		NOR = {
-			acquired_specimen_count <= 0
+			acquired_specimen_count = 0
 			has_country_flag = first_specimen_acquired_event_occured
 		}
 	}
@@ -3735,7 +3737,7 @@ country_event = {
 		text = grand_archive.4006.desc.default
 	}
 	desc = {
-		trigger = { acquired_specimen_count <= 0 }
+		trigger = { acquired_specimen_count = 0 }
 		text = grand_archive.4006.desc.no_specimen
 	}
 
@@ -3751,10 +3753,7 @@ country_event = {
 			}
 			AND = {
 				is_beastmasters_empire = yes
-				count_owned_megastructure = {
-					count = 0
-					limit = { is_megastructure_type = grand_archive_0 }
-				}
+				NOT = { any_owned_megastructure = { is_megastructure_type = grand_archive_0 } }
 			}
 		}
 	}
@@ -3895,15 +3894,21 @@ country_event = {
 	desc = {
 		trigger = {
 			if = {
-				limit = { is_eligible_collection_stage_1_reward_not_skipped_xeno_geology = yes }
+				limit = {
+					is_eligible_collection_stage_1_reward_not_skipped_xeno_geology = yes
+				}
 				text = grand_archive.4105.desc.1.xeno_geology
 			}
 			else_if = {
-				limit = { is_eligible_collection_stage_1_reward_not_skipped_aesthetic_wonder = yes }
+				limit = {
+					is_eligible_collection_stage_1_reward_not_skipped_aesthetic_wonder = yes
+				}
 				text = grand_archive.4105.desc.1.aesthetic_wonder
 			}
 			else_if = {
-				limit = { is_eligible_collection_stage_1_reward_not_skipped_historical_item = yes }
+				limit = {
+					is_eligible_collection_stage_1_reward_not_skipped_historical_item = yes
+				}
 				text = grand_archive.4105.desc.1.historical_item
 			}
 			else = {
@@ -3932,7 +3937,9 @@ country_event = {
 
 	option = {
 		name = grand_archive.4105.1.mineral_insight
-		trigger = { is_eligible_collection_stage_1_reward_not_skipped_xeno_geology = yes }
+		trigger = {
+			is_eligible_collection_stage_1_reward_not_skipped_xeno_geology = yes
+		}
 		allow = {
 			has_resource = { type = energy amount >= @curator_stage_1_price }
 		}
@@ -3944,7 +3951,9 @@ country_event = {
 	}
 	option = {
 		name = grand_archive.4105.1.void_mining
-		trigger = { is_eligible_collection_stage_1_reward_not_skipped_xeno_geology = yes }
+		trigger = {
+			is_eligible_collection_stage_1_reward_not_skipped_xeno_geology = yes
+		}
 		allow = {
 			has_resource = { type = energy amount >= @curator_stage_1_price }
 		}
@@ -4039,15 +4048,21 @@ country_event = {
 	desc = {
 		trigger = {
 			if = {
-				limit = { is_eligible_collection_stage_2_reward_not_skipped_xeno_geology = yes }
+				limit = {
+					is_eligible_collection_stage_2_reward_not_skipped_xeno_geology = yes
+				}
 				text = grand_archive.4105.desc.2.xeno_geology
 			}
 			else_if = {
-				limit = { is_eligible_collection_stage_2_reward_not_skipped_aesthetic_wonder = yes }
+				limit = {
+					is_eligible_collection_stage_2_reward_not_skipped_aesthetic_wonder = yes
+				}
 				text = grand_archive.4105.desc.2.aesthetic_wonder
 			}
 			else_if = {
-				limit = { is_eligible_collection_stage_2_reward_not_skipped_historical_item = yes }
+				limit = {
+					is_eligible_collection_stage_2_reward_not_skipped_historical_item = yes
+				}
 				text = grand_archive.4105.desc.2.historical_item
 			}
 			else = {
@@ -4076,7 +4091,9 @@ country_event = {
 
 	option = {
 		name = EXCELLENT
-		trigger = { is_eligible_collection_stage_2_reward_not_skipped_xeno_geology = yes }
+		trigger = {
+			is_eligible_collection_stage_2_reward_not_skipped_xeno_geology = yes
+		}
 		allow = {
 			has_resource = { type = energy amount >= @curator_stage_2_price }
 		}
@@ -4140,7 +4157,9 @@ country_event = {
 	desc = {
 		trigger = {
 			if = {
-				limit = { is_eligible_collection_stage_3_reward_not_skipped_xeno_geology = yes }
+				limit = {
+					is_eligible_collection_stage_3_reward_not_skipped_xeno_geology = yes
+				}
 				if = {
 					limit = {
 						event_target:curator_enclave_country = {
@@ -4158,7 +4177,9 @@ country_event = {
 				}
 			}
 			else_if = {
-				limit = { is_eligible_collection_stage_3_reward_not_skipped_aesthetic_wonder = yes }
+				limit = {
+					is_eligible_collection_stage_3_reward_not_skipped_aesthetic_wonder = yes
+				}
 				if = {
 					limit = {
 						event_target:curator_enclave_country = {
@@ -4176,7 +4197,9 @@ country_event = {
 				}
 			}
 			else_if = {
-				limit = { is_eligible_collection_stage_3_reward_not_skipped_historical_item = yes }
+				limit = {
+					is_eligible_collection_stage_3_reward_not_skipped_historical_item = yes
+				}
 				if = {
 					limit = {
 						event_target:curator_enclave_country = {
@@ -5508,7 +5531,9 @@ country_event = {
 			if = {
 				limit = {
 					has_origin = origin_treasure_hunters
-					NOT = { has_country_flag = treasure_hunters_council_position_acquired }
+					NOT = {
+						has_country_flag = treasure_hunters_council_position_acquired
+					}
 				}
 				set_country_flag = called_8290_from_celestial_chart
 				country_event = { id = grand_archive.8290 days = 5 scopes = { from = event_target:selected_treasure_planet } }
@@ -5673,7 +5698,9 @@ ship_event = {
 				if = {
 					limit = {
 						has_origin = origin_treasure_hunters
-						NOT = { has_country_flag = treasure_hunters_council_position_acquired }
+						NOT = {
+							has_country_flag = treasure_hunters_council_position_acquired
+						}
 					}
 					set_country_flag = called_8290_from_treasure_trove
 					country_event = { id = grand_archive.8290 days = 5 scopes = { from = root.fromfrom } }
@@ -6142,7 +6169,10 @@ fleet_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		controller = { has_tradition = tr_domestication_bio_repurposing is_reanimator = no }
+		controller = {
+			has_tradition = tr_domestication_bio_repurposing
+			is_reanimator = no
+		}
 	}
 
 	immediate = {
@@ -6263,12 +6293,16 @@ country_event = {
 
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = captured_leader_decision_postponed@fromfrom }
+			NOT = {
+				has_country_flag = captured_leader_decision_postponed@fromfrom
+			}
 		}
 		text = grand_archive.9005.desc
 	}
 	desc = {
-		trigger = { has_country_flag = captured_leader_decision_postponed@fromfrom }
+		trigger = {
+			has_country_flag = captured_leader_decision_postponed@fromfrom
+		}
 		text = grand_archive.9005.desc.second
 	}
 
@@ -6328,7 +6362,9 @@ country_event = {
 	option = {
 		name = grand_archive.9005.b
 		trigger = {
-			NOT = { has_country_flag = captured_leader_decision_postponed@fromfrom }
+			NOT = {
+				has_country_flag = captured_leader_decision_postponed@fromfrom
+			}
 		}
 		set_country_flag = captured_leader_decision_postponed@fromfrom
 		hidden_effect = {
@@ -6832,7 +6868,10 @@ country_event = {
 
 	option = {
 		name = EXCELLENT
-		enable_special_project = { name = tiyanki_matriarch_UNIQUE_MUTATION_PROJECT owner = this }
+		enable_special_project = {
+			name = tiyanki_matriarch_UNIQUE_MUTATION_PROJECT
+			owner = this
+		}
 	}
 }
 
@@ -7011,8 +7050,10 @@ country_event = {
 
 	trigger = {
 		fromfrom = {
-			check_modifier_value = { modifier = split_into_smaller_size_on_death value > 0 }
-			NOT = { has_ship_flag = spawned_from_split_modifier }
+			NOR = {
+				check_modifier_value = { modifier = split_into_smaller_size_on_death value <= 0 }
+				has_ship_flag = spawned_from_split_modifier
+			}
 		}
 	}
 

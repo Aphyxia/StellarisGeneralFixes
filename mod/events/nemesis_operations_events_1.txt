@@ -1413,7 +1413,9 @@ country_event = {
 			icon = GFX_espionage_asset_icon
 			text = ESPIONAGE_OPERATION_ASSET_EVENT_OPTION
 		}
-		trigger = { has_country_flag = sabotage_starbase_collateral@from.target.owner }
+		trigger = {
+			has_country_flag = sabotage_starbase_collateral@from.target.owner
+		}
 		hidden_effect = {
 			remove_country_flag = sabotage_starbase_collateral@from.target.owner
 		}
@@ -1444,20 +1446,16 @@ country_event = {
 			icon = GFX_espionage_asset_icon
 			text = ESPIONAGE_OPERATION_ASSET_EVENT_OPTION
 		}
-		trigger = { has_country_flag = sabotage_starbase_defence@from.target.owner }
+		trigger = {
+			has_country_flag = sabotage_starbase_defence@from.target.owner
+		}
 		custom_tooltip = operation.2005.c.tooltip
 		allow = {
 			custom_tooltip = {
 				fail_text = STARBASE_NO_PLATFORMS
 				from.target = {
 					fleet = {
-						count_controlled_ship = {
-							count > 0
-							limit = {
-								exists = owner
-								is_ship_size = military_station_small
-							}
-						}
+						any_controlled_ship = { exists = owner is_ship_size = military_station_small }
 					}
 				}
 			}
@@ -1551,7 +1549,10 @@ country_event = {
 	}
 	desc = {
 		text = operation.2010.desc.regular
-		trigger = { is_xenophobe = no is_gestalt = no }
+		trigger = {
+			is_xenophobe = no
+			is_gestalt = no
+		}
 	}
 	desc = {
 		text = operation.2010.desc.gestalt
@@ -1574,9 +1575,8 @@ country_event = {
 				modifier = {
 					factor = 0
 					OR = {
-						count_spynetwork = {
-							count = 0
-							limit = {
+						NOT = {
+							any_spynetwork = {
 								is_owned_by = root
 								target = { is_same_value = from }
 							}
@@ -1626,7 +1626,10 @@ country_event = {
 		}
 		name = {
 			text = CURSES
-			trigger = { is_xenophobe = no is_gestalt = no }
+			trigger = {
+				is_xenophobe = no
+				is_gestalt = no
+			}
 		}
 	}
 
@@ -1648,7 +1651,10 @@ espionage_operation_event = {
 
 	desc = {
 		text = operation.3000.desc
-		trigger = { exists = event_target:smear_option_1 exists = event_target:smear_option_2 }
+		trigger = {
+			exists = event_target:smear_option_1
+			exists = event_target:smear_option_2
+		}
 	}
 	desc = {
 		text = operation.3000.desc.single
@@ -2561,10 +2567,7 @@ espionage_operation_event = {
 			if = { # Identify crisis factions, if they exist
 				limit = {
 					target = {
-						count_agreement = {
-							count = 0
-							limit = { agreement_preset = preset_satrapy }
-						}
+						NOT = { any_agreement = { agreement_preset = preset_satrapy } }
 					}
 					any_country = {
 						has_communications = root.owner
@@ -3310,7 +3313,7 @@ country_event = {
 		name = operation.5005.c
 		trigger = {
 			has_monthly_income = { resource = energy value >= 10 }
-			NOT = { has_monthly_income = { resource = energy value >= 40 } }
+			has_monthly_income = { resource = energy value < 40 }
 			from.target = { is_fanatic_xenophobe = no is_fanatic_authoritarian = no }
 		}
 		allow = {
@@ -5155,7 +5158,7 @@ espionage_operation_event = {
 		}
 	}
 
-	# Vfix: collect all options into one without triggering "has no valid options"
+	# Vfix: collect all 18 options into one (without triggering "has no valid options")
 	option = {
 		name = operation.7000.a
 		switch = {

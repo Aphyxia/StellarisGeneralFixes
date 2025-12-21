@@ -444,7 +444,10 @@ country_event = {
 
 	immediate = {
 		from = {
-			create_pre_ftl_awareness_increased_message = { SYSTEM = root.capital_scope.solar_system COUNTRY = root }
+			create_pre_ftl_awareness_increased_message = {
+				SYSTEM = root.capital_scope.solar_system
+				COUNTRY = root
+			}
 		}
 	}
 }
@@ -461,7 +464,10 @@ country_event = {
 
 	immediate = {
 		from = {
-			create_pre_ftl_awareness_decreased_message = { SYSTEM = root.capital_scope.solar_system COUNTRY = root }
+			create_pre_ftl_awareness_decreased_message = {
+				SYSTEM = root.capital_scope.solar_system
+				COUNTRY = root
+			}
 		}
 	}
 }
@@ -585,7 +591,9 @@ country_event = {
 	location = event_target:contact_empire.capital_scope
 
 	trigger = {
-		NOT = { has_country_flag = first_contact_completed@event_target:contact_empire }
+		NOT = {
+			has_country_flag = first_contact_completed@event_target:contact_empire
+		}
 		is_default_or_fallen = yes
 	}
 

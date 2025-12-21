@@ -11,30 +11,24 @@
 #		example_effect = yes
 #	}
 #
-
-add_cosmogenesis_level_1_perks = { # FE Buildings are random draw now
-
+# FE Buildings are random draw now
+add_cosmogenesis_level_1_perks = {
 	add_research_option = tech_cosmogenesis_crisis_1
 	add_research_option = tech_dark_matter_power_core
 	add_research_option = tech_cosmogenesis_world
 	if = {
-		limit = {
-			country_uses_bio_ships = yes
-		}
+		limit = { country_uses_bio_ships = yes }
 		add_research_option = tech_weaver_bio_healing_6
 		add_research_option = tech_weaver_bio_evasion_6
 	}
 }
 
 add_cosmogenesis_level_2_perks = {
-
 	add_research_option = tech_cosmogenesis_crisis_2
 	add_research_option = tech_dark_matter_propulsion
 	add_research_option = tech_enigmatic_decoder
 	if = {
-		limit = {
-			country_uses_bio_ships = no
-		}
+		limit = { country_uses_bio_ships = no }
 		add_research_option = tech_cosmogenesis_escort
 	}
 	else = {
@@ -46,14 +40,11 @@ add_cosmogenesis_level_2_perks = {
 }
 
 add_cosmogenesis_level_3_perks = {
-
 	add_research_option = tech_cosmogenesis_crisis_3
 	add_research_option = tech_dark_matter_deflector
 	add_research_option = tech_enigmatic_encoder
 	if = {
-		limit = {
-			country_uses_bio_ships = no
-		}
+		limit = { country_uses_bio_ships = no }
 		add_research_option = tech_cosmogenesis_battlecruiser
 	}
 	else = {
@@ -64,24 +55,21 @@ add_cosmogenesis_level_3_perks = {
 }
 
 add_cosmogenesis_level_4_perks = {
-
 	add_research_option = tech_cosmogenesis_crisis_4
 	add_research_option = tech_energy_lance_2
 	add_research_option = tech_dragon_armor
 	if = {
-		limit = {
-			country_uses_bio_ships = no
-		}
+		limit = { country_uses_bio_ships = no }
 		add_research_option = tech_cosmogenesis_FE_titan
 	}
 	else = {
 		add_research_option = tech_cosmogenesis_stinger
 	}
+
 	add_research_option = tech_cosmogenesis_thesis
 }
 
 add_cosmogenesis_level_5_perks = {
-
 	add_research_option = tech_cosmogenesis_crisis_5
 	add_research_option = tech_nanite_repair_system
 	add_research_option = tech_nanite_flak_batteries
@@ -91,36 +79,29 @@ add_cosmogenesis_level_5_perks = {
 remove_all_cybernetic_traits = {
 	modify_species = {
 		species = this
-		inline_script = {
-			script = traits/remove_all_cybernetic_traits
-		}
+		inline_script = { script = traits/remove_all_cybernetic_traits }
 	}
 }
 
 add_augmentation_bazaars_cyborg_traits = {
 	save_event_target_as = cyborg_pop
+
 	owner = {
 		switch = {
 			trigger = has_country_flag
 			augmentation_bazaars_power_drills = {
 				event_target:cyborg_pop = {
-					modify_species = {
-						add_trait = trait_cyborg_power_drills
-					}
+					modify_species = { add_trait = trait_cyborg_power_drills }
 				}
 			}
 			augmentation_bazaars_harvesters = {
 				event_target:cyborg_pop = {
-					modify_species = {
-						add_trait = trait_cyborg_harvesters
-					}
+					modify_species = { add_trait = trait_cyborg_harvesters }
 				}
 			}
 			augmentation_bazaars_superconductive = {
 				event_target:cyborg_pop = {
-					modify_species = {
-						add_trait = trait_cyborg_superconductive
-					}
+					modify_species = { add_trait = trait_cyborg_superconductive }
 				}
 			}
 		}
@@ -129,7 +110,8 @@ add_augmentation_bazaars_cyborg_traits = {
 
 # Called from a pop_group, creates a fully cyberized species.
 # The species is saved as global event target - e.g. as cyberspecies7, if the species ID is 7.
-create_cyber_species_effect = { # optimize_memory
+# optimize_memory
+create_cyber_species_effect = {
 	# We need temporarily a new species
 	# modify_species = {
 	# 	base = none # This creates a new main species.
@@ -141,6 +123,7 @@ create_cyber_species_effect = { # optimize_memory
 	# 	}
 	# }
 	save_event_target_as = changing_pop_group # As fallback needed
+
 	species = {
 		save_event_target_as = changing_species
 		if = {
@@ -181,9 +164,7 @@ create_cyber_species_effect = { # optimize_memory
 		}
 		else = {
 			# log = "Cyberspecies \\[cyberspecies@species.GetName] for \\[species.GetName] already exists"
-			event_target:cyberspecies@this = {
-				save_event_target_as = cyberspecies_current
-			}
+			event_target:cyberspecies@this = { save_event_target_as = cyberspecies_current }
 		}
 	}
 }
@@ -203,9 +184,7 @@ create_cyber_creed_species_effect = {
 					homeworld = this
 					namelist = this
 					gender = this
-					traits = {
-						ideal_planet_class = this
-					}
+					traits = { ideal_planet_class = this }
 				}
 				last_created_species = {
 					change_species_characteristics = {
@@ -218,7 +197,6 @@ create_cyber_creed_species_effect = {
 						remove_trait = trait_cyborg_ritualistic_implants
 						add_trait = trait_cybernetic
 					}
-
 					save_global_event_target_as = cybercreedspecies@root.owner
 				}
 			}
@@ -227,10 +205,13 @@ create_cyber_creed_species_effect = {
 }
 
 # This = owner
-cyberize_pops_effect = { # optimize_memory
+# optimize_memory
+cyberize_pops_effect = {
 	# For whatever reason, but the situation needs to be finished
 	if = {
-		limit = { NOT = { exists = event_target:cyberspecies_current } }
+		limit = {
+			NOT = { exists = event_target:cyberspecies_current }
+		}
 		# Local target faster than global dynamic target in extensive loops
 		if = {
 			limit = {
@@ -255,15 +236,19 @@ cyberize_pops_effect = { # optimize_memory
 			}
 		}
 	}
-
 	if = {
 		limit = { exists = event_target:cyberspecies_current }
 		if = { # Final event
-			limit = { prev = { has_situation_flag = cyberization_final } }
+			limit = {
+				prev = { has_situation_flag = cyberization_final }
+			}
 			every_owned_pop_group = {
 				limit = {
 					is_same_species = owner_species
-					NOR = { pop_group_has_trait = trait_cybernetic pop_group_has_trait = trait_limited_cybernetic }
+					NOR = {
+						pop_group_has_trait = trait_cybernetic
+						pop_group_has_trait = trait_limited_cybernetic
+					}
 				}
 				change_species = event_target:cyberspecies_current
 			}
@@ -277,19 +262,18 @@ cyberize_pops_effect = { # optimize_memory
 						# }
 					}
 				}
-				event_target:cyberspecies_current = {
-					set_species_identity = prev.owner_species
-				}
+				event_target:cyberspecies_current = { set_species_identity = prev.owner_species }
 			}
-			change_dominant_species = {
-				species = event_target:cyberspecies_current
-			}
+			change_dominant_species = { species = event_target:cyberspecies_current }
 			set_built_species = event_target:cyberspecies_current
 			# global_event_targets should be no longer needed with v4.0, as they where to omit species duplication
 			every_owned_species = {
 				limit = {
 					is_same_species = owner_species
-					NOR = { has_trait = trait_cybernetic has_trait = trait_limited_cybernetic }
+					NOR = {
+						has_trait = trait_cybernetic
+						has_trait = trait_limited_cybernetic
+					}
 				}
 				clear_global_event_target = event_target:cyberspecies@this
 			}
@@ -304,16 +288,24 @@ cyberize_pops_effect = { # optimize_memory
 				remove_trait = trait_cybernetic
 				add_trait = trait_limited_cybernetic
 				add_traits_at_start_of_list = yes
-				effect = { save_event_target_as = cyberspecies_current }
-			}]
-			while = { count = value:pop_to_cyberize_per_month
+				effect = {
+					save_event_target_as = cyberspecies_current
+				}
+			}
+			]
+			while = {
+				count = value:pop_to_cyberize_per_month
 				limit = {
 					exists = event_target:changing_species
 					any_owned_pop_group = {
 						is_exact_same_species = event_target:changing_species
-						[[SPIRITUALIST] pop_group_has_ethic = ethic_spiritualist ]
+						[[SPIRITUALIST]
+						pop_group_has_ethic = ethic_spiritualist
+						]
 						NOR = {
-							[[!SPIRITUALIST] pop_group_has_ethic = ethic_spiritualist ]
+							[[!SPIRITUALIST]
+							pop_group_has_ethic = ethic_spiritualist
+							]
 							has_trait = trait_cybernetic
 							has_trait = trait_limited_cybernetic
 						}
@@ -322,9 +314,13 @@ cyberize_pops_effect = { # optimize_memory
 				weighted_random_owned_pop_group = {
 					limit = {
 						is_exact_same_species = event_target:changing_species
-						[[SPIRITUALIST] pop_group_has_ethic = ethic_spiritualist ]
+						[[SPIRITUALIST]
+						pop_group_has_ethic = ethic_spiritualist
+						]
 						NOR = {
-							[[!SPIRITUALIST] pop_group_has_ethic = ethic_spiritualist ]
+							[[!SPIRITUALIST]
+							pop_group_has_ethic = ethic_spiritualist
+							]
 							has_trait = trait_cybernetic
 							has_trait = trait_limited_cybernetic
 						}
@@ -348,14 +344,14 @@ cyberize_pops_effect = { # optimize_memory
 			}
 		}
 	}
-	else = { log_error = "Fail cyberize_pops_effect: No current cyberspecies found for \\[This.GetName]" }
+	else = {
+		log_error = "Fail cyberize_pops_effect: No current cyberspecies found for \\[This.GetName]"
+	}
 }
 
 cyberize_limited_hive_pops_effect = {
 	event_target:changing_pop_group = {
-		event_target:cyberspecies@species = {
-			save_event_target_as = cyberspecies_current
-		}
+		event_target:cyberspecies@species = { save_event_target_as = cyberspecies_current }
 	}
 
 	every_owned_pop_group = {
@@ -375,7 +371,6 @@ cyberize_limited_hive_pops_effect = {
 				size = 0
 				effect = {
 					save_event_target_as = target_pop_group
-
 					transfer_pop_amount = {
 						source = event_target:source_pop_group
 						target = event_target:target_pop_group
@@ -384,7 +379,6 @@ cyberize_limited_hive_pops_effect = {
 				}
 			}
 		}
-
 		event_target:target_pop_group = {
 			modify_species = {
 				species = this
@@ -400,14 +394,15 @@ cyberize_creed_pops_effect = {
 	event_target:cybercreedspecies@root.owner = {
 		save_event_target_as = cyberspecies_current
 	}
-
 	while = {
 		limit = {
 			any_owned_pop_group = {
 				exists = event_target:cyberspecies_current
 				is_same_species = owner_species
-				NOT = {	has_trait = trait_cybernetic }
-				pop_group_size > 0
+				NOR = {
+					has_trait = trait_cybernetic
+					pop_group_size <= 0
+				}
 			}
 		}
 		[[SINGLE_LOOP]
@@ -416,7 +411,6 @@ cyberize_creed_pops_effect = {
 		[[!SINGLE_LOOP]
 		count = value:pop_to_cyberize_per_month_creed
 		]
-
 		weighted_random_owned_pop_group = {
 			limit = {
 				is_same_species = owner_species
@@ -428,11 +422,8 @@ cyberize_creed_pops_effect = {
 			}
 			save_event_target_as = source_pop_group
 		}
-
 		if = {
-			limit = {
-				exists = event_target:source_pop_group
-			}
+			limit = { exists = event_target:source_pop_group }
 			event_target:source_pop_group = {
 				planet = {
 					create_pop_group = {
@@ -441,7 +432,6 @@ cyberize_creed_pops_effect = {
 						size = 0
 						effect = {
 							save_event_target_as = target_pop_group
-
 							transfer_pop_amount = {
 								source = event_target:source_pop_group
 								target = event_target:target_pop_group
@@ -452,11 +442,8 @@ cyberize_creed_pops_effect = {
 				}
 			}
 		}
-
 		if = {
-			limit = {
-				exists = event_target:target_pop_group
-			}
+			limit = { exists = event_target:target_pop_group }
 			event_target:target_pop_group = {
 				if = {
 					limit = { # Spiritualist
@@ -532,6 +519,7 @@ cyberize_creed_pops_effect = {
 # OBSOLETE: can be replaced with assimilate_leaders
 cyberize_leaders_effect = {
 	optimize_memory
+
 	every_owned_leader = {
 		limit = {
 			is_exact_same_species = event_target:changing_species
@@ -547,6 +535,7 @@ cyberize_leaders_effect = {
 		# add_trait = { trait = leader_trait_cyborg show_message = no }
 		update_leader_after_modification = yes
 	}
+
 	every_pool_leader = {
 		limit = {
 			is_exact_same_species = event_target:changing_species
@@ -562,6 +551,7 @@ cyberize_leaders_effect = {
 		# add_trait = { trait = leader_trait_cyborg show_message = no }
 		update_leader_after_modification = yes
 	}
+
 	update_node_portraits_if_gestalt_effect = yes
 }
 
@@ -571,7 +561,10 @@ cyberize_leaders_limited_effect = {
 	every_owned_leader = {
 		limit = {
 			is_exact_same_species = event_target:changing_species
-			NOR = { has_trait = leader_trait_cyborg has_trait = leader_trait_limited_cyborg }
+			NOR = {
+				has_trait = leader_trait_cyborg
+				has_trait = leader_trait_limited_cyborg
+			}
 			is_spiritualist = yes
 		}
 		change_species = event_target:cyberspecies_current
@@ -579,10 +572,14 @@ cyberize_leaders_limited_effect = {
 		# add_trait = { trait = leader_trait_limited_cyborg show_message = no }
 		update_leader_after_modification = yes
 	}
+
 	every_pool_leader = {
 		limit = {
 			is_exact_same_species = event_target:changing_species
-			NOR = { has_trait = leader_trait_cyborg has_trait = leader_trait_limited_cyborg }
+			NOR = {
+				has_trait = leader_trait_cyborg
+				has_trait = leader_trait_limited_cyborg
+			}
 			is_spiritualist = yes
 		}
 		change_species = event_target:cyberspecies_current
@@ -590,6 +587,7 @@ cyberize_leaders_limited_effect = {
 		# add_trait = { trait = leader_trait_limited_cyborg show_message = no }
 		update_leader_after_modification = yes
 	}
+
 	update_node_portraits_if_gestalt_effect = yes
 }
 
@@ -609,6 +607,7 @@ cyberize_creed_leaders_effect = {
 		add_trait = { trait = leader_trait_cyborg show_message = no }
 		update_leader_after_modification = yes
 	}
+
 	every_pool_leader = {
 		limit = {
 			is_same_species = owner_species
@@ -623,6 +622,7 @@ cyberize_creed_leaders_effect = {
 		change_species = event_target:cybercreedspecies@root.owner
 		update_leader_after_modification = yes
 	}
+
 	update_node_portraits_if_gestalt_effect = yes
 }
 
@@ -630,13 +630,17 @@ cyberize_creed_leaders_effect = {
 # OBSOLETE: can be replaced with assimilate_colony_ships
 cyberize_colony_ships_effect = {
 	optimize_memory
+
 	every_controlled_ship = {
 		limit = {
 			is_ship_class = shipclass_colonizer
 			exists = species
 			species = {
 				is_exact_same_species = event_target:changing_species
-				NOR = { has_trait = trait_cybernetic has_trait = trait_limited_cybernetic }
+				NOR = {
+					has_trait = trait_cybernetic
+					has_trait = trait_limited_cybernetic
+				}
 			}
 		}
 		change_species = event_target:cyberspecies_current
@@ -647,14 +651,21 @@ cyberize_colony_ships_effect = {
 # OBSOLETE: can be replaced with assimilate_armies
 cyberize_armies_effect = {
 	optimize_memory
+
 	every_owned_army = {
 		limit = {
 			exists = species
 			species = {
 				is_exact_same_species = event_target:changing_species
-				NOR = { has_trait = trait_cybernetic has_trait = trait_limited_cybernetic }
+				NOR = {
+					has_trait = trait_cybernetic
+					has_trait = trait_limited_cybernetic
+				}
 			}
-			OR = { army_type = assault_army army_type = defense_army }
+			OR = {
+				army_type = assault_army
+				army_type = defense_army
+			}
 			# To be realistic!?
 			# NAND = {
 			# 	exists = fleet
@@ -677,22 +688,17 @@ synthesize_pops_effect = {
 			limit = {
 				any_owned_pop_group = {
 					is_same_species = owner_species
-					NOT = {
-						has_trait = trait_mechanical
-					}
+					NOT = { has_trait = trait_mechanical }
 				}
 			}
 			count = $COUNT$
 			weighted_random_owned_pop_group = {
 				limit = {
 					is_same_species = owner_species
-					NOT = {
-						has_trait = trait_mechanical
-					}
+					NOT = { has_trait = trait_mechanical }
 				}
 				save_event_target_as = source_pop_group
 			}
-
 			event_target:source_pop_group = {
 				planet = {
 					create_pop_group = {
@@ -720,16 +726,17 @@ assimilate_armies = {
 		limit = {
 			exists = species
 			exists = $SOURCE$
-			species = {
-				is_exact_same_species = $SOURCE$
+			species = { is_exact_same_species = $SOURCE$ }
+			OR = {
+				army_type = assault_army
+				army_type = defense_army
 			}
-			OR = { army_type = assault_army army_type = defense_army }
 			NAND = {
 				exists = planet
 				planet = { has_ground_combat = yes }
 			}
 		}
-		modify_army = { name = random species =  $TARGET$ }
+		modify_army = { name = random species = $TARGET$ }
 	}
 }
 
@@ -740,9 +747,7 @@ assimilate_colony_ships = {
 			exists = $SOURCE$
 			exists = $TARGET$
 			exists = species
-			species = {
-				is_exact_same_species = $SOURCE$
-			}
+			species = { is_exact_same_species = $SOURCE$ }
 		}
 		change_species = $TARGET$
 	}
@@ -755,16 +760,12 @@ assimilate_leaders = {
 			exists = $TARGET$
 		}
 		every_owned_leader = {
-			limit = {
-				is_exact_same_species = $SOURCE$
-			}
+			limit = { is_exact_same_species = $SOURCE$ }
 			change_species = $TARGET$
 			update_leader_after_modification = yes
 		}
 		every_pool_leader = {
-			limit = {
-				is_exact_same_species = $SOURCE$
-			}
+			limit = { is_exact_same_species = $SOURCE$ }
 			change_species = $TARGET$
 			update_leader_after_modification = yes
 		}
@@ -773,7 +774,7 @@ assimilate_leaders = {
 }
 
 synth_queen_spawn = {
-	#Silent Spawn
+	# Silent Spawn
 	if = { # Xenophobe FE capital
 		limit = {
 			any_galaxy_planet = {
@@ -786,9 +787,7 @@ synth_queen_spawn = {
 			}
 		}
 		random_galaxy_planet = {
-			limit = {
-				has_planet_flag = xenophobe_fe_capital
-			}
+			limit = { has_planet_flag = xenophobe_fe_capital }
 			synth_queen_wipe_planet = yes
 			synth_queen_wipe_system = yes
 		}
@@ -825,46 +824,35 @@ synth_queen_spawn = {
 	}
 	else_if = { # Relic World
 		limit = {
-			any_galaxy_planet = {
-				is_planet_class = pc_relic
-			}
+			any_galaxy_planet = { is_planet_class = pc_relic }
 		}
 		random_galaxy_planet = {
-			limit = {
-				is_planet_class = pc_relic
-			}
+			limit = { is_planet_class = pc_relic }
 			synth_queen_wipe_planet = yes
 			synth_queen_wipe_system = yes
 		}
 	}
 	else_if = { # Tomb World
 		limit = {
-			any_galaxy_planet = {
-				is_planet_class = pc_nuked
-			}
+			any_galaxy_planet = { is_planet_class = pc_nuked }
 		}
 		random_galaxy_planet = {
-			limit = {
-				is_planet_class = pc_nuked
-			}
+			limit = { is_planet_class = pc_nuked }
 			synth_queen_wipe_planet = yes
 			synth_queen_wipe_system = yes
 		}
 	}
 	else = {
 		random_galaxy_planet = {
-			limit = {
-				is_colonizable = yes
-			}
+			limit = { is_colonizable = yes }
 			synth_queen_wipe_planet = yes
 			synth_queen_wipe_system = yes
 		}
 	}
+
 	random_system = {
 		limit = {
-			any_system_planet = {
-				has_planet_flag = synth_queen_bastille
-			}
+			any_system_planet = { has_planet_flag = synth_queen_bastille }
 		}
 		set_star_flag = synth_queen_capital
 		save_global_event_target_as = synth_queen_capital_system
@@ -873,17 +861,13 @@ synth_queen_spawn = {
 	event_target:synth_queen_capital_system = {
 		save_event_target_as = synth_queen_system
 		random_system_planet = {
-			limit = {
-				has_planet_flag = synth_queen_bastille
-			}
+			limit = { has_planet_flag = synth_queen_bastille }
 			create_species = {
 				name = "NAME_Cetana"
 				class = "ROBOT"
 				namelist = "CETANA"
 				portrait = "synth_queen"
-				traits = {
-					trait = "trait_mechanical"
-				}
+				traits = { trait = "trait_mechanical" }
 				effect = {
 					save_event_target_as = synth_queen_species
 				}
@@ -894,20 +878,9 @@ synth_queen_spawn = {
 				species = event_target:synth_queen_species
 				name_list = "CETANA"
 				flag = {
-					icon= {
-						category = "spherical"
-						file = "flag_spherical_15.dds"
-					}
-					background= {
-						category = "backgrounds"
-						file = "00_solid.dds"
-					}
-					colors = {
-						"grey"
-						"grey"
-						"null"
-						"null"
-					}
+					icon = { category = "spherical" file = "flag_spherical_15.dds" }
+					background = { category = "backgrounds" file = "00_solid.dds" }
+					colors = { "grey" "grey" "null" "null" }
 				}
 				effect = {
 					create_ship_design = { design = "NAME_Synth_Queen_Titan" }
@@ -922,13 +895,9 @@ synth_queen_spawn = {
 					add_ship_design = last_created_design
 					create_ship_design = { design = "NAME_Queens_Eye" }
 					add_ship_design = last_created_design
-					add_modifier = {
-						modifier = queen_combat_modifier
-						days = -1
-					}
+					add_modifier = { modifier = queen_combat_modifier days = -1 }
 					save_event_target_as = synth_queen_country
 					save_global_event_target_as = synth_queen_country_global
-
 					set_graphical_culture = synth_queen_01
 					activate_fog_machine = synth_queen_nanite
 					create_leader = {
@@ -941,9 +910,7 @@ synth_queen_spawn = {
 						skip_background_generation = yes
 						set_age = 126872
 						custom_description = cetana_desc
-						traits = {
-							0 = subclass_commander_councilor
-						}
+						traits = { 0 = subclass_commander_councilor }
 					}
 					set_leader = last_created_leader
 					create_leader = {
@@ -956,9 +923,7 @@ synth_queen_spawn = {
 						skip_background_generation = yes
 						set_age = 126872
 						custom_description = cetana_desc
-						traits = {
-							0 = subclass_commander_councilor
-						}
+						traits = { 0 = subclass_commander_councilor }
 						effect = {
 							change_leader_portrait = cetana_mammalian
 							save_global_event_target_as = cetana_mammalian
@@ -974,9 +939,7 @@ synth_queen_spawn = {
 						skip_background_generation = yes
 						set_age = 126872
 						custom_description = cetana_desc
-						traits = {
-							0 = subclass_commander_councilor
-						}
+						traits = { 0 = subclass_commander_councilor }
 						effect = {
 							change_leader_portrait = cetana_reptilian
 							save_global_event_target_as = cetana_reptilian
@@ -992,9 +955,7 @@ synth_queen_spawn = {
 						skip_background_generation = yes
 						set_age = 126872
 						custom_description = cetana_desc
-						traits = {
-							0 = subclass_commander_councilor
-						}
+						traits = { 0 = subclass_commander_councilor }
 						effect = {
 							change_leader_portrait = cetana_robot
 							save_global_event_target_as = cetana_robot
@@ -1010,9 +971,7 @@ synth_queen_spawn = {
 						skip_background_generation = yes
 						set_age = 126872
 						custom_description = cetana_desc
-						traits = {
-							0 = subclass_commander_councilor
-						}
+						traits = { 0 = subclass_commander_councilor }
 						effect = {
 							change_leader_portrait = cetana_aquatic
 							save_global_event_target_as = cetana_aquatic
@@ -1028,9 +987,7 @@ synth_queen_spawn = {
 						skip_background_generation = yes
 						set_age = 126872
 						custom_description = cetana_desc
-						traits = {
-							0 = subclass_commander_councilor
-						}
+						traits = { 0 = subclass_commander_councilor }
 						effect = {
 							change_leader_portrait = cetana_lithoid
 							save_global_event_target_as = cetana_lithoid
@@ -1046,9 +1003,7 @@ synth_queen_spawn = {
 						skip_background_generation = yes
 						set_age = 126872
 						custom_description = cetana_desc
-						traits = {
-							0 = subclass_commander_councilor
-						}
+						traits = { 0 = subclass_commander_councilor }
 						effect = {
 							change_leader_portrait = cetana_plantoid
 							save_global_event_target_as = cetana_plantoid
@@ -1064,9 +1019,7 @@ synth_queen_spawn = {
 						skip_background_generation = yes
 						set_age = 126872
 						custom_description = cetana_desc
-						traits = {
-							0 = subclass_commander_councilor
-						}
+						traits = { 0 = subclass_commander_councilor }
 						effect = {
 							change_leader_portrait = cetana_molluscoid
 							save_global_event_target_as = cetana_molluscoid
@@ -1082,9 +1035,7 @@ synth_queen_spawn = {
 						skip_background_generation = yes
 						set_age = 126872
 						custom_description = cetana_desc
-						traits = {
-							0 = subclass_commander_councilor
-						}
+						traits = { 0 = subclass_commander_councilor }
 						effect = {
 							change_leader_portrait = cetana_avian
 							save_global_event_target_as = cetana_avian
@@ -1100,9 +1051,7 @@ synth_queen_spawn = {
 						skip_background_generation = yes
 						set_age = 126872
 						custom_description = cetana_desc
-						traits = {
-							0 = subclass_commander_councilor
-						}
+						traits = { 0 = subclass_commander_councilor }
 						effect = {
 							change_leader_portrait = cetana_empty
 							save_global_event_target_as = cetana_empty
@@ -1113,10 +1062,7 @@ synth_queen_spawn = {
 			change_pc = pc_gray_goo
 			reset_planet = yes
 			set_name = "NAME_Somnivaya"
-			add_modifier = {
-				modifier = terraforming_candidate
-				days = -1
-			}
+			add_modifier = { modifier = terraforming_candidate days = -1 }
 		}
 		create_starbase = {
 			size = big_starbase_synth_queen
@@ -1133,10 +1079,7 @@ synth_queen_spawn = {
 				name = "NAME_Synth_Queen_Starbase"
 				effect = {
 					set_owner = event_target:synth_queen_country
-					create_ship = {
-						name = random
-						design = "NAME_Synth_Queen_Starbase"
-					}
+					create_ship = { name = random design = "NAME_Synth_Queen_Starbase" }
 					set_location = {
 						target = event_target:synth_queen_system
 						distance = 50
@@ -1152,10 +1095,7 @@ synth_queen_spawn = {
 				name = "NAME_Synth_Queen_Starbase"
 				effect = {
 					set_owner = event_target:synth_queen_country
-					create_ship = {
-						name = random
-						design = "NAME_Synth_Queen_Starbase"
-					}
+					create_ship = { name = random design = "NAME_Synth_Queen_Starbase" }
 					set_location = {
 						target = event_target:synth_queen_system
 						distance = 50
@@ -1171,10 +1111,7 @@ synth_queen_spawn = {
 				name = "NAME_Synth_Queen_Starbase"
 				effect = {
 					set_owner = event_target:synth_queen_country
-					create_ship = {
-						name = random
-						design = "NAME_Synth_Queen_Starbase"
-					}
+					create_ship = { name = random design = "NAME_Synth_Queen_Starbase" }
 					set_location = {
 						target = event_target:synth_queen_system
 						distance = 50
@@ -1190,10 +1127,7 @@ synth_queen_spawn = {
 				name = "NAME_Synth_Queen_Starbase"
 				effect = {
 					set_owner = event_target:synth_queen_country
-					create_ship = {
-						name = random
-						design = "NAME_Synth_Queen_Starbase"
-					}
+					create_ship = { name = random design = "NAME_Synth_Queen_Starbase" }
 					set_location = {
 						target = event_target:synth_queen_system
 						distance = 50
@@ -1209,10 +1143,7 @@ synth_queen_spawn = {
 				name = "NAME_Synth_Queen_Starbase"
 				effect = {
 					set_owner = event_target:synth_queen_country
-					create_ship = {
-						name = random
-						design = "NAME_Synth_Queen_Starbase"
-					}
+					create_ship = { name = random design = "NAME_Synth_Queen_Starbase" }
 					set_location = {
 						target = event_target:synth_queen_system
 						distance = 50
@@ -1228,10 +1159,7 @@ synth_queen_spawn = {
 				name = "NAME_Synth_Queen_Starbase"
 				effect = {
 					set_owner = event_target:synth_queen_country
-					create_ship = {
-						name = random
-						design = "NAME_Synth_Queen_Starbase"
-					}
+					create_ship = { name = random design = "NAME_Synth_Queen_Starbase" }
 					set_location = {
 						target = event_target:synth_queen_system
 						distance = 50
@@ -1248,10 +1176,7 @@ synth_queen_spawn = {
 				effect = {
 					set_fleet_flag = synth_queen_titan_ship
 					set_owner = prev
-					create_ship = {
-						name = random
-						design = "NAME_Synth_Queen_Titan"
-					}
+					create_ship = { name = random design = "NAME_Synth_Queen_Titan" }
 					set_location = {
 						target = event_target:synth_queen_system
 						distance = 5
@@ -1278,9 +1203,7 @@ synth_queen_wipe_planet = {
 	set_planet_flag = synth_queen_bastille
 	save_global_event_target_as = synth_queen_capital
 	if = {
-		limit = {
-			pop_amount > 0
-		}
+		limit = { pop_amount > 0 }
 		remove_all_buildings = yes
 		destroy_colony = yes
 	}
@@ -1293,16 +1216,12 @@ synth_queen_wipe_system = {
 				exists = owner
 				owner = {
 					is_country_type = default
-					NOT = { has_country_flag = speech_1	}
+					NOT = { has_country_flag = speech_1 }
 				}
 			}
 			save_event_target_as = synth_queen_lost_system
 			owner = {
-				country_event = {
-					id = crisis.8020
-					days = 1
-					random = 5
-				}
+				country_event = { id = crisis.8020 days = 1 random = 5 }
 			}
 		}
 		set_star_flag = synth_queen_system
@@ -1320,15 +1239,11 @@ synth_queen_wipe_system = {
 		every_fleet_in_system = {
 			# Exclude those owned by the Synth Queen, so she won't accidentally destroy her own battleships
 			limit = {
-				owner = {
-					is_synth_queen_country_type = no
-				}
+				owner = { is_synth_queen_country_type = no }
 			}
 			# Destroy all stations
 			if = {
-				limit = {
-					is_mobile = no
-				}
+				limit = { is_mobile = no }
 				delete_fleet = this
 			}
 			# Ships
@@ -1342,14 +1257,10 @@ synth_queen_wipe_system = {
 							}
 						}
 					}
-					every_owned_ship = {
-						reduce_hp_percent = 15
-					}
+					every_owned_ship = { reduce_hp_percent = 15 }
 					closest_system = {
 						limit = {
-							NOT = {
-								has_modifier = queen_scorn_storm
-							}
+							NOT = { has_modifier = queen_scorn_storm }
 						}
 						save_event_target_as = destination_system
 					}
@@ -1385,9 +1296,7 @@ synth_queen_wipe_system = {
 		}
 		if = {
 			limit = {
-				NOT = {
-					has_global_flag = synth_queen_revenge_done
-				}
+				NOT = { has_global_flag = synth_queen_revenge_done }
 			}
 			# Turn the planets into nanite worlds
 			every_system_planet = {
@@ -1406,9 +1315,7 @@ synth_queen_wipe_system = {
 				clear_deposits = yes
 				if = {
 					limit = {
-						NOT = {
-							has_deposit = d_nanites_deposit
-						}
+						NOT = { has_deposit = d_nanites_deposit }
 					}
 					add_deposit = d_nanites_deposit
 				}
@@ -1428,14 +1335,9 @@ synth_queen_wipe_system = {
 				change_pc = pc_gray_goo
 				if = {
 					limit = {
-						NOT = {
-							has_modifier = terraforming_candidate
-						}
+						NOT = { has_modifier = terraforming_candidate }
 					}
-					add_modifier = {
-						modifier = terraforming_candidate
-						days = -1
-					}
+					add_modifier = { modifier = terraforming_candidate days = -1 }
 				}
 			}
 			every_system_planet = {
@@ -1475,11 +1377,7 @@ synth_queen_wipe_system = {
 				limit = {
 					has_star_flag = synth_queen_system
 					exists = event_target:synth_queen_country_global
-					count_ship_in_system = { count = 0
-						limit = {
-							is_ship_size = big_starbase_synth_queen
-						}
-					}
+					NOT = { any_ship_in_system = { is_ship_size = big_starbase_synth_queen } }
 				}
 				create_starbase = {
 					size = starbase_synth_queen
@@ -1493,11 +1391,7 @@ synth_queen_wipe_system = {
 				}
 			}
 		}
-
-		add_modifier = {
-			modifier = queen_scorn_storm
-			days = -1
-		}
+		add_modifier = { modifier = queen_scorn_storm days = -1 }
 	}
 }
 
@@ -1509,17 +1403,11 @@ synth_queen_create_war_fleet = {
 			set_owner = prev
 			while = {
 				count = 18
-				create_ship = {
-					name = random
-					design = "NAME_Synth_Queen_Harrier"
-				}
+				create_ship = { name = random design = "NAME_Synth_Queen_Harrier" }
 			}
 			while = {
 				count = 3
-				create_ship = {
-					name = random
-					design = "NAME_Synth_Queen_Royal_Guard"
-				}
+				create_ship = { name = random design = "NAME_Synth_Queen_Royal_Guard" }
 			}
 			set_location = {
 				target = event_target:synth_queen_capital
@@ -1542,19 +1430,18 @@ synth_queen_spawn_history_projects = {
 			NOT = { exists = event_target:synth_queen_capital_system }
 		}
 		random_system = {
-			limit = {
-				has_star_flag = synth_queen_capital
-			}
+			limit = { has_star_flag = synth_queen_capital }
 			save_global_event_target_as = synth_queen_capital_system
 		}
 	}
+
 	# Set flags to spawn 5 projects (4 lore + one empty one)
 	random_system = {
 		limit = {
-			OR = {
-				NOT = { exists = space_owner }
+			NAND = {
+				exists = space_owner
 				space_owner = {
-					NOR = {
+					OR = {
 						is_homicidal = yes
 						is_synth_queen_country_type = yes
 						is_country_type = synth_queen_outposts
@@ -1578,10 +1465,10 @@ synth_queen_spawn_history_projects = {
 	}
 	random_system = {
 		limit = {
-			OR = {
-				NOT = { exists = space_owner }
+			NAND = {
+				exists = space_owner
 				space_owner = {
-					NOR = {
+					OR = {
 						is_homicidal = yes
 						is_synth_queen_country_type = yes
 						is_country_type = synth_queen_outposts
@@ -1605,10 +1492,10 @@ synth_queen_spawn_history_projects = {
 	}
 	random_system = {
 		limit = {
-			OR = {
-				NOT = { exists = space_owner }
+			NAND = {
+				exists = space_owner
 				space_owner = {
-					NOR = {
+					OR = {
 						is_homicidal = yes
 						is_synth_queen_country_type = yes
 						is_country_type = synth_queen_outposts
@@ -1632,10 +1519,10 @@ synth_queen_spawn_history_projects = {
 	}
 	random_system = {
 		limit = {
-			OR = {
-				NOT = { exists = space_owner }
+			NAND = {
+				exists = space_owner
 				space_owner = {
-					NOR = {
+					OR = {
 						is_homicidal = yes
 						is_synth_queen_country_type = yes
 						is_country_type = synth_queen_outposts
@@ -1659,10 +1546,10 @@ synth_queen_spawn_history_projects = {
 	}
 	random_system = {
 		limit = {
-			OR = {
-				NOT = { exists = space_owner }
+			NAND = {
+				exists = space_owner
 				space_owner = {
-					NOR = {
+					OR = {
 						is_homicidal = yes
 						is_synth_queen_country_type = yes
 						is_country_type = synth_queen_outposts
@@ -1691,10 +1578,10 @@ synth_queen_spawn_history_projects = {
 		count = $NUM_EXTRA_PROJECTS$
 		random_system = {
 			limit = {
-				OR = {
-					NOT = { exists = space_owner }
+				NAND = {
+					exists = space_owner
 					space_owner = {
-						NOR = {
+						OR = {
 							is_homicidal = yes
 							is_synth_queen_country_type = yes
 							is_country_type = synth_queen_outposts
@@ -1717,22 +1604,17 @@ synth_queen_spawn_history_projects = {
 			}
 		}
 	}
+
 	]
 }
 
 synth_queen_spawn_history_projects_for_everyone = {
 	every_system = {
-		limit = {
-			has_star_flag = synth_queen_history_system
-		}
+		limit = { has_star_flag = synth_queen_history_system }
 		every_system_planet = {
-			limit = {
-				has_planet_flag = synth_queen_history_site
-			}
+			limit = { has_planet_flag = synth_queen_history_site }
 			if = {
-				limit = {
-					has_planet_flag = synth_queen_history_site_empty
-				}
+				limit = { has_planet_flag = synth_queen_history_site_empty }
 				enable_special_project = {
 					name = THE_SYNTH_QUEENS_INVESTIGATION_FAKE
 					owner = root
@@ -1751,26 +1633,14 @@ synth_queen_spawn_history_projects_for_everyone = {
 }
 
 synth_queen_create_convoy_fleet = {
-
 	create_country = { # Every Fleet is its own country so you can't aggro them all in one raid
 		name = "NAME_Cetana_Convoys"
 		type = synth_queen_convoys
 		name_list = "CETANA"
 		flag = {
-			icon = {
-				category = "special"
-				file = "synth_queen.dds"
-			}
-			background = {
-				category = "backgrounds"
-				file = "00_solid.dds"
-			}
-			colors = {
-				"dark_blue"
-				"dark_blue"
-				"null"
-				"null"
-			}
+			icon = { category = "special" file = "synth_queen.dds" }
+			background = { category = "backgrounds" file = "00_solid.dds" }
+			colors = { "dark_blue" "dark_blue" "null" "null" }
 		}
 		effect = {
 			set_graphical_culture = synth_queen_01
@@ -1779,10 +1649,7 @@ synth_queen_create_convoy_fleet = {
 				establish_communications_no_message = event_target:synth_queen_convoy_country
 			}
 			set_country_flag = protected_from_queen_storm
-			add_modifier = {
-				modifier = synth_queen_convoy_slowdown
-				days = -1
-			}
+			add_modifier = { modifier = synth_queen_convoy_slowdown days = -1 }
 		}
 	}
 
@@ -1794,17 +1661,11 @@ synth_queen_create_convoy_fleet = {
 			set_name = NAME_Synth_Queen_Convoy
 			while = {
 				count = 6
-				create_ship = {
-					name = random
-					design = "NAME_Synth_Queen_Harrier"
-				}
+				create_ship = { name = random design = "NAME_Synth_Queen_Harrier" }
 			}
 			while = {
 				count = 1
-				create_ship = {
-					name = random
-					design = "NAME_Synth_Queen_Royal_Guard"
-				}
+				create_ship = { name = random design = "NAME_Synth_Queen_Royal_Guard" }
 			}
 			set_location = {
 				target = event_target:synth_queen_capital
@@ -1815,76 +1676,49 @@ synth_queen_create_convoy_fleet = {
 			random_system = {
 				limit = {
 					has_owner = yes
-					owner = {
-						is_country_type = synth_queen_outposts
-					}
+					owner = { is_country_type = synth_queen_outposts }
 					has_star_flag = synth_queen_outpost
 					NOT = { has_star_flag = incoming_convoy }
 				}
-				set_timed_star_flag = {
-					flag = incoming_convoy
-					months = 4
-				}
-				star = {
-					save_event_target_as = convoy_first_destination
-				}
+				set_timed_star_flag = { flag = incoming_convoy months = 4 }
+				star = { save_event_target_as = convoy_first_destination }
 			}
 			auto_move_to_planet = {
 				target = event_target:convoy_first_destination
 				clear_auto_move_on_arrival = yes
 			}
 			every_playable_country = {
-				limit = {
-					has_event_chain = the_synth_queen_raids_chain
-				}
+				limit = { has_event_chain = the_synth_queen_raids_chain }
 				enable_special_project = {
 					name = THE_SYNTH_QUEENS_CONVOY_AMBUSH
 					owner = this
 					location = prev
 				}
 			}
-
-			#Failsafe to grab inactive convoys
+			# Failsafe to grab inactive convoys
 			every_country = {
 				limit = {
 					is_country_type = synth_queen_convoys
-					any_owned_fleet = {
-						is_fleet_idle = yes
-					}
+					any_owned_fleet = { is_fleet_idle = yes }
 				}
 				random_owned_fleet = {
 					owner = {
-						country_event = {
-							id = crisis.8140
-							scopes = {
-								from = prev
-							}
-						}
+						country_event = { id = crisis.8140 scopes = { from = prev } }
 					}
 				}
 			}
-
-			#Failsafe if somehow the queen's war fleets end up stranded
+			# Failsafe if somehow the queen's war fleets end up stranded
 			if = {
 				limit = {
-					count_country = { count = 0
-						limit = {
-							is_endgame_crisis = yes
-							is_fallen_empire = yes
-						}
-					}
+					NOT = { any_country = { is_endgame_crisis = yes is_fallen_empire = yes } }
 				}
 				random_country = {
-					limit = {
-						is_country_type = synth_queen
-					}
+					limit = { is_country_type = synth_queen }
 					random_system_within_border = {
-						limit = {
-							has_star_flag = synth_queen_capital
-						}
+						limit = { has_star_flag = synth_queen_capital }
 						save_event_target_as = synth_queen_capital
 					}
-					#SQ recalls fleets, shores them up, then sends them on patrols
+					# SQ recalls fleets, shores them up, then sends them on patrols
 					every_owned_fleet = {
 						limit = {
 							is_mobile = yes
@@ -1907,20 +1741,9 @@ synth_queen_create_outpost = {
 		type = synth_queen_outposts
 		name_list = "CETANA"
 		flag = {
-			icon = {
-				category = "special"
-				file = "synth_queen.dds"
-			}
-			background = {
-				category = "backgrounds"
-				file = "flag_BG_13.dds"
-			}
-			colors = {
-				"burgundy"
-				"burgundy"
-				"null"
-				"null"
-			}
+			icon = { category = "special" file = "synth_queen.dds" }
+			background = { category = "backgrounds" file = "flag_BG_13.dds" }
+			colors = { "burgundy" "burgundy" "null" "null" }
 		}
 		effect = {
 			set_graphical_culture = synth_queen_01
@@ -1940,9 +1763,7 @@ synth_queen_create_outpost = {
 		owner = event_target:synth_queen_outpost_country
 		effect = {
 			solar_system = {
-				star = {
-					save_event_target_as = sq_outpost
-				}
+				star = { save_event_target_as = sq_outpost }
 			}
 		}
 	}
@@ -1953,27 +1774,18 @@ synth_queen_create_outpost = {
 		effect = {
 			set_owner = event_target:synth_queen_outpost_country
 			set_name = NAME_Outpost_Defenders
-
 			while = {
 				count = 6
-				create_ship = {
-					name = random
-					design = "NAME_Synth_Queen_Harrier"
-				}
+				create_ship = { name = random design = "NAME_Synth_Queen_Harrier" }
 			}
 			while = {
 				count = 1
-				create_ship = {
-					name = random
-					design = "NAME_Synth_Queen_Royal_Guard"
-				}
+				create_ship = { name = random design = "NAME_Synth_Queen_Royal_Guard" }
 			}
 			set_fleet_stance = passive
 			set_aggro_range = 1000
 			set_aggro_range_measure_from = self
-			set_location = {
-				target = event_target:sq_outpost
-			}
+			set_location = { target = event_target:sq_outpost }
 		}
 	}
 
@@ -1998,15 +1810,11 @@ synth_queen_fleet_patrol = {
 					trigger = {
 						id = "crisis_8156.trigger.1"
 						exists = owner
-						owner = {
-							is_same_empire = root
-						}
+						is_owned_by = root
 						NOT = { has_star_flag = synth_queen_capital }
 						has_star_flag = synth_queen_system
 					}
-					found_system = {
-						move_to = this
-					}
+					found_system = { move_to = this }
 				}
 				find_closest_planet = {
 					trigger = {
@@ -2015,10 +1823,7 @@ synth_queen_fleet_patrol = {
 					}
 					found_planet = {
 						orbit_planet = this
-						wait = {
-							duration = 180
-							random = 180
-						}
+						wait = { duration = 180 random = 180 }
 					}
 				}
 			}
@@ -2028,16 +1833,12 @@ synth_queen_fleet_patrol = {
 
 synth_queen_fleet_convoys_patrol = {
 	set_fleet_flag = mobile_convoy
+
 	queue_actions = {
 		repeat = {
-			wait = {
-				duration = 80
-				random = 80
-			}
+			wait = { duration = 80 random = 80 }
 			find_random_planet = {
-				found_planet = {
-					orbit_planet = this
-				}
+				found_planet = { orbit_planet = this }
 			}
 		}
 	}
@@ -2045,18 +1846,11 @@ synth_queen_fleet_convoys_patrol = {
 
 synth_queen_debuff = {
 	if = {
-		limit = {
-			is_difficulty = 6
-		}
-		add_modifier = {
-			modifier = synth_queen_regen_debuff
-			days = -1
-		}
+		limit = { is_difficulty = 6 }
+		add_modifier = { modifier = synth_queen_regen_debuff days = -1 }
 	}
 	else_if = {
-		limit = {
-			is_difficulty = 5
-		}
+		limit = { is_difficulty = 5 }
 		add_modifier = {
 			modifier = synth_queen_regen_debuff
 			days = -1
@@ -2064,9 +1858,7 @@ synth_queen_debuff = {
 		}
 	}
 	else_if = {
-		limit = {
-			is_difficulty = 4
-		}
+		limit = { is_difficulty = 4 }
 		add_modifier = {
 			modifier = synth_queen_regen_debuff
 			days = -1
@@ -2074,9 +1866,7 @@ synth_queen_debuff = {
 		}
 	}
 	else_if = {
-		limit = {
-			is_difficulty = 3
-		}
+		limit = { is_difficulty = 3 }
 		add_modifier = {
 			modifier = synth_queen_regen_debuff
 			days = -1
@@ -2084,9 +1874,7 @@ synth_queen_debuff = {
 		}
 	}
 	else_if = {
-		limit = {
-			is_difficulty = 2
-		}
+		limit = { is_difficulty = 2 }
 		add_modifier = {
 			modifier = synth_queen_regen_debuff
 			days = -1
@@ -2094,9 +1882,7 @@ synth_queen_debuff = {
 		}
 	}
 	else_if = {
-		limit = {
-			is_difficulty = 1
-		}
+		limit = { is_difficulty = 1 }
 		add_modifier = {
 			modifier = synth_queen_regen_debuff
 			days = -1
@@ -2104,9 +1890,7 @@ synth_queen_debuff = {
 		}
 	}
 	else_if = {
-		limit = {
-			is_difficulty = 0
-		}
+		limit = { is_difficulty = 0 }
 		add_modifier = {
 			modifier = synth_queen_regen_debuff
 			days = -1
@@ -2115,27 +1899,16 @@ synth_queen_debuff = {
 	}
 }
 
-#This for the queens demands
+# This for the queens demands
 synth_queen_create_mini_outpost = {
 	create_country = { # Every Outpost is its own country so you can't aggro them all in one raid
 		name = "NAME_Cetana_Outpost"
 		type = synth_queen_outposts
 		name_list = "CETANA"
 		flag = {
-			icon = {
-				category = "special"
-				file = "synth_queen.dds"
-			}
-			background = {
-				category = "backgrounds"
-				file = "flag_BG_13.dds"
-			}
-			colors = {
-				"burgundy"
-				"burgundy"
-				"null"
-				"null"
-			}
+			icon = { category = "special" file = "synth_queen.dds" }
+			background = { category = "backgrounds" file = "flag_BG_13.dds" }
+			colors = { "burgundy" "burgundy" "null" "null" }
 		}
 		effect = {
 			save_event_target_as = synth_queen_outpost_country
@@ -2154,9 +1927,7 @@ synth_queen_create_mini_outpost = {
 		owner = event_target:synth_queen_outpost_country
 		effect = {
 			solar_system = {
-				star = {
-					save_event_target_as = sq_outpost
-				}
+				star = { save_event_target_as = sq_outpost }
 			}
 		}
 	}
@@ -2167,20 +1938,14 @@ synth_queen_create_mini_outpost = {
 		effect = {
 			set_owner = event_target:synth_queen_outpost_country
 			set_name = NAME_Outpost_Defenders
-
 			while = {
 				count = 12
-				create_ship = {
-					name = random
-					design = "NAME_Synth_Queen_Harrier"
-				}
+				create_ship = { name = random design = "NAME_Synth_Queen_Harrier" }
 			}
 			set_fleet_stance = passive
 			set_aggro_range = 1000
 			set_aggro_range_measure_from = self
-			set_location = {
-				target = event_target:sq_outpost
-			}
+			set_location = { target = event_target:sq_outpost }
 		}
 	}
 
@@ -2199,15 +1964,11 @@ synth_queen_mini_wipe_system = {
 			destroy_colony = yes
 		}
 		every_fleet_in_system = {
-			limit = {
-				is_mobile = no
-			}
+			limit = { is_mobile = no }
 			delete_fleet = this
 		}
 		every_fleet_in_system = {
-			limit = {
-				is_mobile = yes
-			}
+			limit = { is_mobile = yes }
 			every_owned_ship = {
 				random_list = {
 					1 = { reduce_hp_percent = 99 }
@@ -2229,7 +1990,9 @@ synth_queen_mini_wipe_system = {
 				}
 				destroy_fleet = this
 			}
-			else = { set_mia = mia_return_home }
+			else = {
+				set_mia = mia_return_home
+			}
 		}
 		every_system_planet = {
 			limit = {
@@ -2246,14 +2009,10 @@ synth_queen_mini_wipe_system = {
 			clear_deposits = yes
 		}
 		random_system_planet = {
-			limit = {
-				is_planet_class = pc_gray_goo
-			}
+			limit = { is_planet_class = pc_gray_goo }
 			if = {
 				limit = {
-					NOT = {
-						has_deposit = d_nanites_deposit
-					}
+					NOT = { has_deposit = d_nanites_deposit }
 				}
 				add_deposit = d_nanites_deposit
 			}
@@ -2272,21 +2031,12 @@ synth_queen_mini_wipe_system = {
 			change_pc = pc_gray_goo
 			if = {
 				limit = {
-					NOT = {
-						has_modifier = terraforming_candidate
-					}
+					NOT = { has_modifier = terraforming_candidate }
 				}
-				add_modifier = {
-					modifier = terraforming_candidate
-					days = -1
-				}
+				add_modifier = { modifier = terraforming_candidate days = -1 }
 			}
 		}
-
-		add_modifier = {
-			modifier = queen_scorn_storm
-			days = -1
-		}
+		add_modifier = { modifier = queen_scorn_storm days = -1 }
 	}
 }
 
@@ -2301,11 +2051,8 @@ create_synth_queen_platform = {
 make_fallen_empire = {
 	set_country_type = fallen_empire
 	set_country_flag = cosmogenesis_fe_empire
-
 	if = {
-		limit = {
-			is_gestalt = no
-		}
+		limit = { is_gestalt = no }
 		change_government = {
 			civics = {
 				civic = civic_lethargic_leadership
@@ -2315,9 +2062,7 @@ make_fallen_empire = {
 		}
 	}
 	else_if = {
-		limit = {
-			is_machine_empire = yes
-		}
+		limit = { is_machine_empire = yes }
 		change_government = {
 			civics = {
 				civic = civic_machine_remnants
@@ -2327,9 +2072,7 @@ make_fallen_empire = {
 		}
 	}
 	else_if = {
-		limit = {
-			is_hive_empire = yes
-		}
+		limit = { is_hive_empire = yes }
 		change_government = {
 			civics = {
 				civic = civic_antediluvian_mind
@@ -2343,13 +2086,9 @@ make_fallen_empire = {
 		add_skill = 9
 	}
 	if = {
-		limit = {
-			country_uses_bio_ships = no
-		}
+		limit = { country_uses_bio_ships = no }
 		if = {
-			limit = {
-				is_gestalt = yes
-			}
+			limit = { is_gestalt = yes }
 			add_global_ship_design = "NAME_Omega"
 			add_global_ship_design = "NAME_Alpha"
 			add_global_ship_design = "NAME_Beta"
@@ -2404,9 +2143,7 @@ make_fallen_empire = {
 			set_graphical_culture = fallen_empire_03
 		}
 		else_if = {
-			limit = {
-				is_fanatic_spiritualist = yes
-			}
+			limit = { is_fanatic_spiritualist = yes }
 			add_global_ship_design = "NAME_Cleanser"
 			add_global_ship_design = "NAME_Eternal"
 			add_global_ship_design = "NAME_Avatar"
@@ -2461,54 +2198,34 @@ make_fallen_empire = {
 		modifier = fe_ship_cost_modifier
 		days = -1
 	}
-	every_system = {
+
+	every_system_within_border = {
 		limit = {
 			has_owner = yes
-			owner = {
-				is_same_empire = root
-			}
+			is_owned_by = root
 			OR = {
 				NOT = { exists = sector }
 				sector = { has_sector_type = normal_sector }
 			}
 		}
 		every_fleet_in_system = {
-			limit = {
-				is_mobile = no
-			}
+			limit = { is_mobile = no }
 			destroy_fleet = this
 		}
 	}
 
 	random_owned_planet = {
-		limit = {
-			is_capital = yes
-		}
-
+		limit = { is_capital = yes }
 		create_fallen_empire_planet = yes
-
 		while = {
 			count = 50
 			random_list = {
 				1 = {
-					modifier = {
-						add = 8
-						is_planet_class = pc_habitat
-					}
-					modifier = {
-						add = 4
-						is_planet_class = pc_hive
-					}
-					modifier = {
-						add = 4
-						is_planet_class = pc_machine
-					}
+					modifier = { add = 8 is_planet_class = pc_habitat }
+					modifier = { add = 4 is_planet_class = pc_hive }
+					modifier = { add = 4 is_planet_class = pc_machine }
 				}
-				9 = {
-					create_pop_group = {
-						species = root.species
-					}
-				}
+				9 = { create_pop_group = { species = root.species } }
 			}
 		}
 	}
@@ -2519,46 +2236,30 @@ make_fallen_empire = {
 			is_planet_class = pc_cosmogenesis_world
 		}
 		destroy_colony = yes
-
 		solar_system = {
-			spawn_megastructure = {
-				type = cosmogenesis_world_ruined
-				coords_from = prev
-			}
+			spawn_megastructure = { type = cosmogenesis_world_ruined coords_from = prev }
 			random_system_planet = {
-				limit = {
-					has_planet_flag = has_cosmogenesis_world
-				}
+				limit = { has_planet_flag = has_cosmogenesis_world }
 				remove_planet_flag = has_cosmogenesis_world
 				remove_planet_flag = has_megastructure
 			}
 		}
-
 		remove_planet = yes
 	}
-
 	every_planet_within_border = {
 		limit = {
 			exists = sector
 			sector = { has_sector_type = core_sector }
-
 			is_colonizable = yes
 		}
-
-		create_colony = {
-			owner = root
-			species = root.species
-		}
-
+		create_colony = { owner = root species = root.species }
 		create_fallen_empire_planet = yes
 	}
 
-	every_system = {
+	every_system_within_border = {
 		limit = {
 			has_owner = yes
-			owner =  {
-				is_same_value = root
-			}
+			is_owned_by = root
 			exists = starbase
 		}
 		starbase = {
@@ -2569,7 +2270,6 @@ make_fallen_empire = {
 			set_starbase_module = { slot = 4 module = hangar_bay }
 			set_starbase_module = { slot = 5 module = gun_battery }
 			set_starbase_module = { slot = 6 module = gun_battery }
-
 			while = {
 				count = 10
 				create_fallen_empire_platform = yes
@@ -2579,41 +2279,30 @@ make_fallen_empire = {
 }
 
 create_fallen_empire_planet = {
-
 	set_planet_flag = fallen_empire_world
-
 	if = {
 		limit = {
 			is_artificial = no
-			root = {
-				is_gestalt = no
-			}
+			root = { is_gestalt = no }
 		}
 		change_pc = pc_city
 	}
-
 	if = {
 		limit = {
 			is_artificial = no
-			root = {
-				is_hive_empire = yes
-			}
+			root = { is_hive_empire = yes }
 		}
 		change_pc = pc_hive
 	}
-
 	if = {
 		limit = {
 			is_artificial = no
-			root = {
-				is_machine_empire = yes
-			}
+			root = { is_machine_empire = yes }
 		}
 		change_pc = pc_machine
 	}
 
 	remove_all_buildings = yes
-
 	if = {
 		limit = {
 			root = { is_machine_empire = yes }
@@ -2621,9 +2310,7 @@ create_fallen_empire_planet = {
 		add_building = building_ancient_control_center
 	}
 	if = {
-		limit = {
-			root = { is_hive_empire = yes }
-		}
+		limit = { root = { is_hive_empire = yes } }
 		add_building = building_ancient_hive_capital
 	}
 	else = {
@@ -2647,6 +2334,7 @@ create_fallen_empire_planet = {
 		add_building = building_class_4_singularity
 		add_building = building_fe_security_2
 	}
+
 	add_building = building_nourishment_center
 	add_building = building_class_4_singularity
 	add_building = building_dimensional_fabricator
@@ -2655,16 +2343,11 @@ create_fallen_empire_planet = {
 	add_building = building_nano_forge
 	add_building = building_fe_dome
 	add_building = building_fe_administration_hive_2
-
 	remove_all_districts = yes
 	if = {
-		limit = {
-			is_planet_class = pc_city
-		}
+		limit = { is_planet_class = pc_city }
 		while = {
-			limit = {
-				free_district_slots > 0
-			}
+			limit = { free_district_slots > 0 }
 			random_list = {
 				3 = { add_district = district_arcology_housing }
 				1 = { add_district = district_arcology_arms_industry }
@@ -2675,13 +2358,9 @@ create_fallen_empire_planet = {
 		}
 	}
 	else_if = {
-		limit = {
-			is_planet_class = pc_ringworld_habitable
-		}
+		limit = { is_planet_class = pc_ringworld_habitable }
 		while = {
-			limit = {
-				free_district_slots > 0
-			}
+			limit = { free_district_slots > 0 }
 			random_list = {
 				3 = { add_district = district_rw_city }
 				1 = { add_district = district_rw_urban_1 }
@@ -2690,27 +2369,17 @@ create_fallen_empire_planet = {
 			}
 		}
 	}
-
 	else_if = {
-		limit = {
-			is_planet_class = pc_habitat
-		}
+		limit = { is_planet_class = pc_habitat }
 		while = {
-			limit = {
-				free_district_slots > 0
-			}
+			limit = { free_district_slots > 0 }
 			add_district = district_hab_housing
 		}
 	}
-
 	else_if = {
-		limit = {
-			is_planet_class = pc_hive
-		}
+		limit = { is_planet_class = pc_hive }
 		while = {
-			limit = {
-				free_district_slots > 0
-			}
+			limit = { free_district_slots > 0 }
 			random_list = {
 				3 = { add_district = district_hive }
 				1 = { add_district = district_hive_1 }
@@ -2720,50 +2389,27 @@ create_fallen_empire_planet = {
 		}
 		if = {
 			limit = {
-				num_districts = {
-					type = district_nexus_1
-					value >= 1
-				}
+				num_districts = { type = district_nexus_1 value >= 1 }
 			}
-			add_zone = {
-				district = district_nexus_1
-				zone = zone_energy_hive
-			}
+			add_zone = { district = district_nexus_1 zone = zone_energy_hive }
 		}
 		if = {
 			limit = {
-				num_districts = {
-					type = district_nexus_2
-					value >= 1
-				}
+				num_districts = { type = district_nexus_2 value >= 1 }
 			}
-			add_zone = {
-				district = district_nexus_2
-				zone = zone_minerals_hive
-			}
+			add_zone = { district = district_nexus_2 zone = zone_minerals_hive }
 		}
 		if = {
 			limit = {
-				num_districts = {
-					type = district_nexus_3
-					value >= 1
-				}
+				num_districts = { type = district_nexus_3 value >= 1 }
 			}
-			add_zone = {
-				district = district_nexus_3
-				zone = zone_food_hive
-			}
+			add_zone = { district = district_nexus_3 zone = zone_food_hive }
 		}
 	}
-
 	else_if = {
-		limit = {
-			is_planet_class = pc_machine
-		}
+		limit = { is_planet_class = pc_machine }
 		while = {
-			limit = {
-				free_district_slots > 0
-			}
+			limit = { free_district_slots > 0 }
 			random_list = {
 				3 = { add_district = district_nexus }
 				1 = { add_district = district_nexus_1 }
@@ -2773,55 +2419,28 @@ create_fallen_empire_planet = {
 		}
 		if = {
 			limit = {
-				num_districts = {
-					type = district_nexus_1
-					value >= 1
-				}
+				num_districts = { type = district_nexus_1 value >= 1 }
 			}
-			add_zone = {
-				district = district_nexus_1
-				zone = zone_energy_nexus
-			}
+			add_zone = { district = district_nexus_1 zone = zone_energy_nexus }
 		}
 		if = {
 			limit = {
-				num_districts = {
-					type = district_nexus_2
-					value >= 1
-				}
+				num_districts = { type = district_nexus_2 value >= 1 }
 			}
-			add_zone = {
-				district = district_nexus_2
-				zone = zone_minerals_nexus
-			}
+			add_zone = { district = district_nexus_2 zone = zone_minerals_nexus }
 		}
 	}
-
 	while = {
 		count = 85
 		random_list = {
 			1 = {
-				modifier = {
-					add = 8
-					is_planet_class = pc_habitat
-				}
-				modifier = {
-					add = 4
-					is_planet_class = pc_hive
-				}
-				modifier = {
-					add = 4
-					is_planet_class = pc_machine
-				}
+				modifier = { add = 8 is_planet_class = pc_habitat }
+				modifier = { add = 4 is_planet_class = pc_hive }
+				modifier = { add = 4 is_planet_class = pc_machine }
 			}
-			9 = {
-				create_pop_group = {
-					species = root.species
-				}
-			}
+			9 = { create_pop_group = { species = root.species } }
 		}
 	}
-
 	while = {
 		count = 20
 		random_list = {
@@ -2829,9 +2448,7 @@ create_fallen_empire_planet = {
 				modifier = {
 					factor = 0
 					exists = owner
-					owner = {
-						is_machine_empire = no
-					}
+					owner = { is_machine_empire = no }
 				}
 				create_army = {
 					name = random
@@ -2844,9 +2461,7 @@ create_fallen_empire_planet = {
 				modifier = {
 					factor = 0
 					exists = owner
-					owner = {
-						has_finished_psionic_tradition = no
-					}
+					owner = { has_finished_psionic_tradition = no }
 				}
 				create_army = {
 					name = random
@@ -2855,7 +2470,6 @@ create_fallen_empire_planet = {
 					type = "psionic_army"
 				}
 			}
-
 			1 = {
 				modifier = {
 					factor = 0
@@ -2876,7 +2490,6 @@ create_fallen_empire_planet = {
 					type = "gene_warrior_army"
 				}
 			}
-
 			1 = {
 				modifier = {
 					factor = 0
@@ -2914,6 +2527,7 @@ create_fallen_empire_cosmogenesis_fleet = {
 			leader_age_max = 45
 		}
 	}
+
 	create_fleet = {
 		effect = {
 			set_owner = root
@@ -2957,12 +2571,16 @@ create_fallen_empire_cosmogenesis_fleet = {
 			}
 		}
 	}
-	last_created_fleet = { assign_leader = last_created_leader }
+
+	last_created_fleet = {
+		assign_leader = last_created_leader
+	}
 }
 
 create_fallen_empire_cosmogenesis_navy = {
 	create_fallen_empire_cosmogenesis_fleet = yes
 	create_fallen_empire_cosmogenesis_fleet = yes
+
 	random = {
 		chance = 50
 		create_fallen_empire_cosmogenesis_fleet = yes
@@ -2972,9 +2590,7 @@ create_fallen_empire_cosmogenesis_navy = {
 		create_fallen_empire_cosmogenesis_fleet = yes
 	}
 	if = {
-		limit = {
-			has_apocalypse_dlc = yes
-		}
+		limit = { has_apocalypse_dlc = yes }
 		random = {
 			chance = 75
 			create_fleet = {
@@ -2990,6 +2606,7 @@ create_fallen_empire_cosmogenesis_navy = {
 			}
 		}
 	}
+
 	random = {
 		chance = 75
 		create_fleet = {
@@ -3018,6 +2635,7 @@ create_fallen_empire_cosmogenesis_navy = {
 			}
 		}
 	}
+
 	create_fleet = {
 		effect = {
 			set_owner = root
@@ -3134,125 +2752,59 @@ technological_gifts_of_the_synth_queen_effect = {
 		}
 		locked_random_list = {
 			1 = {
-				modifier = {
-					factor = 0
-					has_technology = tech_ascension_theory
-				}
+				modifier = { factor = 0 has_technology = tech_ascension_theory }
 				add_research_option = tech_ascension_theory
-				add_tech_progress = {
-					tech = tech_ascension_theory
-					progress = 0.50
-				}
+				add_tech_progress = { tech = tech_ascension_theory progress = 0.50 }
 			}
 			1 = {
-				modifier = {
-					factor = 0
-					has_technology = tech_enigmatic_encoder
-				}
+				modifier = { factor = 0 has_technology = tech_enigmatic_encoder }
 				add_research_option = tech_enigmatic_encoder
-				add_tech_progress = {
-					tech = tech_enigmatic_encoder
-					progress = 0.50
-				}
+				add_tech_progress = { tech = tech_enigmatic_encoder progress = 0.50 }
 			}
 			1 = {
-				modifier = {
-					factor = 0
-					has_technology = tech_enigmatic_decoder
-				}
+				modifier = { factor = 0 has_technology = tech_enigmatic_decoder }
 				add_research_option = tech_enigmatic_decoder
-				add_tech_progress = {
-					tech = tech_enigmatic_decoder
-					progress = 0.50
-				}
+				add_tech_progress = { tech = tech_enigmatic_decoder progress = 0.50 }
 			}
 			1 = {
-				modifier = {
-					factor = 0
-					has_technology = tech_dark_matter_deflector
-				}
+				modifier = { factor = 0 has_technology = tech_dark_matter_deflector }
 				add_research_option = tech_dark_matter_deflector
-				add_tech_progress = {
-					tech = tech_dark_matter_deflector
-					progress = 0.50
-				}
+				add_tech_progress = { tech = tech_dark_matter_deflector progress = 0.50 }
 			}
 			1 = {
-				modifier = {
-					factor = 0
-					has_technology = tech_shield_hardeners_2
-				}
+				modifier = { factor = 0 has_technology = tech_shield_hardeners_2 }
 				add_research_option = tech_shield_hardeners_2
-				add_tech_progress = {
-					tech = tech_shield_hardeners_2
-					progress = 0.50
-				}
+				add_tech_progress = { tech = tech_shield_hardeners_2 progress = 0.50 }
 			}
 			1 = {
-				modifier = {
-					factor = 0
-					has_technology = tech_dark_matter_power_core
-				}
+				modifier = { factor = 0 has_technology = tech_dark_matter_power_core }
 				add_research_option = tech_dark_matter_power_core
-				add_tech_progress = {
-					tech = tech_dark_matter_power_core
-					progress = 0.50
-				}
+				add_tech_progress = { tech = tech_dark_matter_power_core progress = 0.50 }
 			}
 			1 = {
-				modifier = {
-					factor = 0
-					has_technology = tech_jump_drive_1
-				}
+				modifier = { factor = 0 has_technology = tech_jump_drive_1 }
 				add_research_option = tech_jump_drive_1
-				add_tech_progress = {
-					tech = tech_jump_drive_1
-					progress = 0.50
-				}
+				add_tech_progress = { tech = tech_jump_drive_1 progress = 0.50 }
 			}
 			1 = {
-				modifier = {
-					factor = 0
-					has_technology = tech_dragon_armor
-				}
+				modifier = { factor = 0 has_technology = tech_dragon_armor }
 				add_research_option = tech_dragon_armor
-				add_tech_progress = {
-					tech = tech_dragon_armor
-					progress = 0.50
-				}
+				add_tech_progress = { tech = tech_dragon_armor progress = 0.50 }
 			}
 			1 = {
-				modifier = {
-					factor = 0
-					has_technology = tech_armor_hardeners_2
-				}
+				modifier = { factor = 0 has_technology = tech_armor_hardeners_2 }
 				add_research_option = tech_armor_hardeners_2
-				add_tech_progress = {
-					tech = tech_armor_hardeners_2
-					progress = 0.50
-				}
+				add_tech_progress = { tech = tech_armor_hardeners_2 progress = 0.50 }
 			}
 			1 = {
-				modifier = {
-					factor = 0
-					has_technology = tech_mine_living_metal
-				}
+				modifier = { factor = 0 has_technology = tech_mine_living_metal }
 				add_research_option = tech_mine_living_metal
-				add_tech_progress = {
-					tech = tech_mine_living_metal
-					progress = 0.50
-				}
+				add_tech_progress = { tech = tech_mine_living_metal progress = 0.50 }
 			}
 			1 = {
-				modifier = {
-					factor = 0
-					has_technology = tech_mega_engineering
-				}
+				modifier = { factor = 0 has_technology = tech_mega_engineering }
 				add_research_option = tech_mega_engineering
-				add_tech_progress = {
-					tech = tech_mega_engineering
-					progress = 0.50
-				}
+				add_tech_progress = { tech = tech_mega_engineering progress = 0.50 }
 			}
 		}
 	}
@@ -3262,15 +2814,10 @@ technological_gifts_of_the_synth_queen_effect = {
 		}
 		set_country_flag = synth_queen_knowledge
 		add_research_option = tech_synth_queen_knowledge
-		add_tech_progress = {
-			tech = tech_synth_queen_knowledge
-			progress = 0.50
-		}
+		add_tech_progress = { tech = tech_synth_queen_knowledge progress = 0.50 }
 	}
 	else_if = {
-		limit = {
-			has_technology = tech_synth_queen_knowledge
-		}
+		limit = { has_technology = tech_synth_queen_knowledge }
 		locked_random_list = {
 			10 = {
 				add_random_research_option = {
@@ -3326,17 +2873,17 @@ defeating_synth_queen_rewards = {
 		modifier = "cetana_defeated"
 		years = 10
 	}
+
 	add_monthly_resource_mult = {
 		resource = unity
 		value = @tier5unityreward
 	}
+
 	hidden_effect = {
 		end_event_chain = "the_synth_queen_war_chain"
 		end_event_chain = "the_synth_queen_history_chain"
 		if = {
-			limit = {
-				has_origin = origin_cybernetic_creed
-			}
+			limit = { has_origin = origin_cybernetic_creed }
 			set_country_flag = footsteps_of_the_prophet_achievement
 		}
 	}
@@ -3362,9 +2909,7 @@ set_random_cybernetic_portrait_effect = {
 
 save_nanotech_subsume_target = {
 	random_system_within_border = {
-		limit = {
-			is_capital_system = yes
-		}
+		limit = { is_capital_system = yes }
 		random_system_planet = {
 			limit = {
 				NOR = {
@@ -3397,14 +2942,11 @@ create_synth_species_effect = {
 				plural = this
 				class = "ROBOT"
 				portrait = "default_robot"
-				traits = {
-					trait = trait_mechanical
-				}
+				traits = { trait = trait_mechanical }
 				can_be_modified = this
 				homeworld = this
 				namelist = this
 				gender = this
-
 				effect = {
 					set_synth_origin_traits_effect = yes
 					set_synth_or_robot_portrait_effect = yes
@@ -3415,9 +2957,7 @@ create_synth_species_effect = {
 		}
 		owner = {
 			if = {
-				limit = {
-					has_policy_flag = robots_outlawed
-				}
+				limit = { has_policy_flag = robots_outlawed }
 				set_policy = {
 					policy = robot_pop_policy
 					option = robot_pops_allowed
@@ -3440,9 +2980,7 @@ create_synth_species_effect = {
 		}
 	}
 	else = { # Vfix opt: local event_target
-		event_target:synthspecies@root.owner = {
-			save_event_target_as = current_synthspecies
-		}
+		event_target:synthspecies@root.owner = { save_event_target_as = current_synthspecies }
 	}
 }
 
@@ -3450,10 +2988,26 @@ set_synth_origin_traits_effect = {
 	prev = {
 		switch = {
 			trigger = has_trait
-			trait_survivor = { prev = { change_species_characteristics = { add_trait = trait_robot_survivor } } }
-			trait_void_dweller_1 = { prev = { change_species_characteristics = { add_trait = trait_void_dweller_2 } } }
-			trait_aquatic = { prev = { change_species_characteristics = { add_trait = trait_robot_aquatic } } }
-			trait_cave_dweller = { prev = { change_species_characteristics = { add_trait = trait_robot_cave_dweller } } }
+			trait_survivor = {
+				prev = {
+					change_species_characteristics = { add_trait = trait_robot_survivor }
+				}
+			}
+			trait_void_dweller_1 = {
+				prev = {
+					change_species_characteristics = { add_trait = trait_void_dweller_2 }
+				}
+			}
+			trait_aquatic = {
+				prev = {
+					change_species_characteristics = { add_trait = trait_robot_aquatic }
+				}
+			}
+			trait_cave_dweller = {
+				prev = {
+					change_species_characteristics = { add_trait = trait_robot_cave_dweller }
+				}
+			}
 		}
 	}
 }
@@ -3590,9 +3144,7 @@ set_synth_or_robot_portrait_effect = {
 doomclock_increase_small = {
 	event_target:synth_queen_country_global = {
 		random_situation = {
-			limit = {
-				is_situation_type = situation_synth_queen_doomclock
-			}
+			limit = { is_situation_type = situation_synth_queen_doomclock }
 			if = {
 				limit = {
 					check_galaxy_setup_value = { setting = crisis_strength_scale value < 1 }
@@ -3636,9 +3188,7 @@ doomclock_increase_small = {
 doomclock_increase_large = {
 	event_target:synth_queen_country_global = {
 		random_situation = {
-			limit = {
-				is_situation_type = situation_synth_queen_doomclock
-			}
+			limit = { is_situation_type = situation_synth_queen_doomclock }
 			if = {
 				limit = {
 					check_galaxy_setup_value = { setting = crisis_strength_scale value < 1 }
@@ -3681,6 +3231,7 @@ doomclock_increase_large = {
 
 arc_welders_start_effect = {
 	save_event_target_as = arc_welders_empire
+
 	capital_scope.solar_system = {
 		# Prefer existing molten planets...
 		if = {
@@ -3688,18 +3239,14 @@ arc_welders_start_effect = {
 				any_system_planet = {
 					is_moon = no
 					is_planet_class = pc_molten
-					NOT = {
-						has_deposit_for = shipclass_research_station
-					}
+					NOT = { has_deposit_for = shipclass_research_station }
 				}
 			}
 			random_system_planet = {
 				limit = {
 					is_moon = no
 					is_planet_class = pc_molten
-					NOT = {
-						has_deposit_for = shipclass_research_station
-					}
+					NOT = { has_deposit_for = shipclass_research_station }
 				}
 				save_event_target_as = arc_furnace_site
 			}
@@ -3713,9 +3260,7 @@ arc_welders_start_effect = {
 						is_planet_class = pc_toxic
 						is_planet_class = pc_barren
 					}
-					NOT = {
-						has_deposit_for = shipclass_research_station
-					}
+					NOT = { has_deposit_for = shipclass_research_station }
 				}
 			}
 			random_system_planet = {
@@ -3725,9 +3270,7 @@ arc_welders_start_effect = {
 						is_planet_class = pc_toxic
 						is_planet_class = pc_barren
 					}
-					NOT = {
-						has_deposit_for = shipclass_research_station
-					}
+					NOT = { has_deposit_for = shipclass_research_station }
 				}
 				change_pc = pc_molten
 				save_event_target_as = arc_furnace_site
@@ -3743,9 +3286,7 @@ arc_welders_start_effect = {
 						is_planet_class = pc_barren
 						is_planet_class = pc_barren_cold
 					}
-					NOT = {
-						has_deposit_for = shipclass_research_station
-					}
+					NOT = { has_deposit_for = shipclass_research_station }
 				}
 				change_pc = pc_molten
 				save_event_target_as = arc_furnace_site
@@ -3768,7 +3309,9 @@ arc_welders_start_effect = {
 				}
 			}
 			max_steps = 3
-			origin_spawn_system_effect = { INITIALIZER = arc_welders_construction_system }
+			origin_spawn_system_effect = {
+				INITIALIZER = arc_welders_construction_system
+			}
 			add_extra_hyperlane_to_spawned_system_effect = yes
 		}
 	}
@@ -3776,25 +3319,19 @@ arc_welders_start_effect = {
 		id = machine_age.3410 # Need to set the variable for number of arc furnaces constructed
 		days = 1
 	}
-	give_technology = {
-		tech = tech_orbital_arc_furnace
-		message = no
-	}
+	give_technology = { tech = tech_orbital_arc_furnace message = no }
+
 	capital_scope = {
 		set_planet_size = 15
 		while = {
 			count = 3
 			random_owned_pop_group = {
-				limit = {
-					is_same_species = event_target:arc_welders_empire.species
-				}
+				limit = { is_same_species = event_target:arc_welders_empire.species }
 				kill_single_pop = yes
 			}
 		}
 		while = {
-			limit = {
-				has_district = district_mining
-			}
+			limit = { has_district = district_mining }
 			remove_district = district_mining
 			add_district_and_planet_size_if_needed_effect = {
 				district = district_generator
@@ -3818,15 +3355,10 @@ obsessional_directive_start_effect = {
 			add_deposit = d_consumer_goods_obsessional_directive
 			if = {
 				limit = {
-					NOT = {
-						has_modifier = obsessional_directive_mod
-					}
+					NOT = { has_modifier = obsessional_directive_mod }
 				}
 				hidden_effect = {
-					add_modifier = {
-						modifier = obsessional_directive_mod
-						days = -1
-					}
+					add_modifier = { modifier = obsessional_directive_mod days = -1 }
 				}
 			}
 		}
@@ -3836,7 +3368,7 @@ obsessional_directive_start_effect = {
 doomclock_reveal = {
 	if = {
 		limit = {
-			NOT = {	has_country_flag =synth_queen_player_can_see_doomclock }
+			NOT = { has_country_flag = synth_queen_player_can_see_doomclock }
 		}
 		set_country_flag = synth_queen_player_can_see_doomclock
 	}
@@ -3844,11 +3376,10 @@ doomclock_reveal = {
 
 synth_queen_progress_situation = {
 	random_situation = {
-		limit = {
-			is_situation_type = situation_synth_queen_player_facing
-		}
+		limit = { is_situation_type = situation_synth_queen_player_facing }
 		save_event_target_as = queen_situation
 	}
+
 	# This looks ugly but will make the tooltip look tidy and clean
 	event_target:queen_situation = {
 		add_situation_progress = $SCORE$
@@ -3861,29 +3392,22 @@ synth_queen_give_storm_project = {
 			NOT = { has_country_flag = synth_queen_started_storm_project }
 		}
 		set_country_flag = synth_queen_started_storm_project
-		enable_special_project = {
-			name = "THE_SYNTH_QUEENS_STORM"
-			owner = root
-		}
+		enable_special_project = { name = "THE_SYNTH_QUEENS_STORM" owner = root }
 	}
 	else_if = { # If you already got and finished the first project, get the second one
 		limit = {
 			has_country_flag = synth_queen_started_storm_project
 			has_country_flag = synth_queen_researched_first_storm_project
 		}
-		enable_special_project = {
-			name = "THE_SYNTH_QUEENS_STORM_2"
-			owner = root
-		}
+		enable_special_project = { name = "THE_SYNTH_QUEENS_STORM_2" owner = root }
 	}
+
 	# If you are still researching the first project, you will get the second one after that
 }
 
 synth_queen_raid_projects = {
 	every_system = {
-		limit = {
-			has_star_flag = synth_queen_outpost
-		}
+		limit = { has_star_flag = synth_queen_outpost }
 		enable_special_project = {
 			name = THE_SYNTH_QUEENS_OUTPOST_AMBUSH
 			owner = prev
@@ -3895,14 +3419,10 @@ synth_queen_raid_projects = {
 synth_queen_fe_war = {
 	if = {
 		limit = {
-			any_country = {
-				is_fallen_empire = yes
-			}
+			any_country = { is_fallen_empire = yes }
 		}
 		every_country = {
-			limit = {
-				is_fallen_empire = yes
-			}
+			limit = { is_fallen_empire = yes }
 			declare_war = {
 				target = event_target:synth_queen_country_global
 				name = cetana_war
@@ -3923,18 +3443,14 @@ synth_queen_scion_warning = {
 			any_playable_country = {
 				has_origin = origin_scion
 				exists = overlord
-				overlord = {
-					has_country_flag = scion_master
-				}
+				overlord = { has_country_flag = scion_master }
 			}
 		}
 		every_playable_country = {
 			limit = {
 				has_origin = origin_scion
 				exists = overlord
-				overlord = {
-					has_country_flag = scion_master
-				}
+				overlord = { has_country_flag = scion_master }
 			}
 			# Scion receive a message changing their agreement terms
 			country_event = { id = crisis.8046 days = 7 }
@@ -3970,9 +3486,7 @@ nanotech_deposit_nanite_generation = {
 	event_target:nanotech_country = {
 		if = {
 			limit = {
-				NOT = {
-					has_country_flag = notified_of_nanites_payoff
-				}
+				NOT = { has_country_flag = notified_of_nanites_payoff }
 			}
 			create_message = {
 				type = MESSAGE_NANOTECH_BOON
@@ -3980,12 +3494,10 @@ nanotech_deposit_nanite_generation = {
 				days = 30
 				target = prev
 			}
-			set_timed_country_flag = {
-				flag = notified_of_nanites_payoff
-				months = 2
-			}
+			set_timed_country_flag = { flag = notified_of_nanites_payoff months = 2 }
 		}
 	}
+
 	random_list = {
 		1 = {
 			modifier = {
@@ -3993,9 +3505,7 @@ nanotech_deposit_nanite_generation = {
 				NOT = { has_planet_flag = nanites_doubled_4 }
 			}
 			event_target:nanotech_country = {
-				add_resource = {
-					nanites = 1024
-				}
+				add_resource = { nanites = 1024 }
 			}
 		}
 		1 = {
@@ -4004,9 +3514,7 @@ nanotech_deposit_nanite_generation = {
 				NOT = { has_planet_flag = nanites_doubled_5 }
 			}
 			event_target:nanotech_country = {
-				add_resource = {
-					nanites = 2048
-				}
+				add_resource = { nanites = 2048 }
 			}
 		}
 		1 = {
@@ -4015,9 +3523,7 @@ nanotech_deposit_nanite_generation = {
 				NOT = { has_planet_flag = nanites_doubled_6 }
 			}
 			event_target:nanotech_country = {
-				add_resource = {
-					nanites = 4096
-				}
+				add_resource = { nanites = 4096 }
 			}
 		}
 		1 = {
@@ -4026,9 +3532,7 @@ nanotech_deposit_nanite_generation = {
 				NOT = { has_planet_flag = nanites_doubled_7 }
 			}
 			event_target:nanotech_country = {
-				add_resource = {
-					nanites = 8192
-				}
+				add_resource = { nanites = 8192 }
 			}
 		}
 		1 = {
@@ -4037,9 +3541,7 @@ nanotech_deposit_nanite_generation = {
 				NOT = { has_planet_flag = nanites_doubled_8 }
 			}
 			event_target:nanotech_country = {
-				add_resource = {
-					nanites = 16384
-				}
+				add_resource = { nanites = 16384 }
 			}
 		}
 		1 = {
@@ -4048,9 +3550,7 @@ nanotech_deposit_nanite_generation = {
 				NOT = { has_planet_flag = nanites_doubled_9 }
 			}
 			event_target:nanotech_country = {
-				add_resource = {
-					nanites = 32768
-				}
+				add_resource = { nanites = 32768 }
 			}
 		}
 	}
@@ -4061,74 +3561,46 @@ get_cetana_face = {
 		switch = {
 			trigger = is_species_class
 			MAM = {
-				event_target:cetana_mammalian = {
-					save_event_target_as = cetana_face
-				}
+				event_target:cetana_mammalian = { save_event_target_as = cetana_face }
 			}
 			HUM = {
-				event_target:cetana_mammalian = {
-					save_event_target_as = cetana_face
-				}
+				event_target:cetana_mammalian = { save_event_target_as = cetana_face }
 			}
 			REP = {
-				event_target:cetana_reptilian = {
-					save_event_target_as = cetana_face
-				}
+				event_target:cetana_reptilian = { save_event_target_as = cetana_face }
 			}
 			AVI = {
-				event_target:cetana_avian = {
-					save_event_target_as = cetana_face
-				}
+				event_target:cetana_avian = { save_event_target_as = cetana_face }
 			}
 			ART = {
-				event_target:cetana_molluscoid = {
-					save_event_target_as = cetana_face
-				}
+				event_target:cetana_molluscoid = { save_event_target_as = cetana_face }
 			}
 			MOL = {
-				event_target:cetana_molluscoid = {
-					save_event_target_as = cetana_face
-				}
+				event_target:cetana_molluscoid = { save_event_target_as = cetana_face }
 			}
 			TOX = {
-				event_target:cetana_molluscoid = {
-					save_event_target_as = cetana_face
-				}
+				event_target:cetana_molluscoid = { save_event_target_as = cetana_face }
 			}
 			FUN = {
-				event_target:cetana_plantoid = {
-					save_event_target_as = cetana_face
-				}
+				event_target:cetana_plantoid = { save_event_target_as = cetana_face }
 			}
 			PLANT = {
-				event_target:cetana_plantoid = {
-					save_event_target_as = cetana_face
-				}
+				event_target:cetana_plantoid = { save_event_target_as = cetana_face }
 			}
 			LITHOID = {
-				event_target:cetana_lithoid = {
-					save_event_target_as = cetana_face
-				}
+				event_target:cetana_lithoid = { save_event_target_as = cetana_face }
 			}
 			AQUATIC = {
-				event_target:cetana_aquatic = {
-					save_event_target_as = cetana_face
-				}
+				event_target:cetana_aquatic = { save_event_target_as = cetana_face }
 			}
 			MACHINE = {
-				event_target:cetana_robot = {
-					save_event_target_as = cetana_face
-				}
+				event_target:cetana_robot = { save_event_target_as = cetana_face }
 			}
 			ROBOT = {
-				event_target:cetana_robot = {
-					save_event_target_as = cetana_face
-				}
+				event_target:cetana_robot = { save_event_target_as = cetana_face }
 			}
 			default = {
-				event_target:cetana_mammalian = {
-					save_event_target_as = cetana_face
-				}
+				event_target:cetana_mammalian = { save_event_target_as = cetana_face }
 			}
 		}
 	}
@@ -4136,148 +3608,104 @@ get_cetana_face = {
 
 save_deposits = {
 	if = {
-		limit = {
-			has_deposit = d_genesis_preserve
-		}
+		limit = { has_deposit = d_genesis_preserve }
 		set_planet_flag = d_genesis_preserve
 	}
 	if = {
-		limit = {
-			has_deposit = d_genesis_monument
-		}
+		limit = { has_deposit = d_genesis_monument }
 		set_planet_flag = d_genesis_monument
 	}
 	if = {
-		limit = {
-			has_deposit = d_nanites_medium
-		}
+		limit = { has_deposit = d_nanites_medium }
 		set_planet_flag = d_nanites_medium
 	}
 	if = {
-		limit = {
-			has_deposit = d_nanites_small
-		}
+		limit = { has_deposit = d_nanites_small }
 		set_planet_flag = d_nanites_small
 	}
 	if = {
-		limit = {
-			has_deposit = d_nanites_tiny
-		}
+		limit = { has_deposit = d_nanites_tiny }
 		set_planet_flag = d_nanites_tiny
 	}
 	if = {
-		limit = {
-			has_deposit = d_living_metal_medium
-		}
+		limit = { has_deposit = d_living_metal_medium }
 		set_planet_flag = d_living_metal_medium
 	}
 	if = {
-		limit = {
-			has_deposit = d_living_metal_small
-		}
+		limit = { has_deposit = d_living_metal_small }
 		set_planet_flag = d_living_metal_small
 	}
 	if = {
-		limit = {
-			has_deposit = d_living_metal_tiny
-		}
+		limit = { has_deposit = d_living_metal_tiny }
 		set_planet_flag = d_living_metal_tiny
 	}
 	if = {
-		limit = {
-			has_deposit = d_virtual_power_medium
-		}
+		limit = { has_deposit = d_virtual_power_medium }
 		set_planet_flag = d_virtual_power_medium
 	}
 	if = {
-		limit = {
-			has_deposit = d_virtual_power_small
-		}
+		limit = { has_deposit = d_virtual_power_small }
 		set_planet_flag = d_virtual_power_small
 	}
 	if = {
-		limit = {
-			has_deposit = d_virtual_power_tiny
-		}
+		limit = { has_deposit = d_virtual_power_tiny }
 		set_planet_flag = d_virtual_power_tiny
 	}
 }
 
 restore_saved_deposits = {
 	if = {
-		limit = {
-			has_planet_flag = d_genesis_preserve
-		}
+		limit = { has_planet_flag = d_genesis_preserve }
 		add_deposit = d_genesis_preserve
 		remove_planet_flag = d_genesis_preserve
 	}
 	if = {
-		limit = {
-			has_planet_flag = d_genesis_monument
-		}
+		limit = { has_planet_flag = d_genesis_monument }
 		add_deposit = d_genesis_monument
 		remove_planet_flag = d_genesis_monument
 	}
 	if = {
-		limit = {
-			has_planet_flag = d_nanites_medium
-		}
+		limit = { has_planet_flag = d_nanites_medium }
 		add_deposit = d_nanites_medium
 		remove_planet_flag = d_nanites_medium
 	}
 	if = {
-		limit = {
-			has_planet_flag = d_nanites_small
-		}
+		limit = { has_planet_flag = d_nanites_small }
 		add_deposit = d_nanites_small
 		remove_planet_flag = d_nanites_small
 	}
 	if = {
-		limit = {
-			has_planet_flag = d_nanites_tiny
-		}
+		limit = { has_planet_flag = d_nanites_tiny }
 		add_deposit = d_nanites_tiny
 		remove_planet_flag = d_nanites_tiny
 	}
 	if = {
-		limit = {
-			has_planet_flag = d_living_metal_medium
-		}
+		limit = { has_planet_flag = d_living_metal_medium }
 		add_deposit = d_living_metal_medium
 		remove_planet_flag = d_living_metal_medium
 	}
 	if = {
-		limit = {
-			has_planet_flag = d_living_metal_small
-		}
+		limit = { has_planet_flag = d_living_metal_small }
 		add_deposit = d_living_metal_small
 		remove_planet_flag = d_living_metal_small
 	}
 	if = {
-		limit = {
-			has_planet_flag = d_living_metal_tiny
-		}
+		limit = { has_planet_flag = d_living_metal_tiny }
 		add_deposit = d_living_metal_tiny
 		remove_planet_flag = d_living_metal_tiny
 	}
 	if = {
-		limit = {
-			has_planet_flag = d_virtual_power_medium
-		}
+		limit = { has_planet_flag = d_virtual_power_medium }
 		add_deposit = d_virtual_power_medium
 		remove_planet_flag = d_virtual_power_medium
 	}
 	if = {
-		limit = {
-			has_planet_flag = d_virtual_power_small
-		}
+		limit = { has_planet_flag = d_virtual_power_small }
 		add_deposit = d_virtual_power_small
 		remove_planet_flag = d_virtual_power_small
 	}
 	if = {
-		limit = {
-			has_planet_flag = d_virtual_power_tiny
-		}
+		limit = { has_planet_flag = d_virtual_power_tiny }
 		add_deposit = d_virtual_power_tiny
 		remove_planet_flag = d_virtual_power_tiny
 	}

@@ -309,14 +309,12 @@ decision_resort_colony = {
 			is_planet_class = pc_city
 			AND = {
 				is_planet_class = pc_nuked
-				NOT = {
-					owner = {
-						OR = {
-							is_memorialist_empire = yes
-							has_trait = trait_survivor
-							has_trait = trait_pc_nuked_preference
-							has_trait = trait_plantoid_radiotrophic
-						}
+				owner = {
+					NOR = {
+						is_memorialist_empire = yes
+						has_trait = trait_survivor
+						has_trait = trait_pc_nuked_preference
+						has_trait = trait_plantoid_radiotrophic
 					}
 				}
 			}
@@ -970,7 +968,9 @@ decision_arcology_project = {
 		category = decisions
 		cost = {
 			influence = 200
-			alloys = 10000
+			# Vfix patch
+			alloys = 5000 # 10000 # v4.3.b
+			minerals = 10000 # 20000 v4.2
 		}
 	}
 
@@ -1097,7 +1097,9 @@ decision_arcology_project_relic = {
 		category = decisions
 		cost = {
 			influence = 200
-			alloys = 10000
+			# Vfix patch
+			alloys = 5000 # 10000 # v4.3.b
+			minerals = 10000 # 20000 v4.2
 		}
 	}
 
@@ -1938,7 +1940,9 @@ decision_shattered_ring_project = {
 				}
 			}
 			if = {
-				limit = { owner = { is_hive_empire = yes } }
+				limit = {
+					owner = { is_hive_empire = yes }
+				}
 				shattered_ring_world_conversion_effect = {
 					DISTRICT = district_rw_hive
 					VARIABLE = num_housing_districts
@@ -2090,7 +2094,10 @@ decision_expand_planetary_sea = {
 			}
 		}
 		else = {
-			custom_tooltip = { text = requires_max_3_times_pass_simple always = yes }
+			custom_tooltip = {
+				text = requires_max_3_times_pass_simple
+				always = yes
+			}
 		}
 	}
 

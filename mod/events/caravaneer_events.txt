@@ -1501,9 +1501,8 @@ country_event = {
 	}
 	desc = {
 		trigger = {
-			count_system_within_border = {
-				count = 0
-				limit = {
+			NOT = {
+				any_system_within_border = {
 					any_fleet_in_system = { is_owned_by = event_target:caravaneer_fleet1_country }
 				}
 			}
@@ -1565,10 +1564,9 @@ country_event = {
 	option = {
 		name = cara_not_in_borders_exit
 		exclusive_trigger = {
-			is_homicidal = no
-			count_system_within_border = {
-				count = 0
-				limit = {
+			NOR = {
+				is_homicidal = yes
+				any_system_within_border = {
 					any_fleet_in_system = { is_owned_by = event_target:caravaneer_fleet1_country }
 				}
 			}
@@ -2154,9 +2152,8 @@ country_event = {
 	}
 	desc = {
 		trigger = {
-			count_system_within_border = {
-				count = 0
-				limit = {
+			NOT = {
+				any_system_within_border = {
 					any_fleet_in_system = { is_owned_by = event_target:caravaneer_fleet2_country }
 				}
 			}
@@ -2221,10 +2218,9 @@ country_event = {
 	option = {
 		name = cara_not_in_borders_exit
 		exclusive_trigger = {
-			is_homicidal = no
-			count_system_within_border = {
-				count = 0
-				limit = {
+			NOR = {
+				is_homicidal = yes
+				any_system_within_border = {
 					any_fleet_in_system = { is_owned_by = event_target:caravaneer_fleet2_country }
 				}
 			}
@@ -2913,9 +2909,8 @@ country_event = {
 	}
 	desc = {
 		trigger = {
-			count_system_within_border = {
-				count = 0
-				limit = {
+			NOT = {
+				any_system_within_border = {
 					any_fleet_in_system = { is_owned_by = event_target:caravaneer_fleet3_country }
 				}
 			}
@@ -2977,10 +2972,9 @@ country_event = {
 	option = {
 		name = cara_not_in_borders_exit
 		exclusive_trigger = {
-			is_homicidal = no
-			count_system_within_border = {
-				count = 0
-				limit = {
+			NOR = {
+				is_homicidal = yes
+				any_system_within_border = {
 					any_fleet_in_system = { is_owned_by = event_target:caravaneer_fleet3_country }
 				}
 			}
@@ -3090,11 +3084,17 @@ country_event = {
 		text = fleet3dealdesc2 # Selling Racket leader
 	}
 	desc = {
-		trigger = { has_country_flag = fleet3deal3 is_machine_empire = yes }
+		trigger = {
+			has_country_flag = fleet3deal3
+			is_machine_empire = yes
+		}
 		text = fleet3dealdesc3machi # Selling pops, MI
 	}
 	desc = {
-		trigger = { has_country_flag = fleet3deal3 is_machine_empire = no }
+		trigger = {
+			has_country_flag = fleet3deal3
+			is_machine_empire = no
+		}
 		text = fleet3dealdesc3 # Selling pops, regular
 	}
 	desc = {
@@ -3102,11 +3102,17 @@ country_event = {
 		text = fleet3dealdesc4 # Selling alloy/gas/living metal
 	}
 	desc = {
-		trigger = { has_country_flag = fleet3deal5 is_gestalt = no }
+		trigger = {
+			has_country_flag = fleet3deal5
+			is_gestalt = no
+		}
 		text = fleet3dealdesc5 # Selling unique building
 	}
 	desc = {
-		trigger = { has_country_flag = fleet3deal5 is_gestalt = yes }
+		trigger = {
+			has_country_flag = fleet3deal5
+			is_gestalt = yes
+		}
 		text = fleet3dealdesc5_gesta # Selling unique building GC
 	}
 	desc = {
@@ -3233,11 +3239,17 @@ country_event = {
 		text = fleet3dealdesc2 # Selling Racket leader
 	}
 	desc = {
-		trigger = { has_country_flag = fleet3deal3 is_machine_empire = yes }
+		trigger = {
+			has_country_flag = fleet3deal3
+			is_machine_empire = yes
+		}
 		text = fleet3dealdesc3machi # Selling pops, MI
 	}
 	desc = {
-		trigger = { has_country_flag = fleet3deal3 is_machine_empire = no }
+		trigger = {
+			has_country_flag = fleet3deal3
+			is_machine_empire = no
+		}
 		text = fleet3dealdesc3 # Selling pops, regular
 	}
 	desc = {
@@ -3417,10 +3429,7 @@ country_event = {
 			closest_system = {
 				limit = {
 					has_owner = yes
-					count_system_planet = {
-						count = 0
-						limit = { habitable_planet = yes }
-					}
+					NOT = { any_system_planet = { habitable_planet = yes } }
 					space_owner = {
 						is_country_type = default
 						has_communications = event_target:caravaneer_home_country
@@ -3582,7 +3591,9 @@ country_event = {
 							distance = 40
 						}
 						save_global_event_target_as = CaravaneerCustomCapital
-						prev = { set_custom_capital_location = event_target:CaravaneerCustomCapital }
+						prev = {
+							set_custom_capital_location = event_target:CaravaneerCustomCapital
+						}
 					}
 					settings = {
 						spawn_debris = no
@@ -3617,10 +3628,7 @@ country_event = {
 					closest_system = {
 						limit = {
 							has_owner = yes
-							count_system_planet = {
-								count = 0
-								limit = { habitable_planet = yes }
-							}
+							NOT = { any_system_planet = { habitable_planet = yes } }
 							space_owner = {
 								is_country_type = default
 								is_at_war = no
@@ -3670,10 +3678,7 @@ country_event = {
 					closest_system = {
 						limit = {
 							has_owner = yes
-							count_system_planet = {
-								count = 0
-								limit = { habitable_planet = yes }
-							}
+							NOT = { any_system_planet = { habitable_planet = yes } }
 							space_owner = {
 								is_country_type = default
 								is_at_war = no
@@ -3735,14 +3740,10 @@ country_event = {
 	trigger = {
 		caravaneers_enabled = yes
 		is_country_type = caravaneer_fleet
-		num_ships = 0
-		NOT = { has_global_flag = caravaneers_destroyed }
-		count_country = {
-			count = 0
-			limit = {
-				is_country_type = caravaneer_fleet
-				num_ships > 0
-			}
+		NOR = {
+			num_ships > 0
+			has_global_flag = caravaneers_destroyed
+			any_country = { is_country_type = caravaneer_fleet num_ships > 0 }
 		}
 		exists = event_target:caravaneer_home_country
 		event_target:caravaneer_home_country = { num_starbases = 0 }
@@ -4342,9 +4343,8 @@ country_event = {
 					modifier = {
 						factor = 0
 						event_target:pleased_planet = {
-							count_owned_pop_group = {
-								count = 0
-								limit = {
+							NOT = {
+								any_owned_pop_group = {
 									NOT = { is_same_species = event_target:welcome_fleet.owner_species }
 								}
 							}

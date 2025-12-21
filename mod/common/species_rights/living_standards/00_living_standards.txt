@@ -1,9 +1,9 @@
 # from = country
 # this = species
-#triggered_pop_group_modifier = {
+# triggered_pop_group_modifier = {
 #	potential = { is_pop_category = ruler }
 #	pop_happiness = 0.15
-#}
+# }
 
 living_standard_organic_trophy = {
 	triggered_pop_group_modifier = {
@@ -23,20 +23,14 @@ living_standard_organic_trophy = {
 	potential = {
 		has_synthetic_dawn = yes
 		exists = from
-		from = {
-			is_machine_empire = yes
-			has_valid_civic = civic_machine_servitor
-		}
+		from = { is_machine_empire = yes has_valid_civic = civic_machine_servitor }
 	}
 
 	allow = {
 		hidden_trigger = { exists = from }
 		custom_tooltip = {
 			fail_text = species_is_not_trophy
-			has_citizenship_type = {
-				type = citizenship_organic_trophy
-				country = from
-			}
+			has_citizenship_type = { type = citizenship_organic_trophy country = from }
 		}
 	}
 
@@ -70,8 +64,10 @@ living_standard_chemical_bliss = {
 			has_technology = tech_subdermal_stimulation
 			NOT = { has_valid_civic = civic_dystopian_society }
 		}
-		NOT = { has_trait = trait_hive_mind }
-		is_robotic = no
+		NOR = {
+			has_trait = trait_hive_mind
+			is_robotic = yes
+		}
 	}
 
 	allow = {
@@ -105,12 +101,7 @@ living_standard_chemical_bliss = {
 		}
 		custom_tooltip = {
 			fail_text = SPECIES_MUST_NOT_BE_ASSIMILATING
-			NOT = {
-				has_citizenship_type = {
-					type = citizenship_assimilation
-					country = from
-				}
-			}
+			NOT = { has_citizenship_type = { type = citizenship_assimilation country = from } }
 		}
 	}
 
@@ -134,12 +125,9 @@ living_standard_shared_burden = {
 		}
 		pop_happiness = 0.05
 	}
-
 	triggered_pop_group_modifier = {
 		# Triggered to hide from the auto-generated tooltip
-		potential = {
-			always = yes
-		}
+		potential = { always = yes }
 		pop_cat_ruler_unemployment_political_power = 3
 		pop_cat_specialist_unemployment_political_power = 3
 		pop_cat_worker_unemployment_political_power = 3
@@ -158,9 +146,7 @@ living_standard_shared_burden = {
 	}
 
 	triggered_pop_group_modifier = {
-		potential = {
-			is_pop_category = civilian
-		}
+		potential = { is_pop_category = civilian }
 		pop_category_civilians_unity_produces_add = 1
 	}
 
@@ -191,12 +177,7 @@ living_standard_shared_burden = {
 		}
 		custom_tooltip = {
 			fail_text = SPECIES_MUST_NOT_BE_ASSIMILATING
-			NOT = {
-				has_citizenship_type = {
-					type = citizenship_assimilation
-					country = from
-				}
-			}
+			NOT = { has_citizenship_type = { type = citizenship_assimilation country = from } }
 		}
 	}
 
@@ -220,14 +201,10 @@ living_standard_dystopian_society = {
 		}
 		pop_cat_ruler_happiness = 0.25
 	}
-
 	triggered_pop_group_modifier = {
-		potential = {
-			is_elite_category = yes
-		}
+		potential = { is_elite_category = yes }
 		pop_amenities_usage_mult = 0.45
 	}
-
 	triggered_pop_group_modifier = {
 		potential = {
 			NOR = {
@@ -237,7 +214,6 @@ living_standard_dystopian_society = {
 		}
 		pop_happiness = -2
 	}
-
 	triggered_pop_group_modifier = {
 		potential = {
 			OR = {
@@ -253,7 +229,6 @@ living_standard_dystopian_society = {
 		pop_entertainer_bonus_workforce_mult = -1
 		pop_maintenance_drone_bonus_workforce_mult = -1
 	}
-
 	triggered_pop_group_modifier = {
 		potential = {
 			OR = {
@@ -293,9 +268,7 @@ living_standard_dystopian_society = {
 
 	triggered_pop_group_modifier = {
 		# Triggered to hide from the auto-generated tooltip
-		potential = {
-			always = yes
-		}
+		potential = { always = yes }
 		pop_cat_ruler_unemployment_political_power = 10
 		pop_cat_specialist_unemployment_political_power = -0.25
 		pop_cat_worker_unemployment_political_power = -0.75
@@ -329,12 +302,7 @@ living_standard_dystopian_society = {
 		}
 		custom_tooltip = {
 			fail_text = SPECIES_MUST_NOT_BE_ASSIMILATING
-			NOT = {
-				has_citizenship_type = {
-					type = citizenship_assimilation
-					country = from
-				}
-			}
+			NOT = { has_citizenship_type = { type = citizenship_assimilation country = from } }
 		}
 	}
 
@@ -351,9 +319,7 @@ living_standard_worker_ownership = {
 
 	triggered_pop_group_modifier = {
 		# Triggered to hide from the auto-generated tooltip
-		potential = {
-			always = yes
-		}
+		potential = { always = yes }
 		pop_cat_ruler_unemployment_political_power = 3
 		pop_cat_specialist_unemployment_political_power = 3
 		pop_cat_worker_unemployment_political_power = 3
@@ -389,7 +355,7 @@ living_standard_worker_ownership = {
 		}
 		custom_tooltip = {
 			fail_text = is_servitude_tooltip
-			NOR = { has_citizenship_type = { country = from type = citizenship_robot_servitude } }
+			NOT = { has_citizenship_type = { country = from type = citizenship_robot_servitude } }
 		}
 		custom_tooltip = {
 			fail_text = is_purged_not_neutered
@@ -408,12 +374,7 @@ living_standard_worker_ownership = {
 		}
 		custom_tooltip = {
 			fail_text = SPECIES_MUST_NOT_BE_ASSIMILATING
-			NOT = {
-				has_citizenship_type = {
-					type = citizenship_assimilation
-					country = from
-				}
-			}
+			NOT = { has_citizenship_type = { type = citizenship_assimilation country = from } }
 		}
 	}
 
@@ -432,22 +393,16 @@ living_standard_utopian = {
 		}
 		pop_happiness = 0.20
 	}
-
 	triggered_pop_group_modifier = {
-		potential = {
-			is_pop_category = civilian
-		}
+		potential = { is_pop_category = civilian }
 		pop_category_civilians_society_research_produces_add = 0.50
 		pop_category_civilians_physics_research_produces_add = 0.50
 		pop_category_civilians_engineering_research_produces_add = 0.50
 		pop_category_civilians_unity_produces_add = 0.50
 	}
-
 	triggered_pop_group_modifier = {
 		# Triggered to hide from the auto-generated tooltip
-		potential = {
-			always = yes
-		}
+		potential = { always = yes }
 		pop_cat_ruler_unemployment_political_power = 4
 		pop_cat_specialist_unemployment_political_power = 4
 		pop_cat_worker_unemployment_political_power = 4
@@ -467,13 +422,13 @@ living_standard_utopian = {
 
 	potential = {
 		exists = from
-		from = {
-			NOR = {
-				is_gestalt = yes
-				has_valid_civic = civic_dystopian_society
-			}
-		}
 		NOR = {
+			from = {
+				OR = {
+					is_gestalt = yes
+					has_valid_civic = civic_dystopian_society
+				}
+			}
 			has_trait = trait_hive_mind
 			AND = {
 				from = { is_individual_machine = no }
@@ -487,9 +442,7 @@ living_standard_utopian = {
 		hidden_trigger = { exists = from }
 		custom_tooltip = {
 			fail_text = empire_not_egalitarian
-			from = {
-				is_egalitarian = yes
-			}
+			from = { is_egalitarian = yes }
 		}
 		custom_tooltip = {
 			fail_text = is_slaves_tooltip
@@ -512,12 +465,7 @@ living_standard_utopian = {
 		}
 		custom_tooltip = {
 			fail_text = SPECIES_MUST_NOT_BE_ASSIMILATING
-			NOT = {
-				has_citizenship_type = {
-					type = citizenship_assimilation
-					country = from
-				}
-			}
+			NOT = { has_citizenship_type = { type = citizenship_assimilation country = from } }
 		}
 	}
 
@@ -525,28 +473,32 @@ living_standard_utopian = {
 		factor = 15
 		modifier = {
 			factor = 0
-			OR = {
-				NOT = { has_citizenship_type = { country = from type = citizenship_full } }
-				AND = {
-					NOT = { has_living_standard = { country = from type = living_standard_utopian } }
-					NOT = {
-						from = {
-							has_monthly_income = {
-								resource = minerals
-								value > 300
-							}
-						}
-					}
+			# OR = {
+			# 	NAND = {
+			# 		has_citizenship_type = { country = from type = citizenship_full }
+			# 		OR = {
+			# 			has_living_standard = { country = from type = living_standard_utopian }
+			# 			from = {
+			# 				has_monthly_income = { resource = minerals value > 300 }
+			# 			}
+			# 		}
+			# 	}
+			# 	AND = {
+			# 		has_living_standard = { country = from type = living_standard_utopian }
+			# 		from = {
+			# 			has_monthly_income = { resource = minerals value <= 200 }
+			# 		}
+			# 	}
+			# }
+			NAND = { # Vfix opt
+				has_citizenship_type = { country = from type = citizenship_full }
+				from = {
+					has_monthly_income = { resource = minerals value > 200 }
 				}
-				AND = {
+				OR = {
 					has_living_standard = { country = from type = living_standard_utopian }
-					NOT = {
-						from = {
-							has_monthly_income = {
-								resource = minerals
-								value > 200
-							}
-						}
+					from = {
+						has_monthly_income = { resource = minerals value > 300 }
 					}
 				}
 			}
@@ -555,7 +507,6 @@ living_standard_utopian = {
 }
 
 living_standard_good = {
-
 	in_breach_of = {
 		{
 			trigger = {
@@ -572,22 +523,15 @@ living_standard_good = {
 				owner = { has_deficit = consumer_goods }
 			}
 		}
-
 		pop_happiness = 0.10
 	}
-
 	triggered_pop_group_modifier = {
-		potential = {
-			is_pop_category = civilian
-		}
+		potential = { is_pop_category = civilian }
 		pop_category_civilians_unity_produces_add = 1
 	}
-
 	triggered_pop_group_modifier = {
 		# Triggered to hide from the auto-generated tooltip
-		potential = {
-			always = yes
-		}
+		potential = { always = yes }
 		pop_cat_ruler_unemployment_political_power = 4
 		pop_cat_specialist_unemployment_political_power = 3
 		pop_cat_worker_unemployment_political_power = 2
@@ -607,24 +551,21 @@ living_standard_good = {
 
 	potential = {
 		exists = from
-		from = {
-			NOR = {
-				is_gestalt = yes
-				has_valid_civic = civic_shared_burden
-				is_worker_coop_empire = yes
-				has_valid_civic = civic_dystopian_society
-			}
-		}
-		NOT = { has_trait = trait_hive_mind }
-		OR = {
-			AND = {
-				is_robotic = yes
+		NOR = {
+			from = {
 				OR = {
-					species_rights_robot_full_rights_check = yes
-					from = { is_individual_machine = yes }
+					is_gestalt = yes
+					has_valid_civic = civic_shared_burden
+					is_worker_coop_empire = yes
+					has_valid_civic = civic_dystopian_society
 				}
 			}
+			has_trait = trait_hive_mind
+		}
+		OR = {
 			is_robotic = no
+			species_rights_robot_full_rights_check = yes
+			from = { is_individual_machine = yes }
 		}
 	}
 
@@ -659,58 +600,56 @@ living_standard_good = {
 		}
 		custom_tooltip = {
 			fail_text = SPECIES_MUST_NOT_BE_ASSIMILATING
-			NOT = {
-				has_citizenship_type = {
-					type = citizenship_assimilation
-					country = from
-				}
-			}
+			NOT = { has_citizenship_type = { type = citizenship_assimilation country = from } }
 		}
 	}
+
 	ai_will_do = {
 		factor = 5
 		modifier = {
 			factor = 0
-			OR = {
-				NOT = { has_citizenship_type = { country = from type = citizenship_full } }
+			# OR = {
+			# 	NAND = {
+			# 		AND = {
+			# 			has_citizenship_type = { country = from type = citizenship_full }
+			# 			from = {
+			# 				OR = {
+			# 					is_pacifist = yes
+			# 					is_egalitarian = yes
+			# 				}
+			# 			}
+			# 		}
+			# 		OR = {
+			# 			has_living_standard = { country = from type = living_standard_good }
+			# 			from = {
+			# 				has_monthly_income = { resource = minerals value > 150 }
+			# 			}
+			# 		}
+			# 	}
+			# 	AND = {
+			# 		has_living_standard = { country = from type = living_standard_good }
+			# 		from = {
+			# 			has_monthly_income = { resource = minerals value <= 100 }
+			# 		}
+			# 	}
+			# }
+			NAND = { # Vfix opt
+				has_citizenship_type = { country = from type = citizenship_full }
 				from = {
-					NOR = {
-						is_pacifist = yes
-						is_egalitarian = yes
-					}
+					has_monthly_income = { resource = minerals value > 100 }
 				}
-				AND = {
-					NOT = { has_living_standard = { country = from type = living_standard_good } }
-					NOT = {
-						from = {
-							has_monthly_income = {
-								resource = minerals
-								value > 150
-							}
-						}
-					}
-				}
-				AND = {
+				OR = {
 					has_living_standard = { country = from type = living_standard_good }
-					NOT = {
-						from = {
-							has_monthly_income = {
-								resource = minerals
-								value > 100
-							}
-						}
+					from = {
+						has_monthly_income = { resource = minerals value > 150 }
 					}
 				}
 			}
 		}
 		modifier = {
 			factor = 0.25
-			from = {
-				is_galactic_community_member = yes
-			}
-			OR = {
-				is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
-			}
+			from = { is_galactic_community_member = yes }
+			is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
 		}
 	}
 }
@@ -742,12 +681,9 @@ living_standard_academic_privilege = {
 		pop_cat_ruler_happiness = 0.15
 		pop_cat_specialist_happiness = 0.15
 	}
-
 	triggered_pop_group_modifier = {
 		# Triggered to hide from the auto-generated tooltip
-		potential = {
-			always = yes
-		}
+		potential = { always = yes }
 		pop_cat_ruler_unemployment_political_power = 6
 		pop_cat_specialist_unemployment_political_power = 2.5
 		pop_cat_worker_unemployment_political_power = 0.5
@@ -767,15 +703,15 @@ living_standard_academic_privilege = {
 
 	potential = {
 		exists = from
-		from = {
-			NOR = {
-				is_gestalt = yes
-				has_valid_civic = civic_shared_burden
-				is_worker_coop_empire = yes
-				has_valid_civic = civic_dystopian_society
-			}
-		}
 		NOR = {
+			from = {
+				OR = {
+					is_gestalt = yes
+					has_valid_civic = civic_shared_burden
+					is_worker_coop_empire = yes
+					has_valid_civic = civic_dystopian_society
+				}
+			}
 			has_trait = trait_hive_mind
 			AND = {
 				from = { is_individual_machine = no }
@@ -789,9 +725,7 @@ living_standard_academic_privilege = {
 		hidden_trigger = { exists = from }
 		custom_tooltip = {
 			fail_text = empire_not_materialist
-			from = {
-				is_materialist = yes
-			}
+			from = { is_materialist = yes }
 		}
 		custom_tooltip = {
 			fail_text = is_slaves_tooltip
@@ -814,51 +748,47 @@ living_standard_academic_privilege = {
 		}
 		custom_tooltip = {
 			fail_text = SPECIES_MUST_NOT_BE_ASSIMILATING
-			NOT = {
-				has_citizenship_type = {
-					type = citizenship_assimilation
-					country = from
-				}
-			}
+			NOT = { has_citizenship_type = { type = citizenship_assimilation country = from } }
 		}
 	}
 
 	ai_will_do = {
 		factor = 10
-
 		modifier = {
 			factor = 0
-			OR = {
-				NOT = { has_citizenship_type = { country = from type = citizenship_full } }
-				AND = {
-					NOT = { has_living_standard = { country = from type = living_standard_academic_privilege } }
-					NOT = {
-						from = {
-							has_monthly_income = {
-								resource = minerals
-								value > 300
-							}
-						}
-					}
+			# OR = {
+			# 	NAND = {
+			# 		has_citizenship_type = { country = from type = citizenship_full }
+			# 		OR = {
+			# 			has_living_standard = { country = from type = living_standard_academic_privilege }
+			# 			from = {
+			# 				has_monthly_income = { resource = minerals value > 300 }
+			# 			}
+			# 		}
+			# 	}
+			# 	AND = {
+			# 		has_living_standard = { country = from type = living_standard_academic_privilege }
+			# 		from = {
+			# 			has_monthly_income = { resource = minerals value <= 200 }
+			# 		}
+			# 	}
+			# }
+			NAND = { # Vfix opt
+				has_citizenship_type = { country = from type = citizenship_full }
+				from = {
+					has_monthly_income = { resource = minerals value > 200 }
 				}
-				AND = {
+				OR = {
 					has_living_standard = { country = from type = living_standard_academic_privilege }
-					NOT = {
-						from = {
-							has_monthly_income = {
-								resource = minerals
-								value > 200
-							}
-						}
+					from = {
+						has_monthly_income = { resource = minerals value > 300 }
 					}
 				}
 			}
 		}
 		modifier = {
 			factor = 0.25
-			from = {
-				is_galactic_community_member = yes
-			}
+			from = { is_galactic_community_member = yes }
 			OR = {
 				is_active_resolution = "resolution_greatergood_balance_in_the_middle"
 				is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
@@ -896,9 +826,7 @@ living_standard_normal = {
 
 	triggered_pop_group_modifier = {
 		# Triggered to hide from the auto-generated tooltip
-		potential = {
-			always = yes
-		}
+		potential = { always = yes }
 		pop_cat_ruler_unemployment_political_power = 5
 		pop_cat_specialist_unemployment_political_power = 2.5
 		pop_cat_worker_unemployment_political_power = 1.5
@@ -918,15 +846,15 @@ living_standard_normal = {
 
 	potential = {
 		exists = from
-		from = {
-			NOR = {
-				is_gestalt = yes
-				has_valid_civic = civic_shared_burden
-				is_worker_coop_empire = yes
-				has_valid_civic = civic_dystopian_society
-			}
-		}
 		NOR = {
+			from = {
+				OR = {
+					is_gestalt = yes
+					has_valid_civic = civic_shared_burden
+					is_worker_coop_empire = yes
+					has_valid_civic = civic_dystopian_society
+				}
+			}
 			has_trait = trait_hive_mind
 			AND = {
 				from = { is_individual_machine = no }
@@ -940,12 +868,7 @@ living_standard_normal = {
 		hidden_trigger = { exists = from }
 		custom_tooltip = {
 			fail_text = SPECIES_MUST_NOT_BE_ASSIMILATING
-			NOT = {
-				has_citizenship_type = {
-					type = citizenship_assimilation
-					country = from
-				}
-			}
+			NOT = { has_citizenship_type = { type = citizenship_assimilation country = from } }
 		}
 		custom_tooltip = {
 			fail_text = is_purged_not_neutered
@@ -963,13 +886,12 @@ living_standard_normal = {
 			}
 		}
 	}
+
 	ai_will_do = {
 		factor = 1
 		modifier = {
 			factor = 0.5
-			from = {
-				is_galactic_community_member = yes
-			}
+			from = { is_galactic_community_member = yes }
 			OR = {
 				is_active_resolution = "resolution_greatergood_balance_in_the_middle"
 				is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
@@ -979,7 +901,6 @@ living_standard_normal = {
 }
 
 living_standard_stratified = {
-
 	triggered_pop_group_modifier = {
 		potential = {
 			NAND = {
@@ -1011,22 +932,16 @@ living_standard_stratified = {
 			key = resolution_greatergood_universal_prosperity_mandate
 		}
 	}
-
 	# Triggered so the auto-generated modifier is hidden.
 	triggered_pop_group_modifier = {
-		potential = {
-			always = yes
-		}
+		potential = { always = yes }
 		pop_cat_worker_happiness = -0.10
 		pop_cat_civilian_happiness = -0.10
 		pop_cat_slave_happiness = -0.10
 	}
-
 	triggered_pop_group_modifier = {
 		# Triggered to hide from the auto-generated tooltip
-		potential = {
-			always = yes
-		}
+		potential = { always = yes }
 		pop_cat_ruler_unemployment_political_power = 8
 		pop_cat_specialist_unemployment_political_power = 1.25
 		pop_cat_worker_unemployment_political_power = -0.25
@@ -1046,15 +961,15 @@ living_standard_stratified = {
 
 	potential = {
 		exists = from
-		from = {
-			NOR = {
-				is_gestalt = yes
-				has_valid_civic = civic_shared_burden
-				is_worker_coop_empire = yes
-				has_valid_civic = civic_dystopian_society
-			}
-		}
 		NOR = {
+			from = {
+				OR = {
+					is_gestalt = yes
+					has_valid_civic = civic_shared_burden
+					is_worker_coop_empire = yes
+					has_valid_civic = civic_dystopian_society
+				}
+			}
 			has_trait = trait_hive_mind
 			AND = {
 				from = { is_individual_machine = no }
@@ -1096,21 +1011,15 @@ living_standard_stratified = {
 		}
 		custom_tooltip = {
 			fail_text = SPECIES_MUST_NOT_BE_ASSIMILATING
-			NOT = {
-				has_citizenship_type = {
-					type = citizenship_assimilation
-					country = from
-				}
-			}
+			NOT = { has_citizenship_type = { type = citizenship_assimilation country = from } }
 		}
 	}
+
 	ai_will_do = {
 		factor = 5
 		modifier = {
 			factor = 0.2
-			from = {
-				is_galactic_community_member = yes
-			}
+			from = { is_galactic_community_member = yes }
 			OR = {
 				is_active_resolution = "resolution_greatergood_greater_than_ourselves"
 				is_active_resolution = "resolution_greatergood_balance_in_the_middle"
@@ -1123,17 +1032,12 @@ living_standard_stratified = {
 living_standard_subsistence = {
 	# Triggered so the auto-generated modifier is hidden.
 	triggered_pop_group_modifier = {
-		potential = {
-			always = yes
-		}
+		potential = { always = yes }
 		pop_happiness = -0.20
 	}
-
 	triggered_pop_group_modifier = {
 		# Triggered to hide from the auto-generated tooltip
-		potential = {
-			always = yes
-		}
+		potential = { always = yes }
 		pop_cat_ruler_unemployment_political_power = 9.5
 		pop_cat_worker_unemployment_political_power = -0.5
 	}
@@ -1213,28 +1117,19 @@ living_standard_subsistence = {
 		}
 		custom_tooltip = {
 			fail_text = SPECIES_MUST_NOT_BE_ASSIMILATING
-			NOT = {
-				has_citizenship_type = {
-					type = citizenship_assimilation
-					country = from
-				}
-			}
+			NOT = { has_citizenship_type = { type = citizenship_assimilation country = from } }
 		}
 	}
+
 	ai_will_do = {
 		factor = 10
 		modifier = {
 			factor = 0
-			from = {
-				is_xenophobe = no
-				is_gestalt = no
-			}
+			from = { is_xenophobe = no is_gestalt = no }
 		}
 		modifier = {
 			factor = 0.1
-			from = {
-				is_galactic_community_member = yes
-			}
+			from = { is_galactic_community_member = yes }
 			OR = {
 				is_active_resolution = "resolution_greatergood_five_year_plans"
 				is_active_resolution = "resolution_greatergood_greater_than_ourselves"
@@ -1246,7 +1141,6 @@ living_standard_subsistence = {
 }
 
 living_standard_servitude = {
-
 	potential = {
 		exists = from
 		from = { is_gestalt = no }
@@ -1278,16 +1172,16 @@ living_standard_hive_mind = {
 
 	allow = {
 		if = {
-			limit = {
-				from = { is_hive_empire = yes }
-			}
+			limit = { from = { is_hive_empire = yes } }
 			custom_tooltip = {
 				fail_text = species_is_not_hive
 				has_trait = trait_hive_mind
 			}
 		}
 		else_if = {
-			limit = { from = { is_machine_empire = yes } }
+			limit = {
+				from = { is_machine_empire = yes }
+			}
 			custom_tooltip = {
 				fail_text = species_is_not_machine
 				OR = {
@@ -1306,12 +1200,7 @@ living_standard_hive_mind = {
 		}
 		custom_tooltip = {
 			fail_text = SPECIES_MUST_NOT_BE_ASSIMILATING
-			NOT = {
-				has_citizenship_type = {
-					type = citizenship_assimilation
-					country = from
-				}
-			}
+			NOT = { has_citizenship_type = { type = citizenship_assimilation country = from } }
 		}
 	}
 
@@ -1369,12 +1258,7 @@ living_standard_decadent = {
 		}
 		custom_tooltip = {
 			fail_text = SPECIES_MUST_NOT_BE_ASSIMILATING
-			NOT = {
-				has_citizenship_type = {
-					type = citizenship_assimilation
-					country = from
-				}
-			}
+			NOT = { has_citizenship_type = { type = citizenship_assimilation country = from } }
 		}
 	}
 
@@ -1389,7 +1273,6 @@ living_standard_decadent = {
 		pop_amenities_usage_base = 1
 		pop_category_civilians_unity_produces_add = 1
 	}
-
 	triggered_pop_group_modifier = {
 		potential = {
 			NAND = {
@@ -1402,12 +1285,9 @@ living_standard_decadent = {
 		pop_cat_worker_happiness = 0.20
 		pop_cat_civilian_happiness = 0.20
 	}
-
 	triggered_pop_group_modifier = {
 		# Triggered to hide from the auto-generated tooltip
-		potential = {
-			always = yes
-		}
+		potential = { always = yes }
 		pop_cat_ruler_unemployment_political_power = 7
 		pop_cat_specialist_unemployment_political_power = 2
 	}
@@ -1430,10 +1310,7 @@ living_standard_decadent = {
 living_standard_protected = {
 	potential = {
 		exists = from
-		from = {
-			is_machine_empire = yes
-			has_origin = origin_shroud_forged
-		}
+		from = { is_machine_empire = yes has_origin = origin_shroud_forged }
 		is_scope_valid = yes
 		has_citizenship_type = { country = from type = citizenship_shroud_touched }
 	}

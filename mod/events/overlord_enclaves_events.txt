@@ -626,10 +626,7 @@ country_event = {
 				random_country = {
 					limit = {
 						is_mercenary = yes
-						count_owned_fleet = {
-							count = 0
-							limit = { is_leased = yes }
-						}
+						NOT = { any_owned_fleet = { is_leased = yes } }
 						has_country_flag = created_by@prev
 						prev = { has_country_flag = merc_enclave_founder@prev }
 					}
@@ -676,18 +673,17 @@ country_event = {
 	option = {
 		name = enclave.205.a
 		trigger = {
-			NOT = {
+			NOR = {
 				is_hostile = event_target:mercenary_enclave_country
 				# is_homicidal = yes
-			}
-			event_target:mercenary_enclave_country = {
-				NOT = { has_country_flag = fleet_commandeered }
-				count_owned_fleet = {
-					count = 0
-					limit = {
-						is_ship_class = shipclass_military
-						is_leased = yes
-						controller = { is_same_empire = root }
+				event_target:mercenary_enclave_country = {
+					OR = {
+						has_country_flag = fleet_commandeered
+						any_owned_fleet = {
+							is_ship_class = shipclass_military
+							is_leased = yes
+							controller = { is_same_empire = root }
+						}
 					}
 				}
 			}
@@ -700,9 +696,8 @@ country_event = {
 			custom_tooltip = {
 				fail_text = enclave.205.tooltip.a
 				event_target:mercenary_enclave_country = {
-					count_owned_fleet = {
-						count = 0
-						limit = {
+					NOT = {
+						any_owned_fleet = {
 							is_ship_class = shipclass_military
 							is_leased = yes
 							is_owned_by = event_target:mercenary_enclave_country
@@ -715,11 +710,10 @@ country_event = {
 				event_target:mercenary_enclave_country = {
 					any_owned_fleet = {
 						is_ship_class = shipclass_military
-						count_controlled_ship = {
-							count = 0
-							limit = { is_damaged = yes }
+						NOR = {
+							any_controlled_ship = { is_damaged = yes }
+							fleet_power < 500
 						}
-						fleet_power >= 500
 					}
 				}
 			}
@@ -763,9 +757,9 @@ country_event = {
 			NOR = {
 				is_hostile = event_target:mercenary_enclave_country
 				has_country_flag = mercenary_enclave_bought_mercenary_garrison
-			}
-			event_target:mercenary_enclave_country = {
-				trust = { who = root value >= 30 }
+				event_target:mercenary_enclave_country = {
+					trust = { who = root value < 30 }
+				}
 			}
 		}
 		allow = {
@@ -838,12 +832,12 @@ country_event = {
 		name = enclave.205.g
 		custom_tooltip = mercenary_tt_logistic
 		trigger = {
-			NOT = {
+			NOR = {
 				is_hostile = event_target:mercenary_enclave_country
 				# is_homicidal = yes
-			}
-			event_target:mercenary_enclave_country = {
-				trust = { who = root value >= 20 }
+				event_target:mercenary_enclave_country = {
+					trust = { who = root value < 20 }
+				}
 			}
 		}
 		allow = {
@@ -906,9 +900,8 @@ country_event = {
 		event_target:mercenary_enclave_country = {
 			if = {
 				limit = {
-					count_owned_leader = {
-						count = 0
-						limit = {
+					NOT = {
+						any_owned_leader = {
 							leader_class = commander
 							is_councilor = no
 							is_ruler = no
@@ -2279,9 +2272,8 @@ country_event = {
 		from = {
 			if = {
 				limit = {
-					count_owned_leader = {
-						count = 0
-						limit = {
+					NOT = {
+						any_owned_leader = {
 							leader_class = commander
 							is_councilor = no
 							is_ruler = no
@@ -3270,7 +3262,10 @@ country_event = {
 	}
 	option = {
 		name = DEAL
-		trigger = { max_naval_capacity > 75 max_naval_capacity < 151 }
+		trigger = {
+			max_naval_capacity > 75
+			max_naval_capacity < 151
+		}
 		allow = {
 			resource_stockpile_compare = { resource = energy value >= 1500 }
 		}
@@ -3286,7 +3281,10 @@ country_event = {
 	}
 	option = {
 		name = DEAL
-		trigger = { max_naval_capacity > 150 max_naval_capacity < 276 }
+		trigger = {
+			max_naval_capacity > 150
+			max_naval_capacity < 276
+		}
 		allow = {
 			resource_stockpile_compare = { resource = energy value >= 2500 }
 		}
@@ -3302,7 +3300,10 @@ country_event = {
 	}
 	option = {
 		name = DEAL
-		trigger = { max_naval_capacity > 275 max_naval_capacity < 451 }
+		trigger = {
+			max_naval_capacity > 275
+			max_naval_capacity < 451
+		}
 		allow = {
 			resource_stockpile_compare = { resource = energy value >= 4000 }
 		}
@@ -3361,7 +3362,10 @@ country_event = {
 	}
 	option = {
 		name = DEAL
-		trigger = { max_naval_capacity > 75 max_naval_capacity < 151 }
+		trigger = {
+			max_naval_capacity > 75
+			max_naval_capacity < 151
+		}
 		allow = {
 			resource_stockpile_compare = { resource = energy value >= 1500 }
 		}
@@ -3377,7 +3381,10 @@ country_event = {
 	}
 	option = {
 		name = DEAL
-		trigger = { max_naval_capacity > 150 max_naval_capacity < 276 }
+		trigger = {
+			max_naval_capacity > 150
+			max_naval_capacity < 276
+		}
 		allow = {
 			resource_stockpile_compare = { resource = energy value >= 2500 }
 		}
@@ -3393,7 +3400,10 @@ country_event = {
 	}
 	option = {
 		name = DEAL
-		trigger = { max_naval_capacity > 275 max_naval_capacity < 451 }
+		trigger = {
+			max_naval_capacity > 275
+			max_naval_capacity < 451
+		}
 		allow = {
 			resource_stockpile_compare = { resource = energy value >= 4000 }
 		}
@@ -3484,10 +3494,7 @@ event = {
 		}
 		any_country = {
 			is_mercenary = yes
-			count_owned_fleet = {
-				count = 0
-				limit = { is_leased = yes }
-			}
+			NOT = { any_owned_fleet = { is_leased = yes } }
 		}
 	}
 
@@ -3537,10 +3544,7 @@ event = {
 			random_country = {
 				limit = {
 					is_mercenary = yes
-					count_owned_fleet = {
-						count = 0
-						limit = { is_leased = yes }
-					}
+					NOT = { any_owned_fleet = { is_leased = yes } }
 					has_country_flag = created_by@prev
 					prev = { has_country_flag = merc_enclave_founder@prev }
 				}
@@ -3683,10 +3687,7 @@ country_event = {
 
 	trigger = {
 		event_target:mercenary_enclave_country = {
-			count_owned_fleet = {
-				count = 0
-				limit = { is_leased = yes }
-			}
+			NOT = { any_owned_fleet = { is_leased = yes } }
 		}
 	}
 
@@ -3864,13 +3865,7 @@ country_event = {
 			is_leased = no
 			exists = solar_system # Vfix
 			solar_system = {
-				count_fleet_in_system = {
-					count = 0
-					limit = {
-						is_mercenary_station = yes
-						is_owned_by = root
-					}
-				}
+				NOT = { any_fleet_in_system = { is_mercenary_station = yes is_owned_by = root } }
 			}
 		}
 	}
@@ -3886,13 +3881,7 @@ country_event = {
 				is_leased = no
 				exists = solar_system # Vfix
 				solar_system = {
-					count_fleet_in_system = {
-						count = 0
-						limit = {
-							is_mercenary_station = yes
-							is_owned_by = root
-						}
-					}
+					NOT = { any_fleet_in_system = { is_mercenary_station = yes is_owned_by = root } }
 				}
 			}
 			position = 0
@@ -4242,9 +4231,9 @@ country_event = {
 				is_hostile = event_target:salvager_enclave_country
 				is_homicidal = yes
 				has_country_flag = salvager_enclave_bought_salvage_works
-			}
-			event_target:salvager_enclave_country = {
-				trust = { who = root value >= 30 }
+				event_target:salvager_enclave_country = {
+					trust = { who = root value < 30 }
+				}
 			}
 		}
 		hidden_effect = {
@@ -4259,9 +4248,9 @@ country_event = {
 			NOR = {
 				is_hostile = event_target:salvager_enclave_country
 				is_homicidal = yes
-			}
-			event_target:salvager_enclave_country = {
-				trust = { who = root value >= 40 }
+				event_target:salvager_enclave_country = {
+					trust = { who = root value < 40 }
+				}
 			}
 		}
 		allow = {
@@ -4283,9 +4272,9 @@ country_event = {
 			NOR = {
 				is_hostile = event_target:salvager_enclave_country
 				is_homicidal = yes
-			}
-			event_target:salvager_enclave_country = {
-				trust = { who = root value >= 10 }
+				event_target:salvager_enclave_country = {
+					trust = { who = root value < 10 }
+				}
 			}
 		}
 		hidden_effect = {
@@ -4300,9 +4289,9 @@ country_event = {
 			NOR = {
 				is_hostile = event_target:salvager_enclave_country
 				is_homicidal = yes
-			}
-			event_target:salvager_enclave_country = {
-				trust = { who = root value >= 10 }
+				event_target:salvager_enclave_country = {
+					trust = { who = root value < 10 }
+				}
 			}
 		}
 		allow = {
@@ -4323,18 +4312,15 @@ country_event = {
 			NOR = {
 				is_hostile = event_target:salvager_enclave_country
 				is_homicidal = yes
-			}
-			event_target:salvager_enclave_country = {
-				trust = { who = root value >= 20 }
+				event_target:salvager_enclave_country = {
+					trust = { who = root value < 20 }
+				}
 			}
 		}
 		allow = {
 			custom_tooltip = {
 				fail_text = master_salvager_already_bought
-				count_owned_leader = {
-					count = 0
-					limit = { has_leader_flag = master_salvager }
-				}
+				NOT = { any_owned_leader = { has_leader_flag = master_salvager } }
 			}
 		}
 		hidden_effect = {
@@ -5172,7 +5158,9 @@ country_event = {
 		allow = {
 			custom_tooltip = {
 				fail_text = enclave.320.c.timeout
-				NOT = { has_country_flag = salvager_enclave_recently_reclaimed_destroyer }
+				NOT = {
+					has_country_flag = salvager_enclave_recently_reclaimed_destroyer
+				}
 			}
 			resource_stockpile_compare = {
 				resource = energy
@@ -5225,7 +5213,9 @@ country_event = {
 		allow = {
 			custom_tooltip = {
 				fail_text = enclave.320.d.timeout
-				NOT = { has_country_flag = salvager_enclave_recently_reclaimed_cruiser }
+				NOT = {
+					has_country_flag = salvager_enclave_recently_reclaimed_cruiser
+				}
 			}
 			resource_stockpile_compare = {
 				resource = energy
@@ -5278,7 +5268,9 @@ country_event = {
 		allow = {
 			custom_tooltip = {
 				fail_text = enclave.320.e.timeout
-				NOT = { has_country_flag = salvager_enclave_recently_reclaimed_battleship }
+				NOT = {
+					has_country_flag = salvager_enclave_recently_reclaimed_battleship
+				}
 			}
 			resource_stockpile_compare = {
 				resource = energy
@@ -5518,9 +5510,11 @@ country_event = {
 
 	trigger = {
 		exists = event_target:salvager_enclave_country
-		NOT = { is_hostile = event_target:salvager_enclave_country }
-		event_target:salvager_enclave_country = {
-			trust = { who = root value >= 40 }
+		NOR = {
+			is_hostile = event_target:salvager_enclave_country
+			event_target:salvager_enclave_country = {
+				trust = { who = root value < 40 }
+			}
 		}
 		any_owned_starbase = { has_starbase_building = salvager_workshop }
 	}
@@ -5559,11 +5553,13 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				NOT = { has_country_flag = salvager_enclave_salvage_commission_active }
-				event_target:salvager_enclave_country = {
-					trust = { who = root value >= 20 }
+				NOR = {
+					has_country_flag = salvager_enclave_salvage_commission_active
+					event_target:salvager_enclave_country = {
+						trust = { who = root value < 20 }
+					}
+					count_available_debris = { count = 0 }
 				}
-				count_available_debris = { count > 0 }
 			}
 			set_country_flag = salvage_commission_available
 		}
@@ -5584,7 +5580,9 @@ country_event = {
 			}
 			custom_tooltip = {
 				fail_text = one_salvage_commission_only
-				NOT = { has_country_flag = salvager_enclave_salvage_commission_active }
+				NOT = {
+					has_country_flag = salvager_enclave_salvage_commission_active
+				}
 			}
 			custom_tooltip = {
 				fail_text = requires_debris_field
@@ -5830,9 +5828,9 @@ country_event = {
 		NOR = {
 			is_hostile = event_target:salvager_enclave_country
 			is_homicidal = yes
-		}
-		event_target:salvager_enclave_country = {
-			trust = { who = root value >= 20 }
+			event_target:salvager_enclave_country = {
+				trust = { who = root value < 20 }
+			}
 		}
 	}
 }
@@ -6101,7 +6099,7 @@ country_event = {
 			event_target:salvager_enclave_country = {
 				trust = { who = root value >= 20 }
 			}
-			count_available_debris = { count > 0 }
+			any_available_debris = {  }
 		}
 		hidden_effect = {
 			country_event = { id = enclave.340 } # Commission Salvage
@@ -6243,7 +6241,10 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		from = { is_country_type = enclave has_country_flag = shroudwalker_enclave_country }
+		from = {
+			is_country_type = enclave
+			has_country_flag = shroudwalker_enclave_country
+		}
 		NOT = {
 			has_active_event = {
 				enclave.405 # GREETINGS
@@ -6370,10 +6371,10 @@ country_event = {
 	desc = {
 		trigger = {
 			exists = event_target:mindwarden_enclave_country
-			event_target:mindwarden_enclave_country = {
-				trust = { who = prev value >= 100 }
-			}
 			NOR = {
+				event_target:mindwarden_enclave_country = {
+					trust = { who = prev value < 100 }
+				}
 				is_homicidal = yes
 				is_hostile = event_target:shroudwalker_enclave_country
 				has_origin = origin_mindwardens
@@ -6464,17 +6465,11 @@ country_event = {
 			}
 			custom_tooltip = {
 				fail_text = shroudwalker_teacher_already_bought
-				count_owned_leader = {
-					count = 0
-					limit = { has_leader_flag = shroudwalker_teacher }
-				}
+				NOT = { any_owned_leader = { has_leader_flag = shroudwalker_teacher } }
 			}
 			custom_tooltip = {
 				fail_text = shroudwalker_teacher_conflicted_leader
-				count_owned_leader = {
-					count = 0
-					limit = { has_leader_flag = mindwarden_commander }
-				}
+				NOT = { any_owned_leader = { has_leader_flag = mindwarden_commander } }
 			}
 		}
 		hidden_effect = {
@@ -6547,9 +6542,9 @@ country_event = {
 				shroudwalker_no_dialog = yes
 				has_technology = tech_mine_zro
 				has_country_flag = purchased_zro_tech
-			}
-			event_target:shroudwalker_enclave_country = {
-				trust = { who = root value >= 30 }
+				event_target:shroudwalker_enclave_country = {
+					trust = { who = root value < 30 }
+				}
 			}
 		}
 		allow = {
@@ -6613,7 +6608,10 @@ country_event = {
 		allow = {
 			if = {
 				limit = { has_technology = tech_psionic_theory }
-				custom_tooltip = { always = no fail_text = shroud.5350.trigger_failed }
+				custom_tooltip = {
+					always = no
+					fail_text = shroud.5350.trigger_failed
+				}
 			}
 			else = {
 				custom_tooltip = {
@@ -6839,7 +6837,9 @@ country_event = {
 	option = {
 		name = enclave.420.b
 		trigger = {
-			NOT = { has_country_flag = shroudwalker_enclave_bought_shroud_beacon }
+			NOT = {
+				has_country_flag = shroudwalker_enclave_bought_shroud_beacon
+			}
 		}
 		allow = {
 			event_target:shroudwalker_enclave_country = {
@@ -7013,15 +7013,9 @@ situation_event = {
 					has_federation_flag = recent_or_current_dismembered_cloud
 				}
 				any_member = { is_at_war = no has_technology = tech_sensors_2 }
-				count_member = {
-					count = 0
-					limit = { has_event_chain = dismembered_cloud_chain }
-				}
+				NOT = { any_member = { has_event_chain = dismembered_cloud_chain } }
 			}
-			count_owned_ship = {
-				count > 0
-				limit = { is_ship_class = shipclass_science_ship }
-			}
+			any_owned_ship = { is_ship_class = shipclass_science_ship }
 		}
 	}
 
@@ -7365,7 +7359,9 @@ fleet_event = {
 	}
 	option = {
 		name = "enclave.4250.c"
-		trigger = { owner = { is_militarist = yes } }
+		trigger = {
+			owner = { is_militarist = yes }
+		}
 	}
 	option = {
 		name = "enclave.4250.d"
@@ -7383,18 +7379,20 @@ situation_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_situation_flag = divination_occurring }
-		owner = {
-			NOR = {
-				is_ai = yes
-				is_gestalt = yes
-				is_individual_machine = yes
-				has_country_flag = too_lucid_flag
-				pop_amount <= 400
-			}
-			count_owned_planet = {
-				count > 1
-				limit = { is_colony = yes }
+		NOR = {
+			has_situation_flag = divination_occurring
+			owner = {
+				OR = {
+					is_ai = yes
+					is_gestalt = yes
+					is_individual_machine = yes
+					has_country_flag = too_lucid_flag
+					pop_amount <= 400
+					count_owned_planet = {
+						count <= 1
+						limit = { is_colony = yes }
+					}
+				}
 			}
 		}
 	}
@@ -7643,13 +7641,14 @@ situation_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_situation_flag = divination_occurring }
-		owner = {
-			count_owned_ship = {
-				count > 0
-				limit = { is_ship_class = shipclass_science_ship }
+		NOR = {
+			has_situation_flag = divination_occurring
+			owner = {
+				OR = {
+					NOT = { any_owned_ship = { is_ship_class = shipclass_science_ship } }
+					has_country_flag = shrouded_ship
+				}
 			}
-			NOT = { has_country_flag = shrouded_ship }
 		}
 	}
 
@@ -7817,18 +7816,20 @@ situation_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_situation_flag = divination_occurring }
-		owner = {
-			NOR = {
-				is_ai = yes
-				is_gestalt = yes
-				has_country_flag = rogue_shaman_flag
-				has_country_flag = active_divination_event
-				pop_amount <= 100
-			}
-			count_owned_planet = {
-				count > 1
-				limit = { is_colony = yes }
+		NOR = {
+			has_situation_flag = divination_occurring
+			owner = {
+				OR = {
+					is_ai = yes
+					is_gestalt = yes
+					has_country_flag = rogue_shaman_flag
+					has_country_flag = active_divination_event
+					pop_amount <= 100
+					count_owned_planet = {
+						count <= 1
+						limit = { is_colony = yes }
+					}
+				}
 			}
 		}
 	}
@@ -8054,15 +8055,17 @@ situation_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_situation_flag = divination_occurring }
-		owner = {
-			NOR = {
-				has_country_flag = great_schism_flag
-				pop_amount <= 100
-			}
-			count_owned_planet = {
-				count > 1
-				limit = { is_colony = yes }
+		NOR = {
+			has_situation_flag = divination_occurring
+			owner = {
+				OR = {
+					has_country_flag = great_schism_flag
+					pop_amount <= 100
+					count_owned_planet = {
+						count <= 1
+						limit = { is_colony = yes }
+					}
+				}
 			}
 		}
 	}
@@ -8171,9 +8174,7 @@ planet_event = {
 					class = scientist
 					species = event_target:shroudwalker_enclave_country.species
 					skill = 4
-					traits = {
-						trait = leader_trait_expertise_psionics
-					}
+					traits = { trait = leader_trait_expertise_psionics }
 				}
 			}
 		}
@@ -8930,9 +8931,7 @@ situation_event = {
 				species = owner_species
 				name = random
 				skill = 3
-				traits = {
-					trait = leader_trait_erudite
-				}
+				traits = { trait = leader_trait_erudite }
 				effect = {
 					save_event_target_as = hero_redivivus
 					exile_leader_as = redivivus
@@ -9048,8 +9047,8 @@ situation_event = {
 					has_planet_flag = shattered_frontier_planet
 					has_modifier = penal_colony
 					has_modifier = resort_colony
+					count_owned_pop_amount = { count < 500 }
 				}
-				count_owned_pop_amount = { count >= 500 }
 			}
 		}
 	}
@@ -9071,8 +9070,8 @@ situation_event = {
 						has_planet_flag = shattered_frontier_planet
 						has_modifier = penal_colony
 						has_modifier = resort_colony
+						count_owned_pop_amount = { count < 500 }
 					}
-					count_owned_pop_amount = { count >= 500 }
 				}
 				set_planet_flag = colony_event
 				set_planet_flag = shattered_frontier_planet
@@ -9699,9 +9698,7 @@ country_event = {
 					species = root.species
 					name = random
 					skill = 3
-					traits = {
-						trait = leader_trait_erudite
-					}
+					traits = { trait = leader_trait_erudite }
 					event_leader = yes
 					effect = {
 						set_leader_flag = shattered_frontier_official
@@ -10055,9 +10052,7 @@ country_event = {
 					species = root.species
 					name = random
 					skill = 1
-					traits = {
-						trait = leader_trait_psionic
-					}
+					traits = { trait = leader_trait_psionic }
 					event_leader = yes
 					effect = {
 						set_leader_flag = shattered_frontier_official
@@ -10074,9 +10069,7 @@ country_event = {
 					species = root.species
 					name = random
 					skill = 1
-					traits = {
-						trait = leader_trait_synthetic
-					}
+					traits = { trait = leader_trait_synthetic }
 					event_leader = yes
 					effect = {
 						set_leader_flag = shattered_frontier_official
@@ -10340,7 +10333,9 @@ situation_event = {
 
 	option = {
 		name = enclave.5557.a
-		owner = { add_resource = { energy = 1000 } }
+		owner = {
+			add_resource = { energy = 1000 }
+		}
 	}
 
 	after = { # Vfix by Dr. Addiction
@@ -10494,7 +10489,10 @@ country_event = {
 	}
 	option = {
 		name = enclave.5570.b
-		owner = { remove_modifier = wayward_pilgrim_00 remove_modifier = wayward_pilgrim_01 }
+		owner = {
+			remove_modifier = wayward_pilgrim_00
+			remove_modifier = wayward_pilgrim_01
+		}
 		country_event = { id = enclave.5575 days = 200 random = 20 }
 	}
 }
@@ -10648,7 +10646,10 @@ fleet_event = {
 		trigger = {
 			owner = { has_ethic = ethic_xenophobe }
 		}
-		leader = { save_event_target_as = dissected_leader exile_leader_as = dissected_leader }
+		leader = {
+			save_event_target_as = dissected_leader
+			exile_leader_as = dissected_leader
+		}
 		owner = {
 			add_monthly_resource_mult = {
 				resource = society_research
@@ -10663,7 +10664,10 @@ fleet_event = {
 		trigger = {
 			owner = { is_fanatic_xenophobe = yes }
 		}
-		leader = { save_event_target_as = dissected_leader exile_leader_as = dissected_leader }
+		leader = {
+			save_event_target_as = dissected_leader
+			exile_leader_as = dissected_leader
+		}
 		owner = {
 			add_monthly_resource_mult = {
 				resource = society_research
@@ -10696,7 +10700,10 @@ fleet_event = {
 		trigger = {
 			owner = { is_gestalt = yes is_machine_empire = no }
 		}
-		leader = { save_event_target_as = dissected_leader exile_leader_as = dissected_leader }
+		leader = {
+			save_event_target_as = dissected_leader
+			exile_leader_as = dissected_leader
+		}
 		owner = {
 			add_monthly_resource_mult = {
 				resource = society_research
@@ -11354,10 +11361,7 @@ country_event = {
 			}
 			custom_tooltip = {
 				fail_text = shroudwalker_teacher_already_bought
-				count_owned_leader = {
-					count = 0
-					limit = { has_leader_flag = shroudwalker_teacher }
-				}
+				NOT = { any_owned_leader = { has_leader_flag = shroudwalker_teacher } }
 			}
 			resource_stockpile_compare = { resource = influence value >= 50 }
 			resource_stockpile_compare = {
@@ -11521,11 +11525,17 @@ leader_event = {
 
 	desc = {
 		text = enclave.8000.shroudwalker_teacher.desc.councilor
-		trigger = { has_leader_flag = shroudwalker_teacher is_councilor = yes }
+		trigger = {
+			has_leader_flag = shroudwalker_teacher
+			is_councilor = yes
+		}
 	}
 	desc = {
 		text = enclave.8000.shroudwalker_teacher.desc
-		trigger = { has_leader_flag = shroudwalker_teacher is_councilor = no }
+		trigger = {
+			has_leader_flag = shroudwalker_teacher
+			is_councilor = no
+		}
 	}
 
 	picture = {
@@ -11535,11 +11545,17 @@ leader_event = {
 
 	desc = {
 		text = enclave.8000.master_salvager.desc.councilor
-		trigger = { has_leader_flag = master_salvager is_councilor = yes }
+		trigger = {
+			has_leader_flag = master_salvager
+			is_councilor = yes
+		}
 	}
 	desc = {
 		text = enclave.8000.master_salvager.desc
-		trigger = { has_leader_flag = master_salvager is_councilor = no }
+		trigger = {
+			has_leader_flag = master_salvager
+			is_councilor = no
+		}
 	}
 
 	picture = {
@@ -11549,11 +11565,17 @@ leader_event = {
 
 	desc = {
 		text = enclave.8000.curator_archivist.desc.councilor
-		trigger = { has_leader_flag = curator_archivist is_councilor = yes }
+		trigger = {
+			has_leader_flag = curator_archivist
+			is_councilor = yes
+		}
 	}
 	desc = {
 		text = enclave.8000.curator_archivist.desc
-		trigger = { has_leader_flag = curator_archivist is_councilor = no }
+		trigger = {
+			has_leader_flag = curator_archivist
+			is_councilor = no
+		}
 	}
 
 	picture = {
@@ -11563,11 +11585,17 @@ leader_event = {
 
 	desc = {
 		text = enclave.8000.trader_leader.desc.councilor
-		trigger = { has_leader_flag = trader_leader is_councilor = yes }
+		trigger = {
+			has_leader_flag = trader_leader
+			is_councilor = yes
+		}
 	}
 	desc = {
 		text = enclave.8000.trader_leader.desc
-		trigger = { has_leader_flag = trader_leader is_councilor = no }
+		trigger = {
+			has_leader_flag = trader_leader
+			is_councilor = no
+		}
 	}
 
 	show_sound = event_default

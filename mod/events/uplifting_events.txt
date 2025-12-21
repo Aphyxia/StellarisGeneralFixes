@@ -612,7 +612,9 @@ planet_event = {
 				resource_stockpile_compare = { resource = energy value >= 300 }
 			}
 		}
-		owner = { add_resource = { energy = -300 } }
+		owner = {
+			add_resource = { energy = -300 }
+		}
 	}
 	option = {
 		name = UNFORTUNATE
@@ -621,7 +623,9 @@ planet_event = {
 				resource_stockpile_compare = { resource = energy value < 300 }
 			}
 		}
-		owner = { add_resource = { energy = -100 } }
+		owner = {
+			add_resource = { energy = -100 }
+		}
 	}
 }
 

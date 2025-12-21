@@ -30,10 +30,7 @@ sshipyard = {
 			has_starbase_module = shipyard
 			owner = {
 				is_ai = yes # Vfix by SirBlackAxe https://forum.paradoxplaza.com/forum/threads/1465575/
-				count_owned_starbase = {
-					count = 0
-					limit = { has_starbase_module = shipyard }
-				}
+				NOT = { any_owned_starbase = { has_starbase_module = shipyard } }
 			}
 		}
 	}
@@ -50,9 +47,8 @@ sshipyard = {
 			add = 1000
 			owner = {
 				is_ai = yes
-				count_owned_starbase = {
-					count = 0
-					limit = {
+				NOT = {
+					any_owned_starbase = {
 						controller = { is_same_empire = root.owner }
 						has_starbase_module = shipyard
 					}
@@ -170,9 +166,7 @@ sbeastport = {
 sanchorage = {
 	potential = {
 		has_starbase_size > starbase_outpost
-		NAND = {
-			solar_system = { is_same_value = sector.sector_capital.solar_system }
-		}
+		NOT = { solar_system = { is_same_value = sector.sector_capital.solar_system } }
 	}
 
 	weight_modifier = {
@@ -565,10 +559,7 @@ smining_hub = {
 			solar_system = { is_capital_system = no }
 			owner = {
 				is_ai = yes
-				count_owned_starbase = {
-					count = 0
-					limit = { has_starbase_module = astromining_bay }
-				}
+				NOT = { any_owned_starbase = { has_starbase_module = astromining_bay } }
 			}
 		}
 		modifier = {
@@ -684,10 +675,7 @@ sdetection_array = {
 		modifier = {
 			add = 1000
 			owner = {
-				count_owned_starbase = {
-					count = 0
-					limit = { has_starbase_module = detection_array }
-				}
+				NOT = { any_owned_starbase = { has_starbase_module = detection_array } }
 			}
 		}
 	}

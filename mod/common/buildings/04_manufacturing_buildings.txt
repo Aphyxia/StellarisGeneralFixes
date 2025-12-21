@@ -837,7 +837,9 @@ building_coordinated_fulfillment_center_1 = {
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
-			owner = { has_policy_flag = relentless_industrialists_full_steam_ahead }
+			owner = {
+				has_policy_flag = relentless_industrialists_full_steam_ahead
+			}
 		}
 		planet_metallurgists_alloys_produces_add = 0.1
 		planet_artisans_consumer_goods_produces_add = 0.1
@@ -961,7 +963,9 @@ building_coordinated_fulfillment_center_2 = {
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
-			owner = { has_policy_flag = relentless_industrialists_full_steam_ahead }
+			owner = {
+				has_policy_flag = relentless_industrialists_full_steam_ahead
+			}
 		}
 		planet_metallurgists_alloys_produces_add = 0.2
 		planet_artisans_consumer_goods_produces_add = 0.2

@@ -133,10 +133,7 @@ country_event = {
 	}
 	desc = {
 		trigger = {
-			count_playable_country = {
-				count = 0
-				limit = { is_galactic_custodian = yes }
-			}
+			NOT = { any_playable_country = { is_galactic_custodian = yes } }
 		}
 		text = "crisis.4100.desc.b"
 	}
@@ -187,10 +184,7 @@ country_event = {
 				has_ascension_perk = ap_become_the_crisis
 				has_ascension_perk = ap_behemoths
 			}
-			count_playable_country = {
-				count = 0
-				limit = { is_galactic_custodian = yes }
-			}
+			NOT = { any_playable_country = { is_galactic_custodian = yes } }
 		}
 		text = "crisis.4105.desc.b"
 	}
@@ -403,10 +397,7 @@ country_event = {
 					using_war_goal = { type = wg_declared_crisis owner = attacker }
 					using_war_goal = { type = wg_imperial_crusade owner = attacker }
 				}
-				count_defender = {
-					count = 0
-					limit = { is_same_value = root }
-				}
+				NOT = { any_defender = { is_same_empire = root } }
 			}
 			remove_war_participant = root
 		}
@@ -653,7 +644,10 @@ country_event = {
 	}
 	option = {
 		name = crisis.4120.shroud_forged.a
-		trigger = { is_machine_empire = yes has_origin = origin_shroud_forged }
+		trigger = {
+			is_machine_empire = yes
+			has_origin = origin_shroud_forged
+		}
 	}
 
 	after = {
@@ -802,7 +796,10 @@ country_event = {
 	}
 	option = {
 		name = crisis.4130.shroud_forged.a
-		trigger = { is_machine_empire = yes has_origin = origin_shroud_forged }
+		trigger = {
+			is_machine_empire = yes
+			has_origin = origin_shroud_forged
+		}
 	}
 	option = {
 		name = crisis.4130.hive.a
@@ -832,7 +829,10 @@ country_event = {
 	}
 	desc = {
 		text = crisis.4135.shroud_forged.desc
-		trigger = { is_machine_empire = yes has_origin = origin_shroud_forged }
+		trigger = {
+			is_machine_empire = yes
+			has_origin = origin_shroud_forged
+		}
 	}
 	desc = {
 		text = crisis.4135.hive.desc
@@ -857,7 +857,10 @@ country_event = {
 	}
 	option = {
 		name = PROCEED
-		trigger = { is_machine_empire = yes has_origin = origin_shroud_forged }
+		trigger = {
+			is_machine_empire = yes
+			has_origin = origin_shroud_forged
+		}
 	}
 	option = {
 		name = crisis.4135.hive.a
@@ -1096,7 +1099,10 @@ country_event = {
 		text = crisis.4150.mach.desc
 	}
 	desc = {
-		trigger = { is_machine_empire = yes has_origin = origin_shroud_forged }
+		trigger = {
+			is_machine_empire = yes
+			has_origin = origin_shroud_forged
+		}
 		text = crisis.4150.shroud_forged.desc
 	}
 	desc = {
@@ -1167,7 +1173,10 @@ country_event = {
 		text = crisis.4155.mach.desc
 	}
 	desc = {
-		trigger = { is_machine_empire = yes has_origin = origin_shroud_forged }
+		trigger = {
+			is_machine_empire = yes
+			has_origin = origin_shroud_forged
+		}
 		text = crisis.4155.shroud_forged.desc
 	}
 	desc = {

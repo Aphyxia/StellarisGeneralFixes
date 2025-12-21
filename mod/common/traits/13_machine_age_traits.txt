@@ -50,7 +50,6 @@ trait_pathogenic_genes = {
 		BIOLOGICAL
 		LITHOID
 	}
-
 	tags = { organic negative special }
 
 	leader_age_min = 40
@@ -87,7 +86,6 @@ trait_limited_cybernetic = {
 		BIOLOGICAL
 		LITHOID
 	}
-
 	tags = { organic positive pop_output cybernetic special }
 
 	custom_tooltip_with_modifiers = TRAIT_CYBORG_EFFECT
@@ -96,7 +94,10 @@ trait_limited_cybernetic = {
 		category = planet_pops
 		# Energy Upkeep
 		upkeep = {
-			trigger = { is_being_purged = no is_sapient = yes }
+			trigger = {
+				is_being_purged = no
+				is_sapient = yes
+			}
 			energy = @cyborg_energy_upkeep
 		}
 	}

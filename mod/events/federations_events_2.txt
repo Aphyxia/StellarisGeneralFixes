@@ -24,14 +24,12 @@ ship_event = {
 		owner = {
 			if = {
 				limit = {
-					NOT = {
-						owner = {
-							OR = {
-								has_country_flag = human_1
-								has_country_flag = human_2
-								has_country_flag = human_plantoid
-								is_human_species = yes
-							}
+					owner = {
+						NOR = {
+							has_country_flag = human_1
+							has_country_flag = human_2
+							has_country_flag = human_plantoid
+							is_human_species = yes
 						}
 					}
 				}
@@ -509,7 +507,10 @@ fleet_event = {
 				name = "NAME_Warder_of_the_Ruins"
 				effect = {
 					set_owner = event_target:ancient_warden_country
-					create_ship = { name = "NAME_Warder_of_the_Ruins" design = "NAME_Warder_of_the_Ruins" }
+					create_ship = {
+						name = "NAME_Warder_of_the_Ruins"
+						design = "NAME_Warder_of_the_Ruins"
+					}
 					set_location = {
 						target = event_target:system_asteroid
 						distance = 5
@@ -805,36 +806,36 @@ country_event = {
 			NOR = {
 				federation_level < 2
 				has_federation_flag = had_successful_hegemony_joint_operation
-			}
-			count_member = {
-				count >= 2
-				limit = {
-					NOT = { is_same_value = root }
-					exists = capital_scope.solar_system # just in case...
-					if = {
-						limit = {
-							any_controlled_fleet = { is_ship_class = shipclass_constructor }
-						}
-						any_controlled_fleet = {
-							is_ship_class = shipclass_constructor
-							can_access_system = root.capital_scope.solar_system # never overuse this trigger
-						}
-					}
-					else = {
-						any_controlled_fleet = {
-							NOR = {
-								is_ship_class = shipclass_military_station
-								is_ship_class = shipclass_mining_station
-								is_ship_class = shipclass_research_station
-								is_ship_class = shipclass_observation_station
+				count_member = {
+					count < 2
+					limit = {
+						NOT = { is_same_value = root }
+						exists = capital_scope.solar_system # just in case...
+						if = {
+							limit = {
+								any_controlled_fleet = { is_ship_class = shipclass_constructor }
 							}
-							is_inside_border = owner
-							can_access_system = root.capital_scope.solar_system
+							any_controlled_fleet = {
+								is_ship_class = shipclass_constructor
+								can_access_system = root.capital_scope.solar_system # never overuse this trigger
+							}
+						}
+						else = {
+							any_controlled_fleet = {
+								NOR = {
+									is_ship_class = shipclass_military_station
+									is_ship_class = shipclass_mining_station
+									is_ship_class = shipclass_research_station
+									is_ship_class = shipclass_observation_station
+								}
+								is_inside_border = owner
+								can_access_system = root.capital_scope.solar_system
+							}
 						}
 					}
 				}
+				has_federation_flag = federation_recent_hegemony_joint_operation
 			}
-			NOT = { has_federation_flag = federation_recent_hegemony_joint_operation }
 		}
 	}
 
@@ -969,10 +970,12 @@ country_event = {
 			factor = 1
 			modifier = {
 				factor = 0
-				federation = { federation_cohesion >= 0 }
-				NAND = {
-					has_country_flag = hegemony_ethos_authoritarian
-					is_authoritarian = no
+				NOR = {
+					federation = { federation_cohesion < 0 }
+					AND = {
+						has_country_flag = hegemony_ethos_authoritarian
+						is_authoritarian = no
+					}
 				}
 			}
 		}
@@ -1054,7 +1057,10 @@ country_event = {
 	option = {
 		name = federations2.51.B # haha no
 		from = {
-			add_opinion_modifier = { who = root modifier = opinion_hegemony_joint_action_refused }
+			add_opinion_modifier = {
+				who = root
+				modifier = opinion_hegemony_joint_action_refused
+			}
 		}
 		custom_tooltip = federations2.51.B.tooltip
 		hidden_effect = {
@@ -1086,7 +1092,9 @@ country_event = {
 
 	trigger = {
 		is_federation_leader = yes
-		federation = { has_federation_flag = federation_recent_hegemony_joint_operation }
+		federation = {
+			has_federation_flag = federation_recent_hegemony_joint_operation
+		}
 	}
 
 	immediate = {
@@ -1113,7 +1121,9 @@ country_event = {
 			country_event = { id = federations2.53 days = 2 }
 			every_federation_ally = {
 				limit = {
-					NOT = { has_country_flag = hegemony_joint_operation_invalid_participant }
+					NOT = {
+						has_country_flag = hegemony_joint_operation_invalid_participant
+					}
 				}
 				country_event = { id = federations2.54 }
 			}
@@ -1288,7 +1298,9 @@ country_event = {
 	}
 	desc = {
 		text = federations2.56.desc.invalid
-		trigger = { has_country_flag = hegemony_joint_operation_invalid_participant }
+		trigger = {
+			has_country_flag = hegemony_joint_operation_invalid_participant
+		}
 	}
 
 	picture = GFX_evt_diplomatic_visit
@@ -1324,7 +1336,9 @@ country_event = {
 		}
 		name = {
 			text = INTERESTING
-			trigger = { has_country_flag = hegemony_joint_operation_invalid_participant }
+			trigger = {
+				has_country_flag = hegemony_joint_operation_invalid_participant
+			}
 		}
 		trigger = {
 			NOT = { has_country_flag = hegemony_joint_operation_yes }
@@ -1685,7 +1699,9 @@ country_event = {
 						count_member = {
 							count = 2
 							limit = {
-								NOT = { has_country_flag = hegemony_joint_operation_invalid_participant }
+								NOT = {
+									has_country_flag = hegemony_joint_operation_invalid_participant
+								}
 							}
 						}
 					}
@@ -1701,7 +1717,9 @@ country_event = {
 				count_member = {
 					count > 2
 					limit = {
-						NOT = { has_country_flag = hegemony_joint_operation_invalid_participant }
+						NOT = {
+							has_country_flag = hegemony_joint_operation_invalid_participant
+						}
 					}
 				}
 			}
@@ -1710,7 +1728,9 @@ country_event = {
 	}
 	desc = {
 		trigger = {
-			federation = { has_federation_flag = hegemony_joint_operation_partial_failure }
+			federation = {
+				has_federation_flag = hegemony_joint_operation_partial_failure
+			}
 		}
 		text = federations2.60.desc.partial_failure
 	}
@@ -1724,13 +1744,19 @@ country_event = {
 		name = {
 			text = EXCELLENT
 			trigger = {
-				NOT = { federation = { has_federation_flag = hegemony_joint_operation_partial_failure } }
+				NOT = {
+					federation = {
+						has_federation_flag = hegemony_joint_operation_partial_failure
+					}
+				}
 			}
 		}
 		name = {
 			text = federations2.60.A.oh_well
 			trigger = {
-				federation = { has_federation_flag = hegemony_joint_operation_partial_failure }
+				federation = {
+					has_federation_flag = hegemony_joint_operation_partial_failure
+				}
 			}
 		}
 		tooltip = { hegemony_join_operation_reward = yes }
@@ -1766,7 +1792,9 @@ country_event = {
 						count_member = {
 							count = 2
 							limit = {
-								NOT = { has_country_flag = hegemony_joint_operation_invalid_participant }
+								NOT = {
+									has_country_flag = hegemony_joint_operation_invalid_participant
+								}
 							}
 						}
 					}
@@ -1782,7 +1810,9 @@ country_event = {
 				count_member = {
 					count > 2
 					limit = {
-						NOT = { has_country_flag = hegemony_joint_operation_invalid_participant }
+						NOT = {
+							has_country_flag = hegemony_joint_operation_invalid_participant
+						}
 					}
 				}
 			}
@@ -1791,21 +1821,29 @@ country_event = {
 	}
 	desc = {
 		trigger = {
-			federation = { has_federation_flag = hegemony_joint_operation_partial_failure }
+			federation = {
+				has_federation_flag = hegemony_joint_operation_partial_failure
+			}
 			has_completed_special_project_in_log = hegemony_joint_project_member
 		}
 		text = federations2.61.desc.partial_failure.but_I_did_it
 	}
 	desc = {
 		trigger = {
-			federation = { has_federation_flag = hegemony_joint_operation_partial_failure }
-			NOT = { has_completed_special_project_in_log = hegemony_joint_project_member }
+			federation = {
+				has_federation_flag = hegemony_joint_operation_partial_failure
+			}
+			NOT = {
+				has_completed_special_project_in_log = hegemony_joint_project_member
+			}
 		}
 		text = federations2.61.desc.partial_failure.haha_no
 	}
 	desc = {
 		trigger = {
-			federation = { has_federation_flag = hegemony_joint_operation_complete_failure }
+			federation = {
+				has_federation_flag = hegemony_joint_operation_complete_failure
+			}
 		}
 		text = federations2.61.desc.complete_failure
 	}
@@ -1830,21 +1868,29 @@ country_event = {
 		name = {
 			text = federations2.61.A.but_I_did_it
 			trigger = {
-				federation = { has_federation_flag = hegemony_joint_operation_partial_failure }
+				federation = {
+					has_federation_flag = hegemony_joint_operation_partial_failure
+				}
 				has_completed_special_project_in_log = hegemony_joint_project_member
 			}
 		}
 		name = {
 			text = federations2.61.A.neutral
 			trigger = {
-				federation = { has_federation_flag = hegemony_joint_operation_partial_failure }
-				NOT = { has_completed_special_project_in_log = hegemony_joint_project_member }
+				federation = {
+					has_federation_flag = hegemony_joint_operation_partial_failure
+				}
+				NOT = {
+					has_completed_special_project_in_log = hegemony_joint_project_member
+				}
 			}
 		}
 		name = {
 			text = federations2.61.A.oh_dear
 			trigger = {
-				federation = { has_federation_flag = hegemony_joint_operation_complete_failure }
+				federation = {
+					has_federation_flag = hegemony_joint_operation_complete_failure
+				}
 			}
 		}
 		tooltip = { hegemony_join_operation_reward = yes }
@@ -1875,7 +1921,9 @@ country_event = {
 						count_member = {
 							count = 2
 							limit = {
-								NOT = { has_country_flag = hegemony_joint_operation_invalid_participant }
+								NOT = {
+									has_country_flag = hegemony_joint_operation_invalid_participant
+								}
 							}
 						}
 					}
@@ -1891,7 +1939,9 @@ country_event = {
 				count_member = {
 					count > 2
 					limit = {
-						NOT = { has_country_flag = hegemony_joint_operation_invalid_participant }
+						NOT = {
+							has_country_flag = hegemony_joint_operation_invalid_participant
+						}
 					}
 				}
 			}
@@ -1900,13 +1950,17 @@ country_event = {
 	}
 	desc = {
 		trigger = {
-			federation = { has_federation_flag = hegemony_joint_operation_partial_failure }
+			federation = {
+				has_federation_flag = hegemony_joint_operation_partial_failure
+			}
 		}
 		text = federations2.62.desc.partial_failure
 	}
 	desc = {
 		trigger = {
-			federation = { has_federation_flag = hegemony_joint_operation_complete_failure }
+			federation = {
+				has_federation_flag = hegemony_joint_operation_complete_failure
+			}
 		}
 		text = federations2.62.desc.complete_failure
 	}
@@ -1935,13 +1989,17 @@ country_event = {
 		name = {
 			text = federations2.62.A.neutral
 			trigger = {
-				federation = { has_federation_flag = hegemony_joint_operation_partial_failure }
+				federation = {
+					has_federation_flag = hegemony_joint_operation_partial_failure
+				}
 			}
 		}
 		name = {
 			text = federations2.62.A.oh_dear
 			trigger = {
-				federation = { has_federation_flag = hegemony_joint_operation_complete_failure }
+				federation = {
+					has_federation_flag = hegemony_joint_operation_complete_failure
+				}
 			}
 		}
 		hegemony_join_operation_reward = yes
@@ -2100,21 +2158,20 @@ country_event = {
 		years_passed > 60
 		has_federation = yes
 		is_federation_leader = yes
-		is_at_war = no
-		count_country = {
-			count = 0
-			limit = { is_crisis_faction = yes }
+		NOR = {
+			is_at_war = yes
+			any_country = { is_crisis_faction = yes }
+			num_ships <= 30
 		}
-		num_ships > 30
 		federation = {
 			has_federation_type = military_federation
 			NOR = {
 				federation_level < 2
 				has_federation_flag = federation_recent_militarist_joint_operation
-			}
-			count_member = {
-				count >= 3
-				limit = { num_ships > 30 }
+				count_member = {
+					count < 3
+					limit = { num_ships > 30 }
+				}
 			}
 		}
 	}
@@ -2242,17 +2299,17 @@ country_event = {
 			modifier = { factor = 1.5 is_militarist = yes }
 			modifier = {
 				factor = 0
-				count_controlled_fleet = {
-					count = 0
-					limit = { num_ships >= 15 }
-				}
+				NOT = { any_controlled_fleet = { num_ships >= 15 } }
 			}
 		}
 	}
 	option = {
 		name = federations2.101.B # haha no
 		from = {
-			add_opinion_modifier = { who = root modifier = opinion_military_joint_action_refused }
+			add_opinion_modifier = {
+				who = root
+				modifier = opinion_military_joint_action_refused
+			}
 		}
 		custom_tooltip = federations2.101.B.tooltip
 		hidden_effect = {
@@ -2269,10 +2326,7 @@ country_event = {
 			modifier = { factor = 2 num_ships < 20 }
 			modifier = {
 				factor = 2
-				count_controlled_fleet = {
-					count = 0
-					limit = { num_ships >= 20 }
-				}
+				NOT = { any_controlled_fleet = { num_ships >= 20 } }
 			}
 			modifier = { factor = 2 is_pacifist = yes }
 		}
@@ -2287,7 +2341,9 @@ country_event = {
 
 	trigger = {
 		is_federation_leader = yes
-		federation = { has_federation_flag = federation_recent_militarist_joint_operation }
+		federation = {
+			has_federation_flag = federation_recent_militarist_joint_operation
+		}
 	}
 
 	immediate = {
@@ -2835,7 +2891,9 @@ country_event = {
 	hide_window = yes
 
 	trigger = {
-		NOT = { has_country_flag = militarist_federation_chain_result_calculated }
+		NOT = {
+			has_country_flag = militarist_federation_chain_result_calculated
+		}
 	}
 
 	immediate = {
@@ -2911,25 +2969,33 @@ country_event = {
 
 	desc = {
 		trigger = {
-			federation = { has_federation_flag = militarist_joint_operation_complete_success }
+			federation = {
+				has_federation_flag = militarist_joint_operation_complete_success
+			}
 		}
 		text = federations2.115.desc.complete_success
 	}
 	desc = {
 		trigger = {
-			federation = { has_federation_flag = militarist_joint_operation_partial_success }
+			federation = {
+				has_federation_flag = militarist_joint_operation_partial_success
+			}
 		}
 		text = federations2.115.desc.partial_success
 	}
 	desc = {
 		trigger = {
-			federation = { has_federation_flag = militarist_joint_operation_partial_failure }
+			federation = {
+				has_federation_flag = militarist_joint_operation_partial_failure
+			}
 		}
 		text = federations2.115.desc.partial_failure
 	}
 	desc = {
 		trigger = {
-			federation = { has_federation_flag = militarist_joint_operation_complete_failure }
+			federation = {
+				has_federation_flag = militarist_joint_operation_complete_failure
+			}
 		}
 		text = federations2.115.desc.complete_failure
 	}

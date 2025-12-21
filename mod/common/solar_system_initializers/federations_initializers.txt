@@ -78,7 +78,10 @@ hauer_system_initializer = {
 					set_owner = event_target:drone_country
 					while = {
 						count = 3
-						create_ship = { name = "NAME_Mining_Drone_C_Class" design = "NAME_Ancient_Mining_Drone" }
+						create_ship = {
+							name = "NAME_Mining_Drone_C_Class"
+							design = "NAME_Ancient_Mining_Drone"
+						}
 					}
 					set_location = {
 						target = event_target:tannhauser_gate
@@ -559,7 +562,6 @@ relentless_pursuit_system_initializer_02 = {
 void_dweller_system = {
 	class = "rl_trinary_stars"
 	usage = origin
-
 	flags = { empire_home_system }
 
 	init_effect = {
@@ -754,7 +756,6 @@ lost_colony_1 = {
 		type = rocky_asteroid_belt
 		radius = 50
 	}
-
 	flags = { empire_home_system lost_colony_home_system }
 
 	usage = misc_system_init
@@ -935,7 +936,6 @@ lost_colony_1 = {
 # Neighbor Tier 1
 lost_colony_neighbor_t1 = {
 	class = "rl_standard_stars"
-
 	flags = { neighbor_t1 }
 
 	init_effect = {
@@ -980,7 +980,6 @@ lost_colony_neighbor_t1 = {
 # Neighbor Tier 1 First Colony
 lost_colony_neighbor_t1_first_colony = {
 	class = "rl_standard_stars"
-
 	flags = { neighbor_t1_first_colony }
 
 	init_effect = {
@@ -1044,7 +1043,6 @@ lost_colony_neighbor_t1_first_colony = {
 # Neighbor Tier 2 Second Colony
 lost_colony_neighbor_t2_second_colony = {
 	class = "rl_standard_stars"
-
 	flags = { neighbor_t2_second_colony }
 
 	init_effect = {
@@ -1114,7 +1112,6 @@ lost_colony_neighbor_t2_second_colony = {
 # Scion Fallen Empire (if they were turned off in options)
 scion_fallen_1 = {
 	class = "rl_standard_stars"
-
 	flags = { scion_fe_system }
 
 	asteroid_belt = {
@@ -1332,7 +1329,6 @@ scion_fallen_1 = {
 
 scion_fallen_2 = {
 	class = "rl_standard_stars"
-
 	flags = { scion_fe_system }
 
 	asteroid_belt = {
@@ -1748,7 +1744,6 @@ shattered_ring_start = {
 mega_shipyard_init_01 = {
 	class = "rl_standard_stars"
 	usage = misc_system_init
-
 	flags = { ruined_mega_shipyard_system }
 
 	usage_odds = {
@@ -1822,10 +1817,7 @@ planet_with_too_many_moons_system = {
 					exists = owner
 					owner = { has_country_flag = fallen_empire_4 }
 				}
-			}
-			count_neighbor_system = {
-				count = 0
-				limit = {
+				any_neighbor_system = {
 					has_owner = yes
 					owner = { has_country_flag = fallen_empire_4 }
 				}
@@ -1843,7 +1835,6 @@ planet_with_too_many_moons_system = {
 
 	max_instances = 1
 	scaled_spawn_chance = 3
-
 	flags = { planet_with_too_many_moons_system hostile_system }
 
 	planet = {
@@ -2124,7 +2115,10 @@ planet_with_too_many_moons_system = {
 					name = "NAME_Warder_of_the_Ruins"
 					effect = {
 						set_owner = event_target:ancient_warden_country
-						create_ship = { name = "NAME_Warder_of_the_Ruins" design = "NAME_Warder_of_the_Ruins" }
+						create_ship = {
+							name = "NAME_Warder_of_the_Ruins"
+							design = "NAME_Warder_of_the_Ruins"
+						}
 						set_location = {
 							target = event_target:too_many_moons_system_star
 							distance = 20
@@ -2187,7 +2181,6 @@ wenkwort_initializer = {
 	}
 
 	max_instances = 1
-
 	flags = { wenkwort_system }
 
 	asteroid_belt = {
@@ -2298,7 +2291,6 @@ sol_system_void_dweller_system = {
 		type = icy_asteroid_belt
 		radius = 290
 	}
-
 	flags = { empire_home_system sol_system sol }
 
 	init_effect = {

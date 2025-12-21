@@ -61,7 +61,10 @@ country_event = {
 		text = "fedel.2.noleader.desc"
 	}
 	desc = {
-		trigger = { is_subject = yes is_gestalt = no }
+		trigger = {
+			is_subject = yes
+			is_gestalt = no
+		}
 		text = "fedel.2.vassal.desc"
 	}
 	desc = {
@@ -542,8 +545,8 @@ country_event = {
 					has_trait = leader_trait_synthetic
 					has_any_chosen_one_leader_trait = yes
 					has_trait = leader_trait_cyborg
+					check_variable = { which = leader_ability value >= 1 }
 				}
-				check_variable = { which = leader_ability value < 1 }
 			}
 		}
 		text = "fedel.10.1.desc"
@@ -556,8 +559,8 @@ country_event = {
 					has_trait = leader_trait_synthetic
 					has_any_chosen_one_leader_trait = yes
 					has_trait = leader_trait_cyborg
+					check_variable = { which = leader_ability value >= 1 }
 				}
-				check_variable = { which = leader_ability value < 1 }
 			}
 		}
 		text = "fedel.10.2.desc"
@@ -570,9 +573,9 @@ country_event = {
 					has_trait = leader_trait_synthetic
 					has_any_chosen_one_leader_trait = yes
 					has_trait = leader_trait_cyborg
+					check_variable = { which = leader_ability value <= 0 }
+					check_variable = { which = leader_ability value >= 20 }
 				}
-				check_variable = { which = leader_ability value > 0 }
-				check_variable = { which = leader_ability value < 20 }
 			}
 		}
 		text = "fedel.10.3.desc"
@@ -585,8 +588,8 @@ country_event = {
 					has_trait = leader_trait_synthetic
 					has_any_chosen_one_leader_trait = yes
 					has_trait = leader_trait_cyborg
+					check_variable = { which = leader_ability value <= 19 }
 				}
-				check_variable = { which = leader_ability value > 19 }
 			}
 		}
 		text = "fedel.10.5.desc"
@@ -615,9 +618,8 @@ country_event = {
 						has_any_chosen_one_leader_trait = yes
 						prev = {
 							federation = {
-								count_member = {
-									count = 0
-									limit = {
+								NOT = {
+									any_member = {
 										leader = { has_any_chosen_one_leader_trait = yes }
 										NOR = {
 											is_same_value = root
@@ -692,9 +694,8 @@ country_event = {
 							has_any_chosen_one_leader_trait = yes
 							prev = {
 								federation = {
-									count_member = {
-										count = 0
-										limit = {
+									NOT = {
+										any_member = {
 											leader = { has_any_chosen_one_leader_trait = yes }
 											NOR = {
 												is_same_value = root
@@ -743,8 +744,8 @@ country_event = {
 					has_trait = leader_trait_psionic
 					has_trait = leader_trait_synthetic
 					event_target:winning_leader = { has_any_chosen_one_leader_trait = yes }
+					check_variable = { which = leader_ability value >= 1 }
 				}
-				check_variable = { which = leader_ability value < 1 }
 			}
 		}
 		text = "fedel.15.1.desc"
@@ -756,8 +757,8 @@ country_event = {
 					has_trait = leader_trait_psionic
 					has_trait = leader_trait_synthetic
 					event_target:winning_leader = { has_any_chosen_one_leader_trait = yes }
+					check_variable = { which = leader_ability value >= 1 }
 				}
-				check_variable = { which = leader_ability value < 1 }
 			}
 		}
 		text = "fedel.15.2.desc"
@@ -769,9 +770,9 @@ country_event = {
 					has_trait = leader_trait_psionic
 					has_trait = leader_trait_synthetic
 					event_target:winning_leader = { has_any_chosen_one_leader_trait = yes }
+					check_variable = { which = leader_ability value <= 0 }
+					check_variable = { which = leader_ability value >= 20 }
 				}
-				check_variable = { which = leader_ability value > 0 }
-				check_variable = { which = leader_ability value < 20 }
 			}
 		}
 		text = "fedel.15.3.desc"
@@ -783,8 +784,8 @@ country_event = {
 					has_trait = leader_trait_psionic
 					has_trait = leader_trait_synthetic
 					event_target:winning_leader = { has_any_chosen_one_leader_trait = yes }
+					check_variable = { which = leader_ability value <= 19 }
 				}
-				check_variable = { which = leader_ability value > 19 }
 			}
 		}
 		text = "fedel.15.4.desc"
@@ -1452,18 +1453,26 @@ country_event = {
 		text = "fedel.501.1.desc"
 	}
 	desc = {
-		trigger = { has_country_flag = no_psi_battle is_subject = no }
+		trigger = {
+			has_country_flag = no_psi_battle
+			is_subject = no
+		}
 		text = "fedel.501.2.desc"
 	}
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = no_psi_battle }
-			resource_stockpile_compare = { resource = sr_zro value < 100 }
+			NOR = {
+				has_country_flag = no_psi_battle
+				resource_stockpile_compare = { resource = sr_zro value >= 100 }
+			}
 		}
 		text = "fedel.501.3.desc"
 	}
 	desc = {
-		trigger = { has_country_flag = no_psi_battle is_subject = yes }
+		trigger = {
+			has_country_flag = no_psi_battle
+			is_subject = yes
+		}
 		text = "fedel.501.4.desc"
 	}
 
@@ -1480,9 +1489,8 @@ country_event = {
 			limit = {
 				OR = {
 					is_subject = yes
-					count_owned_pop_group = {
-						count = 0
-						limit = {
+					NOT = {
+						any_owned_pop_group = {
 							# Vfix
 							has_psionic_species_trait = yes
 						}
@@ -1499,8 +1507,10 @@ country_event = {
 	option = {
 		name = fedel.501.a
 		trigger = {
-			NOT = { has_country_flag = no_psi_battle }
-			resource_stockpile_compare = { resource = sr_zro value >= 100 }
+			NOR = {
+				has_country_flag = no_psi_battle
+				resource_stockpile_compare = { resource = sr_zro value < 100 }
+			}
 		}
 		add_resource = { sr_zro = -100 }
 		hidden_effect = {
@@ -1511,8 +1521,10 @@ country_event = {
 	option = {
 		name = fedel.501.b
 		trigger = {
-			NOT = { has_country_flag = no_psi_battle }
-			resource_stockpile_compare = { resource = sr_zro value >= 500 }
+			NOR = {
+				has_country_flag = no_psi_battle
+				resource_stockpile_compare = { resource = sr_zro value < 500 }
+			}
 		}
 		add_resource = { sr_zro = -500 }
 		hidden_effect = {
@@ -1523,8 +1535,10 @@ country_event = {
 	option = {
 		name = fedel.501.c
 		trigger = {
-			NOT = { has_country_flag = no_psi_battle }
-			resource_stockpile_compare = { resource = sr_zro value >= 1000 }
+			NOR = {
+				has_country_flag = no_psi_battle
+				resource_stockpile_compare = { resource = sr_zro value < 1000 }
+			}
 		}
 		add_resource = { sr_zro = -1000 }
 		hidden_effect = {
@@ -2091,7 +2105,10 @@ country_event = {
 					}
 					modifier = { # Chosen
 						add = 15
-						any_owned_leader = { has_leader_flag = thesis_team has_any_chosen_one_leader_trait = yes }
+						any_owned_leader = {
+							has_leader_flag = thesis_team
+							has_any_chosen_one_leader_trait = yes
+						}
 					}
 					modifier = { # Cyborg
 						add = 10
@@ -2157,14 +2174,15 @@ country_event = {
 					modifier = {
 						add = 40
 						federation = {
-							count_member = {
-								count = 0
-								limit = {
-									NOT = { is_same_value = prevprev }
-									relative_power = {
-										who = prevprev
-										category = technology
-										value > equivalent
+							NOT = {
+								any_member = {
+									NOR = {
+										is_same_value = prevprev
+										relative_power = {
+											who = prevprev
+											category = technology
+											value <= equivalent
+										}
 									}
 								}
 							}
@@ -2173,14 +2191,15 @@ country_event = {
 					modifier = {
 						add = 30
 						federation = {
-							count_member = {
-								count = 0
-								limit = {
-									NOT = { is_same_value = prevprev }
-									relative_power = {
-										who = prevprev
-										category = technology
-										value > inferior
+							NOT = {
+								any_member = {
+									NOR = {
+										is_same_value = prevprev
+										relative_power = {
+											who = prevprev
+											category = technology
+											value <= inferior
+										}
 									}
 								}
 							}
@@ -2216,11 +2235,13 @@ country_event = {
 						factor = 0.1
 						federation = {
 							any_member = {
-								NOT = { is_same_value = prevprev }
-								relative_power = {
-									who = prevprev
-									category = technology
-									value = overwhelming
+								NOR = {
+									is_same_value = prevprev
+									relative_power = {
+										who = prevprev
+										category = technology
+										value != overwhelming
+									}
 								}
 							}
 						}
@@ -2352,8 +2373,10 @@ country_event = {
 
 	desc = { # For those empires with insufficient researchers
 		trigger = {
-			NOT = { event_target:winning_thesis = { is_same_value = root } }
-			check_variable = { which = thesis_assemble value < 3 }
+			NOR = {
+				event_target:winning_thesis = { is_same_value = root }
+				check_variable = { which = thesis_assemble value >= 3 }
+			}
 		}
 		text = "fedel.1506.insufficient.desc"
 	}
@@ -2386,8 +2409,8 @@ country_event = {
 			NOR = {
 				event_target:winning_thesis = { is_same_value = root }
 				is_gestalt = yes
+				check_variable = { which = thesis_assemble value <= 2 }
 			}
-			check_variable = { which = thesis_assemble value > 2 }
 		}
 		text = "fedel.1506.fail.desc"
 	}
@@ -2525,7 +2548,10 @@ country_event = {
 			remove_federation_flag = winner_decision_invest
 			remove_federation_flag = winner_decision_distribute
 			remove_federation_flag = winner_decision_appropriate
-			every_member = { remove_country_flag = bid_contender remove_country_flag = has_abstained }
+			every_member = {
+				remove_country_flag = bid_contender
+				remove_country_flag = has_abstained
+			}
 			# Setup
 			set_federation_flag = bidding_war_underway
 			every_member = {

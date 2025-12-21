@@ -437,21 +437,20 @@ ship_event = {
 
 	trigger = {
 		exists = owner
-		owner = {
-			is_ai = no	# PATCH|OPT
-		}
-		from = {
-			solar_system = {
-				count_system_planet = {
-					count = 0
-					limit = { is_homeworld = yes }
+		NOR = {
+			owner = {
+				OR = {
+					is_ai = yes	# PATCH|OPT
+					AND = {
+						has_country_flag = outer_system_mining_stations_constructed
+						has_country_flag = birth_of_piracy
+					}
 				}
 			}
-		}
-		NOT = {
-			owner = {
-				has_country_flag = outer_system_mining_stations_constructed
-				has_country_flag = birth_of_piracy
+			from = {
+				solar_system = {
+					any_system_planet = { is_homeworld = yes }
+				}
 			}
 		}
 	}
@@ -488,8 +487,8 @@ event = {
 			NOR = {
 				is_ai = yes
 				has_country_flag = birth_of_piracy
+				has_monthly_income = { resource = trade value <= 100 }
 			}
-			has_monthly_income = { resource = trade value > 100 }
 		}
 	}
 
@@ -728,9 +727,8 @@ country_event = {
 		fromfromfrom = { has_fleet_flag = pirate_home_system_fleet }
 		fromfrom.solar_system = {
 			has_star_flag = pirate_home_system
-			count_fleet_in_system = {
-				count = 0
-				limit = {
+			NOT = {
+				any_fleet_in_system = {
 					has_fleet_flag = pirate_home_system_fleet
 					NOT = { is_same_value = fromfromfrom }
 				}
@@ -819,14 +817,20 @@ fleet_event = {
 					found_system = {
 						move_to = this
 						find_closest_planet = {
-							trigger = { id = pirate.20.b is_same_value = event_target:target_capital }
+							trigger = {
+								id = pirate.20.b
+								is_same_value = event_target:target_capital
+							}
 							found_planet = { move_to = this }
 						}
 					}
 				}
 				wait = { duration = 10 }
 				find_closest_system = {
-					trigger = { id = pirate.20.c has_star_flag = pirate_home_system }
+					trigger = {
+						id = pirate.20.c
+						has_star_flag = pirate_home_system
+					}
 					found_system = { move_to = this }
 				}
 			}
@@ -1634,10 +1638,7 @@ ship_event = {
 			}
 		}
 		solar_system = {
-			count_fleet_in_system = {
-				count = 0
-				limit = { is_ship_size = pirate_station }
-			}
+			NOT = { any_fleet_in_system = { is_ship_size = pirate_station } }
 		}
 	}
 

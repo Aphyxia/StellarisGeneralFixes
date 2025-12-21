@@ -145,7 +145,10 @@ country_event = {
 	trigger = {
 		years_passed > 0 # On-action will cause errors running at game start
 		from = {
-			any_system_planet = { is_planet_class = pc_shielded has_planet_flag = fallen_shield_world }
+			any_system_planet = {
+				is_planet_class = pc_shielded
+				has_planet_flag = fallen_shield_world
+			}
 		}
 		NOT = { has_special_project = FALLEN_SHIELD_PROJECT }
 	}
@@ -490,7 +493,10 @@ ship_event = {
 									found_system = { move_to = this }
 								}
 								find_closest_planet = {
-									trigger = { id = "galactic_features.305.trigger.2" is_planet_class = "pc_gas_giant" }
+									trigger = {
+										id = "galactic_features.305.trigger.2"
+										is_planet_class = "pc_gas_giant"
+									}
 									found_planet = {
 										orbit_planet = this
 										wait = { duration = 200 random = 150 }
@@ -521,7 +527,10 @@ ship_event = {
 									found_system = { move_to = this }
 								}
 								find_closest_planet = {
-									trigger = { id = "galactic_features.305.trigger.4" is_planet_class = "pc_gas_giant" }
+									trigger = {
+										id = "galactic_features.305.trigger.4"
+										is_planet_class = "pc_gas_giant"
+									}
 									found_planet = {
 										orbit_planet = this
 										wait = { duration = 200 random = 150 }
@@ -552,7 +561,10 @@ ship_event = {
 									found_system = { move_to = this }
 								}
 								find_closest_planet = {
-									trigger = { id = "galactic_features.305.trigger.6" is_planet_class = "pc_gas_giant" }
+									trigger = {
+										id = "galactic_features.305.trigger.6"
+										is_planet_class = "pc_gas_giant"
+									}
 									found_planet = {
 										orbit_planet = this
 										wait = { duration = 200 random = 150 }
@@ -583,7 +595,10 @@ ship_event = {
 									found_system = { move_to = this }
 								}
 								find_closest_planet = {
-									trigger = { id = "galactic_features.305.trigger.8" is_planet_class = "pc_gas_giant" }
+									trigger = {
+										id = "galactic_features.305.trigger.8"
+										is_planet_class = "pc_gas_giant"
+									}
 									found_planet = {
 										orbit_planet = this
 										wait = { duration = 200 random = 150 }
@@ -623,7 +638,9 @@ ship_event = {
 	}
 
 	immediate = {
-		owner = { establish_communications_no_message = event_target:sanctuary }
+		owner = {
+			establish_communications_no_message = event_target:sanctuary
+		}
 	}
 
 	option = {
@@ -991,15 +1008,24 @@ event = {
 							queue_actions = {
 								repeat = {
 									find_closest_planet = {
-										trigger = { id = "greenC.x1.trigger.1" is_planet = event_target:green_trigger_1 }
+										trigger = {
+											id = "greenC.x1.trigger.1"
+											is_planet = event_target:green_trigger_1
+										}
 										found_planet = { orbit_planet = this }
 									}
 									find_closest_planet = {
-										trigger = { id = "greenC.x1.trigger.2" is_planet = event_target:green_trigger_2 }
+										trigger = {
+											id = "greenC.x1.trigger.2"
+											is_planet = event_target:green_trigger_2
+										}
 										found_planet = { orbit_planet = this }
 									}
 									find_closest_planet = {
-										trigger = { id = "greenC.x1.trigger.3" is_planet = event_target:green_trigger_3 }
+										trigger = {
+											id = "greenC.x1.trigger.3"
+											is_planet = event_target:green_trigger_3
+										}
 										found_planet = { orbit_planet = this }
 									}
 								}
@@ -1061,15 +1087,24 @@ event = {
 							queue_actions = {
 								repeat = {
 									find_closest_planet = {
-										trigger = { id = "greenC2.x1.trigger.1" is_planet = event_target:green2_trigger_1 }
+										trigger = {
+											id = "greenC2.x1.trigger.1"
+											is_planet = event_target:green2_trigger_1
+										}
 										found_planet = { orbit_planet = this }
 									}
 									find_closest_planet = {
-										trigger = { id = "greenC2.x1.trigger.2" is_planet = event_target:green2_trigger_2 }
+										trigger = {
+											id = "greenC2.x1.trigger.2"
+											is_planet = event_target:green2_trigger_2
+										}
 										found_planet = { orbit_planet = this }
 									}
 									find_closest_planet = {
-										trigger = { id = "greenC2.x1.trigger.3" is_planet = event_target:green2_trigger_3 }
+										trigger = {
+											id = "greenC2.x1.trigger.3"
+											is_planet = event_target:green2_trigger_3
+										}
 										found_planet = { orbit_planet = this }
 									}
 								}
@@ -1090,15 +1125,24 @@ event = {
 							queue_actions = {
 								repeat = {
 									find_closest_planet = {
-										trigger = { id = "greenC2.x2.trigger.2" is_planet = event_target:green2_trigger_2 }
+										trigger = {
+											id = "greenC2.x2.trigger.2"
+											is_planet = event_target:green2_trigger_2
+										}
 										found_planet = { orbit_planet = this }
 									}
 									find_closest_planet = {
-										trigger = { id = "greenC2.x2.trigger.3" is_planet = event_target:green2_trigger_3 }
+										trigger = {
+											id = "greenC2.x2.trigger.3"
+											is_planet = event_target:green2_trigger_3
+										}
 										found_planet = { orbit_planet = this }
 									}
 									find_closest_planet = {
-										trigger = { id = "greenC2.x2.trigger.1" is_planet = event_target:green2_trigger_1 }
+										trigger = {
+											id = "greenC2.x2.trigger.1"
+											is_planet = event_target:green2_trigger_1
+										}
 										found_planet = { orbit_planet = this }
 									}
 								}
@@ -1119,15 +1163,24 @@ event = {
 							queue_actions = {
 								repeat = {
 									find_closest_planet = {
-										trigger = { id = "greenC2.x3.trigger.3" is_planet = event_target:green2_trigger_3 }
+										trigger = {
+											id = "greenC2.x3.trigger.3"
+											is_planet = event_target:green2_trigger_3
+										}
 										found_planet = { orbit_planet = this }
 									}
 									find_closest_planet = {
-										trigger = { id = "greenC2.x3.trigger.1" is_planet = event_target:green2_trigger_1 }
+										trigger = {
+											id = "greenC2.x3.trigger.1"
+											is_planet = event_target:green2_trigger_1
+										}
 										found_planet = { orbit_planet = this }
 									}
 									find_closest_planet = {
-										trigger = { id = "greenC2.x3.trigger.2" is_planet = event_target:green2_trigger_2 }
+										trigger = {
+											id = "greenC2.x3.trigger.2"
+											is_planet = event_target:green2_trigger_2
+										}
 										found_planet = { orbit_planet = this }
 									}
 								}
@@ -1403,7 +1456,10 @@ event = {
 						effect = {
 							set_owner = event_target:crystal_country
 							create_ship = { name = "NAME_Delta" design = "NAME_Large_Crystal_Entity_Red_Elite" }
-							create_ship = { name = "NAME_Epsilon" design = "NAME_Medium_Crystal_Entity_Blue_Elite" }
+							create_ship = {
+								name = "NAME_Epsilon"
+								design = "NAME_Medium_Crystal_Entity_Blue_Elite"
+							}
 							create_ship = {
 								name = "NAME_Omega"
 								design = "NAME_Small_Crystal_Entity_Yellow_Elite"
@@ -1428,7 +1484,10 @@ event = {
 								name = "NAME_Delta"
 								design = "NAME_Large_Crystal_Entity_Yellow_Elite"
 							}
-							create_ship = { name = "NAME_Epsilon" design = "NAME_Medium_Crystal_Entity_Red_Elite" }
+							create_ship = {
+								name = "NAME_Epsilon"
+								design = "NAME_Medium_Crystal_Entity_Red_Elite"
+							}
 							create_ship = { name = "NAME_Omega" design = "NAME_Small_Crystal_Entity_Blue_Elite" }
 							create_ship = { name = "NAME_Beta" design = "NAME_Large_Crystal_Entity_Red_Elite" }
 							create_ship = {
@@ -1447,7 +1506,10 @@ event = {
 						effect = {
 							set_owner = event_target:crystal_country
 							create_ship = { name = "NAME_Delta" design = "NAME_Large_Crystal_Entity_Blue_Elite" }
-							create_ship = { name = "NAME_Epsilon" design = "NAME_Medium_Crystal_Entity_Red_Elite" }
+							create_ship = {
+								name = "NAME_Epsilon"
+								design = "NAME_Medium_Crystal_Entity_Red_Elite"
+							}
 							create_ship = {
 								name = "NAME_Omega"
 								design = "NAME_Small_Crystal_Entity_Yellow_Elite"
@@ -1456,7 +1518,10 @@ event = {
 								name = "NAME_Beta"
 								design = "NAME_Large_Crystal_Entity_Yellow_Elite"
 							}
-							create_ship = { name = "NAME_Gamma" design = "NAME_Medium_Crystal_Entity_Blue_Elite" }
+							create_ship = {
+								name = "NAME_Gamma"
+								design = "NAME_Medium_Crystal_Entity_Blue_Elite"
+							}
 							create_ship = { name = "NAME_Psi" design = "NAME_Small_Crystal_Entity_Red_Elite" }
 							set_location = PREVPREV
 							set_fleet_stance = aggressive
@@ -1841,13 +1906,9 @@ event = {
 				any_playable_country = {
 					has_modifier = pacified_amoebas
 					any_system_within_border = {
-						count_system_colony = {
-							count = 0
-							limit = { has_owner = yes }
-						}
-						count_fleet_in_system = {
-							count = 0
-							limit = {
+						NOR = {
+							any_system_colony = { has_owner = yes }
+							any_fleet_in_system = {
 								owner = { is_amoeba_country_type = yes }
 							}
 						}
@@ -1879,14 +1940,10 @@ event = {
 				limit = {
 					has_modifier = pacified_amoebas
 					any_system_within_border = {
-						num_planets_in_system > 1
-						count_system_colony = {
-							count = 0
-							limit = { has_owner = yes }
-						}
-						count_fleet_in_system = {
-							count = 0
-							limit = {
+						NOR = {
+							num_planets_in_system <= 1
+							any_system_colony = { has_owner = yes }
+							any_fleet_in_system = {
 								owner = { is_amoeba_country_type = yes }
 							}
 						}
@@ -1915,14 +1972,10 @@ event = {
 				}
 				random_system_within_border = {
 					limit = {
-						num_planets_in_system > 1
-						count_system_colony = {
-							count = 0
-							limit = { has_owner = yes }
-						}
-						count_fleet_in_system = {
-							count = 0
-							limit = {
+						NOR = {
+							num_planets_in_system <= 1
+							any_system_colony = { has_owner = yes }
+							any_fleet_in_system = {
 								owner = { is_amoeba_country_type = yes }
 							}
 						}
@@ -1992,9 +2045,8 @@ event = {
 					}
 					OR = {
 						exists = space_owner # pacified amoebas
-						count_fleet_in_system = {
-							count = 0
-							limit = {
+						NOT = {
+							any_fleet_in_system = {
 								NOT = { owner = { is_country_type = amoeba_garrison } }
 							}
 						}
@@ -2192,10 +2244,7 @@ country_event = {
 		NOT = { has_global_flag = tiyanki_home_cleared }
 		fromfrom.solar_system = {
 			has_star_flag = tiyanki_spawn_system
-			count_fleet_in_system = {
-				count = 0
-				limit = { has_fleet_flag = tiyanki_home_system_fleet }
-			}
+			NOT = { any_fleet_in_system = { has_fleet_flag = tiyanki_home_system_fleet } }
 		}
 	}
 
@@ -2233,13 +2282,7 @@ country_event = {
 	}
 	desc = {
 		trigger = {
-			count_country = {
-				count = 0
-				limit = {
-					is_country_type = tiyanki
-					num_fleets > 0
-				}
-			}
+			NOT = { any_country = { is_country_type = tiyanki num_fleets > 0 } }
 			any_system = { has_star_flag = elderly_tiyanki_system }
 			exists = event_target:elderly_tiyanki_fleet
 			exists = event_target:elderly_tiyanki_country
@@ -2254,14 +2297,8 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				count_country = {
-					count = 0
-					limit = {
-						is_country_type = tiyanki
-						num_fleets > 0
-					}
-				}
 				NOR = {
+					any_country = { is_country_type = tiyanki num_fleets > 0 }
 					any_system = { has_star_flag = elderly_tiyanki_system }
 					exists = event_target:elderly_tiyanki_fleet
 					exists = event_target:elderly_tiyanki_country
@@ -2411,13 +2448,9 @@ country_event = {
 	trigger = {
 		NOT = { has_global_flag = tiyanki_extinct }
 		is_tiyanki_country_type = yes
-		num_ships = 0
-		count_country = {
-			count = 0
-			limit = {
-				is_tiyanki_country_type = yes
-				num_ships > 0
-			}
+		NOR = {
+			num_ships != 0
+			any_country = { is_tiyanki_country_type = yes num_ships > 0 }
 		}
 	}
 
@@ -2572,7 +2605,10 @@ country_event = {
 	}
 	option = {
 		name = galactic_features.371.c
-		trigger = { is_xenophobe = no is_xenophile = no }
+		trigger = {
+			is_xenophobe = no
+			is_xenophile = no
+		}
 	}
 }
 
@@ -2631,14 +2667,9 @@ country_event = {
 		is_country_type = default
 		from = { is_tiyanki_country_type = yes }
 		fromfrom = {
-			count_owned_ship = {
-				count = 0
-				limit = { is_ship_size = gravity_snare }
-			}
-		}
-		NOT = {
-			# Ariphaos TODO: Captures shouldn't count as kills, but if they just end up getting culled, they should be.
-			fromfrom = {
+			NOR = {
+				any_owned_ship = { is_ship_size = gravity_snare }
+				# Ariphaos TODO: Captures shouldn't count as kills, but if they just end up getting culled, they should be.
 				any_combatant_fleet = {
 					NOT = { is_same_value = fromfromfrom }
 				}
@@ -2882,9 +2913,8 @@ country_event = {
 		NOT = { has_global_flag = tiyanki_graveyard_access }
 		fromfrom.solar_system = {
 			has_star_flag = tiyanki_graveyard_system
-			count_fleet_in_system = {
-				count = 0
-				limit = {
+			NOT = {
+				any_fleet_in_system = {
 					has_fleet_flag = tiyanki_graveyard_system_fleet
 					NOT = { is_same_value = fromfromfrom }
 				}

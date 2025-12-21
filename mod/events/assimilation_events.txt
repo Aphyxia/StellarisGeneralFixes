@@ -47,7 +47,7 @@ planet_event = {
 		set_variable = { which = var_local_pop_amount value = local_pop_amount }
 		if = { # IDK, this var seems out of order, special global in the event scope
 			limit = {
-				NOT = { check_variable = { which = var_local_pop_amount value > 0 } }
+				check_variable = { which = var_local_pop_amount value <= 0 }
 			}
 			set_variable = { which = var_local_pop_amount value = 1 }
 		}
@@ -113,7 +113,7 @@ planet_event = {
 		set_variable = { which = var_local_pop_amount value = local_pop_amount }
 		if = { # IDK, this var seems out of order, special global in the event scope
 			limit = {
-				NOT = { check_variable = { which = var_local_pop_amount value > 0 } }
+				check_variable = { which = var_local_pop_amount value <= 0 }
 			}
 			set_variable = { which = var_local_pop_amount value = 1 }
 		}
@@ -394,9 +394,8 @@ planet_event = {
 				# and save them as an event target
 				if = {
 					limit = {
-						count_galaxy_species = {
-							count = 0
-							limit = {
+						NOT = {
+							any_galaxy_species = {
 								has_species_flag = assimilation_species_of_species@event_target:old_species
 								has_species_flag = assimilation_species_of_empire@root.owner
 								is_same_species = event_target:old_species
@@ -414,9 +413,7 @@ planet_event = {
 						homeworld = this
 						namelist = this
 						gender = this
-						traits = {
-							trait = trait_cybernetic
-						}
+						traits = { trait = trait_cybernetic }
 						effect = {
 							modify_species = {
 								species = this
@@ -522,9 +519,8 @@ planet_event = {
 				# and save them as an event target
 				if = {
 					limit = {
-						count_galaxy_species = {
-							count = 0
-							limit = {
+						NOT = {
+							any_galaxy_species = {
 								has_species_flag = assimilation_species_of_species@event_target:old_species
 								has_species_flag = assimilation_species_of_empire@root.owner
 								is_same_species = event_target:old_species
@@ -650,9 +646,8 @@ planet_event = {
 				# and save them as an event target
 				if = {
 					limit = {
-						count_galaxy_species = {
-							count = 0
-							limit = {
+						NOT = {
+							any_galaxy_species = {
 								has_species_flag = assimilation_species_of_species@event_target:old_species
 								has_species_flag = assimilation_species_of_empire@root.owner
 								is_same_species = event_target:old_species
@@ -670,9 +665,7 @@ planet_event = {
 						homeworld = this
 						namelist = this
 						gender = this
-						traits = {
-							trait = trait_psionic
-						}
+						traits = { trait = trait_psionic }
 						effect = {
 							modify_species = {
 								species = this
@@ -779,9 +772,8 @@ planet_event = {
 				# and save them as an event target
 				if = {
 					limit = {
-						count_galaxy_species = {
-							count = 0
-							limit = {
+						NOT = {
+							any_galaxy_species = {
 								has_species_flag = assimilation_species_of_species@event_target:old_species
 								has_species_flag = assimilation_species_of_empire@root.owner
 								is_same_species = event_target:old_species
@@ -1138,9 +1130,8 @@ planet_event = {
 				# and save them as an event target
 				if = {
 					limit = {
-						count_galaxy_species = {
-							count = 0
-							limit = {
+						NOT = {
+							any_galaxy_species = {
 								has_species_flag = assimilation_species_of_species@event_target:old_species
 								has_species_flag = assimilation_species_of_empire@root.owner
 								is_same_species = event_target:old_species
@@ -1259,9 +1250,8 @@ planet_event = {
 				# and save them as an event target
 				if = {
 					limit = {
-						count_galaxy_species = {
-							count = 0
-							limit = {
+						NOT = {
+							any_galaxy_species = {
 								has_species_flag = assimilation_species_of_species@event_target:old_species
 								has_species_flag = assimilation_species_of_empire@root.owner
 								is_same_species = event_target:old_species
@@ -1279,9 +1269,7 @@ planet_event = {
 						homeworld = this
 						namelist = this
 						gender = this
-						traits = {
-							trait = trait_hive_mind
-						}
+						traits = { trait = trait_hive_mind }
 						effect = {
 							modify_species = {
 								species = this
@@ -1386,9 +1374,8 @@ planet_event = {
 				# and save them as an event target
 				if = {
 					limit = {
-						count_galaxy_species = {
-							count = 0
-							limit = {
+						NOT = {
+							any_galaxy_species = {
 								has_species_flag = assimilation_species_of_species@event_target:old_species
 								has_species_flag = assimilation_species_of_empire@root.owner
 								is_same_species = event_target:old_species

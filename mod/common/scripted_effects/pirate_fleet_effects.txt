@@ -1,10 +1,11 @@
 #  Only minor changes by FirePrince: random pirate stations on create_pirate_base_1
-
 ###############
 # New Pirates #
 ###############
+
 create_normal_pirate_country = {
 	optimize_memory
+
 	event_target:pirate_system = {
 		random_system_planet = {
 			limit = { $HOME_PLANET_TRIGGER|always$ = yes }
@@ -18,12 +19,15 @@ create_normal_pirate_country = {
 					background = { category = "backgrounds" file = "00_solid.dds" }
 					colors = { "black" "black" "null" "null" }
 				}
-				effect = { save_event_target_as = pirate_band }
+				effect = {
+					save_event_target_as = pirate_band
+				}
 			}
 			event_target:pirate_band = {
 				set_name = random
 				randomize_flag_symbol = "pirate"
-				every_country = { limit = { is_country_type_with_subjects = yes }
+				every_country = {
+					limit = { is_country_type_with_subjects = yes }
 					establish_communications_no_message = prev
 				}
 			}
@@ -56,7 +60,6 @@ create_normal_pirate_country = {
 # 		}
 # 	}
 # }
-
 # # DELETEME: Deprecated Obsolete Needless Vanilla Dummie
 # create_drone_pirate_country_2 = {
 # 	optimize_memory
@@ -132,17 +135,20 @@ create_normal_pirate_country = {
 # 		}
 # 	}
 # }
-
 # root = pirate_target country / ship
 create_pirate_base_1 = {
 	optimize_memory
+
 	create_fleet = {
 		name = "NAME_Pirate_Station"
 		effect = {
 			set_owner = event_target:pirate_band
 			random_list = {
 				50 = {
-					modifier = { factor = 0.02 NOT = { root.owner = { has_technology = tech_mass_drivers_1 } } }
+					modifier = {
+						factor = 0.02
+						NOT = { root.owner = { has_technology = tech_mass_drivers_1 } }
+					}
 					create_ship = {
 						name = random
 						design = "NAME_Pirate_Nest"
@@ -150,7 +156,8 @@ create_pirate_base_1 = {
 					}
 				}
 				3 = {
-					modifier = { factor = 0.1
+					modifier = {
+						factor = 0.1
 						root.owner = { has_technology = tech_missiles_1 }
 					}
 					create_ship = {
@@ -160,7 +167,8 @@ create_pirate_base_1 = {
 					}
 				}
 				2 = {
-					modifier = { factor = 0.1
+					modifier = {
+						factor = 0.1
 						root.owner = { has_technology = tech_lasers_1 }
 					}
 					create_ship = {
@@ -212,6 +220,7 @@ create_pirate_base_1 = {
 
 create_pirate_fleet = {
 	optimize_memory
+
 	event_target:pirate_band = {
 		create_leader = {
 			class = commander
@@ -225,7 +234,11 @@ create_pirate_fleet = {
 				set_owner = event_target:pirate_band
 				if = {
 					limit = { years_passed > 99 }
-					create_dyn_pirate_fleet = { Pirate_Galleon = 1 Skull = 6 Brigand = 6 }
+					create_dyn_pirate_fleet = {
+						Pirate_Galleon = 1
+						Skull = 6
+						Brigand = 6
+					}
 				}
 				else_if = {
 					limit = { years_passed > 90 }
@@ -233,19 +246,42 @@ create_pirate_fleet = {
 				}
 				else_if = {
 					limit = { years_passed > 80 }
-					create_dyn_pirate_fleet = { Skull = 8 Brigand = 6 Marauder = 4 Corsair = 4 Black_Earl = 4 }
+					create_dyn_pirate_fleet = {
+						Skull = 8
+						Brigand = 6
+						Marauder = 4
+						Corsair = 4
+						Black_Earl = 4
+					}
 				}
 				else_if = {
 					limit = { years_passed > 70 }
-					create_dyn_pirate_fleet = { Skull = 7 Brigand = 6 Marauder = 4 Corsair = 4 Black_Earl = 3 }
+					create_dyn_pirate_fleet = {
+						Skull = 7
+						Brigand = 6
+						Marauder = 4
+						Corsair = 4
+						Black_Earl = 3
+					}
 				}
 				else_if = {
 					limit = { years_passed > 60 }
-					create_dyn_pirate_fleet = { Skull = 6 Brigand = 6 Marauder = 4 Corsair = 4 Black_Earl = 2 }
+					create_dyn_pirate_fleet = {
+						Skull = 6
+						Brigand = 6
+						Marauder = 4
+						Corsair = 4
+						Black_Earl = 2
+					}
 				}
 				else_if = {
 					limit = { years_passed > 50 }
-					create_dyn_pirate_fleet = { Skull = 6 Brigand = 6 Marauder = 4 Corsair = 2 }
+					create_dyn_pirate_fleet = {
+						Skull = 6
+						Brigand = 6
+						Marauder = 4
+						Corsair = 2
+					}
 				}
 				else_if = {
 					limit = { years_passed > 40 }
@@ -278,10 +314,15 @@ create_pirate_fleet = {
 }
 
 ## ALL create_pirate_ships DEPRECATED Vanilla due create_dyn_pirate_fleet
+
 create_pirate_ships_0 = {
 	optimize_memory
-	create_ship_design = { design = "NAME_Reaver" }
-	while = { count = 10
+
+	create_ship_design = {
+		design = "NAME_Reaver"
+	}
+	while = {
+		count = 10
 		create_ship = {
 			name = random
 			design = last_created_design
@@ -292,16 +333,24 @@ create_pirate_ships_0 = {
 
 create_pirate_ships_1 = {
 	optimize_memory
-	create_ship_design = { design = "NAME_Reaver" }
-	while = { count = 10
+
+	create_ship_design = {
+		design = "NAME_Reaver"
+	}
+	while = {
+		count = 10
 		create_ship = {
 			name = random
 			design = last_created_design
 			graphical_culture = "pirate_01"
 		}
 	}
-	create_ship_design = { design = "NAME_Brigand" }
-	while = { count = 4
+
+	create_ship_design = {
+		design = "NAME_Brigand"
+	}
+	while = {
+		count = 4
 		create_ship = {
 			name = random
 			design = last_created_design
@@ -312,16 +361,24 @@ create_pirate_ships_1 = {
 
 create_pirate_ships_2 = {
 	optimize_memory
-	create_ship_design = { design = "NAME_Reaver" }
-	while = { count = 6
+
+	create_ship_design = {
+		design = "NAME_Reaver"
+	}
+	while = {
+		count = 6
 		create_ship = {
 			name = random
 			design = last_created_design
 			graphical_culture = "pirate_01"
 		}
 	}
-	create_ship_design = { design = "NAME_Brigand" }
-	while = { count = 6
+
+	create_ship_design = {
+		design = "NAME_Brigand"
+	}
+	while = {
+		count = 6
 		create_ship = {
 			name = random
 			design = last_created_design
@@ -332,16 +389,24 @@ create_pirate_ships_2 = {
 
 create_pirate_ships_3 = {
 	optimize_memory
-	create_ship_design = { design = "NAME_Skull" }
-	while = { count = 6
+
+	create_ship_design = {
+		design = "NAME_Skull"
+	}
+	while = {
+		count = 6
 		create_ship = {
 			name = random
 			design = last_created_design
 			graphical_culture = "pirate_01"
 		}
 	}
-	create_ship_design = { design = "NAME_Brigand" }
-	while = { count = 6
+
+	create_ship_design = {
+		design = "NAME_Brigand"
+	}
+	while = {
+		count = 6
 		create_ship = {
 			name = random
 			design = last_created_design
@@ -352,16 +417,24 @@ create_pirate_ships_3 = {
 
 create_pirate_ships_4 = {
 	optimize_memory
-	create_ship_design = { design = "NAME_Skull" }
-	while = { count = 8
+
+	create_ship_design = {
+		design = "NAME_Skull"
+	}
+	while = {
+		count = 8
 		create_ship = {
 			name = random
 			design = last_created_design
 			graphical_culture = "pirate_01"
 		}
 	}
-	create_ship_design = { design = "NAME_Marauder" }
-	while = { count = 4
+
+	create_ship_design = {
+		design = "NAME_Marauder"
+	}
+	while = {
+		count = 4
 		create_ship = {
 			name = random
 			design = last_created_design
@@ -372,32 +445,48 @@ create_pirate_ships_4 = {
 
 create_pirate_ships_5 = {
 	optimize_memory
-	create_ship_design = { design = "NAME_Skull" }
-	while = { count = 6
+
+	create_ship_design = {
+		design = "NAME_Skull"
+	}
+	while = {
+		count = 6
 		create_ship = {
 			name = random
 			design = last_created_design
 			graphical_culture = "pirate_01"
 		}
 	}
-	create_ship_design = { design = "NAME_Brigand" }
-	while = { count = 6
+
+	create_ship_design = {
+		design = "NAME_Brigand"
+	}
+	while = {
+		count = 6
 		create_ship = {
 			name = random
 			design = last_created_design
 			graphical_culture = "pirate_01"
 		}
 	}
-	create_ship_design = { design = "NAME_Marauder" }
-	while = { count = 4
+
+	create_ship_design = {
+		design = "NAME_Marauder"
+	}
+	while = {
+		count = 4
 		create_ship = {
 			name = random
 			design = last_created_design
 			graphical_culture = "pirate_01"
 		}
 	}
-	create_ship_design = { design = "NAME_Corsair" }
-	while = { count = 2
+
+	create_ship_design = {
+		design = "NAME_Corsair"
+	}
+	while = {
+		count = 2
 		create_ship = {
 			name = random
 			design = last_created_design
@@ -408,40 +497,60 @@ create_pirate_ships_5 = {
 
 create_pirate_ships_6 = {
 	optimize_memory
-	create_ship_design = { design = "NAME_Skull" }
-	while = { count = 6
+
+	create_ship_design = {
+		design = "NAME_Skull"
+	}
+	while = {
+		count = 6
 		create_ship = {
 			name = random
 			design = last_created_design
 			graphical_culture = "pirate_01"
 		}
 	}
-	create_ship_design = { design = "NAME_Brigand" }
-	while = { count = 6
+
+	create_ship_design = {
+		design = "NAME_Brigand"
+	}
+	while = {
+		count = 6
 		create_ship = {
 			name = random
 			design = last_created_design
 			graphical_culture = "pirate_01"
 		}
 	}
-	create_ship_design = { design = "NAME_Marauder" }
-	while = { count = 4
+
+	create_ship_design = {
+		design = "NAME_Marauder"
+	}
+	while = {
+		count = 4
 		create_ship = {
 			name = random
 			design = last_created_design
 			graphical_culture = "pirate_01"
 		}
 	}
-	create_ship_design = { design = "NAME_Corsair" }
-	while = { count = 4
+
+	create_ship_design = {
+		design = "NAME_Corsair"
+	}
+	while = {
+		count = 4
 		create_ship = {
 			name = random
 			design = last_created_design
 			graphical_culture = "pirate_01"
 		}
 	}
-	create_ship_design = { design = "NAME_Black_Earl" }
-	while = { count = 2
+
+	create_ship_design = {
+		design = "NAME_Black_Earl"
+	}
+	while = {
+		count = 2
 		create_ship = {
 			name = random
 			design = last_created_design
@@ -452,40 +561,60 @@ create_pirate_ships_6 = {
 
 create_pirate_ships_7 = {
 	optimize_memory
-	create_ship_design = { design = "NAME_Skull" }
-	while = { count = 6
+
+	create_ship_design = {
+		design = "NAME_Skull"
+	}
+	while = {
+		count = 6
 		create_ship = {
 			name = random
 			design = last_created_design
 			graphical_culture = "pirate_01"
 		}
 	}
-	create_ship_design = { design = "NAME_Brigand" }
-	while = { count = 6
+
+	create_ship_design = {
+		design = "NAME_Brigand"
+	}
+	while = {
+		count = 6
 		create_ship = {
 			name = random
 			design = last_created_design
 			graphical_culture = "pirate_01"
 		}
 	}
-	create_ship_design = { design = "NAME_Marauder" }
-	while = { count = 4
+
+	create_ship_design = {
+		design = "NAME_Marauder"
+	}
+	while = {
+		count = 4
 		create_ship = {
 			name = random
 			design = last_created_design
 			graphical_culture = "pirate_01"
 		}
 	}
-	create_ship_design = { design = "NAME_Corsair" }
-	while = { count = 4
+
+	create_ship_design = {
+		design = "NAME_Corsair"
+	}
+	while = {
+		count = 4
 		create_ship = {
 			name = random
 			design = last_created_design
 			graphical_culture = "pirate_01"
 		}
 	}
-	create_ship_design = { design = "NAME_Black_Earl" }
-	while = { count = 2
+
+	create_ship_design = {
+		design = "NAME_Black_Earl"
+	}
+	while = {
+		count = 2
 		create_ship = {
 			name = random
 			design = last_created_design
@@ -496,40 +625,60 @@ create_pirate_ships_7 = {
 
 create_pirate_ships_8 = {
 	optimize_memory
-	create_ship_design = { design = "NAME_Skull" }
-	while = { count = 8
+
+	create_ship_design = {
+		design = "NAME_Skull"
+	}
+	while = {
+		count = 8
 		create_ship = {
 			name = random
 			design = last_created_design
 			graphical_culture = "pirate_01"
 		}
 	}
-	create_ship_design = { design = "NAME_Brigand" }
-	while = { count = 6
+
+	create_ship_design = {
+		design = "NAME_Brigand"
+	}
+	while = {
+		count = 6
 		create_ship = {
 			name = random
 			design = last_created_design
 			graphical_culture = "pirate_01"
 		}
 	}
-	create_ship_design = { design = "NAME_Marauder" }
-	while = { count = 4
+
+	create_ship_design = {
+		design = "NAME_Marauder"
+	}
+	while = {
+		count = 4
 		create_ship = {
 			name = random
 			design = last_created_design
 			graphical_culture = "pirate_01"
 		}
 	}
-	create_ship_design = { design = "NAME_Corsair" }
-	while = { count = 4
+
+	create_ship_design = {
+		design = "NAME_Corsair"
+	}
+	while = {
+		count = 4
 		create_ship = {
 			name = random
 			design = last_created_design
 			graphical_culture = "pirate_01"
 		}
 	}
-	create_ship_design = { design = "NAME_Black_Earl" }
-	while = { count = 4
+
+	create_ship_design = {
+		design = "NAME_Black_Earl"
+	}
+	while = {
+		count = 4
 		create_ship = {
 			name = random
 			design = last_created_design
@@ -540,16 +689,24 @@ create_pirate_ships_8 = {
 
 create_pirate_ships_9 = {
 	optimize_memory
-	create_ship_design = { design = "NAME_Pirate_Galleon" }
-	while = { count = 1
+
+	create_ship_design = {
+		design = "NAME_Pirate_Galleon"
+	}
+	while = {
+		count = 1
 		create_ship = {
 			name = random
 			design = last_created_design
 			graphical_culture = "pirate_01"
 		}
 	}
-	create_ship_design = { design = "NAME_Black_Earl" }
-	while = { count = 2
+
+	create_ship_design = {
+		design = "NAME_Black_Earl"
+	}
+	while = {
+		count = 2
 		create_ship = {
 			name = random
 			design = last_created_design
@@ -560,24 +717,36 @@ create_pirate_ships_9 = {
 
 create_pirate_ships_10 = {
 	optimize_memory
-	create_ship_design = { design = "NAME_Pirate_Galleon" }
-	while = { count = 1
+
+	create_ship_design = {
+		design = "NAME_Pirate_Galleon"
+	}
+	while = {
+		count = 1
 		create_ship = {
 			name = random
 			design = last_created_design
 			graphical_culture = "pirate_01"
 		}
 	}
-	create_ship_design = { design = "NAME_Skull" }
-	while = { count = 6
+
+	create_ship_design = {
+		design = "NAME_Skull"
+	}
+	while = {
+		count = 6
 		create_ship = {
 			name = random
 			design = last_created_design
 			graphical_culture = "pirate_01"
 		}
 	}
-	create_ship_design = { design = "NAME_Brigand" }
-	while = { count = 6
+
+	create_ship_design = {
+		design = "NAME_Brigand"
+	}
+	while = {
+		count = 6
 		create_ship = {
 			name = random
 			design = last_created_design
@@ -587,8 +756,10 @@ create_pirate_ships_10 = {
 }
 
 ### Privateers from "Arm Privateers" operation
+
 create_privateer_country = {
 	optimize_memory
+
 	event_target:privateer_system = {
 		random_system_planet = {
 			save_event_target_as = privateer_home
@@ -601,21 +772,26 @@ create_privateer_country = {
 					background = { category = "backgrounds" file = "00_solid.dds" }
 					colors = { "black" "black" "null" "null" }
 				}
-				effect = { save_event_target_as = privateer_band }
+				effect = {
+					save_event_target_as = privateer_band
+				}
 			}
 			event_target:privateer_band = {
 				randomize_flag_symbol = "pirate"
-				every_country = { limit = { is_country_type_with_subjects = yes } establish_communications_no_message = prev }
+				every_country = {
+					limit = { is_country_type_with_subjects = yes }
+					establish_communications_no_message = prev
+				}
 			}
 		}
 	}
 }
 
 # Update zz_diplo_vanilla_scripted_effects.txt from "Expanded Espionage and Diplomacy"
-create_privateer_fleet = { # Event targets created by create_privateer_country.
+# Event targets created by create_privateer_country.
+create_privateer_fleet = {
 	event_target:privateer_band = {
 		set_variable = { which = pirates_f_tmp value = 1 }
-
 		create_leader = {
 			class = commander
 			species = owner_species
@@ -704,7 +880,6 @@ create_privateer_fleet = { # Event targets created by create_privateer_country.
 # 		}
 # 	}
 # }
-
 # create_privateer_ships_1 = {
 # 	optimize_memory
 # 	create_ship_design = { design = "NAME_Reaver" }
@@ -717,7 +892,6 @@ create_privateer_fleet = { # Event targets created by create_privateer_country.
 # 		}
 # 	}
 # }
-
 # create_privateer_ships_2 = {
 # 	optimize_memory
 # 	create_ship_design = { design = "NAME_Reaver" }
@@ -739,7 +913,6 @@ create_privateer_fleet = { # Event targets created by create_privateer_country.
 # 		}
 # 	}
 # }
-
 # create_privateer_ships_3 = {
 # 	optimize_memory
 # 	create_ship_design = { design = "NAME_Skull" }
@@ -752,7 +925,6 @@ create_privateer_fleet = { # Event targets created by create_privateer_country.
 # 		}
 # 	}
 # }
-
 # create_privateer_ships_4 = {
 # 	optimize_memory
 # 	create_ship_design = { design = "NAME_Skull" }
@@ -765,7 +937,6 @@ create_privateer_fleet = { # Event targets created by create_privateer_country.
 # 		}
 # 	}
 # }
-
 # create_privateer_ships_5 = {
 # 	optimize_memory
 # 	create_ship_design = { design = "NAME_Skull" }
@@ -787,7 +958,6 @@ create_privateer_fleet = { # Event targets created by create_privateer_country.
 # 		}
 # 	}
 # }
-
 # create_privateer_ships_6 = {
 # 	optimize_memory
 # 	create_ship_design = { design = "NAME_Skull" }
@@ -827,7 +997,6 @@ create_privateer_fleet = { # Event targets created by create_privateer_country.
 # 		}
 # 	}
 # }
-
 # create_privateer_ships_7 = {
 # 	optimize_memory
 # 	create_ship_design = { design = "NAME_Skull" }
@@ -876,7 +1045,6 @@ create_privateer_fleet = { # Event targets created by create_privateer_country.
 # 		}
 # 	}
 # }
-
 # create_privateer_ships_8 = {
 # 	optimize_memory
 # 	create_ship_design = { design = "NAME_Skull" }
@@ -925,7 +1093,6 @@ create_privateer_fleet = { # Event targets created by create_privateer_country.
 # 		}
 # 	}
 # }
-
 # create_privateer_ships_9 = {
 # 	optimize_memory
 # 	create_ship_design = { design = "NAME_Pirate_Galleon" }
@@ -956,7 +1123,6 @@ create_privateer_fleet = { # Event targets created by create_privateer_country.
 # 		}
 # 	}
 # }
-
 # create_privateer_ships_10 = {
 # 	optimize_memory
 # 	create_ship_design = { design = "NAME_Pirate_Galleon" }
@@ -1005,7 +1171,6 @@ create_privateer_fleet = { # Event targets created by create_privateer_country.
 # 		}
 # 	}
 # }
-
 # create_privateer_ships_11 = {
 # 	optimize_memory
 # 	create_ship_design = { design = "NAME_Pirate_Galleon" }
@@ -1054,7 +1219,6 @@ create_privateer_fleet = { # Event targets created by create_privateer_country.
 # 		}
 # 	}
 # }
-
 # create_privateer_ships_12 = {
 # 	optimize_memory
 # 	create_ship_design = { design = "NAME_Pirate_Galleon" }
@@ -1103,7 +1267,6 @@ create_privateer_fleet = { # Event targets created by create_privateer_country.
 # 		}
 # 	}
 # }
-
 #####################
 # Late-game Pirates
 #####################
@@ -1111,7 +1274,9 @@ create_privateer_fleet = { # Event targets created by create_privateer_country.
 create_thalassocracy_country = {
 	optimize_memory
 	if = {
-		limit = { NOT = { exists = event_target:thalassocracy_country } }
+		limit = {
+			NOT = { exists = event_target:thalassocracy_country }
+		}
 		create_species = {
 			name = "NAME_Thalassocracy_species"
 			plural = "NAME_Thalassocracy_species_plural"
@@ -1128,7 +1293,9 @@ create_thalassocracy_country = {
 				trait = "trait_deviants"
 				trait = "trait_void_dweller_1"
 			}
-			effect = { save_event_target_as = thalassocracy_species } # Vfix opt
+			effect = {
+				save_event_target_as = thalassocracy_species
+			} # Vfix opt
 		}
 		create_country = {
 			name = "NAME_Thalassocracy"
@@ -1152,6 +1319,7 @@ create_thalassocracy_country = {
 
 create_thalassocracy_fleet = {
 	optimize_memory
+
 	event_target:thalassocracy_country = {
 		create_leader = {
 			class = commander
@@ -1205,28 +1373,32 @@ create_thalassocracy_fleet = {
 
 create_thalassocracy_ships_1 = {
 	optimize_memory
-	while = { count = 40
+	while = {
+		count = 40
 		create_ship = {
 			name = random
 			design = "NAME_Bemat_corvette_01"
 			graphical_culture = "pirate_01"
 		}
 	}
-	while = { count = 35
+	while = {
+		count = 35
 		create_ship = {
 			name = random
 			design = "NAME_Bemat_destroyer_02"
 			graphical_culture = "pirate_01"
 		}
 	}
-	while = { count = 20
+	while = {
+		count = 20
 		create_ship = {
 			name = random
 			design = "NAME_Bemat_cruiser_01"
 			graphical_culture = "pirate_01"
 		}
 	}
-	while = { count = 14
+	while = {
+		count = 14
 		create_ship = {
 			name = random
 			design = "NAME_Bemat_cruiser_02"
@@ -1237,35 +1409,40 @@ create_thalassocracy_ships_1 = {
 
 create_thalassocracy_ships_2 = {
 	optimize_memory
-	while = { count = 34
+	while = {
+		count = 34
 		create_ship = {
 			name = random
 			design = "NAME_Bemat_corvette_01"
 			graphical_culture = "pirate_01"
 		}
 	}
-	while = { count = 28
+	while = {
+		count = 28
 		create_ship = {
 			name = random
 			design = "NAME_Bemat_destroyer_01"
 			graphical_culture = "pirate_01"
 		}
 	}
-	while = { count = 17
+	while = {
+		count = 17
 		create_ship = {
 			name = random
 			design = "NAME_Bemat_destroyer_02"
 			graphical_culture = "pirate_01"
 		}
 	}
-	while = { count = 26
+	while = {
+		count = 26
 		create_ship = {
 			name = random
 			design = "NAME_Bemat_cruiser_01"
 			graphical_culture = "pirate_01"
 		}
 	}
-	while = { count = 18
+	while = {
+		count = 18
 		create_ship = {
 			name = random
 			design = "NAME_Bemat_cruiser_02"
@@ -1276,35 +1453,40 @@ create_thalassocracy_ships_2 = {
 
 create_thalassocracy_ships_3 = {
 	optimize_memory
-	while = { count = 36
+	while = {
+		count = 36
 		create_ship = {
 			name = random
 			design = "NAME_Bemat_corvette_01"
 			graphical_culture = "pirate_01"
 		}
 	}
-	while = { count = 32
+	while = {
+		count = 32
 		create_ship = {
 			name = random
 			design = "NAME_Bemat_destroyer_01"
 			graphical_culture = "pirate_01"
 		}
 	}
-	while = { count = 24
+	while = {
+		count = 24
 		create_ship = {
 			name = random
 			design = "NAME_Bemat_destroyer_02"
 			graphical_culture = "pirate_01"
 		}
 	}
-	while = { count = 30
+	while = {
+		count = 30
 		create_ship = {
 			name = random
 			design = "NAME_Bemat_cruiser_01"
 			graphical_culture = "pirate_01"
 		}
 	}
-	while = { count = 20
+	while = {
+		count = 20
 		create_ship = {
 			name = random
 			design = "NAME_Bemat_cruiser_02"
@@ -1325,7 +1507,9 @@ thalassocracy_patrol = {
 		}
 		solar_system = {
 			random_system_planet = {
-				limit = { NOT = { has_planet_flag = thalassocracy_visited } }
+				limit = {
+					NOT = { has_planet_flag = thalassocracy_visited }
+				}
 				save_global_event_target_as = thalassocracy_target_planet
 				set_planet_flag = thalassocracy_visited
 			}
@@ -1350,7 +1534,9 @@ thalassocracy_patrol = {
 				}
 				save_global_event_target_as = thalassocracy_target_system
 				random_system_planet = {
-					limit = { NOT = { has_planet_flag = thalassocracy_visited } }
+					limit = {
+						NOT = { has_planet_flag = thalassocracy_visited }
+					}
 					save_global_event_target_as = thalassocracy_target_planet
 					set_planet_flag = thalassocracy_visited
 				}
@@ -1366,6 +1552,7 @@ thalassocracy_patrol = {
 			}
 		}
 	}
+
 	auto_move_to_planet = {
 		target = event_target:thalassocracy_target_planet
 		clear_auto_move_on_arrival = no

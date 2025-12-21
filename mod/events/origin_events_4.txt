@@ -249,7 +249,9 @@ first_contact_event = {
 	}
 	option = {
 		name = origin.4200.b.mili
-		trigger = { owner = { is_militarist = yes } }
+		trigger = {
+			owner = { is_militarist = yes }
+		}
 		hidden_effect = {
 			set_first_contact_stage = slavers_stage_2
 		}
@@ -1264,7 +1266,10 @@ country_event = {
 	option = { # weapons
 		name = origin.4041.a
 		custom_tooltip = origin.4041.a.tooltip
-		begin_event_chain = { event_chain = payback_make_them_pay_swords_chain target = this }
+		begin_event_chain = {
+			event_chain = payback_make_them_pay_swords_chain
+			target = this
+		}
 	}
 }
 
@@ -1279,11 +1284,17 @@ country_event = {
 	}
 	desc = {
 		text = origin.4042.desc.galcom
-		trigger = { is_galactic_community_formed = yes is_galactic_community_member = yes }
+		trigger = {
+			is_galactic_community_formed = yes
+			is_galactic_community_member = yes
+		}
 	}
 	desc = {
 		text = origin.4042.desc.nogalcommember
-		trigger = { is_galactic_community_formed = yes is_galactic_community_member = no }
+		trigger = {
+			is_galactic_community_formed = yes
+			is_galactic_community_member = no
+		}
 	}
 
 	picture = GFX_evt_galactic_community
@@ -1435,7 +1446,9 @@ country_event = {
 	trigger = {
 		has_origin = origin_payback
 		has_country_flag = payback_use_words
-		NOT = { has_country_flag = payback_revenge_words_first_resolution_passed }
+		NOT = {
+			has_country_flag = payback_revenge_words_first_resolution_passed
+		}
 	}
 
 	immediate = {
@@ -1874,7 +1887,10 @@ country_event = {
 				limit = {
 					NOT = { has_event_chain = payback_make_them_pay_swords_chain }
 				}
-				begin_event_chain = { event_chain = payback_make_them_pay_swords_chain target = root }
+				begin_event_chain = {
+					event_chain = payback_make_them_pay_swords_chain
+					target = root
+				}
 			}
 			custom_tooltip = origin.4070.d.tooltip
 		}
@@ -2346,7 +2362,9 @@ situation_event = {
 		owner = {
 			switch = {
 				trigger = has_deficit
-				energy = { add_resource = { energy = 1000 } }
+				energy = {
+					add_resource = { energy = 1000 }
+				}
 				minerals = {
 					add_resource = { minerals = 1000 }
 				}
@@ -2379,11 +2397,17 @@ country_event = {
 	title = origin.4300.name
 
 	desc = {
-		trigger = { has_country_flag = has_encountered_other_empire is_xenophile = yes }
+		trigger = {
+			has_country_flag = has_encountered_other_empire
+			is_xenophile = yes
+		}
 		text = origin.4300.aliens.phile.desc
 	}
 	desc = {
-		trigger = { has_country_flag = has_encountered_other_empire is_xenophobe = yes }
+		trigger = {
+			has_country_flag = has_encountered_other_empire
+			is_xenophobe = yes
+		}
 		text = origin.4300.aliens.phobe.desc
 	}
 	desc = {
@@ -2487,7 +2511,10 @@ country_event = {
 	}
 	option = {
 		name = origin.4301.a
-		trigger = { is_xenophobe = yes num_research_agreements > 1 }
+		trigger = {
+			is_xenophobe = yes
+			num_research_agreements > 1
+		}
 		every_owned_pop_group = {
 			limit = {
 				has_any_ethic = yes
@@ -2613,9 +2640,8 @@ country_event = {
 	trigger = {
 		has_country_flag = payback_ruined_gene_clinics # Vfix by Dr. Addiction
 		# Only happens if you haven't somehow built/gotten more clinics in the meantime
-		count_owned_planet = {
-			count = 0
-			limit = {
+		NOT = {
+			any_owned_planet = {
 				OR = {
 					has_active_building = building_medical_2
 					has_active_building = building_medical_3 # Vfix

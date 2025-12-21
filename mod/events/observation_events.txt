@@ -2109,9 +2109,7 @@ country_event = {
 			species = event_target:pre_ftl_country.species
 			name = "NAME_Sobak"
 			skill = 6
-			traits = {
-				1 = leader_trait_spark_of_genius
-			}
+			traits = { 1 = leader_trait_spark_of_genius }
 			custom_description = Sobak_Background
 			skip_background_generation = yes
 			event_leader = yes	# prevents this leader from leading factions and winning elections

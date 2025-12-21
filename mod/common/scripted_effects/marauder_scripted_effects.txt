@@ -3,7 +3,6 @@
 create_1st_khan_fleet = {
 	create_fleet = {
 		name = "NAME_Chosen_of_the_Great_Khan"
-
 		effect = {
 			set_owner = event_target:raider_khanate
 			while = {
@@ -50,7 +49,6 @@ create_1st_khan_fleet = {
 				angle = random
 			}
 		}
-
 		settings = {
 			can_upgrade = no
 			can_disband = no
@@ -64,7 +62,6 @@ create_1st_khan_fleet = {
 create_2nd_khan_fleet = {
 	create_fleet = {
 		name = "NAME_Chosen_of_the_Great_Khan"
-
 		effect = {
 			set_owner = event_target:raider_khanate
 			while = {
@@ -111,7 +108,6 @@ create_2nd_khan_fleet = {
 				angle = random
 			}
 		}
-
 		settings = {
 			can_upgrade = no
 			can_disband = no
@@ -123,13 +119,13 @@ create_2nd_khan_fleet = {
 }
 
 ### Diadochi ###
+
 assign_first_diadochi_planets = {
 	random_system_within_border = {
 		limit = {
 			is_potential_diadochi_system = yes
 			any_system_colony = { has_owner = yes is_owned_by = root }
 		}
-
 		set_star_flag = first_diadochi_system
 		save_event_target_as = first_diadochi_origin
 	}
@@ -137,37 +133,40 @@ assign_first_diadochi_planets = {
 	effect_on_blob = {
 		center = event_target:first_diadochi_origin
 		owned_planets_percentage = 0.25
-
 		planet_limit = {
 			solar_system = { is_potential_diadochi_system = yes }
 		}
-
-		effect = { set_star_flag = first_diadochi_system }
+		effect = {
+			set_star_flag = first_diadochi_system
+		}
 	}
 }
 
 create_first_diadochi = {
 	if = {
 		limit = { exists = event_target:first_diadochi_origin }
-
 		create_country = {
 			name_list = random
 			species = event_target:marauder_species
 			type = default
 			authority = auth_imperial
-			civics = { civic = civic_diadochi civic = random }
+			civics = {
+				civic = civic_diadochi
+				civic = random
+			}
 			origin = "origin_khan_successor"
-			ethos = { ethic = ethic_fanatic_militarist ethic = ethic_xenophobe }
+			ethos = {
+				ethic = ethic_fanatic_militarist
+				ethic = ethic_xenophobe
+			}
 			ignore_initial_colony_error = yes
 		}
-
 		last_created_country = {
 			save_event_target_as = first_diadochi
 			set_country_flag = diadochi_1
 			set_country_flag = diadochi
 			set_name = random
 		}
-
 		# Flip Starbases
 		every_system_within_border = {
 			limit = {
@@ -176,7 +175,6 @@ create_first_diadochi = {
 			}
 			starbase = { set_owner = event_target:first_diadochi }
 		}
-
 		# Flip Planets
 		every_owned_planet = {
 			limit = {
@@ -185,7 +183,6 @@ create_first_diadochi = {
 			set_owner = event_target:first_diadochi
 			set_controller = event_target:first_diadochi
 		}
-
 		event_target:first_diadochi = {
 			add_resource = {
 				minerals = 20000
@@ -287,7 +284,9 @@ create_first_diadochi = {
 						angle = random
 					}
 				}
-				settings = { uses_naval_capacity = no }
+				settings = {
+					uses_naval_capacity = no
+				}
 			}
 			# Armies
 			create_leader = {
@@ -332,7 +331,6 @@ create_first_diadochi = {
 				}
 			}
 		}
-
 		# Establish Communications
 		every_country = {
 			limit = {
@@ -352,7 +350,6 @@ assign_second_diadochi_planets = {
 			is_potential_diadochi_system = yes
 			any_system_colony = { has_owner = yes is_owned_by = root }
 		}
-
 		set_star_flag = second_diadochi_system
 		save_event_target_as = second_diadochi_origin
 	}
@@ -360,37 +357,40 @@ assign_second_diadochi_planets = {
 	effect_on_blob = {
 		center = event_target:second_diadochi_origin
 		owned_planets_percentage = 0.33
-
 		planet_limit = {
 			solar_system = { is_potential_diadochi_system = yes }
 		}
-
-		effect = { set_star_flag = second_diadochi_system }
+		effect = {
+			set_star_flag = second_diadochi_system
+		}
 	}
 }
 
 create_second_diadochi = {
 	if = {
 		limit = { exists = event_target:second_diadochi_origin }
-
 		create_country = {
 			name_list = random
 			species = event_target:marauder_species
 			type = default
 			authority = auth_imperial
-			civics = { civic = civic_diadochi civic = random }
+			civics = {
+				civic = civic_diadochi
+				civic = random
+			}
 			origin = "origin_khan_successor"
-			ethos = { ethic = ethic_fanatic_militarist ethic = ethic_xenophobe }
+			ethos = {
+				ethic = ethic_fanatic_militarist
+				ethic = ethic_xenophobe
+			}
 			ignore_initial_colony_error = yes
 		}
-
 		last_created_country = {
 			save_event_target_as = second_diadochi
 			set_country_flag = diadochi_2
 			set_country_flag = diadochi
 			set_name = random
 		}
-
 		# Flip Starbases
 		every_system_within_border = {
 			limit = {
@@ -399,7 +399,6 @@ create_second_diadochi = {
 			}
 			starbase = { set_owner = event_target:second_diadochi }
 		}
-
 		# Flip Planets
 		every_owned_planet = {
 			limit = {
@@ -408,7 +407,6 @@ create_second_diadochi = {
 			set_owner = event_target:second_diadochi
 			set_controller = event_target:second_diadochi
 		}
-
 		event_target:second_diadochi = {
 			add_resource = {
 				minerals = 20000
@@ -510,7 +508,9 @@ create_second_diadochi = {
 						angle = random
 					}
 				}
-				settings = { uses_naval_capacity = no }
+				settings = {
+					uses_naval_capacity = no
+				}
 			}
 			# Armies
 			create_leader = {
@@ -555,7 +555,6 @@ create_second_diadochi = {
 				}
 			}
 		}
-
 		# Establish Communications
 		every_country = {
 			limit = {
@@ -575,7 +574,6 @@ assign_third_diadochi_planets = {
 			is_potential_diadochi_system = yes
 			any_system_colony = { has_owner = yes is_owned_by = root }
 		}
-
 		set_star_flag = third_diadochi_system
 		save_event_target_as = third_diadochi_origin
 	}
@@ -583,37 +581,40 @@ assign_third_diadochi_planets = {
 	effect_on_blob = {
 		center = event_target:third_diadochi_origin
 		owned_planets_percentage = 0.5
-
 		planet_limit = {
 			solar_system = { is_potential_diadochi_system = yes }
 		}
-
-		effect = { set_star_flag = third_diadochi_system }
+		effect = {
+			set_star_flag = third_diadochi_system
+		}
 	}
 }
 
 create_third_diadochi = {
 	if = {
 		limit = { exists = event_target:third_diadochi_origin }
-
 		create_country = {
 			name_list = random
 			species = event_target:marauder_species
 			type = default
 			authority = auth_imperial
-			civics = { civic = civic_diadochi civic = random }
+			civics = {
+				civic = civic_diadochi
+				civic = random
+			}
 			origin = "origin_khan_successor"
-			ethos = { ethic = ethic_fanatic_militarist ethic = ethic_xenophobe }
+			ethos = {
+				ethic = ethic_fanatic_militarist
+				ethic = ethic_xenophobe
+			}
 			ignore_initial_colony_error = yes
 		}
-
 		last_created_country = {
 			save_event_target_as = third_diadochi
 			set_country_flag = diadochi_3
 			set_country_flag = diadochi
 			set_name = random
 		}
-
 		# Flip Starbases
 		every_system_within_border = {
 			limit = {
@@ -622,7 +623,6 @@ create_third_diadochi = {
 			}
 			starbase = { set_owner = event_target:third_diadochi }
 		}
-
 		# Flip Planets
 		every_owned_planet = {
 			limit = {
@@ -631,7 +631,6 @@ create_third_diadochi = {
 			set_owner = event_target:third_diadochi
 			set_controller = event_target:third_diadochi
 		}
-
 		event_target:third_diadochi = {
 			add_resource = {
 				minerals = 20000
@@ -733,7 +732,9 @@ create_third_diadochi = {
 						angle = random
 					}
 				}
-				settings = { uses_naval_capacity = no }
+				settings = {
+					uses_naval_capacity = no
+				}
 			}
 			# Armies
 			create_leader = {
@@ -778,7 +779,6 @@ create_third_diadochi = {
 				}
 			}
 		}
-
 		# Establish Communications
 		every_country = {
 			limit = {
@@ -798,7 +798,6 @@ assign_fourth_diadochi_planets = {
 			is_potential_diadochi_system = yes
 			any_system_colony = { has_owner = yes is_owned_by = root }
 		}
-
 		set_star_flag = fourth_diadochi_system
 		save_event_target_as = fourth_diadochi_origin
 	}
@@ -806,37 +805,40 @@ assign_fourth_diadochi_planets = {
 	effect_on_blob = {
 		center = event_target:fourth_diadochi_origin
 		owned_planets_percentage = 1
-
 		planet_limit = {
 			solar_system = { is_potential_diadochi_system = yes }
 		}
-
-		effect = { set_star_flag = fourth_diadochi_system }
+		effect = {
+			set_star_flag = fourth_diadochi_system
+		}
 	}
 }
 
 create_fourth_diadochi = {
 	if = {
 		limit = { exists = event_target:fourth_diadochi_origin }
-
 		create_country = {
 			name_list = random
 			species = event_target:marauder_species
 			type = default
 			authority = auth_imperial
-			civics = { civic = civic_diadochi civic = random }
+			civics = {
+				civic = civic_diadochi
+				civic = random
+			}
 			origin = "origin_khan_successor"
-			ethos = { ethic = ethic_fanatic_militarist ethic = ethic_xenophobe }
+			ethos = {
+				ethic = ethic_fanatic_militarist
+				ethic = ethic_xenophobe
+			}
 			ignore_initial_colony_error = yes
 		}
-
 		last_created_country = {
 			save_event_target_as = fourth_diadochi
 			set_country_flag = diadochi_4
 			set_country_flag = diadochi
 			set_name = random
 		}
-
 		# Flip Starbases
 		every_system_within_border = {
 			limit = {
@@ -845,7 +847,6 @@ create_fourth_diadochi = {
 			}
 			starbase = { set_owner = event_target:fourth_diadochi }
 		}
-
 		# Flip Planets
 		every_owned_planet = {
 			limit = {
@@ -854,7 +855,6 @@ create_fourth_diadochi = {
 			set_owner = event_target:fourth_diadochi
 			set_controller = event_target:fourth_diadochi
 		}
-
 		event_target:fourth_diadochi = {
 			add_resource = {
 				minerals = 20000
@@ -956,7 +956,9 @@ create_fourth_diadochi = {
 						angle = random
 					}
 				}
-				settings = { uses_naval_capacity = no }
+				settings = {
+					uses_naval_capacity = no
+				}
 			}
 			# Armies
 			create_leader = {
@@ -1001,7 +1003,6 @@ create_fourth_diadochi = {
 				}
 			}
 		}
-
 		# Establish Communications
 		every_country = {
 			limit = {
@@ -1020,7 +1021,6 @@ spawn_diadochi_shipyard = {
 		limit = {
 			any_owned_starbase = { has_starbase_size = starbase_outpost }
 		}
-
 		random_owned_starbase = {
 			limit = { has_starbase_size = starbase_outpost }
 			weights = {
@@ -1046,7 +1046,6 @@ spawn_diadochi_starhold = {
 		limit = {
 			any_owned_starbase = { has_starbase_size = starbase_outpost }
 		}
-
 		random_owned_starbase = {
 			limit = { has_starbase_size = starbase_outpost }
 			weights = {
@@ -1074,11 +1073,9 @@ spawn_diadochi_starhold = {
 assign_diadochi_systems = {
 	while = {
 		count = 100
-
 		limit = {
 			any_system_within_border = { is_potential_diadochi_system = yes }
 		}
-
 		if = {
 			limit = { exists = event_target:first_diadochi_origin }
 			event_target:first_diadochi_origin = {
@@ -1127,7 +1124,6 @@ set_diadochi_claims = {
 		limit = {
 			any_country = { has_country_flag = diadochi_1 }
 		}
-
 		random_country = {
 			limit = { has_country_flag = diadochi_1 }
 			every_system = {
@@ -1146,12 +1142,10 @@ set_diadochi_claims = {
 			}
 		}
 	}
-
 	if = {
 		limit = {
 			any_country = { has_country_flag = diadochi_2 }
 		}
-
 		random_country = {
 			limit = { has_country_flag = diadochi_2 }
 			every_system = {
@@ -1170,12 +1164,10 @@ set_diadochi_claims = {
 			}
 		}
 	}
-
 	if = {
 		limit = {
 			any_country = { has_country_flag = diadochi_3 }
 		}
-
 		random_country = {
 			limit = { has_country_flag = diadochi_3 }
 			every_system = {
@@ -1194,12 +1186,10 @@ set_diadochi_claims = {
 			}
 		}
 	}
-
 	if = {
 		limit = {
 			any_country = { has_country_flag = diadochi_4 }
 		}
-
 		random_country = {
 			limit = { has_country_flag = diadochi_4 }
 			every_system = {
@@ -1221,6 +1211,7 @@ set_diadochi_claims = {
 }
 
 ### Marauders ###
+
 create_marauder_starbase = {
 	create_starbase = {
 		size = "starbase_marauder"
@@ -1277,7 +1268,6 @@ create_marauder_fleet = {
 				angle = random
 			}
 		}
-
 		settings = {
 			uses_naval_capacity = no
 			can_upgrade = no
@@ -1324,7 +1314,6 @@ create_marauder_constructors = {
 				}
 			}
 		}
-
 		create_fleet = {
 			effect = {
 				set_owner = event_target:raider_khanate
@@ -1354,7 +1343,6 @@ create_small_marauder_auxiliaries = {
 			key = "NAME_Horde_Auxiliary_Fleet"
 			variable_string = "\\[satrapy_species.GetName\\]"
 		}
-
 		effect = {
 			set_owner = event_target:raider_khanate
 			set_fleet_flag = horde_auxuliaries
@@ -1392,7 +1380,6 @@ create_small_marauder_auxiliaries = {
 				angle = random
 			}
 		}
-
 		settings = {
 			can_upgrade = no
 			can_disband = no
@@ -1417,7 +1404,6 @@ create_medium_marauder_auxiliaries = {
 			key = "NAME_Horde_Auxiliary_Fleet"
 			variable_string = "\\[satrapy_species.GetName\\]"
 		}
-
 		effect = {
 			set_owner = event_target:raider_khanate
 			set_fleet_flag = horde_auxuliaries
@@ -1464,7 +1450,6 @@ create_medium_marauder_auxiliaries = {
 				angle = random
 			}
 		}
-
 		settings = {
 			can_upgrade = no
 			can_disband = no
@@ -1489,7 +1474,6 @@ create_large_marauder_auxiliaries = {
 			key = "NAME_Horde_Auxiliary_Fleet"
 			variable_string = "\\[satrapy_species.GetName\\]"
 		}
-
 		effect = {
 			set_owner = event_target:raider_khanate
 			set_fleet_flag = horde_auxuliaries
@@ -1536,7 +1520,6 @@ create_large_marauder_auxiliaries = {
 				angle = random
 			}
 		}
-
 		settings = {
 			can_upgrade = no
 			can_disband = no
@@ -1552,8 +1535,9 @@ create_very_large_marauder_auxiliaries = {
 		class = commander
 		species = event_target:satrapy_species
 		name = random
-
-		effect = { set_age = 37 }
+		effect = {
+			set_age = 37
+		}
 	}
 
 	create_fleet = {
@@ -1561,7 +1545,6 @@ create_very_large_marauder_auxiliaries = {
 			key = "NAME_Horde_Auxiliary_Fleet"
 			variable_string = "\\[satrapy_species.GetName\\]"
 		}
-
 		effect = {
 			set_owner = event_target:raider_khanate
 			set_fleet_flag = horde_auxuliaries
@@ -1608,7 +1591,6 @@ create_very_large_marauder_auxiliaries = {
 				angle = random
 			}
 		}
-
 		settings = {
 			can_upgrade = no
 			can_disband = no
@@ -1631,7 +1613,6 @@ create_marauder_successor_fleet = {
 		skill = 3
 		leader_age_min = 25
 		leader_age_max = 45
-
 		traits = { 0 = leader_trait_mercenary_warrior }
 	}
 
@@ -1681,7 +1662,6 @@ create_marauder_successor_fleet = {
 				angle = random
 			}
 		}
-
 		settings = {
 			uses_naval_capacity = no
 			can_upgrade = no

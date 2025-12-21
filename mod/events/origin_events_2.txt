@@ -261,7 +261,10 @@ country_event = {
 				name = "NAME_Gateway_Vermin"
 				effect = {
 					set_owner = prev
-					create_ship = { name = "NAME_Gateway_Vermin" design = "NAME_Small_Space_Organism_Teal" }
+					create_ship = {
+						name = "NAME_Gateway_Vermin"
+						design = "NAME_Small_Space_Organism_Teal"
+					}
 					set_location = {
 						target = event_target:doorstep_gateway
 						distance = 5
@@ -494,7 +497,10 @@ country_event = {
 					while = {
 						count = 16
 						set_owner = prev
-						create_ship = { name = "NAME_Gateway_Vermin" design = "NAME_Small_Space_Organism_Teal" }
+						create_ship = {
+							name = "NAME_Gateway_Vermin"
+							design = "NAME_Small_Space_Organism_Teal"
+						}
 						set_location = {
 							target = event_target:doorstep_gateway
 							distance = 5
@@ -584,7 +590,10 @@ country_event = {
 					while = {
 						count = 10
 						set_owner = prev
-						create_ship = { name = "NAME_Gateway_Vermin" design = "NAME_Small_Space_Organism_Teal" }
+						create_ship = {
+							name = "NAME_Gateway_Vermin"
+							design = "NAME_Small_Space_Organism_Teal"
+						}
 						set_location = {
 							target = root.capital_scope
 							distance = 5
@@ -828,7 +837,10 @@ fleet_event = {
 
 	after = {
 		from = { set_site_progress_locked = no }
-		owner = { remove_country_flag = arc_site_moon remove_country_flag = arc_site_planet }
+		owner = {
+			remove_country_flag = arc_site_moon
+			remove_country_flag = arc_site_planet
+		}
 	}
 
 	option = {

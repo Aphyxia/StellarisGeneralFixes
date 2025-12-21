@@ -198,7 +198,9 @@ country_event = {
 					mindwarden_enclave_country = {
 						country_event = { id = shroud.4199 }
 					}
-					default = { log_error = "Unexpected enclave type or missing script flag" }
+					default = {
+						log_error = "Unexpected enclave type or missing script flag"
+					}
 				}
 			}
 		}
@@ -222,7 +224,10 @@ country_event = {
 	}
 	option = {
 		name = leviathans.98.a
-		trigger = { is_homicidal = no is_genocidal_infernal = no }
+		trigger = {
+			is_homicidal = no
+			is_genocidal_infernal = no
+		}
 	}
 }
 
@@ -395,7 +400,10 @@ country_event = {
 			text = BURN
 		}
 		name = {
-			trigger = { is_homicidal = no is_genocidal_infernal = no }
+			trigger = {
+				is_homicidal = no
+				is_genocidal_infernal = no
+			}
 			text = leviathans.502.a
 		}
 		default_hide_option = yes
@@ -462,7 +470,10 @@ country_event = {
 		custom_tooltip = trader_tt_strategicresource
 		trigger = { is_homicidal = no }
 		allow = {
-			custom_tooltip = { fail_text = leviathans.105.c.sr2 has_active_xuracorp_trade = no }
+			custom_tooltip = {
+				fail_text = leviathans.105.c.sr2
+				has_active_xuracorp_trade = no
+			}
 		}
 		hidden_effect = {
 			country_event = { id = leviathans.130 }
@@ -488,10 +499,7 @@ country_event = {
 			}
 			custom_tooltip = {
 				fail_text = already_hired_trader_official
-				count_owned_leader = {
-					count = 0
-					limit = { has_trait = leader_trait_xuracorp_liaison }
-				}
+				NOT = { any_owned_leader = { has_trait = leader_trait_xuracorp_liaison } }
 			}
 		}
 		hidden_effect = {
@@ -577,7 +585,10 @@ country_event = {
 		custom_tooltip = trader_tt_strategicresource
 		trigger = { is_homicidal = no }
 		allow = {
-			custom_tooltip = { fail_text = leviathans.105.c.sr1 has_active_riggan_trade = no }
+			custom_tooltip = {
+				fail_text = leviathans.105.c.sr1
+				has_active_riggan_trade = no
+			}
 		}
 		hidden_effect = {
 			country_event = { id = leviathans.131 }
@@ -603,10 +614,7 @@ country_event = {
 			}
 			custom_tooltip = {
 				fail_text = already_hired_trader_official
-				count_owned_leader = {
-					count = 0
-					limit = { has_trait = leader_trait_riggan_liaison }
-				}
+				NOT = { any_owned_leader = { has_trait = leader_trait_riggan_liaison } }
 			}
 		}
 		hidden_effect = {
@@ -692,7 +700,10 @@ country_event = {
 		custom_tooltip = trader_tt_strategicresource
 		trigger = { is_homicidal = no }
 		allow = {
-			custom_tooltip = { fail_text = leviathans.105.c.sr3 has_active_muutagan_trade = no }
+			custom_tooltip = {
+				fail_text = leviathans.105.c.sr3
+				has_active_muutagan_trade = no
+			}
 		}
 		hidden_effect = {
 			country_event = { id = leviathans.132 }
@@ -718,10 +729,7 @@ country_event = {
 			}
 			custom_tooltip = {
 				fail_text = already_hired_trader_official
-				count_owned_leader = {
-					count = 0
-					limit = { has_trait = leader_trait_muutagan_liaison }
-				}
+				NOT = { any_owned_leader = { has_trait = leader_trait_muutagan_liaison } }
 			}
 		}
 		hidden_effect = {
@@ -933,10 +941,7 @@ country_event = {
 			resource_stockpile_compare = { resource = influence value >= 50 }
 			custom_tooltip = {
 				fail_text = already_hired_trader_official
-				count_owned_leader = {
-					count = 0
-					limit = { has_trait = leader_trait_xuracorp_liaison }
-				}
+				NOT = { any_owned_leader = { has_trait = leader_trait_xuracorp_liaison } }
 			}
 		}
 		add_resource = {
@@ -1003,10 +1008,7 @@ country_event = {
 			resource_stockpile_compare = { resource = influence value >= 50 }
 			custom_tooltip = {
 				fail_text = already_hired_trader_official
-				count_owned_leader = {
-					count = 0
-					limit = { has_trait = leader_trait_riggan_liaison }
-				}
+				NOT = { any_owned_leader = { has_trait = leader_trait_riggan_liaison } }
 			}
 		}
 		add_resource = {
@@ -1073,10 +1075,7 @@ country_event = {
 			resource_stockpile_compare = { resource = influence value >= 50 }
 			custom_tooltip = {
 				fail_text = already_hired_trader_official
-				count_owned_leader = {
-					count = 0
-					limit = { has_trait = leader_trait_muutagan_liaison }
-				}
+				NOT = { any_owned_leader = { has_trait = leader_trait_muutagan_liaison } }
 			}
 		}
 		add_resource = {
@@ -1119,7 +1118,10 @@ country_event = {
 	desc_clear = yes
 
 	desc = {
-		trigger = { is_gestalt = no is_worker_coop_empire = no }
+		trigger = {
+			is_gestalt = no
+			is_worker_coop_empire = no
+		}
 		text = leviathans.126.desc
 	}
 	desc = {
@@ -1140,7 +1142,10 @@ country_event = {
 	desc_clear = yes
 
 	desc = {
-		trigger = { is_gestalt = no is_worker_coop_empire = no }
+		trigger = {
+			is_gestalt = no
+			is_worker_coop_empire = no
+		}
 		text = leviathans.126.desc
 	}
 	desc = {
@@ -1161,7 +1166,10 @@ country_event = {
 	desc_clear = yes
 
 	desc = {
-		trigger = { is_gestalt = no is_worker_coop_empire = no }
+		trigger = {
+			is_gestalt = no
+			is_worker_coop_empire = no
+		}
 		text = leviathans.126.desc
 	}
 	desc = {
@@ -2151,7 +2159,10 @@ country_event = {
 			text = BURN
 		}
 		name = {
-			trigger = { is_homicidal = no is_genocidal_infernal = no }
+			trigger = {
+				is_homicidal = no
+				is_genocidal_infernal = no
+			}
 			text = leviathans.156.a
 		}
 		default_hide_option = yes
@@ -2240,7 +2251,10 @@ country_event = {
 			text = BURN
 		}
 		name = {
-			trigger = { is_homicidal = no is_genocidal_infernal = no }
+			trigger = {
+				is_homicidal = no
+				is_genocidal_infernal = no
+			}
 			text = leviathans.156.a
 		}
 		default_hide_option = yes
@@ -2329,7 +2343,10 @@ country_event = {
 			text = BURN
 		}
 		name = {
-			trigger = { is_homicidal = no is_genocidal_infernal = no }
+			trigger = {
+				is_homicidal = no
+				is_genocidal_infernal = no
+			}
 			text = leviathans.156.a
 		}
 		default_hide_option = yes
@@ -2550,7 +2567,10 @@ country_event = {
 			text = BURN
 		}
 		name = {
-			trigger = { is_homicidal = no is_genocidal_infernal = no }
+			trigger = {
+				is_homicidal = no
+				is_genocidal_infernal = no
+			}
 			text = INTERESTING
 		}
 		default_hide_option = yes
@@ -2648,9 +2668,11 @@ country_event = {
 		allow = {
 			custom_tooltip = {
 				text = leviathans.300.c.allow
-				NOT = { has_country_flag = artist_festival_purchased }
-				event_target:artist_enclave_country = {
-					trust = { who = root value >= 50 }
+				NOR = {
+					has_country_flag = artist_festival_purchased
+					event_target:artist_enclave_country = {
+						trust = { who = root value < 50 }
+					}
 				}
 			}
 			custom_tooltip = {
@@ -2736,7 +2758,10 @@ country_event = {
 			text = BURN
 		}
 		name = {
-			trigger = { is_homicidal = no is_genocidal_infernal = no }
+			trigger = {
+				is_homicidal = no
+				is_genocidal_infernal = no
+			}
 			text = leviathans.502.a
 		}
 		default_hide_option = yes
@@ -2931,12 +2956,14 @@ country_event = {
 	option = {
 		name = DEAL
 		allow = {
-			resource_stockpile_compare = {
-				resource = energy
-				value >= -1 # flip to a positive value to make this comparison
-				mult = artisan_patronage_cost
+			NOR = {
+				resource_stockpile_compare = {
+					resource = energy
+					value < -1 # flip to a positive value to make this comparison
+					mult = artisan_patronage_cost
+				}
+				has_modifier = enclave_artist_patron
 			}
-			NOT = { has_modifier = enclave_artist_patron }
 		}
 		add_resource = {
 			energy = 1
@@ -3035,7 +3062,10 @@ country_event = {
 				}
 				# Broken Artistry (one-time)
 				20 = {
-					modifier = { factor = 0 has_country_flag = enclave_artist_patron_event_3 }
+					modifier = {
+						factor = 0
+						has_country_flag = enclave_artist_patron_event_3
+					}
 					country_event = { id = leviathans.324 days = 500 random = 1000 }
 				}
 				# No result (run newsletter again)
@@ -3527,9 +3557,7 @@ country_event = {
 			hidden_effect = {
 				every_owned_pop_group = {
 					limit = { is_same_species = event_target:artist_species }
-					modify_species = {
-						ideal_planet_class = event_target:this_planet
-					}
+					modify_species = { ideal_planet_class = event_target:this_planet }
 				}
 			}
 		}
@@ -4065,7 +4093,10 @@ country_event = {
 	# Scientist
 	option = {
 		name = leviathans.500.d
-		trigger = { is_homicidal = no is_gestalt = no }
+		trigger = {
+			is_homicidal = no
+			is_gestalt = no
+		}
 		allow = {
 			custom_tooltip = {
 				fail_text = leviathans.500.d.opinion
@@ -4075,10 +4106,7 @@ country_event = {
 			}
 			custom_tooltip = {
 				fail_text = leviathans.500.d.alreadyrecruited
-				count_owned_leader = {
-					count = 0
-					limit = { has_trait = leader_trait_curator }
-				}
+				NOT = { any_owned_leader = { has_trait = leader_trait_curator } }
 			}
 		}
 		hidden_effect = {
@@ -4089,7 +4117,10 @@ country_event = {
 	# Gestalt Trait
 	option = {
 		name = leviathans.500.e
-		trigger = { is_homicidal = no is_gestalt = yes }
+		trigger = {
+			is_homicidal = no
+			is_gestalt = yes
+		}
 		allow = {
 			custom_tooltip = {
 				fail_text = leviathans.500.e.opinion
@@ -4099,10 +4130,7 @@ country_event = {
 			}
 			custom_tooltip = {
 				fail_text = leviathans.500.e.alreadyshared
-				count_owned_leader = {
-					count = 0
-					limit = { has_trait = leader_trait_curator }
-				}
+				NOT = { any_owned_leader = { has_trait = leader_trait_curator } }
 			}
 		}
 		hidden_effect = {
@@ -4216,7 +4244,10 @@ country_event = {
 					trust = { who = root value >= 80 }
 				}
 			}
-			resource_stockpile_compare = { resource = energy value >= value:curator_purchase_cost|COST|5000| }
+			resource_stockpile_compare = {
+				resource = energy
+				value >= value:curator_purchase_cost|COST|5000|
+			}
 		}
 		add_resource = {
 			energy = -1
@@ -4298,7 +4329,10 @@ country_event = {
 			text = BURN
 		}
 		name = {
-			trigger = { is_homicidal = no is_genocidal_infernal = no }
+			trigger = {
+				is_homicidal = no
+				is_genocidal_infernal = no
+			}
 			text = GOODBYE
 		}
 		default_hide_option = yes
@@ -4340,10 +4374,12 @@ country_event = {
 	option = {
 		name = leviathans.507.a
 		allow = {
-			NOT = { has_modifier = curator_insight }
-			resource_stockpile_compare = {
-				resource = energy
-				value >= value:curator_purchase_cost|COST|curator_insight_cost|
+			NOR = {
+				has_modifier = curator_insight
+				resource_stockpile_compare = {
+					resource = energy
+					value < value:curator_purchase_cost|COST|curator_insight_cost|
+				}
 			}
 		}
 		add_resource = {
@@ -5328,7 +5364,10 @@ country_event = {
 						has_country_flag = bought_toxic_god_info_1
 					}
 				}
-				resource_stockpile_compare = { resource = energy value >= value:curator_purchase_cost|COST|1000| }
+				resource_stockpile_compare = {
+					resource = energy
+					value >= value:curator_purchase_cost|COST|1000|
+				}
 			}
 		}
 		is_dialog_only = yes
@@ -5376,7 +5415,10 @@ country_event = {
 						has_country_flag = bought_toxic_god_info_2
 					}
 				}
-				resource_stockpile_compare = { resource = energy value >= value:curator_purchase_cost|COST|1000| }
+				resource_stockpile_compare = {
+					resource = energy
+					value >= value:curator_purchase_cost|COST|1000|
+				}
 			}
 		}
 		is_dialog_only = yes
@@ -5414,13 +5456,19 @@ country_event = {
 	}
 	option = { # Can we fight it? (Probably not)
 		name = leviathans.506.f
-		trigger = { ariphaos_patch_fleet_huge = yes ariphaos_patch_fleet_massive = no }
+		trigger = {
+			ariphaos_patch_fleet_huge = yes
+			ariphaos_patch_fleet_massive = no
+		}
 		is_dialog_only = yes
 		response_text = leviathans.5106.f2.reply
 	}
 	option = { # Can we fight it? (Maybe)
 		name = leviathans.506.f
-		trigger = { ariphaos_patch_fleet_massive = yes ariphaos_patch_fleet_enormous = no }
+		trigger = {
+			ariphaos_patch_fleet_massive = yes
+			ariphaos_patch_fleet_enormous = no
+		}
 		is_dialog_only = yes
 		response_text = leviathans.5106.f3.reply
 	}
@@ -5616,7 +5664,10 @@ country_event = {
 				}
 			}
 			custom_tooltip = leviathans.590.tt_scientist
-			resource_stockpile_compare = { resource = energy value >= value:curator_purchase_cost|COST|1000| }
+			resource_stockpile_compare = {
+				resource = energy
+				value >= value:curator_purchase_cost|COST|1000|
+			}
 			resource_stockpile_compare = {
 				resource = influence
 				value >= value:curator_purchase_cost|COST|50|
@@ -5697,7 +5748,10 @@ country_event = {
 				}
 			}
 			custom_tooltip = leviathans.598.tt_principles
-			resource_stockpile_compare = { resource = energy value >= value:curator_purchase_cost|COST|1000| }
+			resource_stockpile_compare = {
+				resource = energy
+				value >= value:curator_purchase_cost|COST|1000|
+			}
 			resource_stockpile_compare = {
 				resource = influence
 				value >= value:curator_purchase_cost|COST|50|
@@ -5886,7 +5940,10 @@ country_event = {
 					has_country_flag = curator_clue_purchased
 				}
 			}
-			resource_stockpile_compare = { resource = energy value >= value:curator_purchase_cost|COST|5000| }
+			resource_stockpile_compare = {
+				resource = energy
+				value >= value:curator_purchase_cost|COST|5000|
+			}
 		}
 		add_resource = {
 			energy = -1
@@ -6283,10 +6340,7 @@ country_event = {
 			NOT = { has_modifier = curator_insight }
 			has_communications = event_target:curator_destroyer
 			from = {
-				count_controlled_ship = {
-					count > 0
-					limit = { is_ship_size = enclave_station }
-				}
+				any_controlled_ship = { is_ship_size = enclave_station }
 			}
 		}
 	}
@@ -6300,10 +6354,7 @@ country_event = {
 				has_communications = event_target:curator_destroyer
 			}
 			from = {
-				count_controlled_ship = {
-					count > 0
-					limit = { is_ship_size = enclave_station }
-				}
+				any_controlled_ship = { is_ship_size = enclave_station }
 			}
 		}
 	}
@@ -6313,10 +6364,9 @@ country_event = {
 		text = leviathans.594.c.desc
 		trigger = {
 			has_modifier = curator_insight
-			from = {
-				count_controlled_ship = {
-					count < 1
-					limit = { is_ship_size = enclave_station }
+			NOT = {
+				from = {
+					any_controlled_ship = { is_ship_size = enclave_station }
 				}
 			}
 			has_communications = event_target:curator_destroyer
@@ -6328,13 +6378,12 @@ country_event = {
 		text = leviathans.594.d.desc
 		trigger = {
 			has_modifier = curator_insight
-			from = {
-				count_controlled_ship = {
-					count < 1
-					limit = { is_ship_size = enclave_station }
+			NOR = {
+				from = {
+					any_controlled_ship = { is_ship_size = enclave_station }
 				}
+				has_communications = event_target:curator_destroyer
 			}
-			NOT = { has_communications = event_target:curator_destroyer }
 		}
 	}
 
@@ -6348,10 +6397,9 @@ country_event = {
 		if = {
 			limit = {
 				has_modifier = curator_insight
-				from = {
-					count_controlled_ship = {
-						count < 1
-						limit = { is_ship_size = enclave_station }
+				NOT = {
+					from = {
+						any_controlled_ship = { is_ship_size = enclave_station }
 					}
 				}
 			}
@@ -6361,10 +6409,9 @@ country_event = {
 		if = {
 			limit = {
 				has_modifier = curator_insight
-				from = {
-					count_controlled_ship = {
-						count < 1
-						limit = { is_ship_size = enclave_station }
+				NOT = {
+					from = {
+						any_controlled_ship = { is_ship_size = enclave_station }
 					}
 				}
 				is_ai = yes
@@ -6391,10 +6438,9 @@ country_event = {
 		name = "leviathans.594.b"
 		exclusive_trigger = {
 			has_modifier = curator_insight
-			from = {
-				count_controlled_ship = {
-					count < 1
-					limit = { is_ship_size = enclave_station }
+			NOT = {
+				from = {
+					any_controlled_ship = { is_ship_size = enclave_station }
 				}
 			}
 		}
@@ -6498,7 +6544,10 @@ country_event = {
 			text = BURN
 		}
 		name = {
-			trigger = { is_homicidal = no is_genocidal_infernal = no }
+			trigger = {
+				is_homicidal = no
+				is_genocidal_infernal = no
+			}
 			text = leviathans.156.a
 		}
 		hidden_effect = {
@@ -6615,11 +6664,17 @@ country_event = {
 				queue_actions = {
 					repeat = {
 						find_closest_system = {
-							trigger = { id = dragon.1.retaliation.1x has_star_flag = system_target_1 }
+							trigger = {
+								id = dragon.1.retaliation.1x
+								has_star_flag = system_target_1
+							}
 							found_system = {
 								move_to = this
 								find_closest_planet = {
-									trigger = { id = dragon.1.retaliation.2x is_star = yes }
+									trigger = {
+										id = dragon.1.retaliation.2x
+										is_star = yes
+									}
 									found_planet = {
 										move_to = this
 										wait = { duration = 60 }
@@ -6641,11 +6696,17 @@ country_event = {
 					queue_actions = {
 						repeat = {
 							find_closest_system = {
-								trigger = { id = dragon.2.retaliation.1x is_same_value = event_target:system_target_2 }
+								trigger = {
+									id = dragon.2.retaliation.1x
+									is_same_value = event_target:system_target_2
+								}
 								found_system = {
 									move_to = this
 									find_closest_planet = {
-										trigger = { id = dragon.2.retaliation.2x is_star = yes }
+										trigger = {
+											id = dragon.2.retaliation.2x
+											is_star = yes
+										}
 										found_planet = {
 											move_to = this
 											wait = { duration = 60 }
@@ -6663,11 +6724,17 @@ country_event = {
 					queue_actions = {
 						repeat = {
 							find_closest_system = {
-								trigger = { id = dragon.3.retaliation.1x has_star_flag = guardians_dragon_system }
+								trigger = {
+									id = dragon.3.retaliation.1x
+									has_star_flag = guardians_dragon_system
+								}
 								found_system = {
 									move_to = this
 									find_closest_planet = {
-										trigger = { id = dragon.3.retaliation.2x has_planet_flag = hoard_planet }
+										trigger = {
+											id = dragon.3.retaliation.2x
+											has_planet_flag = hoard_planet
+										}
 										found_planet = {
 											move_to = this
 											effect = {
@@ -6688,11 +6755,17 @@ country_event = {
 				queue_actions = {
 					repeat = {
 						find_closest_system = {
-							trigger = { id = dragon.2.retaliation.1y has_star_flag = system_target_2 }
+							trigger = {
+								id = dragon.2.retaliation.1y
+								has_star_flag = system_target_2
+							}
 							found_system = { move_to = this }
 						}
 						find_closest_planet = {
-							trigger = { id = dragon.2.retaliation.2y is_star = yes }
+							trigger = {
+								id = dragon.2.retaliation.2y
+								is_star = yes
+							}
 							found_planet = {
 								move_to = this
 								wait = { duration = 60 }
@@ -6708,11 +6781,17 @@ country_event = {
 				queue_actions = {
 					repeat = {
 						find_closest_system = {
-							trigger = { id = dragon.3.retaliation.1y has_star_flag = guardians_dragon_system }
+							trigger = {
+								id = dragon.3.retaliation.1y
+								has_star_flag = guardians_dragon_system
+							}
 							found_system = {
 								move_to = this
 								find_closest_planet = {
-									trigger = { id = dragon.3.retaliation.2y has_planet_flag = hoard_planet }
+									trigger = {
+										id = dragon.3.retaliation.2y
+										has_planet_flag = hoard_planet
+									}
 									found_planet = {
 										move_to = this
 										effect = {
@@ -6732,11 +6811,17 @@ country_event = {
 				queue_actions = {
 					repeat = {
 						find_closest_system = {
-							trigger = { id = dragon.3.retaliation.1z has_star_flag = guardians_dragon_system }
+							trigger = {
+								id = dragon.3.retaliation.1z
+								has_star_flag = guardians_dragon_system
+							}
 							found_system = {
 								move_to = this
 								find_closest_planet = {
-									trigger = { id = dragon.3.retaliation.2z has_planet_flag = hoard_planet }
+									trigger = {
+										id = dragon.3.retaliation.2z
+										has_planet_flag = hoard_planet
+									}
 									found_planet = {
 										move_to = this
 										effect = {
@@ -6914,11 +6999,17 @@ fleet_event = {
 				repeat = {
 					max_iterations = 1
 					find_closest_system = {
-						trigger = { id = dragon.1.retaliation.1 is_same_value = event_target:system_target_1 }
+						trigger = {
+							id = dragon.1.retaliation.1
+							is_same_value = event_target:system_target_1
+						}
 						found_system = {
 							move_to = this
 							find_closest_planet = {
-								trigger = { id = dragon.1.retaliation.2 is_star = yes }
+								trigger = {
+									id = dragon.1.retaliation.2
+									is_star = yes
+								}
 								found_planet = {
 									move_to = this
 									wait = { duration = 1 }
@@ -6931,11 +7022,17 @@ fleet_event = {
 										}
 									}
 									find_closest_system = {
-										trigger = { id = dragon.3.retaliation.1 has_star_flag = guardians_dragon_system }
+										trigger = {
+											id = dragon.3.retaliation.1
+											has_star_flag = guardians_dragon_system
+										}
 										found_system = {
 											move_to = this
 											find_closest_planet = {
-												trigger = { id = dragon.3.retaliation.2 has_planet_flag = hoard_planet }
+												trigger = {
+													id = dragon.3.retaliation.2
+													has_planet_flag = hoard_planet
+												}
 												found_planet = {
 													move_to = this
 													effect = {
@@ -6990,11 +7087,17 @@ fleet_event = {
 				repeat = {
 					max_iterations = 1
 					find_closest_system = {
-						trigger = { id = dragon.4.retaliation.1 is_same_value = event_target:system_target_2 }
+						trigger = {
+							id = dragon.4.retaliation.1
+							is_same_value = event_target:system_target_2
+						}
 						found_system = {
 							move_to = this
 							find_closest_planet = {
-								trigger = { id = dragon.4.retaliation.2 is_star = yes }
+								trigger = {
+									id = dragon.4.retaliation.2
+									is_star = yes
+								}
 								found_planet = {
 									move_to = this
 									wait = { duration = 1 }
@@ -7007,11 +7110,17 @@ fleet_event = {
 										}
 									}
 									find_closest_system = {
-										trigger = { id = dragon.5.retaliation.1 has_star_flag = guardians_dragon_system }
+										trigger = {
+											id = dragon.5.retaliation.1
+											has_star_flag = guardians_dragon_system
+										}
 										found_system = {
 											move_to = this
 											find_closest_planet = {
-												trigger = { id = dragon.5.retaliation.2 has_planet_flag = hoard_planet }
+												trigger = {
+													id = dragon.5.retaliation.2
+													has_planet_flag = hoard_planet
+												}
 												found_planet = {
 													move_to = this
 													effect = {
@@ -7066,11 +7175,17 @@ fleet_event = {
 					repeat = {
 						max_iterations = 1
 						find_random_system = {
-							trigger = { id = guardian.hibernate.7 has_star_flag = guardians_dragon_system }
+							trigger = {
+								id = guardian.hibernate.7
+								has_star_flag = guardians_dragon_system
+							}
 							found_system = {
 								move_to = this
 								find_random_planet = {
-									trigger = { id = guardian.hibernate.8 is_star = yes }
+									trigger = {
+										id = guardian.hibernate.8
+										is_star = yes
+									}
 									found_planet = {
 										move_to = this
 										orbit_planet = this
@@ -7114,11 +7229,17 @@ country_event = {
 				repeat = {
 					max_iterations = 1
 					find_random_system = {
-						trigger = { id = guardian.hibernate.1 has_star_flag = guardians_dragon_system }
+						trigger = {
+							id = guardian.hibernate.1
+							has_star_flag = guardians_dragon_system
+						}
 						found_system = {
 							move_to = this
 							find_random_planet = {
-								trigger = { id = guardian.hibernate.2 is_star = yes }
+								trigger = {
+									id = guardian.hibernate.2
+									is_star = yes
+								}
 								found_planet = {
 									orbit_planet = this
 									effect = {
@@ -7328,11 +7449,17 @@ country_event = {
 	title = leviathans.665.name
 
 	desc = {
-		trigger = { is_hive_empire = no is_machine_empire = no }
+		trigger = {
+			is_hive_empire = no
+			is_machine_empire = no
+		}
 		text = leviathans.665.desc
 	}
 	desc = {
-		trigger = { is_hive_empire = yes is_machine_empire = no }
+		trigger = {
+			is_hive_empire = yes
+			is_machine_empire = no
+		}
 		text = leviathans.665.desc.gesta
 	}
 	desc = {

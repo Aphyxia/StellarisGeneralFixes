@@ -148,7 +148,10 @@ country_event = {
 
 	option = {
 		name = paragon.4.a
-		trigger = { is_militarist = no is_xenophobe = no }
+		trigger = {
+			is_militarist = no
+			is_xenophobe = no
+		}
 		enable_special_project = {
 			name = BEFRIENDING_BEHOLDER_PRESAPIENTS
 			location = fromfrom
@@ -187,7 +190,10 @@ country_event = {
 	}
 	option = {
 		name = paragon.4.c
-		trigger = { is_pacifist = no is_xenophile = no }
+		trigger = {
+			is_pacifist = no
+			is_xenophile = no
+		}
 		hidden_effect = {
 			country_event = { id = paragon.15 days = 20 random = 20 }
 		}
@@ -820,7 +826,7 @@ planet_event = {
 		if = {
 			limit = {
 				count_owned_pop_amount = {
-					count = 0
+					count < 1
 					limit = {
 						is_organic_species = yes
 						NOR = {
@@ -1986,7 +1992,9 @@ planet_event = {
 				}
 				leader_trait_legendary_terraformation_nucleus_3_buds = {
 					remove_trait = leader_trait_legendary_terraformation_nucleus_3_buds
-					add_trait = { trait = leader_trait_legendary_terraformation_nucleus_2_buds }
+					add_trait = {
+						trait = leader_trait_legendary_terraformation_nucleus_2_buds
+					}
 					change_leader_portrait = paragon_azaryn_2_buds
 					leader_event = { id = paragon.232 days = 60 random = 30 }
 				}
@@ -2516,7 +2524,9 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				NOT = { has_country_flag = has_picked_tr_statecraft_inspiring_agendas }
+				NOT = {
+					has_country_flag = has_picked_tr_statecraft_inspiring_agendas
+				}
 				has_tradition = tr_statecraft_inspiring_agendas
 			}
 			# Makes sure this is only triggered ONCE and only when tr_statecraft_inspiring_agendas was unlocked.
@@ -2946,18 +2956,17 @@ country_event = {
 							factor = 0
 							OR = {
 								has_leader_flag = funeral_option_plantoid_fungoid
-								species = {
-									NOR = {
-										is_species_class = PLANT
-										is_species_class = FUN
-										is_species_class = PRE_PLANT
-										is_species_class = PRE_FUN
+								NAND = {
+									species = {
+										OR = {
+											is_species_class = PLANT
+											is_species_class = FUN
+											is_species_class = PRE_PLANT
+											is_species_class = PRE_FUN
+										}
 									}
-								}
-								root = {
-									count_owned_planet = {
-										count = 0
-										limit = { is_colony = yes }
+									root = {
+										any_owned_planet = { is_colony = yes }
 									}
 								}
 							}
@@ -4175,11 +4184,11 @@ leader_event = {
 			has_ethic = ethic_pacifist
 			has_ethic = ethic_xenophile
 			has_leader_flag = leader_death_events_blocked
-		}
-		num_leader_traits = {
-			value >= 1
-			negative = yes
-			count_tiers = no
+			num_leader_traits = {
+				value < 1
+				negative = yes
+				count_tiers = no
+			}
 		}
 	}
 
@@ -4393,7 +4402,10 @@ leader_event = {
 			kill_leader = { show_notification = no }
 		}
 		owner = {
-			add_modifier = { modifier = "paragon_empire_wide_scandal_averted" years = 10 }
+			add_modifier = {
+				modifier = "paragon_empire_wide_scandal_averted"
+				years = 10
+			}
 		}
 	}
 }

@@ -259,13 +259,9 @@ manifesti = {
 						has_component = COMBAT_COMPUTER_CARRIER_SAPIENT
 					}
 				}
-				count_owned_army = {
-					count < 1
-					limit = { army_type = slave_army }
-				}
-				count_owned_army = {
-					count < 1
-					limit = { army_type = undead_army }
+				NOR = {
+					any_owned_army = { army_type = slave_army }
+					any_owned_army = { army_type = undead_army }
 				}
 			}
 		}
@@ -279,9 +275,8 @@ manifesti = {
 		potential = { exists = owner }
 		trigger = {
 			owner = {
-				count_owned_leader = {
-					count = 0
-					limit = {
+				NOT = {
+					any_owned_leader = {
 						leader_class = scientist
 						is_councilor = yes
 						NOR = {
@@ -328,17 +323,11 @@ manifesti = {
 						has_federation = yes
 						is_federation_leader = yes
 					}
-					count_owned_leader = {
-						count = 0
-						limit = { is_assigned_to_federation = yes }
-					}
+					NOT = { any_owned_leader = { is_assigned_to_federation = yes } }
 				}
 				if = {
 					limit = { is_galactic_community_member = yes }
-					count_owned_leader = {
-						count = 0
-						limit = { is_assigned_to_galcom = yes }
-					}
+					NOT = { any_owned_leader = { is_assigned_to_galcom = yes } }
 					is_proposing_resolution = any # Vfix
 				}
 			}
@@ -382,12 +371,9 @@ manifesti = {
 			potential = {
 				exists = owner
 				owner = {
-					OR = {
-						is_subject = no
-						count_agreement = {
-							count = 0
-							limit = { agreement_preset = preset_dominion }
-						}
+					NAND = {
+						is_subject = yes
+						any_agreement = { agreement_preset = preset_dominion }
 					}
 				}
 			}

@@ -58,7 +58,9 @@ country_event = {
 					save_global_event_target_as = nanite_factory
 				}
 			}
-			every_country = { establish_communications_no_message = event_target:graygoo_country }
+			every_country = {
+				establish_communications_no_message = event_target:graygoo_country
+			}
 			create_fleet = {
 				name = "NAME_Tempest_Fleet"
 				effect = {
@@ -844,7 +846,10 @@ country_event = {
 					civic = civic_environmentalist
 				}
 				species = last_created_species
-				ethos = { ethic = "ethic_fanatic_xenophile" ethic = "ethic_egalitarian" }
+				ethos = {
+					ethic = "ethic_fanatic_xenophile"
+					ethic = "ethic_egalitarian"
+				}
 				effect = {
 					save_global_event_target_as = graygoo_country
 					add_resource = {
@@ -870,7 +875,9 @@ country_event = {
 					save_global_event_target_as = nanite_factory
 				}
 			}
-			every_country = { establish_communications_no_message = event_target:graygoo_country }
+			every_country = {
+				establish_communications_no_message = event_target:graygoo_country
+			}
 			event_target:graygoo_country = {
 				create_ship_design = { design = "NAME_Gatebuilder_Starbase" }
 				add_ship_design = last_created_design
@@ -1079,7 +1086,10 @@ country_event = {
 			create_dessanu_roamers_7 = yes
 			every_system = {
 				limit = { has_star_flag = lcluster }
-				create_starbase = { size = "starbase_gatebuilders" owner = event_target:graygoo_country }
+				create_starbase = {
+					size = "starbase_gatebuilders"
+					owner = event_target:graygoo_country
+				}
 				every_system_planet = {
 					limit = { has_deposit_for = shipclass_mining_station }
 					create_mining_station = { owner = event_target:graygoo_country }
@@ -2115,12 +2125,9 @@ country_event = {
 			if = {
 				limit = {
 					has_star_flag = lcluster
-					count_system_megastructure = {
-						count >= 1
-						limit = {
-							is_scope_valid = yes
-							NOT = { is_megastructure_type = lgate_base }
-						}
+					any_system_megastructure = {
+						is_scope_valid = yes
+						NOT = { is_megastructure_type = lgate_base }
 					}
 				}
 				# Replace ringworlds, habitats
@@ -2364,7 +2371,10 @@ country_event = {
 
 	option = {
 		name = graygoo.401.a
-		trigger = { is_machine_empire = no is_hive_empire = no }
+		trigger = {
+			is_machine_empire = no
+			is_hive_empire = no
+		}
 		hidden_effect = {
 			country_event = { id = graygoo.402 }
 		}
@@ -2971,10 +2981,7 @@ event = {
 			OR = {
 				AND = {
 					has_country_flag = gray_army_active
-					count_owned_army = {
-						count = 0
-						limit = { army_type = gray_army }
-					}
+					NOT = { any_owned_army = { army_type = gray_army } }
 				}
 				AND = {
 					has_country_flag = gray_warship_active

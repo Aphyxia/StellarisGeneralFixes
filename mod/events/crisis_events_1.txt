@@ -108,14 +108,13 @@ country_event = {
 					}
 				}
 				# No neighboring fallen empires
-				count_neighbor_system = {
-					count = 0
-					limit = {
+				NOR = {
+					any_neighbor_system = {
 						has_owner = yes
 						space_owner = { is_fallen_empire = yes }
 					}
+					has_star_flag = crisis_spawn_exclude
 				}
-				NOT = { has_star_flag = crisis_spawn_exclude }
 			}
 			set_star_flag = swarm_invasion_target_1
 			# Risa fix: Accurately tell countries where the swarm is about to strike.
@@ -1156,27 +1155,42 @@ country_event = {
 	}
 	option = {
 		name = crisis.30.b
-		trigger = { is_pacifist = yes can_talk_to_prethoryn = no }
+		trigger = {
+			is_pacifist = yes
+			can_talk_to_prethoryn = no
+		}
 		response_text = crisis.30.b.response
 	}
 	option = {
 		name = crisis.30.c
-		trigger = { is_militarist = yes can_talk_to_prethoryn = no }
+		trigger = {
+			is_militarist = yes
+			can_talk_to_prethoryn = no
+		}
 		response_text = crisis.30.c.response
 	}
 	option = {
 		name = crisis.30.d
-		trigger = { is_xenophobe = yes can_talk_to_prethoryn = no }
+		trigger = {
+			is_xenophobe = yes
+			can_talk_to_prethoryn = no
+		}
 		response_text = crisis.30.d.response
 	}
 	option = {
 		name = crisis.30.e
-		trigger = { is_xenophile = yes can_talk_to_prethoryn = no }
+		trigger = {
+			is_xenophile = yes
+			can_talk_to_prethoryn = no
+		}
 		response_text = crisis.30.e.response
 	}
 	option = {
 		name = crisis.30.f
-		trigger = { is_spiritualist = yes can_talk_to_prethoryn = no }
+		trigger = {
+			is_spiritualist = yes
+			can_talk_to_prethoryn = no
+		}
 		response_text = crisis.30.f.response
 	}
 	option = {
@@ -1260,7 +1274,9 @@ country_event = {
 				limit = { is_fallen_empire = yes }
 				save_global_event_target_as = sentinel_fallen_empire
 			}
-			every_playable_country = { establish_communications = event_target:sentinel_fallen_empire }
+			every_playable_country = {
+				establish_communications = event_target:sentinel_fallen_empire
+			}
 		}
 		observer_event = { id = observer.31 }
 		every_playable_country = {
@@ -1392,7 +1408,7 @@ fleet_event = {
 		owner = { is_country_type = sentinels }
 		owner = { num_ships < 200 }
 		is_same_value = event_target:sentinel_alpha
-		count_playable_country = { count > 0 }
+		any_playable_country = {  }
 	}
 
 	mean_time_to_happen = {
@@ -1409,9 +1425,7 @@ fleet_event = {
 				species = event_target:random_species
 				name = random
 				skill = 3
-				traits = {
-					0 = leader_trait_sentinel
-				}
+				traits = { 0 = leader_trait_sentinel }
 			}
 			create_fleet = {
 				name = "NAME_Sentinel_Battle_Fleet"
@@ -1518,12 +1532,16 @@ country_event = {
 	trigger = {
 		has_global_flag = sentinels_founded
 		is_country_type = default
-		NOT = { has_country_flag = sentinel_donation }
-		check_variable = { which = "swarm_fleet_kills" value > 6 }
+		NOR = {
+			has_country_flag = sentinel_donation
+			check_variable = { which = "swarm_fleet_kills" value <= 6 }
+		}
 		any_country = {
 			is_country_type = sentinels
-			count_controlled_ship = { count > 30 }
-			NOT = { root = { is_at_war_with = prev } }
+			NOR = {
+				count_controlled_ship = { count <= 30 }
+				root = { is_at_war_with = prev }
+			}
 		}
 	}
 
@@ -2070,10 +2088,7 @@ event = {
 				}
 				if = {
 					limit = {
-						count_country = {
-							count = 0
-							limit = { is_country_type = feral_prethoryn }
-						}
+						NOT = { any_country = { is_country_type = feral_prethoryn } }
 					}
 					random_system = {
 						limit = {
@@ -2114,7 +2129,9 @@ event = {
 						random_system_planet = { feral_prethoryn_garrison_1 = yes }
 						random_system_planet = { feral_prethoryn_garrison_1 = yes }
 						random_system_planet = { feral_prethoryn_garrison_2 = yes }
-						every_country = { establish_communications_no_message = event_target:feral_prethoryn }
+						every_country = {
+							establish_communications_no_message = event_target:feral_prethoryn
+						}
 						if = {
 							limit = {
 								NOT = { has_global_flag = feral_prethoryn_appeared }
@@ -2433,10 +2450,7 @@ planet_event = {
 				create_starbase = { size = starbase_swarm owner = event_target:swarm }
 				if = {
 					limit = {
-						count_system_ambient_object = {
-							count = 0
-							limit = { has_ambient_object_flag = swarm_system_effect }
-						}
+						NOT = { any_system_ambient_object = { has_ambient_object_flag = swarm_system_effect } }
 					}
 					star = {
 						create_ambient_object = { type = "swarm_1" location = this }
@@ -2750,20 +2764,16 @@ event = {
 			limit = {
 				any_country = {
 					is_country_type = swarm
-					num_ships < 2
-					count_system = {
-						count = 0
-						limit = {
+					NOR = {
+						num_ships >= 2
+						any_system = {
 							any_system_colony = {
 								has_owner = yes
 								exists = controller
 								controller = { is_country_type = swarm }
 							}
 						}
-					}
-					count_system = {
-						count = 0
-						limit = {
+						any_system = {
 							any_system_colony = {
 								has_owner = yes
 								owner = { is_country_type = swarm }
@@ -3164,7 +3174,10 @@ country_event = {
 	title = "crisis.234.name"
 
 	desc = {
-		trigger = { is_robot_empire = no is_gestalt = no }
+		trigger = {
+			is_robot_empire = no
+			is_gestalt = no
+		}
 		text = crisis.234.desc.organic_non_gestalt
 	}
 	desc = {

@@ -43,10 +43,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					count_system = {
-						count = 0
-						limit = { has_star_flag = nomad_mid_point }
-					}
+					NOT = { any_system = { has_star_flag = nomad_mid_point } }
 				}
 				random_system = {
 					limit = {
@@ -73,10 +70,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					count_system = {
-						count = 0
-						limit = { has_star_flag = nomad_end_point }
-					}
+					NOT = { any_system = { has_star_flag = nomad_end_point } }
 				}
 				random_rim_system = {
 					limit = {
@@ -196,7 +190,10 @@ fleet_event = {
 			}
 			queue_actions = {
 				find_random_system = {
-					trigger = { id = nomad.2.trigger.1 has_star_flag = nomad_mid_point }
+					trigger = {
+						id = nomad.2.trigger.1
+						has_star_flag = nomad_mid_point
+					}
 					found_system = { move_to = this }
 				}
 			}
@@ -204,7 +201,10 @@ fleet_event = {
 		else = {
 			queue_actions = {
 				find_random_system = {
-					trigger = { id = nomad.2.trigger.2 has_star_flag = nomad_end_point }
+					trigger = {
+						id = nomad.2.trigger.2
+						has_star_flag = nomad_end_point
+					}
 					found_system = { move_to = this }
 				}
 			}
@@ -263,7 +263,10 @@ fleet_event = {
 				repeat = {
 					max_iterations = 1
 					find_closest_planet = {
-						trigger = { id = nomad.3.trigger.1 is_capital = no }
+						trigger = {
+							id = nomad.3.trigger.1
+							is_capital = no
+						}
 						found_planet = { orbit_planet = this }
 					}
 					effect = {
@@ -402,11 +405,10 @@ fleet_event = {
 									is_planet_class = pc_continental
 									is_planet_class = pc_gaia
 								}
-								NOT = { has_modifier = "holy_planet" }
-								solar_system = {
-									count_system_colony = {
-										count = 0
-										limit = { has_owner = yes }
+								NOR = {
+									has_modifier = "holy_planet"
+									solar_system = {
+										any_system_colony = { has_owner = yes }
 									}
 								}
 							}
@@ -745,7 +747,10 @@ country_event = {
 
 	option = {
 		name = "nomad.9.a"
-		trigger = { is_xenophile = no is_xenophobe = no }
+		trigger = {
+			is_xenophile = no
+			is_xenophobe = no
+		}
 	}
 	option = {
 		name = "nomad.9.a.phobe"
@@ -828,11 +833,17 @@ country_event = {
 		}
 		name = {
 			text = action.1.ai
-			trigger = { is_xenophile = yes is_egalitarian = yes }
+			trigger = {
+				is_xenophile = yes
+				is_egalitarian = yes
+			}
 		}
 		name = {
 			text = action.1.aj
-			trigger = { is_xenophile = yes is_authoritarian = yes }
+			trigger = {
+				is_xenophile = yes
+				is_authoritarian = yes
+			}
 		}
 		name = {
 			text = action.1.ak
@@ -942,7 +953,10 @@ country_event = {
 		else = {
 			custom_tooltip = seek_friends_tt
 			event_target:contact_empire = {
-				add_opinion_modifier = { who = root modifier = opinion_friendly_first_comms_greeting }
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_friendly_first_comms_greeting
+				}
 			}
 		}
 		trigger = {
@@ -1188,7 +1202,10 @@ country_event = {
 		}
 		name = {
 			text = action.1.au
-			trigger = { is_spiritualist = yes is_militarist = yes }
+			trigger = {
+				is_spiritualist = yes
+				is_militarist = yes
+			}
 		}
 		name = {
 			text = action.1.k
@@ -1459,11 +1476,17 @@ fleet_event = {
 			repeat = {
 				max_iterations = 1
 				find_random_system = {
-					trigger = { id = nomad.20.trigger.1 has_star_flag = nomad_mission_waypoint }
+					trigger = {
+						id = nomad.20.trigger.1
+						has_star_flag = nomad_mission_waypoint
+					}
 					found_system = { move_to = this }
 				}
 				find_closest_planet = {
-					trigger = { id = nomad.20.trigger.2 has_planet_flag = nomad_mission_location }
+					trigger = {
+						id = nomad.20.trigger.2
+						has_planet_flag = nomad_mission_location
+					}
 					found_planet = {
 						move_to = this
 						orbit_planet = this
@@ -1736,11 +1759,10 @@ fleet_event = {
 						is_planet_class = pc_ocean
 						is_planet_class = pc_arid
 					}
-					NOT = { has_modifier = "holy_planet" }
-					solar_system = {
-						count_system_colony = {
-							count = 0
-							limit = { has_owner = yes }
+					NOR = {
+						has_modifier = "holy_planet"
+						solar_system = {
+							any_system_colony = { has_owner = yes }
 						}
 					}
 				}
@@ -1752,11 +1774,17 @@ fleet_event = {
 			repeat = {
 				max_iterations = 1
 				find_random_system = {
-					trigger = { id = nomad.40.trigger.1 has_star_flag = nomad_mission_waypoint }
+					trigger = {
+						id = nomad.40.trigger.1
+						has_star_flag = nomad_mission_waypoint
+					}
 					found_system = { move_to = this }
 				}
 				find_closest_planet = {
-					trigger = { id = nomad.40.trigger.2 has_planet_flag = nomad_mission_location }
+					trigger = {
+						id = nomad.40.trigger.2
+						has_planet_flag = nomad_mission_location
+					}
 					found_planet = {
 						move_to = this
 						orbit_planet = this
@@ -1827,7 +1855,10 @@ country_event = {
 		name = nomad.41.b
 		response_text = nomad.41.b.response
 		custom_tooltip = nomad.41.b.tooltip
-		trigger = { is_xenophobe = no is_spiritualist = no }
+		trigger = {
+			is_xenophobe = no
+			is_spiritualist = no
+		}
 		add_resource = { influence = -50 }
 		hidden_effect = {
 			event_target:nomad_fleet = {
@@ -1859,7 +1890,10 @@ country_event = {
 		name = nomad.41.b.spirit
 		response_text = nomad.41.b.response
 		custom_tooltip = nomad.41.b.tooltip
-		trigger = { is_spiritualist = yes is_xenophobe = no }
+		trigger = {
+			is_spiritualist = yes
+			is_xenophobe = no
+		}
 		add_resource = { influence = -50 }
 		hidden_effect = {
 			event_target:nomad_fleet = {
@@ -2277,7 +2311,10 @@ country_event = {
 
 	option = {
 		name = OK
-		trigger = { is_xenophile = no is_xenophobe = no }
+		trigger = {
+			is_xenophile = no
+			is_xenophobe = no
+		}
 	}
 	option = {
 		name = EXCELLENT
@@ -2311,7 +2348,10 @@ country_event = {
 
 	option = {
 		name = OK
-		trigger = { is_xenophile = no is_xenophobe = no }
+		trigger = {
+			is_xenophile = no
+			is_xenophobe = no
+		}
 	}
 	option = {
 		name = EXCELLENT

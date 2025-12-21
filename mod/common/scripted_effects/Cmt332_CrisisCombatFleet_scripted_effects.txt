@@ -8,14 +8,12 @@
 #####													#####
 #############################################################
 #############################################################
-
 #
 # Information
 #	All script in this file require following scopes
 #	this: Owner country
 #	prev: Location for creating fleets (e.g. planet)
 #
-
 ##############
 ###- Khan -###
 ##############

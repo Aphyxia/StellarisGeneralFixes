@@ -21,7 +21,10 @@ country_event = {
 		text = "leader.1.desc.machine"
 	}
 	desc = {
-		trigger = { is_hive_empire = no is_machine_empire = no }
+		trigger = {
+			is_hive_empire = no
+			is_machine_empire = no
+		}
 		text = "leader.1.desc"
 	}
 
@@ -187,7 +190,10 @@ country_event = {
 		text = "leader.newadmiraltrait.desc.machine"
 	}
 	desc = {
-		trigger = { is_hive_empire = no is_machine_empire = no }
+		trigger = {
+			is_hive_empire = no
+			is_machine_empire = no
+		}
 		text = "leader.5.desc"
 	}
 
@@ -241,7 +247,10 @@ country_event = {
 		text = "leader.newadmiraltrait.desc.machine"
 	}
 	desc = {
-		trigger = { is_hive_empire = no is_machine_empire = no }
+		trigger = {
+			is_hive_empire = no
+			is_machine_empire = no
+		}
 		text = "leader.6.desc"
 	}
 
@@ -295,7 +304,10 @@ country_event = {
 		text = "leader.newadmiraltrait.desc.machine"
 	}
 	desc = {
-		trigger = { is_hive_empire = no is_machine_empire = no }
+		trigger = {
+			is_hive_empire = no
+			is_machine_empire = no
+		}
 		text = "leader.7.desc"
 	}
 
@@ -349,7 +361,10 @@ country_event = {
 		text = "leader.newadmiraltrait.desc.machine"
 	}
 	desc = {
-		trigger = { is_hive_empire = no is_machine_empire = no }
+		trigger = {
+			is_hive_empire = no
+			is_machine_empire = no
+		}
 		text = "leader.8.desc"
 	}
 
@@ -404,7 +419,10 @@ country_event = {
 		text = "leader.lostadmiraltrait.desc.machine"
 	}
 	desc = {
-		trigger = { is_hive_empire = no is_machine_empire = no }
+		trigger = {
+			is_hive_empire = no
+			is_machine_empire = no
+		}
 		text = "leader.9.desc"
 	}
 
@@ -837,7 +855,10 @@ country_event = {
 		text = "leader.lostadmiraltrait.desc.machine"
 	}
 	desc = {
-		trigger = { is_hive_empire = no is_machine_empire = no }
+		trigger = {
+			is_hive_empire = no
+			is_machine_empire = no
+		}
 		text = "leader.17.desc"
 	}
 

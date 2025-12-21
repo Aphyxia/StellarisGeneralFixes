@@ -1,5 +1,9 @@
+
 refresh_class_cost_mod = {
-	erase_modifier = { MOD = $CLASS$s_cost_mod }
+	erase_modifier = {
+		MOD = $CLASS$s_cost_mod
+	}
+
 	add_modifier = {
 		modifier = $CLASS$s_cost_mod
 		multiplier = $MULT$
@@ -11,110 +15,107 @@ add_ship_type_from_debris = {
 		count = value:ships_of_size_in_fromscoped_debris|SIZE|$USES$|
 		random = {
 			chance = $CHANCE$
-			create_ship = {
-				name = random
-				random_existing_design = $GIVES$
-			}
+			create_ship = { name = random random_existing_design = $GIVES$ }
 		}
 	}
 }
 
 salvage_mechanical_ships_effect = {
 	# Standard ships
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = corvette							GIVES = corvette }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = frigate							GIVES = frigate }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = destroyer						GIVES = destroyer }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = cruiser							GIVES = cruiser }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = battleship						GIVES = battleship }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = titan							GIVES = titan }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = corvette GIVES = corvette }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = frigate GIVES = frigate }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = destroyer GIVES = destroyer }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = cruiser GIVES = cruiser }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = battleship GIVES = battleship }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = titan GIVES = titan }
 
 	# Offspring Ships
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_corvette				GIVES = corvette }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_destroyer				GIVES = destroyer }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_cruiser				GIVES = cruiser }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_battleship				GIVES = battleship }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_corvette GIVES = corvette }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_destroyer GIVES = destroyer }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_cruiser GIVES = cruiser }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_battleship GIVES = battleship }
 
 	# Pirate/Marauder/Galactic Nemesis Ships
 	if = {
 		limit = {
 			root = { has_crisis_level = crisis_level_2 }
 		}
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = pirate_corvette				GIVES = crisis_corvette }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = bemat_corvette				GIVES = crisis_corvette }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = marauder_corvette			GIVES = crisis_corvette }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = crisis_corvette				GIVES = crisis_corvette }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = pirate_corvette GIVES = crisis_corvette }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = bemat_corvette GIVES = crisis_corvette }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = marauder_corvette GIVES = crisis_corvette }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = crisis_corvette GIVES = crisis_corvette }
 	}
 	else = {
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = pirate_corvette				GIVES = corvette }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = bemat_corvette				GIVES = corvette }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = marauder_corvette			GIVES = corvette }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = crisis_corvette				GIVES = corvette }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = pirate_corvette GIVES = corvette }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = bemat_corvette GIVES = corvette }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = marauder_corvette GIVES = corvette }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = crisis_corvette GIVES = corvette }
 	}
 	if = {
 		limit = {
 			root = { has_crisis_level = crisis_level_3 }
 		}
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = pirate_destroyer 			GIVES = crisis_destroyer }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = bemat_destroyer				GIVES = crisis_destroyer }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = marauder_destroyer			GIVES = crisis_destroyer }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = crisis_destroyer				GIVES = crisis_destroyer }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = pirate_destroyer GIVES = crisis_destroyer }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = bemat_destroyer GIVES = crisis_destroyer }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = marauder_destroyer GIVES = crisis_destroyer }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = crisis_destroyer GIVES = crisis_destroyer }
 	}
 	else = {
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = pirate_destroyer 			GIVES = destroyer }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = bemat_destroyer				GIVES = destroyer }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = marauder_destroyer			GIVES = destroyer }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = crisis_destroyer				GIVES = destroyer }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = pirate_destroyer GIVES = destroyer }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = bemat_destroyer GIVES = destroyer }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = marauder_destroyer GIVES = destroyer }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = crisis_destroyer GIVES = destroyer }
 	}
 	if = {
 		limit = {
 			root = { has_crisis_level = crisis_level_3 }
 		}
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = pirate_cruiser				GIVES = crisis_cruiser }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = bemat_cruiser				GIVES = crisis_cruiser }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = marauder_cruiser				GIVES = crisis_cruiser }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = crisis_cruiser				GIVES = crisis_cruiser }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = pirate_cruiser GIVES = crisis_cruiser }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = bemat_cruiser GIVES = crisis_cruiser }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = marauder_cruiser GIVES = crisis_cruiser }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = crisis_cruiser GIVES = crisis_cruiser }
 	}
 	else = {
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = pirate_cruiser				GIVES = cruiser }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = bemat_cruiser				GIVES = cruiser }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = marauder_cruiser				GIVES = cruiser }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = crisis_cruiser				GIVES = cruiser }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = pirate_cruiser GIVES = cruiser }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = bemat_cruiser GIVES = cruiser }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = marauder_cruiser GIVES = cruiser }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = crisis_cruiser GIVES = cruiser }
 	}
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = marauder_galleon					GIVES = battleship }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = marauder_galleon GIVES = battleship }
 
 	# Fallen Empire/Cosmogenesis ships
 	if = {
 		limit = {
 			root = { has_technology = tech_cosmogenesis_escort }
 		}
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = small_ship_fallen_empire		GIVES = cosmo_crisis_destroyer }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = cosmo_crisis_destroyer		GIVES = cosmo_crisis_destroyer }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = small_ship_fallen_empire GIVES = cosmo_crisis_destroyer }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = cosmo_crisis_destroyer GIVES = cosmo_crisis_destroyer }
 	}
 	else = {
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = small_ship_fallen_empire		GIVES = destroyer }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = cosmo_crisis_destroyer		GIVES = destroyer }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = small_ship_fallen_empire GIVES = destroyer }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = cosmo_crisis_destroyer GIVES = destroyer }
 	}
 	if = {
 		limit = {
 			root = { has_technology = tech_cosmogenesis_battlecruiser }
 		}
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = large_ship_fallen_empire		GIVES = cosmo_crisis_battlecruiser }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = cosmo_crisis_battlecruiser	GIVES = cosmo_crisis_battlecruiser }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = large_ship_fallen_empire GIVES = cosmo_crisis_battlecruiser }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = cosmo_crisis_battlecruiser GIVES = cosmo_crisis_battlecruiser }
 	}
 	else = {
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = large_ship_fallen_empire		GIVES = battleship }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = cosmo_crisis_battlecruiser	GIVES = battleship }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = large_ship_fallen_empire GIVES = battleship }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = cosmo_crisis_battlecruiser GIVES = battleship }
 	}
 	if = {
 		limit = {
 			root = { has_technology = tech_cosmogenesis_FE_titan }
 		}
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = massive_ship_fallen_empire	GIVES = cosmo_crisis_titan }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = cosmo_crisis_titan			GIVES = cosmo_crisis_titan }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = massive_ship_fallen_empire GIVES = cosmo_crisis_titan }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = cosmo_crisis_titan GIVES = cosmo_crisis_titan }
 	}
 	else = {
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = massive_ship_fallen_empire	GIVES = titan }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = cosmo_crisis_titan			GIVES = titan }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = massive_ship_fallen_empire GIVES = titan }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = cosmo_crisis_titan GIVES = titan }
 	}
 
 	# Nanotech Ships
@@ -122,65 +123,65 @@ salvage_mechanical_ships_effect = {
 		limit = {
 			root = { has_tradition = tr_nanotech_4 }
 		}
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = nanite_swarmer				GIVES = nanite_swarmer }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = nanite_swarmer GIVES = nanite_swarmer }
 	}
 	if = {
 		limit = {
 			root = { has_tradition = tr_nanotech_5 }
 		}
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = nanite_interdictor			GIVES = nanite_interdictor }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = nanite_interdictor GIVES = nanite_interdictor }
 	}
 }
 
 salvage_biological_ships_effect = {
 	# Biological Ships
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = mauler_stage_1					GIVES = mauler_stage_1 }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = mauler_stage_2					GIVES = mauler_stage_2 }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = mauler_stage_3					GIVES = mauler_stage_3 }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = weaver_stage_1					GIVES = weaver_stage_1 }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = weaver_stage_2					GIVES = weaver_stage_2 }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = weaver_stage_3					GIVES = weaver_stage_3 }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = harbinger_stage_1				GIVES = harbinger_stage_1 }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = harbinger_stage_2				GIVES = harbinger_stage_2 }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = harbinger_stage_3				GIVES = harbinger_stage_3 }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = stinger_stage_1					GIVES = stinger_stage_1 }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = stinger_stage_2					GIVES = stinger_stage_2 }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = stinger_stage_3					GIVES = stinger_stage_3 }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_mauler_stage_1			GIVES = mauler_stage_1 }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_mauler_stage_2			GIVES = mauler_stage_2 }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_mauler_stage_3			GIVES = mauler_stage_3 }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_weaver_stage_1			GIVES = weaver_stage_1 }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_weaver_stage_2			GIVES = weaver_stage_2 }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_weaver_stage_3			GIVES = weaver_stage_3 }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_harbinger_stage_1		GIVES = harbinger_stage_1 }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_harbinger_stage_2		GIVES = harbinger_stage_2 }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_harbinger_stage_3		GIVES = harbinger_stage_3 }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_stinger_stage_1		GIVES = stinger_stage_1 }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_stinger_stage_2		GIVES = stinger_stage_2 }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_stinger_stage_3		GIVES = stinger_stage_3 }
-	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = titan							GIVES = titan }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = mauler_stage_1 GIVES = mauler_stage_1 }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = mauler_stage_2 GIVES = mauler_stage_2 }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = mauler_stage_3 GIVES = mauler_stage_3 }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = weaver_stage_1 GIVES = weaver_stage_1 }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = weaver_stage_2 GIVES = weaver_stage_2 }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = weaver_stage_3 GIVES = weaver_stage_3 }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = harbinger_stage_1 GIVES = harbinger_stage_1 }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = harbinger_stage_2 GIVES = harbinger_stage_2 }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = harbinger_stage_3 GIVES = harbinger_stage_3 }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = stinger_stage_1 GIVES = stinger_stage_1 }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = stinger_stage_2 GIVES = stinger_stage_2 }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = stinger_stage_3 GIVES = stinger_stage_3 }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_mauler_stage_1 GIVES = mauler_stage_1 }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_mauler_stage_2 GIVES = mauler_stage_2 }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_mauler_stage_3 GIVES = mauler_stage_3 }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_weaver_stage_1 GIVES = weaver_stage_1 }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_weaver_stage_2 GIVES = weaver_stage_2 }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_weaver_stage_3 GIVES = weaver_stage_3 }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_harbinger_stage_1 GIVES = harbinger_stage_1 }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_harbinger_stage_2 GIVES = harbinger_stage_2 }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_harbinger_stage_3 GIVES = harbinger_stage_3 }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_stinger_stage_1 GIVES = stinger_stage_1 }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_stinger_stage_2 GIVES = stinger_stage_2 }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_stinger_stage_3 GIVES = stinger_stage_3 }
+	add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = titan GIVES = titan }
 
 	# Fallen Empire/Cosmogenesis ships
 	if = {
 		limit = {
 			root = { has_technology = tech_cosmogenesis_escort }
 		}
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = small_ship_fallen_empire		GIVES = cosmo_crisis_destroyer }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = cosmo_crisis_destroyer		GIVES = cosmo_crisis_destroyer }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = small_ship_fallen_empire GIVES = cosmo_crisis_destroyer }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = cosmo_crisis_destroyer GIVES = cosmo_crisis_destroyer }
 	}
 	if = {
 		limit = {
 			root = { has_technology = tech_cosmogenesis_battlecruiser }
 		}
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = large_ship_fallen_empire		GIVES = cosmo_crisis_battlecruiser }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = cosmo_crisis_battlecruiser	GIVES = cosmo_crisis_battlecruiser }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = large_ship_fallen_empire GIVES = cosmo_crisis_battlecruiser }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = cosmo_crisis_battlecruiser GIVES = cosmo_crisis_battlecruiser }
 	}
 	if = {
 		limit = {
 			root = { has_technology = tech_cosmogenesis_FE_titan }
 		}
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = massive_ship_fallen_empire	GIVES = cosmo_crisis_titan }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = cosmo_crisis_titan			GIVES = cosmo_crisis_titan }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = massive_ship_fallen_empire GIVES = cosmo_crisis_titan }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = cosmo_crisis_titan GIVES = cosmo_crisis_titan }
 	}
 
 	# Pirate/Marauder/Galactic Nemesis Ships
@@ -188,28 +189,28 @@ salvage_biological_ships_effect = {
 		limit = {
 			root = { has_crisis_level = crisis_level_2 }
 		}
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = pirate_corvette				GIVES = crisis_corvette }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = bemat_corvette				GIVES = crisis_corvette }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = marauder_corvette			GIVES = crisis_corvette }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = crisis_corvette				GIVES = crisis_corvette }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = pirate_corvette GIVES = crisis_corvette }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = bemat_corvette GIVES = crisis_corvette }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = marauder_corvette GIVES = crisis_corvette }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = crisis_corvette GIVES = crisis_corvette }
 	}
 	if = {
 		limit = {
 			root = { has_crisis_level = crisis_level_3 }
 		}
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = pirate_destroyer 			GIVES = crisis_destroyer }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = bemat_destroyer				GIVES = crisis_destroyer }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = marauder_destroyer			GIVES = crisis_destroyer }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = crisis_destroyer				GIVES = crisis_destroyer }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = pirate_destroyer GIVES = crisis_destroyer }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = bemat_destroyer GIVES = crisis_destroyer }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = marauder_destroyer GIVES = crisis_destroyer }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = crisis_destroyer GIVES = crisis_destroyer }
 	}
 	if = {
 		limit = {
 			root = { has_crisis_level = crisis_level_3 }
 		}
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = pirate_cruiser				GIVES = crisis_cruiser }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = bemat_cruiser				GIVES = crisis_cruiser }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = marauder_cruiser				GIVES = crisis_cruiser }
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = crisis_cruiser				GIVES = crisis_cruiser }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = pirate_cruiser GIVES = crisis_cruiser }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = bemat_cruiser GIVES = crisis_cruiser }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = marauder_cruiser GIVES = crisis_cruiser }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = crisis_cruiser GIVES = crisis_cruiser }
 	}
 
 	# Nanotech Ships
@@ -217,13 +218,13 @@ salvage_biological_ships_effect = {
 		limit = {
 			root = { has_tradition = tr_nanotech_4 }
 		}
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = nanite_swarmer				GIVES = nanite_swarmer }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = nanite_swarmer GIVES = nanite_swarmer }
 	}
 	if = {
 		limit = {
 			root = { has_tradition = tr_nanotech_5 }
 		}
-		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = nanite_interdictor			GIVES = nanite_interdictor }
+		add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = nanite_interdictor GIVES = nanite_interdictor }
 	}
 }
 
@@ -233,12 +234,9 @@ salvage_ships_from_debris = {
 		effect = {
 			set_owner = root
 			set_location = from
-
 			if = {
 				limit = {
-					root = {
-						country_uses_bio_ships = no
-					}
+					root = { country_uses_bio_ships = no }
 				}
 				salvage_mechanical_ships_effect = {
 					CHANCE = $CHANCE$
@@ -278,9 +276,7 @@ salvage_ships_from_debris = {
 				scope = last_created_fleet
 			}
 		}
-		last_created_fleet = {
-			clear_variable = num_ships_salvaged
-		}
+		last_created_fleet = { clear_variable = num_ships_salvaged }
 	}
 }
 
@@ -289,10 +285,7 @@ create_variable_if_not_exists = {
 		limit = {
 			NOT = { is_variable_set = $VARIABLE$ }
 		}
-		set_variable = {
-			which = $VARIABLE$
-			value = $VALUE_IF_CREATED$
-		}
+		set_variable = { which = $VARIABLE$ value = $VALUE_IF_CREATED$ }
 	}
 }
 
@@ -303,25 +296,20 @@ update_modifier_amount_if_needed = {
 		limit = {
 			check_variable = { which = $MULT_VAR$ value > 0 }
 		}
-
 		# Remove old modifier if the multiplier amount should change
 		if = {
 			limit = {
-				NOT = { check_variable = { which = $MULT_VAR$ value = $PREV_MULT_VAR$ } }
+				check_variable = { which = $MULT_VAR$ value != $PREV_MULT_VAR$ }
 				has_modifier = $MODIFIER$
 			}
 			remove_modifier = $MODIFIER$
 		}
-
 		# Add modifier with a multiplier based on the amount of overseers
 		if = {
 			limit = {
 				NOT = { has_modifier = $MODIFIER$ }
 			}
-			add_modifier = {
-				modifier = $MODIFIER$
-				multiplier = $MULT_VAR$
-			}
+			add_modifier = { modifier = $MODIFIER$ multiplier = $MULT_VAR$ }
 		}
 	}
 	else_if = { # Remove modifier since there are no overseers
@@ -332,11 +320,10 @@ update_modifier_amount_if_needed = {
 	# Keep track of multiplier amount applied so we only need to update the
 	# modifier if the amount is changed.
 	if = {
-		limit = { check_variable = { which = $MULT_VAR$ value > 0 } }
-		set_variable = {
-			which = $PREV_MULT_VAR$
-			value = $MULT_VAR$
+		limit = {
+			check_variable = { which = $MULT_VAR$ value > 0 }
 		}
+		set_variable = { which = $PREV_MULT_VAR$ value = $MULT_VAR$ }
 	}
 	else = {
 		clear_variable = $PREV_MULT_VAR$ # No need to bloat variable list if it's 0
@@ -347,9 +334,7 @@ update_modifier_amount_if_needed = {
 
 ethic_leader_hire_event = {
 	set_global_flag = $LEADER_ID$
-	country_event = {
-		id = $EVENT_ID$
-	}
+	country_event = { id = $EVENT_ID$ }
 }
 
 ethic_leader_creator = {
@@ -358,25 +343,15 @@ ethic_leader_creator = {
 		type = faction
 		auto_delete = yes
 		flag = {
-			icon = {
-				category = "special"
-				file = "unknown.dds"
-			}
-			background = {
-				category = "backgrounds"
-				file = "00_solid.dds"
-			}
-			colors = {
-				"red"
-				"red"
-				"null"
-				"null"
-			}
+			icon = { category = "special" file = "unknown.dds" }
+			background = { category = "backgrounds" file = "00_solid.dds" }
+			colors = { "red" "red" "null" "null" }
 		}
 		effect = {
 			save_event_target_as = leader_country
 		}
 	}
+
 	event_target:leader_country = {
 		create_species = {
 			name = UNKNOWN
@@ -384,9 +359,7 @@ ethic_leader_creator = {
 			portrait = $LEADER_PORTRAIT$
 			name_list = $NAME_LIST|random_class$
 			immortal = $IMMORTAL_SPECIES|no$
-			traits = {
-				trait = "trait_enduring"
-			}
+			traits = { trait = "trait_enduring" }
 			allow_negative_traits = no
 			effect = {
 				save_event_target_as = leader_species
@@ -406,16 +379,19 @@ ethic_leader_creator = {
 			custom_catch_phrase = $CATCH_PHRASE$
 			immortal = $IMMORTAL$
 			hide_age = $HIDEAGE|IMMORTAL$ # Matches HIDEAGE, Fallbacks on IMMORTAL
-
 			randomize_traits = no
 			effect = {
 				set_skill = $LEVEL$
 				save_event_target_as = ethic_leader
 				set_leader_flag = is_in_recruit_window
-				set_variable = { which = leader_pending_negative_traits_unmodified value = 1 }
+				set_variable = {
+					which = leader_pending_negative_traits_unmodified
+					value = 1
+				}
 			}
 		}
 	}
+
 	event_target:ethic_leader = {
 		set_owner = root
 		# This is a hack to make the leader not be added to player country.
@@ -427,13 +403,8 @@ ethic_leader_creator = {
 
 ethic_leader_hire_effect = {
 	if = {
-		limit = {
-			is_variable_set = paragon_memory_vault
-		}
-		change_variable = {
-			which = paragon_memory_vault
-			value = 1
-		}
+		limit = { is_variable_set = paragon_memory_vault }
+		change_variable = { which = paragon_memory_vault value = 1 }
 	}
 
 	lower_leader_chance = yes
@@ -453,7 +424,7 @@ ethic_leader_hire_effect = {
 
 	create_message = {
 		type = MESSAGE_RECRUITED_LEADER
-		localization =  MESSAGE_RECRUITED_LEADER_DESC
+		localization = MESSAGE_RECRUITED_LEADER_DESC
 		days = @toast_message_days
 		target = event_target:ethic_leader
 		variable = {
@@ -461,10 +432,7 @@ ethic_leader_hire_effect = {
 			localization = LEADER
 			scope = event_target:ethic_leader
 		}
-		variable = {
-			key = "border"
-			value = "GFX_border_veteran"
-		}
+		variable = { key = "border" value = "GFX_border_veteran" }
 	}
 
 	event_target:$GLOBAL_EVENT_TARGET$ = {
@@ -478,15 +446,9 @@ ethic_leader_kill_effect = {
 	}
 	if = {
 		limit = {
-			check_variable = {
-				which = paragon_chance_negative
-				value > 0
-			}
+			check_variable = { which = paragon_chance_negative value > 0 }
 		}
-		change_variable = {
-			which = paragon_chance_negative
-			value = -1
-		}
+		change_variable = { which = paragon_chance_negative value = -1 }
 	}
 }
 
@@ -508,7 +470,7 @@ hire_event_leader_effect = {
 hire_event_leader_message = {
 	create_message = {
 		type = MESSAGE_RECRUITED_LEADER
-		localization =  MESSAGE_RECRUITED_LEADER_DESC
+		localization = MESSAGE_RECRUITED_LEADER_DESC
 		days = @toast_message_days
 		target = event_target:$LEADER$
 		variable = {
@@ -516,10 +478,7 @@ hire_event_leader_message = {
 			localization = LEADER
 			scope = event_target:$LEADER$
 		}
-		variable = {
-			key = "border"
-			value = "GFX_border_veteran"
-		}
+		variable = { key = "border" value = "GFX_border_veteran" }
 	}
 }
 
@@ -541,6 +500,7 @@ country_create_gestalt_councilor = {
 			save_event_target_as = gestalt_councilor
 		}
 	}
+
 	event_target:gestalt_councilor = {
 		set_owner = prev
 		change_leader_portrait = $COUNCIL_POS$_1
@@ -548,9 +508,7 @@ country_create_gestalt_councilor = {
 		set_immortal = yes
 		set_leader_flag = leader_death_events_blocked
 		if = {
-			limit = {
-				has_paragon_dlc = yes
-			}
+			limit = { has_paragon_dlc = yes }
 			assign_node_subclass_traits = yes
 		}
 		add_trait = {
@@ -578,28 +536,16 @@ assign_node_subclass_traits = {
 	switch = {
 		trigger = is_councilor_type
 		councilor_gestalt_legion = {
-			add_trait = {
-				trait = subclass_commander_councilor
-				show_message = no
-			}
+			add_trait = { trait = subclass_commander_councilor show_message = no }
 		}
 		councilor_gestalt_cognitive = {
-			add_trait = {
-				trait = subclass_scientist_councilor
-				show_message = no
-			}
+			add_trait = { trait = subclass_scientist_councilor show_message = no }
 		}
 		councilor_gestalt_regulatory = {
-			add_trait = {
-				trait = subclass_official_diplomacy_councilor
-				show_message = no
-			}
+			add_trait = { trait = subclass_official_diplomacy_councilor show_message = no }
 		}
 		councilor_gestalt_growth = {
-			add_trait = {
-				trait = subclass_official_economy_councilor
-				show_message = no
-			}
+			add_trait = { trait = subclass_official_economy_councilor show_message = no }
 		}
 	}
 }
@@ -608,31 +554,20 @@ assign_gestalt_ruler_subclass_trait = {
 	switch = {
 		trigger = leader_class
 		commander = {
-			add_trait = {
-				trait = subclass_commander_councilor
-				show_message = no
-			}
+			add_trait = { trait = subclass_commander_councilor show_message = no }
 		}
 		scientist = {
-			add_trait = {
-				trait = subclass_scientist_councilor
-				show_message = no
-			}
+			add_trait = { trait = subclass_scientist_councilor show_message = no }
 		}
 		official = {
-			add_trait = {
-				trait = subclass_official_economy_councilor
-				show_message = no
-			}
+			add_trait = { trait = subclass_official_economy_councilor show_message = no }
 		}
 	}
 }
 
 update_node_portraits_if_gestalt_effect = {
 	if = {
-		limit = {
-			is_gestalt = yes
-		}
+		limit = { is_gestalt = yes }
 		every_owned_leader = {
 			limit = {
 				is_councilor = yes
@@ -707,9 +642,7 @@ set_gestalt_node_portrait_effect = {
 
 restore_gestalt_councilor_effect = {
 	every_owned_leader = {
-		limit = {
-			is_councilor_type = $COUNCIL_POS$
-		}
+		limit = { is_councilor_type = $COUNCIL_POS$ }
 		custom_tooltip = restore_gestalt_councilor_effect_tooltip
 		save_global_event_target_as = culled_node
 		hidden_effect = {
@@ -721,24 +654,15 @@ restore_gestalt_councilor_effect = {
 					DESC = $DESC$
 				}
 				prev = {
-					kill_leader = {
-						show_notification = no
-					}
+					kill_leader = { show_notification = no }
 				}
-				assign_restored_node = {
-					COUNCIL_POS = $COUNCIL_POS$
-				}
+				assign_restored_node = { COUNCIL_POS = $COUNCIL_POS$ }
 				last_created_leader = {
-					add_trait = {
-						trait = random_common
-						show_message = no
-					}
+					add_trait = { trait = random_common show_message = no }
 					add_skill_without_trait_selection = value:restored_node_additional_skills
 					if = {
 						limit = {
-							owner = {
-								has_valid_civic = civic_machine_predictive_analysis
-							}
+							owner = { has_valid_civic = civic_machine_predictive_analysis }
 							is_councilor_type = councilor_gestalt_cognitive
 						}
 						add_random_expertise_trait_effect = yes
@@ -778,23 +702,16 @@ assign_restored_node = {
 		set_immortal = yes
 		set_leader_flag = leader_death_events_blocked
 		if = {
-			limit = {
-				has_paragon_dlc = yes
-			}
+			limit = { has_paragon_dlc = yes }
 			assign_node_subclass_traits = yes
 		}
 	}
 }
 
-lower_leader_chance = { #increase the wait time between getting new ethic leaders
-	change_variable = {
-		which = paragon_chance_negative
-		value = 1
-	}
-	set_timed_country_flag = {
-		flag = leader_recruited_recently
-		days = 7250
-	}
+# increase the wait time between getting new ethic leaders
+lower_leader_chance = {
+	change_variable = { which = paragon_chance_negative value = 1 }
+	set_timed_country_flag = { flag = leader_recruited_recently days = 7250 }
 }
 
 remove_subclass = {
@@ -804,12 +721,10 @@ remove_subclass = {
 		subclass_commander_general = { remove_trait = subclass_commander_general }
 		subclass_commander_governor = { remove_trait = subclass_commander_governor }
 		subclass_commander_councilor = { remove_trait = subclass_commander_councilor }
-
 		subclass_official_delegate = { remove_trait = subclass_official_delegate }
 		subclass_official_governor = { remove_trait = subclass_official_governor }
 		subclass_official_diplomacy_councilor = { remove_trait = subclass_official_diplomacy_councilor }
 		subclass_official_economy_councilor = { remove_trait = subclass_official_economy_councilor }
-
 		subclass_scientist_explorer = { remove_trait = subclass_scientist_explorer }
 		subclass_scientist_scholar = { remove_trait = subclass_scientist_scholar }
 		subclass_scientist_governor = { remove_trait = subclass_scientist_governor }
@@ -826,16 +741,8 @@ paragon_origin_create_pirates = {
 			species = random
 			name_list = "PRT1"
 			flag = {
-				background = {
-					category = "backgrounds"
-					file = "00_solid.dds"
-				}
-				colors = {
-					"black"
-					"black"
-					"null"
-					"null"
-				}
+				background = { category = "backgrounds" file = "00_solid.dds" }
+				colors = { "black" "black" "null" "null" }
 			}
 			effect = {
 				save_event_target_as = paragon_origin_pirate_country
@@ -844,9 +751,7 @@ paragon_origin_create_pirates = {
 		event_target:paragon_origin_pirate_country = {
 			set_name = random
 			randomize_flag_symbol = "pirate"
-			every_country = {
-				establish_communications_no_message = prev
-			}
+			every_country = { establish_communications_no_message = prev }
 			create_fleet = {
 				name = "NAME_Pirate_Station"
 				effect = {
@@ -863,9 +768,7 @@ paragon_origin_create_pirates = {
 				name = "NAME_Pirate_Fleet"
 				effect = {
 					set_owner = event_target:paragon_origin_pirate_country
-					create_ship_design = {
-						design = "NAME_Reaver"
-					}
+					create_ship_design = { design = "NAME_Reaver" }
 					while = {
 						count = 8
 						create_ship = {
@@ -874,9 +777,7 @@ paragon_origin_create_pirates = {
 							graphical_culture = "pirate_01"
 						}
 					}
-					create_ship_design = {
-						design = "NAME_Brigand"
-					}
+					create_ship_design = { design = "NAME_Brigand" }
 					while = {
 						count = 4
 						create_ship = {
@@ -900,42 +801,34 @@ paragon_origin_create_pirates = {
 
 paragon_origin_reformists_negotiations_effect = {
 	optimize_memory
-	ruler = { #Remove Delusion Trait If It Is Low
+
+	ruler = { # Remove Delusion Trait If It Is Low
 		if = {
 			limit = {
 				has_trait = leader_trait_legendary_delusional
-				check_variable = {
-					which = paragon_origin_delusion_tier
-					value <= 5
-				}
+				check_variable = { which = paragon_origin_delusion_tier value <= 5 }
 			}
 			remove_trait = leader_trait_legendary_delusional
 		}
 	}
 	if = {
-		limit = { #Did reformist finished their situation?
+		limit = { # Did reformist finished their situation?
 			has_country_flag = reformists_situation_finished
 		}
 		if = {
 			limit = {
-				NOR = { #Was player a bad ruler?
+				NOR = { # Was player a bad ruler?
 					has_country_flag = took_reformists_side
 					ruler = {
-						check_variable = {
-							which = paragon_origin_delusion_tier
-							value < 4
-						}
+						check_variable = { which = paragon_origin_delusion_tier value < 4 }
 					}
 				}
 			}
-			hidden_effect = { #Ruler was bad - force them to revert Imperial
+			hidden_effect = { # Ruler was bad - force them to revert Imperial
 				set_origin = origin_legendary_leader_dictatorial
 			}
-			change_government = {
-				authority = auth_dictatorial
-				remove_invalid_civics = yes
-			}
-			switch = { #Ruler was bad, so throw some more pains for him
+			change_government = { authority = auth_dictatorial remove_invalid_civics = yes }
+			switch = { # Ruler was bad, so throw some more pains for him
 				trigger = has_ethic
 				ethic_materialist = { shift_ethic = ethic_spiritualist }
 				ethic_xenophile = { shift_ethic = ethic_xenophobe }
@@ -948,31 +841,24 @@ paragon_origin_reformists_negotiations_effect = {
 				limit = {
 					NOT = { has_civic = civic_shadow_council }
 				}
-				if = { #Down with the aristocracy and their oppression
-					limit = {
-						has_civic = civic_aristocratic_elite
-					}
+				if = { # Down with the aristocracy and their oppression
+					limit = { has_civic = civic_aristocratic_elite }
 					force_remove_civic = civic_aristocratic_elite
 					force_add_civic = civic_shadow_council
 				}
-				if = { #Eat the rich
-					limit = {
-						has_civic = civic_merchant_guilds
-					}
+				if = { # Eat the rich
+					limit = { has_civic = civic_merchant_guilds }
 					force_remove_civic = civic_merchant_guilds
 					force_add_civic = civic_shadow_council
 				}
 			}
 		}
-		else = { #Was player a good ruler?
+		else = { # Was player a good ruler?
 			if = {
-				limit = { #Some carrot to be a good guy, using situation approach
+				limit = { # Some carrot to be a good guy, using situation approach
 					has_country_flag = took_reformists_side
 					ruler = {
-						check_variable = {
-							which = paragon_origin_delusion_tier
-							value < 4
-						}
+						check_variable = { which = paragon_origin_delusion_tier value < 4 }
 					}
 				}
 				paragon_origin_gain_modifier = yes
@@ -981,40 +867,30 @@ paragon_origin_reformists_negotiations_effect = {
 				limit = {
 					NOT = { has_civic = civic_efficient_bureaucracy }
 				}
-				if = { #Down with the aristocracy and their oppression
-					limit = {
-						has_civic = civic_aristocratic_elite
-					}
+				if = { # Down with the aristocracy and their oppression
+					limit = { has_civic = civic_aristocratic_elite }
 					force_remove_civic = civic_aristocratic_elite
 					force_add_civic = civic_efficient_bureaucracy
 				}
-				if = { #Eat the rich
-					limit = {
-						has_civic = civic_merchant_guilds
-					}
+				if = { # Eat the rich
+					limit = { has_civic = civic_merchant_guilds }
 					force_remove_civic = civic_merchant_guilds
 					force_add_civic = civic_efficient_bureaucracy
 				}
 			}
 		}
-		if = { #People wants some more say in ruling the country
+		if = { # People wants some more say in ruling the country
 			limit = { has_modifier = paragon_origin_forgotten_deal }
-			hidden_effect = { remove_modifier = paragon_origin_forgotten_deal }
-			add_modifier = {
-				modifier = paragon_origin_reformists_deal
-				days = -1
+			hidden_effect = {
+				remove_modifier = paragon_origin_forgotten_deal
 			}
+			add_modifier = { modifier = paragon_origin_reformists_deal days = -1 }
 		}
-		else = { #People wants some more say in ruling the country
-			add_modifier = {
-				modifier = paragon_origin_forgotten_deal
-				days = -1
-			}
+		else = { # People wants some more say in ruling the country
+			add_modifier = { modifier = paragon_origin_forgotten_deal days = -1 }
 		}
-		if = { #People don't want to be slaves anymore
-			limit = {
-				has_civic = civic_slaver_guilds
-			}
+		if = { # People don't want to be slaves anymore
+			limit = { has_civic = civic_slaver_guilds }
 			force_remove_civic = civic_slaver_guilds
 			if = {
 				limit = {
@@ -1035,10 +911,8 @@ paragon_origin_reformists_negotiations_effect = {
 				force_add_civic = civic_efficient_bureaucracy
 			}
 		}
-		if = { #People want some amenities
-			limit = {
-				has_civic = civic_dystopian_society
-			}
+		if = { # People want some amenities
+			limit = { has_civic = civic_dystopian_society }
 			force_remove_civic = civic_dystopian_society
 			if = {
 				limit = {
@@ -1059,7 +933,7 @@ paragon_origin_reformists_negotiations_effect = {
 				force_add_civic = civic_philosopher_king
 			}
 		}
-		if = { #People want better living standards
+		if = { # People want better living standards
 			limit = {
 				owner_species = {
 					OR = {
@@ -1070,39 +944,35 @@ paragon_origin_reformists_negotiations_effect = {
 				}
 			}
 			owner_species = {
-				set_living_standard = {
-					type = living_standard_good
-					country = root.owner
-				}
+				set_living_standard = { type = living_standard_good country = root.owner }
 			}
 		}
-		if = { #If player imprisoned people, they deserve freedom!
+		if = { # If player imprisoned people, they deserve freedom!
 			limit = { has_country_flag = forgotten_imprisoned }
-			add_modifier = {
-				modifier = paragon_origin_prisoners
-				years = 10
-			}
+			add_modifier = { modifier = paragon_origin_prisoners years = 10 }
 		}
 		set_government_cooldown = default
 	}
-	else = { #Lower reformists expectation if they did not finish their situation
-		if = { #People wants some more say in ruling the country, but not too much
+	else = { # Lower reformists expectation if they did not finish their situation
+		if = { # People wants some more say in ruling the country, but not too much
 			limit = { has_modifier = paragon_origin_forgotten_deal }
-			hidden_effect = { remove_modifier = paragon_origin_forgotten_deal }
+			hidden_effect = {
+				remove_modifier = paragon_origin_forgotten_deal
+			}
 			add_modifier = {
 				modifier = paragon_origin_reformists_deal
 				days = -1
 				multiplier = 0.5
 			}
 		}
-		else = { #People wants some more say in ruling the country
+		else = { # People wants some more say in ruling the country
 			add_modifier = {
 				modifier = paragon_origin_forgotten_deal
 				days = -1
 				multiplier = 0.5
 			}
 		}
-		if = { #People want better living standards
+		if = { # People want better living standards
 			limit = {
 				owner_species = {
 					OR = {
@@ -1113,16 +983,11 @@ paragon_origin_reformists_negotiations_effect = {
 				}
 			}
 			owner_species = {
-				set_living_standard = {
-					type = living_standard_good
-					country = root.owner
-				}
+				set_living_standard = { type = living_standard_good country = root.owner }
 			}
 		}
-		if = { #People don't want to be slaves anymore
-			limit = {
-				has_civic = civic_slaver_guilds
-			}
+		if = { # People don't want to be slaves anymore
+			limit = { has_civic = civic_slaver_guilds }
 			force_remove_civic = civic_slaver_guilds
 			if = {
 				limit = {
@@ -1143,10 +1008,8 @@ paragon_origin_reformists_negotiations_effect = {
 				force_add_civic = civic_efficient_bureaucracy
 			}
 		}
-		if = { #People want some amenities
-			limit = {
-				has_civic = civic_dystopian_society
-			}
+		if = { # People want some amenities
+			limit = { has_civic = civic_dystopian_society }
 			force_remove_civic = civic_dystopian_society
 			if = {
 				limit = {
@@ -1200,18 +1063,22 @@ paragon_origin_civil_war = {
 				create_rebels = {
 					name = random
 					authority = auth_democratic
-					civics = { civic = civic_distinguished_admiralty civic = civic_idealistic_foundation civic = civic_citizen_service }
+					civics = {
+						civic = civic_distinguished_admiralty
+						civic = civic_idealistic_foundation
+						civic = civic_citizen_service
+					}
 					species = root
-					ethos = { ethic = ethic_fanatic_egalitarian ethic = ethic_militarist }
+					ethos = {
+						ethic = ethic_fanatic_egalitarian
+						ethic = ethic_militarist
+					}
 					origin = "origin_legendary_leader_death"
 					flag = random
 					effect = {
 						set_country_flag = rebel_empire_@root
 						set_country_flag = origin_rebel_empire
-						add_modifier = {
-							modifier = paragon_origin_rebel_player
-							days = -1
-						}
+						add_modifier = { modifier = paragon_origin_rebel_player days = -1 }
 						set_country_type = default
 						save_event_target_as = rebel_empire
 						add_resource = {
@@ -1227,10 +1094,7 @@ paragon_origin_civil_war = {
 							unity = 5000
 						}
 						establish_communications_no_message = root
-						declare_war = {
-							target = root
-							attacker_war_goal = wg_independence
-						}
+						declare_war = { target = root attacker_war_goal = wg_independence }
 						create_fleet_from_naval_cap = 0.4
 					}
 				}
@@ -1246,27 +1110,15 @@ paragon_origin_civil_war = {
 									if = {
 										limit = { has_starbase_size = starbase_outpost }
 										set_starbase_size = starbase_starport
-										set_starbase_module = {
-											slot = 1
-											module = shipyard
-										}
-										set_starbase_module = {
-											slot = 2
-											module = shipyard
-										}
+										set_starbase_module = { slot = 1 module = shipyard }
+										set_starbase_module = { slot = 2 module = shipyard }
 									}
 									else_if = {
 										limit = {
 											NOT = { has_starbase_module = shipyard }
 										}
-										set_starbase_module = {
-											slot = 1
-											module = shipyard
-										}
-										set_starbase_module = {
-											slot = 2
-											module = shipyard
-										}
+										set_starbase_module = { slot = 1 module = shipyard }
+										set_starbase_module = { slot = 2 module = shipyard }
 									}
 								}
 							}
@@ -1279,10 +1131,7 @@ paragon_origin_civil_war = {
 								owner = event_target:rebel_empire
 							}
 						}
-						add_claims = {
-							who = root.owner
-							show_notification = no
-						}
+						add_claims = { who = root.owner show_notification = no }
 						every_system_colony = {
 							limit = {
 								has_owner = yes
@@ -1328,27 +1177,15 @@ paragon_origin_civil_war = {
 									if = {
 										limit = { has_starbase_size = starbase_outpost }
 										set_starbase_size = starbase_starport
-										set_starbase_module = {
-											slot = 1
-											module = shipyard
-										}
-										set_starbase_module = {
-											slot = 2
-											module = shipyard
-										}
+										set_starbase_module = { slot = 1 module = shipyard }
+										set_starbase_module = { slot = 2 module = shipyard }
 									}
 									else_if = {
 										limit = {
 											NOT = { has_starbase_module = shipyard }
 										}
-										set_starbase_module = {
-											slot = 1
-											module = shipyard
-										}
-										set_starbase_module = {
-											slot = 2
-											module = shipyard
-										}
+										set_starbase_module = { slot = 1 module = shipyard }
+										set_starbase_module = { slot = 2 module = shipyard }
 									}
 								}
 							}
@@ -1361,10 +1198,7 @@ paragon_origin_civil_war = {
 								owner = event_target:rebel_empire
 							}
 						}
-						add_claims = {
-							who = root.owner
-							show_notification = no
-						}
+						add_claims = { who = root.owner show_notification = no }
 						every_system_colony = {
 							limit = {
 								has_owner = yes
@@ -1448,25 +1282,18 @@ paragon_origin_civil_war = {
 	}
 	else = {
 		set_country_flag = paragon_origin_reformists_war
-		add_modifier = {
-			modifier = paragon_origin_one_system_war
-			years = 5
-		}
+		add_modifier = { modifier = paragon_origin_one_system_war years = 5 }
 		set_country_flag = one_planet_civil_war
-		country_event = {
-			id = paragon.5223 days = 1800
-		}
+		country_event = { id = paragon.5223 days = 1800 }
 	}
 }
 
 paragon_origin_bad_trait_giver = {
 	optimize_memory
+
 	locked_random_list = {
 		1 = {
-			modifier = {
-				factor = 2
-				is_militarist = yes
-			}
+			modifier = { factor = 2 is_militarist = yes }
 			modifier = {
 				factor = 0
 				OR = {
@@ -1475,16 +1302,11 @@ paragon_origin_bad_trait_giver = {
 				}
 			}
 			ruler = {
-				add_trait = {
-					trait = leader_trait_legendary_warmonger
-				}
+				add_trait = { trait = leader_trait_legendary_warmonger }
 			}
 		}
 		1 = {
-			modifier = {
-				factor = 2
-				is_spiritualist = yes
-			}
+			modifier = { factor = 2 is_spiritualist = yes }
 			modifier = {
 				factor = 0
 				OR = {
@@ -1493,34 +1315,24 @@ paragon_origin_bad_trait_giver = {
 				}
 			}
 			ruler = {
-				add_trait = {
-					trait = leader_trait_legendary_dreamlike
-				}
+				add_trait = { trait = leader_trait_legendary_dreamlike }
 			}
 		}
 		1 = {
-			modifier = {
-				factor = 2
-				is_authoritarian = yes
-			}
+			modifier = { factor = 2 is_authoritarian = yes }
 			modifier = {
 				factor = 0
 				OR = {
 					ruler = { has_trait = leader_trait_legendary_harsh_ruler }
-					is_egalitarian = yes #Impossible to get, but to keep the structure
+					is_egalitarian = yes # Impossible to get, but to keep the structure
 				}
 			}
 			ruler = {
-				add_trait = {
-					trait = leader_trait_legendary_harsh_ruler
-				}
+				add_trait = { trait = leader_trait_legendary_harsh_ruler }
 			}
 		}
 		1 = {
-			modifier = {
-				factor = 2
-				is_xenophile = yes
-			}
+			modifier = { factor = 2 is_xenophile = yes }
 			modifier = {
 				factor = 0
 				OR = {
@@ -1529,16 +1341,11 @@ paragon_origin_bad_trait_giver = {
 				}
 			}
 			ruler = {
-				add_trait = {
-					trait = leader_trait_legendary_too_open
-				}
+				add_trait = { trait = leader_trait_legendary_too_open }
 			}
 		}
 		1 = {
-			modifier = {
-				factor = 2
-				is_pacifist = yes
-			}
+			modifier = { factor = 2 is_pacifist = yes }
 			modifier = {
 				factor = 0
 				OR = {
@@ -1547,16 +1354,11 @@ paragon_origin_bad_trait_giver = {
 				}
 			}
 			ruler = {
-				add_trait = {
-					trait = leader_trait_legendary_hoplofobia
-				}
+				add_trait = { trait = leader_trait_legendary_hoplofobia }
 			}
 		}
 		1 = {
-			modifier = {
-				factor = 2
-				is_materialist = yes
-			}
+			modifier = { factor = 2 is_materialist = yes }
 			modifier = {
 				factor = 0
 				OR = {
@@ -1565,16 +1367,11 @@ paragon_origin_bad_trait_giver = {
 				}
 			}
 			ruler = {
-				add_trait = {
-					trait = leader_trait_legendary_bad_meritocracy
-				}
+				add_trait = { trait = leader_trait_legendary_bad_meritocracy }
 			}
 		}
 		1 = {
-			modifier = {
-				factor = 2
-				is_xenophobe = yes
-			}
+			modifier = { factor = 2 is_xenophobe = yes }
 			modifier = {
 				factor = 0
 				OR = {
@@ -1583,9 +1380,7 @@ paragon_origin_bad_trait_giver = {
 				}
 			}
 			ruler = {
-				add_trait = {
-					trait = leader_trait_legendary_unfriendly
-				}
+				add_trait = { trait = leader_trait_legendary_unfriendly }
 			}
 		}
 	}
@@ -1593,109 +1388,140 @@ paragon_origin_bad_trait_giver = {
 
 paragon_origin_ascension_flag_flipping = {
 	if = {
-		limit = { has_country_flag = paragon_origin_ascension_flag_flipping_$perk$ }
-		change_variable = {
-			which = paragon_origin_ascension
-			value = -1
+		limit = {
+			has_country_flag = paragon_origin_ascension_flag_flipping_$perk$
 		}
+		change_variable = { which = paragon_origin_ascension value = -1 }
 		remove_country_flag = paragon_origin_ascension_flag_flipping_$perk$
 	}
 	else = {
 		set_country_flag = paragon_origin_ascension_flag_flipping_$perk$
-		change_variable = {
-			which = paragon_origin_ascension
-			value = 1
-		}
+		change_variable = { which = paragon_origin_ascension value = 1 }
 	}
 }
 
 paragon_origin_ascension_effect = {
 	optimize_memory
-	if = { #Focus - same for everyone
-		limit = { has_country_flag = paragon_origin_ascension_flag_flipping_focus }
+	if = { # Focus - same for everyone
+		limit = {
+			has_country_flag = paragon_origin_ascension_flag_flipping_focus
+		}
 		# country_event = { id = paragon.5265 } # Vfix TODO doesn't exists?
 		remove_country_flag = paragon_origin_ascension_flag_flipping_focus
 	}
-	if = { #Psionic
-		limit = { has_country_flag = paragon_origin_ascension_flag_flipping_psychic_beacon }
+	if = { # Psionic
+		limit = {
+			has_country_flag = paragon_origin_ascension_flag_flipping_psychic_beacon
+		}
 		ruler = { set_leader_flag = psychic_beacon }
 		remove_country_flag = paragon_origin_ascension_flag_flipping_psychic_beacon
 	}
 	if = {
-		limit = { has_country_flag = paragon_origin_ascension_flag_flipping_astropath }
+		limit = {
+			has_country_flag = paragon_origin_ascension_flag_flipping_astropath
+		}
 		ruler = { set_leader_flag = astropath }
 		remove_country_flag = paragon_origin_ascension_flag_flipping_astropath
 	}
 	if = {
-		limit = { has_country_flag = paragon_origin_ascension_flag_flipping_all_seeing }
+		limit = {
+			has_country_flag = paragon_origin_ascension_flag_flipping_all_seeing
+		}
 		ruler = { set_leader_flag = all_seeing }
 		remove_country_flag = paragon_origin_ascension_flag_flipping_all_seeing
 	}
 	if = {
-		limit = { has_country_flag = paragon_origin_ascension_flag_flipping_the_voice }
+		limit = {
+			has_country_flag = paragon_origin_ascension_flag_flipping_the_voice
+		}
 		ruler = { set_leader_flag = the_voice }
 		remove_country_flag = paragon_origin_ascension_flag_flipping_the_voice
 	}
-	if = { #Cybernetic
-		limit = { has_country_flag = paragon_origin_ascension_flag_flipping_permanent_transmitters }
+	if = { # Cybernetic
+		limit = {
+			has_country_flag = paragon_origin_ascension_flag_flipping_permanent_transmitters
+		}
 		ruler = { set_leader_flag = permanent_transmitters }
 		remove_country_flag = paragon_origin_ascension_flag_flipping_permanent_transmitters
 	}
 	if = {
-		limit = { has_country_flag = paragon_origin_ascension_flag_flipping_sleep_inhibitors }
+		limit = {
+			has_country_flag = paragon_origin_ascension_flag_flipping_sleep_inhibitors
+		}
 		ruler = { set_leader_flag = sleep_inhibitors }
 		remove_country_flag = paragon_origin_ascension_flag_flipping_sleep_inhibitors
 	}
 	if = {
-		limit = { has_country_flag = paragon_origin_ascension_flag_flipping_tactical_interface }
+		limit = {
+			has_country_flag = paragon_origin_ascension_flag_flipping_tactical_interface
+		}
 		ruler = { set_leader_flag = tactical_interface }
 		remove_country_flag = paragon_origin_ascension_flag_flipping_tactical_interface
 	}
 	if = {
-		limit = { has_country_flag = paragon_origin_ascension_flag_flipping_cognitive_analyzers }
+		limit = {
+			has_country_flag = paragon_origin_ascension_flag_flipping_cognitive_analyzers
+		}
 		ruler = { set_leader_flag = cognitive_analyzers }
 		remove_country_flag = paragon_origin_ascension_flag_flipping_cognitive_analyzers
 	}
-	if = { #Synthetic
-		limit = { has_country_flag = paragon_origin_ascension_flag_flipping_shared_learning_network }
+	if = { # Synthetic
+		limit = {
+			has_country_flag = paragon_origin_ascension_flag_flipping_shared_learning_network
+		}
 		ruler = { set_leader_flag = shared_learning_network }
 		remove_country_flag = paragon_origin_ascension_flag_flipping_shared_learning_network
 	}
 	if = {
-		limit = { has_country_flag = paragon_origin_ascension_flag_flipping_battle_calculation_systems }
+		limit = {
+			has_country_flag = paragon_origin_ascension_flag_flipping_battle_calculation_systems
+		}
 		ruler = { set_leader_flag = battle_calculation_systems }
 		remove_country_flag = paragon_origin_ascension_flag_flipping_battle_calculation_systems
 	}
 	if = {
-		limit = { has_country_flag = paragon_origin_ascension_flag_flipping_recycling_algorithms }
+		limit = {
+			has_country_flag = paragon_origin_ascension_flag_flipping_recycling_algorithms
+		}
 		ruler = { set_leader_flag = recycling_algorithms }
 		remove_country_flag = paragon_origin_ascension_flag_flipping_recycling_algorithms
 	}
 	if = {
-		limit = { has_country_flag = paragon_origin_ascension_flag_flipping_vast_engineering_database }
+		limit = {
+			has_country_flag = paragon_origin_ascension_flag_flipping_vast_engineering_database
+		}
 		ruler = { set_leader_flag = vast_engineering_database }
 		remove_country_flag = paragon_origin_ascension_flag_flipping_vast_engineering_database
 	}
-	if = { #Genetic
-		limit = { has_country_flag = paragon_origin_ascension_flag_flipping_brain_growth }
+	if = { # Genetic
+		limit = {
+			has_country_flag = paragon_origin_ascension_flag_flipping_brain_growth
+		}
 		ruler = { set_leader_flag = brain_growth }
 		remove_country_flag = paragon_origin_ascension_flag_flipping_brain_growth
 	}
 	if = {
-		limit = { has_country_flag = paragon_origin_ascension_flag_flipping_gene_splicing }
+		limit = {
+			has_country_flag = paragon_origin_ascension_flag_flipping_gene_splicing
+		}
 		ruler = { set_leader_flag = gene_splicing }
 		remove_country_flag = paragon_origin_ascension_flag_flipping_gene_splicing
 	}
 	if = {
-		limit = { has_country_flag = paragon_origin_ascension_flag_flipping_irresistible_charisma }
+		limit = {
+			has_country_flag = paragon_origin_ascension_flag_flipping_irresistible_charisma
+		}
 		ruler = { set_leader_flag = irresistible_charisma }
 		remove_country_flag = paragon_origin_ascension_flag_flipping_irresistible_charisma
 	}
 	if = {
-		limit = { has_country_flag = paragon_origin_ascension_flag_flipping_divided_attention }
+		limit = {
+			has_country_flag = paragon_origin_ascension_flag_flipping_divided_attention
+		}
 		ruler = { set_leader_flag = divided_attention }
 		remove_country_flag = paragon_origin_ascension_flag_flipping_divided_attention
 	}
+
 	ruler = {
 		if = {
 			limit = { has_leader_flag = paragon_origin_legendary_leader }
@@ -1704,6 +1530,7 @@ paragon_origin_ascension_effect = {
 			paragon_origin_delusion_trait_lowerer = yes
 		}
 	}
+
 	remove_country_flag = increase_leader_upkeep
 }
 
@@ -1714,10 +1541,7 @@ scientist_prospector_effect = {
 			# Minerals
 			if = {
 				limit = {
-					has_resource = {
-						type = minerals
-						amount > 0
-					}
+					has_resource = { type = minerals amount > 0 }
 				}
 				locked_random_list = {
 					1 = { add_deposit = d_minerals_2 }
@@ -1728,10 +1552,7 @@ scientist_prospector_effect = {
 			# Energy
 			if = {
 				limit = {
-					has_resource = {
-						type = energy
-						amount > 0
-					}
+					has_resource = { type = energy amount > 0 }
 				}
 				locked_random_list = {
 					1 = { add_deposit = d_energy_2 }
@@ -1742,10 +1563,7 @@ scientist_prospector_effect = {
 			# Volatile Motes
 			if = {
 				limit = {
-					has_resource = {
-						type = volatile_motes
-						amount > 0
-					}
+					has_resource = { type = volatile_motes amount > 0 }
 				}
 				locked_random_list = {
 					1 = { add_deposit = d_volatile_motes_1 }
@@ -1756,10 +1574,7 @@ scientist_prospector_effect = {
 			# Exotic Gases
 			if = {
 				limit = {
-					has_resource = {
-						type = exotic_gases
-						amount > 0
-					}
+					has_resource = { type = exotic_gases amount > 0 }
 				}
 				locked_random_list = {
 					1 = { add_deposit = d_exotic_gases_1 }
@@ -1770,10 +1585,7 @@ scientist_prospector_effect = {
 			# Rare Crystals
 			if = {
 				limit = {
-					has_resource = {
-						type = rare_crystals
-						amount > 0
-					}
+					has_resource = { type = rare_crystals amount > 0 }
 				}
 				locked_random_list = {
 					1 = { add_deposit = d_rare_crystals_1 }
@@ -1784,10 +1596,7 @@ scientist_prospector_effect = {
 			# Physics Research
 			if = {
 				limit = {
-					has_resource = {
-						type = physics_research
-						amount > 0
-					}
+					has_resource = { type = physics_research amount > 0 }
 				}
 				locked_random_list = {
 					1 = { add_deposit = d_physics_1 }
@@ -1798,10 +1607,7 @@ scientist_prospector_effect = {
 			# Society Research
 			if = {
 				limit = {
-					has_resource = {
-						type = society_research
-						amount > 0
-					}
+					has_resource = { type = society_research amount > 0 }
 				}
 				locked_random_list = {
 					1 = { add_deposit = d_society_1 }
@@ -1812,10 +1618,7 @@ scientist_prospector_effect = {
 			# Engineering Research
 			if = {
 				limit = {
-					has_resource = {
-						type = engineering_research
-						amount > 0
-					}
+					has_resource = { type = engineering_research amount > 0 }
 				}
 				locked_random_list = {
 					1 = { add_deposit = d_engineering_1 }
@@ -1827,45 +1630,31 @@ scientist_prospector_effect = {
 	}
 }
 
-paragon_origin_gain_delusion = { #Use on leader scope
+# Use on leader scope
+paragon_origin_gain_delusion = {
 	if = {
-		limit = {
-			has_trait = leader_trait_legendary_delusional
-		}
+		limit = { has_trait = leader_trait_legendary_delusional }
 		if = {
 			limit = {
-				check_variable = {
-					which = paragon_origin_delusion_tier
-					value < 20
-				}
+				check_variable = { which = paragon_origin_delusion_tier value < 20 }
 			}
 			hidden_effect = {
-				change_variable = {
-					which = paragon_origin_delusion_tier
-					value = 1
-				}
+				change_variable = { which = paragon_origin_delusion_tier value = 1 }
 			}
 		}
 	}
 	else = {
-		add_trait = {
-			trait = leader_trait_legendary_delusional
-		}
+		add_trait = { trait = leader_trait_legendary_delusional }
 	}
 }
 
-paragon_origin_delusion_trait_lowerer = { #Use on leader scope
+# Use on leader scope
+paragon_origin_delusion_trait_lowerer = {
 	if = {
 		limit = {
-			check_variable = {
-				which = paragon_origin_delusion_tier
-				value > 1
-			}
+			check_variable = { which = paragon_origin_delusion_tier value > 1 }
 		}
-		change_variable = {
-			which = paragon_origin_delusion_tier
-			value = -1
-		}
+		change_variable = { which = paragon_origin_delusion_tier value = -1 }
 	}
 	else = {
 		remove_trait = leader_trait_legendary_delusional
@@ -1883,30 +1672,27 @@ paragon_origin_launch_rebelion = {
 		}
 		set_star_flag = your_rebel_planet
 	}
+
 	random_system_within_border = {
 		limit = {
 			NOT = { has_star_flag = your_rebel_planet }
-			any_system_colony = {
-				has_owner = yes
-				is_owned_by = root
-			}
+			any_system_colony = { has_owner = yes is_owned_by = root }
 		}
 		set_star_flag = rebels_1
 	}
+
 	every_system_within_border = {
 		limit = {
 			NOT = { has_star_flag = your_rebel_planet }
 		}
 		set_star_flag = rebels_1
 	}
+
 	random_system_within_border = {
 		limit = {
 			NOT = { has_star_flag = your_rebel_planet }
 			has_star_flag = rebels_1
-			any_system_colony = {
-				has_owner = yes
-				is_owned_by = root
-			}
+			any_system_colony = { has_owner = yes is_owned_by = root }
 		}
 		random_system_colony = {
 			limit = {
@@ -1917,16 +1703,19 @@ paragon_origin_launch_rebelion = {
 			create_rebels = {
 				name = random
 				authority = auth_imperial
-				ethos = { ethic = ethic_fanatic_authoritarian ethic = ethic_militarist }
-				civics = { civic = random civic = random }
+				ethos = {
+					ethic = ethic_fanatic_authoritarian
+					ethic = ethic_militarist
+				}
+				civics = {
+					civic = random
+					civic = random
+				}
 				species = root
 				origin = "origin_legendary_leader_death"
 				flag = random
 				effect = {
-					add_modifier = {
-						modifier = paragon_origin_one_system_war
-						days = -1
-					}
+					add_modifier = { modifier = paragon_origin_one_system_war days = -1 }
 					set_country_type = default
 					set_country_flag = rebel_empire_@root
 					set_country_flag = origin_rebel_empire
@@ -1959,27 +1748,15 @@ paragon_origin_launch_rebelion = {
 								if = {
 									limit = { has_starbase_size = starbase_outpost }
 									set_starbase_size = starbase_starport
-									set_starbase_module = {
-										slot = 1
-										module = shipyard
-									}
-									set_starbase_module = {
-										slot = 2
-										module = shipyard
-									}
+									set_starbase_module = { slot = 1 module = shipyard }
+									set_starbase_module = { slot = 2 module = shipyard }
 								}
 								else_if = {
 									limit = {
 										NOT = { has_starbase_module = shipyard }
 									}
-									set_starbase_module = {
-										slot = 1
-										module = shipyard
-									}
-									set_starbase_module = {
-										slot = 2
-										module = shipyard
-									}
+									set_starbase_module = { slot = 1 module = shipyard }
+									set_starbase_module = { slot = 2 module = shipyard }
 								}
 							}
 						}
@@ -1992,10 +1769,7 @@ paragon_origin_launch_rebelion = {
 							owner = event_target:rebel_empire_1
 						}
 					}
-					add_claims = {
-						who = root.owner
-						show_notification = no
-					}
+					add_claims = { who = root.owner show_notification = no }
 					every_system_colony = {
 						limit = {
 							has_owner = yes
@@ -2012,6 +1786,7 @@ paragon_origin_launch_rebelion = {
 			}
 		}
 	}
+
 	every_system_within_border = {
 		limit = {
 			has_owner = yes
@@ -2036,27 +1811,15 @@ paragon_origin_launch_rebelion = {
 								if = {
 									limit = { has_starbase_size = starbase_outpost }
 									set_starbase_size = starbase_starport
-									set_starbase_module = {
-										slot = 1
-										module = shipyard
-									}
-									set_starbase_module = {
-										slot = 2
-										module = shipyard
-									}
+									set_starbase_module = { slot = 1 module = shipyard }
+									set_starbase_module = { slot = 2 module = shipyard }
 								}
 								else_if = {
 									limit = {
 										NOT = { has_starbase_module = shipyard }
 									}
-									set_starbase_module = {
-										slot = 1
-										module = shipyard
-									}
-									set_starbase_module = {
-										slot = 2
-										module = shipyard
-									}
+									set_starbase_module = { slot = 1 module = shipyard }
+									set_starbase_module = { slot = 2 module = shipyard }
 								}
 							}
 						}
@@ -2069,10 +1832,7 @@ paragon_origin_launch_rebelion = {
 							owner = event_target:rebel_empire_1
 						}
 					}
-					add_claims = {
-						who = root.owner
-						show_notification = no
-					}
+					add_claims = { who = root.owner show_notification = no }
 					every_system_colony = {
 						limit = {
 							has_owner = yes
@@ -2089,11 +1849,13 @@ paragon_origin_launch_rebelion = {
 			}
 		}
 	}
+
 	# Declare wars
 	declare_war = {
 		target = event_target:rebel_empire_1
 		attacker_war_goal = wg_end_threat
 	}
+
 	event_target:rebel_empire_1 = {
 		create_leader = {
 			class = commander
@@ -2158,12 +1920,11 @@ paragon_origin_launch_rebelion = {
 			}
 		}
 	}
+
 	# Remove Reformists modifiers
 	every_system_within_border = {
 		limit = {
-			any_system_colony = {
-				has_modifier = paragon_origin_reformists
-			}
+			any_system_colony = { has_modifier = paragon_origin_reformists }
 		}
 		remove_modifier = paragon_origin_reformists
 	}
@@ -2174,373 +1935,325 @@ paragon_origin_trait_giver_authoritarian = {
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_egalitarian = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_commanding_presence } }
+				NOR = {
+					owner = { is_egalitarian = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_commanding_presence }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_commanding_presence
-			}
+			add_trait = { trait = leader_trait_legendary_commanding_presence }
 		}
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_egalitarian = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_high_king } }
+				NOR = {
+					owner = { is_egalitarian = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_high_king }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_high_king
-			}
+			add_trait = { trait = leader_trait_legendary_high_king }
 		}
 	}
 }
+
 paragon_origin_trait_giver_xenophile = {
 	locked_random_list = {
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_xenophobe = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_scientific_diplomacy } }
+				NOR = {
+					owner = { is_xenophobe = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_scientific_diplomacy }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_scientific_diplomacy
-			}
+			add_trait = { trait = leader_trait_legendary_scientific_diplomacy }
 		}
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_xenophobe = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_gunboat_diplomacy } }
+				NOR = {
+					owner = { is_xenophobe = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_gunboat_diplomacy }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_gunboat_diplomacy
-			}
+			add_trait = { trait = leader_trait_legendary_gunboat_diplomacy }
 		}
 	}
 }
+
 paragon_origin_trait_giver_xenophobe = {
 	locked_random_list = {
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_xenophile = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_genetic_purist } }
+				NOR = {
+					owner = { is_xenophile = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_genetic_purist }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_genetic_purist
-			}
+			add_trait = { trait = leader_trait_legendary_genetic_purist }
 		}
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_xenophile = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_evervigilant } }
+				NOR = {
+					owner = { is_xenophile = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_evervigilant }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_evervigilant
-			}
+			add_trait = { trait = leader_trait_legendary_evervigilant }
 		}
 	}
 }
+
 paragon_origin_trait_giver_militarist = {
 	locked_random_list = {
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_pacifist = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_military_knowledge } }
+				NOR = {
+					owner = { is_pacifist = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_military_knowledge }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_military_knowledge
-			}
+			add_trait = { trait = leader_trait_legendary_military_knowledge }
 		}
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_pacifist = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_foe_hammer } }
+				NOR = {
+					owner = { is_pacifist = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_foe_hammer }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_foe_hammer
-			}
+			add_trait = { trait = leader_trait_legendary_foe_hammer }
 		}
 	}
 }
+
 paragon_origin_trait_giver_pacifist = {
 	locked_random_list = {
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_militarist = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_natural_ruler } }
+				NOR = {
+					owner = { is_militarist = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_natural_ruler }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_natural_ruler
-			}
+			add_trait = { trait = leader_trait_legendary_natural_ruler }
 		}
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_militarist = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_autarky } }
+				NOR = {
+					owner = { is_militarist = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_autarky }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_autarky
-			}
+			add_trait = { trait = leader_trait_legendary_autarky }
 		}
 	}
 }
+
 paragon_origin_trait_giver_spiritualist = {
 	locked_random_list = {
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_materialist = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_pious_ascet } }
+				NOR = {
+					owner = { is_materialist = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_pious_ascet }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_pious_ascet
-			}
+			add_trait = { trait = leader_trait_legendary_pious_ascet }
 		}
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_materialist = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_great_teacher } }
+				NOR = {
+					owner = { is_materialist = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_great_teacher }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_great_teacher
-			}
+			add_trait = { trait = leader_trait_legendary_great_teacher }
 		}
 	}
 }
+
 paragon_origin_trait_giver_materialist = {
 	locked_random_list = {
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_spiritualist = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_industry_titan } }
+				NOR = {
+					owner = { is_spiritualist = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_industry_titan }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_industry_titan
-			}
+			add_trait = { trait = leader_trait_legendary_industry_titan }
 		}
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_spiritualist = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_great_inventor } }
+				NOR = {
+					owner = { is_spiritualist = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_great_inventor }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_great_inventor
-			}
+			add_trait = { trait = leader_trait_legendary_great_inventor }
 		}
 	}
 }
 
 paragon_origin_legendary_leader_trait_giver = {
 	optimize_memory
+
 	locked_random_list = {
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_egalitarian = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_commanding_presence } }
+				NOR = {
+					owner = { is_egalitarian = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_commanding_presence }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_commanding_presence
-			}
+			add_trait = { trait = leader_trait_legendary_commanding_presence }
 		}
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_xenophile = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_genetic_purist } }
+				NOR = {
+					owner = { is_xenophile = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_genetic_purist }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_genetic_purist
-			}
+			add_trait = { trait = leader_trait_legendary_genetic_purist }
 		}
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_xenophobe = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_scientific_diplomacy } }
+				NOR = {
+					owner = { is_xenophobe = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_scientific_diplomacy }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_scientific_diplomacy
-			}
+			add_trait = { trait = leader_trait_legendary_scientific_diplomacy }
 		}
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_militarist = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_natural_ruler } }
+				NOR = {
+					owner = { is_militarist = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_natural_ruler }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_natural_ruler
-			}
+			add_trait = { trait = leader_trait_legendary_natural_ruler }
 		}
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_pacifist = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_military_knowledge } }
+				NOR = {
+					owner = { is_pacifist = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_military_knowledge }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_military_knowledge
-			}
+			add_trait = { trait = leader_trait_legendary_military_knowledge }
 		}
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_materialist = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_pious_ascet } }
+				NOR = {
+					owner = { is_materialist = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_pious_ascet }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_pious_ascet
-			}
+			add_trait = { trait = leader_trait_legendary_pious_ascet }
 		}
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_spiritualist = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_industry_titan } }
+				NOR = {
+					owner = { is_spiritualist = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_industry_titan }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_industry_titan
-			}
+			add_trait = { trait = leader_trait_legendary_industry_titan }
 		}
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_egalitarian = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_high_king } }
+				NOR = {
+					owner = { is_egalitarian = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_high_king }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_high_king
-			}
+			add_trait = { trait = leader_trait_legendary_high_king }
 		}
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_xenophile = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_evervigilant } }
+				NOR = {
+					owner = { is_xenophile = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_evervigilant }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_evervigilant
-			}
+			add_trait = { trait = leader_trait_legendary_evervigilant }
 		}
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_xenophobe = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_gunboat_diplomacy } }
+				NOR = {
+					owner = { is_xenophobe = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_gunboat_diplomacy }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_gunboat_diplomacy
-			}
+			add_trait = { trait = leader_trait_legendary_gunboat_diplomacy }
 		}
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_militarist = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_autarky } }
+				NOR = {
+					owner = { is_militarist = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_autarky }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_autarky
-			}
+			add_trait = { trait = leader_trait_legendary_autarky }
 		}
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_pacifist = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_foe_hammer } }
+				NOR = {
+					owner = { is_pacifist = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_foe_hammer }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_foe_hammer
-			}
+			add_trait = { trait = leader_trait_legendary_foe_hammer }
 		}
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_materialist = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_great_teacher } }
+				NOR = {
+					owner = { is_materialist = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_great_teacher }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_great_teacher
-			}
+			add_trait = { trait = leader_trait_legendary_great_teacher }
 		}
 		0 = {
 			modifier = {
 				add = 1
-				AND = {
-					owner = { is_spiritualist = no }
-					NOT = { has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_great_inventor } }
+				NOR = {
+					owner = { is_spiritualist = yes }
+					has_trait_tier1or2or3 = { TRAIT = leader_trait_legendary_great_inventor }
 				}
 			}
-			add_trait = {
-				trait = leader_trait_legendary_great_inventor
-			}
+			add_trait = { trait = leader_trait_legendary_great_inventor }
 		}
 	}
 }
 
-paragon_origin_gain_modifier = { #Use on country scope
+# Use on country scope
+paragon_origin_gain_modifier = {
 	switch = {
 		trigger = has_modifier
 		paragon_origin_strengthened_government_i = {
@@ -2561,8 +2274,7 @@ paragon_origin_gain_modifier = { #Use on country scope
 				days = -1
 			}
 		}
-		paragon_origin_strengthened_government_iii = {
-		}
+		paragon_origin_strengthened_government_iii = {  }
 		default = {
 			add_modifier = {
 				modifier = paragon_origin_strengthened_government_i
@@ -2583,72 +2295,22 @@ create_random_species = {
 
 add_random_expertise_trait_effect = {
 	random_list = {
-		10 = {
-			add_trait = {
-				trait = leader_trait_expertise_materials
-				show_message = no
-			}
-		}
-		10 = {
-			add_trait = {
-				trait = leader_trait_expertise_propulsion
-				show_message = no
-			}
-		}
-		10 = {
-			add_trait = {
-				trait = leader_trait_expertise_voidcraft
-				show_message = no
-			}
-		}
-		10 = {
-			add_trait = {
-				trait = leader_trait_expertise_industry
-				show_message = no
-			}
-		}
+		10 = { add_trait = { trait = leader_trait_expertise_materials show_message = no } }
+		10 = { add_trait = { trait = leader_trait_expertise_propulsion show_message = no } }
+		10 = { add_trait = { trait = leader_trait_expertise_voidcraft show_message = no } }
+		10 = { add_trait = { trait = leader_trait_expertise_industry show_message = no } }
 		10 = {
 			add_trait = {
 				trait = leader_trait_expertise_field_manipulation
 				show_message = no
 			}
 		}
-		10 = {
-			add_trait = {
-				trait = leader_trait_expertise_particles
-				show_message = no
-			}
-		}
-		10 = {
-			add_trait = {
-				trait = leader_trait_expertise_computing
-				show_message = no
-			}
-		}
-		10 = {
-			add_trait = {
-				trait = leader_trait_expertise_new_worlds
-				show_message = no
-			}
-		}
-		10 = {
-			add_trait = {
-				trait = leader_trait_expertise_statecraft
-				show_message = no
-			}
-		}
-		10 = {
-			add_trait = {
-				trait = leader_trait_expertise_biology
-				show_message = no
-			}
-		}
-		10 = {
-			add_trait = {
-				trait = leader_trait_expertise_military_theory
-				show_message = no
-			}
-		}
+		10 = { add_trait = { trait = leader_trait_expertise_particles show_message = no } }
+		10 = { add_trait = { trait = leader_trait_expertise_computing show_message = no } }
+		10 = { add_trait = { trait = leader_trait_expertise_new_worlds show_message = no } }
+		10 = { add_trait = { trait = leader_trait_expertise_statecraft show_message = no } }
+		10 = { add_trait = { trait = leader_trait_expertise_biology show_message = no } }
+		10 = { add_trait = { trait = leader_trait_expertise_military_theory show_message = no } }
 		1 = {
 			modifier = {
 				add = 4
@@ -2657,20 +2319,13 @@ add_random_expertise_trait_effect = {
 						has_origin = origin_remnants
 						has_ascension_perk = ap_archaeoengineers
 						any_system_within_border = {
-							any_archaeological_site = {
-								is_site_completed = yes
-							}
+							any_archaeological_site = { is_site_completed = yes }
 						}
-						any_owned_planet = {
-							has_active_building = building_archaeostudies_faculty
-						}
+						any_owned_planet = { has_active_building = building_archaeostudies_faculty }
 					}
 				}
 			}
-			add_trait = {
-				trait = leader_trait_expertise_archaeostudies
-				show_message = no
-			}
+			add_trait = { trait = leader_trait_expertise_archaeostudies show_message = no }
 		}
 		1 = {
 			modifier = {
@@ -2682,10 +2337,7 @@ add_random_expertise_trait_effect = {
 					}
 				}
 			}
-			add_trait = {
-				trait = leader_trait_expertise_psionics
-				show_message = no
-			}
+			add_trait = { trait = leader_trait_expertise_psionics show_message = no }
 		}
 	}
 }
@@ -2694,23 +2346,13 @@ add_random_expertise_trait_effect = {
 add_expertise_trait_effect = {
 	if = {
 		limit = {
-			NOT = {
-				has_trait_tier1or2or3 = {
-					TRAIT = $TRAIT$
-				}
-			}
+			NOT = { has_trait_tier1or2or3 = { TRAIT = $TRAIT$ } }
 		}
-		add_trait = {
-			trait = $TRAIT$
-		}
+		add_trait = { trait = $TRAIT$ }
 	}
 	else_if = {
-		limit = {
-			has_trait = $TRAIT$
-		}
-		add_trait = {
-			trait = $TRAIT$_2
-		}
+		limit = { has_trait = $TRAIT$ }
+		add_trait = { trait = $TRAIT$_2 }
 	}
 	else = {
 		add_experience = 200
@@ -2720,43 +2362,25 @@ add_expertise_trait_effect = {
 add_or_level_up_veteran_trait_effect = {
 	if = {
 		limit = {
-			NOT = {
-				has_trait_tier1or2or3 = {
-					TRAIT = $TRAIT$
-				}
-			}
+			NOT = { has_trait_tier1or2or3 = { TRAIT = $TRAIT$ } }
 		}
-		add_trait = {
-			trait = $TRAIT$
-		}
+		add_trait = { trait = $TRAIT$ }
 	}
 	else_if = {
-		limit = {
-			has_trait = $TRAIT$
-		}
-		add_trait = {
-			trait = $TRAIT$_2
-		}
+		limit = { has_trait = $TRAIT$ }
+		add_trait = { trait = $TRAIT$_2 }
 	}
 	else = {
-		add_trait = {
-			trait = $TRAIT$_3
-		}
+		add_trait = { trait = $TRAIT$_3 }
 	}
 }
 
-add_expertise_trait_to_leader_or_research_node_effect  = {
+add_expertise_trait_to_leader_or_research_node_effect = {
 	if = {
-		limit = {
-			owner = {
-				is_gestalt = yes
-			}
-		}
+		limit = { owner = { is_gestalt = yes } }
 		owner = {
 			random_owned_leader = {
-				limit = {
-					is_councilor_type = councilor_gestalt_cognitive
-				}
+				limit = { is_councilor_type = councilor_gestalt_cognitive }
 				add_expertise_trait_effect = {
 					TRAIT = $TRAIT$
 				}
@@ -2810,17 +2434,13 @@ set_random_scientist_background_effect = {
 
 assign_governor_effect = {
 	if = {
-		limit = {
-			prefers_scientist_governors = yes
-		}
+		limit = { prefers_scientist_governors = yes }
 		set_starting_governor_effect = {
 			GOVERNOR = scientist
 		}
 	}
 	else_if = {
-		limit = {
-			prefers_commander_governors = yes
-		}
+		limit = { prefers_commander_governors = yes }
 		set_starting_governor_effect = {
 			GOVERNOR = commander
 		}
@@ -2834,35 +2454,26 @@ assign_governor_effect = {
 
 set_starting_governor_effect = {
 	if = {
-		limit = {
-			exists = capital_scope
-		}
+		limit = { exists = capital_scope }
 		capital_scope = {
 			if = {
 				limit = {
 					exists = leader
-					leader = {
-						leader_class = $GOVERNOR$
-						is_councilor = yes
-					}
+					leader = { leader_class = $GOVERNOR$ is_councilor = yes }
 				}
 				# Do nothing, leader matches chosen class.
 			}
 			else = {
 				if = {
-					limit = {
-						exists = leader
-					}
-					kill_leader = {
-						show_notification = no
-					}
+					limit = { exists = leader }
+					kill_leader = { show_notification = no }
 				}
 				root = {
 					if = {
 						limit = {
 							is_gestalt = no
 							any_owned_leader = {
-								leader_class =  $GOVERNOR$
+								leader_class = $GOVERNOR$
 								is_councilor = yes
 								is_idle = yes
 								is_ruler = no
@@ -2870,7 +2481,7 @@ set_starting_governor_effect = {
 						}
 						random_owned_leader = {
 							limit = {
-								leader_class =  $GOVERNOR$
+								leader_class = $GOVERNOR$
 								is_councilor = yes
 								is_idle = yes
 								is_ruler = no
@@ -2884,9 +2495,7 @@ set_starting_governor_effect = {
 							name = random
 							species = owner_species
 							randomize_traits = no
-							traits = {
-								1 = random_common
-							}
+							traits = { 1 = random_common }
 							effect = {
 								save_event_target_as = governor_leader
 							}
@@ -2901,10 +2510,12 @@ set_starting_governor_effect = {
 
 give_trait_no_notify_ignore_autocracy_restriction = {
 	set_leader_flag = ignore_autocracy_ruler_trait_restriction
+
 	add_trait = {
 		trait = $TRAIT$
 		show_message = no
 	}
+
 	remove_leader_flag = ignore_autocracy_ruler_trait_restriction
 }
 
@@ -2922,8 +2533,6 @@ luminary_speech_effect = {
 			exists = ruler
 			ruler = { has_leader_flag = paragon_origin_legendary_leader }
 		}
-		country_event = {
-			id = paragon.5201 days = 3600 random = 7200
-		}
+		country_event = { id = paragon.5201 days = 3600 random = 7200 }
 	}
 }

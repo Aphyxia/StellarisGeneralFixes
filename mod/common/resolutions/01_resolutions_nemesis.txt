@@ -881,7 +881,9 @@ resolution_galacticreforms_unseat_custodian = {
 		custom_tooltip = resolution_galacticreforms_unseat_custodian_tooltip
 		hidden_effect = {
 			if = {
-				limit = { is_active_resolution = "resolution_custodian_perpetual_custodianship" }
+				limit = {
+					is_active_resolution = "resolution_custodian_perpetual_custodianship"
+				}
 				cancel_resolution = "resolution_custodian_perpetual_custodianship"
 			}
 			country_event = { id = custodian.16 }
@@ -904,10 +906,7 @@ resolution_galacticreforms_unseat_custodian = {
 		modifier = {
 			factor = 1.6
 			is_xenophobe = yes
-			count_neighbor_country = {
-				count = 0
-				limit = { is_crisis_faction = yes }
-			}
+			NOT = { any_neighbor_country = { is_crisis_faction = yes } }
 			desc = ethic_xenophobe
 		}
 		modifier = {
@@ -1382,10 +1381,7 @@ resolution_custodian_united_front = {
 		modifier = {
 			factor = 0.5
 			has_ai_personality = xenophobic_isolationists
-			count_neighbor_country = {
-				count = 0
-				limit = { is_crisis_faction = yes }
-			}
+			NOT = { any_neighbor_country = { is_crisis_faction = yes } }
 			desc = personality_xenophobic_isolationists
 		}
 		modifier = {
@@ -1460,7 +1456,9 @@ resolution_custodian_galactic_mobilization = {
 	allow = {
 		custom_tooltip = {
 			fail_text = "resolution_already_active"
-			NOT = { is_active_resolution = resolution_custodian_galactic_mobilization }
+			NOT = {
+				is_active_resolution = resolution_custodian_galactic_mobilization
+			}
 		}
 	}
 
@@ -1479,10 +1477,7 @@ resolution_custodian_galactic_mobilization = {
 		modifier = {
 			factor = 0.6
 			is_pacifist = yes
-			count_neighbor_country = {
-				count = 0
-				limit = { is_crisis_faction = yes }
-			}
+			NOT = { any_neighbor_country = { is_crisis_faction = yes } }
 			desc = ethic_pacifist
 		}
 		modifier = {
@@ -1594,7 +1589,9 @@ resolution_custodian_galactic_standard = {
 	allow = {
 		custom_tooltip = {
 			fail_text = "resolution_already_active"
-			NOT = { is_active_resolution = resolution_custodian_galactic_standard }
+			NOT = {
+				is_active_resolution = resolution_custodian_galactic_standard
+			}
 		}
 	}
 
@@ -1869,7 +1866,9 @@ resolution_custodian_perpetual_custodianship = {
 	allow = {
 		custom_tooltip = {
 			fail_text = "resolution_already_active"
-			NOT = { is_active_resolution = resolution_custodian_perpetual_custodianship }
+			NOT = {
+				is_active_resolution = resolution_custodian_perpetual_custodianship
+			}
 		}
 	}
 
@@ -2027,9 +2026,8 @@ resolution_custodian_end_custodianship = {
 		modifier = {
 			factor = 1.6
 			is_xenophobe = yes
-			count_neighbor_country = {
-				count = 0
-				limit = {
+			NOT = {
+				any_neighbor_country = {
 					OR = {
 						is_crisis_faction = yes
 						has_been_declared_crisis = yes
@@ -2042,9 +2040,8 @@ resolution_custodian_end_custodianship = {
 		}
 		modifier = {
 			factor = 20
-			count_country = {
-				count = 0
-				limit = {
+			NOT = {
+				any_country = {
 					OR = {
 						is_crisis_faction = yes
 						has_been_declared_crisis = yes
@@ -2193,19 +2190,13 @@ resolution_custodian_gdf = {
 		modifier = {
 			factor = 0.6
 			is_pacifist = yes
-			count_neighbor_country = {
-				count = 0
-				limit = { is_crisis_faction = yes }
-			}
+			NOT = { any_neighbor_country = { is_crisis_faction = yes } }
 			desc = ethic_pacifist
 		}
 		modifier = {
 			factor = 0.6
 			is_xenophobe = yes
-			count_neighbor_country = {
-				count = 0
-				limit = { is_crisis_faction = yes }
-			}
+			NOT = { any_neighbor_country = { is_crisis_faction = yes } }
 			desc = ethic_xenophobe
 		}
 		modifier = {
@@ -2355,19 +2346,13 @@ resolution_custodian_expand_gdf = {
 		modifier = {
 			factor = 0.6
 			is_pacifist = yes
-			count_neighbor_country = {
-				count = 0
-				limit = { is_crisis_faction = yes }
-			}
+			NOT = { any_neighbor_country = { is_crisis_faction = yes } }
 			desc = ethic_pacifist
 		}
 		modifier = {
 			factor = 0.6
 			is_xenophobe = yes
-			count_neighbor_country = {
-				count = 0
-				limit = { is_crisis_faction = yes }
-			}
+			NOT = { any_neighbor_country = { is_crisis_faction = yes } }
 			desc = ethic_xenophobe
 		}
 		modifier = {
@@ -2520,18 +2505,14 @@ resolution_custodian_disband_gdf = {
 		modifier = {
 			factor = 2
 			is_pacifist = yes
-			count_neighbor_country = {
-				count = 0
-				limit = { is_crisis_faction = yes }
-			}
+			NOT = { any_neighbor_country = { is_crisis_faction = yes } }
 			desc = ethic_pacifist
 		}
 		modifier = {
 			factor = 1.6
 			is_xenophobe = yes
-			count_neighbor_country = {
-				count = 0
-				limit = {
+			NOT = {
+				any_neighbor_country = {
 					OR = {
 						is_crisis_faction = yes
 						has_been_declared_crisis = yes
@@ -3040,9 +3021,8 @@ resolution_galactic_empire_imperial_crusade = {
 
 	potential = {
 		has_galactic_emperor = yes
-		count_war = {
-			count = 0
-			limit = {
+		NOT = {
+			any_war = {
 				using_war_goal = { type = wg_imperial_crusade owner = attacker }
 			}
 		}
@@ -3276,10 +3256,7 @@ resolution_emperor_united_front = {
 		modifier = {
 			factor = 0.5
 			has_ai_personality = xenophobic_isolationists
-			count_neighbor_country = {
-				count = 0
-				limit = { is_crisis_faction = yes }
-			}
+			NOT = { any_neighbor_country = { is_crisis_faction = yes } }
 			desc = personality_xenophobic_isolationists
 		}
 		modifier = {
@@ -3373,19 +3350,13 @@ resolution_emperor_imperial_armada = {
 		modifier = {
 			factor = 0.6
 			is_pacifist = yes
-			count_neighbor_country = {
-				count = 0
-				limit = { is_crisis_faction = yes }
-			}
+			NOT = { any_neighbor_country = { is_crisis_faction = yes } }
 			desc = ethic_pacifist
 		}
 		modifier = {
 			factor = 0.6
 			is_xenophobe = yes
-			count_neighbor_country = {
-				count = 0
-				limit = { is_crisis_faction = yes }
-			}
+			NOT = { any_neighbor_country = { is_crisis_faction = yes } }
 			desc = ethic_xenophobe
 		}
 		modifier = {
@@ -3524,19 +3495,13 @@ resolution_emperor_expand_ia = {
 		modifier = {
 			factor = 0.6
 			is_pacifist = yes
-			count_neighbor_country = {
-				count = 0
-				limit = { is_crisis_faction = yes }
-			}
+			NOT = { any_neighbor_country = { is_crisis_faction = yes } }
 			desc = ethic_pacifist
 		}
 		modifier = {
 			factor = 0.6
 			is_xenophobe = yes
-			count_neighbor_country = {
-				count = 0
-				limit = { is_crisis_faction = yes }
-			}
+			NOT = { any_neighbor_country = { is_crisis_faction = yes } }
 			desc = ethic_xenophobe
 		}
 		modifier = {
@@ -3633,7 +3598,9 @@ resolution_emperor_imperial_legions = {
 	allow = {
 		custom_tooltip = {
 			fail_text = "resolution_already_active"
-			NOT = { is_active_resolution = "resolution_emperor_imperial_legions" }
+			NOT = {
+				is_active_resolution = "resolution_emperor_imperial_legions"
+			}
 		}
 	}
 
@@ -3641,7 +3608,9 @@ resolution_emperor_imperial_legions = {
 	}
 
 	effect = {
-		event_target:gal_emperor = { custom_tooltip = resolution_emperor_imperial_legions_tooltip }
+		event_target:gal_emperor = {
+			custom_tooltip = resolution_emperor_imperial_legions_tooltip
+		}
 		hidden_effect = {
 			every_galcom_member = {
 				country_event = { id = emperor.55 }
@@ -3666,19 +3635,13 @@ resolution_emperor_imperial_legions = {
 		modifier = {
 			factor = 0.4
 			is_pacifist = yes
-			count_neighbor_country = {
-				count = 0
-				limit = { is_crisis_faction = yes }
-			}
+			NOT = { any_neighbor_country = { is_crisis_faction = yes } }
 			desc = ethic_pacifist
 		}
 		modifier = {
 			factor = 0.6
 			is_xenophobe = yes
-			count_neighbor_country = {
-				count = 0
-				limit = { is_crisis_faction = yes }
-			}
+			NOT = { any_neighbor_country = { is_crisis_faction = yes } }
 			desc = ethic_xenophobe
 		}
 		modifier = {
@@ -4146,7 +4109,9 @@ resolution_emperor_imperial_charter = {
 	allow = {
 		custom_tooltip = {
 			fail_text = "resolution_already_active"
-			NOT = { is_active_resolution = "resolution_emperor_imperial_charter" }
+			NOT = {
+				is_active_resolution = "resolution_emperor_imperial_charter"
+			}
 		}
 	}
 
@@ -4259,7 +4224,10 @@ resolution_emperor_revoke_imperial_charter = {
 			remove_modifier = imperial_charter
 			every_galaxy_planet = {
 				limit = { has_planet_flag = imp_concession_port }
-				remove_holding = { holding = building_imperial_concession_port owner = galactic_emperor }
+				remove_holding = {
+					holding = building_imperial_concession_port
+					owner = galactic_emperor
+				}
 				remove_planet_flag = imp_concession_port
 			}
 			event_target:gal_emperor = {
@@ -4454,12 +4422,14 @@ resolution_emperor_restore_council = {
 		}
 		modifier = {
 			factor = 0.8
-			galactic_community_rank > 5
-			NAND = {
-				is_subject = yes
-				overlord = {
-					opinion_level = { who = prev level >= neutral }
-					galactic_community_rank <= 3
+			NOR = {
+				galactic_community_rank <= 5
+				AND = {
+					is_subject = yes
+					overlord = {
+						opinion_level = { who = prev level >= neutral }
+						galactic_community_rank <= 3
+					}
 				}
 			}
 			desc = gal_com_neither_they_or_overlord_high_ranked
@@ -5240,7 +5210,9 @@ resolution_emperor_trial_of_advancement = {
 	allow = {
 		custom_tooltip = {
 			fail_text = "resolution_already_active"
-			NOT = { is_active_resolution = "resolution_emperor_trial_of_advancement" }
+			NOT = {
+				is_active_resolution = "resolution_emperor_trial_of_advancement"
+			}
 		}
 	}
 
@@ -5325,7 +5297,9 @@ resolution_emperor_by_appointment = {
 			}
 			set_emperor_can_change_council_members = yes
 			if = {
-				limit = { is_active_resolution = "resolution_emperor_trial_of_advancement" }
+				limit = {
+					is_active_resolution = "resolution_emperor_trial_of_advancement"
+				}
 				cancel_resolution = "resolution_emperor_trial_of_advancement"
 			}
 			else_if = {
@@ -5388,7 +5362,9 @@ resolution_emperor_by_election = {
 				remove_permanent_councillor = yes
 			}
 			if = {
-				limit = { is_active_resolution = "resolution_emperor_trial_of_advancement" }
+				limit = {
+					is_active_resolution = "resolution_emperor_trial_of_advancement"
+				}
 				cancel_resolution = "resolution_emperor_trial_of_advancement"
 			}
 			else_if = {

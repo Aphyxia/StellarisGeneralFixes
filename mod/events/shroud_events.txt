@@ -143,9 +143,9 @@ country_event = {
 			has_country_flag = synth_queen_contacted_the_animator_already
 			has_country_flag = synth_queen_refused_the_animator_contact
 			has_covenant_with_end_of_the_cycle = yes
+			resource_stockpile_compare = { resource = energy value < 2000 }
+			resource_stockpile_compare = { resource = sr_zro value < 500 }
 		}
-		resource_stockpile_compare = { resource = energy value >= 2000 }
-		resource_stockpile_compare = { resource = sr_zro value >= 500 }
 	}
 
 	option = {
@@ -199,7 +199,9 @@ country_event = {
 	}
 
 	immediate = {
-		add_attunement = { the_eater_of_worlds = modifier:eater_of_worlds_monthly_attunement_add }
+		add_attunement = {
+			the_eater_of_worlds = modifier:eater_of_worlds_monthly_attunement_add
+		}
 	}
 }
 
@@ -257,7 +259,9 @@ country_event = {
 	}
 
 	immediate = {
-		add_attunement = { the_cradle_of_souls = modifier:cradle_of_souls_monthly_attunement_add }
+		add_attunement = {
+			the_cradle_of_souls = modifier:cradle_of_souls_monthly_attunement_add
+		}
 	}
 }
 
@@ -1014,7 +1018,9 @@ country_event = {
 	}
 
 	immediate = {
-		fire_on_action = { on_action = on_superstitious_beliefs_random_positive_events_list }
+		fire_on_action = {
+			on_action = on_superstitious_beliefs_random_positive_events_list
+		}
 	}
 }
 
@@ -1029,7 +1035,9 @@ country_event = {
 	}
 
 	immediate = {
-		fire_on_action = { on_action = on_superstitious_beliefs_random_negative_events_list }
+		fire_on_action = {
+			on_action = on_superstitious_beliefs_random_negative_events_list
+		}
 	}
 }
 
@@ -1223,8 +1231,10 @@ country_event = {
 		is_superstitious_beliefs_empire = yes
 		any_planet_within_border = {
 			has_research_station = yes
-			NOT = { has_deposit_for = shipclass_mining_station }
-			count_owned_pop_amount = { count <= 0 }
+			NOR = {
+				has_deposit_for = shipclass_mining_station
+				count_owned_pop_amount = { count >= 1 limit = {  } }
+			}
 		}
 	}
 
@@ -1234,8 +1244,10 @@ country_event = {
 			limit = {
 				any_system_planet = {
 					has_research_station = yes
-					NOT = { has_deposit_for = shipclass_mining_station }
-					count_owned_pop_amount = { count <= 0 }
+					NOR = {
+						has_deposit_for = shipclass_mining_station
+						count_owned_pop_amount = { count >= 1 limit = {  } }
+					}
 				}
 			}
 			system_event = { id = shroud.522 }
@@ -1257,8 +1269,10 @@ system_event = {
 		random_system_planet = {
 			limit = {
 				has_research_station = yes
-				NOT = { has_deposit_for = shipclass_mining_station }
-				count_owned_pop_amount = { count <= 0 }
+				NOR = {
+					has_deposit_for = shipclass_mining_station
+					count_owned_pop_amount = { count >= 1 limit = {  } }
+				}
 			}
 			add_deposit = d_physics_7
 		}
@@ -1275,8 +1289,10 @@ country_event = {
 		NOT = { has_country_flag = shroud_525_triggered }
 		is_superstitious_beliefs_empire = yes
 		any_planet_within_border = {
-			NOT = { has_deposit_for = shipclass_mining_station }
-			count_owned_pop_amount = { count <= 0 }
+			NOR = {
+				has_deposit_for = shipclass_mining_station
+				count_owned_pop_amount = { count >= 1 limit = {  } }
+			}
 		}
 	}
 
@@ -1285,8 +1301,10 @@ country_event = {
 		random_system_within_border = {
 			limit = {
 				any_system_planet = {
-					NOT = { has_deposit_for = shipclass_mining_station }
-					count_owned_pop_amount = { count <= 0 }
+					NOR = {
+						has_deposit_for = shipclass_mining_station
+						count_owned_pop_amount = { count >= 1 limit = {  } }
+					}
 				}
 			}
 			system_event = { id = shroud.527 }
@@ -1307,8 +1325,10 @@ system_event = {
 		name = HOW_FORTUITOUS
 		random_system_planet = {
 			limit = {
-				NOT = { has_deposit_for = shipclass_mining_station }
-				count_owned_pop_amount = { count <= 0 }
+				NOR = {
+					has_deposit_for = shipclass_mining_station
+					count_owned_pop_amount = { count >= 1 limit = {  } }
+				}
 			}
 			add_deposit = d_society_7
 		}
@@ -1746,10 +1766,10 @@ country_event = {
 		NOR = {
 			is_gestalt = yes
 			has_country_flag = shroud_570_triggered
-		}
-		count_owned_leader = {
-			count >= 2
-			limit = { sb_councilor_harmony_leader_trigger = yes }
+			count_owned_leader = {
+				count < 2
+				limit = { sb_councilor_harmony_leader_trigger = yes }
+			}
 		}
 	}
 
@@ -1787,7 +1807,7 @@ country_event = {
 		has_grand_archive_dlc = yes
 		NOT = { has_country_flag = shroud_575_triggered }
 		has_megastructure = grand_archive_0
-		count_exhibit = { count > 0 }
+		any_exhibit = {  }
 		any_exhibit = { is_exhibit_active = yes is_specimen_category = historical_item }
 	}
 
@@ -1934,10 +1954,7 @@ country_event = {
 			50 = {
 				modifier = {
 					factor = 0
-					count_owned_planet = {
-						count = 0
-						limit = { has_building = building_resource_silo }
-					}
+					NOT = { any_owned_planet = { has_building = building_resource_silo } }
 				}
 				random_owned_planet = {
 					limit = { has_building = building_resource_silo }
@@ -1948,10 +1965,7 @@ country_event = {
 			50 = {
 				modifier = {
 					factor = 0
-					count_owned_starbase = {
-						count = 0
-						limit = { has_starbase_building = resource_silo }
-					}
+					NOT = { any_owned_starbase = { has_starbase_building = resource_silo } }
 				}
 				random_owned_starbase = {
 					limit = { has_starbase_building = resource_silo }
@@ -2163,7 +2177,10 @@ leader_event = {
 		text = shroud.725.desc_killed
 	}
 	desc = {
-		trigger = { is_machine_species = no is_organic_species = no }
+		trigger = {
+			is_machine_species = no
+			is_organic_species = no
+		}
 		text = shroud.725.desc
 	}
 
@@ -2280,7 +2297,9 @@ planet_event = {
 	is_triggered_only = yes
 
 	desc = {
-		trigger = { from = { is_hive_empire = yes } }
+		trigger = {
+			from = { is_hive_empire = yes }
+		}
 		text = shroud.735.desc_hive
 	}
 	desc = {
@@ -2353,7 +2372,10 @@ planet_event = {
 			}
 		}
 		else = {
-			add_modifier = { modifier = hypertransmissible_virus years = @sb_cycles_duration_years }
+			add_modifier = {
+				modifier = hypertransmissible_virus
+				years = @sb_cycles_duration_years
+			}
 		}
 	}
 
@@ -2371,7 +2393,10 @@ planet_event = {
 				}
 			}
 			else = {
-				add_modifier = { modifier = hypertransmissible_virus years = @sb_cycles_duration_years }
+				add_modifier = {
+					modifier = hypertransmissible_virus
+					years = @sb_cycles_duration_years
+				}
 			}
 		}
 	}
@@ -2624,10 +2649,10 @@ country_event = {
 		NOR = {
 			is_gestalt = yes
 			has_country_flag = shroud_765_triggered
-		}
-		count_owned_leader = {
-			count >= 2
-			limit = { sb_discordant_council_leader_trigger = yes }
+			count_owned_leader = {
+				count < 2
+				limit = { sb_discordant_council_leader_trigger = yes }
+			}
 		}
 	}
 
@@ -2672,7 +2697,10 @@ country_event = {
 		text = shroud.770.desc_hive
 	}
 	desc = {
-		trigger = { is_machine_empire = no is_hive_empire = no }
+		trigger = {
+			is_machine_empire = no
+			is_hive_empire = no
+		}
 		text = shroud.770.desc_default
 	}
 
@@ -2680,13 +2708,7 @@ country_event = {
 		NOR = {
 			is_homicidal = yes
 			has_country_flag = shroud_770_triggered
-		}
-		count_relation = {
-			count >= 1
-			limit = {
-				is_country_type = default
-				has_communications = prev
-			}
+			NOT = { any_relation = { is_country_type = default has_communications = prev } }
 		}
 	}
 
@@ -7685,7 +7707,9 @@ country_event = {
 			if = {
 				limit = {
 					exists = event_target:mindwarden_enclave_country
-					NOT = { has_communications = event_target:mindwarden_enclave_country }
+					NOT = {
+						has_communications = event_target:mindwarden_enclave_country
+					}
 				}
 				country_event = { id = shroud.4195 days = 15 }
 			}
@@ -7773,7 +7797,9 @@ country_event = {
 
 	trigger = {
 		exists = event_target:mindwarden_enclave_country
-		NOT = { has_communications = event_target:mindwarden_enclave_country }
+		NOT = {
+			has_communications = event_target:mindwarden_enclave_country
+		}
 	}
 
 	immediate = {
@@ -8433,7 +8459,9 @@ country_event = {
 			set_faction_hostility = { target = event_target:marauder_target set_hostile = yes }
 		}
 		if = {
-			limit = { has_communications = event_target:mindwarden_enclave_country }
+			limit = {
+				has_communications = event_target:mindwarden_enclave_country
+			}
 			country_event = { id = shroud.4246 }
 		}
 		else = {
@@ -8738,10 +8766,12 @@ country_event = {
 	option_clear = yes
 
 	trigger = {
-		from = {
-			trust = { who = root value >= 80 }
+		NOR = {
+			from = {
+				trust = { who = root value < 80 }
+			}
+			has_country_flag = in_diplomacy_with@from
 		}
-		NOT = { has_country_flag = in_diplomacy_with@from }
 	}
 
 	option = {
@@ -8877,17 +8907,11 @@ country_event = {
 			}
 			custom_tooltip = {
 				fail_text = mindwarden_commander_already_bought
-				count_owned_leader = {
-					count = 0
-					limit = { has_leader_flag = mindwarden_commander }
-				}
+				NOT = { any_owned_leader = { has_leader_flag = mindwarden_commander } }
 			}
 			custom_tooltip = {
 				fail_text = mindwarden_commander_conflicted_leader
-				count_owned_leader = {
-					count = 0
-					limit = { has_leader_flag = shroudwalker_teacher }
-				}
+				NOT = { any_owned_leader = { has_leader_flag = shroudwalker_teacher } }
 			}
 			resource_stockpile_compare = { resource = energy value >= 4000 }
 			resource_stockpile_compare = { resource = influence value >= 50 }
@@ -9034,10 +9058,7 @@ country_event = {
 			if = {
 				limit = {
 					event_target:mindwarden_enclave_system = {
-						count_fleet_in_system = {
-							count < 1
-							limit = { has_fleet_flag = mindwarden_defense_fleet }
-						}
+						NOT = { any_fleet_in_system = { has_fleet_flag = mindwarden_defense_fleet } }
 					}
 				}
 				create_mindwarden_defense_fleet = yes
@@ -9092,7 +9113,9 @@ country_event = {
 	option_clear = yes
 
 	trigger = {
-		NOT = { has_country_flag = mindwarden_enclave_materiality_engine_built }
+		NOT = {
+			has_country_flag = mindwarden_enclave_materiality_engine_built
+		}
 	}
 
 	immediate = {
@@ -9714,11 +9737,17 @@ country_event = {
 
 	option = {
 		name = shroud.4715.a.default
-		trigger = { is_gestalt = no is_spiritualist = no }
+		trigger = {
+			is_gestalt = no
+			is_spiritualist = no
+		}
 	}
 	option = {
 		name = covenant.cycle.option
-		trigger = { is_gestalt = no is_spiritualist = yes }
+		trigger = {
+			is_gestalt = no
+			is_spiritualist = yes
+		}
 	}
 	option = {
 		name = shroud.4715.a.gestalt
@@ -9929,9 +9958,11 @@ country_event = {
 			limit = {
 				aura_owner = { is_same_empire = root }
 				has_owner = yes
-				NOT = { is_owned_by = root }
-				root = {
-					num_favors = { target = prev.owner value > 0 }
+				NOR = {
+					is_owned_by = root
+					root = {
+						num_favors = { target = prev.owner value <= 0 }
+					}
 				}
 			}
 			root = {
@@ -10556,7 +10587,9 @@ country_event = {
 				text = newline
 				text = shroud.4950.desc.1
 				if = {
-					limit = { has_communications = event_target:mindwarden_enclave_country }
+					limit = {
+						has_communications = event_target:mindwarden_enclave_country
+					}
 					text = newline
 					text = shroud.4190.desc_mindwarden
 				}
@@ -10868,7 +10901,10 @@ country_event = {
 			country_event = { id = shroud.4971 }
 		}
 		set_update_modifiers_batch = begin
-		every_system = { set_star_flag = destroyed_by_end_of_the_cycle destroy_star_system = yes }
+		every_system = {
+			set_star_flag = destroyed_by_end_of_the_cycle
+			destroy_star_system = yes
+		}
 		set_update_modifiers_batch = end
 		every_country = {
 			limit = {
@@ -11541,7 +11577,9 @@ country_event = {
 		picture = GFX_evt_shroud_cradle_of_souls
 	}
 	picture = {
-		trigger = { has_country_flag = the_instrument_of_desire_as_chosen_patron }
+		trigger = {
+			has_country_flag = the_instrument_of_desire_as_chosen_patron
+		}
 		picture = GFX_evt_shroud_instrument_of_desire
 	}
 	picture = {
@@ -11611,7 +11649,9 @@ country_event = {
 		text = shroud.5115.desc.cradle
 	}
 	desc = {
-		trigger = { has_country_flag = the_instrument_of_desire_as_chosen_patron }
+		trigger = {
+			has_country_flag = the_instrument_of_desire_as_chosen_patron
+		}
 		text = shroud.5115.desc.instrument
 	}
 
@@ -11792,7 +11832,10 @@ country_event = {
 				}
 			}
 			else = {
-				custom_tooltip = { always = no fail_text = shroud.5315.trigger_failed }
+				custom_tooltip = {
+					always = no
+					fail_text = shroud.5315.trigger_failed
+				}
 			}
 		}
 		hidden_effect = {
@@ -12368,7 +12411,10 @@ country_event = {
 		allow = {
 			if = {
 				limit = { has_technology = tech_psionic_theory }
-				custom_tooltip = { always = no fail_text = shroud.5350.trigger_failed }
+				custom_tooltip = {
+					always = no
+					fail_text = shroud.5350.trigger_failed
+				}
 			}
 			else = {
 				resource_stockpile_compare = { resource = energy value >= 1000 }
@@ -12641,15 +12687,16 @@ country_event = {
 	option = {
 		name = shroud.6855.d
 		trigger = {
-			NOT = { is_hostile = event_target:mindwarden_enclave_country }
-			event_target:mindwarden_enclave_country = {
-				NOT = { has_country_flag = fleet_commandeered }
-				count_owned_fleet = {
-					count = 0
-					limit = {
-						is_ship_class = shipclass_military
-						is_leased = yes
-						controller = { is_same_empire = root }
+			NOR = {
+				is_hostile = event_target:mindwarden_enclave_country
+				event_target:mindwarden_enclave_country = {
+					OR = {
+						has_country_flag = fleet_commandeered
+						any_owned_fleet = {
+							is_ship_class = shipclass_military
+							is_leased = yes
+							controller = { is_same_empire = root }
+						}
 					}
 				}
 			}
@@ -12662,9 +12709,8 @@ country_event = {
 			custom_tooltip = {
 				fail_text = enclave.205.tooltip.a
 				event_target:mindwarden_enclave_country = {
-					count_owned_fleet = {
-						count = 0
-						limit = {
+					NOT = {
+						any_owned_fleet = {
 							is_ship_class = shipclass_military
 							is_leased = yes
 							is_owned_by = prev
@@ -12677,11 +12723,10 @@ country_event = {
 				event_target:mindwarden_enclave_country = {
 					any_owned_fleet = {
 						is_ship_class = shipclass_military
-						count_controlled_ship = {
-							count = 0
-							limit = { is_damaged = yes }
+						NOR = {
+							any_controlled_ship = { is_damaged = yes }
+							fleet_power < 500
 						}
-						fleet_power >= 500
 					}
 				}
 			}
@@ -13138,9 +13183,8 @@ country_event = {
 		event_target:mindwarden_enclave_country = {
 			if = {
 				limit = {
-					count_owned_leader = {
-						count = 0
-						limit = {
+					NOT = {
+						any_owned_leader = {
 							leader_class = commander
 							is_councilor = no
 							is_ruler = no
@@ -14908,7 +14952,7 @@ country_event = {
 		can_access_shroud = yes
 		exists = from
 		count_species = {
-			count = 0
+			count < 1
 			limit = {
 				NOT = { is_exact_same_species = from }
 				is_same_species = from
@@ -15501,7 +15545,10 @@ country_event = {
 
 	immediate = {
 		# Update own reckoning event chain
-		reset_event_chain_counter = { event_chain = the_reckoning_chain counter = reckoning_integrity }
+		reset_event_chain_counter = {
+			event_chain = the_reckoning_chain
+			counter = reckoning_integrity
+		}
 		add_event_chain_counter = {
 			event_chain = the_reckoning_chain
 			counter = reckoning_integrity
@@ -15649,9 +15696,9 @@ country_event = {
 
 	trigger = {
 		has_covenant = end_of_the_cycle
-		OR = {
-			NOT = { has_origin = origin_endbringers }
-			check_variable = { which = endbringers_delve_count_variable value > 3 }
+		NAND = {
+			has_origin = origin_endbringers
+			check_variable = { which = endbringers_delve_count_variable value <= 3 }
 		}
 	}
 
@@ -15901,7 +15948,10 @@ country_event = {
 				trait = leader_trait_ambassador_ear_to_the_ground_2
 				consume_selection = yes
 			}
-			add_trait = { trait = leader_trait_ambassador_extra_envoys_2 consume_selection = yes }
+			add_trait = {
+				trait = leader_trait_ambassador_extra_envoys_2
+				consume_selection = yes
+			}
 			add_trait = { trait = leader_trait_overseer consume_selection = yes }
 			add_trait = { trait = leader_trait_disciple_of_the_cradle consume_selection = yes }
 			add_trait = { trait = leader_trait_psionic consume_selection = yes }
@@ -16090,7 +16140,10 @@ country_event = {
 			add_trait = { trait = leader_trait_pop_focused consume_selection = yes }
 			add_trait = { trait = leader_trait_distribution_lines_2 consume_selection = yes }
 			add_trait = { trait = leader_trait_refinement_focus_2 consume_selection = yes }
-			add_trait = { trait = leader_trait_disciple_of_the_instrument consume_selection = yes }
+			add_trait = {
+				trait = leader_trait_disciple_of_the_instrument
+				consume_selection = yes
+			}
 			add_trait = { trait = leader_trait_psionic consume_selection = yes }
 		}
 	}
@@ -16417,10 +16470,19 @@ country_event = {
 			add_trait = { trait = subclass_scientist_scholar consume_selection = yes }
 			add_trait = { trait = leader_trait_carefree_2 consume_selection = yes }
 			add_trait = { trait = leader_trait_spark_of_genius_2 consume_selection = yes }
-			add_trait = { trait = leader_trait_academic_dig_site_expert_2 consume_selection = yes }
-			add_trait = { trait = leader_trait_academic_astral_rift_expert consume_selection = yes }
+			add_trait = {
+				trait = leader_trait_academic_dig_site_expert_2
+				consume_selection = yes
+			}
+			add_trait = {
+				trait = leader_trait_academic_astral_rift_expert
+				consume_selection = yes
+			}
 			add_trait = { trait = leader_trait_expertise_psionics_2 consume_selection = yes }
-			add_trait = { trait = leader_trait_disciple_of_the_whisperers consume_selection = yes }
+			add_trait = {
+				trait = leader_trait_disciple_of_the_whisperers
+				consume_selection = yes
+			}
 			add_trait = { trait = leader_trait_psionic consume_selection = yes }
 		}
 	}
@@ -16584,7 +16646,9 @@ country_event = {
 	}
 
 	immediate = {
-		add_attunement = { the_eater_of_worlds = @disciple_of_the_eater_combat_attunement }
+		add_attunement = {
+			the_eater_of_worlds = @disciple_of_the_eater_combat_attunement
+		}
 	}
 }
 
@@ -16700,9 +16764,9 @@ pop_group_event = {
 			exists = leader
 			leader = {
 				has_trait = leader_trait_disciple_of_the_composer
-				OR = {
-					NOT = { is_variable_set = disciple_of_the_composer_pop_growth }
-					check_variable = { which = disciple_of_the_composer_pop_growth value > 0 }
+				NAND = {
+					is_variable_set = disciple_of_the_composer_pop_growth
+					check_variable = { which = disciple_of_the_composer_pop_growth value <= 0 }
 				}
 			}
 		}

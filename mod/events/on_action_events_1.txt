@@ -1805,7 +1805,10 @@ country_event = {
 	desc = {
 		text = action.1.desc_65
 		trigger = {
-			event_target:contact_empire = { is_country_type = fallen_empire is_fanatic_spiritualist = yes }
+			event_target:contact_empire = {
+				is_country_type = fallen_empire
+				is_fanatic_spiritualist = yes
+			}
 			NOR = {
 				has_origin = origin_cybernetic_creed
 				is_individual_machine = yes
@@ -1817,7 +1820,10 @@ country_event = {
 	desc = {
 		text = action.1.desc_111
 		trigger = {
-			event_target:contact_empire = { is_country_type = fallen_empire is_fanatic_spiritualist = yes }
+			event_target:contact_empire = {
+				is_country_type = fallen_empire
+				is_fanatic_spiritualist = yes
+			}
 			has_origin = origin_cybernetic_creed
 		}
 	}
@@ -1826,7 +1832,10 @@ country_event = {
 	desc = {
 		text = action.1.desc_107
 		trigger = {
-			event_target:contact_empire = { is_country_type = fallen_empire is_fanatic_spiritualist = yes }
+			event_target:contact_empire = {
+				is_country_type = fallen_empire
+				is_fanatic_spiritualist = yes
+			}
 			NOT = { has_origin = origin_cybernetic_creed }
 			is_individual_machine = yes
 			is_spiritualist = no
@@ -1837,7 +1846,10 @@ country_event = {
 	desc = {
 		text = action.1.desc_108
 		trigger = {
-			event_target:contact_empire = { is_country_type = fallen_empire is_fanatic_spiritualist = yes }
+			event_target:contact_empire = {
+				is_country_type = fallen_empire
+				is_fanatic_spiritualist = yes
+			}
 			is_individual_machine = yes
 			is_spiritualist = yes
 		}
@@ -2243,7 +2255,10 @@ country_event = {
 		text = "action.1.desc_99"
 		trigger = {
 			first_contact_custom_greeting = yes
-			event_target:contact_empire = { has_country_flag = human_lithoid species_portrait = lith_human }
+			event_target:contact_empire = {
+				has_country_flag = human_lithoid
+				species_portrait = lith_human
+			}
 			has_country_flag = human_1
 		}
 	}
@@ -2455,11 +2470,17 @@ country_event = {
 		}
 		name = {
 			text = action.1.ai
-			trigger = { is_xenophile = yes is_egalitarian = yes }
+			trigger = {
+				is_xenophile = yes
+				is_egalitarian = yes
+			}
 		}
 		name = {
 			text = action.1.aj
-			trigger = { is_xenophile = yes is_authoritarian = yes }
+			trigger = {
+				is_xenophile = yes
+				is_authoritarian = yes
+			}
 		}
 		name = {
 			text = action.1.ak
@@ -2476,7 +2497,10 @@ country_event = {
 		}
 		name = {
 			text = action.1.am
-			trigger = { is_spiritualist = yes is_individual_machine = no }
+			trigger = {
+				is_spiritualist = yes
+				is_individual_machine = no
+			}
 		}
 		name = {
 			text = action.1.j
@@ -2576,7 +2600,10 @@ country_event = {
 		}
 		name = {
 			text = action.1.af
-			trigger = { is_xenophobe = yes is_individual_machine = no }
+			trigger = {
+				is_xenophobe = yes
+				is_individual_machine = no
+			}
 		}
 		name = {
 			text = action.1.va
@@ -2659,7 +2686,10 @@ country_event = {
 		else = {
 			custom_tooltip = seek_friends_tt
 			event_target:contact_empire = {
-				add_opinion_modifier = { who = root modifier = opinion_friendly_first_comms_greeting }
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_friendly_first_comms_greeting
+				}
 			}
 		}
 		if = {
@@ -3015,7 +3045,10 @@ country_event = {
 		}
 		name = {
 			text = action.1.au
-			trigger = { is_spiritualist = yes is_militarist = yes }
+			trigger = {
+				is_spiritualist = yes
+				is_militarist = yes
+			}
 		}
 		name = {
 			text = action.1.k
@@ -3749,7 +3782,9 @@ country_event = {
 						mindwarden_enclave_country = {
 							country_event = { id = shroud.4199 }
 						}
-						default = { log_error = "Unexpected enclave type or missing script flag" }
+						default = {
+							log_error = "Unexpected enclave type or missing script flag"
+						}
 					}
 				}
 			}
@@ -4327,7 +4362,10 @@ country_event = {
 	option = {
 		name = action.14.a.military
 		custom_tooltip = action.14.a.tooltip
-		trigger = { is_militarist = yes is_xenophobe = no }
+		trigger = {
+			is_militarist = yes
+			is_xenophobe = no
+		}
 	}
 	option = {
 		name = action.14.a.spirit
@@ -4539,7 +4577,9 @@ planet_event = {
 					}
 				}
 				else_if = {
-					limit = { fromfrom = { is_infernal = yes } }
+					limit = {
+						fromfrom = { is_infernal = yes }
+					}
 					from = {
 						add_resource = {
 							alloys = 0.12
@@ -4630,7 +4670,9 @@ planet_event = {
 					}
 				}
 				else_if = {
-					limit = { fromfrom = { is_infernal = yes } }
+					limit = {
+						fromfrom = { is_infernal = yes }
+					}
 					from = {
 						add_resource = {
 							alloys = 0.12
@@ -4711,7 +4753,9 @@ planet_event = {
 					}
 				}
 				else_if = {
-					limit = { fromfrom = { is_infernal = yes } }
+					limit = {
+						fromfrom = { is_infernal = yes }
+					}
 					from = {
 						add_resource = {
 							alloys = 0.12
@@ -6106,7 +6150,9 @@ country_event = {
 				is_country_type = default
 			}
 			species = {
-				apex_predator_switch = { COUNTRY = event_target:destroyer_country }
+				apex_predator_switch = {
+					COUNTRY = event_target:destroyer_country
+				}
 			}
 		}
 		if = {
@@ -6150,9 +6196,8 @@ country_event = {
 			if = {
 				limit = {
 					is_country_type = default
-					count_war = {
-						count = 0
-						limit = {
+					NOT = {
+						any_war = {
 							using_war_goal = { owner = root type = wg_machine_uprising }
 						}
 					}
@@ -7924,9 +7969,8 @@ planet_event = {
 	trigger = {
 		has_modifier = planet_culture_shock
 		FromFrom.species = { has_species_flag = primitive_species }
-		count_owned_pop_group = {
-			count = 0
-			limit = {
+		NOT = {
+			any_owned_pop_group = {
 				species = { has_species_flag = primitive_species }
 				NOT = { is_same_value = fromfrom }
 			}

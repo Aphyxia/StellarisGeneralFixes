@@ -12,9 +12,9 @@ country_event = {
 
 	trigger = {
 		is_country_type = default
-		NOR = {
-			num_cosmic_storms_encountered >= 1
-			from = { has_storm_flag = first_storm_met_by_@root }
+		num_cosmic_storms_encountered < 1 # First time encountering a storm
+		from = {
+			NOT = { has_storm_flag = first_storm_met_by_@root }
 		}
 	}
 
@@ -330,7 +330,12 @@ planet_event = {
 				}
 			}
 			AND = {
-				has_deposit = d_active_volcano
+				OR = {
+					has_deposit = d_active_volcano
+					has_deposit = d_raging_lavafalls
+					has_deposit = d_rugged_landscape
+					has_deposit = d_seismic_bombing_crater
+				}
 				owner = {
 					NOR = {
 						has_technology = tech_volcano
@@ -433,9 +438,8 @@ system_event = {
 		}
 		from = {
 			has_storm_flag = first_storm_met_by_@prev.owner
-			count_system_within_storm = {
-				count = 0
-				limit = {
+			NOT = {
+				any_system_within_storm = {
 					NOT = { is_same_value = root }
 					has_owner = yes
 					is_owned_by = prevprev.owner_or_space_owner # Vfix (very strange: also root.owner gives error?!?)
@@ -598,7 +602,9 @@ event = {
 		every_galcom_member = {
 			# Unity per system
 			if = {
-				limit = { is_active_resolution = "resolution_cosmic_storms_shared_knowledge" }
+				limit = {
+					is_active_resolution = "resolution_cosmic_storms_shared_knowledge"
+				}
 				# Reset counters
 				set_variable = { which = storm_affected_system_count value = 0 }
 				create_variable_if_not_exists = {
@@ -656,7 +662,9 @@ event = {
 					multiply_variable = { which = storm_affected_planet_count value = 2 }
 				}
 				else_if = {
-					limit = { is_active_resolution = "resolution_cosmic_storms_manipulation_mandate" }
+					limit = {
+						is_active_resolution = "resolution_cosmic_storms_manipulation_mandate"
+					}
 					multiply_variable = { which = storm_affected_planet_count value = 3 }
 				}
 				# Update/remove modifier as needed
@@ -696,7 +704,10 @@ event = {
 			}
 			# Reset counters
 			set_variable = { which = storm_affected_ship_count value = 0 }
-			create_variable_if_not_exists = { VARIABLE = prev_storm_affected_ship_count VALUE_IF_CREATED = 0 }
+			create_variable_if_not_exists = {
+				VARIABLE = prev_storm_affected_ship_count
+				VALUE_IF_CREATED = 0
+			}
 			# Count
 			every_owned_ship = {
 				limit = {
@@ -1232,10 +1243,9 @@ planet_event = {
 	trigger = {
 		solar_system = {
 			exists = owner
-			owner = { is_ai = no }
-			count_system_planet = {
-				count = 0
-				limit = {
+			NOR = {
+				owner = { is_ai = yes }
+				any_system_planet = {
 					OR = {
 						has_planet_flag = hold_the_line_habitat
 						has_planet_flag = habitat
@@ -1246,10 +1256,7 @@ planet_event = {
 				limit = {
 					owner = { has_origin = origin_payback }
 				}
-				count_system_planet = {
-					count = 0
-					limit = { is_homeworld = yes }
-				}
+				NOT = { any_system_planet = { is_homeworld = yes } }
 			}
 		}
 	}
@@ -1647,7 +1654,9 @@ system_event = {
 			NOT = { has_country_flag = has_discovered_spirits_of_the_storm }
 		}
 		exists = from
-		NOT = { from = { has_storm_flag = storm_stormfall } }
+		from = {
+			NOT = { has_storm_flag = storm_stormfall }
+		}
 	}
 
 	immediate = {
@@ -1778,7 +1787,9 @@ ship_event = {
 	option = {
 		name = cstorms.1500.b
 		trigger = {
-			NOT = { owner = { has_origin = origin_evolutionary_predators } }
+			owner = {
+				NOT = { has_origin = origin_evolutionary_predators }
+			}
 		}
 		owner = {
 			add_resource = {
@@ -2460,7 +2471,9 @@ planet_event = {
 			has_modifier = weak_magnetic_field
 		}
 		is_owned_by = from
-		NOT = { owner = { has_country_flag = triggered_magnetized_planetary_core } }
+		owner = {
+			NOT = { has_country_flag = triggered_magnetized_planetary_core }
+		}
 	}
 
 	immediate = {
@@ -2563,7 +2576,9 @@ planet_event = {
 			is_cold = yes
 		}
 		is_owned_by = from
-		NOT = { owner = { has_country_flag = triggered_electrified_oceans } }
+		owner = {
+			NOT = { has_country_flag = triggered_electrified_oceans }
+		}
 	}
 
 	immediate = {
@@ -2703,7 +2718,9 @@ planet_event = {
 		is_colony = yes
 		is_artificial = no
 		is_owned_by = from
-		NOT = { owner = { has_country_flag = triggered_ghostly_apparitions } }
+		owner = {
+			NOT = { has_country_flag = triggered_ghostly_apparitions }
+		}
 	}
 
 	immediate = {
@@ -2782,7 +2799,9 @@ planet_event = {
 				NOT = { has_planet_flag = afflicted_by_storm_event }
 				has_deposit = d_active_volcano
 				is_owned_by = from
-				NOT = { owner = { has_country_flag = triggered_volcanic_inactivity } }
+				owner = {
+					NOT = { has_country_flag = triggered_volcanic_inactivity }
+				}
 			}
 			set_planet_flag = afflicted_by_storm_event
 			owner = { set_country_flag = triggered_volcanic_inactivity }
@@ -2884,7 +2903,9 @@ planet_event = {
 		is_colony = yes
 		is_artificial = no
 		is_owned_by = from
-		NOT = { owner = { has_country_flag = triggered_sky_mountain } }
+		owner = {
+			NOT = { has_country_flag = triggered_sky_mountain }
+		}
 	}
 
 	immediate = {
@@ -2964,7 +2985,9 @@ planet_event = {
 				}
 				is_cold = yes
 				is_owned_by = from
-				NOT = { owner = { has_country_flag = triggered_melting_glaciers } }
+				owner = {
+					NOT = { has_country_flag = triggered_melting_glaciers }
+				}
 			}
 			set_planet_flag = afflicted_by_storm_event
 			owner = { set_country_flag = triggered_melting_glaciers }
@@ -3118,7 +3141,9 @@ planet_event = {
 		is_artificial = no
 		solar_system = { is_inside_storm = celestial_storm }
 		is_owned_by = from
-		NOT = { owner = { has_country_flag = triggered_dusty_drink } }
+		owner = {
+			NOT = { has_country_flag = triggered_dusty_drink }
+		}
 	}
 
 	immediate = {
@@ -3287,7 +3312,9 @@ planet_event = {
 		solar_system = { is_inside_storm = gravity_storm }
 		exists = owner
 		is_owned_by = from
-		NOT = { owner = { has_country_flag = triggered_flightless_fauna } }
+		owner = {
+			NOT = { has_country_flag = triggered_flightless_fauna }
+		}
 	}
 
 	immediate = {
@@ -3318,7 +3345,9 @@ planet_event = {
 	option = {
 		name = cstorms.1771.b
 		trigger = {
-			NOT = { owner = { has_civic = civic_hive_devouring_swarm } }
+			owner = {
+				NOT = { has_civic = civic_hive_devouring_swarm }
+			}
 		}
 		owner = {
 			add_monthly_resource_mult = {
@@ -3433,7 +3462,9 @@ system_event = {
 			NOT = { has_country_flag = triggered_eye_of_the_storm }
 		}
 		exists = from
-		NOT = { from = { has_storm_flag = storm_stormfall } }
+		from = {
+			NOT = { has_storm_flag = storm_stormfall }
+		}
 	}
 
 	immediate = {
@@ -3502,21 +3533,11 @@ ship_event = {
 		fromfrom = {
 			switch = {
 				trigger = is_storm_type
-				magnetic_storm = {
-					prev.from.star = { set_planet_flag = collect_alloys }
-				}
-				celestial_storm = {
-					prev.from.star = { set_planet_flag = collect_minerals }
-				}
-				shroud_storm = {
-					prev.from.star = { set_planet_flag = collect_zro }
-				}
-				nexus_storm = {
-					prev.from.star = { set_planet_flag = collect_multiple_resources }
-				}
-				default = {
-					prev.from.star = { set_planet_flag = collect_energy }
-				}
+				magnetic_storm = { prev.from.star = { set_planet_flag = collect_alloys } }
+				celestial_storm = { prev.from.star = { set_planet_flag = collect_minerals } }
+				shroud_storm = { prev.from.star = { set_planet_flag = collect_zro } }
+				nexus_storm = { prev.from.star = { set_planet_flag = collect_multiple_resources } }
+				default = { prev.from.star = { set_planet_flag = collect_energy } }
 			}
 		}
 		random = {
@@ -3932,10 +3953,9 @@ planet_event = {
 					NOR = {
 						is_colony = yes
 						is_star = yes
-					}
-					count_fleet_in_orbit = {
-						count = 0
-						limit = { is_ship_class = shipclass_habitat_station }
+						any_fleet_in_orbit = { ##Lets not mess with Habitat deposits
+							is_ship_class = shipclass_habitat_station
+						}
 					}
 				}
 				if = { # ## temperate worlds turn into something
@@ -4483,7 +4503,9 @@ planet_event = {
 
 	trigger = {
 		has_modifier = pm_satured_filtration
-		NOT = { from = { has_special_project = CLEAR_DUSTY_PIPES_PROJECT } }
+		from = {
+			NOT = { has_special_project = CLEAR_DUSTY_PIPES_PROJECT }
+		}
 	}
 
 	immediate = {

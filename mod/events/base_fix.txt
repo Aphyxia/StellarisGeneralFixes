@@ -15,8 +15,8 @@ event = {
 					has_country_flag = breached_shroud
 					has_country_flag = shroud_fallen_empire
 				}
-				resource_stockpile_compare = { resource = energy value >= 1000 }
 				NOR = {
+					resource_stockpile_compare = { resource = energy value < 1000 }
 					has_country_flag = shroud_diplomacy_engaged
 					has_modifier = shroud_cooldown
 					has_modifier = shroud_precog_cooldown

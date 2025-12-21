@@ -519,14 +519,20 @@ building_baol_organic_plant = {
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
-			owner = { country_uses_consumer_goods = yes has_ascension_perk = ap_archaeoengineers }
+			owner = {
+				country_uses_consumer_goods = yes
+				has_ascension_perk = ap_archaeoengineers
+			}
 		}
 		planet_farmers_consumer_goods_produces_add = 0.125
 	}
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
-			owner = { country_uses_consumer_goods = no has_ascension_perk = ap_archaeoengineers }
+			owner = {
+				country_uses_consumer_goods = no
+				has_ascension_perk = ap_archaeoengineers
+			}
 		}
 		planet_farmers_energy_produces_add = 0.25
 	}
@@ -648,10 +654,10 @@ building_mineral_purification_plant = {
 			has_modifier = resort_colony
 			is_planet_class = pc_ringworld_habitable
 			is_planet_class = pc_cybrex
-		}
-		OR = {
-			NOT = { is_planet_class = pc_habitat }
-			check_modifier_value = { modifier = district_hab_mining_max_add value > 0 }
+			AND = {
+				is_planet_class = pc_habitat
+				check_modifier_value = { modifier = district_hab_mining_max_add value <= 0 }
+			}
 		}
 		OR = {
 			has_planet_flag = ignore_ai_building_limitations
@@ -1101,9 +1107,11 @@ building_energy_grid = {
 			is_wilderness_empire = no # see 'building_bioelectric_stimulator_3'
 		}
 		OR = {
-			NOT = { is_planet_class = pc_habitat }
-			check_modifier_value = { modifier = district_hab_energy_max_add value > 0 }
-			owner = { is_ai = no }
+			NAND = {
+				is_planet_class = pc_habitat
+				check_modifier_value = { modifier = district_hab_energy_max_add value <= 0 }
+				owner = { is_ai = yes }
+			}
 			has_any_generator_district_or_building = yes
 		}
 	}

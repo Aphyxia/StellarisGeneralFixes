@@ -821,11 +821,17 @@ country_event = {
 	title = "distar.218.name"
 
 	desc = {
-		trigger = { is_hive_empire = no is_machine_empire = no }
+		trigger = {
+			is_hive_empire = no
+			is_machine_empire = no
+		}
 		text = "distar.5016.desc.regular"
 	}
 	desc = {
-		trigger = { is_hive_empire = yes is_machine_empire = no }
+		trigger = {
+			is_hive_empire = yes
+			is_machine_empire = no
+		}
 		text = "distar.5016.desc.hive"
 	}
 	desc = {
@@ -1334,8 +1340,10 @@ event = {
 				is_country_type = default
 				has_communications = prev
 				has_event_chain = l_cluster_chain
-				NOT = { has_country_flag = lgate_warned@prev }
-				check_variable = { which = num_lcluster_clues value > 5 }
+				NOR = {
+					has_country_flag = lgate_warned@prev
+					check_variable = { which = num_lcluster_clues value <= 5 }
+				}
 				any_owned_megastructure = { is_megastructure_type = lgate_base }
 			}
 		}
@@ -1353,8 +1361,10 @@ event = {
 					is_country_type = default
 					has_communications = prev
 					has_event_chain = l_cluster_chain
-					NOT = { has_country_flag = lgate_warned@prev }
-					check_variable = { which = num_lcluster_clues value > 5 }
+					NOR = {
+						has_country_flag = lgate_warned@prev
+						check_variable = { which = num_lcluster_clues value <= 5 }
+					}
 					any_owned_megastructure = { is_megastructure_type = lgate_base }
 				}
 			}
@@ -1363,8 +1373,10 @@ event = {
 					is_country_type = default
 					has_communications = prev
 					has_event_chain = l_cluster_chain
-					NOT = { has_country_flag = lgate_warned@prev }
-					check_variable = { which = num_lcluster_clues value > 5 }
+					NOR = {
+						has_country_flag = lgate_warned@prev
+						check_variable = { which = num_lcluster_clues value <= 5 }
+					}
 					any_owned_megastructure = { is_megastructure_type = lgate_base }
 				}
 				save_event_target_as = lgate_warning_country
@@ -1646,10 +1658,7 @@ country_event = {
 		# Notify those without l-gate systems
 		every_playable_country = {
 			limit = {
-				count_system_within_border = {
-					count = 0
-					limit = { has_star_flag = lgate }
-				}
+				NOT = { any_system_within_border = { has_star_flag = lgate } }
 			}
 			country_event = { id = distar.13011 }
 		}

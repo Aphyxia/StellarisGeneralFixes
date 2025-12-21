@@ -24,7 +24,6 @@ salvager_enclave_init_01 = {
 
 	max_instances = 1
 	spawn_chance = 100 # Guaranteed, assuming usage_odds passes
-
 	flags = { salvager_enclave_system enclave }
 
 	asteroid_belt = {
@@ -147,7 +146,6 @@ salvager_enclave_init_02 = {
 
 	max_instances = 1
 	scaled_spawn_chance = 16 # scales by galaxy size (1000 stars = 10x base)
-
 	flags = { salvager_enclave_system enclave }
 
 	asteroid_belt = {
@@ -279,7 +277,6 @@ salvager_enclave_init_03 = {
 
 	max_instances = 1
 	scaled_spawn_chance = 12 # scales by galaxy size (1000 stars = 10x base)
-
 	flags = { salvager_enclave_system enclave }
 
 	planet = {
@@ -437,7 +434,6 @@ shroudwalker_enclave_init_01 = {
 
 	max_instances = 1
 	spawn_chance = 100 # Guaranteed, assuming usage_odds passes
-
 	flags = { shroudwalker_enclave_system enclave }
 
 	planet = {
@@ -536,7 +532,6 @@ shroudwalker_enclave_init_02 = {
 
 	max_instances = 1
 	scaled_spawn_chance = 16	# scales by galaxy size (1000 stars = 10x base)
-
 	flags = { shroudwalker_enclave_system enclave }
 
 	asteroid_belt = {
@@ -609,9 +604,8 @@ shroudwalker_enclave_init_02 = {
 		if = {
 			limit = {
 				exists = event_target:shroudwalker_enclave_country
-				count_system = {
-					count = 0
-					limit = {
+				NOT = {
+					any_system = {
 						OR = {
 							has_star_flag = shroudwalker_enclave_system
 							has_star_flag = shroud_tunnel_nexus
@@ -650,7 +644,6 @@ shroudwalker_enclave_init_03 = {
 
 	max_instances = 1
 	scaled_spawn_chance = 12	# scales by galaxy size (1000 stars = 10x base)
-
 	flags = { shroudwalker_enclave_system enclave }
 
 	asteroid_belt = {
@@ -739,9 +732,8 @@ shroudwalker_enclave_init_03 = {
 		if = {
 			limit = {
 				exists = event_target:shroudwalker_enclave_country
-				count_system = {
-					count = 0
-					limit = {
+				NOT = {
+					any_system = {
 						OR = {
 							has_star_flag = shroudwalker_enclave_system
 							has_star_flag = shroud_tunnel_nexus
@@ -815,7 +807,6 @@ broken_shroudwalker_init_01 = {
 
 	max_instances = 1
 	spawn_chance = 33
-
 	flags = { broken_shroudwalker_enclave }
 
 	planet = {
@@ -963,7 +954,6 @@ broken_shroudwalker_init_01 = {
 quantum_catapult_init_01 = {
 	class = sc_pulsar
 	usage = misc_system_init
-
 	flags = { ruined_catapult_system }
 
 	usage_odds = {
@@ -1047,7 +1037,6 @@ orbital_ring_init_01 = {
 		type = icy_asteroid_belt
 		radius = 145
 	}
-
 	flags = { ruined_orbital_ring_system }
 
 	usage = misc_system_init
@@ -1162,7 +1151,6 @@ overlord_system_init = {
 	}
 
 	max_instances = 1
-
 	flags = { overlord_empire_flag overlord_system_1_flag }
 
 	planet = {
@@ -1473,10 +1461,7 @@ overlord_system_init = {
 	}
 	neighbor_system = {
 		trigger = {
-			count_neighbor_system = {
-				count = 0
-				limit = { has_star_flag = empire_home_system }
-			}
+			NOT = { any_neighbor_system = { has_star_flag = empire_home_system } }
 		}
 		initializer = "overlord_system_4_init"
 	}
@@ -1512,7 +1497,6 @@ overlord_system_init = {
 # Empire second system
 overlord_system_2_init = {
 	class = "rl_standard_stars"
-
 	flags = { overlord_empire_flag overlord_system_2_flag }
 
 	asteroid_belt = {
@@ -1562,9 +1546,7 @@ overlord_system_2_init = {
 					can_be_modified = this
 					homeworld = this
 					namelist = this
-					traits = {
-						ideal_planet_class = event_target:imperial_homeland_2
-					}
+					traits = { ideal_planet_class = event_target:imperial_homeland_2 }
 				}
 			}
 			last_created_species = { save_event_target_as = local_imperial_species }
@@ -1681,7 +1663,6 @@ overlord_system_2_init = {
 # Empire third system
 overlord_system_3_init = {
 	class = "rl_standard_stars"
-
 	flags = { overlord_empire_flag overlord_system_3_flag }
 
 	asteroid_belt = {
@@ -1728,9 +1709,7 @@ overlord_system_3_init = {
 					can_be_modified = this
 					homeworld = this
 					namelist = this
-					traits = {
-						ideal_planet_class = event_target:imperial_homeland_3
-					}
+					traits = { ideal_planet_class = event_target:imperial_homeland_3 }
 				}
 			}
 			last_created_species = { save_event_target_as = local_imperial_species }
@@ -1831,7 +1810,6 @@ overlord_system_3_init = {
 # First vassal
 overlord_system_4_init = {
 	class = "rl_standard_stars"
-
 	flags = { overlord_empire_flag overlord_system_4_flag }
 
 	planet = {
@@ -1890,7 +1868,10 @@ overlord_system_4_init = {
 					civic = civic_technocracy
 					civic = civic_slaver_guilds
 				}
-				ethos = { ethic = ethic_fanatic_materialist ethic = ethic_authoritarian }
+				ethos = {
+					ethic = ethic_fanatic_materialist
+					ethic = ethic_authoritarian
+				}
 				origin = "origin_imperial_vassal"
 				effect = {
 					set_country_flag = origin_imperial_vassal_technocrat_country
@@ -2063,7 +2044,6 @@ overlord_system_4_init = {
 # Second vassal
 overlord_system_5_init = {
 	class = "rl_standard_stars"
-
 	flags = { overlord_empire_flag overlord_system_5_flag }
 
 	planet = {
@@ -2122,7 +2102,10 @@ overlord_system_5_init = {
 					civic = civic_warrior_culture
 					civic = civic_distinguished_admiralty
 				}
-				ethos = { ethic = ethic_fanatic_militarist ethic = ethic_spiritualist }
+				ethos = {
+					ethic = ethic_fanatic_militarist
+					ethic = ethic_spiritualist
+				}
 				origin = "origin_imperial_vassal"
 				effect = {
 					save_global_event_target_as = origin_imperial_homeland_country_3
@@ -2296,7 +2279,6 @@ overlord_system_5_init = {
 # Third vassal
 overlord_system_6_init = {
 	class = "rl_standard_stars"
-
 	flags = { overlord_empire_flag overlord_system_6_flag }
 
 	asteroid_belt = {
@@ -2356,7 +2338,10 @@ overlord_system_6_init = {
 					civic = civic_philosopher_king
 					civic = civic_exalted_priesthood
 				}
-				ethos = { ethic = ethic_fanatic_spiritualist ethic = ethic_xenophobe }
+				ethos = {
+					ethic = ethic_fanatic_spiritualist
+					ethic = ethic_xenophobe
+				}
 				origin = "origin_imperial_vassal"
 				effect = {
 					save_global_event_target_as = origin_imperial_homeland_country_4
@@ -2526,7 +2511,6 @@ overlord_system_6_init = {
 # Fourth vassal
 overlord_system_7_init = {
 	class = "rl_standard_stars"
-
 	flags = { overlord_empire_flag overlord_system_7_flag }
 
 	planet = {
@@ -2595,7 +2579,10 @@ overlord_system_7_init = {
 						civic = civic_free_traders
 						civic = civic_ruthless_competition
 					}
-					ethos = { ethic = ethic_fanatic_materialist ethic = ethic_xenophile }
+					ethos = {
+						ethic = ethic_fanatic_materialist
+						ethic = ethic_xenophile
+					}
 					origin = "origin_imperial_vassal"
 					effect = {
 						save_global_event_target_as = origin_imperial_homeland_country_5
@@ -2614,7 +2601,10 @@ overlord_system_7_init = {
 						civic = civic_meritocracy
 						civic = civic_corporate_dominion
 					}
-					ethos = { ethic = ethic_fanatic_materialist ethic = ethic_xenophile }
+					ethos = {
+						ethic = ethic_fanatic_materialist
+						ethic = ethic_xenophile
+					}
 					origin = "origin_imperial_vassal"
 					effect = {
 						save_global_event_target_as = origin_imperial_homeland_country_5
@@ -2785,7 +2775,6 @@ overlord_system_7_init = {
 # Overlord Colonies
 overlord_system_8_init = {
 	class = "rl_standard_stars"
-
 	flags = { overlord_empire_flag overlord_colony_flag }
 
 	planet = {
@@ -2855,9 +2844,7 @@ overlord_system_8_init = {
 						can_be_modified = this
 						homeworld = this
 						namelist = this
-						traits = {
-							ideal_planet_class = event_target:imperial_colony
-						}
+						traits = { ideal_planet_class = event_target:imperial_colony }
 					}
 				}
 				last_created_species = { save_event_target_as = local_imperial_species }

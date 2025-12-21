@@ -97,7 +97,9 @@ building_colony_shelter = {
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
-			owner = { has_active_tradition = tr_synthetics_prefabricated_components }
+			owner = {
+				has_active_tradition = tr_synthetics_prefabricated_components
+			}
 		}
 		job_roboticist_add = 100
 		job_colonist_add = -100
@@ -1077,7 +1079,9 @@ building_hab_capital = {
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
-			owner = { has_active_tradition = tr_synthetics_prefabricated_components }
+			owner = {
+				has_active_tradition = tr_synthetics_prefabricated_components
+			}
 		}
 		job_roboticist_add = 100
 	}
@@ -1218,7 +1222,9 @@ building_hab_major_capital = {
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
-			owner = { has_active_tradition = tr_synthetics_prefabricated_components }
+			owner = {
+				has_active_tradition = tr_synthetics_prefabricated_components
+			}
 		}
 		job_roboticist_add = 100
 	}
@@ -1370,7 +1376,9 @@ building_hab_system_capital = {
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
-			owner = { has_active_tradition = tr_synthetics_prefabricated_components }
+			owner = {
+				has_active_tradition = tr_synthetics_prefabricated_components
+			}
 		}
 		job_roboticist_add = 100
 	}
@@ -1475,7 +1483,9 @@ building_resort_capital = {
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
-			owner = { has_active_tradition = tr_synthetics_prefabricated_components }
+			owner = {
+				has_active_tradition = tr_synthetics_prefabricated_components
+			}
 		}
 		job_roboticist_add = 100
 	}
@@ -1556,7 +1566,9 @@ building_resort_major_capital = {
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
-			owner = { has_active_tradition = tr_synthetics_prefabricated_components }
+			owner = {
+				has_active_tradition = tr_synthetics_prefabricated_components
+			}
 		}
 		job_roboticist_add = 100
 	}

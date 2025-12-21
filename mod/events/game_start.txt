@@ -80,10 +80,7 @@ event = {
 		if = {
 			# If there are no Sols
 			limit = {
-				count_system = {
-					count = 0
-					limit = { has_star_flag = sol }
-				}
+				NOT = { any_system = { has_star_flag = sol } }
 			}
 			random_list = {
 				450 = {  } # No Sol
@@ -935,9 +932,7 @@ country_event = {
 							name = random
 							species = owner_species
 							randomize_traits = no
-							traits = {
-								1 = random_common
-							}
+							traits = { 1 = random_common }
 						}
 					}
 					set_leader = last_created_leader
@@ -951,9 +946,7 @@ country_event = {
 				name = random
 				species = owner_species
 				randomize_traits = no
-				traits = {
-					1 = random_common
-				}
+				traits = { 1 = random_common }
 			}
 		}
 		if = {
@@ -973,9 +966,7 @@ country_event = {
 								name = random
 								species = owner_species
 								randomize_traits = no
-								traits = {
-									1 = random_common
-								}
+								traits = { 1 = random_common }
 							}
 						}
 						if = {
@@ -1062,9 +1053,7 @@ country_event = {
 							name = random
 							species = owner_species
 							randomize_traits = no
-							traits = {
-								1 = random_common
-							}
+							traits = { 1 = random_common }
 						}
 					}
 					set_leader = last_created_leader
@@ -1165,9 +1154,7 @@ country_event = {
 							name = random
 							species = owner_species
 							randomize_traits = no
-							traits = {
-								1 = random_common
-							}
+							traits = { 1 = random_common }
 						}
 					}
 					set_leader = last_created_leader
@@ -1198,9 +1185,7 @@ country_event = {
 							name = random
 							species = owner_species
 							randomize_traits = no
-							traits = {
-								1 = random_common
-							}
+							traits = { 1 = random_common }
 						}
 					}
 					set_leader = last_created_leader
@@ -1219,9 +1204,7 @@ country_event = {
 				name = random
 				species = owner_species
 				randomize_traits = no
-				traits = {
-					1 = random_common
-				}
+				traits = { 1 = random_common }
 			}
 		}
 	}
@@ -1407,7 +1390,9 @@ planet_event = {
 				}
 			}
 			else_if = {
-				limit = { owner = { is_hive_empire = yes } }
+				limit = {
+					owner = { is_hive_empire = yes }
+				}
 				add_district_and_planet_size_if_needed_effect = {
 					district = district_hive
 				}
@@ -1504,7 +1489,9 @@ planet_event = {
 				}
 			}
 			else_if = {
-				limit = { owner = { is_hive_empire = yes } }
+				limit = {
+					owner = { is_hive_empire = yes }
+				}
 				while = {
 					count = 2
 					add_district_if_possible_effect = {
@@ -1556,7 +1543,9 @@ planet_event = {
 				}
 			}
 			else_if = {
-				limit = { owner = { is_hive_empire = yes } }
+				limit = {
+					owner = { is_hive_empire = yes }
+				}
 				add_district_and_planet_size_if_needed_effect = {
 					district = district_hive
 				}
@@ -1632,7 +1621,9 @@ planet_event = {
 				create_pop_group = { species = owner_species size = 1300 }
 			}
 			else_if = {
-				limit = { owner = { is_hive_empire = yes } }
+				limit = {
+					owner = { is_hive_empire = yes }
+				}
 				create_pop_group = { species = owner_species size = 1600 }
 			}
 			else_if = {
@@ -1674,7 +1665,9 @@ planet_event = {
 				create_pop_group = { species = owner_species size = 1500 }
 			}
 			else_if = {
-				limit = { owner = { is_hive_empire = yes } }
+				limit = {
+					owner = { is_hive_empire = yes }
+				}
 				create_pop_group = { species = owner_species size = 1800 }
 			}
 			else_if = {
@@ -1782,10 +1775,7 @@ country_event = {
 				}
 				capital_scope = {
 					solar_system = {
-						count_neighbor_system = {
-							count = 0
-							limit = { NOT = { exists = owner } }
-						}
+						NOT = { any_neighbor_system = { NOT = { exists = owner } } }
 					}
 				}
 			}
@@ -1953,10 +1943,7 @@ country_event = {
 				limit = {
 					exists = event_target:hyperlane_system
 					event_target:hyperlane_system = {
-						count_neighbor_system = {
-							count = 0
-							limit = { NOT = { exists = owner } }
-						}
+						NOT = { any_neighbor_system = { NOT = { exists = owner } } }
 					}
 				}
 				event_target:hyperlane_system = {
@@ -2047,7 +2034,9 @@ country_event = {
 					}
 				}
 				weighted_random_owned_pop_group = {
-					limit = { NOT = { is_same_species = prev } }
+					limit = {
+						NOT = { is_same_species = prev }
+					}
 					species = { save_event_target_as = correct_prepatent_species }
 				}
 			}
@@ -2582,9 +2571,7 @@ country_event = {
 					name = random
 					species = owner_species
 					randomize_traits = no
-					traits = {
-						1 = random_common
-					}
+					traits = { 1 = random_common }
 					effect = {
 						set_council_position = councilor_defense
 					}

@@ -27,10 +27,7 @@ country_event = {
 		# Spawn mini-FE if player turned off Fallen Empires but picked this Origin anyway...
 		if = {
 			limit = {
-				count_country = {
-					count = 0
-					limit = { is_fallen_empire = yes }
-				}
+				NOT = { any_country = { is_fallen_empire = yes } }
 			}
 			set_country_flag = scion_needs_fe
 			if = {
@@ -422,7 +419,9 @@ country_event = {
 					}
 					OR = {
 						has_technology = tech_space_defense_station_improvement
-						NOT = { can_research_technology = tech_space_defense_station_improvement }
+						NOT = {
+							can_research_technology = tech_space_defense_station_improvement
+						}
 					}
 					OR = {
 						has_technology = tech_battleships
@@ -554,9 +553,8 @@ event = {
 						factor = 0
 						OR = {
 							has_country_flag = scion_requested_leader
-							count_owned_leader = {
-								count = 0
-								limit = {
+							NOT = {
+								any_owned_leader = {
 									NOR = {
 										is_ruler = yes
 										has_leader_flag = fe_gifted_leader
@@ -1759,7 +1757,10 @@ country_event = {
 		icon = { icon = GFX_military_federation text = origin.57.B.icon_tooltip }
 		allow = {
 			OR = {
-				custom_tooltip = { fail_text = civic_tooltip_militarist is_militarist = yes }
+				custom_tooltip = {
+					fail_text = civic_tooltip_militarist
+					is_militarist = yes
+				}
 				has_valid_civic = civic_hive_strength_of_legions
 				has_valid_civic = civic_machine_warbots
 			}
@@ -1772,7 +1773,10 @@ country_event = {
 		icon = { icon = GFX_research_federation text = origin.57.C.icon_tooltip }
 		allow = {
 			OR = {
-				custom_tooltip = { fail_text = civic_tooltip_materialist is_materialist = yes }
+				custom_tooltip = {
+					fail_text = civic_tooltip_materialist
+					is_materialist = yes
+				}
 				is_machine_empire = yes
 				has_valid_civic = civic_hive_natural_neural_network
 			}
@@ -1785,7 +1789,10 @@ country_event = {
 		trigger = { is_gestalt = no }
 		icon = { icon = GFX_spiritualist_federation text = origin.57.D.icon_tooltip }
 		allow = {
-			custom_tooltip = { fail_text = civic_tooltip_spiritualist is_spiritualist = yes }
+			custom_tooltip = {
+				fail_text = civic_tooltip_spiritualist
+				is_spiritualist = yes
+			}
 		}
 		federation = { set_federation_type = spiritualist_federation set_name = random }
 		ai_chance = { factor = 10 }
@@ -2494,7 +2501,9 @@ country_event = {
 			}
 			check_planet_employment = yes
 			# Dig site
-			owner = { set_country_flag = broken_shackles_origin_arcsite_owner@prev }
+			owner = {
+				set_country_flag = broken_shackles_origin_arcsite_owner@prev
+			}
 			create_archaeological_site = broken_shackles_digsite
 		}
 		if = {
@@ -2648,10 +2657,7 @@ country_event = {
 	}
 	desc = {
 		trigger = {
-			count_owned_planet = {
-				count = 0
-				limit = { has_deposit = d_crashed_slaver_ship }
-			}
+			NOT = { any_owned_planet = { has_deposit = d_crashed_slaver_ship } }
 		}
 		text = "origin.111.2.desc"
 	}
@@ -2756,10 +2762,7 @@ country_event = {
 	immediate = {
 		if = {
 			limit = { # Vfix opt
-				count_playable_country = {
-					count = 0
-					limit = { has_origin = origin_payback }
-				}
+				NOT = { any_playable_country = { has_origin = origin_payback } }
 			}
 			uplift_pre_ftl_with_origin_effect = {
 				ORIGIN = origin_payback

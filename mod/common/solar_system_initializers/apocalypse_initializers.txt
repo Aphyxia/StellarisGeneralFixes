@@ -2,7 +2,6 @@
 # Abandoned Gateways
 abandoned_gateways_01 = {
 	class = "rl_standard_stars"
-
 	flags = { abandoned_gateway }
 
 	usage = misc_system_init

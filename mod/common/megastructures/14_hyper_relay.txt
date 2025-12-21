@@ -101,9 +101,8 @@ hyper_relay = {
 		custom_tooltip = {
 			fail_text = "requires_surveyed_system" # or is in my subject's territory
 			OR = {
-				count_system_planet = {
-					count = 0
-					limit = {
+				NOT = {
+					any_system_planet = {
 						is_surveyed = { who = prev.from status = no }
 					}
 				}
@@ -130,7 +129,7 @@ hyper_relay = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_hyperlane"
-			count_neighbor_system = { count > 0 }
+			any_neighbor_system = {  }
 		}
 	}
 

@@ -1125,11 +1125,15 @@ country_event = {
 			}
 			else_if = {
 				limit = {
-					NOT = { exists = from }
-					count_owned_planet = { count > 0 }
+					NOR = {
+						exists = from
+						count_owned_planet = { count = 0 }
+					}
 				}
 				if = {
-					limit = { NOT = { exists = capital_scope } }
+					limit = {
+						NOT = { exists = capital_scope }
+					}
 					ordered_owned_planet = {
 						order_by = trigger:sapient_pop_amount
 						position = 0

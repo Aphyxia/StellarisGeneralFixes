@@ -553,36 +553,46 @@ country_event = {
 	immediate = {
 		if = { # Energy Credits
 			limit = {
-				NOT = { has_country_flag = energy_storage_1000 }
-				resource_stockpile_compare = { resource = energy value >= 1000 }
+				NOR = {
+					has_country_flag = energy_storage_1000
+					resource_stockpile_compare = { resource = energy value < 1000 }
+				}
 			}
 			set_country_flag = energy_storage_1000
 		}
 		if = { # Minerals
 			limit = {
-				NOT = { has_country_flag = mineral_storage_1000 }
-				resource_stockpile_compare = { resource = minerals value >= 1000 }
+				NOR = {
+					has_country_flag = mineral_storage_1000
+					resource_stockpile_compare = { resource = minerals value < 1000 }
+				}
 			}
 			set_country_flag = mineral_storage_1000
 		}
 		if = { # Food
 			limit = {
-				NOT = { has_country_flag = food_storage_1000 }
-				resource_stockpile_compare = { resource = food value >= 1000 }
+				NOR = {
+					has_country_flag = food_storage_1000
+					resource_stockpile_compare = { resource = food value < 1000 }
+				}
 			}
 			set_country_flag = food_storage_1000
 		}
 		if = { # Consumer Goods
 			limit = {
-				NOT = { has_country_flag = consumer_goods_storage_1000 }
-				resource_stockpile_compare = { resource = consumer_goods value >= 1000 }
+				NOR = {
+					has_country_flag = consumer_goods_storage_1000
+					resource_stockpile_compare = { resource = consumer_goods value < 1000 }
+				}
 			}
 			set_country_flag = consumer_goods_storage_1000
 		}
 		if = { # Alloys
 			limit = {
-				NOT = { has_country_flag = alloys_storage_1000 }
-				resource_stockpile_compare = { resource = alloys value >= 1000 }
+				NOR = {
+					has_country_flag = alloys_storage_1000
+					resource_stockpile_compare = { resource = alloys value < 1000 }
+				}
 			}
 			set_country_flag = alloys_storage_1000
 		}
@@ -1272,11 +1282,13 @@ country_event = {
 
 	trigger = {
 		has_active_focus = development_focus_510
-		NOT = { has_country_flag = has_excellent_relations }
-		count_relation = {
-			count >= 10
-			limit = {
-				opinion = { who = root value >= 200 }
+		NOR = {
+			has_country_flag = has_excellent_relations
+			count_relation = {
+				count < 10
+				limit = {
+					opinion = { who = root value >= 200 }
+				}
 			}
 		}
 	}

@@ -840,9 +840,7 @@ planet_event = {
 			class = "ROBOT"
 			namelist = "AI"
 			portrait = "hum_robot_red"
-			traits = {
-				trait = "trait_mechanical"
-			}
+			traits = { trait = "trait_mechanical" }
 			effect = {
 				save_global_event_target_as = custodian_bot
 			}
@@ -853,9 +851,7 @@ planet_event = {
 			namelist = "AI"
 			portrait = "ai_crisis_1"
 			immortal = yes
-			traits = {
-				trait = "trait_mechanical"
-			}
+			traits = { trait = "trait_mechanical" }
 			effect = {
 				save_global_event_target_as = contingency_bot
 			}
@@ -1480,13 +1476,19 @@ country_event = {
 	desc = {
 		text = crisis.2037.alt.shielded.desc
 		trigger = {
-			from = { has_planet_flag = destroyed_by_colossus has_planet_flag = planet_shielded }
+			from = {
+				has_planet_flag = destroyed_by_colossus
+				has_planet_flag = planet_shielded
+			}
 		}
 	}
 	desc = {
 		text = crisis.2037.alt.godray.desc
 		trigger = {
-			from = { has_planet_flag = destroyed_by_colossus has_planet_flag = planet_godrayed }
+			from = {
+				has_planet_flag = destroyed_by_colossus
+				has_planet_flag = planet_godrayed
+			}
 		}
 	}
 
@@ -1538,13 +1540,19 @@ country_event = {
 	desc = {
 		text = crisis.2038.shield.desc
 		trigger = {
-			from = { has_planet_flag = destroyed_by_colossus has_planet_flag = planet_shielded }
+			from = {
+				has_planet_flag = destroyed_by_colossus
+				has_planet_flag = planet_shielded
+			}
 		}
 	}
 	desc = {
 		text = crisis.2038.godray.desc
 		trigger = {
-			from = { has_planet_flag = destroyed_by_colossus has_planet_flag = planet_godrayed }
+			from = {
+				has_planet_flag = destroyed_by_colossus
+				has_planet_flag = planet_godrayed
+			}
 		}
 	}
 
@@ -1704,10 +1712,7 @@ planet_event = {
 				create_starbase = { size = starbase_ai owner = event_target:contingency }
 				if = {
 					limit = {
-						count_system_ambient_object = {
-							count = 0
-							limit = { has_ambient_object_flag = contingency_system_effect }
-						}
+						NOT = { any_system_ambient_object = { has_ambient_object_flag = contingency_system_effect } }
 					}
 					star = {
 						create_ambient_object = { type = "contingency_1" location = this }
@@ -2697,8 +2702,10 @@ country_event = {
 			count = 3
 			random_owned_planet = {
 				limit = {
-					num_districts = { type = district_generator value > 3 }
-					NOT = { has_modifier = contingency_sabotage }
+					NOR = {
+						num_districts = { type = district_generator value <= 3 }
+						has_modifier = contingency_sabotage
+					}
 				}
 				add_modifier = { modifier = "contingency_sabotage" years = 5 }
 			}
@@ -3754,9 +3761,7 @@ country_event = {
 			species = owner_species
 			name = random
 			skill = 5
-			traits = {
-				trait = leader_trait_cybrex
-			}
+			traits = { trait = leader_trait_cybrex }
 			effect = {
 				set_age = 0
 			}
@@ -3819,9 +3824,7 @@ country_event = {
 			species = owner_species
 			name = random
 			skill = 5
-			traits = {
-				trait = leader_trait_cybrex
-			}
+			traits = { trait = leader_trait_cybrex }
 			effect = {
 				set_age = 0
 			}
@@ -3901,12 +3904,14 @@ country_event = {
 		NOR = {
 			has_global_flag = cybrex_destroyed
 			has_country_flag = cybrex_donation
+			check_variable = { which = "contingency_fleet_kills" value <= 100 }
 		}
-		check_variable = { which = "contingency_fleet_kills" value > 100 }
 		any_country = {
 			is_country_type = cybrex_empire
-			count_controlled_ship = { count > 30 }
-			NOT = { root = { is_at_war_with = prev } }
+			NOR = {
+				count_controlled_ship = { count <= 30 }
+				root = { is_at_war_with = prev }
+			}
 		}
 	}
 
@@ -4089,10 +4094,7 @@ ship_event = {
 		solar_system = {
 			if = {
 				limit = {
-					count_system_ambient_object = {
-						count = 0
-						limit = { has_ambient_object_flag = contingency_system_effect }
-					}
+					NOT = { any_system_ambient_object = { has_ambient_object_flag = contingency_system_effect } }
 				}
 				star = {
 					create_ambient_object = { type = "contingency_1" location = this }

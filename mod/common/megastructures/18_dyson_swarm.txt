@@ -3,7 +3,6 @@ dyson_swarm_1 = {
 	entity = "dyson_swarm_phase_1_entity"
 	construction_entity = "dyson_swarm_phase_1_entity"
 	portrait = "GFX_megastructure_dyson_swarm_background"
-
 	entity_offset = { x = 0.1 y = 0.1 }
 
 	rotate_to_center = no
@@ -87,12 +86,14 @@ dyson_swarm_1 = {
 
 	possible = {
 		hidden_trigger = { exists = starbase }
-		custom_tooltip = { fail_text = "requires_inside_border" is_inside_border = from }
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
 		custom_tooltip = {
 			fail_text = "requires_surveyed_system"
-			count_system_planet = {
-				count = 0
-				limit = {
+			NOT = {
+				any_system_planet = {
 					is_surveyed = { who = prev.from status = no }
 				}
 			}
@@ -120,8 +121,14 @@ dyson_swarm_1 = {
 
 	placement_rules = {
 		planet_possible = {
-			custom_tooltip = { fail_text = "must_build_around_star" is_star = yes }
-			custom_tooltip = { fail_text = "requires_no_anomaly" has_anomaly = no }
+			custom_tooltip = {
+				fail_text = "must_build_around_star"
+				is_star = yes
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_anomaly"
+				has_anomaly = no
+			}
 			custom_tooltip = {
 				fail_text = "requires_no_existing_megastructure"
 				NOR = {
@@ -205,7 +212,6 @@ dyson_swarm_2 = {
 	entity = "dyson_swarm_phase_2_entity"
 	construction_entity = "dyson_swarm_phase_2_entity"
 	portrait = "GFX_megastructure_dyson_swarm_background"
-
 	entity_offset = { x = -0.1 y = -0.1 }
 
 	rotate_to_center = no
@@ -306,7 +312,6 @@ dyson_swarm_3 = {
 	entity = "dyson_swarm_phase_3_entity"
 	construction_entity = "dyson_swarm_phase_3_entity"
 	portrait = "GFX_megastructure_dyson_swarm_background"
-
 	entity_offset = { x = -0.1 y = -0.1 }
 
 	rotate_to_center = no

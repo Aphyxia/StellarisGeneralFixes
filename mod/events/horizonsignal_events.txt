@@ -687,7 +687,10 @@ planet_event = {
 		trigger = {
 			owner = { is_spiritualist = yes }
 		}
-		add_modifier = { modifier = spiritual_happy_with_open_loop_temple days = -1 }
+		add_modifier = {
+			modifier = spiritual_happy_with_open_loop_temple
+			days = -1
+		}
 		owner = {
 			hidden_effect = {
 				set_country_flag = worm_events_available

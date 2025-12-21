@@ -195,9 +195,7 @@ country_event = {
 						species = event_target:extradimensional_species
 						name = random
 						skill = 3
-						traits = {
-							trait = leader_trait_ethereal
-						}
+						traits = { trait = leader_trait_ethereal }
 					}
 					create_fleet = {
 						effect = {
@@ -322,9 +320,7 @@ fleet_event = {
 						species = event_target:extradimensional_species
 						name = random
 						skill = 3
-						traits = {
-							trait = leader_trait_ethereal
-						}
+						traits = { trait = leader_trait_ethereal }
 					}
 				}
 				25 = {
@@ -333,9 +329,7 @@ fleet_event = {
 						species = event_target:extradimensional_species
 						name = random
 						skill = 3
-						traits = {
-							trait = leader_trait_dimensional_stutter
-						}
+						traits = { trait = leader_trait_dimensional_stutter }
 					}
 				}
 				50 = {
@@ -1318,9 +1312,7 @@ country_event = {
 								species = event_target:extradimensional_hunters_species
 								name = random
 								skill = 3
-								traits = {
-									trait = leader_trait_ethereal
-								}
+								traits = { trait = leader_trait_ethereal }
 							}
 						}
 						25 = {
@@ -1329,9 +1321,7 @@ country_event = {
 								species = event_target:extradimensional_hunters_species
 								name = random
 								skill = 3
-								traits = {
-									trait = leader_trait_dimensional_stutter
-								}
+								traits = { trait = leader_trait_dimensional_stutter }
 							}
 						}
 						50 = {
@@ -1439,9 +1429,7 @@ fleet_event = {
 						species = event_target:extradimensional_hunters_species
 						name = random
 						skill = 3
-						traits = {
-							trait = leader_trait_ethereal
-						}
+						traits = { trait = leader_trait_ethereal }
 					}
 				}
 				25 = {
@@ -1450,9 +1438,7 @@ fleet_event = {
 						species = event_target:extradimensional_hunters_species
 						name = random
 						skill = 3
-						traits = {
-							trait = leader_trait_dimensional_stutter
-						}
+						traits = { trait = leader_trait_dimensional_stutter }
 					}
 				}
 				50 = {
@@ -1865,9 +1851,7 @@ country_event = {
 									species = event_target:extradimensional_trespassers_species
 									name = random
 									skill = 3
-									traits = {
-										trait = leader_trait_ethereal
-									}
+									traits = { trait = leader_trait_ethereal }
 								}
 							}
 							25 = {
@@ -1876,9 +1860,7 @@ country_event = {
 									species = event_target:extradimensional_trespassers_species
 									name = random
 									skill = 3
-									traits = {
-										trait = leader_trait_dimensional_stutter
-									}
+									traits = { trait = leader_trait_dimensional_stutter }
 								}
 							}
 							50 = {
@@ -1985,9 +1967,7 @@ fleet_event = {
 						species = event_target:extradimensional_trespassers_species
 						name = random
 						skill = 3
-						traits = {
-							trait = leader_trait_ethereal
-						}
+						traits = { trait = leader_trait_ethereal }
 					}
 				}
 				25 = {
@@ -1996,9 +1976,7 @@ fleet_event = {
 						species = event_target:extradimensional_trespassers_species
 						name = random
 						skill = 3
-						traits = {
-							trait = leader_trait_dimensional_stutter
-						}
+						traits = { trait = leader_trait_dimensional_stutter }
 					}
 				}
 				50 = {
@@ -2265,6 +2243,7 @@ event = {
 	is_triggered_only = yes
 
 	trigger = {
+		has_global_flag = extradimensional_first_portal_destroyed # Vfix opt
 		any_country = {
 			OR = {
 				is_country_type = extradimensional
@@ -2276,27 +2255,25 @@ event = {
 
 	immediate = {
 		if = {
-			limit = {
+			limit = { # Vfix (the whole mess)
+				OR = {
+					NOR = {
+						has_global_flag = extradimensional_second_portal
+						has_global_flag = extradimensional_third_portal
+					}
+					AND = {
+						has_global_flag = extradimensional_second_portal_destroyed
+						OR = {
+							NOT = { has_global_flag = extradimensional_third_portal }
+							has_global_flag = extradimensional_third_portal_destroyed
+						}
+					}
+				}
 				any_country = {
 					OR = {
 						is_country_type = extradimensional
 						is_country_type = extradimensional_2
 						is_country_type = extradimensional_3
-					}
-					has_global_flag = extradimensional_first_portal_destroyed
-					OR = {
-						NOR = {
-							has_global_flag = extradimensional_second_portal
-							has_global_flag = extradimensional_third_portal
-						}
-						AND = {
-							has_global_flag = extradimensional_second_portal_destroyed
-							NOT = { has_global_flag = extradimensional_third_portal }
-						}
-						AND = {
-							has_global_flag = extradimensional_second_portal_destroyed
-							has_global_flag = extradimensional_third_portal_destroyed
-						}
 					}
 					NOR = {
 						num_ships >= 6
@@ -2305,34 +2282,8 @@ event = {
 							is_country_type = portal_holder
 							any_controlled_ship = { is_ship_size = dimensional_portal_ed }
 						}
-					}
-					count_system = {
-						count = 0
-						limit = {
-							any_system_planet = {
-								controller = {
-									OR = {
-										is_country_type = extradimensional
-										is_country_type = extradimensional_2
-										is_country_type = extradimensional_3
-									}
-								}
-							}
-						}
-					}
-					count_system = {
-						count = 0
-						limit = {
-							any_system_planet = {
-								owner = {
-									OR = {
-										is_country_type = extradimensional
-										is_country_type = extradimensional_2
-										is_country_type = extradimensional_3
-									}
-								}
-							}
-						}
+						num_owned_planets > 0
+						any_controlled_planet = { has_owner = yes }
 					}
 				}
 			}
@@ -2363,19 +2314,10 @@ country_event = {
 			is_country_type = extradimensional_3
 		}
 		OR = {
-			count_controlled_ship = {
-				count > 0
-				limit = { is_ship_size = dimensional_portal_ed }
-			}
+			any_controlled_ship = { is_ship_size = dimensional_portal_ed }
 			any_country = {
 				is_country_type = portal_holder
-				count_controlled_ship = {
-					count > 0
-					limit = {
-						is_ship_size = dimensional_portal_ed
-						is_within_borders_of = root
-					}
-				}
+				any_controlled_ship = { is_ship_size = dimensional_portal_ed is_within_borders_of = root }
 			}
 		}
 	}
@@ -2391,10 +2333,7 @@ country_event = {
 		# If no Anchors
 		else_if = {
 			limit = {
-				count_controlled_ship = {
-					count < 1
-					limit = { is_ship_size = starbase_exd }
-				}
+				NOT = { any_controlled_ship = { is_ship_size = starbase_exd } }
 			}
 			country_event = { id = crisis.1265 days = 1500 random = 200 }
 		}
@@ -2500,19 +2439,10 @@ country_event = {
 	trigger = {
 		# Must only trigger if portal is still alive
 		OR = {
-			count_controlled_ship = {
-				count > 0
-				limit = { is_ship_size = dimensional_portal_ed }
-			}
+			any_controlled_ship = { is_ship_size = dimensional_portal_ed }
 			any_country = {
 				is_country_type = portal_holder
-				count_controlled_ship = {
-					count > 0
-					limit = {
-						is_ship_size = dimensional_portal_ed
-						is_within_borders_of = root
-					}
-				}
+				any_controlled_ship = { is_ship_size = dimensional_portal_ed is_within_borders_of = root }
 			}
 		}
 	}
@@ -2545,9 +2475,7 @@ country_event = {
 						species = event_target:extradimensional_species
 						name = random
 						skill = 3
-						traits = {
-							trait = leader_trait_ethereal
-						}
+						traits = { trait = leader_trait_ethereal }
 					}
 				}
 				25 = {
@@ -2556,9 +2484,7 @@ country_event = {
 						species = event_target:extradimensional_species
 						name = random
 						skill = 3
-						traits = {
-							trait = leader_trait_dimensional_stutter
-						}
+						traits = { trait = leader_trait_dimensional_stutter }
 					}
 				}
 				50 = {
@@ -2627,9 +2553,7 @@ country_event = {
 						species = event_target:extradimensional_species
 						name = random
 						skill = 3
-						traits = {
-							trait = leader_trait_ethereal
-						}
+						traits = { trait = leader_trait_ethereal }
 					}
 				}
 				25 = {
@@ -2638,9 +2562,7 @@ country_event = {
 						species = event_target:extradimensional_species
 						name = random
 						skill = 3
-						traits = {
-							trait = leader_trait_dimensional_stutter
-						}
+						traits = { trait = leader_trait_dimensional_stutter }
 					}
 				}
 				50 = {
@@ -2709,9 +2631,7 @@ country_event = {
 						species = event_target:extradimensional_species
 						name = random
 						skill = 3
-						traits = {
-							trait = leader_trait_ethereal
-						}
+						traits = { trait = leader_trait_ethereal }
 					}
 				}
 				25 = {
@@ -2720,9 +2640,7 @@ country_event = {
 						species = event_target:extradimensional_species
 						name = random
 						skill = 3
-						traits = {
-							trait = leader_trait_dimensional_stutter
-						}
+						traits = { trait = leader_trait_dimensional_stutter }
 					}
 				}
 				50 = {
@@ -2792,19 +2710,10 @@ country_event = {
 	trigger = {
 		# Must only trigger if portal is still alive
 		OR = {
-			count_controlled_ship = {
-				count > 0
-				limit = { is_ship_size = dimensional_portal_ed }
-			}
+			any_controlled_ship = { is_ship_size = dimensional_portal_ed }
 			any_country = {
 				is_country_type = portal_holder
-				count_controlled_ship = {
-					count > 0
-					limit = {
-						is_ship_size = dimensional_portal_ed
-						is_within_borders_of = root
-					}
-				}
+				any_controlled_ship = { is_ship_size = dimensional_portal_ed is_within_borders_of = root }
 			}
 		}
 		count_controlled_ship = {
@@ -2906,32 +2815,21 @@ ship_event = {
 	trigger = {
 		# is_ship_size = starbase_exd # now implicit
 		owner = {
-			OR = {
+			OR = { # Vfix double
 				is_country_type = extradimensional
 				is_country_type = extradimensional_2
 				is_country_type = extradimensional_3
 			}
 			# Must only trigger if portal is still alive
 			OR = {
-				count_controlled_ship = {
-					count > 0
-					limit = { is_ship_size = dimensional_portal_ed }
-				}
+				any_controlled_ship = { is_ship_size = dimensional_portal_ed }
 				any_country = {
 					is_country_type = portal_holder
-					count_controlled_ship = {
-						count > 0
-						limit = {
-							is_ship_size = dimensional_portal_ed
-							is_within_borders_of = root.owner
-						}
+					any_controlled_ship = {
+						is_ship_size = dimensional_portal_ed
+						is_within_borders_of = root.owner
 					}
 				}
-			}
-			OR = {
-				is_country_type = extradimensional
-				is_country_type = extradimensional_2
-				is_country_type = extradimensional_3
 			}
 			num_ships < 2001
 		}
@@ -2966,9 +2864,7 @@ ship_event = {
 							species = event_target:extradimensional_species
 							name = random
 							skill = 3
-							traits = {
-								trait = leader_trait_ethereal
-							}
+							traits = { trait = leader_trait_ethereal }
 						}
 					}
 					25 = {
@@ -2977,9 +2873,7 @@ ship_event = {
 							species = event_target:extradimensional_species
 							name = random
 							skill = 3
-							traits = {
-								trait = leader_trait_dimensional_stutter
-							}
+							traits = { trait = leader_trait_dimensional_stutter }
 						}
 					}
 					50 = {
@@ -3048,9 +2942,7 @@ ship_event = {
 							species = event_target:extradimensional_species
 							name = random
 							skill = 3
-							traits = {
-								trait = leader_trait_ethereal
-							}
+							traits = { trait = leader_trait_ethereal }
 						}
 					}
 					25 = {
@@ -3059,9 +2951,7 @@ ship_event = {
 							species = event_target:extradimensional_species
 							name = random
 							skill = 3
-							traits = {
-								trait = leader_trait_dimensional_stutter
-							}
+							traits = { trait = leader_trait_dimensional_stutter }
 						}
 					}
 					50 = {
@@ -3130,9 +3020,7 @@ ship_event = {
 							species = event_target:extradimensional_species
 							name = random
 							skill = 3
-							traits = {
-								trait = leader_trait_ethereal
-							}
+							traits = { trait = leader_trait_ethereal }
 						}
 					}
 					25 = {
@@ -3141,9 +3029,7 @@ ship_event = {
 							species = event_target:extradimensional_species
 							name = random
 							skill = 3
-							traits = {
-								trait = leader_trait_dimensional_stutter
-							}
+							traits = { trait = leader_trait_dimensional_stutter }
 						}
 					}
 					50 = {
@@ -3217,9 +3103,8 @@ country_event = {
 			is_country_type = extradimensional_2
 			is_country_type = extradimensional_3
 		}
-		count_country = {
-			count = 0
-			limit = {
+		NOT = {
+			any_country = {
 				NOT = { is_same_empire = root }
 				OR = {
 					is_country_type = extradimensional
@@ -3234,10 +3119,7 @@ country_event = {
 		observer_event = { id = observer.40 }
 		every_country = {
 			limit = {
-				OR = {
-					is_country_type = default
-					is_country_type = fallen_empire
-				}
+				is_default_or_fallen = yes # Vfix
 			}
 			country_event = { id = crisis.1271 }
 		}
@@ -3455,10 +3337,7 @@ country_event = {
 		log = "anchor destroyed event crisis.1281 triggered"
 		if = {
 			limit = {
-				count_controlled_ship = {
-					count < 1
-					limit = { is_ship_size = starbase_exd }
-				}
+				NOT = { any_controlled_ship = { is_ship_size = starbase_exd } }
 			}
 			switch = {
 				trigger = has_country_flag
@@ -3708,9 +3587,8 @@ country_event = {
 			is_country_type = extradimensional_2
 			is_country_type = extradimensional_3
 		}
-		count_country = {
-			count = 0
-			limit = {
+		NOT = {
+			any_country = {
 				OR = {
 					is_country_type = extradimensional
 					is_country_type = extradimensional_2
@@ -3773,9 +3651,8 @@ country_event = {
 			is_country_type = extradimensional_2
 			is_country_type = extradimensional_3
 		}
-		count_country = {
-			count = 0
-			limit = {
+		NOT = {
+			any_country = {
 				OR = {
 					is_country_type = extradimensional
 					is_country_type = extradimensional_2
@@ -4000,10 +3877,7 @@ ship_event = {
 		solar_system = {
 			if = {
 				limit = {
-					count_system_ambient_object = {
-						count = 0
-						limit = { has_ambient_object_flag = extradimensional_system_effect }
-					}
+					NOT = { any_system_ambient_object = { has_ambient_object_flag = extradimensional_system_effect } }
 				}
 				star = {
 					create_ambient_object = { type = "extradimensional_1" location = this }

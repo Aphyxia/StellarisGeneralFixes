@@ -448,7 +448,10 @@ ship_event = {
 		name = "country.5.a"
 		from = { save_event_target_as = ion_trail_system }
 		hidden_effect = {
-			owner = { set_country_flag = chasing_ion_trail set_country_flag = probe_salvage_flag }
+			owner = {
+				set_country_flag = chasing_ion_trail
+				set_country_flag = probe_salvage_flag
+			}
 			closest_system = {
 				limit = {
 					NOR = {
@@ -493,7 +496,10 @@ fleet_event = {
 	}
 
 	immediate = {
-		from = { remove_star_flag = ion_trail_target save_event_target_as = salvager_system }
+		from = {
+			remove_star_flag = ion_trail_target
+			save_event_target_as = salvager_system
+		}
 		owner = {
 			remove_country_flag = chasing_ion_trail
 			remove_point_of_interest = probe_ion_trail_poi.1
@@ -571,7 +577,9 @@ ship_event = {
 			}
 		}
 		response_text = country.7.b.response
-		owner = { add_resource = { energy = -100 } }
+		owner = {
+			add_resource = { energy = -100 }
+		}
 		hidden_effect = {
 			owner = {
 				country_event = { id = country.8 days = 3 }
@@ -2464,7 +2472,10 @@ fleet_event = {
 	}
 
 	immediate = {
-		owner = { save_event_target_as = owner_country set_country_flag = cultists_sighted_1 }
+		owner = {
+			save_event_target_as = owner_country
+			set_country_flag = cultists_sighted_1
+		}
 		from = {
 			random_system_planet = {
 				limit = {
@@ -2627,7 +2638,10 @@ fleet_event = {
 	}
 
 	immediate = {
-		owner = { save_event_target_as = owner_country set_country_flag = cultists_sighted_2 }
+		owner = {
+			save_event_target_as = owner_country
+			set_country_flag = cultists_sighted_2
+		}
 		from = {
 			random_system_planet = {
 				limit = {
@@ -2704,7 +2718,10 @@ fleet_event = {
 	}
 
 	immediate = {
-		owner = { set_country_flag = cultists_sighted_3 save_event_target_as = owner_country }
+		owner = {
+			set_country_flag = cultists_sighted_3
+			save_event_target_as = owner_country
+		}
 		from = {
 			random_system_planet = {
 				limit = {
@@ -2855,7 +2872,7 @@ country_event = {
 							has_star_flag = hostile_system
 							has_star_flag = hidden_treasure_system # Vfix
 							has_owner = yes
-							count_system_colony = { count > 0 }
+							any_system_colony = {  }
 							root = {
 								intel_level = { level > low system = prev }
 							}

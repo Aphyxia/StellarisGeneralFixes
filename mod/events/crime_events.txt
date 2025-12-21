@@ -24,7 +24,9 @@ planet_event = {
 				}
 			}
 			else_if = {
-				limit = { owner = { is_hive_empire = yes } }
+				limit = {
+					owner = { is_hive_empire = yes }
+				}
 				text = crime.1.b.desc
 				if = {
 					limit = {
@@ -192,7 +194,9 @@ planet_event = {
 					text = crime.1.b.experimenters
 				}
 				else_if = {
-					limit = { owner = { is_hive_empire = yes } }
+					limit = {
+						owner = { is_hive_empire = yes }
+					}
 					text = crime.1.b2.experimenters
 				}
 			}
@@ -202,7 +206,9 @@ planet_event = {
 			add_modifier = { modifier = "criminal_underworld_experimenters" days = -1 }
 		}
 		else_if = {
-			limit = { owner = { is_hive_empire = yes } }
+			limit = {
+				owner = { is_hive_empire = yes }
+			}
 			add_modifier = { modifier = "drone_deviancy_experimenters" days = -1 }
 		}
 	}
@@ -739,7 +745,9 @@ planet_event = {
 				}
 			}
 			else_if = {
-				limit = { owner = { is_hive_empire = yes } }
+				limit = {
+					owner = { is_hive_empire = yes }
+				}
 				text = crime.40.b.desc
 				if = {
 					limit = {
@@ -828,7 +836,9 @@ planet_event = {
 			break = yes
 		}
 		if = {
-			limit = { owner = { is_hive_empire = yes } }
+			limit = {
+				owner = { is_hive_empire = yes }
+			}
 			if = {
 				limit = {
 					owner = { is_twisted_experimenters_empire = yes }
@@ -875,7 +885,9 @@ planet_event = {
 		name = {
 			trigger = {
 				if = {
-					limit = { owner = { is_hive_empire = yes } }
+					limit = {
+						owner = { is_hive_empire = yes }
+					}
 					text = crime.40.b.experimenters
 				}
 				else = {
@@ -888,7 +900,9 @@ planet_event = {
 		}
 		tooltip = {
 			if = {
-				limit = { owner = { is_hive_empire = yes } }
+				limit = {
+					owner = { is_hive_empire = yes }
+				}
 				add_modifier = { modifier = "drone_deviancy_experimenters" days = -1 }
 			}
 			else = {
@@ -932,7 +946,9 @@ planet_event = {
 				}
 			}
 			else_if = {
-				limit = { owner = { is_hive_empire = yes } }
+				limit = {
+					owner = { is_hive_empire = yes }
+				}
 				text = crime.41.b.desc
 				if = {
 					limit = {

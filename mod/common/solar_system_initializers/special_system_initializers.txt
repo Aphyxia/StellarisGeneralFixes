@@ -49,7 +49,6 @@ special_init_06 = {
 
 	max_instances = 1
 	scaled_spawn_chance = 3	# scales by galaxy size (1000 stars = 10x base)
-
 	flags = { guardians_of_zanaam hostile_system }
 
 	planet = {
@@ -183,7 +182,6 @@ special_init_07 = {
 	}
 
 	max_instances = 1
-
 	flags = { hostile_system }
 
 	planet = {
@@ -398,7 +396,6 @@ special_init_09 = {
 
 hyacinth_system = {
 	class = "rl_standard_stars"
-
 	flags = { hyacinth_system }
 
 	planet = {
@@ -452,7 +449,6 @@ hyacinth_system = {
 # AI Revolt System
 ai_system_1 = {
 	class = "rl_standard_stars"
-
 	flags = { ai_system }
 
 	asteroid_belt = {
@@ -551,7 +547,6 @@ ai_system_1 = {
 # Crystal Manufactory version of Basic 4
 crystal_manufactory_system = {
 	class = "rl_standard_stars"
-
 	flags = { manufactory_system }
 
 	asteroid_belt = {
@@ -927,7 +922,10 @@ polaris_civilization = {
 							queue_actions = {
 								repeat = {
 									find_closest_planet = {
-										trigger = { id = polaris.patrol.1 has_planet_flag = polaris_patrol_1 }
+										trigger = {
+											id = polaris.patrol.1
+											has_planet_flag = polaris_patrol_1
+										}
 										found_planet = {
 											move_to = this
 											orbit_planet = this
@@ -935,7 +933,10 @@ polaris_civilization = {
 										}
 									}
 									find_closest_planet = {
-										trigger = { id = polaris.patrol.2 has_planet_flag = polaris_patrol_2 }
+										trigger = {
+											id = polaris.patrol.2
+											has_planet_flag = polaris_patrol_2
+										}
 										found_planet = {
 											move_to = this
 											orbit_planet = this
@@ -943,7 +944,10 @@ polaris_civilization = {
 										}
 									}
 									find_closest_planet = {
-										trigger = { id = polaris.patrol.3 has_planet_flag = polaris_patrol_3 }
+										trigger = {
+											id = polaris.patrol.3
+											has_planet_flag = polaris_patrol_3
+										}
 										found_planet = {
 											move_to = this
 											orbit_planet = this
@@ -1003,7 +1007,6 @@ fumongus_init_01 = {
 		type = rocky_asteroid_belt
 		radius = 110
 	}
-
 	flags = { fumongus_system hostile_system }
 
 	# create nebula
@@ -1073,15 +1076,24 @@ fumongus_init_01 = {
 					queue_actions = {
 						repeat = {
 							find_closest_planet = {
-								trigger = { id = "fumongusC.1.trigger.1" is_planet = event_target:fumongus_trigger_1 }
+								trigger = {
+									id = "fumongusC.1.trigger.1"
+									is_planet = event_target:fumongus_trigger_1
+								}
 								found_planet = { move_to = this orbit_planet = this }
 							}
 							find_closest_planet = {
-								trigger = { id = "fumongusC.1.trigger.2" is_planet = event_target:fumongus_trigger_2 }
+								trigger = {
+									id = "fumongusC.1.trigger.2"
+									is_planet = event_target:fumongus_trigger_2
+								}
 								found_planet = { move_to = this orbit_planet = this }
 							}
 							find_closest_planet = {
-								trigger = { id = "fumongusC.1.trigger.3" is_planet = event_target:fumongus_trigger_3 }
+								trigger = {
+									id = "fumongusC.1.trigger.3"
+									is_planet = event_target:fumongus_trigger_3
+								}
 								found_planet = { move_to = this orbit_planet = this }
 							}
 						}
@@ -1278,7 +1290,10 @@ ghost_ship_system_initializer_01 = {
 						queue_actions = {
 							repeat = {
 								find_closest_planet = {
-									trigger = { id = hillos.patrol.1 has_planet_flag = hillos_patrol_2 }
+									trigger = {
+										id = hillos.patrol.1
+										has_planet_flag = hillos_patrol_2
+									}
 									found_planet = {
 										move_to = this
 										orbit_planet = this
@@ -1286,7 +1301,10 @@ ghost_ship_system_initializer_01 = {
 									}
 								}
 								find_closest_planet = {
-									trigger = { id = hillos.patrol.2 has_planet_flag = hillos_patrol_3 }
+									trigger = {
+										id = hillos.patrol.2
+										has_planet_flag = hillos_patrol_3
+									}
 									found_planet = {
 										move_to = this
 										orbit_planet = this
@@ -1294,7 +1312,10 @@ ghost_ship_system_initializer_01 = {
 									}
 								}
 								find_closest_planet = {
-									trigger = { id = hillos.patrol.3 has_planet_flag = hillos_patrol_4 }
+									trigger = {
+										id = hillos.patrol.3
+										has_planet_flag = hillos_patrol_4
+									}
 									found_planet = {
 										move_to = this
 										orbit_planet = this
@@ -1302,7 +1323,10 @@ ghost_ship_system_initializer_01 = {
 									}
 								}
 								find_closest_planet = {
-									trigger = { id = hillos.patrol.4 has_planet_flag = hillos_patrol_1 }
+									trigger = {
+										id = hillos.patrol.4
+										has_planet_flag = hillos_patrol_1
+									}
 									found_planet = {
 										move_to = this
 										orbit_planet = this
@@ -1337,7 +1361,6 @@ surveillance_supercomputer_system = {
 
 	usage = misc_system_init
 	usage_odds = 0
-
 	flags = { surveillance_supercomputer_system hostile_system crisis_spawn_exclude sealed_system }
 
 	planet = {
@@ -1588,7 +1611,6 @@ locust_system_initializer_01 = {
 		type = rocky_asteroid_belt
 		radius = 85
 	}
-
 	flags = { lost_swarm_system hostile_system }
 
 	usage = misc_system_init
@@ -1778,7 +1800,10 @@ locust_system_initializer_01 = {
 						queue_actions = {
 							repeat = {
 								find_closest_planet = {
-									trigger = { id = lostswarm.patrol.1 has_planet_flag = broken_fortress_1 }
+									trigger = {
+										id = lostswarm.patrol.1
+										has_planet_flag = broken_fortress_1
+									}
 									found_planet = { move_to = this orbit_planet = this }
 								}
 								wait = 45
@@ -1814,7 +1839,6 @@ holibrae_initializer = {
 
 	max_instances = 1
 	scaled_spawn_chance = 10
-
 	flags = { holibrae_system hostile_system }
 
 	# create nebula
@@ -1877,15 +1901,24 @@ holibrae_initializer = {
 					queue_actions = {
 						repeat = {
 							find_closest_planet = {
-								trigger = { id = "holibraeC.1.trigger.1" is_planet = event_target:holibrae_trigger_1 }
+								trigger = {
+									id = "holibraeC.1.trigger.1"
+									is_planet = event_target:holibrae_trigger_1
+								}
 								found_planet = { move_to = this orbit_planet = this }
 							}
 							find_closest_planet = {
-								trigger = { id = "holibraeC.1.trigger.2" is_planet = event_target:holibrae_trigger_2 }
+								trigger = {
+									id = "holibraeC.1.trigger.2"
+									is_planet = event_target:holibrae_trigger_2
+								}
 								found_planet = { move_to = this orbit_planet = this }
 							}
 							find_closest_planet = {
-								trigger = { id = "holibraeC.1.trigger.3" is_planet = event_target:holibrae_trigger_3 }
+								trigger = {
+									id = "holibraeC.1.trigger.3"
+									is_planet = event_target:holibrae_trigger_3
+								}
 								found_planet = { move_to = this orbit_planet = this }
 							}
 						}
@@ -2016,7 +2049,6 @@ debris_belt_initializer = {
 the_chosen_home_initializer = {
 	class = sc_g
 	name = NAME_Aspharelle
-
 	flags = { chosen_system crisis_spawn_exclude }
 
 	usage = misc_system_init
@@ -2081,7 +2113,10 @@ the_chosen_home_initializer = {
 				adjective = NAME_ADJ_Chosen
 				type = default
 				origin = origin_life_seeded_ai_only
-				ethos = { ethic = ethic_fanatic_xenophobe ethic = ethic_spiritualist }
+				ethos = {
+					ethic = ethic_fanatic_xenophobe
+					ethic = ethic_spiritualist
+				}
 				civics = {
 					civic = civic_fanatic_purifiers
 					civic = civic_exalted_priesthood
@@ -2218,7 +2253,6 @@ the_chosen_home_initializer = {
 the_chosen_resources_initializer = {
 	class = rl_standard_stars
 	name = NAME_Taremes
-
 	flags = { chosen_system crisis_spawn_exclude }
 
 	usage = misc_system_init
@@ -2294,7 +2328,6 @@ the_chosen_resources_initializer = {
 the_chosen_resources_initializer2 = {
 	class = rl_standard_stars
 	name = NAME_Ereba
-
 	flags = { chosen_system crisis_spawn_exclude }
 
 	usage = misc_system_init
@@ -2377,7 +2410,6 @@ the_chosen_resources_initializer2 = {
 the_chosen_gate_initializer = {
 	class = sc_black_hole
 	name = NAME_Ithomes_Gate
-
 	flags = { chosen_system crisis_spawn_exclude ithomes_gate }
 
 	usage = misc_system_init
@@ -2494,7 +2526,6 @@ the_chosen_gate_initializer = {
 the_chosen_escapee_initializer = {
 	class = sc_g
 	name = NAME_Ophala
-
 	flags = { chosen_system crisis_spawn_exclude }
 
 	usage = misc_system_init
@@ -2587,7 +2618,6 @@ the_star_mall_initializer = {
 
 	max_instances = 1
 	scaled_spawn_chance = 3	# scales by galaxy size (1000 stars = 10x base)
-
 	flags = { star_mall hostile_system }
 
 	planet = {

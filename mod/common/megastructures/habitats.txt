@@ -11,7 +11,6 @@ habitat_central_complex = {
 	show_galactic_map_icon = no
 	hide_name = yes
 	show_in_outliner = no
-
 	entity_offset = { x = 7 y = -7 }
 
 	build_time = @central_orbital_build_time
@@ -56,7 +55,10 @@ habitat_central_complex = {
 
 	possible = {
 		hidden_trigger = { exists = starbase }
-		custom_tooltip = { fail_text = "requires_inside_border" is_inside_border = from }
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
 		custom_tooltip = {
 			fail_text = "requires_not_habitat_central_complex"
 			NOR = {
@@ -71,10 +73,7 @@ habitat_central_complex = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_no_orbital_debris"
-			count_system_planet = {
-				count = 0
-				limit = { has_planet_flag = has_orbital_debris }
-			}
+			NOT = { any_system_planet = { has_planet_flag = has_orbital_debris } }
 		}
 		# The AI has a hard cap on number of habitats scaling with galaxy size and difficulty
 		hidden_trigger = {
@@ -102,7 +101,10 @@ habitat_central_complex = {
 					status = yes
 				}
 			}
-			custom_tooltip = { fail_text = "requires_no_anomaly" has_anomaly = no }
+			custom_tooltip = {
+				fail_text = "requires_no_anomaly"
+				has_anomaly = no
+			}
 			custom_tooltip = {
 				fail_text = "requires_no_existing_megastructure"
 				# can_build_megastructure_on_planet = yes
@@ -130,7 +132,10 @@ habitat_central_complex = {
 				is_asteroid = no
 				is_moon = no
 			}
-			custom_tooltip = { fail_text = "requires_not_astral_scar" is_astral_scar = no }
+			custom_tooltip = {
+				fail_text = "requires_not_astral_scar"
+				is_astral_scar = no
+			}
 			custom_tooltip = {
 				fail_text = "requires_not_solarpunk"
 				NOT = { solar_system = { has_star_flag = solarpunk_system_02 } }
@@ -216,7 +221,6 @@ habitat_central_complex_ruined = {
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
 	show_in_outliner = no
-
 	entity_offset = { x = 7 y = -7 }
 
 	potential = {
@@ -233,7 +237,6 @@ habitat_central_complex_restored = {
 	show_galactic_map_icon = no
 	hide_name = yes
 	show_in_outliner = no
-
 	entity_offset = { x = 7 y = -7 }
 
 	build_time = @central_orbital_build_time
@@ -327,7 +330,6 @@ habitat_major_orbital = {
 	use_planet_resource = yes
 	hide_name = yes
 	show_in_outliner = no
-
 	entity_offset = { x = -7 y = -7 }
 
 	build_time = 900
@@ -385,7 +387,6 @@ habitat_minor_orbital = {
 	use_planet_resource = yes
 	hide_name = yes
 	show_in_outliner = no
-
 	entity_offset = { x = -7 y = -7 }
 
 	build_time = 900

@@ -134,7 +134,9 @@ country_event = {
 
 	# Militarist
 	option = {
-		trigger = { owner = { is_militarist = yes } }
+		trigger = {
+			owner = { is_militarist = yes }
+		}
 		name = "story.contact_report.militarist"
 		if = {
 			limit = {
@@ -343,7 +345,10 @@ country_event = {
 
 	# Followup
 	desc = {
-		trigger = { has_country_flag = Story1 is_gestalt = no }
+		trigger = {
+			has_country_flag = Story1
+			is_gestalt = no
+		}
 		text = story.2.desc.followup
 	}
 	desc = {
@@ -444,7 +449,9 @@ country_event = {
 
 	# Militarist
 	option = {
-		trigger = { owner = { is_militarist = yes } }
+		trigger = {
+			owner = { is_militarist = yes }
+		}
 		name = "story.contact_report.militarist"
 		if = {
 			limit = {
@@ -745,7 +752,9 @@ country_event = {
 
 	# Militarist
 	option = {
-		trigger = { owner = { is_militarist = yes } }
+		trigger = {
+			owner = { is_militarist = yes }
+		}
 		name = "story.contact_report.militarist"
 		if = {
 			limit = {
@@ -1055,7 +1064,9 @@ country_event = {
 
 	# Militarist
 	option = {
-		trigger = { owner = { is_militarist = yes } }
+		trigger = {
+			owner = { is_militarist = yes }
+		}
 		name = "story.contact_report.militarist"
 		if = {
 			limit = {
@@ -1357,7 +1368,9 @@ country_event = {
 
 	# Militarist
 	option = {
-		trigger = { owner = { is_militarist = yes } }
+		trigger = {
+			owner = { is_militarist = yes }
+		}
 		name = "story.contact_report.militarist"
 		if = {
 			limit = {
@@ -1673,7 +1686,9 @@ country_event = {
 
 	# Militarist
 	option = {
-		trigger = { owner = { is_militarist = yes } }
+		trigger = {
+			owner = { is_militarist = yes }
+		}
 		name = "story.contact_report.militarist"
 		if = {
 			limit = {
@@ -2020,7 +2035,9 @@ country_event = {
 
 	# Militarist
 	option = {
-		trigger = { owner = { is_militarist = yes } }
+		trigger = {
+			owner = { is_militarist = yes }
+		}
 		name = "story.contact_report.militarist"
 		if = {
 			limit = {
@@ -2355,7 +2372,10 @@ country_event = {
 	}
 	option = {
 		name = story.8.d
-		trigger = { has_country_flag = StoryFirst is_machine_empire = yes }
+		trigger = {
+			has_country_flag = StoryFirst
+			is_machine_empire = yes
+		}
 	}
 	option = {
 		name = story.8.e
@@ -2790,7 +2810,10 @@ country_event = {
 		text = story.305.desc.mater
 	}
 	desc = {
-		trigger = { is_materialist = no is_pacifist = no }
+		trigger = {
+			is_materialist = no
+			is_pacifist = no
+		}
 		text = story.305.desc
 	}
 
@@ -3156,7 +3179,10 @@ country_event = {
 		text = story.405.desc.spiri
 	}
 	desc = {
-		trigger = { is_spiritualist = no is_gestalt = no }
+		trigger = {
+			is_spiritualist = no
+			is_gestalt = no
+		}
 		text = story.405.desc
 	}
 

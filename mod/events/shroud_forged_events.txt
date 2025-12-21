@@ -1624,7 +1624,10 @@ country_event = {
 
 	trigger = {
 		has_origin = origin_shroud_forged
-		from = { is_country_type = shroud has_country_flag = animator_of_clay_country_flag }
+		from = {
+			is_country_type = shroud
+			has_country_flag = animator_of_clay_country_flag
+		}
 	}
 
 	picture_event_data = {
@@ -1655,7 +1658,10 @@ country_event = {
 		text = shroud_forged.400.desc.default.cooldown
 	}
 	desc = {
-		trigger = { has_breached_shroud = no has_zroni_equilibrators = no }
+		trigger = {
+			has_breached_shroud = no
+			has_zroni_equilibrators = no
+		}
 		text = shroud_forged.400.desc.default.inactive
 	}
 	desc = {
@@ -2463,10 +2469,10 @@ situation_event = {
 					NOR = {
 						has_modifier = pm_shroud_forged_denied_ceremony
 						has_modifier = pm_shroud_forged_ceremony
-					}
-					count_owned_pop_group = {
-						count > 1
-						limit = { pop_group_has_trait = trait_shroud_forged }
+						count_owned_pop_group = {
+							count <= 1
+							limit = { pop_group_has_trait = trait_shroud_forged }
+						}
 					}
 				}
 				save_event_target_as = target_planet
@@ -2594,10 +2600,10 @@ situation_event = {
 						has_modifier = pm_shroud_forged_troubling_elements_example
 						has_modifier = pm_shroud_forged_troubling_elements_regulations
 						has_modifier = pm_shroud_forged_troubling_elements_cooperation
-					}
-					count_owned_pop_group = {
-						count > 1
-						limit = { pop_group_has_trait = trait_shroud_forged }
+						count_owned_pop_group = {
+							count <= 1
+							limit = { pop_group_has_trait = trait_shroud_forged }
+						}
 					}
 				}
 				save_event_target_as = target_planet
@@ -2959,7 +2965,9 @@ situation_event = {
 	option = {
 		name = shroud_forged.560.b
 		shroud_forged_situation_event_negative_3 = { FLAG = shroud_forged_560_negative_2 }
-		owner = { add_resource = { unity = -1000 } }
+		owner = {
+			add_resource = { unity = -1000 }
+		}
 	}
 }
 
@@ -3056,7 +3064,9 @@ situation_event = {
 				resource_stockpile_compare = { resource = energy value >= 500 }
 			}
 		}
-		owner = { add_resource = { energy = -500 } }
+		owner = {
+			add_resource = { energy = -500 }
+		}
 	}
 }
 
@@ -3158,7 +3168,9 @@ situation_event = {
 	option = {
 		name = shroud_forged.600.b
 		shroud_forged_situation_event_negative_3 = { FLAG = shroud_forged_600_negative_2 }
-		owner = { add_resource = { unity = -1000 } }
+		owner = {
+			add_resource = { unity = -1000 }
+		}
 	}
 }
 

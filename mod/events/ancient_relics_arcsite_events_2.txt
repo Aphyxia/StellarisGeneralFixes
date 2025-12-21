@@ -5626,7 +5626,10 @@ country_event = {
 	option = {
 		name = "artifact_find_peaceful_application_amenities_hivemind"
 		custom_tooltip = "artifact_find_peaceful_application_amenities_hivemind_desc"
-		trigger = { is_hive_empire = yes is_wilderness_empire = no }
+		trigger = {
+			is_hive_empire = yes
+			is_wilderness_empire = no
+		}
 		add_modifier = {
 			modifier = "artifact_find_peaceful_application_amenities_hivemind"
 			years = 5
@@ -5692,7 +5695,10 @@ country_event = {
 		text = ancrel.10030.phobe.desc
 	}
 	desc = {
-		trigger = { is_xenophobe = no is_homicidal = no }
+		trigger = {
+			is_xenophobe = no
+			is_homicidal = no
+		}
 		text = ancrel.10030.desc
 	}
 
@@ -6102,11 +6108,17 @@ country_event = {
 		text = ancrel.10100.desc_hive
 	}
 	desc = {
-		trigger = { is_regular_empire = yes is_fanatic_materialist = yes }
+		trigger = {
+			is_regular_empire = yes
+			is_fanatic_materialist = yes
+		}
 		text = ancrel.10100.desc_fm
 	}
 	desc = {
-		trigger = { is_regular_empire = yes is_fanatic_materialist = no }
+		trigger = {
+			is_regular_empire = yes
+			is_fanatic_materialist = no
+		}
 		text = ancrel.10100.desc
 	}
 
@@ -6758,10 +6770,7 @@ country_event = {
 			event_target:eldritch_location = {
 				if = {
 					limit = {
-						count_system_planet = {
-							count = 0
-							limit = { is_star_class = sc_black_hole }
-						}
+						NOT = { any_system_planet = { is_star_class = sc_black_hole } }
 					}
 					if = {
 						limit = {
@@ -7466,9 +7475,8 @@ country_event = {
 	trigger = {
 		from = {
 			has_country_flag = surveillance_bots
-			count_owned_fleet = {
-				count = 0
-				limit = {
+			NOT = {
+				any_owned_fleet = {
 					NOT = { is_same_value = root.fromfromfrom }
 				}
 			}
@@ -7776,7 +7784,9 @@ fleet_event = {
 	option = {
 		name = ancrel.12090.E
 		custom_tooltip = ancrel.12090.E.tooltip
-		allow = { owner = { is_spiritualist = no } }
+		allow = {
+			owner = { is_spiritualist = no }
+		}
 		hidden_effect = {
 			from.planet = {
 				create_country = {
@@ -8617,7 +8627,9 @@ fleet_event = {
 		text = "ancrel.14100.desc"
 	}
 	desc = {
-		trigger = { owner = { is_reanimator = yes } }
+		trigger = {
+			owner = { is_reanimator = yes }
+		}
 		text = "ancrel.14100.necro.desc"
 	}
 
@@ -8863,7 +8875,9 @@ fleet_event = {
 		trigger = {
 			owner = { has_country_flag = curator_intro }
 		}
-		owner = { add_resource = { energy = 5000 } }
+		owner = {
+			add_resource = { energy = 5000 }
+		}
 	}
 	option = { # Evolutionary Predator Interaction
 		name = ancrel.14510.e

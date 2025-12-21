@@ -54,7 +54,10 @@ country_event = {
 		text = "crisis.6000.d.desc"
 	}
 	desc = {
-		trigger = { is_machine_empire = yes has_origin = origin_shroud_forged }
+		trigger = {
+			is_machine_empire = yes
+			has_origin = origin_shroud_forged
+		}
 		text = "crisis.6000.e.desc"
 	}
 
@@ -123,7 +126,10 @@ country_event = {
 	}
 	option = {
 		name = crisis.6000.e
-		trigger = { is_machine_empire = yes has_origin = origin_shroud_forged }
+		trigger = {
+			is_machine_empire = yes
+			has_origin = origin_shroud_forged
+		}
 		custom_tooltip = crisis.6000.tooltip
 		hidden_effect = {
 			country_event = { id = crisis.6001 days = 5 }
@@ -624,7 +630,10 @@ country_event = {
 		text = "crisis.6050.b.desc"
 	}
 	desc = {
-		trigger = { is_gestalt = yes has_origin = origin_shroud_forged }
+		trigger = {
+			is_gestalt = yes
+			has_origin = origin_shroud_forged
+		}
 		text = "crisis.6050.c.desc"
 	}
 
@@ -962,7 +971,9 @@ country_event = {
 				}
 			}
 		}
-		every_playable_country = { establish_communications_no_message = event_target:shroud_country }
+		every_playable_country = {
+			establish_communications_no_message = event_target:shroud_country
+		}
 	}
 }
 
@@ -1072,7 +1083,9 @@ country_event = {
 				}
 			}
 		}
-		every_playable_country = { establish_communications_no_message = event_target:shroud_country }
+		every_playable_country = {
+			establish_communications_no_message = event_target:shroud_country
+		}
 	}
 }
 
@@ -1178,7 +1191,10 @@ country_event = {
 		text = "crisis.6171.b.desc.machine_non_gestalt"
 	}
 	desc = {
-		trigger = { is_same_value = from is_gestalt = yes }
+		trigger = {
+			is_same_value = from
+			is_gestalt = yes
+		}
 		text = "crisis.6171.b.desc.gestalt"
 	}
 

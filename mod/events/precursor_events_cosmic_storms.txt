@@ -291,7 +291,9 @@ fleet_event = {
 				resource_stockpile_compare = { resource = energy value <= 300 }
 			}
 		}
-		owner = { add_resource = { energy = -300 } }
+		owner = {
+			add_resource = { energy = -300 }
+		}
 		fromfrom = { add_stage_clues = 2 }
 	}
 
@@ -1307,7 +1309,9 @@ country_event = {
 			}
 			random_system_within_border = {
 				limit = {
-					NOT = { is_same_value = event_target:wm_storm_shelter_planet.solar_system }
+					NOT = {
+						is_same_value = event_target:wm_storm_shelter_planet.solar_system
+					}
 					any_system_planet = {
 						NOT = { has_planet_flag = precursor_world }
 						uninhabitable_regular_planet = yes
@@ -1699,7 +1703,9 @@ ship_event = {
 				max = @tier2researchmax
 			}
 		}
-		from = { create_archaeological_site = site_adakkaria_the_propaganda_station }
+		from = {
+			create_archaeological_site = site_adakkaria_the_propaganda_station
+		}
 	}
 }
 
@@ -3977,12 +3983,10 @@ system_event = {
 		exists = owner
 		# A given storm can only trigger this once
 		exists = from
-		NOT = {
-			from = {
-				OR = {
-					has_storm_flag = passed_patriotic_institute
-					has_storm_flag = storm_stormfall
-				}
+		from = {
+			NOR = {
+				has_storm_flag = passed_patriotic_institute
+				has_storm_flag = storm_stormfall
 			}
 		}
 		# Requires colonized patriotic institute.

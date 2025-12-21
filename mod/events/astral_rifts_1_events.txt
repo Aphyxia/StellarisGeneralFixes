@@ -2733,8 +2733,8 @@ astral_rift_event = {
 
 	desc = {
 		trigger = {
-			check_variable = { which = freeze_time_left_1555 value = 1 }
 			NOR = {
+				check_variable = { which = freeze_time_left_1555 value != 1 }
 				has_astral_rift_flag = description_psionic
 				has_astral_rift_flag = description_latent_psionic
 				has_astral_rift_flag = description_robotic
@@ -2744,8 +2744,8 @@ astral_rift_event = {
 	}
 	desc = {
 		trigger = {
-			check_variable = { which = freeze_time_left_1555 value = 1 }
 			NOR = {
+				check_variable = { which = freeze_time_left_1555 value != 1 }
 				has_astral_rift_flag = description_psionic
 				has_astral_rift_flag = description_latent_psionic
 			}
@@ -2755,8 +2755,8 @@ astral_rift_event = {
 	}
 	desc = {
 		trigger = {
-			check_variable = { which = freeze_time_left_1555 value > 1 }
 			NOR = {
+				check_variable = { which = freeze_time_left_1555 value <= 1 }
 				has_astral_rift_flag = description_psionic
 				has_astral_rift_flag = description_latent_psionic
 				has_astral_rift_flag = description_robotic
@@ -2766,8 +2766,8 @@ astral_rift_event = {
 	}
 	desc = {
 		trigger = {
-			check_variable = { which = freeze_time_left_1555 value > 1 }
 			NOR = {
+				check_variable = { which = freeze_time_left_1555 value <= 1 }
 				has_astral_rift_flag = description_psionic
 				has_astral_rift_flag = description_latent_psionic
 			}
@@ -2877,12 +2877,10 @@ astral_rift_event = {
 	option = {
 		name = UNFORTUNATE
 		trigger = {
-			NOT = {
-				leader.species = {
-					OR = {
-						has_trait = trait_aquatic
-						has_trait = trait_robot_aquatic
-					}
+			leader.species = {
+				NOR = {
+					has_trait = trait_aquatic
+					has_trait = trait_robot_aquatic
 				}
 			}
 		}
@@ -3072,7 +3070,9 @@ astral_rift_event = {
 		}
 	}
 	option = {
-		trigger = { explorer = { is_gestalt = yes } }
+		trigger = {
+			explorer = { is_gestalt = yes }
+		}
 		name = FASCINATING
 		set_next_astral_rift_event = { id = astral_rift.1611 }
 	}
@@ -3259,12 +3259,16 @@ astral_rift_event = {
 		set_next_astral_rift_event = { id = astral_rift.1625 }
 	}
 	option = {
-		trigger = { explorer = { is_gestalt = yes } }
+		trigger = {
+			explorer = { is_gestalt = yes }
+		}
 		name = astral_rift.1615.c
 		set_next_astral_rift_event = { id = astral_rift.1620 }
 	}
 	option = {
-		trigger = { explorer = { is_gestalt = yes } }
+		trigger = {
+			explorer = { is_gestalt = yes }
+		}
 		name = astral_rift.1615.d
 		set_next_astral_rift_event = { id = astral_rift.1625 }
 	}

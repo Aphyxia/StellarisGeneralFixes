@@ -77,10 +77,7 @@ country_event = {
 						is_specialist_subject_tier = { TYPE = bulwark TIER = 3 }
 						fromfrom = {
 							is_specialist_subject_type = { TYPE = bulwark }
-							count_agreement = {
-								count = 0
-								limit = { specialist_tier = 3 }
-							}
+							NOT = { any_agreement = { specialist_tier = 3 } }
 						}
 					}
 					NOT = {
@@ -133,10 +130,7 @@ country_event = {
 				is_specialist_subject_tier = { TYPE = bulwark TIER = 3 }
 				fromfrom = {
 					is_specialist_subject_type = { TYPE = bulwark }
-					count_agreement = {
-						count = 0
-						limit = { specialist_tier = 3 }
-					}
+					NOT = { any_agreement = { specialist_tier = 3 } }
 				}
 			}
 			from = {
@@ -460,7 +454,9 @@ country_event = {
 	}
 	option = { # Minerals
 		name = specialist.1150.b
-		trigger = { has_country_flag = prospectorium_resource_discovery_minerals }
+		trigger = {
+			has_country_flag = prospectorium_resource_discovery_minerals
+		}
 		enable_special_project = {
 			name = PROSPECTORIUM_RESOURCE_DISCOVERY_MINERALS
 			location = event_target:prospectorium_discovery_target
@@ -478,7 +474,9 @@ country_event = {
 	}
 	option = { # Rare Crystals
 		name = specialist.1150.d
-		trigger = { has_country_flag = prospectorium_resource_discovery_rare_crystals }
+		trigger = {
+			has_country_flag = prospectorium_resource_discovery_rare_crystals
+		}
 		enable_special_project = {
 			name = PROSPECTORIUM_RESOURCE_DISCOVERY_RARE_CRYSTALS
 			location = event_target:prospectorium_discovery_target
@@ -487,7 +485,9 @@ country_event = {
 	}
 	option = { # Volatile Motes
 		name = specialist.1150.e
-		trigger = { has_country_flag = prospectorium_resource_discovery_volatile_motes }
+		trigger = {
+			has_country_flag = prospectorium_resource_discovery_volatile_motes
+		}
 		enable_special_project = {
 			name = PROSPECTORIUM_RESOURCE_DISCOVERY_VOLATILE_MOTES
 			location = event_target:prospectorium_discovery_target
@@ -496,7 +496,9 @@ country_event = {
 	}
 	option = { # Exotic Gases
 		name = specialist.1150.f
-		trigger = { has_country_flag = prospectorium_resource_discovery_exotic_gases }
+		trigger = {
+			has_country_flag = prospectorium_resource_discovery_exotic_gases
+		}
 		enable_special_project = {
 			name = PROSPECTORIUM_RESOURCE_DISCOVERY_EXOTIC_GASES
 			location = event_target:prospectorium_discovery_target
@@ -514,7 +516,9 @@ country_event = {
 	}
 	option = { # Dark Matter
 		name = specialist.1150.h
-		trigger = { has_country_flag = prospectorium_resource_discovery_dark_matter }
+		trigger = {
+			has_country_flag = prospectorium_resource_discovery_dark_matter
+		}
 		enable_special_project = {
 			name = PROSPECTORIUM_RESOURCE_DISCOVERY_DARK_MATTER
 			location = event_target:prospectorium_discovery_target
@@ -523,7 +527,9 @@ country_event = {
 	}
 	option = { # Living Metal
 		name = specialist.1150.i
-		trigger = { has_country_flag = prospectorium_resource_discovery_living_metal }
+		trigger = {
+			has_country_flag = prospectorium_resource_discovery_living_metal
+		}
 		enable_special_project = {
 			name = PROSPECTORIUM_RESOURCE_DISCOVERY_LIVING_METAL
 			location = event_target:prospectorium_discovery_target

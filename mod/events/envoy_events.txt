@@ -274,9 +274,9 @@ country_event = {
 			}
 		}
 		any_galcom_member = {
-			is_part_of_galactic_council = no
-			relative_power = { who = root value < equivalent }
 			NOR = {
+				is_part_of_galactic_council = yes
+				relative_power = { who = root value >= equivalent }
 				is_same_species = root
 				is_in_federation_with = root
 				has_defensive_pact = root
@@ -314,9 +314,9 @@ country_event = {
 		}
 		random_galcom_member = {
 			limit = {
-				is_part_of_galactic_council = no
-				relative_power = { who = root value < equivalent }
 				NOR = {
+					is_part_of_galactic_council = yes
+					relative_power = { who = root value >= equivalent }
 					is_same_species = root
 					is_in_federation_with = root
 					has_defensive_pact = root
@@ -1783,7 +1783,10 @@ country_event = {
 	option = { # Ignore
 		name = {
 			text = envoy_events.100.b
-			trigger = { is_unfriendly = no is_spiritualist = no }
+			trigger = {
+				is_unfriendly = no
+				is_spiritualist = no
+			}
 		}
 		name = {
 			text = envoy_events.100.c
@@ -1835,7 +1838,9 @@ country_event = {
 			}
 		}
 		if = {
-			limit = { root = { is_overlord_to = from } }
+			limit = {
+				root = { is_overlord_to = from }
+			}
 			tooltip = {
 				random_agreement = {
 					limit = {
@@ -1847,7 +1852,9 @@ country_event = {
 			}
 		}
 		if = {
-			limit = { from = { is_overlord_to = root } }
+			limit = {
+				from = { is_overlord_to = root }
+			}
 			tooltip = {
 				random_agreement = {
 					limit = {
@@ -1982,7 +1989,10 @@ country_event = {
 
 	option = {
 		name = {
-			trigger = { is_xenophobe = no is_gestalt = no }
+			trigger = {
+				is_xenophobe = no
+				is_gestalt = no
+			}
 			text = envoy_events.205.A
 		}
 		name = {
@@ -2021,7 +2031,10 @@ country_event = {
 	}
 	option = {
 		name = envoy_events.3.C1
-		event_target:event_envoy = { unassign_leader = this set_cooldown = @envoy_punishment_cooldown }
+		event_target:event_envoy = {
+			unassign_leader = this
+			set_cooldown = @envoy_punishment_cooldown
+		}
 	}
 }
 
@@ -2332,7 +2345,10 @@ country_event = {
 	}
 	option = {
 		name = envoy_events.3.C1
-		event_target:event_envoy = { unassign_leader = this set_cooldown = @envoy_punishment_cooldown }
+		event_target:event_envoy = {
+			unassign_leader = this
+			set_cooldown = @envoy_punishment_cooldown
+		}
 	}
 
 	after = {
@@ -2564,7 +2580,10 @@ country_event = {
 
 	option = {
 		name = {
-			trigger = { is_xenophobe = no is_gestalt = no }
+			trigger = {
+				is_xenophobe = no
+				is_gestalt = no
+			}
 			text = envoy_events.205.A
 		}
 		name = {
@@ -2603,7 +2622,10 @@ country_event = {
 	}
 	option = {
 		name = envoy_events.3.C1
-		event_target:event_envoy = { unassign_leader = this set_cooldown = @envoy_punishment_cooldown }
+		event_target:event_envoy = {
+			unassign_leader = this
+			set_cooldown = @envoy_punishment_cooldown
+		}
 	}
 }
 

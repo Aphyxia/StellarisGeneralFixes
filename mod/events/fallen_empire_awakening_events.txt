@@ -148,7 +148,7 @@ country_event = {
 					modifier = {
 						factor = 0
 						NOT = {
-							any_country = { # has opposing_ethic_fallen_non_machine
+							any_country = {
 								is_country_type = fallen_empire
 								NOR = {
 									has_country_flag = awakening_not_allowed
@@ -301,7 +301,9 @@ country_event = {
 		picture = GFX_evt_fallen_empire
 	}
 	picture = {
-		trigger = { from = { is_hive_empire = yes } }
+		trigger = {
+			from = { is_hive_empire = yes }
+		}
 		picture = GFX_evt_hive_mind_fallen_empire
 	}
 
@@ -421,7 +423,10 @@ country_event = {
 
 	immediate = {
 		# set_global_flag = guardians_of_the_galaxy_happened
-		set_timed_global_flag = { flag = guardians_of_the_galaxy_happened_recently years = 12 }
+		set_timed_global_flag = {
+			flag = guardians_of_the_galaxy_happened_recently
+			years = 12
+		}
 		if = {
 			limit = { is_hive_empire = no }
 			country_event = { id = fallen_empires_awakening.3 }
@@ -514,7 +519,9 @@ country_event = {
 		picture = GFX_evt_fallen_empire
 	}
 	picture = {
-		trigger = { from = { is_hive_empire = yes } }
+		trigger = {
+			from = { is_hive_empire = yes }
+		}
 		picture = GFX_evt_hive_mind_fallen_empire
 	}
 

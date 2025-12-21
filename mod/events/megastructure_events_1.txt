@@ -1426,9 +1426,8 @@ event = {
 					country_event = { id = utopia.64 days = 60 random = 60 }
 					modifier = {
 						factor = 0
-						count_owned_leader = {
-							count = 0
-							limit = {
+						NOT = {
+							any_owned_leader = {
 								leader_class = scientist
 								is_leader_tier = leader_tier_default
 								NOT = { has_leader_flag = leader_death_events_blocked }
@@ -1529,9 +1528,8 @@ country_event = {
 			}
 			else_if = {
 				limit = {
-					count_owned_leader = {
-						count = 0
-						limit = {
+					NOT = {
+						any_owned_leader = {
 							leader_class = scientist
 							NOR = {
 								is_ruler = yes
@@ -1564,9 +1562,8 @@ country_event = {
 			}
 			else_if = {
 				limit = {
-					count_owned_leader = {
-						count = 0
-						limit = {
+					NOT = {
+						any_owned_leader = {
 							leader_class = scientist
 							NOR = {
 								is_ruler = yes
@@ -3101,16 +3098,15 @@ country_event = {
 	}
 	option = { # has no Ring World
 		trigger = {
-			count_owned_megastructure = {
-				count = 0
-				limit = {
+			NOR = {
+				any_owned_megastructure = {
 					OR = {
 						is_megastructure_type = ring_world_1
 						is_megastructure_type = ring_world_2
 					}
 				}
+				has_country_flag = finished_ringworld
 			}
-			NOT = { has_country_flag = finished_ringworld }
 		}
 		name = "utopia.2002.b"
 	}
@@ -3394,14 +3390,12 @@ ship_event = {
 	option = {
 		name = FASCINATING
 		trigger = {
-			NOT = {
-				owner = {
-					OR = {
-						has_megastructure = think_tank_1
-						has_megastructure = think_tank_2
-						has_megastructure = think_tank_3
-						has_megastructure = think_tank_4
-					}
+			owner = {
+				NOR = {
+					has_megastructure = think_tank_1
+					has_megastructure = think_tank_2
+					has_megastructure = think_tank_3
+					has_megastructure = think_tank_4
 				}
 			}
 		}
@@ -3967,7 +3961,9 @@ ship_event = {
 	trigger = {
 		from = {
 			has_star_flag = ruined_strategic_coordination_center_system
-			any_system_megastructure = { is_megastructure_type = strategic_coordination_center_ruined }
+			any_system_megastructure = {
+				is_megastructure_type = strategic_coordination_center_ruined
+			}
 		}
 	}
 
@@ -4735,7 +4731,10 @@ country_event = {
 
 	option = {
 		name = over.100.a
-		trigger = { is_xenophobe = no is_gestalt = no }
+		trigger = {
+			is_xenophobe = no
+			is_gestalt = no
+		}
 	}
 	option = {
 		name = over.100.b

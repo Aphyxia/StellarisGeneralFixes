@@ -877,7 +877,10 @@ country_event = {
 		custom_tooltip = fallen_empire_unhappy_tooltip
 		hidden_effect = {
 			event_target:FallenEmpireTaskOrigin = {
-				add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_refused_fallen_empire_request
+				}
 			}
 		}
 	}
@@ -888,7 +891,10 @@ country_event = {
 		custom_tooltip = fallen_empire_unhappy_tooltip
 		hidden_effect = {
 			event_target:FallenEmpireTaskOrigin = {
-				add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_refused_fallen_empire_request
+				}
 			}
 		}
 	}
@@ -899,7 +905,10 @@ country_event = {
 		custom_tooltip = fallen_empire_unhappy_tooltip
 		hidden_effect = {
 			event_target:FallenEmpireTaskOrigin = {
-				add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_refused_fallen_empire_request
+				}
 			}
 		}
 	}
@@ -916,7 +925,10 @@ country_event = {
 		custom_tooltip = fallen_empire_unhappy_tooltip
 		hidden_effect = {
 			event_target:FallenEmpireTaskOrigin = {
-				add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_refused_fallen_empire_request
+				}
 			}
 		}
 	}
@@ -1244,17 +1256,10 @@ country_event = {
 	trigger = {
 		has_global_flag = fe_task_stop_atrocity_active
 		OR = {
-			count_country = {
-				count = 0
-				limit = { has_country_flag = fe_task_stop_atrocity }
-			}
-			count_country = {
-				count = 0
-				limit = { has_country_flag = fe_task_stop_atrocity_origin }
-			}
-			count_country = {
-				count = 0
-				limit = { has_country_flag = fe_task_stop_atrocity_target }
+			NAND = {
+				any_country = { has_country_flag = fe_task_stop_atrocity }
+				any_country = { has_country_flag = fe_task_stop_atrocity_origin }
+				any_country = { has_country_flag = fe_task_stop_atrocity_target }
 			}
 			any_country = {
 				has_country_flag = fe_task_stop_atrocity_origin
@@ -1691,13 +1696,9 @@ country_event = {
 	trigger = {
 		has_global_flag = fe_task_stop_robots_active
 		OR = {
-			count_country = {
-				count = 0
-				limit = { has_country_flag = fe_task_stop_robots }
-			}
-			count_country = {
-				count = 0
-				limit = { has_country_flag = fe_task_stop_robots_target }
+			NAND = {
+				any_country = { has_country_flag = fe_task_stop_robots }
+				any_country = { has_country_flag = fe_task_stop_robots_target }
 			}
 			any_country = {
 				has_country_flag = fe_task_stop_robots_origin
@@ -1912,7 +1913,10 @@ country_event = {
 		custom_tooltip = fallen_empire_unhappy_tooltip
 		hidden_effect = {
 			event_target:FallenEmpireTaskOrigin = {
-				add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_refused_fallen_empire_request
+				}
 			}
 		}
 	}
@@ -1923,7 +1927,10 @@ country_event = {
 		custom_tooltip = fallen_empire_unhappy_tooltip
 		hidden_effect = {
 			event_target:FallenEmpireTaskOrigin = {
-				add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_refused_fallen_empire_request
+				}
 			}
 		}
 	}
@@ -1934,7 +1941,10 @@ country_event = {
 		custom_tooltip = fallen_empire_unhappy_tooltip
 		hidden_effect = {
 			event_target:FallenEmpireTaskOrigin = {
-				add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_refused_fallen_empire_request
+				}
 			}
 		}
 	}
@@ -1951,7 +1961,10 @@ country_event = {
 		custom_tooltip = fallen_empire_unhappy_tooltip
 		hidden_effect = {
 			event_target:FallenEmpireTaskOrigin = {
-				add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_refused_fallen_empire_request
+				}
 			}
 		}
 	}
@@ -2068,7 +2081,10 @@ country_event = {
 		custom_tooltip = fallen_empire_unhappy_tooltip
 		hidden_effect = {
 			event_target:FallenEmpireTaskOrigin = {
-				add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_refused_fallen_empire_request
+				}
 			}
 		}
 		hidden_effect = {

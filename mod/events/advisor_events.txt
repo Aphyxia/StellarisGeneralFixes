@@ -505,8 +505,8 @@ ship_event = {
 				is_ai = yes
 				is_tutorial_level = 0
 				has_country_flag = advisor_potential_colony
+				num_owned_planets != 1
 			}
-			num_owned_planets = 1
 		}
 		from = {
 			any_system_planet = {

@@ -175,7 +175,10 @@ country_event = {
 			is_enigmatic_to = root
 			has_communications = root
 			NOR = {
-				has_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
+				has_opinion_modifier = {
+					who = root
+					modifier = opinion_refused_fallen_empire_request
+				}
 				has_opinion_modifier = {
 					who = root
 					modifier = opinion_accepted_fallen_empire_request
@@ -193,7 +196,10 @@ country_event = {
 				is_enigmatic_to = root
 				has_communications = root
 				NOR = {
-					has_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
+					has_opinion_modifier = {
+						who = root
+						modifier = opinion_refused_fallen_empire_request
+					}
 					has_opinion_modifier = {
 						who = root
 						modifier = opinion_accepted_fallen_empire_request
@@ -237,7 +243,10 @@ country_event = {
 		custom_tooltip = fallen_machine_empire_happy_tooltip
 		if = {
 			limit = { is_xenophobe = yes }
-			add_modifier = { modifier = machine_empire_inoculations_xenophobe days = -1 }
+			add_modifier = {
+				modifier = machine_empire_inoculations_xenophobe
+				days = -1
+			}
 		}
 		if = {
 			limit = { is_xenophobe = no }
@@ -259,7 +268,10 @@ country_event = {
 		custom_tooltip = fallen_machine_empire_unhappy_tooltip
 		hidden_effect = {
 			event_target:FallenEmpireTaskOrigin = {
-				add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_refused_fallen_empire_request
+				}
 			}
 		}
 	}
@@ -270,7 +282,10 @@ country_event = {
 		custom_tooltip = fallen_machine_empire_unhappy_tooltip
 		hidden_effect = {
 			event_target:FallenEmpireTaskOrigin = {
-				add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_refused_fallen_empire_request
+				}
 			}
 		}
 	}
@@ -391,7 +406,10 @@ country_event = {
 			is_enigmatic_to = root
 			has_communications = root
 			NOR = {
-				has_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
+				has_opinion_modifier = {
+					who = root
+					modifier = opinion_refused_fallen_empire_request
+				}
 				has_opinion_modifier = {
 					who = root
 					modifier = opinion_accepted_fallen_empire_request
@@ -409,7 +427,10 @@ country_event = {
 				is_enigmatic_to = root
 				has_communications = root
 				NOR = {
-					has_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
+					has_opinion_modifier = {
+						who = root
+						modifier = opinion_refused_fallen_empire_request
+					}
 					has_opinion_modifier = {
 						who = root
 						modifier = opinion_accepted_fallen_empire_request
@@ -460,7 +481,10 @@ country_event = {
 		custom_tooltip = fallen_machine_empire_unhappy_tooltip
 		hidden_effect = {
 			event_target:FallenEmpireTaskOrigin = {
-				add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_refused_fallen_empire_request
+				}
 			}
 		}
 	}
@@ -553,7 +577,10 @@ country_event = {
 			is_enigmatic_to = root
 			has_communications = root
 			NOR = {
-				has_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
+				has_opinion_modifier = {
+					who = root
+					modifier = opinion_refused_fallen_empire_request
+				}
 				has_opinion_modifier = {
 					who = root
 					modifier = opinion_accepted_fallen_empire_request
@@ -578,7 +605,10 @@ country_event = {
 				is_enigmatic_to = root
 				has_communications = root
 				NOR = {
-					has_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
+					has_opinion_modifier = {
+						who = root
+						modifier = opinion_refused_fallen_empire_request
+					}
 					has_opinion_modifier = {
 						who = root
 						modifier = opinion_accepted_fallen_empire_request
@@ -646,7 +676,10 @@ country_event = {
 		custom_tooltip = fallen_machine_empire_unhappy_tooltip
 		hidden_effect = {
 			event_target:FallenEmpireTaskOrigin = {
-				add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_refused_fallen_empire_request
+				}
 			}
 		}
 	}
@@ -682,14 +715,21 @@ country_event = {
 			is_enigmatic_to = root
 			has_communications = root
 			NOR = {
-				has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_request }
+				has_opinion_modifier = {
+					who = prev
+					modifier = opinion_refused_fallen_empire_request
+				}
 				has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_task }
 				has_opinion_modifier = { who = prev modifier = opinion_failed_fallen_empire_task }
 			}
 			any_playable_country = {
 				root = { is_rival = prev }
 				OR = {
-					has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_request is_reverse = yes }
+					has_opinion_modifier = {
+						who = prev
+						modifier = opinion_refused_fallen_empire_request
+						is_reverse = yes
+					}
 					has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_task is_reverse = yes }
 					has_opinion_modifier = { who = prev modifier = opinion_failed_fallen_empire_task is_reverse = yes }
 				}
@@ -706,14 +746,21 @@ country_event = {
 				is_enigmatic_to = root
 				has_communications = root
 				NOR = {
-					has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_request }
+					has_opinion_modifier = {
+						who = prev
+						modifier = opinion_refused_fallen_empire_request
+					}
 					has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_task }
 					has_opinion_modifier = { who = prev modifier = opinion_failed_fallen_empire_task }
 				}
 				any_playable_country = {
 					root = { is_rival = prev }
 					OR = {
-						has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_request is_reverse = yes }
+						has_opinion_modifier = {
+							who = prev
+							modifier = opinion_refused_fallen_empire_request
+							is_reverse = yes
+						}
 						has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_task is_reverse = yes }
 						has_opinion_modifier = { who = prev modifier = opinion_failed_fallen_empire_task is_reverse = yes }
 					}
@@ -723,7 +770,11 @@ country_event = {
 				limit = {
 					root = { is_rival = prev }
 					OR = {
-						has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_request is_reverse = yes }
+						has_opinion_modifier = {
+							who = prev
+							modifier = opinion_refused_fallen_empire_request
+							is_reverse = yes
+						}
 						has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_task is_reverse = yes }
 						has_opinion_modifier = { who = prev modifier = opinion_failed_fallen_empire_task is_reverse = yes }
 					}
@@ -793,7 +844,10 @@ country_event = {
 		has_global_flag = fe_task_attack_empire_active
 		has_country_flag = fe_task_attack_empire
 		is_at_war = yes
-		any_country = { has_country_flag = fe_task_attack_empire_target is_at_war_with = root }
+		any_country = {
+			has_country_flag = fe_task_attack_empire_target
+			is_at_war_with = root
+		}
 	}
 
 	mean_time_to_happen = {
@@ -912,17 +966,10 @@ country_event = {
 	trigger = {
 		has_global_flag = fe_task_attack_empire_active
 		OR = {
-			count_country = {
-				count = 0
-				limit = { has_country_flag = fe_task_attack_empire }
-			}
-			count_country = {
-				count = 0
-				limit = { has_country_flag = fe_task_attack_empire_origin }
-			}
-			count_country = {
-				count = 0
-				limit = { has_country_flag = fe_task_attack_empire_target }
+			NAND = {
+				any_country = { has_country_flag = fe_task_attack_empire }
+				any_country = { has_country_flag = fe_task_attack_empire_origin }
+				any_country = { has_country_flag = fe_task_attack_empire_target }
 			}
 			any_country = {
 				has_country_flag = fe_task_attack_empire_origin
@@ -984,7 +1031,10 @@ country_event = {
 			is_enigmatic_to = root
 			has_communications = root
 			NOR = {
-				has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_request }
+				has_opinion_modifier = {
+					who = prev
+					modifier = opinion_refused_fallen_empire_request
+				}
 				has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_task }
 				has_opinion_modifier = { who = prev modifier = opinion_failed_fallen_empire_task }
 			}
@@ -1023,7 +1073,10 @@ country_event = {
 				is_enigmatic_to = root
 				has_communications = root
 				NOR = {
-					has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_request }
+					has_opinion_modifier = {
+						who = prev
+						modifier = opinion_refused_fallen_empire_request
+					}
 					has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_task }
 					has_opinion_modifier = { who = prev modifier = opinion_failed_fallen_empire_task }
 				}
@@ -1151,9 +1204,8 @@ country_event = {
 	trigger = {
 		has_global_flag = fe_task_colonize_planet_active
 		has_country_flag = fe_task_colonize_planet
-		count_owned_planet = {
-			count = 0
-			limit = { # Vfix opt
+		NOT = {
+			any_owned_planet = {
 				is_colony = yes
 				has_planet_flag = fe_task_colonize_planet_target
 			}
@@ -1226,13 +1278,9 @@ country_event = {
 	trigger = {
 		has_global_flag = fe_task_colonize_planet_active
 		OR = {
-			count_country = {
-				count = 0
-				limit = { has_country_flag = fe_task_colonize_planet }
-			}
-			count_country = {
-				count = 0
-				limit = { has_country_flag = fe_task_colonize_planet_origin }
+			NAND = {
+				any_country = { has_country_flag = fe_task_colonize_planet }
+				any_country = { has_country_flag = fe_task_colonize_planet_origin }
 			}
 			any_country = {
 				has_country_flag = fe_task_colonize_planet_origin
@@ -1307,7 +1355,10 @@ country_event = {
 			is_enigmatic_to = root
 			has_communications = root
 			OR = {
-				has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_request }
+				has_opinion_modifier = {
+					who = prev
+					modifier = opinion_refused_fallen_empire_request
+				}
 				has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_task }
 				has_opinion_modifier = { who = prev modifier = opinion_failed_fallen_empire_task }
 				root = { is_homicidal = yes }
@@ -1324,7 +1375,10 @@ country_event = {
 				is_enigmatic_to = root
 				has_communications = root
 				OR = {
-					has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_request }
+					has_opinion_modifier = {
+						who = prev
+						modifier = opinion_refused_fallen_empire_request
+					}
 					has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_task }
 					has_opinion_modifier = { who = prev modifier = opinion_failed_fallen_empire_task }
 					root = { is_homicidal = yes }
@@ -1464,7 +1518,10 @@ country_event = {
 		custom_tooltip = fallen_machine_empire_angry_task_tooltip
 		hidden_effect = {
 			event_target:FallenEmpireTaskOrigin = {
-				add_opinion_modifier = { who = root modifier = opinion_angered_fallen_machine_empire }
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_angered_fallen_machine_empire
+				}
 			}
 		}
 		hidden_effect = {
@@ -1487,13 +1544,9 @@ country_event = {
 	trigger = {
 		has_global_flag = fe_task_no_wars_active
 		OR = {
-			count_country = {
-				count = 0
-				limit = { has_country_flag = fe_task_no_wars }
-			}
-			count_country = {
-				count = 0
-				limit = { has_country_flag = fe_task_no_wars_origin }
+			NAND = {
+				any_country = { has_country_flag = fe_task_no_wars }
+				any_country = { has_country_flag = fe_task_no_wars_origin }
 			}
 			any_country = {
 				has_country_flag = fe_task_no_wars_origin
@@ -1556,15 +1609,10 @@ country_event = {
 			# is_machine_empire = yes Vfix # Risa fix?
 			has_country_flag = fe_task_given
 			has_global_flag = fe_task_no_colonies_active
-		}
-		count_owned_planet = {
-			count = 0
-			limit = { is_under_colonization = yes }
-		}
-		NOR = {
 			end_game_years_passed >= 0
 			has_country_flag = fe_task_no_wars
 			has_country_flag = fe_task_no_colonies
+			any_owned_planet = { is_under_colonization = yes }
 		}
 		any_country = {
 			is_fallen_empire_machine = yes # Vfix minor opt
@@ -1572,7 +1620,10 @@ country_event = {
 			is_enigmatic_to = root
 			has_communications = root
 			OR = {
-				has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_request }
+				has_opinion_modifier = {
+					who = prev
+					modifier = opinion_refused_fallen_empire_request
+				}
 				has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_task }
 				has_opinion_modifier = { who = prev modifier = opinion_failed_fallen_empire_task }
 				root = { is_homicidal = yes }
@@ -1589,7 +1640,10 @@ country_event = {
 				is_enigmatic_to = root
 				has_communications = root
 				OR = {
-					has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_request }
+					has_opinion_modifier = {
+						who = prev
+						modifier = opinion_refused_fallen_empire_request
+					}
 					has_opinion_modifier = { who = prev modifier = opinion_refused_fallen_empire_task }
 					has_opinion_modifier = { who = prev modifier = opinion_failed_fallen_empire_task }
 					root = { is_homicidal = yes }
@@ -1726,7 +1780,10 @@ country_event = {
 		custom_tooltip = fallen_machine_empire_angry_task_tooltip
 		hidden_effect = {
 			event_target:FallenEmpireTaskOrigin = {
-				add_opinion_modifier = { who = root modifier = opinion_angered_fallen_machine_empire }
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_angered_fallen_machine_empire
+				}
 			}
 		}
 		hidden_effect = {
@@ -1749,13 +1806,9 @@ country_event = {
 	trigger = {
 		has_global_flag = fe_task_no_colonies_active
 		OR = {
-			count_country = {
-				count = 0
-				limit = { has_country_flag = fe_task_no_colonies }
-			}
-			count_country = {
-				count = 0
-				limit = { has_country_flag = fe_task_no_colonies_origin }
+			NAND = {
+				any_country = { has_country_flag = fe_task_no_colonies }
+				any_country = { has_country_flag = fe_task_no_colonies_origin }
 			}
 			any_country = {
 				has_country_flag = fe_task_no_colonies_origin

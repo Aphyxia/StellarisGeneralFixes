@@ -1973,18 +1973,24 @@ situation_event = {
 		switch = {
 			trigger = current_stage
 			radiation_damage_low = {
-				owner = { add_resource = { energy = -300 } }
+				owner = {
+					add_resource = { energy = -300 }
+				}
 			}
 			radiation_damage_mid = {
 				custom_tooltip = situation.213.a.2.tooltip
 				hidden_effect = {
-					owner = { add_resource = { energy = -300 } }
+					owner = {
+						add_resource = { energy = -300 }
+					}
 				}
 			}
 			radiation_damage_high = {
 				custom_tooltip = situation.213.a.3.tooltip
 				hidden_effect = {
-					owner = { add_resource = { energy = -300 } }
+					owner = {
+						add_resource = { energy = -300 }
+					}
 				}
 			}
 		}
@@ -2615,7 +2621,9 @@ planet_event = {
 
 	option = { # scrap it
 		name = situation.299.a
-		owner = { add_resource = { alloys = 1000 } }
+		owner = {
+			add_resource = { alloys = 1000 }
+		}
 	}
 	option = { # keep it
 		name = situation.299.b
@@ -3111,8 +3119,10 @@ situation_event = {
 		current_situation_approach = approach_no_food
 		owner = {
 			any_owned_planet = {
-				num_districts = { type = district_generator value >= 1 }
-				NOT = { has_modifier = phantom_load }
+				NOR = {
+					num_districts = { type = district_generator value < 1 }
+					has_modifier = phantom_load
+				}
 			}
 		}
 	}
@@ -3128,8 +3138,10 @@ situation_event = {
 		owner = {
 			random_owned_planet = {
 				limit = {
-					num_districts = { type = district_generator value >= 1 }
-					NOT = { has_modifier = phantom_load }
+					NOR = {
+						num_districts = { type = district_generator value < 1 }
+						has_modifier = phantom_load
+					}
 				}
 				save_event_target_as = infested_planet
 			}
@@ -3231,7 +3243,9 @@ situation_event = {
 	}
 	option = {
 		name = situation.2031.b
-		owner = { add_resource = { energy = 1000 } }
+		owner = {
+			add_resource = { energy = 1000 }
+		}
 	}
 }
 
@@ -4345,7 +4359,9 @@ situation_event = {
 
 	option = { # Use it for Construction
 		name = situation.1070.a
-		owner = { add_resource = { alloys = 5000 } }
+		owner = {
+			add_resource = { alloys = 5000 }
+		}
 		add_situation_progress = -20
 		ai_chance = { weight = 100 }
 	}
@@ -5004,7 +5020,10 @@ country_event = {
 		text = situation.1145.desc.regular
 	}
 	desc = {
-		trigger = { is_gestalt = yes is_wilderness_empire = no }
+		trigger = {
+			is_gestalt = yes
+			is_wilderness_empire = no
+		}
 		text = situation.1145.desc.gestalt
 	}
 	desc = {
@@ -5058,7 +5077,10 @@ country_event = {
 
 	option = {
 		name = situation.1150.a
-		start_situation = { type = situation_stellarite_infested_star target = root.capital_star }
+		start_situation = {
+			type = situation_stellarite_infested_star
+			target = root.capital_star
+		}
 	}
 }
 

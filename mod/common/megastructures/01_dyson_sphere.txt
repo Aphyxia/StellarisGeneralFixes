@@ -4,7 +4,6 @@ dyson_sphere_0 = {
 	construction_entity = "construction_platform_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
-
 	entity_offset = { x = -7 y = -7 }
 
 	build_time = 1800
@@ -45,7 +44,10 @@ dyson_sphere_0 = {
 
 	possible = {
 		hidden_trigger = { exists = starbase }
-		custom_tooltip = { fail_text = "requires_inside_border" is_inside_border = from }
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
 		custom_tooltip = {
 			fail_text = "requires_no_existing_dyson_sphere"
 			from = {
@@ -70,14 +72,16 @@ dyson_sphere_0 = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_surveyed_system"
-			count_system_planet = {
-				count = 0
-				limit = {
+			NOT = {
+				any_system_planet = {
 					is_surveyed = { who = prev.from status = no }
 				}
 			}
 		}
-		custom_tooltip = { fail_text = "requires_no_arc_furnace" system_has_arc_furnace = no }
+		custom_tooltip = {
+			fail_text = "requires_no_arc_furnace"
+			system_has_arc_furnace = no
+		}
 		custom_tooltip = {
 			fail_text = "requires_no_arc_furnace_construction"
 			if = {
@@ -87,9 +91,8 @@ dyson_sphere_0 = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_no_colonies"
-			count_system_colony = {
-				count = 0
-				limit = {
+			NOT = {
+				any_system_colony = {
 					has_owner = yes
 					is_artificial = no
 					owner = { is_primitive = no }
@@ -124,17 +127,20 @@ dyson_sphere_0 = {
 		custom_tooltip = {
 			fail_text = "requires_no_existing_megastructure"
 			has_no_non_gate_megastructure = yes
-			count_system_planet = {
-				count = 0
-				limit = { is_planet_class = pc_cosmogenesis_world }
-			}
+			NOT = { any_system_planet = { is_planet_class = pc_cosmogenesis_world } }
 		}
 	}
 
 	placement_rules = {
 		planet_possible = {
-			custom_tooltip = { fail_text = "must_build_around_star" is_star = yes }
-			custom_tooltip = { fail_text = "requires_no_anomaly" has_anomaly = no }
+			custom_tooltip = {
+				fail_text = "must_build_around_star"
+				is_star = yes
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_anomaly"
+				has_anomaly = no
+			}
 		}
 	}
 
@@ -218,7 +224,10 @@ dyson_sphere_1 = {
 	}
 
 	possible = {
-		custom_tooltip = { fail_text = "requires_no_arc_furnace" system_has_arc_furnace = no }
+		custom_tooltip = {
+			fail_text = "requires_no_arc_furnace"
+			system_has_arc_furnace = no
+		}
 		custom_tooltip = {
 			fail_text = "requires_no_arc_furnace_construction"
 			if = {
@@ -228,9 +237,8 @@ dyson_sphere_1 = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_no_colonies"
-			count_system_colony = {
-				count = 0
-				limit = {
+			NOT = {
+				any_system_colony = {
 					has_owner = yes
 					is_artificial = no
 					owner = { is_primitive = no }
@@ -295,7 +303,10 @@ dyson_sphere_2 = {
 			fail_text = "requires_no_existing_dyson_sphere_two"
 			NOT = { from = { has_country_flag = built_dyson_sphere_contingency_swarm } }
 		}
-		custom_tooltip = { fail_text = "requires_no_arc_furnace" system_has_arc_furnace = no }
+		custom_tooltip = {
+			fail_text = "requires_no_arc_furnace"
+			system_has_arc_furnace = no
+		}
 		custom_tooltip = {
 			fail_text = "requires_no_arc_furnace_construction"
 			if = {
@@ -444,7 +455,10 @@ dyson_sphere_3 = {
 	}
 
 	possible = {
-		custom_tooltip = { fail_text = "requires_no_arc_furnace" system_has_arc_furnace = no }
+		custom_tooltip = {
+			fail_text = "requires_no_arc_furnace"
+			system_has_arc_furnace = no
+		}
 		custom_tooltip = {
 			fail_text = "requires_no_arc_furnace_construction"
 			if = {
@@ -454,9 +468,8 @@ dyson_sphere_3 = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_no_colonies"
-			count_system_colony = {
-				count = 0
-				limit = {
+			NOT = {
+				any_system_colony = {
 					has_owner = yes
 					is_artificial = no
 					owner = { is_primitive = no }
@@ -540,7 +553,10 @@ dyson_sphere_4 = {
 	}
 
 	possible = {
-		custom_tooltip = { fail_text = "requires_no_arc_furnace" system_has_arc_furnace = no }
+		custom_tooltip = {
+			fail_text = "requires_no_arc_furnace"
+			system_has_arc_furnace = no
+		}
 		custom_tooltip = {
 			fail_text = "requires_no_arc_furnace_construction"
 			if = {
@@ -550,9 +566,8 @@ dyson_sphere_4 = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_no_colonies"
-			count_system_colony = {
-				count = 0
-				limit = {
+			NOT = {
+				any_system_colony = {
 					has_owner = yes
 					is_artificial = no
 					owner = { is_primitive = no }
@@ -635,7 +650,10 @@ dyson_sphere_5 = {
 	}
 
 	possible = {
-		custom_tooltip = { fail_text = "requires_no_arc_furnace" system_has_arc_furnace = no }
+		custom_tooltip = {
+			fail_text = "requires_no_arc_furnace"
+			system_has_arc_furnace = no
+		}
 		custom_tooltip = {
 			fail_text = "requires_no_arc_furnace_construction"
 			if = {
@@ -645,9 +663,8 @@ dyson_sphere_5 = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_no_colonies"
-			count_system_colony = {
-				count = 0
-				limit = {
+			NOT = {
+				any_system_colony = {
 					has_owner = yes
 					is_artificial = no
 					owner = { is_primitive = no }
@@ -770,7 +787,10 @@ dyson_sphere_restored = {
 
 	possible = {
 		from = { has_technology = tech_mega_engineering }
-		custom_tooltip = { fail_text = "requires_no_arc_furnace" system_has_arc_furnace = no }
+		custom_tooltip = {
+			fail_text = "requires_no_arc_furnace"
+			system_has_arc_furnace = no
+		}
 		custom_tooltip = {
 			fail_text = "requires_no_arc_furnace_construction"
 			if = {
@@ -780,9 +800,8 @@ dyson_sphere_restored = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_no_colonies"
-			count_system_colony = {
-				count = 0
-				limit = {
+			NOT = {
+				any_system_colony = {
 					has_owner = yes
 					is_artificial = no
 					owner = { is_primitive = no }
@@ -985,7 +1004,10 @@ dyson_sphere_disco_restored = {
 
 	possible = {
 		from = { has_nemesis = yes has_country_flag = can_build_disco_sphere }
-		custom_tooltip = { fail_text = "requires_no_arc_furnace" system_has_arc_furnace = no }
+		custom_tooltip = {
+			fail_text = "requires_no_arc_furnace"
+			system_has_arc_furnace = no
+		}
 		custom_tooltip = {
 			fail_text = "requires_no_arc_furnace_construction"
 			if = {
@@ -995,9 +1017,8 @@ dyson_sphere_disco_restored = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_no_colonies"
-			count_system_colony = {
-				count = 0
-				limit = {
+			NOT = {
+				any_system_colony = {
 					has_owner = yes
 					is_artificial = no
 					owner = { is_primitive = no }

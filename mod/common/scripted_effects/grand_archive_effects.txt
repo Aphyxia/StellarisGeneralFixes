@@ -1,17 +1,19 @@
 ####################################
 # Grand Archive - Scripted Effects #
 ####################################
-
 ##################
 # Gravity Snares #
 ##################
+
 create_auto_updated_design_from_global_design = {
 	create_ship_design = {
 		design = $GLOBAL_DESIGN$
 	}
+
 	last_created_design = {
 		set_auto_upgrade_components = yes
 	}
+
 	add_ship_design = last_created_design
 }
 
@@ -33,14 +35,9 @@ create_voidworms_country = {
 			inline_script = "grand_archive/voidworms_flag"
 			effect = {
 				inline_script = "grand_archive/voidworm_init_common_effects"
-				set_policy = {
-					policy = first_contact_protocol
-					option = first_contact_attack_allowed
-				}
+				set_policy = { policy = first_contact_protocol option = first_contact_attack_allowed }
 				save_global_event_target_as = voidworms_country
-				start_situation = {
-					type = voidworm_country_situation
-				}
+				start_situation = { type = voidworm_country_situation }
 				if = {
 					limit = { is_difficulty = 0 }
 					add_modifier = { modifier = voidworm_scaling_difficulty_civilian }
@@ -66,10 +63,7 @@ create_voidworm_ship = {
 create_multiple_voidworm_ship = {
 	while = {
 		count = $COUNT$
-		create_voidworm_ship = {
-			DESIGN = $DESIGN$
-			AGE = $AGE|0$
-		}
+		create_voidworm_ship = { DESIGN = $DESIGN$ AGE = $AGE|0$ }
 	}
 }
 
@@ -160,11 +154,22 @@ create_voidworm_crisis_eradicate_chain = {
 		event_chain = voidworm_crisis_eradicate_chain
 		target = this
 	}
-	create_voidworm_system_poi = { SIZE = tiny }
-	create_voidworm_system_poi = { SIZE = small }
-	create_voidworm_system_poi = { SIZE = medium }
-	create_voidworm_system_poi = { SIZE = large }
-	create_voidworm_system_poi = { SIZE = huge }
+
+	create_voidworm_system_poi = {
+		SIZE = tiny
+	}
+	create_voidworm_system_poi = {
+		SIZE = small
+	}
+	create_voidworm_system_poi = {
+		SIZE = medium
+	}
+	create_voidworm_system_poi = {
+		SIZE = large
+	}
+	create_voidworm_system_poi = {
+		SIZE = huge
+	}
 }
 
 # scope = system
@@ -176,9 +181,7 @@ remove_voidworm_system_poi = {
 		}
 		every_playable_country = {
 			limit = {
-				has_point_of_interest = {
-					poi = voidworm_system_tiny_poi
-				}
+				has_point_of_interest = { poi = voidworm_system_tiny_poi }
 			}
 			remove_point_of_interest = voidworm_system_tiny_poi
 		}
@@ -191,9 +194,7 @@ remove_voidworm_system_poi = {
 		}
 		every_playable_country = {
 			limit = {
-				has_point_of_interest = {
-					poi = voidworm_system_small_poi
-				}
+				has_point_of_interest = { poi = voidworm_system_small_poi }
 			}
 			remove_point_of_interest = voidworm_system_small_poi
 		}
@@ -206,9 +207,7 @@ remove_voidworm_system_poi = {
 		}
 		every_playable_country = {
 			limit = {
-				has_point_of_interest = {
-					poi = voidworm_system_medium_poi
-				}
+				has_point_of_interest = { poi = voidworm_system_medium_poi }
 			}
 			remove_point_of_interest = voidworm_system_medium_poi
 		}
@@ -221,9 +220,7 @@ remove_voidworm_system_poi = {
 		}
 		every_playable_country = {
 			limit = {
-				has_point_of_interest = {
-					poi = voidworm_system_large_poi
-				}
+				has_point_of_interest = { poi = voidworm_system_large_poi }
 			}
 			remove_point_of_interest = voidworm_system_large_poi
 		}
@@ -236,9 +233,7 @@ remove_voidworm_system_poi = {
 		}
 		every_playable_country = {
 			limit = {
-				has_point_of_interest = {
-					poi = voidworm_system_huge_poi
-				}
+				has_point_of_interest = { poi = voidworm_system_huge_poi }
 			}
 			remove_point_of_interest = voidworm_system_huge_poi
 		}
@@ -274,10 +269,7 @@ end_voidworms_crisis = {
 					random_owned_fleet = {
 						weights = {
 							base = 1
-							modifier = {
-								factor = 100
-								is_ship_size = voidworms_titan
-							}
+							modifier = { factor = 100 is_ship_size = voidworms_titan }
 							modifier = {
 								factor = 2
 								OR = {
@@ -317,27 +309,13 @@ create_cutholoids_country = {
 			type = cutholoids
 			auto_delete = no
 			flag = {
-				icon = {
-					category = "zoological"
-					file = "flag_zoological_1.dds"
-				}
-				background= {
-					category = "backgrounds"
-					file = "00_solid.dds"
-				}
-				colors={
-					"black"
-					"black"
-					"null"
-					"null"
-				}
+				icon = { category = "zoological" file = "flag_zoological_1.dds" }
+				background = { category = "backgrounds" file = "00_solid.dds" }
+				colors = { "black" "black" "null" "null" }
 			}
 			effect = {
 				save_global_event_target_as = cutholoids_country
-				set_variable = {
-					which = alive_cutholoids
-					value = 0
-				}
+				set_variable = { which = alive_cutholoids value = 0 }
 			}
 		}
 	}
@@ -358,9 +336,7 @@ spawn_cutholoid_from_asteroid = {
 			}
 			set_location = $LOCATION$
 			$LOCATION$ = {
-				solar_system = {
-					remove_star_flag = hidden_cutholoid
-				}
+				solar_system = { remove_star_flag = hidden_cutholoid }
 				remove_planet = yes
 			}
 		}
@@ -388,16 +364,13 @@ hide_cutholoid_in_asteroid = {
 	}
 
 	event_target:cutholoids_country = {
-		change_variable = {
-			which = alive_cutholoids
-			value = 1
-		}
+		change_variable = { which = alive_cutholoids value = 1 }
 	}
 }
-
 @category_aesthetic_wonders = 1
 @category_historical_items = 2
 @category_xeno_geology = 3
+
 artifact_analysis_effect = {
 	random_list = {
 		1 = {
@@ -598,13 +571,15 @@ give_random_common_historical_items_specimen = {
 ###############
 # Collection  #
 ###############
-	###########
-	# Stage 1 #
-	###########
+###########
+# Stage 1 #
+###########
+
 give_collection_stage_1_reward = {
 	hidden_effect = {
 		set_country_flag = received_collection_stage_1_reward_$CATEGORY$
 	}
+
 	add_modifier = {
 		modifier = $MODIFIER$
 	}
@@ -634,15 +609,21 @@ give_collection_stage_1_reward_historical_item = {
 skip_collection_stage_1_reward = {
 	hidden_effect = {
 		if = {
-			limit = { is_eligible_collection_stage_1_reward_not_skipped_xeno_geology = yes }
+			limit = {
+				is_eligible_collection_stage_1_reward_not_skipped_xeno_geology = yes
+			}
 			set_country_flag = skipped_collection_stage_1_reward_xeno_geology
 		}
 		else_if = {
-			limit = { is_eligible_collection_stage_1_reward_not_skipped_aesthetic_wonder = yes }
+			limit = {
+				is_eligible_collection_stage_1_reward_not_skipped_aesthetic_wonder = yes
+			}
 			set_country_flag = skipped_collection_stage_1_reward_aesthetic_wonder
 		}
 		else_if = {
-			limit = { is_eligible_collection_stage_1_reward_not_skipped_historical_item = yes }
+			limit = {
+				is_eligible_collection_stage_1_reward_not_skipped_historical_item = yes
+			}
 			set_country_flag = skipped_collection_stage_1_reward_historical_item
 		}
 	}
@@ -652,6 +633,7 @@ give_homicidal_stage_1_reward = {
 	hidden_effect = {
 		set_country_flag = received_homicidal_stage_1_reward_$CATEGORY$
 	}
+
 	add_monthly_resource_mult = {
 		resource = unity
 		value = @tier2unityreward
@@ -660,13 +642,15 @@ give_homicidal_stage_1_reward = {
 	}
 }
 
-	###########
-	# Stage 2 #
-	###########
+###########
+# Stage 2 #
+###########
+
 give_collection_stage_2_reward = {
 	hidden_effect = {
 		set_country_flag = received_collection_stage_2_reward_$CATEGORY$
 	}
+
 	custom_tooltip = collection_stage_2_reward_$CATEGORY$_tt
 }
 
@@ -691,15 +675,21 @@ give_collection_stage_2_reward_historical_item = {
 skip_collection_stage_2_reward = {
 	hidden_effect = {
 		if = {
-			limit = { is_eligible_collection_stage_2_reward_not_skipped_xeno_geology = yes }
+			limit = {
+				is_eligible_collection_stage_2_reward_not_skipped_xeno_geology = yes
+			}
 			set_country_flag = skipped_collection_stage_2_reward_xeno_geology
 		}
 		else_if = {
-			limit = { is_eligible_collection_stage_2_reward_not_skipped_aesthetic_wonder = yes }
+			limit = {
+				is_eligible_collection_stage_2_reward_not_skipped_aesthetic_wonder = yes
+			}
 			set_country_flag = skipped_collection_stage_2_reward_aesthetic_wonder
 		}
 		else_if = {
-			limit = { is_eligible_collection_stage_2_reward_not_skipped_historical_item = yes }
+			limit = {
+				is_eligible_collection_stage_2_reward_not_skipped_historical_item = yes
+			}
 			set_country_flag = skipped_collection_stage_2_reward_historical_item
 		}
 	}
@@ -709,6 +699,7 @@ give_homicidal_stage_2_reward = {
 	hidden_effect = {
 		set_country_flag = received_homicidal_stage_2_reward_$CATEGORY$
 	}
+
 	add_monthly_resource_mult = {
 		resource = unity
 		value = @tier3unityreward
@@ -717,26 +708,23 @@ give_homicidal_stage_2_reward = {
 	}
 }
 
-	###########
-	# Stage 3 #
-	###########
+###########
+# Stage 3 #
+###########
+
 roll_selected_relic = {
 	random_list = {
 		1 = {
 			modifier = {
 				factor = 0
 				OR = {
-					event_target:curator_enclave_country = {
-						has_country_flag = gave_relic_$RELIC_1$
-					}
+					event_target:curator_enclave_country = { has_country_flag = gave_relic_$RELIC_1$ }
 					has_country_flag = selected_relic_$RELIC_1$
 				}
 			}
 			modifier = {
 				factor = 0.1
-				any_playable_country = {
-					has_country_flag = selected_relic_$RELIC_1$
-				}
+				any_playable_country = { has_country_flag = selected_relic_$RELIC_1$ }
 			}
 			set_country_flag = selected_relic_$RELIC_1$
 		}
@@ -744,17 +732,13 @@ roll_selected_relic = {
 			modifier = {
 				factor = 0
 				OR = {
-					event_target:curator_enclave_country = {
-						has_country_flag = gave_relic_$RELIC_2$
-					}
+					event_target:curator_enclave_country = { has_country_flag = gave_relic_$RELIC_2$ }
 					has_country_flag = selected_relic_$RELIC_2$
 				}
 			}
 			modifier = {
 				factor = 0.1
-				any_playable_country = {
-					has_country_flag = selected_relic_$RELIC_2$
-				}
+				any_playable_country = { has_country_flag = selected_relic_$RELIC_2$ }
 			}
 			set_country_flag = selected_relic_$RELIC_2$
 		}
@@ -762,17 +746,13 @@ roll_selected_relic = {
 			modifier = {
 				factor = 0
 				OR = {
-					event_target:curator_enclave_country = {
-						has_country_flag = gave_relic_$RELIC_3$
-					}
+					event_target:curator_enclave_country = { has_country_flag = gave_relic_$RELIC_3$ }
 					has_country_flag = selected_relic_$RELIC_3$
 				}
 			}
 			modifier = {
 				factor = 0.1
-				any_playable_country = {
-					has_country_flag = selected_relic_$RELIC_3$
-				}
+				any_playable_country = { has_country_flag = selected_relic_$RELIC_3$ }
 			}
 			set_country_flag = selected_relic_$RELIC_3$
 		}
@@ -780,17 +760,13 @@ roll_selected_relic = {
 			modifier = {
 				factor = 0
 				OR = {
-					event_target:curator_enclave_country = {
-						has_country_flag = gave_relic_$RELIC_4$
-					}
+					event_target:curator_enclave_country = { has_country_flag = gave_relic_$RELIC_4$ }
 					has_country_flag = selected_relic_$RELIC_4$
 				}
 			}
 			modifier = {
 				factor = 0.1
-				any_playable_country = {
-					has_country_flag = selected_relic_$RELIC_4$
-				}
+				any_playable_country = { has_country_flag = selected_relic_$RELIC_4$ }
 			}
 			set_country_flag = selected_relic_$RELIC_4$
 		}
@@ -798,17 +774,13 @@ roll_selected_relic = {
 			modifier = {
 				factor = 0
 				OR = {
-					event_target:curator_enclave_country = {
-						has_country_flag = gave_relic_$RELIC_5$
-					}
+					event_target:curator_enclave_country = { has_country_flag = gave_relic_$RELIC_5$ }
 					has_country_flag = selected_relic_$RELIC_5$
 				}
 			}
 			modifier = {
 				factor = 0.1
-				any_playable_country = {
-					has_country_flag = selected_relic_$RELIC_5$
-				}
+				any_playable_country = { has_country_flag = selected_relic_$RELIC_5$ }
 			}
 			set_country_flag = selected_relic_$RELIC_5$
 		}
@@ -848,15 +820,21 @@ roll_selected_historical_item_relic = {
 skip_collection_stage_3_reward = {
 	hidden_effect = {
 		if = {
-			limit = { is_eligible_collection_stage_3_reward_not_skipped_xeno_geology = yes }
+			limit = {
+				is_eligible_collection_stage_3_reward_not_skipped_xeno_geology = yes
+			}
 			set_country_flag = skipped_collection_stage_3_reward_xeno_geology
 		}
 		else_if = {
-			limit = { is_eligible_collection_stage_3_reward_not_skipped_aesthetic_wonder = yes }
+			limit = {
+				is_eligible_collection_stage_3_reward_not_skipped_aesthetic_wonder = yes
+			}
 			set_country_flag = skipped_collection_stage_3_reward_aesthetic_wonder
 		}
 		else_if = {
-			limit = { is_eligible_collection_stage_3_reward_not_skipped_historical_item = yes }
+			limit = {
+				is_eligible_collection_stage_3_reward_not_skipped_historical_item = yes
+			}
 			set_country_flag = skipped_collection_stage_3_reward_historical_item
 		}
 	}
@@ -866,6 +844,7 @@ give_homicidal_stage_3_reward = {
 	hidden_effect = {
 		set_country_flag = received_homicidal_stage_3_reward_$CATEGORY$
 	}
+
 	add_monthly_resource_mult = {
 		resource = unity
 		value = @tier4unityreward
@@ -877,14 +856,13 @@ give_homicidal_stage_3_reward = {
 ###################
 # Treasure Troves #
 ###################
+
 setup_treasure_trove_reward = {
 	random_list = {
 		250 = {
 			modifier = {
 				add = 50
-				$COUNTRY_SCOPE$ = {
-					should_use_increased_treasure_trove_drops = yes
-				}
+				$COUNTRY_SCOPE$ = { should_use_increased_treasure_trove_drops = yes }
 			}
 			set_$TREASURE_TROVE_SCOPE_TYPE$_flag = treasure_trove_energy
 		}
@@ -900,45 +878,35 @@ setup_treasure_trove_reward = {
 		60 = {
 			modifier = {
 				add = 40
-				$COUNTRY_SCOPE$ = {
-					should_use_increased_treasure_trove_drops = yes
-				}
+				$COUNTRY_SCOPE$ = { should_use_increased_treasure_trove_drops = yes }
 			}
 			set_$TREASURE_TROVE_SCOPE_TYPE$_flag = treasure_trove_exotic_gases
 		}
 		60 = {
 			modifier = {
 				add = 40
-				$COUNTRY_SCOPE$ = {
-					should_use_increased_treasure_trove_drops = yes
-				}
+				$COUNTRY_SCOPE$ = { should_use_increased_treasure_trove_drops = yes }
 			}
 			set_$TREASURE_TROVE_SCOPE_TYPE$_flag = treasure_trove_volatile_motes
 		}
 		60 = {
 			modifier = {
 				add = 40
-				$COUNTRY_SCOPE$ = {
-					should_use_increased_treasure_trove_drops = yes
-				}
+				$COUNTRY_SCOPE$ = { should_use_increased_treasure_trove_drops = yes }
 			}
 			set_$TREASURE_TROVE_SCOPE_TYPE$_flag = treasure_trove_rare_crystals
 		}
 		250 = {
 			modifier = {
 				factor = 0
-				$COUNTRY_SCOPE$ = {
-					should_use_increased_treasure_trove_drops = yes
-				}
+				$COUNTRY_SCOPE$ = { should_use_increased_treasure_trove_drops = yes }
 			}
 			set_$TREASURE_TROVE_SCOPE_TYPE$_flag = treasure_trove_specimen
 		}
 		5 = {
 			modifier = {
 				add = 20
-				$COUNTRY_SCOPE$ = {
-					should_use_increased_treasure_trove_drops = yes
-				}
+				$COUNTRY_SCOPE$ = { should_use_increased_treasure_trove_drops = yes }
 			}
 			set_$TREASURE_TROVE_SCOPE_TYPE$_flag = treasure_trove_pirate_ship
 			create_fleet = {
@@ -961,9 +929,7 @@ setup_treasure_trove_reward = {
 		15 = {
 			modifier = {
 				add = 60
-				$COUNTRY_SCOPE$ = {
-					should_use_increased_treasure_trove_drops = yes
-				}
+				$COUNTRY_SCOPE$ = { should_use_increased_treasure_trove_drops = yes }
 			}
 			set_$TREASURE_TROVE_SCOPE_TYPE$_flag = treasure_trove_technology
 		}
@@ -979,7 +945,6 @@ setup_treasure_trove_reward = {
 		}
 		set_$TREASURE_TROVE_SCOPE_TYPE$_flag = treasure_trove_specimen_extra
 	}
-
 	if = {
 		limit = {
 			OR = {
@@ -1102,9 +1067,7 @@ give_treasure_trove_reward = {
 			$COUNTRY_SCOPE$ = {
 				custom_tooltip = treasure_trove_pirate_ship_tt
 				hidden_effect = {
-					event_target:treasure_trove_pirate_ship = {
-						set_disabled = no
-					}
+					event_target:treasure_trove_pirate_ship = { set_disabled = no }
 				}
 			}
 		}
@@ -1122,7 +1085,6 @@ give_treasure_trove_reward = {
 			}
 		}
 	}
-
 	# For Treasure Hunters origin, specimen is given in addition to another reward
 	if = {
 		limit = {
@@ -1134,15 +1096,14 @@ give_treasure_trove_reward = {
 		custom_tooltip = treasure_trove_specimen_tt
 		hidden_effect = {
 			$COUNTRY_SCOPE$ = {
-				give_random_treasure_trove_specimen = {
-					TREASURE_TROVE_SCOPE_TYPE = $TREASURE_TROVE_SCOPE_TYPE$
-				}
+				give_random_treasure_trove_specimen = { TREASURE_TROVE_SCOPE_TYPE = $TREASURE_TROVE_SCOPE_TYPE$ }
 			}
 		}
 	}
-
 	if = {
-		limit = { has_$TREASURE_TROVE_SCOPE_TYPE$_flag = treasure_trove_pirates_defeated }
+		limit = {
+			has_$TREASURE_TROVE_SCOPE_TYPE$_flag = treasure_trove_pirates_defeated
+		}
 		$COUNTRY_SCOPE$ = {
 			add_monthly_resource_mult = {
 				resource = energy
@@ -1154,6 +1115,7 @@ give_treasure_trove_reward = {
 	}
 
 	remove_$TREASURE_TROVE_SCOPE_TYPE$_flag = treasure_trove_active
+
 	solar_system = {
 		if = {
 			limit = { has_star_flag = pirates_spawn_rolled }
@@ -1194,118 +1156,76 @@ create_treasure_trove_pirate_fleet = {
 			name = random
 			skill = 1
 		}
-		get_galaxy_setup_value = {
-			setting = end_game_year
-			which = local_end_game_years
-		}
-		set_variable = {
-			which = local_percent_game_years_passed
-			value = trigger:years_passed
-		}
-		divide_variable = {
-			which = local_percent_game_years_passed
-			value = local_end_game_years
-		}
+		get_galaxy_setup_value = { setting = end_game_year which = local_end_game_years }
+		set_variable = { which = local_percent_game_years_passed value = trigger:years_passed }
+		divide_variable = { which = local_percent_game_years_passed value = local_end_game_years }
 		create_fleet = {
 			name = "NAME_Pirate_Fleet"
 			effect = {
 				set_owner = event_target:pirate_band
 				if = {
 					limit = {
-						check_variable = {
-							which = local_percent_game_years_passed
-							value >= 0.0
-						}
+						check_variable = { which = local_percent_game_years_passed value >= 0.0 }
 					}
 					create_pirate_ships_0 = yes
 				}
 				if = {
 					limit = {
-						check_variable = {
-							which = local_percent_game_years_passed
-							value >= 0.1
-						}
+						check_variable = { which = local_percent_game_years_passed value >= 0.1 }
 					}
 					create_pirate_ships_1 = yes
 				}
 				if = {
 					limit = {
-						check_variable = {
-							which = local_percent_game_years_passed
-							value >= 0.2
-						}
+						check_variable = { which = local_percent_game_years_passed value >= 0.2 }
 					}
 					create_pirate_ships_2 = yes
 				}
 				if = {
 					limit = {
-						check_variable = {
-							which = local_percent_game_years_passed
-							value >= 0.3
-						}
+						check_variable = { which = local_percent_game_years_passed value >= 0.3 }
 					}
 					create_pirate_ships_3 = yes
 				}
 				if = {
 					limit = {
-						check_variable = {
-							which = local_percent_game_years_passed
-							value >= 0.4
-						}
+						check_variable = { which = local_percent_game_years_passed value >= 0.4 }
 					}
 					create_pirate_ships_4 = yes
 				}
 				if = {
 					limit = {
-						check_variable = {
-							which = local_percent_game_years_passed
-							value >= 0.5
-						}
+						check_variable = { which = local_percent_game_years_passed value >= 0.5 }
 					}
 					create_pirate_ships_5 = yes
 				}
 				if = {
 					limit = {
-						check_variable = {
-							which = local_percent_game_years_passed
-							value >= 0.6
-						}
+						check_variable = { which = local_percent_game_years_passed value >= 0.6 }
 					}
 					create_pirate_ships_6 = yes
 				}
 				if = {
 					limit = {
-						check_variable = {
-							which = local_percent_game_years_passed
-							value >= 0.7
-						}
+						check_variable = { which = local_percent_game_years_passed value >= 0.7 }
 					}
 					create_pirate_ships_7 = yes
 				}
 				if = {
 					limit = {
-						check_variable = {
-							which = local_percent_game_years_passed
-							value >= 0.8
-						}
+						check_variable = { which = local_percent_game_years_passed value >= 0.8 }
 					}
 					create_pirate_ships_8 = yes
 				}
 				if = {
 					limit = {
-						check_variable = {
-							which = local_percent_game_years_passed
-							value >= 0.9
-						}
+						check_variable = { which = local_percent_game_years_passed value >= 0.9 }
 					}
 					create_pirate_ships_9 = yes
 				}
 				if = {
 					limit = {
-						check_variable = {
-							which = local_percent_game_years_passed
-							value >= 1
-						}
+						check_variable = { which = local_percent_game_years_passed value >= 1 }
 					}
 					create_pirate_ships_10 = yes
 				}
@@ -1396,6 +1316,7 @@ give_random_treasure_trove_specimen = {
 
 upgrade_celestial_chart_relic = {
 	custom_tooltip = celestial_chart_upgraded_tt
+
 	hidden_effect = {
 		switch = {
 			trigger = has_relic
@@ -1423,11 +1344,13 @@ upgrade_celestial_chart_relic = {
 # Primal Calling #
 ##################
 ### Primal Calling Exhibit ###
+
 refresh_primal_calling_exhibit_modifier = {
 	if = {
 		limit = { has_modifier = primal_calling_exhibit_modifier }
 		remove_modifier = primal_calling_exhibit_modifier
 	}
+
 	add_modifier = {
 		modifier = primal_calling_exhibit_modifier
 		multiplier = trigger:num_vivarium_slots
@@ -1436,11 +1359,13 @@ refresh_primal_calling_exhibit_modifier = {
 }
 
 ### Primal Calling Exploit ###
+
 refresh_primal_calling_exploit_modifier = {
 	if = {
 		limit = { has_modifier = primal_calling_exploit_modifier }
 		remove_modifier = primal_calling_exploit_modifier
 	}
+
 	add_modifier = {
 		modifier = primal_calling_exploit_modifier
 		multiplier = trigger:num_vivarium_slots
@@ -1449,11 +1374,13 @@ refresh_primal_calling_exploit_modifier = {
 }
 
 ### Primal Calling Assimilate ###
+
 refresh_primal_calling_assimilate_modifier = {
 	if = {
 		limit = { has_modifier = primal_calling_assimilate_modifier }
 		remove_modifier = primal_calling_assimilate_modifier
 	}
+
 	add_modifier = {
 		modifier = primal_calling_assimilate_modifier
 		multiplier = trigger:num_vivarium_slots
@@ -1462,6 +1389,7 @@ refresh_primal_calling_assimilate_modifier = {
 }
 
 ### Primal Calling Space Fauna Ships Update ###
+
 append_cloned_fauna_size = {
 	if = {
 		limit = { is_variable_set = cloned_space_fauna_size_value }
@@ -1487,10 +1415,7 @@ remove_cloned_fauna_size = {
 		}
 		if = {
 			limit = {
-				check_variable = {
-					which = cloned_space_fauna_size_value
-					value <= 0
-				}
+				check_variable = { which = cloned_space_fauna_size_value value <= 0 }
 			}
 			clear_variable = cloned_space_fauna_size_value
 		}
@@ -1517,20 +1442,14 @@ spawn_from_location_tiyanki = {
 			name = "NAME_Tiyanki_Space_Whale"
 			effect = {
 				set_owner = event_target:tiyanki_country
-				create_ship = {
-					design = "NAME_Tiyanki_Cow"
-				}
+				create_ship = { design = "NAME_Tiyanki_Cow" }
 				while = {
 					count = 2
-					create_ship = {
-						design = "NAME_Tiyanki_Bull"
-					}
+					create_ship = { design = "NAME_Tiyanki_Bull" }
 				}
 				while = {
 					count = 4
-					create_ship = {
-						design = "NAME_Tiyanki_Calf"
-					}
+					create_ship = { design = "NAME_Tiyanki_Calf" }
 				}
 				set_location = $LOCATION$
 			}
@@ -1546,15 +1465,11 @@ spawn_from_location_space_amoeba = {
 				set_owner = event_target:amoeba_country
 				while = {
 					count = 2
-					create_ship = {
-						design = "NAME_Small_Space_Organism_Orange"
-					}
+					create_ship = { design = "NAME_Small_Space_Organism_Orange" }
 				}
 				while = {
 					count = 4
-					create_ship = {
-						design = "NAME_Large_Space_Organism_Orange"
-					}
+					create_ship = { design = "NAME_Large_Space_Organism_Orange" }
 				}
 				set_location = $LOCATION$
 			}
@@ -1568,20 +1483,14 @@ spawn_from_location_crystalline_entity = {
 			name = "NAME_Sapphire_Lurkers"
 			effect = {
 				set_owner = event_target:crystal_country
-				create_ship = {
-					design = "NAME_Small_Crystal_Entity_Blue"
-				}
+				create_ship = { design = "NAME_Small_Crystal_Entity_Blue" }
 				while = {
 					count = 2
-					create_ship = {
-						design = "NAME_Medium_Crystal_Entity_Blue"
-					}
+					create_ship = { design = "NAME_Medium_Crystal_Entity_Blue" }
 				}
 				while = {
 					count = 4
-					create_ship = {
-						design = "NAME_Large_Crystal_Entity_Blue"
-					}
+					create_ship = { design = "NAME_Large_Crystal_Entity_Blue" }
 				}
 				set_location = $LOCATION$
 			}
@@ -1595,14 +1504,10 @@ spawn_from_location_voidworm = {
 			name = "NAME_Voidworms"
 			effect = {
 				set_owner = event_target:voidworms_country
-				create_ship = {
-					design = "NAME_Voidworms_Mature"
-				}
+				create_ship = { design = "NAME_Voidworms_Mature" }
 				while = {
 					count = 3
-					create_ship = {
-						design = "NAME_Voidworms_Juvenile"
-					}
+					create_ship = { design = "NAME_Voidworms_Juvenile" }
 				}
 				set_location = $LOCATION$
 			}
@@ -1621,9 +1526,7 @@ spawn_from_location_cutholoid = {
 			name = "NAME_Cutholoids"
 			effect = {
 				set_owner = event_target:cutholoids_country
-				create_ship = {
-					design = NAME_Cutholoids
-				}
+				create_ship = { design = NAME_Cutholoids }
 				set_location = $LOCATION$
 			}
 			settings = {
@@ -1641,16 +1544,10 @@ increase_hunted_fauna_count = {
 			limit = {
 				NOT = { is_variable_set = hunted_space_fauna }
 			}
-			set_variable = {
-				which = hunted_space_fauna
-				value = 1
-			}
+			set_variable = { which = hunted_space_fauna value = 1 }
 		}
 		else = {
-			change_variable = {
-				which = hunted_space_fauna
-				value = 1
-			}
+			change_variable = { which = hunted_space_fauna value = 1 }
 		}
 	}
 }
@@ -1659,28 +1556,16 @@ give_specimen_galactic_curators = {
 	switch = {
 		trigger = has_civic
 		civic_galactic_curators = {
-			give_specimen = {
-				key = $KEY$
-				origin = civic_galactic_curators
-			}
+			give_specimen = { key = $KEY$ origin = civic_galactic_curators }
 		}
 		civic_corporate_galactic_curators = {
-			give_specimen = {
-				key = $KEY$
-				origin = civic_corporate_galactic_curators
-			}
+			give_specimen = { key = $KEY$ origin = civic_corporate_galactic_curators }
 		}
 		civic_hive_galactic_curators = {
-			give_specimen = {
-				key = $KEY$
-				origin = civic_hive_galactic_curators
-			}
+			give_specimen = { key = $KEY$ origin = civic_hive_galactic_curators }
 		}
 		civic_machine_galactic_curators = {
-			give_specimen = {
-				key = $KEY$
-				origin = civic_machine_galactic_curators
-			}
+			give_specimen = { key = $KEY$ origin = civic_machine_galactic_curators }
 		}
 	}
 }
@@ -1689,31 +1574,22 @@ give_bio_repurposing_reward_on_organic_deposit_cleared = {
 	if = {
 		limit = {
 			exists = owner
-			owner = {
-				has_tradition = tr_domestication_bio_repurposing
-			}
+			owner = { has_tradition = tr_domestication_bio_repurposing }
 		}
-		owner = { add_resource = { food = @bio_repurposing_blocker_clear_food } }
+		owner = {
+			add_resource = { food = @bio_repurposing_blocker_clear_food }
+		}
 	}
 }
 
 release_all_vivarium_fauna = {
-	set_variable = {
-		which = local_released_fauna_count
-		value = @grand_archive_vivarium_capacity
-	}
+	set_variable = { which = local_released_fauna_count value = @grand_archive_vivarium_capacity }
 	set_variable = {
 		which = local_released_fauna_count_mult
 		value = modifier:country_vivarium_max_capacity_mult
 	}
-	change_variable = {
-		which = local_released_fauna_count_mult
-		value = 1
-	}
-	multiply_variable = {
-		which = local_released_fauna_count
-		value = local_released_fauna_count_mult
-	}
+	change_variable = { which = local_released_fauna_count_mult value = 1 }
+	multiply_variable = { which = local_released_fauna_count value = local_released_fauna_count_mult }
 
 	release_vivarium_fauna_count = {
 		count = local_released_fauna_count
@@ -1731,6 +1607,7 @@ release_all_vivarium_fauna = {
 ##############
 # Traditions #
 ##############
+
 give_flawless_display_modifier_for_category = {
 	remove_modifier = archivism_flawless_display_modifier_$CATEGORY$
 	export_trigger_value_to_variable = {
@@ -1750,10 +1627,7 @@ give_flawless_display_modifier_for_category = {
 	}
 	if = {
 		limit = {
-			check_variable = {
-				which = $CATEGORY$_specimen_count
-				value > 0
-			}
+			check_variable = { which = $CATEGORY$_specimen_count value > 0 }
 		}
 		add_modifier = {
 			modifier = archivism_flawless_display_modifier_$CATEGORY$
@@ -1773,19 +1647,11 @@ add_trophy_hunter_resource_diff_to_variable = {
 }
 
 add_resource_diff_to_variable = {
-	export_resource_stockpile_to_variable = {
-		resource = $RESOURCE$
-		variable = $RESOURCE$_after
-	}
+	export_resource_stockpile_to_variable = { resource = $RESOURCE$ variable = $RESOURCE$_after }
+
 	$EXPORT_SCOPE$ = {
-		change_variable = {
-			which = $TARGET$
-			value = $RESOURCES_AFTER$
-		}
-		subtract_variable = {
-			which = $TARGET$
-			value = $RESOURCES_BEFORE$
-		}
+		change_variable = { which = $TARGET$ value = $RESOURCES_AFTER$ }
+		subtract_variable = { which = $TARGET$ value = $RESOURCES_BEFORE$ }
 	}
 }
 
@@ -1843,8 +1709,8 @@ display_trophy_hunters_fauna_kill_message = {
 select_suitable_spawn_system = {
 	random_system_within_border = {
 		limit = {
-			is_capital_system = no
-			NOT = {
+			NOR = {
+				is_capital_system = yes
 				any_neighbor_system = {
 					OR = {
 						NOR = {
@@ -1886,14 +1752,13 @@ select_suitable_spawn_system = {
 			}
 		}
 	}
+
 	# Select capital if there is no other solution
 	if = {
 		limit = {
 			NOT = { exists = event_target:suitable_spawn_system }
 		}
-		capital_scope.solar_system = {
-			save_event_target_as = suitable_spawn_system
-		}
+		capital_scope.solar_system = { save_event_target_as = suitable_spawn_system }
 	}
 }
 
@@ -1907,12 +1772,12 @@ spawn_treasure_hidden_system = {
 			target = this
 		}
 	}
+
 	# First spawn has different rules than subsequent spawns
 	capital_scope.solar_system = {
-		random_neighbor_system = {
-			save_event_target_as = suitable_spawn_system
-		}
+		random_neighbor_system = { save_event_target_as = suitable_spawn_system }
 	}
+
 	event_target:suitable_spawn_system = {
 		set_star_flag = treasure_hunters_spawn_pinpoint
 		spawn_system = {
@@ -1921,10 +1786,7 @@ spawn_treasure_hidden_system = {
 			initializer = "hidden_treasure_system_initializer"
 			hyperlane = no
 			effect = {
-				add_hyperlane = {
-					from = this
-					to = prev
-				}
+				add_hyperlane = { from = this to = prev }
 				save_global_event_target_as = first_hidden_system_for@root
 				root = {
 					set_visited = prev
@@ -1944,32 +1806,24 @@ spawn_treasure_hidden_system = {
 create_black_needle_country = {
 	optimize_memory
 	if = {
-		limit = { NOT = { exists = event_target:black_needle_country } }
+		limit = {
+			NOT = { exists = event_target:black_needle_country }
+		}
 		create_country = {
 			name = "NAME_BlackNeedle"
 			type = pirate
 			species = random
 			auto_delete = no
 			flag = {
-				background = {
-					category = "backgrounds"
-					file = "00_solid.dds"
-				}
-				colors = {
-					"red"
-					"red"
-					"null"
-					"null"
-				}
+				background = { category = "backgrounds" file = "00_solid.dds" }
+				colors = { "red" "red" "null" "null" }
 			}
 			effect = {
 				set_country_flag = disable_pirate_starbase_spawning
 				save_global_event_target_as = black_needle_country
 			}
 		}
-		event_target:black_needle_country = {
-			randomize_flag_symbol = "pirate"
-		}
+		event_target:black_needle_country = { randomize_flag_symbol = "pirate" }
 	}
 }
 
@@ -1987,13 +1841,14 @@ set_black_needle_hostile = {
 
 set_black_needle_actively_hostile = {
 	set_black_needle_hostile = yes
+
 	$FLEET_SCOPE$ = {
 		set_fleet_stance = aggressive
 		if = {
 			limit = {
 				solar_system = {
-					count_neighbor_system = { count = 0
-						limit = {
+					NOT = {
+						any_neighbor_system = {
 							has_owner = yes
 							is_owned_by = root
 							is_capital_system = yes
@@ -2014,9 +1869,7 @@ set_black_needle_actively_hostile = {
 							}
 						}
 					}
-					found_system = {
-						move_to = this
-					}
+					found_system = { move_to = this }
 				}
 			}
 		}
@@ -2032,9 +1885,7 @@ create_captain_hoo_leader = {
 		event_target:black_needle_country = {
 			if = {
 				limit = {
-					prev = {
-						species_portrait = cyb5
-					}
+					prev = { species_portrait = cyb5 }
 				}
 				create_species = {
 					name = "NAME_Unknown"
@@ -2097,19 +1948,12 @@ create_black_needle_fleet_01 = {
 			name = "NAME_BlackNeedle"
 			effect = {
 				set_owner = event_target:black_needle_country
-				create_ship_design = {
-					design = "NAME_Reaver"
-				}
+				create_ship_design = { design = "NAME_Reaver" }
 				while = {
 					count = 8
-					create_ship = {
-						design = last_created_design
-						graphical_culture = "pirate_01"
-					}
+					create_ship = { design = last_created_design graphical_culture = "pirate_01" }
 				}
-				create_ship_design = {
-					design = "NAME_Marauder"
-				}
+				create_ship_design = { design = "NAME_Marauder" }
 				create_ship = {
 					design = last_created_design
 					graphical_culture = "pirate_01"
@@ -2131,9 +1975,7 @@ create_black_needle_fleet_01 = {
 					clone_leader = {
 						target = event_target:captain_hoo
 						effect = {
-							event_target:black_needle_fleet = {
-								assign_leader = prev
-							}
+							event_target:black_needle_fleet = { assign_leader = prev }
 						}
 					}
 				}
@@ -2158,7 +2000,9 @@ spawn_black_needle_base_system = {
 			target = this
 		}
 	}
+
 	select_suitable_spawn_system = yes
+
 	event_target:suitable_spawn_system = {
 		spawn_system = {
 			min_distance = 20
@@ -2166,10 +2010,7 @@ spawn_black_needle_base_system = {
 			initializer = "black_needle_base_initializer"
 			hyperlane = no
 			effect = {
-				add_hyperlane = {
-					from = this
-					to = prev
-				}
+				add_hyperlane = { from = this to = prev }
 				save_global_event_target_as = black_needle_base_system_for@root
 				root = {
 					set_visited = prev
@@ -2196,7 +2037,9 @@ spawn_smeegibb_shelter_system = {
 			target = this
 		}
 	}
+
 	select_suitable_spawn_system = yes
+
 	event_target:suitable_spawn_system = {
 		spawn_system = {
 			min_distance = 20
@@ -2204,10 +2047,7 @@ spawn_smeegibb_shelter_system = {
 			initializer = "smeegibb_shelter_initializer"
 			hyperlane = no
 			effect = {
-				add_hyperlane = {
-					from = this
-					to = prev
-				}
+				add_hyperlane = { from = this to = prev }
 				save_global_event_target_as = smeegibb_system_for@root
 				root = {
 					set_visited = prev
@@ -2227,7 +2067,9 @@ spawn_smeegibb_shelter_system = {
 create_smeegibb_country = {
 	optimize_memory
 	if = {
-		limit = { NOT = { exists = event_target:smeegibb_country } }
+		limit = {
+			NOT = { exists = event_target:smeegibb_country }
+		}
 		create_country = {
 			name = "NAME_Unknown"
 			type = paragon_event_country
@@ -2265,7 +2107,6 @@ create_smeegibb_leader = {
 				event_leader = yes
 				skip_background_generation = yes
 				randomize_traits = no
-
 				effect = {
 					set_leader_flag = smeegibb
 					save_global_event_target_as = smeegibb
@@ -2285,9 +2126,7 @@ create_captain_inax_leader = {
 		event_target:black_needle_country = {
 			if = {
 				limit = {
-					prev = {
-						species_portrait = art11
-					}
+					prev = { species_portrait = art11 }
 				}
 				create_species = {
 					name = "NAME_Unknown"
@@ -2350,29 +2189,17 @@ create_black_needle_fleet_02 = {
 			name = "NAME_BlackNeedle"
 			effect = {
 				set_owner = event_target:black_needle_country
-				create_ship_design = {
-					design = "NAME_Skull"
-				}
+				create_ship_design = { design = "NAME_Skull" }
 				while = {
 					count = 8
-					create_ship = {
-						design = last_created_design
-						graphical_culture = "pirate_01"
-					}
+					create_ship = { design = last_created_design graphical_culture = "pirate_01" }
 				}
-				create_ship_design = {
-					design = "NAME_Bemat_destroyer_02"
-				}
+				create_ship_design = { design = "NAME_Bemat_destroyer_02" }
 				while = {
 					count = 6
-					create_ship = {
-						design = last_created_design
-						graphical_culture = "pirate_01"
-					}
+					create_ship = { design = last_created_design graphical_culture = "pirate_01" }
 				}
-				create_ship_design = {
-					design = "NAME_Bemat_cruiser_inax_01"
-				}
+				create_ship_design = { design = "NAME_Bemat_cruiser_inax_01" }
 				create_ship = {
 					design = last_created_design
 					graphical_culture = "pirate_01"
@@ -2394,9 +2221,7 @@ create_black_needle_fleet_02 = {
 					clone_leader = {
 						target = event_target:captain_inax
 						effect = {
-							event_target:black_needle_fleet = {
-								assign_leader = prev
-							}
+							event_target:black_needle_fleet = { assign_leader = prev }
 						}
 					}
 				}
@@ -2421,7 +2246,9 @@ spawn_gateway_to_ness_treasure_system = {
 			target = this
 		}
 	}
+
 	select_suitable_spawn_system = yes
+
 	event_target:suitable_spawn_system = {
 		spawn_system = {
 			min_distance = 20
@@ -2429,10 +2256,7 @@ spawn_gateway_to_ness_treasure_system = {
 			initializer = "gateway_to_ness_treasure_initializer"
 			hyperlane = no
 			effect = {
-				add_hyperlane = {
-					from = this
-					to = prev
-				}
+				add_hyperlane = { from = this to = prev }
 				save_global_event_target_as = gateway_to_ness_treasure_system_for@root
 				root = {
 					if = {
@@ -2466,6 +2290,7 @@ spawn_ness_treasure_system = {
 			target = this
 		}
 	}
+
 	random_system = {
 		spawn_system = {
 			min_distance = 40
@@ -2536,22 +2361,12 @@ create_final_black_needle_fleet = {
 			name = "NAME_BlackNeedle"
 			effect = {
 				set_owner = event_target:black_needle_country
-				create_ship_design = {
-					design = "NAME_Pirate_Galleon"
-				}
-				create_ship = {
-					design = last_created_design
-					graphical_culture = "pirate_01"
-				}
-				create_ship_design = {
-					design = "NAME_Bemat_cruiser_01"
-				}
+				create_ship_design = { design = "NAME_Pirate_Galleon" }
+				create_ship = { design = last_created_design graphical_culture = "pirate_01" }
+				create_ship_design = { design = "NAME_Bemat_cruiser_01" }
 				while = {
 					count = 60
-					create_ship = {
-						design = last_created_design
-						graphical_culture = "pirate_01"
-					}
+					create_ship = { design = last_created_design graphical_culture = "pirate_01" }
 				}
 				set_location = {
 					target = root.$LOCATION$
@@ -2565,9 +2380,7 @@ create_final_black_needle_fleet = {
 					clone_leader = {
 						target = event_target:cobalt_quill
 						effect = {
-							event_target:black_needle_fleet = {
-								assign_leader = prev
-							}
+							event_target:black_needle_fleet = { assign_leader = prev }
 						}
 					}
 				}
@@ -2584,9 +2397,7 @@ create_final_black_needle_fleet = {
 
 create_sabotage_fleet = {
 	if = {
-		limit = {
-			exists = event_target:black_needle_country
-		}
+		limit = { exists = event_target:black_needle_country }
 		create_fleet = {
 			name = "NAME_BlackNeedle"
 			effect = {
@@ -2619,20 +2430,9 @@ create_captain_ness_leader = {
 			type = global_event
 			auto_delete = yes
 			flag = {
-				icon = {
-					category = "special"
-					file = "unknown.dds"
-				}
-				background = {
-					category = "backgrounds"
-					file = "00_solid.dds"
-				}
-				colors = {
-					"null"
-					"null"
-					"null"
-					"null"
-				}
+				icon = { category = "special" file = "unknown.dds" }
+				background = { category = "backgrounds" file = "00_solid.dds" }
+				colors = { "null" "null" "null" "null" }
 			}
 			effect = {
 				save_event_target_as = captain_ness_country
@@ -2692,25 +2492,15 @@ create_primal_leader = {
 		type = nice_faction
 		auto_delete = yes
 		flag = {
-			icon = {
-				category = "special"
-				file = "unknown.dds"
-			}
-			background = {
-				category = "backgrounds"
-				file = "00_solid.dds"
-			}
-			colors = {
-				"red"
-				"red"
-				"null"
-				"null"
-			}
+			icon = { category = "special" file = "unknown.dds" }
+			background = { category = "backgrounds" file = "00_solid.dds" }
+			colors = { "red" "red" "null" "null" }
 		}
 		effect = {
 			save_event_target_as = leader_country
 		}
 	}
+
 	event_target:leader_country = {
 		create_species = {
 			name = UNKNOWN
@@ -2740,7 +2530,10 @@ create_primal_leader = {
 			randomize_traits = no
 			effect = {
 				save_event_target_as = primal_leader
-				set_variable = { which = leader_pending_negative_traits_unmodified value = 1 }
+				set_variable = {
+					which = leader_pending_negative_traits_unmodified
+					value = 1
+				}
 				set_owner = event_target:leader_country
 				exile_leader_as = primal_leader_exile
 			}
@@ -2771,34 +2564,22 @@ create_frenzied_voidworms_fleet = {
 		name = "NAME_Frenzied_Voidworms"
 		effect = {
 			set_owner = event_target:frenzied_voidworms_country
-			set_variable = {
-				which = matures_to_spawn
-				value = 9
-			}
+			set_variable = { which = matures_to_spawn value = 9 }
 			while = {
 				count = $FLEET_STRENGTH|0$
-				change_variable = {
-					which = matures_to_spawn
-					value = 2
-				}
+				change_variable = { which = matures_to_spawn value = 2 }
 			}
 			while = {
 				count = matures_to_spawn
-				create_ship = {
-					design = NAME_Frenzied_Voidworms_Mature
-				}
+				create_ship = { design = NAME_Frenzied_Voidworms_Mature }
 			}
 			while = {
 				count = 1
-				create_ship = {
-					design = NAME_Frenzied_Voidworms_Juvenile
-				}
+				create_ship = { design = NAME_Frenzied_Voidworms_Juvenile }
 			}
 			while = {
 				count = 4
-				create_ship = {
-					design = NAME_Frenzied_Voidworms_Nymph
-				}
+				create_ship = { design = NAME_Frenzied_Voidworms_Nymph }
 			}
 			set_location = {
 				target = $LOCATION$
@@ -2808,10 +2589,7 @@ create_frenzied_voidworms_fleet = {
 			set_fleet_stance = aggressive
 			set_fleet_flag = frenzied_voidworms_fleet
 			set_fleet_bombardment_stance = frenzied_voidworm_invasion
-			add_modifier = {
-				modifier = frenzied_voidworms_at_home_modifier
-				days = -1
-			}
+			add_modifier = { modifier = frenzied_voidworms_at_home_modifier days = -1 }
 			save_event_target_as = frenzied_voidworms_fleet
 		}
 		settings = {
@@ -2827,20 +2605,17 @@ get_frenzied_voidworms_target = {
 			exists = home_planet
 			home_planet.owner = { is_same_empire = prev }
 		}
-		home_planet = {
-			save_event_target_as = $TARGET$
-		}
+		home_planet = { save_event_target_as = $TARGET$ }
 	}
 	else = {
-		capital_scope = {
-			save_event_target_as = $TARGET$
-		}
+		capital_scope = { save_event_target_as = $TARGET$ }
 	}
 }
 
 cleanup_sabotage_flags = {
 	remove_country_flag = periodic_spawn_block
 	remove_country_flag = destroyed_fleet_spawn_cooldown
+
 	every_system_within_border = {
 		limit = { has_star_flag = available_for_sabotage }
 		remove_star_flag = available_for_sabotage
@@ -2850,10 +2625,12 @@ cleanup_sabotage_flags = {
 # Scope = Planet
 plant_fruitful_seeds = {
 	set_planet_flag = seeds_planted_by@$SEEDS_OWNER$
+
 	set_surveyed = {
 		surveyed = yes
 		surveyor = $SEEDS_OWNER$
 	}
+
 	# If the planet has an owner:
 	# YOU
 	# - Get a positive opinion modifier
@@ -2861,41 +2638,28 @@ plant_fruitful_seeds = {
 	# - Get a planet modifier (nice forests) or levels up an existing one
 	# - Get a decision to remove the modifier
 	if = {
-		limit = {
-			exists = owner
-		}
+		limit = { exists = owner }
 		switch = {
 			trigger = has_modifier
 			seeded_planet_1_modifier = {
-				add_modifier = {
-					modifier = seeded_planet_2_modifier
-				}
+				add_modifier = { modifier = seeded_planet_2_modifier }
 				remove_modifier = seeded_planet_1_modifier
 			}
 			seeded_planet_2_modifier = {
-				add_modifier = {
-					modifier = seeded_planet_3_modifier
-				}
+				add_modifier = { modifier = seeded_planet_3_modifier }
 				remove_modifier = seeded_planet_2_modifier
 			}
 			default = {
-				add_modifier = {
-					modifier = seeded_planet_1_modifier
-				}
+				add_modifier = { modifier = seeded_planet_1_modifier }
 			}
 		}
 		if = {
 			limit = {
-				NOT = {
-					owner = { is_same_empire = $SEEDS_OWNER$ }
-				}
+				NOT = { is_owned_by = $SEEDS_OWNER$ }
 			}
 			planet_event = { id = origin.7327 days = 1 }
 			owner = {
-				add_opinion_modifier = {
-					modifier = opinion_nice_forests
-					who = $SEEDS_OWNER$
-				}
+				add_opinion_modifier = { modifier = opinion_nice_forests who = $SEEDS_OWNER$ }
 			}
 		}
 		# notify the seeds owner
@@ -2921,14 +2685,13 @@ plant_fruitful_seeds = {
 			}
 		}
 	}
+
 	# If the planet has no owner:
 	# YOU
 	# - Get a planet modifier (dormant seed pod)
 	# - Get a special project to open it, colonizing the planet
 	else = {
-		add_modifier = {
-			modifier = seeded_planet_0_modifier
-		}
+		add_modifier = { modifier = seeded_planet_0_modifier }
 		enable_special_project = {
 			name = OPEN_SEED_PODS_PROJECT
 			owner = $SEEDS_OWNER$
@@ -2957,6 +2720,7 @@ plant_fruitful_seeds = {
 			}
 		}
 	}
+
 	$SEEDED_FLEET$ = {
 		remove_fleet_flag = fruitful_seeded_critter
 	}
@@ -2973,20 +2737,9 @@ create_lured_fauna_country = {
 			type = lured_fauna_faction
 			auto_delete = no
 			flag = {
-				icon = {
-					category = "zoological"
-					file = "flag_zoological_1.dds"
-				}
-				background= {
-					category = "backgrounds"
-					file = "00_solid.dds"
-				}
-				colors={
-					"black"
-					"black"
-					"null"
-					"null"
-				}
+				icon = { category = "zoological" file = "flag_zoological_1.dds" }
+				background = { category = "backgrounds" file = "00_solid.dds" }
+				colors = { "black" "black" "null" "null" }
 			}
 			effect = {
 				save_global_event_target_as = lured_fauna_country

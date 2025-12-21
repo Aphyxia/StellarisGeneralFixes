@@ -20,7 +20,6 @@ deneb_system = {
 		}
 		generate_home_system_resources = yes
 	}
-
 	flags = { empire_home_system deneb_system }
 
 	usage = custom_empire
@@ -173,7 +172,6 @@ une_deneb_system = {
 		}
 		generate_home_system_resources = yes
 	}
-
 	flags = { empire_home_system deneb_system }
 
 	usage = misc_system_init
@@ -189,11 +187,8 @@ une_deneb_system = {
 					has_origin = origin_broken_shackles
 				}
 			}
-			count_system = {
-				count = 0
-				limit = { has_star_flag = deneb_system }
-			}
 			NOR = {
+				any_system = { has_star_flag = deneb_system }
 				has_star_flag = empire_cluster
 				num_ai_empires_setting < 1
 			}
@@ -289,7 +284,10 @@ une_deneb_system = {
 					species = event_target:human_species
 					name_list = "HUMAN2"
 					ship_prefix = "CNS"
-					ethos = { ethic = "ethic_xenophobe" ethic = "ethic_fanatic_militarist" }
+					ethos = {
+						ethic = "ethic_xenophobe"
+						ethic = "ethic_fanatic_militarist"
+					}
 					flag = {
 						icon = { category = "human" file = "flag_human_4.dds" }
 						background = { category = "backgrounds" file = "stripe.dds" }
@@ -408,7 +406,6 @@ une_deneb_system = {
 # Neighbor Tier 1
 deneb_neighbor_t1 = {
 	class = "rl_standard_stars"
-
 	flags = { neighbor_t1 }
 
 	init_effect = {
@@ -449,7 +446,6 @@ deneb_neighbor_t1 = {
 # Neighbor Tier 1 First Colony
 deneb_neighbor_t1_first_colony = {
 	class = "rl_standard_stars"
-
 	flags = { neighbor_t1_first_colony }
 
 	init_effect = {
@@ -504,7 +500,6 @@ deneb_neighbor_t1_first_colony = {
 # Neighbor Tier 2 Second Colony
 deneb_neighbor_t2_second_colony = {
 	class = "rl_standard_stars"
-
 	flags = { neighbor_t2_second_colony }
 
 	init_effect = {
@@ -567,7 +562,6 @@ deneb_neighbor_t2_second_colony = {
 vultaumar_system = {
 	name = "NAME_Vultaumar"
 	class = "sc_b"
-
 	flags = { vultaumar precursor_system }
 
 	planet = {
@@ -684,7 +678,6 @@ yuhtaan_system = {
 		type = rocky_asteroid_belt
 		radius = 125
 	}
-
 	flags = { yuhtaan precursor_system }
 
 	planet = {
@@ -849,7 +842,6 @@ fen_habbanis_system = {
 		type = rocky_asteroid_belt
 		radius = 85
 	}
-
 	flags = { fen_habbanis precursor_system }
 
 	planet = {
@@ -972,7 +964,6 @@ irass_system = {
 		type = rocky_asteroid_belt
 		radius = 125
 	}
-
 	flags = { irass precursor_system }
 
 	planet = {
@@ -1118,7 +1109,6 @@ irass_system = {
 cybrex_system = {
 	name = "NAME_Cybrex_Alpha"
 	class = "sc_g"
-
 	flags = { cybrex precursor_system }
 
 	planet = {
@@ -1275,7 +1265,6 @@ ai_titawin_init = {
 	class = "rl_binary_starting_stars"
 	name = "NAME_Titawin"
 	usage = misc_system_init
-
 	flags = { empire_home_system theian_system }
 
 	asteroid_belt = {
@@ -1422,7 +1411,10 @@ ai_titawin_init = {
 					species = event_target:lith_human
 					name_list = "LITHOID4"
 					ship_prefix = "TPC"
-					ethos = { ethic = "ethic_pacifist" ethic = "ethic_fanatic_materialist" }
+					ethos = {
+						ethic = "ethic_pacifist"
+						ethic = "ethic_fanatic_materialist"
+					}
 					flag = {
 						icon = { category = "lithoid" file = "lithoid_03.dds" }
 						background = { category = "backgrounds" file = "circle.dds" }

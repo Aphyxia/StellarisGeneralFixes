@@ -197,9 +197,8 @@ fleet_event = {
 			limit = {
 				any_system = {
 					has_star_flag = stellarite_present
-					count_fleet_in_system = {
-						count = 0
-						limit = {
+					NOT = {
+						any_fleet_in_system = {
 							owner = { has_country_flag = guardian_stellarite_country }
 						}
 					}
@@ -723,7 +722,10 @@ country_event = {
 						found_system = {
 							move_to = this
 							find_random_planet = {
-								trigger = { id = leviathans.1004.trigger.2 is_star = yes }
+								trigger = {
+									id = leviathans.1004.trigger.2
+									is_star = yes
+								}
 								found_planet = { orbit_planet = this }
 							}
 						}
@@ -1234,7 +1236,10 @@ country_event = {
 						found_system = {
 							move_to = this
 							find_random_planet = {
-								trigger = { id = leviathans.1032.trigger.2 is_star = yes }
+								trigger = {
+									id = leviathans.1032.trigger.2
+									is_star = yes
+								}
 								found_planet = { orbit_planet = this }
 							}
 						}
@@ -1498,7 +1503,10 @@ country_event = {
 
 	option = {
 		name = TERRIBLE
-		trigger = { is_militarist = no is_materialist = no }
+		trigger = {
+			is_militarist = no
+			is_materialist = no
+		}
 	}
 	option = {
 		name = CURSES
@@ -2290,7 +2298,10 @@ event = {
 									found_system = {
 										move_to = this
 										find_closest_planet = {
-											trigger = { id = wraith.1.trigger.2 is_star = yes }
+											trigger = {
+												id = wraith.1.trigger.2
+												is_star = yes
+											}
 											found_planet = {
 												move_to = this
 												wait = { duration = 10 }
@@ -2472,12 +2483,10 @@ fleet_event = {
 				if = {
 					limit = {
 						has_ship_flag = wraith_freq_blue
-						NOT = {
-							solar_system = {
-								OR = {
-									is_star_class = sc_b
-									is_star_class = sc_a
-								}
+						solar_system = {
+							NOR = {
+								is_star_class = sc_b
+								is_star_class = sc_a
 							}
 						}
 					}
@@ -2649,11 +2658,8 @@ country_event = {
 		NOR = {
 			has_global_flag = enigmatic_fortress_disabled
 			has_event_chain = "enigmatic_fortress_chain"
-		}
-		event_target:fortress_country = { # Check that all ships are disabled
-			count_owned_ship = {
-				count = 0
-				limit = { is_disabled = no }
+			event_target:fortress_country = { # Check that all ships are disabled
+				any_owned_ship = { is_disabled = no }
 			}
 		}
 	}
@@ -4632,10 +4638,7 @@ country_event = {
 	trigger = {
 		is_country_type = guardian_hiver
 		has_country_flag = hive_country
-		count_controlled_ship = {
-			count < 1
-			limit = { is_ship_size = hive_asteroid }
-		}
+		NOT = { any_controlled_ship = { is_ship_size = hive_asteroid } }
 		from = { has_country_flag = provoked_hivers is_ai = no }
 	}
 

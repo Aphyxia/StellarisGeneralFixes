@@ -186,10 +186,15 @@ ship_event = {
 		}
 	}
 	option = {
-		trigger = { owner = { is_reanimator = yes } }
+		trigger = {
+			owner = { is_reanimator = yes }
+		}
 		name = anomaly.2520.a.rean
 		from = {
-			enable_special_project = { name = "GIGANTIC_SKELETON_RESURRECTION_PROJECT" owner = root.owner }
+			enable_special_project = {
+				name = "GIGANTIC_SKELETON_RESURRECTION_PROJECT"
+				owner = root.owner
+			}
 		}
 	}
 }
@@ -2894,7 +2899,10 @@ fleet_event = {
 
 	trigger = {
 		from = { has_star_flag = wrecked_fleet_system }
-		owner = { has_event_chain = wrecked_fleet_chain has_country_flag = wrecker_pirates }
+		owner = {
+			has_event_chain = wrecked_fleet_chain
+			has_country_flag = wrecker_pirates
+		}
 	}
 
 	immediate = {
@@ -3368,7 +3376,9 @@ ship_event = {
 	}
 	option = {
 		name = anomaly.3127.a.3
-		trigger = { owner = { is_materialist = no } }
+		trigger = {
+			owner = { is_materialist = no }
+		}
 		owner = {
 			give_technology = { tech = tech_mine_rare_crystals }
 		}

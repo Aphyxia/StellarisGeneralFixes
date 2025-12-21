@@ -166,7 +166,9 @@ country_event = {
 				r_time_crystal = {
 					set_global_flag = astral_rift_with_relic_r_time_crystal_being_explored
 				}
-				r_continuum = { set_global_flag = astral_rift_with_relic_r_continuum_being_explored }
+				r_continuum = {
+					set_global_flag = astral_rift_with_relic_r_continuum_being_explored
+				}
 			}
 		}
 	}
@@ -439,7 +441,9 @@ country_event = {
 			# Riftworld Origin - Arc Site completed
 			if = {
 				limit = {
-					NOT = { has_astral_rift_flag = description_riftworld_digsite_completed }
+					NOT = {
+						has_astral_rift_flag = description_riftworld_digsite_completed
+					}
 					has_astral_rift_flag = riftworld_rift
 					explorer = { has_country_flag = riftworld_digsite_completed }
 				}
@@ -509,10 +513,7 @@ event = {
 			}
 			else_if = {
 				limit = {
-					count_situation = {
-						count = 0
-						limit = { is_situation_type = situation_a_rift_in_space }
-					}
+					NOT = { any_situation = { is_situation_type = situation_a_rift_in_space } }
 				}
 				if = {
 					limit = { has_origin = origin_riftworld }
@@ -1110,10 +1111,7 @@ country_event = {
 			}
 			else_if = {
 				limit = {
-					count_situation = {
-						count = 0
-						limit = { is_situation_type = situation_a_rift_in_space }
-					}
+					NOT = { any_situation = { is_situation_type = situation_a_rift_in_space } }
 				}
 				if = {
 					limit = { has_origin = origin_riftworld }
@@ -1346,7 +1344,9 @@ fleet_event = {
 
 	immediate = {
 		remove_fleet_flag = flash_forging_hyper_relay
-		controller = { start_astral_action_cooldown = action_flash_forge_hyper_relay }
+		controller = {
+			start_astral_action_cooldown = action_flash_forge_hyper_relay
+		}
 	}
 }
 
@@ -1462,10 +1462,7 @@ country_event = {
 			limit = {
 				is_capital = no
 				has_deposit_for = shipclass_research_station
-				count_fleet_in_orbit = {
-					count = 0
-					limit = { is_ship_class = shipclass_habitat_station }
-				}
+				NOT = { any_fleet_in_orbit = { is_ship_class = shipclass_habitat_station } }
 			}
 			add_deposit = d_dark_matter_deposit_3
 		}
@@ -1626,10 +1623,8 @@ country_event = {
 					value >= trigger:situation_progress
 				}
 			}
-			NOT = {
-				event_target:aberrant_country = {
-					count_controlled_fleet = { count = 2 }
-				}
+			event_target:aberrant_country = {
+				count_controlled_fleet = { count < 2 } # Vfix
 			}
 		}
 	}
@@ -2100,7 +2095,10 @@ country_event = {
 				background = { category = "backgrounds" file = "triangle_split.dds" }
 				colors = { "purple" "pink" "null" "null" }
 			}
-			ethos = { ethic = ethic_fanatic_spiritualist ethic = ethic_xenophile }
+			ethos = {
+				ethic = ethic_fanatic_spiritualist
+				ethic = ethic_xenophile
+			}
 			effect = {
 				add_resource = {
 					minerals = 10000
@@ -2776,10 +2774,7 @@ country_event = {
 		exists = event_target:formless_country
 		event_target:formless_country = {
 			has_country_flag = formless_war_state_initiated
-			count_playable_country = {
-				count = 0
-				limit = { is_hostile = prev }
-			}
+			NOT = { any_playable_country = { is_hostile = prev } }
 		}
 	}
 
@@ -2787,10 +2782,7 @@ country_event = {
 		event_target:formless_country = {
 			if = {
 				limit = {
-					count_playable_country = {
-						count = 0
-						limit = { is_forced_friendly = prev }
-					}
+					NOT = { any_playable_country = { is_forced_friendly = prev } }
 				}
 				destroy_country = yes
 			}
@@ -3292,7 +3284,10 @@ ship_event = {
 		name = astral_planes.6010.b
 		trigger = { owner = { is_gestalt = no } }
 		solar_system = {
-			find_closest_player_planet_local = { OWNER_SCOPE = owner EVENT_TARGET = closest_planet_found_local }
+			find_closest_player_planet_local = {
+				OWNER_SCOPE = owner
+				EVENT_TARGET = closest_planet_found_local
+			}
 		}
 		ship_event = {
 			id = astral_planes.6012
@@ -4203,12 +4198,11 @@ country_event = {
 	hide_window = yes
 
 	trigger = {
-		NOT = { species = { species_portrait = fun12 } }
-		count_playable_country = {
-			count = 0
-			limit = { has_country_flag = prescripted_blorg }
+		NOR = {
+			species = { species_portrait = fun12 }
+			any_playable_country = { has_country_flag = prescripted_blorg }
+			has_global_flag = mercedes_spawned
 		}
-		NOT = { has_global_flag = mercedes_spawned }
 	}
 
 	immediate = {

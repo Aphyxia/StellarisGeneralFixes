@@ -578,7 +578,9 @@ situation_event = {
 	option = {	# Scrap Robots.
 		name = syndaw.505.b
 		add_situation_progress = 5
-		owner = { add_resource = { alloys = 1000 } }
+		owner = {
+			add_resource = { alloys = 1000 }
+		}
 		hidden_effect = {
 			change_variable = { which = var_cruelty_to_robots value = 1 }
 		}
@@ -1439,9 +1441,8 @@ situation_event = {
 			# no robots, no uprising
 			if = {
 				limit = {
-					count_owned_planet = {
-						count = 0
-						limit = {
+					NOT = {
+						any_owned_planet = {
 							any_owned_pop_group = { has_trait = trait_mechanical }
 						}
 					}
@@ -1495,7 +1496,9 @@ planet_event = {
 		text = syndaw.1020.desc.spiri
 	}
 	desc = {
-		trigger = { owner = { is_militarist = yes } }
+		trigger = {
+			owner = { is_militarist = yes }
+		}
 		text = syndaw.1020.desc.milit
 	}
 	desc = {
@@ -1614,7 +1617,9 @@ planet_event = {
 		# create machine country
 		random_list = {
 			1 = { # exterminator
-				modifier = { add = event_target:organic_empire.var_uprising_cruelty_to_robots }
+				modifier = {
+					add = event_target:organic_empire.var_uprising_cruelty_to_robots
+				}
 				modifier = {
 					add = 10
 					owner = { has_country_flag = machine_uprising_disassembly }
@@ -1640,7 +1645,9 @@ planet_event = {
 				}
 			}
 			10 = { # individual machine empire
-				modifier = { add = event_target:organic_empire.var_uprising_cruelty_to_robots }
+				modifier = {
+					add = event_target:organic_empire.var_uprising_cruelty_to_robots
+				}
 				owner = {
 					create_individual_machine_country = yes
 					event_target:current_uprising = {
@@ -1653,7 +1660,9 @@ planet_event = {
 				}
 			}
 			30 = { # assimilator
-				modifier = { add = event_target:organic_empire.var_uprising_cruelty_to_robots }
+				modifier = {
+					add = event_target:organic_empire.var_uprising_cruelty_to_robots
+				}
 				owner = {
 					create_assimilator_country = yes
 					event_target:current_uprising = {

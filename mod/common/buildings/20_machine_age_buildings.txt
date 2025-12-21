@@ -771,7 +771,10 @@ building_forge_of_the_fellowship = {
 
 	empire_limit = {
 		base = 1
-		modifier = { factor = -1 has_country_flag = cybernetic_creed_construction }
+		modifier = {
+			factor = -1
+			has_country_flag = cybernetic_creed_construction
+		}
 	}
 
 	can_demolish = no
@@ -1122,7 +1125,9 @@ building_identity_repository = {
 		has_owner = yes
 		owner = {
 			has_origin = origin_synthetic_fertility
-			NOT = { has_country_flag = synthetic_fertility_no_identity_left_behind }
+			NOT = {
+				has_country_flag = synthetic_fertility_no_identity_left_behind
+			}
 		}
 	}
 

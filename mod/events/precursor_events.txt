@@ -814,7 +814,10 @@ country_event = {
 					has_global_flag = vultaum_system_discovered
 					has_country_flag = vultaum_system
 				}
-				has_completed_event_chain_counter = { event_chain = "vultaum_chain" counter = "vultaum_artifacts" }
+				has_completed_event_chain_counter = {
+					event_chain = "vultaum_chain"
+					counter = "vultaum_artifacts"
+				}
 			}
 			country_event = { id = precursor.98 }
 		}
@@ -822,7 +825,10 @@ country_event = {
 			limit = {
 				has_global_flag = vultaum_system_discovered
 				NOT = { has_country_flag = vultaum_system }
-				has_completed_event_chain_counter = { event_chain = "vultaum_chain" counter = "vultaum_artifacts" }
+				has_completed_event_chain_counter = {
+					event_chain = "vultaum_chain"
+					counter = "vultaum_artifacts"
+				}
 			}
 			country_event = { id = precursor.99 }
 		}
@@ -5659,19 +5665,31 @@ country_event = {
 	title = "precursor.301.name"
 
 	desc = {
-		trigger = { is_machine_empire = no is_hive_empire = no }
+		trigger = {
+			is_machine_empire = no
+			is_hive_empire = no
+		}
 		text = precursor.301.a.desc
 	}
 	desc = {
-		trigger = { is_machine_empire = no is_hive_empire = no }
+		trigger = {
+			is_machine_empire = no
+			is_hive_empire = no
+		}
 		text = precursor.301.b.desc
 	}
 	desc = {
-		trigger = { is_machine_empire = no is_hive_empire = no }
+		trigger = {
+			is_machine_empire = no
+			is_hive_empire = no
+		}
 		text = precursor.301.c.desc
 	}
 	desc = {
-		trigger = { is_machine_empire = no is_hive_empire = no }
+		trigger = {
+			is_machine_empire = no
+			is_hive_empire = no
+		}
 		text = precursor.301.d.desc
 	}
 	desc = {

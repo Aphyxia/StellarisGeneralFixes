@@ -68,7 +68,10 @@ event = {
 						use_bypasses = no
 						min_steps = 1
 						max_steps = 6
-						set_timed_star_flag = { flag = mining_drone_expansion_destination_system years = 9 }
+						set_timed_star_flag = {
+							flag = mining_drone_expansion_destination_system
+							years = 9
+						}
 						save_event_target_as = mining_drone_expansion_destination_system
 					}
 				}
@@ -79,7 +82,10 @@ event = {
 						NOT = { exists = starbase }
 						is_valid_drone_expansion_destination_system = yes
 					}
-					set_timed_star_flag = { flag = mining_drone_expansion_destination_system years = 9 }
+					set_timed_star_flag = {
+						flag = mining_drone_expansion_destination_system
+						years = 9
+					}
 					save_event_target_as = mining_drone_expansion_destination_system
 				}
 			}
@@ -142,7 +148,10 @@ fleet_event = {
 						NOT = { exists = starbase }
 						is_valid_drone_expansion_destination_system = yes
 					}
-					set_timed_star_flag = { flag = mining_drone_expansion_destination_system years = 9 }
+					set_timed_star_flag = {
+						flag = mining_drone_expansion_destination_system
+						years = 9
+					}
 					save_event_target_as = mining_drone_expansion_destination_system
 				}
 				root = {
@@ -312,7 +321,9 @@ fleet_event = {
 		exists = event_target:aggressive_drone_expansion_country # Global
 		exists = owner
 		is_owned_by = event_target:aggressive_drone_expansion_country
-		from = { has_star_flag = aggressive_drone_expansion_destination_system }
+		from = {
+			has_star_flag = aggressive_drone_expansion_destination_system
+		}
 	}
 
 	immediate = {
@@ -486,8 +497,10 @@ event = {
 		# Pick a Crystal-occupied system
 		if = {
 			limit = {
-				NOT = { exists = event_target:crystal_splitter_starting_system }
-				event_target:crystal_country = { num_fleets > 0 } # FIXME: create fallback if there exists no fleet?
+				NOR = {
+					exists = event_target:crystal_splitter_starting_system
+					event_target:crystal_country = { num_fleets = 0 } # FIXME: create fallback if there exists no fleet?
+				}
 			}
 			# Better just scan from the country to the fleet instead from every galaxy system?!?
 			event_target:crystal_country = { # Vfix

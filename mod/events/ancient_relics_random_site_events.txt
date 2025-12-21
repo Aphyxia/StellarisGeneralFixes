@@ -111,7 +111,9 @@ fleet_event = {
 				resource_stockpile_compare = { resource = energy value >= 100 }
 			}
 		}
-		owner = { add_resource = { energy = -100 } }
+		owner = {
+			add_resource = { energy = -100 }
+		}
 		fromfrom = { add_stage_clues = 3 }
 	}
 	option = {
@@ -221,7 +223,9 @@ fleet_event = {
 				resource_stockpile_compare = { resource = energy value >= 100 }
 			}
 		}
-		owner = { add_resource = { energy = -100 } }
+		owner = {
+			add_resource = { energy = -100 }
+		}
 		fromfrom = { add_stage_clues = 3 }
 	}
 	option = {
@@ -331,7 +335,9 @@ fleet_event = {
 				resource_stockpile_compare = { resource = energy value >= 100 }
 			}
 		}
-		owner = { add_resource = { energy = -100 } }
+		owner = {
+			add_resource = { energy = -100 }
+		}
 		fromfrom = { add_stage_clues = 3 }
 	}
 	option = {
@@ -441,7 +447,9 @@ fleet_event = {
 				resource_stockpile_compare = { resource = energy value >= 100 }
 			}
 		}
-		owner = { add_resource = { energy = -100 } }
+		owner = {
+			add_resource = { energy = -100 }
+		}
 		fromfrom = { add_stage_clues = 3 }
 	}
 	option = {
@@ -479,7 +487,11 @@ fleet_event = {
 					add_resource = { minerals = 1500 }
 				}
 			}
-			10 = { owner = { add_resource = { energy = 1500 } } }
+			10 = {
+				owner = {
+					add_resource = { energy = 1500 }
+				}
+			}
 			10 = { owner = { add_resource = { alloys = 200 } } }
 			10 = {
 				owner = {
@@ -594,11 +606,31 @@ fleet_event = {
 		name = EXCELLENT
 		locked_random_list = {
 			10 = { owner = { add_resource = { energy = 800 } } }
-			10 = { owner = { add_resource = { energy = 1000 } } }
-			10 = { owner = { add_resource = { energy = 1200 } } }
-			10 = { owner = { add_resource = { energy = 1400 } } }
-			10 = { owner = { add_resource = { energy = 1600 } } }
-			10 = { owner = { add_resource = { energy = 1800 } } }
+			10 = {
+				owner = {
+					add_resource = { energy = 1000 }
+				}
+			}
+			10 = {
+				owner = {
+					add_resource = { energy = 1200 }
+				}
+			}
+			10 = {
+				owner = {
+					add_resource = { energy = 1400 }
+				}
+			}
+			10 = {
+				owner = {
+					add_resource = { energy = 1600 }
+				}
+			}
+			10 = {
+				owner = {
+					add_resource = { energy = 1800 }
+				}
+			}
 		}
 	}
 }
@@ -818,7 +850,9 @@ fleet_event = {
 				resource_stockpile_compare = { resource = energy value >= 100 }
 			}
 		}
-		owner = { add_resource = { energy = -100 } }
+		owner = {
+			add_resource = { energy = -100 }
+		}
 		fromfrom = { add_stage_clues = 3 }
 	}
 	option = {
@@ -928,7 +962,9 @@ fleet_event = {
 				resource_stockpile_compare = { resource = energy value >= 100 }
 			}
 		}
-		owner = { add_resource = { energy = -100 } }
+		owner = {
+			add_resource = { energy = -100 }
+		}
 		fromfrom = { add_stage_clues = 3 }
 	}
 	option = {
@@ -1375,7 +1411,9 @@ fleet_event = {
 				resource_stockpile_compare = { resource = energy value >= 100 }
 			}
 		}
-		owner = { add_resource = { energy = -100 } }
+		owner = {
+			add_resource = { energy = -100 }
+		}
 		fromfrom = { add_stage_clues = 3 }
 	}
 	option = {

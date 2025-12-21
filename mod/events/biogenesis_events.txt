@@ -53,17 +53,25 @@ situation_event = {
 		set_situation_flag = bio_2_blocked
 		remove_situation_flag = bio_3_blocked
 		if = {
-			limit = { owner = { is_hive_empire = yes } }
+			limit = {
+				owner = { is_hive_empire = yes }
+			}
 			switch = {
 				trigger = current_situation_approach
 				genetic_ascension_approach_purity = {
-					fire_on_action = { on_action = on_genetic_ascension_hive_approach_purity_events_list }
+					fire_on_action = {
+						on_action = on_genetic_ascension_hive_approach_purity_events_list
+					}
 				}
 				genetic_ascension_approach_cloning = {
-					fire_on_action = { on_action = on_genetic_ascension_hive_approach_cloning_events_list }
+					fire_on_action = {
+						on_action = on_genetic_ascension_hive_approach_cloning_events_list
+					}
 				}
 				genetic_ascension_approach_mutation = {
-					fire_on_action = { on_action = on_genetic_ascension_hive_approach_mutation_events_list }
+					fire_on_action = {
+						on_action = on_genetic_ascension_hive_approach_mutation_events_list
+					}
 				}
 			}
 		}
@@ -71,13 +79,19 @@ situation_event = {
 			switch = {
 				trigger = current_situation_approach
 				genetic_ascension_approach_purity = {
-					fire_on_action = { on_action = on_genetic_ascension_approach_purity_events_list }
+					fire_on_action = {
+						on_action = on_genetic_ascension_approach_purity_events_list
+					}
 				}
 				genetic_ascension_approach_cloning = {
-					fire_on_action = { on_action = on_genetic_ascension_approach_cloning_events_list }
+					fire_on_action = {
+						on_action = on_genetic_ascension_approach_cloning_events_list
+					}
 				}
 				genetic_ascension_approach_mutation = {
-					fire_on_action = { on_action = on_genetic_ascension_approach_mutation_events_list }
+					fire_on_action = {
+						on_action = on_genetic_ascension_approach_mutation_events_list
+					}
 				}
 			}
 		}
@@ -113,7 +127,9 @@ situation_event = {
 		set_situation_flag = bio_3_blocked
 		remove_situation_flag = bio_2_blocked
 		if = {
-			limit = { owner = { is_hive_empire = yes } }
+			limit = {
+				owner = { is_hive_empire = yes }
+			}
 			fire_on_action = { on_action = on_genetic_ascension_hive_events_list }
 		}
 		else = {
@@ -5141,7 +5157,9 @@ country_event = {
 			owner = {
 				if = {
 					limit = {
-						NOT = { has_country_flag = operation_complete_bodysnatcher_prepare_invasion }
+						NOT = {
+							has_country_flag = operation_complete_bodysnatcher_prepare_invasion
+						}
 					}
 					change_variable = {
 						which = tinker_tailor_soldier_blorg_achievement_count
@@ -5459,20 +5477,18 @@ country_event = {
 
 	desc = {
 		trigger = {
-			check_variable = { which = smuggle_pops_amount value <= 4 }
-			count_owned_planet = {
-				count = 0
-				limit = { is_planet_class = pc_cosmogenesis_world }
+			NOR = {
+				check_variable = { which = smuggle_pops_amount value > 4 }
+				any_owned_planet = { is_planet_class = pc_cosmogenesis_world }
 			}
 		}
 		text = bio.915.desc
 	}
 	desc = {
 		trigger = {
-			check_variable = { which = smuggle_pops_amount value > 4 }
-			count_owned_planet = {
-				count = 0
-				limit = { is_planet_class = pc_cosmogenesis_world }
+			NOR = {
+				check_variable = { which = smuggle_pops_amount value <= 4 }
+				any_owned_planet = { is_planet_class = pc_cosmogenesis_world }
 			}
 		}
 		text = bio.915.desc.detected
@@ -5494,10 +5510,7 @@ country_event = {
 
 	picture = {
 		trigger = {
-			count_owned_planet = {
-				count = 0
-				limit = { is_planet_class = pc_cosmogenesis_world }
-			}
+			NOT = { any_owned_planet = { is_planet_class = pc_cosmogenesis_world } }
 		}
 		picture = GFX_evt_salute
 	}
@@ -5852,7 +5865,9 @@ country_event = {
 			owner = {
 				if = {
 					limit = {
-						NOT = { has_country_flag = operation_complete_smuggle_pops_prepare_invasion }
+						NOT = {
+							has_country_flag = operation_complete_smuggle_pops_prepare_invasion
+						}
 					}
 					change_variable = {
 						which = tinker_tailor_soldier_blorg_achievement_count
@@ -6379,12 +6394,10 @@ country_event = {
 				}
 				modifier = { # If you are not going to be an even fight why give you this task?
 					factor = 0.1
-					NOT = {
-						relative_power = {
-							who = root
-							category = fleet
-							value = equivalent
-						}
+					relative_power = {
+						who = root
+						category = fleet
+						value != equivalent
 					}
 				}
 			}
@@ -6709,7 +6722,10 @@ country_event = {
 		}
 	}
 	option = {
-		trigger = { is_planetscaper_empire = no exists = event_target:alternate_planet }
+		trigger = {
+			is_planetscaper_empire = no
+			exists = event_target:alternate_planet
+		}
 		allow = {
 			NOT = { has_valid_civic = civic_environmentalist }
 		}
@@ -6730,7 +6746,10 @@ country_event = {
 		}
 	}
 	option = {
-		trigger = { is_planetscaper_empire = yes exists = event_target:alternate_planet }
+		trigger = {
+			is_planetscaper_empire = yes
+			exists = event_target:alternate_planet
+		}
 		name = bio.3205.b.planetscaper
 		ai_chance = { factor = 100 }
 		custom_tooltip = fallen_empire_happy_tooltip
@@ -6756,7 +6775,10 @@ country_event = {
 		custom_tooltip = fallen_empire_unhappy_tooltip
 		hidden_effect = {
 			event_target:fallen_empire_hive_growth = {
-				add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_refused_fallen_empire_request
+				}
 			}
 		}
 	}
@@ -6767,7 +6789,10 @@ country_event = {
 		custom_tooltip = fallen_empire_unhappy_tooltip
 		hidden_effect = {
 			event_target:fallen_empire_hive_growth = {
-				add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_refused_fallen_empire_request
+				}
 			}
 		}
 	}
@@ -7294,7 +7319,10 @@ country_event = {
 		custom_tooltip = fallen_empire_unhappy_tooltip
 		hidden_effect = {
 			event_target:fallen_empire_hive_growth = {
-				add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_refused_fallen_empire_request
+				}
 			}
 		}
 	}
@@ -7503,7 +7531,10 @@ country_event = {
 							}
 						}
 						trait_survivor = {
-							change_species_characteristics = { add_trait = trait_survivor add_traits_at_start_of_list = yes }
+							change_species_characteristics = {
+								add_trait = trait_survivor
+								add_traits_at_start_of_list = yes
+							}
 						}
 						trait_enigmatic_intelligence = {
 							change_species_characteristics = {
@@ -7530,16 +7561,28 @@ country_event = {
 							}
 						}
 						trait_stargazer = {
-							change_species_characteristics = { add_trait = trait_stargazer add_traits_at_start_of_list = yes }
+							change_species_characteristics = {
+								add_trait = trait_stargazer
+								add_traits_at_start_of_list = yes
+							}
 						}
 						trait_brainslug = {
-							change_species_characteristics = { add_trait = trait_brainslug add_traits_at_start_of_list = no }
+							change_species_characteristics = {
+								add_trait = trait_brainslug
+								add_traits_at_start_of_list = no
+							}
 						}
 						trait_plasmic = {
-							change_species_characteristics = { add_trait = trait_plasmic add_traits_at_start_of_list = no }
+							change_species_characteristics = {
+								add_trait = trait_plasmic
+								add_traits_at_start_of_list = no
+							}
 						}
 						trait_storm_fused = {
-							change_species_characteristics = { add_trait = trait_storm_fused add_traits_at_start_of_list = no }
+							change_species_characteristics = {
+								add_trait = trait_storm_fused
+								add_traits_at_start_of_list = no
+							}
 						}
 						trait_storm_touched = {
 							change_species_characteristics = {
@@ -7554,10 +7597,16 @@ country_event = {
 							}
 						}
 						trait_tiyanki = {
-							change_species_characteristics = { add_trait = trait_tiyanki add_traits_at_start_of_list = no }
+							change_species_characteristics = {
+								add_trait = trait_tiyanki
+								add_traits_at_start_of_list = no
+							}
 						}
 						trait_voidling = {
-							change_species_characteristics = { add_trait = trait_voidling add_traits_at_start_of_list = no }
+							change_species_characteristics = {
+								add_trait = trait_voidling
+								add_traits_at_start_of_list = no
+							}
 						}
 						trait_notofthisworld = {
 							change_species_characteristics = {
@@ -7566,7 +7615,10 @@ country_event = {
 							}
 						}
 						trait_exd = {
-							change_species_characteristics = { add_trait = trait_exd add_traits_at_start_of_list = yes }
+							change_species_characteristics = {
+								add_trait = trait_exd
+								add_traits_at_start_of_list = yes
+							}
 						}
 					}
 				}
@@ -7579,7 +7631,10 @@ country_event = {
 		custom_tooltip = fallen_empire_unhappy_tooltip
 		hidden_effect = {
 			event_target:fallen_empire_hive_growth = {
-				add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_refused_fallen_empire_request
+				}
 			}
 		}
 	}
@@ -7772,7 +7827,10 @@ country_event = {
 		custom_tooltip = fallen_empire_unhappy_tooltip
 		hidden_effect = {
 			event_target:fallen_empire_hive_control = {
-				add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_refused_fallen_empire_request
+				}
 			}
 		}
 	}
@@ -7827,7 +7885,10 @@ country_event = {
 					custom_tooltip = fallen_empire_maybe_unhappy_tooltip
 					hidden_effect = {
 						event_target:fallen_empire_hive_control = {
-							add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request }
+							add_opinion_modifier = {
+								who = root
+								modifier = opinion_refused_fallen_empire_request
+							}
 						}
 					}
 				}
@@ -8035,18 +8096,16 @@ country_event = {
 					}
 				}
 				any_system_colony = { has_owner = yes is_owned_by = root }
-			}
-			count_neighbor_system = { # Then we look for systems that border 2 or more systems that you don't own
-				count >= 3
-				limit = {
-					NAND = {
-						exists = starbase.owner
-						starbase.owner = { is_same_empire = root }
+				count_neighbor_system = { # Then we look for systems that border 2 or more systems that you don't own # Then we look for systems that border 2 or more systems that you don't own
+					count < 3
+					limit = {
+						NAND = {
+							exists = starbase.owner
+							starbase.owner = { is_same_empire = root }
+						}
 					}
 				}
-			}
-			NOT = { # But we will not flag it if the system is connected to 2 or more of your own systems
-				count_neighbor_system = {
+				count_neighbor_system = { # But we will not flag it if the system is connected to 2 or more of your own systems
 					count >= 2
 					limit = {
 						exists = starbase.owner
@@ -8092,18 +8151,16 @@ country_event = {
 						}
 					}
 					any_system_colony = { has_owner = yes is_owned_by = root }
-				}
-				count_neighbor_system = { # Then we look for systems that border 2 or more systems that you don't own
-					count >= 3
-					limit = {
-						NAND = {
-							exists = starbase.owner
-							starbase.owner = { is_same_empire = root }
+					count_neighbor_system = { # Then we look for systems that border 2 or more systems that you don't own # Then we look for systems that border 2 or more systems that you don't own
+						count < 3
+						limit = {
+							NAND = {
+								exists = starbase.owner
+								starbase.owner = { is_same_empire = root }
+							}
 						}
 					}
-				}
-				NOT = { # But we will not flag it if the system is connected to 2 or more of your own systems
-					count_neighbor_system = {
+					count_neighbor_system = { # But we will not flag it if the system is connected to 2 or more of your own systems
 						count >= 2
 						limit = {
 							exists = starbase.owner
@@ -8167,7 +8224,10 @@ country_event = {
 		custom_tooltip = fallen_empire_unhappy_tooltip
 		hidden_effect = {
 			event_target:fallen_empire_hive_control = {
-				add_opinion_modifier = { who = root modifier = opinion_angered_fallen_machine_empire }
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_angered_fallen_machine_empire
+				}
 				remove_opinion_modifier = { who = root modifier = opinion_completed_fallen_empire_task }
 				if = {
 					limit = {

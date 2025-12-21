@@ -136,7 +136,10 @@ resolution_galactic_focus_repeal_crisis_malevolent_aura = {
 			save_event_target_as = former_malevolent_aura
 			random_war = {
 				limit = {
-					using_war_goal = { type = wg_declared_crisis owner = event_target:former_malevolent_aura }
+					using_war_goal = {
+						type = wg_declared_crisis
+						owner = event_target:former_malevolent_aura
+					}
 				}
 				every_war_participant = {
 					limit = {

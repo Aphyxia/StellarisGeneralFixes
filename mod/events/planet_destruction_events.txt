@@ -624,7 +624,10 @@ country_event = {
 
 	desc = {
 		text = planet_destruction.210.desc
-		trigger = { is_pacifist = no is_egalitarian = no }
+		trigger = {
+			is_pacifist = no
+			is_egalitarian = no
+		}
 	}
 	desc = {
 		text = planet_destruction.210.desc.alt
@@ -663,7 +666,10 @@ country_event = {
 
 	option = {
 		name = planet_destruction.210.a
-		trigger = { is_pacifist = no is_egalitarian = no }
+		trigger = {
+			is_pacifist = no
+			is_egalitarian = no
+		}
 	}
 	option = {
 		name = planet_destruction.210.b
@@ -829,7 +835,10 @@ planet_event = {
 						}
 					}
 				}
-				add_opinion_modifier = { modifier = opinion_swept_a_primitive_world_phile who = from.owner }
+				add_opinion_modifier = {
+					modifier = opinion_swept_a_primitive_world_phile
+					who = from.owner
+				}
 			}
 		}
 		# Add war exhaustion to planet owner
@@ -900,8 +909,8 @@ country_event = {
 					is_planet_class = pc_infested
 					is_planet_class = pc_barren
 					is_planet_class = pc_barren_cold
+					count_owned_pop_amount = { count != 0 }
 				}
-				count_owned_pop_amount = { count = 0 }
 			}
 		}
 	}
@@ -909,7 +918,7 @@ country_event = {
 		text = planet_destruction.301.bots.desc
 		trigger = {
 			from = {
-				count_owned_pop_amount = { count > 0 }
+				count_owned_pop_amount = { count >= 1 limit = {  } }
 			}
 		}
 	}
@@ -1313,7 +1322,10 @@ planet_event = {
 						has_communications = root.owner
 					}
 				}
-				add_opinion_modifier = { modifier = opinion_assimilated_a_primitive_world who = from.owner }
+				add_opinion_modifier = {
+					modifier = opinion_assimilated_a_primitive_world
+					who = from.owner
+				}
 			}
 			every_country = {
 				limit = {
@@ -1610,7 +1622,10 @@ country_event = {
 	immediate = {
 		declare_war = {
 			target = event_target:FE_outrager
-			name = { key = "NAME_Holy_World_War" variable_string = "[This.MainAttacker.GetAdj]" }
+			name = {
+				key = "NAME_Holy_World_War"
+				variable_string = "[This.MainAttacker.GetAdj]"
+			}
 			# __STR_32__
 			attacker_war_goal = wg_subjugation
 		}
@@ -2118,7 +2133,10 @@ planet_event = {
 					}
 					if = {
 						limit = { root = { is_colony = no } }
-						add_opinion_modifier = { modifier = opinion_toxified_an_uninhabited_world who = from.owner }
+						add_opinion_modifier = {
+							modifier = opinion_toxified_an_uninhabited_world
+							who = from.owner
+						}
 					}
 					else = {
 						add_opinion_modifier = { modifier = opinion_toxified_a_world who = from.owner }
@@ -2132,7 +2150,10 @@ planet_event = {
 			owner = {
 				if = {
 					limit = { root = { is_colony = no } }
-					add_opinion_modifier = { modifier = opinion_toxified_my_uninhabited_world who = from.owner }
+					add_opinion_modifier = {
+						modifier = opinion_toxified_my_uninhabited_world
+						who = from.owner
+					}
 				}
 				else = {
 					add_opinion_modifier = { modifier = opinion_toxified_my_world who = from.owner }
@@ -2381,7 +2402,10 @@ planet_event = {
 				}
 			}
 			from.owner = {
-				set_timed_country_flag = { flag = resolution_breached_fired_devolution_beam years = 10 }
+				set_timed_country_flag = {
+					flag = resolution_breached_fired_devolution_beam
+					years = 10
+				}
 			}
 		}
 		if = {

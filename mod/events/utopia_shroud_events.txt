@@ -276,13 +276,9 @@ country_event = {
 					factor = 0
 					NAND = {
 						has_country_flag = shroud_vision_1
-						count_controlled_ship = {
-							count < 1
-							limit = { is_ship_size = psionic_avatar }
-						}
-						count_owned_army = {
-							count < 1
-							limit = { army_type = shroud_army }
+						NOR = {
+							any_controlled_ship = { is_ship_size = psionic_avatar }
+							any_owned_army = { army_type = shroud_army }
 						}
 					}
 				}
@@ -292,14 +288,8 @@ country_event = {
 				modifier = {
 					factor = 0
 					OR = {
-						count_controlled_ship = {
-							count > 0
-							limit = { is_ship_size = psionic_avatar }
-						}
-						count_owned_army = {
-							count > 0
-							limit = { army_type = shroud_army }
-						}
+						any_controlled_ship = { is_ship_size = psionic_avatar }
+						any_owned_army = { army_type = shroud_army }
 					}
 				}
 				country_event = { id = utopia.3110 }
@@ -930,11 +920,17 @@ country_event = {
 		text = "utopia.3030.desc.gestalt"
 	}
 	desc = {
-		trigger = { is_gestalt = no is_robot_empire = yes }
+		trigger = {
+			is_gestalt = no
+			is_robot_empire = yes
+		}
 		text = "utopia.3030.desc.machine_non_gestalt"
 	}
 	desc = {
-		trigger = { is_gestalt = no is_robot_empire = no }
+		trigger = {
+			is_gestalt = no
+			is_robot_empire = no
+		}
 		text = "utopia.3030.desc.organic_non_gestalt"
 	}
 
@@ -1018,11 +1014,17 @@ country_event = {
 		text = "utopia.3032.desc.non_gestalt"
 	}
 	desc = {
-		trigger = { is_gestalt = yes is_robot_empire = yes }
+		trigger = {
+			is_gestalt = yes
+			is_robot_empire = yes
+		}
 		text = "utopia.3032.desc.machine_gestalt"
 	}
 	desc = {
-		trigger = { is_gestalt = yes is_robot_empire = no }
+		trigger = {
+			is_gestalt = yes
+			is_robot_empire = no
+		}
 		text = "utopia.3032.desc.organic_gestalt"
 	}
 
@@ -1167,11 +1169,17 @@ country_event = {
 		text = "utopia.3036.desc.gestalt"
 	}
 	desc = {
-		trigger = { is_gestalt = no is_robot_empire = yes }
+		trigger = {
+			is_gestalt = no
+			is_robot_empire = yes
+		}
 		text = "utopia.3036.desc.machine_non_gestalt"
 	}
 	desc = {
-		trigger = { is_gestalt = no is_robot_empire = no }
+		trigger = {
+			is_gestalt = no
+			is_robot_empire = no
+		}
 		text = "utopia.3036.desc.organic_non_gestalt"
 	}
 
@@ -1221,11 +1229,17 @@ country_event = {
 		text = "utopia.3037.desc.genocidal"
 	}
 	desc = {
-		trigger = { is_homicidal = no is_robot_empire = yes }
+		trigger = {
+			is_homicidal = no
+			is_robot_empire = yes
+		}
 		text = "utopia.3037.desc.machine_non_genocidal"
 	}
 	desc = {
-		trigger = { is_homicidal = no is_robot_empire = no }
+		trigger = {
+			is_homicidal = no
+			is_robot_empire = no
+		}
 		text = "utopia.3037.desc.organic_non_genocidal"
 	}
 
@@ -1388,11 +1402,17 @@ country_event = {
 		text = "utopia.3041.desc.machine"
 	}
 	desc = {
-		trigger = { is_robot_empire = no is_gestalt = yes }
+		trigger = {
+			is_robot_empire = no
+			is_gestalt = yes
+		}
 		text = "utopia.3041.desc.organic_gestalt"
 	}
 	desc = {
-		trigger = { is_robot_empire = no is_gestalt = no }
+		trigger = {
+			is_robot_empire = no
+			is_gestalt = no
+		}
 		text = "utopia.3041.desc.organic_non_gestalt"
 	}
 
@@ -1475,7 +1495,10 @@ country_event = {
 	title = "boon.bestowed"
 
 	desc = {
-		trigger = { is_robot_empire = no is_gestalt = no }
+		trigger = {
+			is_robot_empire = no
+			is_gestalt = no
+		}
 		text = "utopia.3043.desc.organic"
 	}
 	desc = {
@@ -1744,11 +1767,17 @@ country_event = {
 		text = utopia.3053.desc.machine
 	}
 	desc = {
-		trigger = { is_robot_empire = no is_gestalt = yes }
+		trigger = {
+			is_robot_empire = no
+			is_gestalt = yes
+		}
 		text = utopia.3053.desc.organic_gestalt
 	}
 	desc = {
-		trigger = { is_robot_empire = no is_gestalt = no }
+		trigger = {
+			is_robot_empire = no
+			is_gestalt = no
+		}
 		text = utopia.3053.desc.organic_non_gestalt
 	}
 
@@ -1787,19 +1816,31 @@ country_event = {
 	title = "curse.bestowed"
 
 	desc = {
-		trigger = { is_robot_empire = yes is_gestalt = yes }
+		trigger = {
+			is_robot_empire = yes
+			is_gestalt = yes
+		}
 		text = utopia.3054.desc.machine_gestalt
 	}
 	desc = {
-		trigger = { is_robot_empire = yes is_gestalt = no }
+		trigger = {
+			is_robot_empire = yes
+			is_gestalt = no
+		}
 		text = utopia.3054.desc.machine_non_gestalt
 	}
 	desc = {
-		trigger = { is_robot_empire = no is_gestalt = yes }
+		trigger = {
+			is_robot_empire = no
+			is_gestalt = yes
+		}
 		text = utopia.3054.desc.organic_gestalt
 	}
 	desc = {
-		trigger = { is_robot_empire = no is_gestalt = no }
+		trigger = {
+			is_robot_empire = no
+			is_gestalt = no
+		}
 		text = utopia.3054.desc.organic_non_gestalt
 	}
 
@@ -1872,7 +1913,10 @@ country_event = {
 	title = "curse.bestowed"
 
 	desc = {
-		trigger = { is_robot_empire = no is_gestalt = no }
+		trigger = {
+			is_robot_empire = no
+			is_gestalt = no
+		}
 		text = utopia.3056.desc.organic_non_gestalt
 	}
 	desc = {
@@ -1954,7 +1998,10 @@ country_event = {
 	title = "curse.bestowed"
 
 	desc = {
-		trigger = { is_robot_empire = no is_gestalt = no }
+		trigger = {
+			is_robot_empire = no
+			is_gestalt = no
+		}
 		text = utopia.3058.desc.organic_non_gestalt
 	}
 	desc = {
@@ -2045,7 +2092,10 @@ country_event = {
 		text = utopia.3100.desc_hive
 	}
 	desc = {
-		trigger = { is_machine_species = no is_hive_empire = no }
+		trigger = {
+			is_machine_species = no
+			is_hive_empire = no
+		}
 		text = utopia.3100.desc_default
 	}
 
@@ -3667,7 +3717,10 @@ country_event = {
 
 	option = {
 		name = "utopia.3153.a"
-		trigger = { is_machine_species = no is_gestalt = no }
+		trigger = {
+			is_machine_species = no
+			is_gestalt = no
+		}
 		tooltip = {
 			event_target:fallen_empire = {
 				add_opinion_modifier = { who = root modifier = opinion_invaded_mind }
@@ -3893,7 +3946,10 @@ country_event = {
 		text = utopia.3171.desc_machine_gestalt
 	}
 	desc = {
-		trigger = { is_machine_species = no is_gestalt = no }
+		trigger = {
+			is_machine_species = no
+			is_gestalt = no
+		}
 		text = utopia.3171.desc_organic
 	}
 
@@ -3945,19 +4001,31 @@ country_event = {
 	title = "utopia.3172.name"
 
 	desc = {
-		trigger = { is_machine_species = yes is_gestalt = no }
+		trigger = {
+			is_machine_species = yes
+			is_gestalt = no
+		}
 		text = utopia.3172.desc_machine_non_gestalt
 	}
 	desc = {
-		trigger = { is_machine_species = yes is_gestalt = yes }
+		trigger = {
+			is_machine_species = yes
+			is_gestalt = yes
+		}
 		text = utopia.3172.desc_machine_gestalt
 	}
 	desc = {
-		trigger = { is_machine_species = no is_gestalt = yes }
+		trigger = {
+			is_machine_species = no
+			is_gestalt = yes
+		}
 		text = utopia.3172.desc_organic_gestalt
 	}
 	desc = {
-		trigger = { is_machine_species = no is_gestalt = no }
+		trigger = {
+			is_machine_species = no
+			is_gestalt = no
+		}
 		text = utopia.3172.desc_organic_non_gestalt
 	}
 
@@ -4006,11 +4074,17 @@ country_event = {
 		text = utopia.3180.desc_gestalt
 	}
 	desc = {
-		trigger = { is_robot_empire = yes is_gestalt = no }
+		trigger = {
+			is_robot_empire = yes
+			is_gestalt = no
+		}
 		text = utopia.3180.desc_machine_non_gestalt
 	}
 	desc = {
-		trigger = { is_robot_empire = no is_gestalt = no }
+		trigger = {
+			is_robot_empire = no
+			is_gestalt = no
+		}
 		text = utopia.3180.desc_organic_non_gestalt
 	}
 
@@ -4069,11 +4143,17 @@ country_event = {
 		text = utopia.3181.desc_gestalt
 	}
 	desc = {
-		trigger = { is_robot_empire = yes is_gestalt = no }
+		trigger = {
+			is_robot_empire = yes
+			is_gestalt = no
+		}
 		text = utopia.3181.desc_machine_non_gestalt
 	}
 	desc = {
-		trigger = { is_robot_empire = no is_gestalt = no }
+		trigger = {
+			is_robot_empire = no
+			is_gestalt = no
+		}
 		text = utopia.3181.desc_organic_non_gestalt
 	}
 
@@ -4129,11 +4209,17 @@ country_event = {
 		text = utopia.3182.desc_gestalt
 	}
 	desc = {
-		trigger = { is_robot_empire = yes is_gestalt = no }
+		trigger = {
+			is_robot_empire = yes
+			is_gestalt = no
+		}
 		text = utopia.3182.desc_machine_non_gestalt
 	}
 	desc = {
-		trigger = { is_robot_empire = no is_gestalt = no }
+		trigger = {
+			is_robot_empire = no
+			is_gestalt = no
+		}
 		text = utopia.3182.desc_organic_non_gestalt
 	}
 
@@ -4622,11 +4708,17 @@ country_event = {
 		text = utopia.3191.desc_gestalt
 	}
 	desc = {
-		trigger = { is_robot_empire = yes is_gestalt = no }
+		trigger = {
+			is_robot_empire = yes
+			is_gestalt = no
+		}
 		text = utopia.3191.desc_machine_non_gestalt
 	}
 	desc = {
-		trigger = { is_robot_empire = no is_gestalt = no }
+		trigger = {
+			is_robot_empire = no
+			is_gestalt = no
+		}
 		text = utopia.3191.desc_organic_non_gestalt
 	}
 
@@ -6117,11 +6209,17 @@ country_event = {
 
 	desc = {
 		text = "utopia.3320.desc.a.gestalt"
-		trigger = { has_country_flag = exile_world is_gestalt = yes }
+		trigger = {
+			has_country_flag = exile_world
+			is_gestalt = yes
+		}
 	}
 	desc = {
 		text = "utopia.3320.desc.a.non_gestalt"
-		trigger = { has_country_flag = exile_world is_gestalt = no }
+		trigger = {
+			has_country_flag = exile_world
+			is_gestalt = no
+		}
 	}
 	desc = {
 		text = "utopia.3320.desc.b"
@@ -6266,17 +6364,14 @@ fleet_event = {
 					is_colonizable = yes
 					has_owner = yes
 				}
-				OR = {
-					NOT = { has_planet_flag = exile_planet }
-					count_galaxy_planet = {
-						count = 0
-						limit = {
-							OR = {
-								is_colonizable = yes
-								has_owner = yes
-							}
-							NOT = { has_planet_flag = exile_planet }
+				NAND = {
+					has_planet_flag = exile_planet
+					any_galaxy_planet = {
+						OR = {
+							is_colonizable = yes
+							has_owner = yes
 						}
+						NOT = { has_planet_flag = exile_planet }
 					}
 				}
 			}
@@ -6296,17 +6391,14 @@ fleet_event = {
 						is_colonizable = yes
 						has_owner = yes
 					}
-					OR = {
-						NOT = { has_planet_flag = exile_planet }
-						count_galaxy_planet = {
-							count = 0
-							limit = {
-								OR = {
-									is_colonizable = yes
-									has_owner = yes
-								}
-								NOT = { has_planet_flag = exile_planet }
+					NAND = {
+						has_planet_flag = exile_planet
+						any_galaxy_planet = {
+							OR = {
+								is_colonizable = yes
+								has_owner = yes
 							}
+							NOT = { has_planet_flag = exile_planet }
 						}
 					}
 				}
@@ -6317,17 +6409,14 @@ fleet_event = {
 						is_colonizable = yes
 						has_owner = yes
 					}
-					OR = {
-						NOT = { has_planet_flag = exile_planet }
-						count_galaxy_planet = {
-							count = 0
-							limit = {
-								OR = {
-									is_colonizable = yes
-									has_owner = yes
-								}
-								NOT = { has_planet_flag = exile_planet }
+					NAND = {
+						has_planet_flag = exile_planet
+						any_galaxy_planet = {
+							OR = {
+								is_colonizable = yes
+								has_owner = yes
 							}
+							NOT = { has_planet_flag = exile_planet }
 						}
 					}
 				}
@@ -6343,7 +6432,10 @@ fleet_event = {
 				found_system = {
 					move_to = this
 					find_closest_planet = {
-						trigger = { id = utopia.3323.t2 is_same_value = event_target:move_to_planet }
+						trigger = {
+							id = utopia.3323.t2
+							is_same_value = event_target:move_to_planet
+						}
 						found_planet = {
 							move_to = this
 							effect = {
@@ -6609,11 +6701,17 @@ country_event = {
 		text = utopia.3332.desc.gestalt
 	}
 	desc = {
-		trigger = { is_gestalt = no is_robot_empire = yes }
+		trigger = {
+			is_gestalt = no
+			is_robot_empire = yes
+		}
 		text = utopia.3332.desc.machine_non_gestalt
 	}
 	desc = {
-		trigger = { is_gestalt = no is_robot_empire = no }
+		trigger = {
+			is_gestalt = no
+			is_robot_empire = no
+		}
 		text = utopia.3332.desc.organic_non_gestalt
 	}
 
@@ -6687,11 +6785,17 @@ country_event = {
 		text = utopia.3333.desc.gestalt
 	}
 	desc = {
-		trigger = { is_gestalt = no is_robot_empire = yes }
+		trigger = {
+			is_gestalt = no
+			is_robot_empire = yes
+		}
 		text = utopia.3333.desc.machine_non_gestalt
 	}
 	desc = {
-		trigger = { is_gestalt = no is_robot_empire = no }
+		trigger = {
+			is_gestalt = no
+			is_robot_empire = no
+		}
 		text = utopia.3333.desc.organic_non_gestalt
 	}
 
@@ -6766,11 +6870,17 @@ country_event = {
 		text = utopia.3334.desc.gestalt
 	}
 	desc = {
-		trigger = { is_gestalt = no is_robot_empire = yes }
+		trigger = {
+			is_gestalt = no
+			is_robot_empire = yes
+		}
 		text = utopia.3334.desc.machine_non_gestalt
 	}
 	desc = {
-		trigger = { is_gestalt = no is_robot_empire = no }
+		trigger = {
+			is_gestalt = no
+			is_robot_empire = no
+		}
 		text = utopia.3334.desc.organic_non_gestalt
 	}
 
@@ -7138,11 +7248,17 @@ country_event = {
 		text = utopia.3340.desc.gestalt
 	}
 	desc = {
-		trigger = { is_gestalt = no is_robot_empire = yes }
+		trigger = {
+			is_gestalt = no
+			is_robot_empire = yes
+		}
 		text = utopia.3340.desc.machine_non_gestalt
 	}
 	desc = {
-		trigger = { is_gestalt = no is_robot_empire = no }
+		trigger = {
+			is_gestalt = no
+			is_robot_empire = no
+		}
 		text = utopia.3340.desc.organic_non_gestalt
 	}
 
@@ -7265,11 +7381,17 @@ country_event = {
 		text = utopia.3341.desc.machine
 	}
 	desc = {
-		trigger = { is_robot_empire = no is_gestalt = yes }
+		trigger = {
+			is_robot_empire = no
+			is_gestalt = yes
+		}
 		text = utopia.3341.desc.organic_gestalt
 	}
 	desc = {
-		trigger = { is_robot_empire = no is_gestalt = no }
+		trigger = {
+			is_robot_empire = no
+			is_gestalt = no
+		}
 		text = utopia.3341.desc.organic_non_gestalt
 	}
 
@@ -7391,11 +7513,17 @@ country_event = {
 		text = utopia.3343.desc.gestalt
 	}
 	desc = {
-		trigger = { is_gestalt = no is_robot_empire = yes }
+		trigger = {
+			is_gestalt = no
+			is_robot_empire = yes
+		}
 		text = utopia.3343.desc.machine_non_gestalt
 	}
 	desc = {
-		trigger = { is_gestalt = no is_robot_empire = no }
+		trigger = {
+			is_gestalt = no
+			is_robot_empire = no
+		}
 		text = utopia.3343.desc.organic_non_gestalt
 	}
 
@@ -7713,10 +7841,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		count_owned_fleet = {
-			count >= 1
-			limit = { is_ship_class = shipclass_military }
-		}
+		any_owned_fleet = { is_ship_class = shipclass_military }
 	}
 
 	immediate = {
@@ -7739,7 +7864,10 @@ country_event = {
 	title = "utopia.3348.name"
 
 	desc = {
-		trigger = { is_robot_empire = no is_gestalt = no }
+		trigger = {
+			is_robot_empire = no
+			is_gestalt = no
+		}
 		text = utopia.3348.desc.organic_non_gestalt
 	}
 	desc = {
@@ -7881,7 +8009,10 @@ country_event = {
 			# Or you're Imperial and the Chosen One is your current ruler or heir.
 			AND = {
 				is_imperial_authority = yes
-				any_owned_leader = { has_any_chosen_one_leader_trait = yes has_trait = trait_imperial_heir }
+				any_owned_leader = {
+					has_any_chosen_one_leader_trait = yes
+					has_trait = trait_imperial_heir
+				}
 			}
 		}
 	}
@@ -7983,7 +8114,9 @@ country_event = {
 	desc = {
 		trigger = {
 			if = {
-				limit = { from = { is_robot_empire = yes } }
+				limit = {
+					from = { is_robot_empire = yes }
+				}
 				text = utopia.3401.desc.machine
 			}
 			else = {

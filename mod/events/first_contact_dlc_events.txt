@@ -96,10 +96,7 @@ event = {
 				}
 				if = {
 					limit = {
-						count_situation = {
-							count = 0
-							limit = { is_situation_type = situation_observation_insight }
-						}
+						NOT = { any_situation = { is_situation_type = situation_observation_insight } }
 					}
 					start_situation = {
 						type = situation_observation_insight
@@ -332,7 +329,10 @@ country_event = {
 				set_country_flag = jaunting_traveler_of@root
 				save_event_target_as = jaunting_traveler_country
 				# automatically fires first_contact.3000
-				establish_contact = { who = root location = root.owner.capital_scope.solar_system }
+				establish_contact = {
+					who = root
+					location = root.owner.capital_scope.solar_system
+				}
 			}
 		}
 	}
@@ -416,9 +416,7 @@ first_contact_event = {
 				species = root.contact_country.species
 				gender = female
 				skill = 5
-				traits = {
-					trait = leader_trait_psionic
-				}
+				traits = { trait = leader_trait_psionic }
 				event_leader = yes
 				effect = {
 					save_event_target_as = guest_scientist
@@ -754,19 +752,31 @@ country_event = {
 	title = "fircon.1242.name"
 
 	desc = {
-		trigger = { is_robot_empire = no is_gestalt = no }
+		trigger = {
+			is_robot_empire = no
+			is_gestalt = no
+		}
 		text = fircon.1242.desc.organic_non_gestalt
 	}
 	desc = {
-		trigger = { is_robot_empire = yes is_gestalt = no }
+		trigger = {
+			is_robot_empire = yes
+			is_gestalt = no
+		}
 		text = fircon.1242.desc.machine_non_gestalt
 	}
 	desc = {
-		trigger = { is_robot_empire = no is_gestalt = yes }
+		trigger = {
+			is_robot_empire = no
+			is_gestalt = yes
+		}
 		text = fircon.1242.desc.organic_gestalt
 	}
 	desc = {
-		trigger = { is_robot_empire = yes is_gestalt = yes }
+		trigger = {
+			is_robot_empire = yes
+			is_gestalt = yes
+		}
 		text = fircon.1242.desc.machine_gestalt
 	}
 
@@ -1745,15 +1755,24 @@ country_event = {
 
 	desc = {
 		text = "fircon.1320.desc.regular"
-		trigger = { is_authoritarian = no is_materialist = no }
+		trigger = {
+			is_authoritarian = no
+			is_materialist = no
+		}
 	}
 	desc = {
 		text = "fircon.1320.desc.materialist"
-		trigger = { is_materialist = yes is_fanatic_authoritarian = no }
+		trigger = {
+			is_materialist = yes
+			is_fanatic_authoritarian = no
+		}
 	}
 	desc = {
 		text = "fircon.1320.desc.authoritarian"
-		trigger = { is_authoritarian = yes is_fanatic_materialist = no }
+		trigger = {
+			is_authoritarian = yes
+			is_fanatic_materialist = no
+		}
 	}
 
 	picture = GFX_evt_alien_cavemen
@@ -1949,7 +1968,10 @@ country_event = {
 	}
 	option = {
 		name = "fircon.1340.c"
-		trigger = { is_materialist = yes is_gestalt = no }
+		trigger = {
+			is_materialist = yes
+			is_gestalt = no
+		}
 		add_modifier = { modifier = hands_off_approach years = 1 }
 		hidden_effect = {
 			country_event = { id = fircon.1350 days = 100 }
@@ -2078,7 +2100,10 @@ country_event = {
 
 	option = {
 		name = "fircon.1360.a"
-		trigger = { is_spiritualist = no is_materialist = no }
+		trigger = {
+			is_spiritualist = no
+			is_materialist = no
+		}
 		hidden_effect = {
 			country_event = { id = fircon.1365 days = 100 }
 		}
@@ -3248,7 +3273,10 @@ country_event = {
 				queue_actions = {
 					repeat = {
 						find_closest_planet = {
-							trigger = { id = laser_ship.patrol.1 is_same_value = event_target:lasership_planet_1 }
+							trigger = {
+								id = laser_ship.patrol.1
+								is_same_value = event_target:lasership_planet_1
+							}
 							found_planet = {
 								move_to = this
 								orbit_planet = this
@@ -3256,7 +3284,10 @@ country_event = {
 							}
 						}
 						find_closest_planet = {
-							trigger = { id = laser_ship.patrol.2 is_same_value = event_target:lasership_planet_2 }
+							trigger = {
+								id = laser_ship.patrol.2
+								is_same_value = event_target:lasership_planet_2
+							}
 							found_planet = {
 								move_to = this
 								orbit_planet = this
@@ -4629,9 +4660,8 @@ country_event = {
 	}
 	option = {
 		trigger = {
-			count_spynetwork = {
-				count = 0
-				limit = {
+			NOT = {
+				any_spynetwork = {
 					is_owned_by = root
 					target = { is_same_empire = from.owner }
 					has_available_spy_power >= 20
@@ -5083,10 +5113,7 @@ ship_event = {
 							limit = { has_planet_flag = solarpunk_capital }
 							if = {
 								limit = {
-									count_galaxy_species = {
-										count = 0
-										limit = { species_portrait = mol7 }
-									}
+									NOT = { any_galaxy_species = { species_portrait = mol7 } }
 								}
 								create_species = {
 									name = "NAME_Habinte"
@@ -5100,10 +5127,7 @@ ship_event = {
 							}
 							else_if = {
 								limit = {
-									count_galaxy_species = {
-										count = 0
-										limit = { species_portrait = fun3 }
-									}
+									NOT = { any_galaxy_species = { species_portrait = fun3 } }
 								}
 								create_species = {
 									name = "NAME_Habinte"
@@ -5133,7 +5157,10 @@ ship_event = {
 									civic = civic_environmentalist
 								}
 								species = last_created_species
-								ethos = { ethic = ethic_fanatic_egalitarian ethic = ethic_pacifist }
+								ethos = {
+									ethic = ethic_fanatic_egalitarian
+									ethic = ethic_pacifist
+								}
 								flag = random
 								origin = "origin_life_seeded_ai_only"
 								type = primitive
@@ -6417,7 +6444,10 @@ country_event = {
 		}
 	}
 	option = { # Can we have some of those plushies?
-		trigger = { is_megacorp = no values_others = yes }
+		trigger = {
+			is_megacorp = no
+			values_others = yes
+		}
 		name = fircon.7500.e
 		add_modifier = { modifier = stuffed_toy }
 	}
@@ -7340,9 +7370,7 @@ country_event = {
 			species = event_target:preftl_hagglers_species
 			class = official
 			skill = 4
-			traits = {
-				1 = leader_trait_preftl_haggler
-			}
+			traits = { 1 = leader_trait_preftl_haggler }
 		}
 	}
 	option = {
@@ -7776,9 +7804,7 @@ country_event = {
 			name = random
 			class = scientist
 			skill = 3
-			traits = {
-				1 = leader_trait_meticulous
-			}
+			traits = { 1 = leader_trait_meticulous }
 			effect = {
 				save_event_target_as = lone_drone_leader
 			}

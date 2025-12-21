@@ -210,7 +210,9 @@ country_event = {
 		picture = GFX_evt_fallen_empire
 	}
 	picture = {
-		trigger = { from = { is_hive_empire = yes } }
+		trigger = {
+			from = { is_hive_empire = yes }
+		}
 		picture = GFX_evt_hive_mind_fallen_empire
 	}
 
@@ -304,13 +306,7 @@ country_event = {
 
 	picture = {
 		trigger = {
-			count_country = {
-				count = 0
-				limit = {
-					is_country_type = awakened_fallen_empire
-					is_hive_empire = yes
-				}
-			}
+			NOT = { any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes } }
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}
@@ -332,13 +328,7 @@ country_event = {
 				has_been_declared_crisis = yes
 				is_subject = yes
 				is_galactic_emperor = yes
-			}
-			count_country = {
-				count = 0
-				limit = {
-					is_country_type = awakened_fallen_empire
-					is_at_war_with = prev
-				}
+				any_country = { is_country_type = awakened_fallen_empire is_at_war_with = prev }
 			}
 			is_country_type = default
 		}
@@ -358,10 +348,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 2
-				count_neighbor_country = {
-					count = 0
-					limit = { is_same_empire = from }
-				}
+				NOT = { any_neighbor_country = { is_same_empire = from } }
 				any_system_within_border = {
 					distance_to_empire = {
 						who = from
@@ -523,13 +510,7 @@ country_event = {
 				has_been_declared_crisis = yes
 				is_subject = yes
 				is_galactic_emperor = yes
-			}
-			count_country = {
-				count = 0
-				limit = {
-					is_country_type = awakened_fallen_empire
-					is_at_war_with = prev
-				}
+				any_country = { is_country_type = awakened_fallen_empire is_at_war_with = prev }
 			}
 			is_country_type = default
 		}
@@ -549,10 +530,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 2
-				count_neighbor_country = {
-					count = 0
-					limit = { is_same_empire = from }
-				}
+				NOT = { any_neighbor_country = { is_same_empire = from } }
 				any_system_within_border = {
 					distance_to_empire = {
 						who = from
@@ -709,7 +687,10 @@ country_event = {
 	}
 	option = {
 		name = war_in_heaven.4.c
-		trigger = { is_subject = no has_been_declared_crisis = no }
+		trigger = {
+			is_subject = no
+			has_been_declared_crisis = no
+		}
 		ai_chance = {
 			factor = 100
 			modifier = { factor = 0.5 fleet_power < 25000 }
@@ -768,13 +749,7 @@ country_event = {
 
 	picture = {
 		trigger = {
-			count_country = {
-				count = 0
-				limit = {
-					is_country_type = awakened_fallen_empire
-					is_hive_empire = yes
-				}
-			}
+			NOT = { any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes } }
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}
@@ -806,13 +781,7 @@ country_event = {
 
 	picture = {
 		trigger = {
-			count_country = {
-				count = 0
-				limit = {
-					is_country_type = awakened_fallen_empire
-					is_hive_empire = yes
-				}
-			}
+			NOT = { any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes } }
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}
@@ -840,13 +809,7 @@ country_event = {
 
 	picture = {
 		trigger = {
-			count_country = {
-				count = 0
-				limit = {
-					is_country_type = awakened_fallen_empire
-					is_hive_empire = yes
-				}
-			}
+			NOT = { any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes } }
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}
@@ -1000,9 +963,8 @@ country_event = {
 		set_global_flag = war_in_heaven_first_awakened_down
 		if = {
 			limit = {
-				count_country = {
-					count = 0
-					limit = {
+				NOT = {
+					any_country = {
 						any_war = {
 							using_war_goal = { type = wg_war_in_heaven owner = prev }
 						}
@@ -1027,13 +989,7 @@ country_event = {
 
 	picture = {
 		trigger = {
-			count_country = {
-				count = 0
-				limit = {
-					is_country_type = awakened_fallen_empire
-					is_hive_empire = yes
-				}
-			}
+			NOT = { any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes } }
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}
@@ -1068,13 +1024,9 @@ country_event = {
 			has_galactic_emperor = yes # Galactic Empire serves this purpose
 		}
 		any_playable_country = {
-			is_subject = no
-			count_country = {
-				count = 0
-				limit = {
-					is_country_type = awakened_fallen_empire
-					is_at_war_with = prev
-				}
+			NOR = {
+				is_subject = yes
+				any_country = { is_country_type = awakened_fallen_empire is_at_war_with = prev }
 			}
 			any_playable_country = {
 				NOR = {
@@ -1141,11 +1093,13 @@ country_event = {
 					}
 					NOT = {
 						any_federation = {
-							NOT = { is_same_value = prev }
-							relative_power = {
-								who = prev
-								value > equivalent
-								category = fleet
+							NOR = {
+								is_same_value = prev
+								relative_power = {
+									who = prev
+									value <= equivalent
+									category = fleet
+								}
 							}
 							any_member = {
 								is_federation_leader = yes
@@ -1180,11 +1134,13 @@ country_event = {
 					}
 					NOT = {
 						any_federation = {
-							NOT = { is_same_value = prev }
-							relative_power = {
-								who = prev
-								value > equivalent
-								category = fleet
+							NOR = {
+								is_same_value = prev
+								relative_power = {
+									who = prev
+									value <= equivalent
+									category = fleet
+								}
 							}
 							any_member = {
 								is_federation_leader = yes
@@ -1233,9 +1189,9 @@ country_event = {
 						# is_level_5_player_crisis = yes
 						any_country = { is_country_type = awakened_fallen_empire is_at_war_with = prev }
 						any_playable_country = {
-							is_subject = no
-							relative_power = { who = prev value > equivalent }
 							NOR = {
+								is_subject = yes
+								relative_power = { who = prev value <= equivalent }
 								has_country_flag = war_in_heaven_league_leader_declined
 								is_homicidal = yes
 								is_player_crisis = yes # Vfix
@@ -1285,13 +1241,7 @@ country_event = {
 
 	picture = {
 		trigger = {
-			count_country = {
-				count = 0
-				limit = {
-					is_country_type = awakened_fallen_empire
-					is_hive_empire = yes
-				}
-			}
+			NOT = { any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes } }
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}
@@ -1417,19 +1367,10 @@ country_event = {
 			# has_ascension_perk = ap_become_the_crisis
 			# is_level_4_player_crisis = yes
 			# is_level_5_player_crisis = yes
-		}
-		count_country = {
-			count = 0
-			limit = {
-				is_country_type = awakened_fallen_empire
-				is_at_war_with = prev
-			}
-		}
-		count_country = {
-			count = 0
-			limit = {
-				alliance = { has_federation_flag = non_aligned_league }
+			any_country = { is_country_type = awakened_fallen_empire is_at_war_with = prev }
+			any_country = {
 				has_federation = yes
+				alliance = { has_federation_flag = non_aligned_league }
 				is_at_war_with = prev
 			}
 		}
@@ -1471,13 +1412,7 @@ country_event = {
 
 	picture = {
 		trigger = {
-			count_country = {
-				count = 0
-				limit = {
-					is_country_type = awakened_fallen_empire
-					is_hive_empire = yes
-				}
-			}
+			NOT = { any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes } }
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}
@@ -1663,13 +1598,7 @@ country_event = {
 
 	picture = {
 		trigger = {
-			count_country = {
-				count = 0
-				limit = {
-					is_country_type = awakened_fallen_empire
-					is_hive_empire = yes
-				}
-			}
+			NOT = { any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes } }
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}
@@ -1742,13 +1671,7 @@ country_event = {
 	trigger = {
 		is_country_type = awakened_fallen_empire
 		has_global_flag = war_in_heaven_ongoing
-		count_country = {
-			count = 0
-			limit = {
-				is_country_type = awakened_fallen_empire
-				is_at_war_with = root
-			}
-		}
+		NOT = { any_country = { is_country_type = awakened_fallen_empire is_at_war_with = root } }
 	}
 
 	immediate = {
@@ -1803,13 +1726,7 @@ country_event = {
 
 	picture = {
 		trigger = {
-			count_country = {
-				count = 0
-				limit = {
-					is_country_type = awakened_fallen_empire
-					is_hive_empire = yes
-				}
-			}
+			NOT = { any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes } }
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}
@@ -1851,13 +1768,7 @@ country_event = {
 
 	picture = {
 		trigger = {
-			count_country = {
-				count = 0
-				limit = {
-					is_country_type = awakened_fallen_empire
-					is_hive_empire = yes
-				}
-			}
+			NOT = { any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes } }
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}
@@ -1903,7 +1814,10 @@ country_event = {
 		name = war_in_heaven.19.b
 	}
 	option = {
-		trigger = { is_in_federation_with = from is_subject = no }
+		trigger = {
+			is_in_federation_with = from
+			is_subject = no
+		}
 		name = war_in_heaven.19.b2
 		leave_alliance = { override_requirements = yes }
 		ai_chance = { factor = 0 }
@@ -1917,13 +1831,7 @@ country_event = {
 
 	picture = {
 		trigger = {
-			count_country = {
-				count = 0
-				limit = {
-					is_country_type = awakened_fallen_empire
-					is_hive_empire = yes
-				}
-			}
+			NOT = { any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes } }
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}
@@ -1950,13 +1858,7 @@ country_event = {
 
 	picture = {
 		trigger = {
-			count_country = {
-				count = 0
-				limit = {
-					is_country_type = awakened_fallen_empire
-					is_hive_empire = yes
-				}
-			}
+			NOT = { any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes } }
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}
@@ -1986,18 +1888,14 @@ country_event = {
 	}
 	desc = {
 		text = war_in_heaven.22.desc2
-		trigger = { from = { has_federation = yes } }
+		trigger = {
+			from = { has_federation = yes }
+		}
 	}
 
 	picture = {
 		trigger = {
-			count_country = {
-				count = 0
-				limit = {
-					is_country_type = awakened_fallen_empire
-					is_hive_empire = yes
-				}
-			}
+			NOT = { any_country = { is_country_type = awakened_fallen_empire is_hive_empire = yes } }
 		}
 		picture = GFX_evt_fallen_empire_awakes
 	}

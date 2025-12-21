@@ -1,0 +1,10 @@
+# Merger of Rules scripted trigger.
+planet_is_hostile_or_crisis = {
+	exists = owner
+	owner = {
+		OR = {
+			is_at_war_with = from.owner
+			is_crisis_faction = yes
+		}
+	}
+}

@@ -68,7 +68,10 @@ country_event = {
 
 	desc = {
 		text = action.97.desc
-		trigger = { is_xenophobe = no is_megacorp = no }
+		trigger = {
+			is_xenophobe = no
+			is_megacorp = no
+		}
 	}
 	desc = {
 		text = action.97.desc.phobe
@@ -1344,7 +1347,9 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		from = { set_country_flag = whatever_it_is_im_against_it_left_federation }
+		from = {
+			set_country_flag = whatever_it_is_im_against_it_left_federation
+		}
 	}
 }
 
@@ -1845,9 +1850,8 @@ country_event = {
 							limit = {
 								prev = { is_amoeba_country_type = yes }
 							}
-							count_active_first_contact = {
-								count = 0
-								limit = {
+							NOT = {
+								any_active_first_contact = {
 									contact_country = { is_amoeba_country_type = yes }
 								}
 							}
@@ -1856,9 +1860,8 @@ country_event = {
 							limit = {
 								prev = { is_tiyanki_country_type = yes }
 							}
-							count_active_first_contact = {
-								count = 0
-								limit = {
+							NOT = {
+								any_active_first_contact = {
 									contact_country = { is_tiyanki_country_type = yes }
 								}
 							}
@@ -1867,9 +1870,8 @@ country_event = {
 							limit = {
 								prev = { is_crystal_country_type = yes }
 							}
-							count_active_first_contact = {
-								count = 0
-								limit = {
+							NOT = {
+								any_active_first_contact = {
 									contact_country = { is_crystal_country_type = yes }
 								}
 							}
@@ -1878,9 +1880,8 @@ country_event = {
 							limit = {
 								prev = { is_drone_country_type = yes }
 							}
-							count_active_first_contact = {
-								count = 0
-								limit = {
+							NOT = {
+								any_active_first_contact = {
 									contact_country = { is_drone_country_type = yes }
 								}
 							}
@@ -1889,9 +1890,8 @@ country_event = {
 							limit = {
 								prev = { is_country_type = cloud }
 							}
-							count_active_first_contact = {
-								count = 0
-								limit = {
+							NOT = {
+								any_active_first_contact = {
 									contact_country = { is_country_type = cloud }
 								}
 							}
@@ -1905,9 +1905,8 @@ country_event = {
 									}
 								}
 							}
-							count_active_first_contact = {
-								count = 0
-								limit = {
+							NOT = {
+								any_active_first_contact = {
 									contact_country = {
 										OR = {
 											is_country_type = caravaneer_fleet
@@ -2022,10 +2021,7 @@ country_event = {
 	hide_window = yes
 
 	trigger = {
-		count_federation_ally = {
-			count = 0
-			limit = { is_fallen_empire = yes }
-		}
+		NOT = { any_federation_ally = { is_fallen_empire = yes } }
 	}
 
 	immediate = {
@@ -2310,7 +2306,10 @@ agreement_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		has_term_value = { term = subject_diplomacy value = subject_can_do_diplomacy_but_not_vote }
+		has_term_value = {
+			term = subject_diplomacy
+			value = subject_can_do_diplomacy_but_not_vote
+		}
 		owner = { is_galactic_community_member = yes }
 		target = { is_galactic_community_member = no }
 	}
@@ -2333,7 +2332,10 @@ country_event = {
 		this = {
 			is_galactic_community_member = no
 			any_agreement = {
-				has_term_value = { term = subject_diplomacy value = subject_can_do_diplomacy_but_not_vote }
+				has_term_value = {
+					term = subject_diplomacy
+					value = subject_can_do_diplomacy_but_not_vote
+				}
 			}
 		}
 	}
@@ -2353,7 +2355,10 @@ agreement_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		has_term_value = { term = subject_diplomacy value = subject_can_do_diplomacy_but_not_vote }
+		has_term_value = {
+			term = subject_diplomacy
+			value = subject_can_do_diplomacy_but_not_vote
+		}
 		owner = {
 			has_federation = yes
 			federation = { has_federation_law = allow_subjects_to_join_yes }
@@ -2378,7 +2383,10 @@ agreement_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		has_term_value = { term = subject_diplomacy value = subject_can_do_diplomacy_but_not_vote }
+		has_term_value = {
+			term = subject_diplomacy
+			value = subject_can_do_diplomacy_but_not_vote
+		}
 		owner = {
 			has_federation = yes
 			federation = { has_federation_law = allow_subjects_to_join_yes }
@@ -2927,7 +2935,9 @@ country_event = {
 	}
 
 	immediate = {
-		fire_on_action = { on_action = on_decade_random_pulse_country_payback_broken_shackles }
+		fire_on_action = {
+			on_action = on_decade_random_pulse_country_payback_broken_shackles
+		}
 	}
 }
 

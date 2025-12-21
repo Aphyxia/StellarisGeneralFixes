@@ -221,7 +221,10 @@ country_event = {
 
 	option = {
 		name = "paragon.3003.a"
-		trigger = { is_gestalt = no is_fanatic_xenophobe = no }
+		trigger = {
+			is_gestalt = no
+			is_fanatic_xenophobe = no
+		}
 		enable_special_project = {
 			name = "PARAGON_GATEWAY_DUDE_REPAIR_PROJECT"
 			location = event_target:sharpbeak_fleet
@@ -1644,7 +1647,10 @@ country_event = {
 
 	option = { # Take leader
 		name = paragon.3105.a
-		trigger = { is_homicidal = no is_gestalt = no }
+		trigger = {
+			is_homicidal = no
+			is_gestalt = no
+		}
 		capital_scope = {
 			enable_special_project = {
 				name = "LEGENDARY_LEADER_STUDY_RELIC_PROJECT"
@@ -3088,14 +3094,12 @@ fleet_event = {
 
 	trigger = {
 		exists = owner # Vfix log
-		NOT = {
-			owner = {
-				OR = {
-					has_country_flag = sharpbeak_known
-					AND = {
-						is_ai = yes
-						is_gestalt = yes
-					}
+		owner = {
+			NOR = {
+				has_country_flag = sharpbeak_known
+				AND = {
+					is_ai = yes
+					is_gestalt = yes
 				}
 			}
 		}

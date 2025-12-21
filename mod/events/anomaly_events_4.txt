@@ -2075,7 +2075,10 @@ country_event = {
 	title = "anomaly.6793.name"
 
 	desc = {
-		trigger = { is_gestalt = no is_robot_empire = no }
+		trigger = {
+			is_gestalt = no
+			is_robot_empire = no
+		}
 		text = "anomaly.6793.desc"
 	}
 	desc = {
@@ -2127,7 +2130,10 @@ country_event = {
 	title = "anomaly.6794.name"
 
 	desc = {
-		trigger = { is_gestalt = no is_robot_empire = no }
+		trigger = {
+			is_gestalt = no
+			is_robot_empire = no
+		}
 		text = "anomaly.6794.desc"
 	}
 	desc = {
@@ -2148,7 +2154,10 @@ country_event = {
 
 	option = {
 		name = {
-			trigger = { is_gestalt = no is_robot_empire = no }
+			trigger = {
+				is_gestalt = no
+				is_robot_empire = no
+			}
 			text = "anomaly.6794.a"
 		}
 		name = {
@@ -2176,7 +2185,10 @@ country_event = {
 	title = "anomaly.6794.name"
 
 	desc = {
-		trigger = { is_gestalt = no is_robot_empire = no }
+		trigger = {
+			is_gestalt = no
+			is_robot_empire = no
+		}
 		text = "anomaly.6795.desc"
 	}
 	desc = {
@@ -2660,7 +2672,9 @@ ship_event = {
 	desc = "anomaly.6845.desc"
 
 	picture = {
-		trigger = { owner = { values_others = yes } }
+		trigger = {
+			owner = { values_others = yes }
+		}
 		picture = GFX_evt_worrying_signal
 	}
 	picture = {
@@ -2723,7 +2737,9 @@ ship_event = {
 	}
 
 	picture = {
-		trigger = { owner = { values_others = yes } }
+		trigger = {
+			owner = { values_others = yes }
+		}
 		picture = GFX_evt_gas_giant
 	}
 	picture = {
@@ -3401,7 +3417,9 @@ ship_event = {
 				resource_stockpile_compare = { resource = energy value >= 200 }
 			}
 		}
-		owner = { add_resource = { energy = -200 } }
+		owner = {
+			add_resource = { energy = -200 }
+		}
 		hidden_effect = {
 			owner = {
 				country_event = { id = anomaly.7010 }
@@ -3419,7 +3437,10 @@ country_event = {
 	title = "anomaly.7010.name"
 
 	desc = {
-		trigger = { has_country_flag = vending_machine_contents_full is_megacorp = yes }
+		trigger = {
+			has_country_flag = vending_machine_contents_full
+			is_megacorp = yes
+		}
 		text = anomaly.7010.desc.full.megacorp
 	}
 	desc = {
@@ -3489,7 +3510,10 @@ country_event = {
 
 	option = {
 		name = anomaly.7010.a
-		trigger = { has_country_flag = vending_machine_contents_full is_megacorp = yes }
+		trigger = {
+			has_country_flag = vending_machine_contents_full
+			is_megacorp = yes
+		}
 		add_monthly_resource_mult = {
 			resource = energy
 			value = @tier2materialreward
@@ -4434,7 +4458,10 @@ country_event = {
 	option = {
 		name = anomaly.7155.a
 		owner = { add_resource = { food = 500 } }
-		event_target:desertling_planet = { remove_modifier = alien_infestation add_deposit = d_red_desert }
+		event_target:desertling_planet = {
+			remove_modifier = alien_infestation
+			add_deposit = d_red_desert
+		}
 	}
 }
 
@@ -4550,7 +4577,9 @@ ship_event = {
 	title = "anomaly.2000.name"
 
 	desc = {
-		trigger = { owner = { is_hive_empire = no } }
+		trigger = {
+			owner = { is_hive_empire = no }
+		}
 		text = anomaly.2000.default.desc
 	}
 	desc = {

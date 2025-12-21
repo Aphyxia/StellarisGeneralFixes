@@ -35,10 +35,7 @@ building_citadel_uplink = {
 		solar_system = {
 			custom_tooltip = {
 				text = "requires_deep_space_citadel"
-				count_ship_in_system = {
-					count > 0
-					limit = { is_space_citadel_ship_size = yes }
-				}
+				any_ship_in_system = { is_space_citadel_ship_size = yes }
 			}
 		}
 	}
@@ -46,13 +43,10 @@ building_citadel_uplink = {
 	destroy_trigger = {
 		has_owner = yes
 		exists = solar_system
-		OR = {
-			NOT = { owner = { has_origin = origin_starlit_citadel } }
+		NAND = {
+			owner = { has_origin = origin_starlit_citadel }
 			solar_system = {
-				count_ship_in_system = {
-					count = 0
-					limit = { is_space_citadel_ship_size = yes }
-				}
+				any_ship_in_system = { is_space_citadel_ship_size = yes }
 			}
 		}
 	}

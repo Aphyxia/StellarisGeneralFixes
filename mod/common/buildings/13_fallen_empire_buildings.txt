@@ -645,7 +645,10 @@ building_affluence_emporium = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -718,7 +721,9 @@ building_affluence_center = {
 						has_country_flag = affluence_emporium_can_build
 						OR = {
 							check_variable = { which = affluence_emporium_upgrade_count value > 0 }
-							prev = { has_planet_flag = affluence_emporium_upgrade_queued_by@owner }
+							prev = {
+								has_planet_flag = affluence_emporium_upgrade_queued_by@owner
+							}
 						}
 					}
 					is_fallen_empire = yes
@@ -786,7 +791,10 @@ building_affluence_center = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -945,7 +953,10 @@ building_nourishment_complex = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -1016,7 +1027,9 @@ building_nourishment_center = {
 						has_country_flag = nourishment_complex_can_build
 						OR = {
 							check_variable = { which = nourishment_complex_upgrade_count value > 0 }
-							prev = { has_planet_flag = nourishment_complex_upgrade_queued_by@owner }
+							prev = {
+								has_planet_flag = nourishment_complex_upgrade_queued_by@owner
+							}
 						}
 					}
 					is_fallen_empire = yes
@@ -1091,7 +1104,10 @@ building_nourishment_center = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -1231,7 +1247,10 @@ building_dimensional_replicator = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -1304,7 +1323,9 @@ building_dimensional_fabricator = {
 						has_country_flag = dimensional_replicator_can_build
 						OR = {
 							check_variable = { which = dimensional_replicator_upgrade_count value > 0 }
-							prev = { has_planet_flag = dimensional_replicator_upgrade_queued_by@owner }
+							prev = {
+								has_planet_flag = dimensional_replicator_upgrade_queued_by@owner
+							}
 						}
 					}
 					is_fallen_empire = yes
@@ -1358,7 +1379,10 @@ building_dimensional_fabricator = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -1518,7 +1542,10 @@ building_class_3_singularity = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -1589,7 +1616,9 @@ building_class_4_singularity = {
 						has_country_flag = class_3_singularity_can_build
 						OR = {
 							check_variable = { which = class_3_singularity_upgrade_count value > 0 }
-							prev = { has_planet_flag = class_3_singularity_upgrade_queued_by@owner }
+							prev = {
+								has_planet_flag = class_3_singularity_upgrade_queued_by@owner
+							}
 						}
 					}
 					is_fallen_empire = yes
@@ -1659,7 +1688,10 @@ building_class_4_singularity = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -1813,7 +1845,10 @@ building_micro_forge = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -1949,7 +1984,10 @@ building_nano_forge = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -2094,7 +2132,10 @@ building_fe_sky_dome = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -2226,7 +2267,10 @@ building_fe_dome = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -2377,7 +2421,10 @@ building_fe_fortress = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -2512,7 +2559,10 @@ building_fe_stronghold = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -2680,7 +2730,10 @@ building_fe_administration_1 = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -2773,7 +2826,9 @@ building_fe_administration_2 = {
 						has_country_flag = fe_administration_1_can_build
 						OR = {
 							check_variable = { which = fe_administration_1_upgrade_count value > 0 }
-							prev = { has_planet_flag = fe_administration_1_upgrade_queued_by@owner }
+							prev = {
+								has_planet_flag = fe_administration_1_upgrade_queued_by@owner
+							}
 						}
 					}
 					is_fallen_empire = yes
@@ -2837,7 +2892,10 @@ building_fe_administration_2 = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -3008,7 +3066,10 @@ building_fe_administration_hive_1 = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -3091,7 +3152,9 @@ building_fe_administration_hive_2 = {
 						has_country_flag = fe_administration_hive_1_can_build
 						OR = {
 							check_variable = { which = fe_administration_hive_1_upgrade_count value > 0 }
-							prev = { has_planet_flag = fe_administration_hive_1_upgrade_queued_by@owner }
+							prev = {
+								has_planet_flag = fe_administration_hive_1_upgrade_queued_by@owner
+							}
 						}
 					}
 					is_fallen_empire = yes
@@ -3155,7 +3218,10 @@ building_fe_administration_hive_2 = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -3321,7 +3387,10 @@ building_fe_administration_machine_1 = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -3407,7 +3476,9 @@ building_fe_administration_machine_2 = {
 								which = fe_administration_machine_1_upgrade_count
 								value > 0
 							}
-							prev = { has_planet_flag = fe_administration_machine_1_upgrade_queued_by@owner }
+							prev = {
+								has_planet_flag = fe_administration_machine_1_upgrade_queued_by@owner
+							}
 						}
 					}
 					is_fallen_empire = yes
@@ -3471,7 +3542,10 @@ building_fe_administration_machine_2 = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -3645,7 +3719,10 @@ building_fe_temple_1 = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -3730,7 +3807,9 @@ building_fe_temple_2 = {
 						has_country_flag = fe_administration_1_can_build
 						OR = {
 							check_variable = { which = fe_administration_1_upgrade_count value > 0 }
-							prev = { has_planet_flag = fe_administration_1_upgrade_queued_by@owner }
+							prev = {
+								has_planet_flag = fe_administration_1_upgrade_queued_by@owner
+							}
 						}
 					}
 					is_fallen_empire = yes
@@ -3794,7 +3873,10 @@ building_fe_temple_2 = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -4016,7 +4098,10 @@ building_fe_assembly_1 = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -4214,7 +4299,10 @@ building_fe_assembly_2 = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -4415,7 +4503,10 @@ building_fe_clinic_1 = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -4603,7 +4694,10 @@ building_fe_clinic_2 = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -4738,7 +4832,6 @@ building_fe_security_1 = {
 		}
 		job_enforcer_add = @fe_jobs
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
@@ -4778,7 +4871,10 @@ building_fe_security_1 = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -4944,7 +5040,10 @@ building_fe_security_2 = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -5097,7 +5196,10 @@ building_fe_market_1 = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -5243,7 +5345,10 @@ building_fe_market_2 = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -5385,7 +5490,10 @@ building_fe_silo_1 = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -5504,7 +5612,10 @@ building_fe_silo_2 = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -5656,7 +5767,10 @@ building_fe_entertainment_1 = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -5722,7 +5836,9 @@ building_fe_entertainment_2 = {
 						has_country_flag = fe_entertainment_1_can_build
 						OR = {
 							check_variable = { which = fe_entertainment_1_upgrade_count value > 0 }
-							prev = { has_planet_flag = fe_entertainment_1_upgrade_queued_by@owner }
+							prev = {
+								has_planet_flag = fe_entertainment_1_upgrade_queued_by@owner
+							}
 						}
 					}
 					is_fallen_empire = yes
@@ -5787,7 +5903,10 @@ building_fe_entertainment_2 = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -5954,7 +6073,10 @@ building_fe_lab_1 = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -6100,7 +6222,10 @@ building_fe_lab_2 = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -6265,7 +6390,10 @@ building_fe_mine_1 = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {
@@ -6407,7 +6535,10 @@ building_fe_mine_2 = {
 		if = { # kill on the same planet
 			limit = {
 				is_variable_set = local_spent_biomass
-				any_owned_pop_group = { has_trait = trait_wilderness pop_group_size > local_spent_biomass }
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
 			}
 			random_owned_pop_group = {
 				limit = {

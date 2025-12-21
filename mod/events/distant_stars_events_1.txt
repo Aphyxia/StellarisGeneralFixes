@@ -132,8 +132,10 @@ country_event = {
 	}
 	option = {
 		trigger = {
-			resource_stockpile_compare = { resource = minerals value >= 300 }
-			NOT = { is_at_war_with = event_target:wreckage_owner }
+			NOR = {
+				resource_stockpile_compare = { resource = minerals value < 300 }
+				is_at_war_with = event_target:wreckage_owner
+			}
 		}
 		name = distar.2.b
 		add_resource = { minerals = -300 }
@@ -294,7 +296,10 @@ planet_event = {
 		}
 	}
 	option = {
-		trigger = { is_under_colonization = no is_colony = no }
+		trigger = {
+			is_under_colonization = no
+			is_colony = no
+		}
 		name = "distar.7.b"
 		add_modifier = { modifier = superflare_struck years = 20 }
 		hidden_effect = {
@@ -492,9 +497,7 @@ planet_event = {
 			portrait = "default_robot"
 			namelist = "PRT1"
 			homeworld = this
-			traits = {
-				trait = "trait_mechanical"
-			}
+			traits = { trait = "trait_mechanical" }
 			effect = {
 				set_species_flag = primitive_robots_flag
 				save_global_event_target_as = primitive_robot_species
@@ -2029,7 +2032,9 @@ ship_event = {
 
 	option = {
 		name = "distar.340.a"
-		trigger = { owner = { is_reanimator = yes } }
+		trigger = {
+			owner = { is_reanimator = yes }
+		}
 		if = {
 			limit = { exists = event_target:amoeba_finding_scientist }
 			event_target:amoeba_finding_scientist = {
@@ -2119,9 +2124,8 @@ country_event = {
 
 	trigger = {
 		any_controlled_fleet = { has_fleet_flag = lost_amoeba_adult_fleet@root }
-		count_controlled_ship = {
-			count = 0
-			limit = {
+		NOT = {
+			any_controlled_ship = {
 				has_ship_flag = lost_amoeba_ship
 				OR = {
 					has_ship_flag = resurrected_once
@@ -2481,7 +2485,10 @@ country_event = {
 			limit = { exists = event_target:kohtalo_country }
 			event_target:kohtalo_country = { destroy_country = yes }
 		}
-		create_ambient_object = { type = "kohtalo_object" location = event_target:ouroboros_pulsar }
+		create_ambient_object = {
+			type = "kohtalo_object"
+			location = event_target:ouroboros_pulsar
+		}
 		last_created_ambient_object = {
 			set_location = {
 				target = event_target:ouroboros_pulsar
@@ -3698,7 +3705,10 @@ country_event = {
 			}
 		}
 		from = {
-			auto_move_to_planet = { target = event_target:new_location clear_auto_move_on_arrival = no }
+			auto_move_to_planet = {
+				target = event_target:new_location
+				clear_auto_move_on_arrival = no
+			}
 		}
 	}
 }
@@ -5770,7 +5780,10 @@ country_event = {
 			}
 		}
 		from = {
-			auto_move_to_planet = { target = event_target:new_location clear_auto_move_on_arrival = no }
+			auto_move_to_planet = {
+				target = event_target:new_location
+				clear_auto_move_on_arrival = no
+			}
 		}
 	}
 }
@@ -6291,11 +6304,17 @@ country_event = {
 	title = "distar.218.name"
 
 	desc = {
-		trigger = { is_hive_empire = no is_machine_empire = no }
+		trigger = {
+			is_hive_empire = no
+			is_machine_empire = no
+		}
 		text = "distar.218.desc.regular"
 	}
 	desc = {
-		trigger = { is_hive_empire = yes is_machine_empire = no }
+		trigger = {
+			is_hive_empire = yes
+			is_machine_empire = no
+		}
 		text = "distar.218.desc.hive"
 	}
 	desc = {
@@ -7014,9 +7033,8 @@ country_event = {
 	}
 	desc = {
 		trigger = {
-			count_system = {
-				count = 0
-				limit = {
+			NOT = {
+				any_system = {
 					has_star_flag = ratling_system
 					any_system_planet = {
 						has_planet_flag = ratling_planet
@@ -7045,9 +7063,8 @@ country_event = {
 	desc = {
 		trigger = {
 			has_civic = civic_machine_assimilator
-			count_system = {
-				count = 0
-				limit = {
+			NOT = {
+				any_system = {
 					has_star_flag = ratling_system
 					any_system_planet = {
 						has_planet_flag = ratling_planet
@@ -7160,13 +7177,7 @@ country_event = {
 				exists = event_target:ratling_pre_space_country
 				any_system = {
 					has_star_flag = ratling_system
-					count_fleet_in_system = {
-						count = 0
-						limit = {
-							is_ship_size = constructor
-							is_constructing = starbase
-						}
-					}
+					NOT = { any_fleet_in_system = { is_ship_size = constructor is_constructing = starbase } }
 					any_system_colony = {
 						has_owner = yes
 						has_planet_flag = ratling_planet
@@ -7207,13 +7218,7 @@ country_event = {
 		exists = event_target:ratling_pre_space_country
 		any_system = {
 			has_star_flag = ratling_system
-			count_fleet_in_system = {
-				count = 0
-				limit = {
-					is_ship_size = constructor
-					is_constructing = starbase
-				}
-			}
+			NOT = { any_fleet_in_system = { is_ship_size = constructor is_constructing = starbase } }
 			any_system_colony = {
 				has_owner = yes
 				has_planet_flag = ratling_planet
@@ -8625,9 +8630,7 @@ planet_event = {
 			namelist = "FUN4"
 			homeworld = root
 			sapient = no
-			traits = {
-				trait = trait_presapient_docile_livestock
-			}
+			traits = { trait = trait_presapient_docile_livestock }
 			effect = {
 				save_global_event_target_as = livestock_species
 			}
@@ -8803,7 +8806,9 @@ planet_event = {
 		}
 		name = "distar.262.b"
 		custom_tooltip = "distar.262.b.tooltip.2"
-		owner = { add_resource = { energy = -300 } }
+		owner = {
+			add_resource = { energy = -300 }
+		}
 		add_deposit = d_processing_pens
 		hidden_effect = {
 			while = {

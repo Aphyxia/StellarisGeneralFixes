@@ -347,12 +347,15 @@ building_storm_resistant_production = {
 
 	potential = {
 		has_owner = yes
-		NOR = {
-			owner = { is_wilderness_empire = yes }
-			AND = {
-				owner = { is_ai = yes }
-				solar_system = { system_has_storm_repelling_tech = yes }
+		owner = {
+			NAND = {
+				is_wilderness_empire = yes
+				has_origin = origin_storm_chasers
 			}
+		}
+		OR = {
+			owner = { is_ai = no }
+			solar_system = { system_has_storm_repelling_tech = no }
 		}
 	}
 
@@ -447,7 +450,12 @@ building_advanced_storm_resistant_production = {
 
 	potential = {
 		has_owner = yes
-		owner = { is_wilderness_empire = no }
+		owner = {
+			NAND = {
+				is_wilderness_empire = yes
+				has_origin = origin_storm_chasers
+			}
+		}
 		if = {
 			limit = { owner = { is_ai = yes } }
 			solar_system = { system_has_storm_repelling_tech = no }

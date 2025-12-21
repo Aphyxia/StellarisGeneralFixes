@@ -734,7 +734,10 @@ country_event = {
 		every_galcom_member = {
 			limit = {
 				position_on_last_resolution = support
-				any_owned_leader = { has_trait = leader_trait_supporting_voter is_assigned_to_galcom = yes }
+				any_owned_leader = {
+					has_trait = leader_trait_supporting_voter
+					is_assigned_to_galcom = yes
+				}
 				NOT = { is_same_value = root }
 			}
 			random_owned_leader = {

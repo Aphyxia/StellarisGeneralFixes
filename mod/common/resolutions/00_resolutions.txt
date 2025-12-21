@@ -6864,10 +6864,7 @@ resolution_rulesofwar_demobilization_initiative = {
 					has_crisis_stage_2 = yes
 					has_crisis_stage_3 = yes
 					has_crisis_stage_4 = yes
-				}
-				count_country = {
-					count = 0
-					limit = { has_country_flag = declared_crisis }
+					any_playable_country = { has_country_flag = declared_crisis } # Vfix opt
 				}
 			}
 		}
@@ -7738,7 +7735,9 @@ resolution_divinity_silence_the_soulless = {
 
 	triggered_modifier = {
 		potential = { is_synthetic_empire = yes }
-		modifier = { resolution_divinity_silence_the_soulless_synthetic_empire_effect = 1 }
+		modifier = {
+			resolution_divinity_silence_the_soulless_synthetic_empire_effect = 1
+		}
 	}
 
 	effect = {
@@ -8156,12 +8155,14 @@ resolution_galacticreforms_form_council = {
 		}
 		modifier = {
 			factor = 0.8
-			galactic_community_rank > 5
-			NAND = {
-				is_subject = yes
-				overlord = {
-					opinion_level = { who = prev level >= neutral }
-					galactic_community_rank <= 3
+			NOR = {
+				galactic_community_rank <= 5
+				AND = {
+					is_subject = yes
+					overlord = {
+						opinion_level = { who = prev level >= neutral }
+						galactic_community_rank <= 3
+					}
 				}
 			}
 			desc = gal_com_empire_or_overlord_unlikely_council_candidate
@@ -8967,12 +8968,14 @@ resolution_galacticreforms_enable_council_veto = {
 		}
 		modifier = {
 			factor = 0.8
-			galactic_community_rank > 5
-			NAND = {
-				is_subject = yes
-				overlord = {
-					opinion_level = { who = prev level >= neutral }
-					is_part_of_galactic_council = yes
+			NOR = {
+				galactic_community_rank <= 5
+				AND = {
+					is_subject = yes
+					overlord = {
+						opinion_level = { who = prev level >= neutral }
+						is_part_of_galactic_council = yes
+					}
 				}
 			}
 			desc = gal_com_they_nor_overlord_not_on_galatic_council
@@ -11623,10 +11626,7 @@ resolution_galactic_focus_crisis_prethoryn = {
 		}
 		modifier = {
 			factor = 0.75
-			count_neighbor_country = {
-				count = 0
-				limit = { is_country_type = swarm }
-			}
+			NOT = { any_neighbor_country = { is_country_type = swarm } }
 			desc = gal_com_is_not_neighboring_swarm
 		}
 		modifier = {
@@ -11662,19 +11662,13 @@ resolution_galactic_focus_crisis_prethoryn = {
 		modifier = {
 			factor = 0.5
 			is_xenophobe = yes
-			count_neighbor_country = {
-				count = 0
-				limit = { is_country_type = swarm }
-			}
+			NOT = { any_neighbor_country = { is_country_type = swarm } }
 			desc = ethic_xenophobe
 		}
 		modifier = {
 			factor = 0.1
 			is_fanatic_xenophobe = yes
-			count_neighbor_country = {
-				count = 0
-				limit = { is_country_type = swarm }
-			}
+			NOT = { any_neighbor_country = { is_country_type = swarm } }
 			desc = ethic_fanatic_xenophobe
 		}
 	}
@@ -11744,9 +11738,8 @@ resolution_galactic_focus_crisis_unbidden = {
 		}
 		modifier = {
 			factor = 0.75
-			count_neighbor_country = {
-				count = 0
-				limit = {
+			NOT = {
+				any_neighbor_country = {
 					OR = {
 						is_country_type = extradimensional
 						is_country_type = extradimensional_2
@@ -11794,9 +11787,8 @@ resolution_galactic_focus_crisis_unbidden = {
 		modifier = {
 			factor = 0.5
 			is_xenophobe = yes
-			count_neighbor_country = {
-				count = 0
-				limit = {
+			NOT = {
+				any_neighbor_country = {
 					OR = {
 						is_country_type = extradimensional
 						is_country_type = extradimensional_2
@@ -11809,9 +11801,8 @@ resolution_galactic_focus_crisis_unbidden = {
 		modifier = {
 			factor = 0.1
 			is_fanatic_xenophobe = yes
-			count_neighbor_country = {
-				count = 0
-				limit = {
+			NOT = {
+				any_neighbor_country = {
 					is_country_type = extradimensional
 					is_country_type = extradimensional_2
 					is_country_type = extradimensional_3
@@ -11877,10 +11868,7 @@ resolution_galactic_focus_crisis_contingency = {
 		}
 		modifier = {
 			factor = 0.75
-			count_neighbor_country = {
-				count = 0
-				limit = { is_country_type = ai_empire }
-			}
+			NOT = { any_neighbor_country = { is_country_type = ai_empire } }
 			desc = gal_com_not_neighboring_ai_empire
 		}
 		modifier = {
@@ -11924,19 +11912,13 @@ resolution_galactic_focus_crisis_contingency = {
 		modifier = {
 			factor = 0.5
 			is_xenophobe = yes
-			count_neighbor_country = {
-				count = 0
-				limit = { is_country_type = ai_empire }
-			}
+			NOT = { any_neighbor_country = { is_country_type = ai_empire } }
 			desc = ethic_xenophobe
 		}
 		modifier = {
 			factor = 0.1
 			is_fanatic_xenophobe = yes
-			count_neighbor_country = {
-				count = 0
-				limit = { is_country_type = ai_empire }
-			}
+			NOT = { any_neighbor_country = { is_country_type = ai_empire } }
 			desc = ethic_fanatic_xenophobe
 		}
 	}
@@ -12031,9 +12013,8 @@ resolution_galactic_focus_crisis_greatkhan = {
 		modifier = {
 			factor = 0.5
 			is_xenophobe = yes
-			count_neighbor_country = {
-				count = 0
-				limit = {
+			NOT = {
+				any_neighbor_country = {
 					OR = {
 						is_country_type = awakened_marauders
 						any_agreement = { agreement_preset = preset_satrapy }
@@ -12045,9 +12026,8 @@ resolution_galactic_focus_crisis_greatkhan = {
 		modifier = {
 			factor = 0.1
 			is_fanatic_xenophobe = yes
-			count_neighbor_country = {
-				count = 0
-				limit = {
+			NOT = {
+				any_neighbor_country = {
 					OR = {
 						is_country_type = awakened_marauders
 						any_agreement = { agreement_preset = preset_satrapy }
@@ -12114,13 +12094,7 @@ resolution_galactic_focus_crisis_nanites = {
 		}
 		modifier = {
 			factor = 0.75
-			count_country = {
-				count = 0
-				limit = {
-					is_country_type = gray_goo
-					galaxy_percentage > 0.10
-				}
-			}
+			NOT = { any_country = { is_country_type = gray_goo galaxy_percentage > 0.10 } }
 			desc = gal_com_gray_goo_size_smallest
 		}
 		modifier = {
@@ -12182,10 +12156,7 @@ resolution_galactic_focus_crisis_nanites = {
 		modifier = {
 			factor = 0.5
 			is_xenophobe = yes
-			count_neighbor_country = {
-				count = 0
-				limit = { is_country_type = gray_goo }
-			}
+			NOT = { any_neighbor_country = { is_country_type = gray_goo } }
 			desc = ethic_xenophobe
 		}
 	}
@@ -13130,12 +13101,12 @@ resolution_galactic_market_form = {
 			has_global_flag = ongoing_market_nomination
 			is_gestalt = yes
 			is_homicidal = yes
-		}
-		count_relation = {
-			count >= 3
-			limit = {
-				is_country_type = default
-				is_homicidal = no
+			count_relation = {
+				count < 3
+				limit = {
+					is_country_type = default
+					is_homicidal = no
+				}
 			}
 		}
 	}
@@ -13167,7 +13138,9 @@ resolution_galactic_market_form = {
 		}
 		modifier = {
 			factor = 0.1
-			NOT = { has_global_flag = galactic_focus_pass_a_resolution_completed }
+			NOT = {
+				has_global_flag = galactic_focus_pass_a_resolution_completed
+			}
 			desc = ariphaos_patch_gal_com_first_resolution
 		}
 		modifier = {
@@ -13546,7 +13519,9 @@ resolution_galactic_market_relocate = {
 	allow = {
 		custom_tooltip = {
 			fail_text = "resolution_galactic_market_relocate_trigger_fail"
-			NOT = { has_global_flag = "resolution_galactic_market_relocated_recently" }
+			NOT = {
+				has_global_flag = "resolution_galactic_market_relocated_recently"
+			}
 		}
 	}
 
@@ -13741,12 +13716,14 @@ resolution_community_champions = {
 		}
 		modifier = {
 			factor = 0.8
-			galactic_community_rank > 5
-			NAND = {
-				is_subject = yes
-				overlord = {
-					opinion_level = { who = prev level >= neutral }
-					is_part_of_galactic_council = yes
+			NOR = {
+				galactic_community_rank <= 5
+				AND = {
+					is_subject = yes
+					overlord = {
+						opinion_level = { who = prev level >= neutral }
+						is_part_of_galactic_council = yes
+					}
 				}
 			}
 			desc = gal_com_they_nor_overlord_not_on_galatic_council
@@ -13785,10 +13762,7 @@ resolution_constitutional_immunity = {
 	allow = {
 		custom_tooltip = {
 			fail_text = "immunity_already_active"
-			count_country = {
-				count = 0
-				limit = { has_country_flag = constitutional_immunity }
-			}
+			NOT = { any_country = { has_country_flag = constitutional_immunity } }
 		}
 	}
 
@@ -13884,12 +13858,14 @@ resolution_development_aides = {
 		}
 		modifier = {
 			factor = 0.8
-			galactic_community_rank > 5
-			NAND = {
-				is_subject = yes
-				overlord = {
-					opinion_level = { who = prev level >= neutral }
-					is_part_of_galactic_council = yes
+			NOR = {
+				galactic_community_rank <= 5
+				AND = {
+					is_subject = yes
+					overlord = {
+						opinion_level = { who = prev level >= neutral }
+						is_part_of_galactic_council = yes
+					}
 				}
 			}
 			desc = gal_com_they_nor_overlord_not_on_galatic_council
@@ -13960,7 +13936,9 @@ resolution_galactic_threats_committee = {
 
 	allow = {
 		custom_tooltip = { text = "resolution_already_active" }
-		NOT = { is_active_resolution = resolution_galactic_threats_committee }
+		NOT = {
+			is_active_resolution = resolution_galactic_threats_committee
+		}
 		is_galactic_council_established = yes
 	}
 
@@ -14129,12 +14107,14 @@ resolution_development_aides_repeal = {
 		}
 		modifier = {
 			factor = 2
-			galactic_community_rank > 5
-			NAND = {
-				is_subject = yes
-				overlord = {
-					opinion_level = { who = prev level >= neutral }
-					is_part_of_galactic_council = yes
+			NOR = {
+				galactic_community_rank <= 5
+				AND = {
+					is_subject = yes
+					overlord = {
+						opinion_level = { who = prev level >= neutral }
+						is_part_of_galactic_council = yes
+					}
 				}
 			}
 			desc = gal_com_they_nor_overlord_not_on_galatic_council

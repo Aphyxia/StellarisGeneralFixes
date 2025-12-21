@@ -16,75 +16,149 @@
 # Prev = owner
 create_dyn_pirate_fleet = {
 	optimize_memory
+
 	prev = {
 		if = {
-			limit = { NOT = { is_variable_set = pirates_f_tmp } }
+			limit = {
+				NOT = { is_variable_set = pirates_f_tmp }
+			}
 			set_variable = { which = pirates_f_tmp value = 0.8 }
 		}
 	}
+
 	# log = "create_dyn_pirate_fleet [prev.pirates_f_tmp]"
 	[[Reaver]
-	create_ship_design = { design = "NAME_Reaver" }
+
+	create_ship_design = {
+		design = "NAME_Reaver"
+	}
 	set_variable = { which = fleet_f_tmp value = prev.pirates_f_tmp }
 	multiply_variable = { which = fleet_f_tmp value = $Reaver$ }
+
 	ceiling_variable = fleet_f_tmp
-	while = { count = fleet_f_tmp
-		create_ship = { name = random design = last_created_design graphical_culture = "pirate_01" }
+	while = {
+		count = fleet_f_tmp
+		create_ship = {
+			name = random
+			design = last_created_design
+			graphical_culture = "pirate_01"
+		}
 	}
+
 	]
 	[[Brigand]
-	create_ship_design = { design = "NAME_Brigand" }
+
+	create_ship_design = {
+		design = "NAME_Brigand"
+	}
 	set_variable = { which = fleet_f_tmp value = prev.pirates_f_tmp }
 	multiply_variable = { which = fleet_f_tmp value = $Brigand$ }
+
 	ceiling_variable = fleet_f_tmp
-	while = { count = fleet_f_tmp
-		create_ship = { name = random design = last_created_design graphical_culture = "pirate_01" }
+	while = {
+		count = fleet_f_tmp
+		create_ship = {
+			name = random
+			design = last_created_design
+			graphical_culture = "pirate_01"
+		}
 	}
+
 	]
 	[[Skull]
-	create_ship_design = { design = "NAME_Skull" }
+
+	create_ship_design = {
+		design = "NAME_Skull"
+	}
 	set_variable = { which = fleet_f_tmp value = prev.pirates_f_tmp }
 	multiply_variable = { which = fleet_f_tmp value = $Skull$ }
+
 	ceiling_variable = fleet_f_tmp
-	while = { count = fleet_f_tmp
-		create_ship = { name = random design = last_created_design graphical_culture = "pirate_01" }
+	while = {
+		count = fleet_f_tmp
+		create_ship = {
+			name = random
+			design = last_created_design
+			graphical_culture = "pirate_01"
+		}
 	}
+
 	]
 	[[Marauder]
-	create_ship_design = { design = "NAME_Marauder" }
+
+	create_ship_design = {
+		design = "NAME_Marauder"
+	}
 	set_variable = { which = fleet_f_tmp value = prev.pirates_f_tmp }
 	multiply_variable = { which = fleet_f_tmp value = $Marauder$ }
+
 	ceiling_variable = fleet_f_tmp
-	while = { count = fleet_f_tmp
-		create_ship = { name = random design = last_created_design graphical_culture = "pirate_01" }
+	while = {
+		count = fleet_f_tmp
+		create_ship = {
+			name = random
+			design = last_created_design
+			graphical_culture = "pirate_01"
+		}
 	}
+
 	]
 	[[Corsair]
-	create_ship_design = { design = "NAME_Corsair" }
+
+	create_ship_design = {
+		design = "NAME_Corsair"
+	}
 	set_variable = { which = fleet_f_tmp value = prev.pirates_f_tmp }
 	multiply_variable = { which = fleet_f_tmp value = $Corsair$ }
+
 	ceiling_variable = fleet_f_tmp
-	while = { count = fleet_f_tmp
-		create_ship = { name = random design = last_created_design graphical_culture = "pirate_01" }
+	while = {
+		count = fleet_f_tmp
+		create_ship = {
+			name = random
+			design = last_created_design
+			graphical_culture = "pirate_01"
+		}
 	}
+
 	]
 	[[Black_Earl]
-	create_ship_design = { design = "NAME_Black_Earl" }
+
+	create_ship_design = {
+		design = "NAME_Black_Earl"
+	}
 	set_variable = { which = fleet_f_tmp value = prev.pirates_f_tmp }
 	multiply_variable = { which = fleet_f_tmp value = $Black_Earl$ }
+
 	ceiling_variable = fleet_f_tmp
-	while = { count = fleet_f_tmp
-		create_ship = { name = random design = last_created_design graphical_culture = "pirate_01" }
+	while = {
+		count = fleet_f_tmp
+		create_ship = {
+			name = random
+			design = last_created_design
+			graphical_culture = "pirate_01"
+		}
 	}
+
 	]
 	[[Pirate_Galleon]
-	create_ship_design = { design = "NAME_Pirate_Galleon" }
+
+	create_ship_design = {
+		design = "NAME_Pirate_Galleon"
+	}
 	set_variable = { which = fleet_f_tmp value = prev.pirates_f_tmp }
 	multiply_variable = { which = fleet_f_tmp value = $Pirate_Galleon$ }
+
 	ceiling_variable = fleet_f_tmp
-	while = { count = fleet_f_tmp
-		create_ship = { name = random design = last_created_design graphical_culture = "pirate_01" }
+	while = {
+		count = fleet_f_tmp
+		create_ship = {
+			name = random
+			design = last_created_design
+			graphical_culture = "pirate_01"
+		}
 	}
+
 	]
 	clear_variable = fleet_f_tmp
 }
@@ -94,11 +168,17 @@ create_pirate_waves_countries = {
 	optimize_memory
 	# First Pirate Country
 	if = {
-		limit = { NOT = { exists = event_target:pirate_waves_country } }
+		limit = {
+			NOT = { exists = event_target:pirate_waves_country }
+		}
 		create_species = {
 			name = random
 			class = random
-			blocked_archetypes = { MACHINE ROBOT LITHOID }
+			blocked_archetypes = {
+				MACHINE
+				ROBOT
+				LITHOID
+			}
 			portrait = random
 			traits = {
 				trait = "trait_pc_habitat_preference"
@@ -123,7 +203,10 @@ create_pirate_waves_countries = {
 				background = { category = "backgrounds" file = "00_solid.dds" }
 				colors = { "red" "black" "null" "null" }
 			}
-			ethos = { ethic = ethic_fanatic_militarist ethic = random }
+			ethos = {
+				ethic = ethic_fanatic_militarist
+				ethic = random
+			}
 			day_zero_contact = no
 			ignore_initial_colony_error = yes
 			effect = {
@@ -144,13 +227,20 @@ create_pirate_waves_countries = {
 			}
 		}
 	}
+
 	# Second Pirate Country
 	if = {
-		limit = { NOT = { exists = event_target:pirate_waves_2_country } }
+		limit = {
+			NOT = { exists = event_target:pirate_waves_2_country }
+		}
 		create_species = {
 			name = random
 			class = random
-			blocked_archetypes = { MACHINE ROBOT LITHOID }
+			blocked_archetypes = {
+				MACHINE
+				ROBOT
+				LITHOID
+			}
 			portrait = random
 			traits = {
 				trait = "trait_pc_habitat_preference"
@@ -199,17 +289,25 @@ create_pirate_waves_countries = {
 
 	# Stop all pirates attacking enclave stations
 	every_country = {
-		limit = { OR = { is_country_type = enclave is_mercenary = yes is_country_type = ldragon_country } }
+		limit = {
+			OR = {
+				is_country_type = enclave
+				is_mercenary = yes
+				is_country_type = ldragon_country
+			}
+		}
 		every_country = {
 			limit = { is_pirate_country = yes }
 			set_faction_hostility = { target = prev set_friendly = yes }
 		}
 	}
+
 	# Establish communications between the pirates and other countries.
 	every_playable_country = {
 		event_target:pirate_waves_country = { establish_communications_no_message = prev }
 		event_target:pirate_waves_2_country = { establish_communications_no_message = prev }
 	}
+
 	# log = "Created both Pirate countries..."
 }
 
@@ -259,7 +357,6 @@ create_pirate_waves_countries = {
 # 			}
 # 		}
 # 	}
-
 # 	# Checks the ship limit of this country.
 # 	if = {
 # 		limit = {
@@ -419,7 +516,6 @@ create_pirate_waves_countries = {
 # 		}
 # 	}
 # }
-
 # # Add the Kill Count Pirate event chain to the from country.
 # add_pirate_waves_pirate_event_chain = {
 # 	optimize_memory
@@ -431,7 +527,6 @@ create_pirate_waves_countries = {
 # 		begin_event_chain = { event_chain = "pirate_waves_pirate_event_chain" target = from }
 # 	}
 # }
-
 #
 #	Calculation stuff:
 #	4 * 5800 = 23200
@@ -479,7 +574,6 @@ create_pirate_waves_countries = {
 # 			random_planet_within_border = { save_event_target_as = wave_location }
 # 		}
 # 	}
-
 # 	# Difficulty modifiers
 # 	prev = {
 # 		set_variable = { which = years_passed_tmp value = trigger:years_passed }
@@ -529,7 +623,6 @@ create_pirate_waves_countries = {
 # 				multiply_variable = { which = pirates_factor value = 0.5 }
 # 			}
 # 		}
-
 # 		# Time passed based modifiers
 # 		set_variable = { which = pirates_f_tmp value = pirates_factor }
 # 		if = {
@@ -552,7 +645,6 @@ create_pirate_waves_countries = {
 # 	multiply_variable	= { which = pirates_fleet_factor value = 0.35 }	# 0.5
 # 	round_variable = pirates_fleet_factor
 # 	# log = "pirates_fleet_factor [This.pirates_fleet_factor]"
-
 # 	# Corvettes: AVG 100 FP
 # 	if = {
 # 		limit = { exists = event_target:current_pirate_country mid_game_years_passed < 0 }

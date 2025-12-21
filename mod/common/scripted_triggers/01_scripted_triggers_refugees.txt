@@ -6,7 +6,12 @@ is_valid_refugee_pop = {
 		is_non_sapient_robot = yes
 		AND = {
 			has_virtual_species_trait = yes
-			NOT = { owner = { has_active_tradition = tr_virtuality_finish } }
+			exists = owner
+			owner = {
+				NOT = {
+					has_active_tradition = tr_virtuality_finish
+				}
+			}
 		}
 	}
 	owner = {
@@ -40,6 +45,34 @@ is_valid_refugee_pop = {
 	}
 }
 
+country_has_habitability_and_housing = {
+	has_country_flag = valid_refugee_destination_for_@event_target:refugee_pop
+	any_owned_planet = {
+		planet_has_habitability_and_housing = {
+			[[HABITABILITY
+				HABITABILITY = $HABITABILITY$
+			]
+			[[HOUSING
+				HOUSING = $HOUSING$
+			]
+		}
+	}
+}
+
+planet_has_habitability_and_housing = {
+	[[HABITABILITY
+		habitability = { who = event_target:refugee_pop value >= $HABITABILITY$ }
+	]
+	[[HOUSING
+		free_housing >= $HOUSING$
+	]
+	is_under_colonization = no
+	is_controlled_by = owner
+	has_orbital_bombardment = no
+	NOT = { is_planet_class = pc_cosmogenesis_world }
+}
+
+### TODO REMOVEME in v4.4 (Old v4.2 triggers)
 has_good_habitability_and_housing = {
 	has_country_flag = valid_refugee_destination_for_@event_target:refugee_pop
 	any_owned_planet = {
