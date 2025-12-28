@@ -407,7 +407,6 @@ une_deneb_system = {
 deneb_neighbor_t1 = {
 	class = "rl_standard_stars"
 	flags = { neighbor_t1 }
-
 	init_effect = {
 		every_neighbor_system = { set_star_flag = empire_cluster }
 	}
@@ -447,7 +446,6 @@ deneb_neighbor_t1 = {
 deneb_neighbor_t1_first_colony = {
 	class = "rl_standard_stars"
 	flags = { neighbor_t1_first_colony }
-
 	init_effect = {
 		every_neighbor_system = { set_star_flag = empire_cluster }
 	}
@@ -501,7 +499,6 @@ deneb_neighbor_t1_first_colony = {
 deneb_neighbor_t2_second_colony = {
 	class = "rl_standard_stars"
 	flags = { neighbor_t2_second_colony }
-
 	init_effect = {
 		every_neighbor_system = { set_star_flag = empire_cluster }
 	}
@@ -563,7 +560,6 @@ vultaumar_system = {
 	name = "NAME_Vultaumar"
 	class = "sc_b"
 	flags = { vultaumar precursor_system }
-
 	planet = {
 		name = "NAME_Vultaumar"
 		class = "pc_b_star"
@@ -679,7 +675,6 @@ yuhtaan_system = {
 		radius = 125
 	}
 	flags = { yuhtaan precursor_system }
-
 	planet = {
 		name = "NAME_Yuhtaan"
 		class = "pc_m_star"
@@ -843,7 +838,6 @@ fen_habbanis_system = {
 		radius = 85
 	}
 	flags = { fen_habbanis precursor_system }
-
 	planet = {
 		name = "NAME_Fen_Habbanis"
 		class = "pc_g_star"
@@ -965,7 +959,6 @@ irass_system = {
 		radius = 125
 	}
 	flags = { irass precursor_system }
-
 	planet = {
 		class = star
 		orbit_distance = 0
@@ -1110,7 +1103,6 @@ cybrex_system = {
 	name = "NAME_Cybrex_Alpha"
 	class = "sc_g"
 	flags = { cybrex precursor_system }
-
 	planet = {
 		class = star
 		orbit_distance = 0
@@ -1266,7 +1258,6 @@ ai_titawin_init = {
 	name = "NAME_Titawin"
 	usage = misc_system_init
 	flags = { empire_home_system theian_system }
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 160

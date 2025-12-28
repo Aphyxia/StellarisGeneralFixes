@@ -98,7 +98,6 @@ make_moderately_hostile = {
 
 create_marauder_merc_admiral = {
 	optimize_memory
-
 	create_leader = {
 		class = commander
 		species = event_target:marauder_species
@@ -153,7 +152,6 @@ create_marauder_merc_admiral = {
 
 create_marauder_merc_general = {
 	optimize_memory
-
 	create_leader = {
 		class = commander
 		species = event_target:marauder_species

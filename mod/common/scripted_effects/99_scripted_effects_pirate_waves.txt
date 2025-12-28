@@ -16,7 +16,6 @@
 # Prev = owner
 create_dyn_pirate_fleet = {
 	optimize_memory
-
 	prev = {
 		if = {
 			limit = {

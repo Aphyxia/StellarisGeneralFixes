@@ -835,7 +835,7 @@ bureaucrat = {
 		category = planet_bureaucrats
 		# PRODUCES
 		produces = {
-			unity = 2
+			unity = 4
 		}
 		upkeep = {
 			consumer_goods = 2
@@ -1234,6 +1234,7 @@ bureaucrat = {
 
 enforcer = {
 	category = dystopian_specialist
+	can_be_automated = no
 
 	swappable_data = {
 		default = {
@@ -1564,7 +1565,7 @@ entertainer = {
 	resources = {
 		category = planet_entertainers
 		produces = {
-			unity = 0.5
+			unity = 1
 		}
 		upkeep = {
 			trigger = {
@@ -1577,7 +1578,7 @@ entertainer = {
 			trigger = {
 				entertainer_is_duelist_trigger = yes
 			}
-			unity = 0.5
+			unity = 1
 		}
 		upkeep = {
 			trigger = {
@@ -1591,7 +1592,7 @@ entertainer = {
 			trigger = {
 				entertainer_is_storm_dancer_trigger = yes
 			}
-			unity = 1.5
+			unity = 3
 		}
 		upkeep = {
 			trigger = {

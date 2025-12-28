@@ -801,7 +801,6 @@ paragon_origin_create_pirates = {
 
 paragon_origin_reformists_negotiations_effect = {
 	optimize_memory
-
 	ruler = { # Remove Delusion Trait If It Is Low
 		if = {
 			limit = {
@@ -1290,7 +1289,6 @@ paragon_origin_civil_war = {
 
 paragon_origin_bad_trait_giver = {
 	optimize_memory
-
 	locked_random_list = {
 		1 = {
 			modifier = { factor = 2 is_militarist = yes }
@@ -1521,7 +1519,6 @@ paragon_origin_ascension_effect = {
 		ruler = { set_leader_flag = divided_attention }
 		remove_country_flag = paragon_origin_ascension_flag_flipping_divided_attention
 	}
-
 	ruler = {
 		if = {
 			limit = { has_leader_flag = paragon_origin_legendary_leader }
@@ -2107,7 +2104,6 @@ paragon_origin_trait_giver_materialist = {
 
 paragon_origin_legendary_leader_trait_giver = {
 	optimize_memory
-
 	locked_random_list = {
 		0 = {
 			modifier = {

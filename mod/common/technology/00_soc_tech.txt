@@ -1738,7 +1738,6 @@ tech_terrestrial_sculpting = {
 
 	weight = @tier2weight3
 	feature_flags = { build_terraform_station }
-
 	weight_modifier = {
 		factor = 1.5	# terraforming needs to be a bit more common
 		modifier = { factor = 1.25 has_tradition = tr_expansion_adopt }
@@ -1815,7 +1814,6 @@ tech_ecological_adaptation = {
 
 	weight = @tier3weight2
 	feature_flags = { terraform_inhabited }
-
 	weight_modifier = {
 		modifier = { factor = 1.25 has_tradition = tr_expansion_adopt }
 	}
@@ -2101,7 +2099,6 @@ tech_epigenetic_triggers = {
 
 	weight = @tier2weight2
 	feature_flags = { uplifting }
-
 	potential = {
 		NOR = {
 			has_valid_civic = civic_fanatic_purifiers
@@ -2405,7 +2402,6 @@ tech_gene_tailoring = {
 		BIOLOGICAL_species_trait_points_add = @tech_gene_tailoring_POINTS
 	}
 	feature_flags = { modify_traits pop_self_modification }
-
 	technology_swap = {
 		name = tech_gene_tailoring_overtuned
 		inherit_icon = yes
@@ -2466,7 +2462,6 @@ tech_glandular_acclimation = {
 	feature_flags = {
 		habitability_gene_modding # No longer does anything except make a tooltip, handled in game rules ("can_gene_mod_habitability")
 	}
-
 	potential = {
 		OR = {
 			is_machine_empire = no
@@ -3795,7 +3790,6 @@ tech_psi_jump_drive_1 = {
 	is_dangerous = yes
 	is_reverse_engineerable = no
 	feature_flags = { jump_method }
-
 	prereqfor_desc = {
 		component = {
 			title = "TECH_UNLOCK_PSI_JUMPDRIVE_1_TITLE"
@@ -4296,7 +4290,6 @@ tech_subdermal_stimulation = {
 	is_rare = yes
 	# unlocks Chemical Bliss living standard
 	feature_flags = { bliss_standard }
-
 	potential = {
 		NOR = {
 			is_gestalt = yes
@@ -5388,7 +5381,6 @@ tech_ascension_theory = {
 		ascension_perks_add = 1
 	}
 	feature_flags = { unity_ambitions }
-
 	weight_modifier = {
 		factor = 0.5
 		modifier = { factor = 0 num_ascension_perk_slots < 6 }

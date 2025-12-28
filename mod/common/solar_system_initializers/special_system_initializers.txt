@@ -50,7 +50,6 @@ special_init_06 = {
 	max_instances = 1
 	scaled_spawn_chance = 3	# scales by galaxy size (1000 stars = 10x base)
 	flags = { guardians_of_zanaam hostile_system }
-
 	planet = {
 		count = 1
 		class = star
@@ -183,7 +182,6 @@ special_init_07 = {
 
 	max_instances = 1
 	flags = { hostile_system }
-
 	planet = {
 		count = 1
 		class = star
@@ -397,7 +395,6 @@ special_init_09 = {
 hyacinth_system = {
 	class = "rl_standard_stars"
 	flags = { hyacinth_system }
-
 	planet = {
 		count = 1
 		class = star
@@ -450,7 +447,6 @@ hyacinth_system = {
 ai_system_1 = {
 	class = "rl_standard_stars"
 	flags = { ai_system }
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 100
@@ -548,7 +544,6 @@ ai_system_1 = {
 crystal_manufactory_system = {
 	class = "rl_standard_stars"
 	flags = { manufactory_system }
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 120
@@ -1362,7 +1357,6 @@ surveillance_supercomputer_system = {
 	usage = misc_system_init
 	usage_odds = 0
 	flags = { surveillance_supercomputer_system hostile_system crisis_spawn_exclude sealed_system }
-
 	planet = {
 		class = star
 		orbit_distance = 0
@@ -2619,7 +2613,6 @@ the_star_mall_initializer = {
 	max_instances = 1
 	scaled_spawn_chance = 3	# scales by galaxy size (1000 stars = 10x base)
 	flags = { star_mall hostile_system }
-
 	planet = {
 		count = 1
 		class = "pc_g_star"

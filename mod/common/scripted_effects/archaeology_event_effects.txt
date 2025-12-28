@@ -44,7 +44,6 @@ standard_archaeological_site_on_roll_failed_less_than_eq_entry = {
 
 standard_archaeological_site_on_roll_failed_case = {
 	optimize_memory
-
 	custom_tooltip_with_params = {
 		description = archaeology_roll_header
 		description_parameters = { "SCORE" = $SCORE$ }
@@ -111,7 +110,6 @@ standard_archaeological_site_on_roll_failed = {
 		13 = { standard_archaeological_site_on_roll_failed_case = { SCORE = 13 } }
 		14 >= { standard_archaeological_site_on_roll_failed_case = { SCORE = 14 } }
 	}
-
 	hidden_effect = {
 		switch = {
 			trigger = is_site_current_stage_score

@@ -30,7 +30,6 @@ megacorp_caravaneer_init = {
 	max_instances = 1
 	spawn_chance = 9999
 	flags = { caravaneer_home }
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 40
@@ -552,7 +551,6 @@ megacorp_matter_decompressor_init_01 = {
 	class = sc_black_hole
 	usage = misc_system_init
 	flags = { ruined_matter_decompressor_system }
-
 	usage_odds = {
 		base = 0
 		modifier = { has_megacorp = yes add = 100 }
@@ -624,7 +622,6 @@ megacorp_strategic_coordination_center_init_01 = {
 	class = "rl_standard_stars"
 	usage = misc_system_init
 	flags = { ruined_strategic_coordination_center_system }
-
 	usage_odds = {
 		base = 0
 		modifier = { has_megacorp = yes add = 100 }
@@ -880,7 +877,6 @@ megacorp_mega_art_installation_init_01 = {
 	class = "rl_trinary_stars"
 	usage = misc_system_init
 	flags = { ruined_mega_art_installation_system }
-
 	usage_odds = {
 		base = 0
 		modifier = { has_megacorp = yes add = 100 }
@@ -967,7 +963,6 @@ megacorp_interstellar_assembly_init_01 = {
 	max_instances = 1
 	scaled_spawn_chance = 4
 	flags = { ruined_interstellar_assembly_system }
-
 	planet = {
 		count = 1
 		class = star

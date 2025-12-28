@@ -572,7 +572,7 @@ shroud_storm = {
 			}
 		}
 		modifier = {
-			mult = 0.25
+			factor = 0.25
 			from = {
 				has_megastructure = shroud_seal
 			}

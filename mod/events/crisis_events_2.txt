@@ -252,9 +252,7 @@ country_event = {
 		observer_event = { id = observer.34 }
 		# make portal invincible
 		event_target:extradimensionals = {
-			random_controlled_ship = {
-				ship_event = { id = crisis.1280 }
-			}
+			country_event = { id = crisis.1280 }
 		}
 		# Custodian/Emperor Announcements
 		event_target:extradimensionals = { save_event_target_as = crisis_country }
@@ -401,6 +399,17 @@ country_event = {
 
 	after = {
 		begin_event_chain = { event_chain = "extradimensional_invasion_chain" target = root }
+		if = { # Vfix patch
+			limit = {
+				NOT = { exists = event_target:dimensional_portal }
+			}
+			event_target:extradimensional_system = {
+				random_fleet_in_system = {
+					limit = { is_ship_size = dimensional_portal_ed }
+					save_event_target_as = dimensional_portal
+				}
+			}
+		}
 		create_point_of_interest = {
 			id = extradimensional_invasion_poi.1
 			name = "extradimensional_invasion_1_poi"
@@ -582,6 +591,17 @@ country_event = {
 
 	after = {
 		begin_event_chain = { event_chain = "extradimensional_invasion_chain" target = root }
+		if = { # Vfix patch
+			limit = {
+				NOT = { exists = event_target:dimensional_portal }
+			}
+			event_target:extradimensional_system = {
+				random_fleet_in_system = {
+					limit = { is_ship_size = dimensional_portal_ed }
+					save_event_target_as = dimensional_portal
+				}
+			}
+		}
 		create_point_of_interest = {
 			id = extradimensional_invasion_poi.1
 			name = "extradimensional_invasion_1_poi"
@@ -824,7 +844,13 @@ planet_event = {
 				}
 				if = { # Vfix
 					limit = { NOT = { exists = starbase } }
-					create_starbase = { owner = from size = starbase_exd_0 }
+					create_starbase = {
+						owner = from
+						size = starbase_exd
+						effect = { # Vfix Hack for extra aberrant and vehement!?
+							set_starbase_size = starbase_exd_0
+						}
+					}
 				}
 				random_ship_in_system = {
 					limit = { is_owned_by = from }
@@ -1232,7 +1258,6 @@ country_event = {
 					}
 					effect = {
 						set_country_flag = aberrant # Vfix: not used?
-						save_global_event_target_as = extradimensionals2
 						create_ship_design = { design = "NAME_Void_Former" }
 						add_ship_design = last_created_design
 						create_ship_design = { design = "NAME_Aberrant_Anchor" }
@@ -1241,6 +1266,7 @@ country_event = {
 						add_ship_design = last_created_design
 						establish_communications_no_message = event_target:portal_holder_1
 						set_faction_hostility = { target = event_target:portal_holder_1 set_hostile = no }
+						save_global_event_target_as = extradimensionals2
 						save_event_target_as = extradimensional_hunters
 						set_graphical_culture = extra_dimensional_02
 					}
@@ -1358,9 +1384,7 @@ country_event = {
 		observer_event = { id = observer.36 }
 		# make portal invincible
 		event_target:extradimensional_hunters = {
-			random_controlled_ship = {
-				ship_event = { id = crisis.1280 }
-			}
+			country_event = { id = crisis.1280 }
 			establish_communications_no_message = root # Vfix opt
 		}
 		every_country = {
@@ -1746,9 +1770,9 @@ country_event = {
 							add_ship_design = last_created_design
 							establish_communications_no_message = event_target:portal_holder_1
 							set_faction_hostility = { target = event_target:portal_holder_1 set_hostile = no }
-							set_graphical_culture = extra_dimensional_03
 							save_global_event_target_as = extradimensionals3
 							save_event_target_as = extradimensional_trespassers
+							set_graphical_culture = extra_dimensional_03
 						}
 					}
 					event_target:extradimensional_trespassers = {
@@ -1869,9 +1893,7 @@ country_event = {
 		observer_event = { id = observer.38 }
 		# make portal invincible
 		event_target:extradimensional_trespassers = {
-			random_controlled_ship = {
-				ship_event = { id = crisis.1280 }
-			}
+			country_event = { id = crisis.1280 }
 			establish_communications_no_message = root
 		}
 		every_country = {
@@ -2187,7 +2209,7 @@ event = {
 					}
 					NOR = {
 						num_ships > 5
-						any_controlled_fleet = { is_ship_size = dimensional_portal_ed }
+						# any_controlled_fleet = { is_ship_size = dimensional_portal_ed }
 						event_target:portal_holder_1 = {
 							any_controlled_fleet = { is_ship_size = dimensional_portal_ed }
 						}
@@ -2254,17 +2276,18 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			is_country_type = extradimensional
-			is_country_type = extradimensional_2
-			is_country_type = extradimensional_3
+		# OR = { implicit
+		# 	is_country_type = extradimensional
+		# 	is_country_type = extradimensional_2
+		# 	is_country_type = extradimensional_3
+		# }
+		# Must only trigger if portal is still alive
+		# OR = { any_controlled_fleet = { is_ship_size = dimensional_portal_ed }
+		exists = event_target:portal_holder_1
+		event_target:portal_holder_1 = {
+			any_controlled_fleet = { is_ship_size = dimensional_portal_ed is_within_borders_of = root }
 		}
-		OR = {
-			any_controlled_fleet = { is_ship_size = dimensional_portal_ed }
-			event_target:portal_holder_1 = {
-				any_controlled_fleet = { is_ship_size = dimensional_portal_ed is_within_borders_of = root }
-			}
-		}
+		# }
 	}
 
 	immediate = {
@@ -2357,13 +2380,14 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 
-	trigger = {	# Must only trigger if portal is still alive
-		OR = {
-			any_controlled_fleet = { is_ship_size = dimensional_portal_ed }
-			event_target:portal_holder_1 = {
-				any_controlled_fleet = { is_ship_size = dimensional_portal_ed is_within_borders_of = root }
-			}
+	trigger = {
+		# Must only trigger if portal is still alive
+		# OR = { any_controlled_fleet = { is_ship_size = dimensional_portal_ed }
+		exists = event_target:portal_holder_1
+		event_target:portal_holder_1 = {
+			any_controlled_fleet = { is_ship_size = dimensional_portal_ed is_within_borders_of = root }
 		}
+		# }
 	}
 
 	immediate = {
@@ -2379,15 +2403,6 @@ country_event = {
 					}
 					save_event_target_as = dimensional_portal
 				}
-			}
-		}
-		if = { # Vfix opt
-			limit = {
-				NOT = { exists = event_target:dimensional_portal }
-			}
-			random_controlled_fleet = {
-				limit = { is_ship_size = dimensional_portal_ed }
-				save_event_target_as = dimensional_portal
 			}
 		}
 		owner_species = { save_event_target_as = extradimensional_species }
@@ -2525,13 +2540,14 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 
-	trigger = {	# Must only trigger if portal is still alive
-		OR = {
-			any_controlled_fleet = { is_ship_size = dimensional_portal_ed }
-			event_target:portal_holder_1 = {
-				any_controlled_fleet = { is_ship_size = dimensional_portal_ed is_within_borders_of = root }
-			}
+	trigger = {
+		# Must only trigger if portal is still alive
+		# OR = { any_controlled_fleet = { is_ship_size = dimensional_portal_ed }
+		exists = event_target:portal_holder_1
+		event_target:portal_holder_1 = {
+			any_controlled_fleet = { is_ship_size = dimensional_portal_ed is_within_borders_of = root }
 		}
+		# }
 		count_controlled_fleet = {
 			count < 3
 			limit = { is_ship_size = construction_ship_ed }
@@ -2553,13 +2569,10 @@ country_event = {
 				}
 			}
 		}
-		if = { # Vfix opt
-			limit = {
-				NOT = { exists = event_target:dimensional_portal }
-			}
-			random_controlled_fleet = {
-				limit = { is_ship_size = dimensional_portal_ed }
-				save_event_target_as = dimensional_portal
+		event_target:dimensional_portal.solar_system = {
+			if = {
+				limit = { NOT = { exists = starbase } }
+				create_starbase = { owner = root size = starbase_exd }
 			}
 		}
 		switch = { # Vfix opt
@@ -2636,7 +2649,7 @@ ship_event = {
 			# Must only trigger if portal is still alive
 			OR = {
 				exists = event_target:dimensional_portal
-				any_controlled_fleet = { is_ship_size = dimensional_portal_ed }
+				# any_controlled_fleet = { is_ship_size = dimensional_portal_ed }
 				event_target:portal_holder_1 = {
 					any_controlled_fleet = {
 						is_ship_size = dimensional_portal_ed
@@ -2651,15 +2664,6 @@ ship_event = {
 	immediate = {
 		owner = {
 			country_event = { id = crisis.1266 days = 6 } # Spawn Construction Ships if needed
-			if = { # Vfix opt
-				limit = {
-					NOT = { exists = event_target:dimensional_portal }
-				}
-				random_controlled_fleet = {
-					limit = { is_ship_size = dimensional_portal_ed }
-					save_event_target_as = dimensional_portal
-				}
-			}
 			if = { # Vfix opt
 				limit = {
 					NOT = { exists = event_target:dimensional_portal }
@@ -2964,12 +2968,11 @@ country_event = {
 }
 
 # Anchor Built (HIDDEN)
-ship_event = {
+country_event = {
 	id = crisis.1280
 	hide_window = yes
 	is_triggered_only = yes
 	# trigger # Vfix now implicit
-
 	immediate = {	# log = "anchor built and crisis.1280 executed, not yet reaching fleet owner switch"
 		if = {  # Vfix sync
 			limit = {
@@ -2980,7 +2983,8 @@ ship_event = {
 				save_global_event_target_as = portal_holder_1
 			}
 		}
-		owner = {
+		if = {  # Vfix sync
+			limit = { exists = event_target:portal_holder_1 }
 			random_controlled_fleet = {
 				limit = { is_ship_size = dimensional_portal_ed }
 				set_event_locked = yes
@@ -3510,16 +3514,6 @@ ship_event = {
 	}
 
 	immediate = {
-		if = {
-			limit = {
-				exists = starbase
-				starbase = { NOT = { has_starbase_size = starbase_exd_0 } }
-			}
-			starbase = { # Vfix Hack for extra aberrant and vehement!?
-				set_starbase_size = starbase_exd_0
-			}
-		}
-
 		owner = {	# Vfix opt (count several times up to 100 is wasting)
 			export_trigger_value_to_variable = {
 				trigger = count_starbase_sizes
@@ -3565,6 +3559,7 @@ ship_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		exists = owner
 		exists = solar_system
 	}
 
@@ -3573,7 +3568,7 @@ ship_event = {
 			starbase = { set_starbase_size = starbase_exd }
 		}
 		ship_event = { id = crisis.1267 } # Reinforcements Arrive After Building Anchor
-		ship_event = { id = crisis.1280 } # Anchor Built
+		owner = { country_event = { id = crisis.1280 } } # Anchor Built
 	}
 }
 
@@ -3704,7 +3699,13 @@ country_event = {
 			}
 			if = { # Vfix
 				limit = { NOT = { exists = starbase } }
-				create_starbase = { owner = root size = starbase_exd_0 }
+				create_starbase = {
+					owner = root
+					size = starbase_exd
+					effect = {  # Vfix Hack for extra aberrant and vehement!?
+						set_starbase_size = starbase_exd_0
+					}
+				}
 			}
 			random_ship_in_system = {
 				limit = { is_owned_by = root }

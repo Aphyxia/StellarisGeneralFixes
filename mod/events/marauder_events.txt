@@ -6961,7 +6961,7 @@ country_event = {
 	hide_window = yes
 	# is_triggered_only = yes
 	trigger = {
-		is_crises_allowed = yes
+		# is_crises_allowed = yes
 		num_marauder_empires_to_spawn > 0
 		OR = {
 			AND = {
@@ -12471,9 +12471,7 @@ country_event = {
 				}
 			}
 			if = {
-				limit = {
-					exists = event_target:second_marauder_system
-				}
+				limit = { exists = event_target:second_marauder_system }
 				## assign_first_marauder_systems
 				event_target:second_marauder_system = {
 					every_neighbor_system = {
@@ -12631,9 +12629,7 @@ country_event = {
 					}
 				}
 				if = {
-					limit = {
-						exists = event_target:third_marauder_system
-					}
+					limit = { exists = event_target:third_marauder_system }
 					# assign_second_marauder_systems
 					event_target:third_marauder_system = {
 						every_neighbor_system = {

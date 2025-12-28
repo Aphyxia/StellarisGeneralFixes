@@ -1351,7 +1351,6 @@ refresh_primal_calling_exhibit_modifier = {
 		limit = { has_modifier = primal_calling_exhibit_modifier }
 		remove_modifier = primal_calling_exhibit_modifier
 	}
-
 	add_modifier = {
 		modifier = primal_calling_exhibit_modifier
 		multiplier = trigger:num_vivarium_slots
@@ -1366,7 +1365,6 @@ refresh_primal_calling_exploit_modifier = {
 		limit = { has_modifier = primal_calling_exploit_modifier }
 		remove_modifier = primal_calling_exploit_modifier
 	}
-
 	add_modifier = {
 		modifier = primal_calling_exploit_modifier
 		multiplier = trigger:num_vivarium_slots
@@ -1381,7 +1379,6 @@ refresh_primal_calling_assimilate_modifier = {
 		limit = { has_modifier = primal_calling_assimilate_modifier }
 		remove_modifier = primal_calling_assimilate_modifier
 	}
-
 	add_modifier = {
 		modifier = primal_calling_assimilate_modifier
 		multiplier = trigger:num_vivarium_slots
@@ -1591,7 +1588,6 @@ release_all_vivarium_fauna = {
 	}
 	change_variable = { which = local_released_fauna_count_mult value = 1 }
 	multiply_variable = { which = local_released_fauna_count value = local_released_fauna_count_mult }
-
 	release_vivarium_fauna_count = {
 		count = local_released_fauna_count
 		location = $LOCATION$
@@ -1649,7 +1645,6 @@ add_trophy_hunter_resource_diff_to_variable = {
 
 add_resource_diff_to_variable = {
 	export_resource_stockpile_to_variable = { resource = $RESOURCE$ variable = $RESOURCE$_after }
-
 	$EXPORT_SCOPE$ = {
 		change_variable = { which = $TARGET$ value = $RESOURCES_AFTER$ }
 		subtract_variable = { which = $TARGET$ value = $RESOURCES_BEFORE$ }
@@ -2291,7 +2286,6 @@ spawn_ness_treasure_system = {
 			target = this
 		}
 	}
-
 	random_system = {
 		spawn_system = {
 			min_distance = 40
@@ -2721,7 +2715,6 @@ plant_fruitful_seeds = {
 			}
 		}
 	}
-
 	$SEEDED_FLEET$ = {
 		remove_fleet_flag = fruitful_seeded_critter
 	}

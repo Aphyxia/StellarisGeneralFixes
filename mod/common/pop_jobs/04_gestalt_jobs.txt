@@ -569,7 +569,7 @@ evaluator = {
 	resources = {
 		category = planet_evaluators
 		produces = {
-			unity = 2
+			unity = 4
 		}
 		upkeep = {
 			energy = 2
@@ -675,7 +675,7 @@ coordinator = {
 	resources = {
 		category = planet_bureaucrats
 		produces = {
-			unity = 2
+			unity = 4
 		}
 		produces = {
 			trigger = {
@@ -684,7 +684,7 @@ coordinator = {
 					is_memorialist_empire = yes
 				}
 			}
-			unity = 0.5
+			unity = 1
 		}
 		upkeep = {
 			trigger = {
@@ -2149,7 +2149,7 @@ patrol_drone = {
 	resources = {
 		category = planet_jobs
 		produces = {
-			unity = 0.5
+			unity = 1
 		}
 	}
 
@@ -3077,7 +3077,7 @@ wilderness_maintenance_drone = {
 
 ##Solider Jobs
 warrior_drone = {
-	category = complex_drone
+	category = simple_drone
 
 	swappable_data = {
 		default = {
@@ -3106,8 +3106,6 @@ warrior_drone = {
 	}
 	resources = {
 		category = planet_soldiers
-
-		upkeep = { alloys = 1 }
 	}
 
 	inline_script = "output/soldier_triggered_modifiers"
@@ -3121,7 +3119,7 @@ warrior_drone = {
 	}
 
 	possible_precalc = can_fill_drone_job
-	possible = { can_think = yes }
+	possible = { simple_drone_trigger = yes }
 
 	weight = {
 		weight = @simple_drone_job_weight
@@ -3181,7 +3179,7 @@ warrior_drone = {
 		time = @standard_promotion_time
 		effect = {
 			pop_amount_change_category = {
-				CATEGORY = complex_drone
+				CATEGORY = simple_drone
 				AMOUNT = local_pop_amount
 			}
 		}
@@ -3248,7 +3246,7 @@ polytechnic_drone = {
 	}
 
 	planet_modifier = {
-		planet_miners_engineering_research_produces_add = @polytechnic_output
+		planet_miners_unity_produces_add = @polytechnic_output
 		planet_technician_physics_research_produces_add = @polytechnic_output
 		planet_metallurgists_engineering_research_produces_add = @polytechnic_output
 		planet_artisans_engineering_research_produces_add = @polytechnic_output
@@ -3290,7 +3288,7 @@ offworld_prospector_drone = {
 	possible = { can_think = yes }
 
 	resources = {
-		category = planet_metallurgists
+		category = planet_sr_miners
 		upkeep = {
 			energy = @offworld_prospector_upkeep
 		}

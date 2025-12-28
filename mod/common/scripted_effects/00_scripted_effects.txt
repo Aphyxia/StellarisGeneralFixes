@@ -1476,7 +1476,6 @@ create_ai_fleet = {
 # this = country
 add_500_unity_per_year_passed = {
 	optimize_memory
-
 	add_resource = {
 		unity = 500
 		mult = trigger:years_passed
@@ -1650,7 +1649,6 @@ nuke_pre_ftls_toxic_effect = {
 # (Pre-FTL) planet scope | owner = pre-FTL country
 nuke_pre_ftls_stone_age_effect = {
 	optimize_memory
-
 	every_owned_pop_group = {
 		limit = { is_robot_pop_group = yes }
 		kill_single_pop = yes
@@ -1659,7 +1657,6 @@ nuke_pre_ftls_stone_age_effect = {
 		limit = { pop_amount > 200 }
 		random_owned_pop_group = { kill_single_pop = yes }
 	}
-
 	owner = {
 		if = {
 			limit = {
@@ -1805,10 +1802,14 @@ spawn_habitat_cracker_effect = {
 
 	save_event_target_as = target_habitat
 
+	owner_or_space_owner = {
+		save_event_target_as = habitat_owner
+	}
+
 	solar_system = {
 		spawn_megastructure = {
 			type = habitat_central_complex_ruined
-			owner = this.owner
+			owner = event_target:habitat_owner # Vfix
 			coords_from = prev
 		}
 		random_system_planet = {
@@ -2009,7 +2010,6 @@ spawn_habitat_divine_effect = {
 
 spawn_ringworld_divine_effect = {
 	optimize_memory
-
 	create_ambient_object = {
 		location = this
 		type = ringworld_divine_object
@@ -2025,7 +2025,6 @@ spawn_ringworld_divine_effect = {
 
 spawn_lathe_divine_effect = {
 	optimize_memory
-
 	create_ambient_object = {
 		location = this
 		type = habitat_divine_object
@@ -2042,7 +2041,6 @@ spawn_lathe_divine_effect = {
 # Nanobot effect
 spawn_habitat_nanobot_effect = {
 	optimize_memory
-
 	create_ambient_object = {
 		location = this
 		type = habitat_nanobot_object
@@ -2058,7 +2056,6 @@ spawn_habitat_nanobot_effect = {
 
 spawn_ringworld_nanobot_effect = {
 	optimize_memory
-
 	create_ambient_object = {
 		location = this
 		type = ringworld_nanobot_object
@@ -2074,7 +2071,6 @@ spawn_ringworld_nanobot_effect = {
 
 spawn_lathe_nanobot_effect = {
 	optimize_memory
-
 	create_ambient_object = {
 		location = this
 		type = habitat_nanobot_object
@@ -2901,7 +2897,6 @@ add_zro = {
 # this = country getting a clue
 generate_lcluster_clue = {
 	optimize_memory
-
 	hidden_effect = {
 		# increment counter
 		if = {
@@ -3109,7 +3104,6 @@ create_built_robot_species = {
 		}
 		create_global_robot_parent_species = yes
 	}
-
 	create_species = {
 		name = "NAME_Robot"
 		plural = "NAME_Robot_plural"
@@ -3457,7 +3451,6 @@ set_assimilation_counter_variable = {
 	change_variable = { which = assimilation_counter_mult value = 1 }
 	export_modifier_to_variable = { modifier = auto_mod_monthly_add variable = assimilation_counter }
 	multiply_variable = { which = assimilation_counter value = assimilation_counter_mult }
-
 	set_variable_to_random_value = {
 		which = assimilation_counter_1
 		min = 1
@@ -3489,7 +3482,6 @@ set_assimilation_counter_variable = {
 
 	# Divide by 5 and round as we assimilate in batches of 5
 	divide_variable = { which = assimilation_counter value = 5 }
-
 	round_variable_to_closest = {
 		which = assimilation_counter
 		value = 5
@@ -3582,7 +3574,6 @@ convert_to_limited_cybernetic_effect = {
 			species = { save_event_target_as = target_species }
 		}
 	}
-
 	modify_species = {
 		species = event_target:target_species
 		remove_trait = trait_cybernetic
@@ -4197,7 +4188,6 @@ destroy_machine_world = {
 		add_deposit = d_minerals_3
 		add_deposit = d_energy_3
 	}
-
 	every_playable_country = {
 		limit = { has_event_chain = "ai_crisis_chain" }
 		add_event_chain_counter = {
@@ -4422,7 +4412,6 @@ death_cult_sacrifice_effect = {
 		parameters = { job = mortal_initiate }
 		variable = sacrifice_result_mult
 	}
-
 	every_subject = {
 		# Count Subject Mortal Initiates
 		export_trigger_value_to_variable = {
@@ -4453,7 +4442,6 @@ death_cult_sacrifice_effect = {
 		}
 		set_variable = { which = sacrifice_result_mult value = 0.15 }
 	}
-
 	random_list = {
 		# This is effectively ( base * random ), where base = 30
 		# It is balanced so that sacrificing 5% of your pops gives a really good result
@@ -4469,7 +4457,6 @@ death_cult_sacrifice_effect = {
 			multiply_variable = { which = sacrifice_result_mult value = 0.8 }
 		}
 	}
-
 	round_variable_to_closest = {
 		which = sacrifice_result_mult
 		value = 0.1
@@ -4637,7 +4624,6 @@ ask_empire_if_they_want_this_revolt = {
 # Call this from the Situation, at the end
 cleanup_separatism_situation = {
 	optimize_memory
-
 	owner = {
 		every_owned_planet = {
 			limit = { has_modifier = instability_join_revolt }
@@ -5288,7 +5274,6 @@ country_defaulted_effect = {
 	else = {
 		add_modifier = { modifier = country_defaulted years = 10 }
 	}
-
 	hidden_effect = {
 		if = {
 			limit = { is_ai = yes }
@@ -5888,7 +5873,6 @@ create_zombie_pop_group = {
 			save_event_target_as = target_species
 		}
 	}
-
 	create_pop_group = {
 		pop_group = event_target:old_pop_group
 		species = event_target:target_species
@@ -6463,13 +6447,11 @@ impose_ideology_effect = {
 		force_remove_civic = 1
 		force_add_civic = civic_crusader_spirit
 	}
-
 	add_modifier = {
 		modifier = recently_liberated
 		years = 20
 	}
 	add_opinion_modifier = { modifier = opinion_liberated_us who = root }
-
 	root = {
 		add_opinion_modifier = { modifier = opinion_we_liberated who = from }
 	}
@@ -6906,7 +6888,6 @@ shroud_invasion_effect = {
 
 shroud_forged_animator_of_clay_cooldown = {
 	set_timed_country_flag = { flag = animator_of_clay_cooldown days = $VALUE$ }
-
 	set_saved_date = {
 		key = animator_of_clay_cooldown_timer
 		days_from_present = $VALUE$
@@ -7510,7 +7491,6 @@ lure_valid_critter_fleet = {
 
 create_space_storm = {
 	optimize_memory
-
 	add_modifier = {
 		modifier = space_storm
 	}
@@ -7641,7 +7621,6 @@ slushify_world = {
 
 set_subject_advanced_authority = {
 	optimize_memory
-
 	from = {
 		switch = {
 			trigger = has_country_flag
@@ -7669,7 +7648,6 @@ set_subject_advanced_authority = {
 
 create_strategic_resource_message = {
 	optimize_memory
-
 	create_message = {
 		type = $RESOURCE_TYPE$
 		localization = $RESOURCE_DESC$
@@ -7685,7 +7663,6 @@ create_strategic_resource_message = {
 
 create_faction_formed_message = {
 	optimize_memory
-
 	create_message = {
 		type = $FACTION_TYPE$
 		localization = $FACTION_INTRO$
@@ -7696,7 +7673,6 @@ create_faction_formed_message = {
 
 create_faction_shifted_message = {
 	optimize_memory
-
 	create_message = {
 		type = $FACTION_TYPE$
 		localization = $FACTION_INTRO$
@@ -7707,7 +7683,6 @@ create_faction_shifted_message = {
 
 create_focus_completed_message = {
 	optimize_memory
-
 	create_message = {
 		type = MESSAGE_$CATEGORY$_FOCUS_COMPLETED
 		localization = MESSAGE_$CATEGORY$_FOCUS_COMPLETED_DESC
@@ -7717,7 +7692,6 @@ create_focus_completed_message = {
 
 create_focus_reward_message = {
 	optimize_memory
-
 	create_message = {
 		type = MESSAGE_$CATEGORY$_FOCUS_REWARD
 		localization = MESSAGE_$CATEGORY$_FOCUS_REWARD_DESC
@@ -7889,7 +7863,6 @@ add_red_solution = {
 		}
 		set_country_flag = verystrong_added
 	}
-
 	change_dominant_species = {
 		species = last_created_species
 	}
@@ -7951,7 +7924,6 @@ add_green_solution = {
 		}
 		set_country_flag = extremelyadaptive_added
 	}
-
 	change_dominant_species = {
 		species = last_created_species
 	}
@@ -8012,7 +7984,6 @@ add_blue_solution = {
 		}
 		set_country_flag = venerable_added
 	}
-
 	change_dominant_species = {
 		species = last_created_species
 	}
@@ -8042,7 +8013,6 @@ add_blue_solution = {
 
 declare_malevolent_aura_focus = {
 	optimize_memory
-
 	event_target:malevolent_aura_empire = {
 		if = {
 			limit = { is_galactic_community_member = yes }

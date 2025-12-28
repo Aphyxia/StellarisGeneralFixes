@@ -5,7 +5,6 @@
 
 create_normal_pirate_country = {
 	optimize_memory
-
 	event_target:pirate_system = {
 		random_system_planet = {
 			limit = { $HOME_PLANET_TRIGGER|always$ = yes }
@@ -138,7 +137,6 @@ create_normal_pirate_country = {
 # root = pirate_target country / ship
 create_pirate_base_1 = {
 	optimize_memory
-
 	create_fleet = {
 		name = "NAME_Pirate_Station"
 		effect = {
@@ -220,7 +218,6 @@ create_pirate_base_1 = {
 
 create_pirate_fleet = {
 	optimize_memory
-
 	event_target:pirate_band = {
 		create_leader = {
 			class = commander
@@ -317,7 +314,6 @@ create_pirate_fleet = {
 
 create_pirate_ships_0 = {
 	optimize_memory
-
 	create_ship_design = {
 		design = "NAME_Reaver"
 	}
@@ -333,7 +329,6 @@ create_pirate_ships_0 = {
 
 create_pirate_ships_1 = {
 	optimize_memory
-
 	create_ship_design = {
 		design = "NAME_Reaver"
 	}
@@ -345,7 +340,6 @@ create_pirate_ships_1 = {
 			graphical_culture = "pirate_01"
 		}
 	}
-
 	create_ship_design = {
 		design = "NAME_Brigand"
 	}
@@ -361,7 +355,6 @@ create_pirate_ships_1 = {
 
 create_pirate_ships_2 = {
 	optimize_memory
-
 	create_ship_design = {
 		design = "NAME_Reaver"
 	}
@@ -373,7 +366,6 @@ create_pirate_ships_2 = {
 			graphical_culture = "pirate_01"
 		}
 	}
-
 	create_ship_design = {
 		design = "NAME_Brigand"
 	}
@@ -389,7 +381,6 @@ create_pirate_ships_2 = {
 
 create_pirate_ships_3 = {
 	optimize_memory
-
 	create_ship_design = {
 		design = "NAME_Skull"
 	}
@@ -401,7 +392,6 @@ create_pirate_ships_3 = {
 			graphical_culture = "pirate_01"
 		}
 	}
-
 	create_ship_design = {
 		design = "NAME_Brigand"
 	}
@@ -417,7 +407,6 @@ create_pirate_ships_3 = {
 
 create_pirate_ships_4 = {
 	optimize_memory
-
 	create_ship_design = {
 		design = "NAME_Skull"
 	}
@@ -429,7 +418,6 @@ create_pirate_ships_4 = {
 			graphical_culture = "pirate_01"
 		}
 	}
-
 	create_ship_design = {
 		design = "NAME_Marauder"
 	}
@@ -445,7 +433,6 @@ create_pirate_ships_4 = {
 
 create_pirate_ships_5 = {
 	optimize_memory
-
 	create_ship_design = {
 		design = "NAME_Skull"
 	}
@@ -457,7 +444,6 @@ create_pirate_ships_5 = {
 			graphical_culture = "pirate_01"
 		}
 	}
-
 	create_ship_design = {
 		design = "NAME_Brigand"
 	}
@@ -469,7 +455,6 @@ create_pirate_ships_5 = {
 			graphical_culture = "pirate_01"
 		}
 	}
-
 	create_ship_design = {
 		design = "NAME_Marauder"
 	}
@@ -481,7 +466,6 @@ create_pirate_ships_5 = {
 			graphical_culture = "pirate_01"
 		}
 	}
-
 	create_ship_design = {
 		design = "NAME_Corsair"
 	}
@@ -497,7 +481,6 @@ create_pirate_ships_5 = {
 
 create_pirate_ships_6 = {
 	optimize_memory
-
 	create_ship_design = {
 		design = "NAME_Skull"
 	}
@@ -509,7 +492,6 @@ create_pirate_ships_6 = {
 			graphical_culture = "pirate_01"
 		}
 	}
-
 	create_ship_design = {
 		design = "NAME_Brigand"
 	}
@@ -521,7 +503,6 @@ create_pirate_ships_6 = {
 			graphical_culture = "pirate_01"
 		}
 	}
-
 	create_ship_design = {
 		design = "NAME_Marauder"
 	}
@@ -533,7 +514,6 @@ create_pirate_ships_6 = {
 			graphical_culture = "pirate_01"
 		}
 	}
-
 	create_ship_design = {
 		design = "NAME_Corsair"
 	}
@@ -545,7 +525,6 @@ create_pirate_ships_6 = {
 			graphical_culture = "pirate_01"
 		}
 	}
-
 	create_ship_design = {
 		design = "NAME_Black_Earl"
 	}
@@ -561,7 +540,6 @@ create_pirate_ships_6 = {
 
 create_pirate_ships_7 = {
 	optimize_memory
-
 	create_ship_design = {
 		design = "NAME_Skull"
 	}
@@ -573,7 +551,6 @@ create_pirate_ships_7 = {
 			graphical_culture = "pirate_01"
 		}
 	}
-
 	create_ship_design = {
 		design = "NAME_Brigand"
 	}
@@ -585,7 +562,6 @@ create_pirate_ships_7 = {
 			graphical_culture = "pirate_01"
 		}
 	}
-
 	create_ship_design = {
 		design = "NAME_Marauder"
 	}
@@ -597,7 +573,6 @@ create_pirate_ships_7 = {
 			graphical_culture = "pirate_01"
 		}
 	}
-
 	create_ship_design = {
 		design = "NAME_Corsair"
 	}
@@ -609,7 +584,6 @@ create_pirate_ships_7 = {
 			graphical_culture = "pirate_01"
 		}
 	}
-
 	create_ship_design = {
 		design = "NAME_Black_Earl"
 	}
@@ -625,7 +599,6 @@ create_pirate_ships_7 = {
 
 create_pirate_ships_8 = {
 	optimize_memory
-
 	create_ship_design = {
 		design = "NAME_Skull"
 	}
@@ -637,7 +610,6 @@ create_pirate_ships_8 = {
 			graphical_culture = "pirate_01"
 		}
 	}
-
 	create_ship_design = {
 		design = "NAME_Brigand"
 	}
@@ -649,7 +621,6 @@ create_pirate_ships_8 = {
 			graphical_culture = "pirate_01"
 		}
 	}
-
 	create_ship_design = {
 		design = "NAME_Marauder"
 	}
@@ -661,7 +632,6 @@ create_pirate_ships_8 = {
 			graphical_culture = "pirate_01"
 		}
 	}
-
 	create_ship_design = {
 		design = "NAME_Corsair"
 	}
@@ -673,7 +643,6 @@ create_pirate_ships_8 = {
 			graphical_culture = "pirate_01"
 		}
 	}
-
 	create_ship_design = {
 		design = "NAME_Black_Earl"
 	}
@@ -689,7 +658,6 @@ create_pirate_ships_8 = {
 
 create_pirate_ships_9 = {
 	optimize_memory
-
 	create_ship_design = {
 		design = "NAME_Pirate_Galleon"
 	}
@@ -701,7 +669,6 @@ create_pirate_ships_9 = {
 			graphical_culture = "pirate_01"
 		}
 	}
-
 	create_ship_design = {
 		design = "NAME_Black_Earl"
 	}
@@ -717,7 +684,6 @@ create_pirate_ships_9 = {
 
 create_pirate_ships_10 = {
 	optimize_memory
-
 	create_ship_design = {
 		design = "NAME_Pirate_Galleon"
 	}
@@ -729,7 +695,6 @@ create_pirate_ships_10 = {
 			graphical_culture = "pirate_01"
 		}
 	}
-
 	create_ship_design = {
 		design = "NAME_Skull"
 	}
@@ -741,7 +706,6 @@ create_pirate_ships_10 = {
 			graphical_culture = "pirate_01"
 		}
 	}
-
 	create_ship_design = {
 		design = "NAME_Brigand"
 	}
@@ -759,7 +723,6 @@ create_pirate_ships_10 = {
 
 create_privateer_country = {
 	optimize_memory
-
 	event_target:privateer_system = {
 		random_system_planet = {
 			save_event_target_as = privateer_home
@@ -1319,7 +1282,6 @@ create_thalassocracy_country = {
 
 create_thalassocracy_fleet = {
 	optimize_memory
-
 	event_target:thalassocracy_country = {
 		create_leader = {
 			class = commander
@@ -1552,7 +1514,6 @@ thalassocracy_patrol = {
 			}
 		}
 	}
-
 	auto_move_to_planet = {
 		target = event_target:thalassocracy_target_planet
 		clear_auto_move_on_arrival = no

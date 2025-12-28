@@ -46,7 +46,6 @@ tech_gravity_wells = {
 
 	weight = @tier2weight1
 	feature_flags = { unlock_gravity_snares }
-
 	potential = {
 		has_grand_archive_dlc = yes
 		OR = {
@@ -301,7 +300,6 @@ tech_alien_cloning = {
 		}
 	}
 	feature_flags = { alien_cloning_unlocked }
-
 	technology_swap = {
 		name = tech_alien_cloning_beastmasters
 		inherit_effects = yes
@@ -472,7 +470,6 @@ tech_controlled_mutations = {
 		}
 	}
 	feature_flags = { mutations }
-
 	modifier = {
 		mutation_slots_add = 3
 	}

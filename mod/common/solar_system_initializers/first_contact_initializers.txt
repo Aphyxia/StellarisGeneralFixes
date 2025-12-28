@@ -161,7 +161,6 @@ msi_home_system = {
 slavers_neighbor_t1 = {
 	class = "rl_standard_stars"
 	flags = { neighbor_t1 }
-
 	init_effect = {
 		every_neighbor_system = { set_star_flag = empire_cluster }
 	}
@@ -205,7 +204,6 @@ slavers_neighbor_t1 = {
 slavers_neighbor_t1_first_colony = {
 	class = "rl_standard_stars"
 	flags = { neighbor_t1_first_colony }
-
 	init_effect = {
 		every_neighbor_system = { set_star_flag = empire_cluster }
 	}
@@ -271,7 +269,6 @@ slavers_neighbor_t1_first_colony = {
 slavers_neighbor_t2_second_colony = {
 	class = "rl_standard_stars"
 	flags = { neighbor_t2_second_colony }
-
 	init_effect = {
 		every_neighbor_system = { set_star_flag = empire_cluster }
 	}

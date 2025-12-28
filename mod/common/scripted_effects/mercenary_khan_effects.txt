@@ -54,7 +54,6 @@ create_dyn_marauder_fleet = {
 
 create_1st_khan_fleet = {
 	optimize_memory
-
 	create_fleet = {
 		name = "NAME_Chosen_of_the_Great_Khan"
 		effect = {
@@ -109,7 +108,6 @@ create_1st_khan_fleet = {
 
 create_2nd_khan_fleet = {
 	optimize_memory
-
 	create_fleet = {
 		name = "NAME_Chosen_of_the_Great_Khan"
 		effect = {
@@ -247,7 +245,6 @@ create_marauder_fleet = {
 
 create_small_marauder_auxiliaries = {
 	optimize_memory
-
 	event_target:satrapy_empire = {
 		random_pool_leader = { set_owner = prevprev save_event_target_as = satrapy_commander }
 	}
@@ -313,7 +310,6 @@ create_small_marauder_auxiliaries = {
 
 create_medium_marauder_auxiliaries = {
 	optimize_memory
-
 	event_target:satrapy_empire = {
 		random_pool_leader = { set_owner = prevprev save_event_target_as = satrapy_commander }
 	}
@@ -378,7 +374,6 @@ create_medium_marauder_auxiliaries = {
 
 create_large_marauder_auxiliaries = {
 	optimize_memory
-
 	event_target:satrapy_empire = {
 		random_pool_leader = { set_owner = prevprev save_event_target_as = satrapy_commander }
 	}
@@ -442,7 +437,6 @@ create_large_marauder_auxiliaries = {
 
 create_very_large_marauder_auxiliaries = {
 	optimize_memory
-
 	event_target:satrapy_empire = {
 		random_pool_leader = { set_owner = prevprev save_event_target_as = satrapy_commander }
 	}
@@ -1011,7 +1005,6 @@ commit_system_to = {
 		}
 		starbase = { set_owner = $EMPIRE$ }
 	}
-
 	every_orbital_station = {
 		limit = {
 			OR = {

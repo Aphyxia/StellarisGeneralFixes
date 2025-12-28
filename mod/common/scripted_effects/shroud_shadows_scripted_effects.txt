@@ -73,7 +73,6 @@ add_psionic_trait = {
 
 turn_main_species_to_psionic = {
 	country_event = { id = timeline.81 }
-
 	every_owned_species = {
 		limit = {
 			OR = {
@@ -180,7 +179,6 @@ update_every_leader_from_psionic_countries = {
 
 	# Notify rest of the galaxy about it
 	observer_event = { id = observer.6 }
-
 	every_playable_country = {
 		limit = {
 			is_ai = no
@@ -202,7 +200,6 @@ reckoning_consume_world = {
 			change_variable = { which = end_power value = prev.consumed_pops_planet }
 		}
 	}
-
 	event_target:the_end_of_the_cycle@$OWNER$ = {
 		change_variable = { which = consumed_worlds value = 1 }
 	}
@@ -232,7 +229,6 @@ reckoning_consume_world = {
 		clear_planet_modifiers = yes
 		clear_deposits = yes
 	}
-
 	event_target:the_end_of_the_cycle@$OWNER$ = {
 		# Reckoning healing via pop consumption
 		set_variable = { which = heal_percentage value = prev.consumed_pops_planet }
@@ -489,11 +485,12 @@ clear_covenant_flags = {
 	remove_country_flag = composer_covenant_rank_2
 	remove_country_flag = composer_covenant_rank_3
 	remove_country_flag = composer_covenant_rank_4
-	remove_country_flag = cradle_covenant_confirmed
-	remove_country_flag = cradle_covenant_rank_1
-	remove_country_flag = cradle_covenant_rank_2
-	remove_country_flag = cradle_covenant_rank_3
-	remove_country_flag = cradle_covenant_rank_4
+	# Vfix TODO cradle never set?
+	# remove_country_flag = cradle_covenant_confirmed
+	# remove_country_flag = cradle_covenant_rank_1
+	# remove_country_flag = cradle_covenant_rank_2
+	# remove_country_flag = cradle_covenant_rank_3
+	# remove_country_flag = cradle_covenant_rank_4
 	remove_country_flag = instrument_covenant_confirmed
 	remove_country_flag = instrument_covenant_rank_1
 	remove_country_flag = instrument_covenant_rank_2
@@ -643,7 +640,6 @@ bestow_modifier_and_flag = {
 
 roll_boon = {
 	optimize_memory
-
 	random_list = {
 		$GOOD$ = {
 			modifier = { add = value:delve_success_chance_from_techs }
@@ -1218,7 +1214,6 @@ create_well_found_cruiser_ship = {
 
 give_twisted_experimenters_physics_tech_insight = {
 	optimize_memory
-
 	random_list = {
 		45 = {
 			inline_script = {
@@ -1415,7 +1410,6 @@ give_twisted_experimenters_physics_tech_insight = {
 
 give_twisted_experimenters_society_tech_insight = {
 	optimize_memory
-
 	random_list = {
 		35 = {
 			inline_script = {
@@ -1628,7 +1622,6 @@ give_twisted_experimenters_society_tech_insight = {
 
 give_twisted_experimenters_engineering_tech_insight = {
 	optimize_memory
-
 	random_list = {
 		50 = {
 			inline_script = {
@@ -2098,7 +2091,6 @@ disable_shroud_patrons = {
 			force_remove_chosen_civic = yes
 		}
 	}
-
 	hidden_effect = {
 		if = {
 			limit = { has_covenant = the_eater_of_worlds }
@@ -2324,7 +2316,6 @@ accept_end_of_the_cycle = {
 	else = {
 		start_situation = { type = end_of_the_cycle }
 	}
-
 	hidden_effect = {
 		set_patron_first_contact_state = { patron = end_of_the_cycle state = completed }
 		set_attunement = { patron = end_of_the_cycle value = @max_attunement }
@@ -2410,7 +2401,6 @@ reckoning_spawn = {
 			save_global_event_target_as = the_reckoning_country
 		}
 	}
-
 	capital_scope = {
 		save_event_target_as = former_capital
 	}
@@ -2547,7 +2537,6 @@ reckoning_spawn = {
 			planet_event = { id = shroud.11255 }
 		}
 	}
-
 	random_owned_leader = {
 		limit = { is_heir = yes }
 		if = {
@@ -2577,7 +2566,6 @@ reckoning_spawn = {
 		}
 		assign_leader = last_created_leader
 	}
-
 	every_controlled_fleet = {
 		limit = {
 			NAND = {
@@ -3455,7 +3443,6 @@ mindwarden_give_logistic_assistance = {
 		limit = { exists = event_target:shroudwalker_enclave_country }
 		custom_tooltip = mindwarden_rival_opinion_tt
 	}
-
 	hidden_effect = {
 		$MINDWARDEN_COUNTRY$ = {
 			add_trust = { who = root amount = @positive_opinion }
@@ -3833,7 +3820,6 @@ mind_over_matter_immediate = {
 
 	update_node_portraits_if_gestalt_effect = yes
 	observer_event = { id = observer.5 }
-
 	every_playable_country = {
 		limit = {
 			is_ai = no
@@ -4071,7 +4057,6 @@ shroud_touched_option_cost = {
 		limit = { exists = event_target:mindwarden_enclave_country }
 		custom_tooltip = shroudwalker_rival_opinion_tt
 	}
-
 	hidden_effect = {
 		event_target:shroudwalker_enclave_country = {
 			add_trust = { who = root amount = @positive_opinion }
@@ -4087,7 +4072,6 @@ shroud_touched_option_cost = {
 
 shroud_touched_cooldown = {
 	set_timed_country_flag = { flag = $NAME$ days = 3600 }
-
 	set_saved_date = {
 		key = $NAME$_timer
 		days_from_present = 3600
@@ -4253,7 +4237,7 @@ shroud_leader_creator = {
 			name = UNKNOWN
 			class = $SPECIES_CLASS$
 			portrait = $LEADER_PORTRAIT$
-			name_list = random_class
+			namelist = random_class # Vfix
 			immortal = no
 			allow_negative_traits = no
 			effect = {
@@ -4360,7 +4344,6 @@ animator_of_clay_create_vessels = {
 	else = {
 		event_target:selected_vessel_species = { save_event_target_as = final_vessel_species }
 	}
-
 	create_pop_group = {
 		species = event_target:final_vessel_species
 		size = @animator_of_clay_create_more_vessels

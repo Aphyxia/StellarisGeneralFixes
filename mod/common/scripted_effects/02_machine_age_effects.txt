@@ -122,10 +122,9 @@ create_cyber_species_effect = {
 	# 		save_global_event_target_as = cyberspecies@prev.species
 	# 	}
 	# }
-	save_event_target_as = changing_pop_group # As fallback needed
-
+	# save_event_target_as = changing_pop_group # As fallback needed,  needs to be saved outside for backward compat
 	species = {
-		save_event_target_as = changing_species
+		# save_event_target_as = changing_species needs to be saved outside for backward compat
 		if = {
 			limit = {
 				NAND = {
@@ -158,13 +157,13 @@ create_cyber_species_effect = {
 					# 	}
 					# }
 					save_global_event_target_as = cyberspecies@prev
-					save_event_target_as = cyberspecies_current
+					save_event_target_as = cyberspecies_current # Vfix opt
 				}
 			}
 		}
 		else = {
 			# log = "Cyberspecies \\[cyberspecies@species.GetName] for \\[species.GetName] already exists"
-			event_target:cyberspecies@this = { save_event_target_as = cyberspecies_current }
+			event_target:cyberspecies@this = { save_event_target_as = cyberspecies_current } # Vfix opt
 		}
 	}
 }
@@ -519,7 +518,6 @@ cyberize_creed_pops_effect = {
 # OBSOLETE: can be replaced with assimilate_leaders
 cyberize_leaders_effect = {
 	optimize_memory
-
 	every_owned_leader = {
 		limit = {
 			is_exact_same_species = event_target:changing_species
@@ -630,7 +628,6 @@ cyberize_creed_leaders_effect = {
 # OBSOLETE: can be replaced with assimilate_colony_ships
 cyberize_colony_ships_effect = {
 	optimize_memory
-
 	every_controlled_ship = {
 		limit = {
 			is_ship_class = shipclass_colonizer
@@ -651,7 +648,6 @@ cyberize_colony_ships_effect = {
 # OBSOLETE: can be replaced with assimilate_armies
 cyberize_armies_effect = {
 	optimize_memory
-
 	every_owned_army = {
 		limit = {
 			exists = species
@@ -849,7 +845,6 @@ synth_queen_spawn = {
 			synth_queen_wipe_system = yes
 		}
 	}
-
 	random_system = {
 		limit = {
 			any_system_planet = { has_planet_flag = synth_queen_bastille }
@@ -2070,7 +2065,6 @@ make_fallen_empire = {
 			remove_invalid_civics = yes
 		}
 	}
-
 	ruler = {
 		add_skill = 9
 	}
@@ -2595,7 +2589,6 @@ create_fallen_empire_cosmogenesis_navy = {
 			}
 		}
 	}
-
 	random = {
 		chance = 75
 		create_fleet = {
@@ -3309,7 +3302,6 @@ arc_welders_start_effect = {
 		days = 1
 	}
 	give_technology = { tech = tech_orbital_arc_furnace message = no }
-
 	capital_scope = {
 		set_planet_size = 15
 		while = {

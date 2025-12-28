@@ -25,7 +25,6 @@ salvager_enclave_init_01 = {
 	max_instances = 1
 	spawn_chance = 100 # Guaranteed, assuming usage_odds passes
 	flags = { salvager_enclave_system enclave }
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 85
@@ -147,7 +146,6 @@ salvager_enclave_init_02 = {
 	max_instances = 1
 	scaled_spawn_chance = 16 # scales by galaxy size (1000 stars = 10x base)
 	flags = { salvager_enclave_system enclave }
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 125
@@ -278,7 +276,6 @@ salvager_enclave_init_03 = {
 	max_instances = 1
 	scaled_spawn_chance = 12 # scales by galaxy size (1000 stars = 10x base)
 	flags = { salvager_enclave_system enclave }
-
 	planet = {
 		class = star
 		orbit_distance = 0
@@ -435,7 +432,6 @@ shroudwalker_enclave_init_01 = {
 	max_instances = 1
 	spawn_chance = 100 # Guaranteed, assuming usage_odds passes
 	flags = { shroudwalker_enclave_system enclave }
-
 	planet = {
 		count = 1
 		class = star
@@ -533,7 +529,6 @@ shroudwalker_enclave_init_02 = {
 	max_instances = 1
 	scaled_spawn_chance = 16	# scales by galaxy size (1000 stars = 10x base)
 	flags = { shroudwalker_enclave_system enclave }
-
 	asteroid_belt = {
 		type = crystal_asteroid_belt
 		radius = 125
@@ -645,7 +640,6 @@ shroudwalker_enclave_init_03 = {
 	max_instances = 1
 	scaled_spawn_chance = 12	# scales by galaxy size (1000 stars = 10x base)
 	flags = { shroudwalker_enclave_system enclave }
-
 	asteroid_belt = {
 		type = crystal_asteroid_belt
 		radius = 30
@@ -808,7 +802,6 @@ broken_shroudwalker_init_01 = {
 	max_instances = 1
 	spawn_chance = 33
 	flags = { broken_shroudwalker_enclave }
-
 	planet = {
 		name = "NAME_Mesembria"
 		class = star
@@ -955,7 +948,6 @@ quantum_catapult_init_01 = {
 	class = sc_pulsar
 	usage = misc_system_init
 	flags = { ruined_catapult_system }
-
 	usage_odds = {
 		base = @spawn_system_extreme
 		modifier = { factor = 0 has_overlord_dlc = no }
@@ -1152,7 +1144,6 @@ overlord_system_init = {
 
 	max_instances = 1
 	flags = { overlord_empire_flag overlord_system_1_flag }
-
 	planet = {
 		class = star
 		orbit_distance = 0
@@ -1498,7 +1489,6 @@ overlord_system_init = {
 overlord_system_2_init = {
 	class = "rl_standard_stars"
 	flags = { overlord_empire_flag overlord_system_2_flag }
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 40
@@ -1664,7 +1654,6 @@ overlord_system_2_init = {
 overlord_system_3_init = {
 	class = "rl_standard_stars"
 	flags = { overlord_empire_flag overlord_system_3_flag }
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 35
@@ -1811,7 +1800,6 @@ overlord_system_3_init = {
 overlord_system_4_init = {
 	class = "rl_standard_stars"
 	flags = { overlord_empire_flag overlord_system_4_flag }
-
 	planet = {
 		count = 1
 		class = star
@@ -2045,7 +2033,6 @@ overlord_system_4_init = {
 overlord_system_5_init = {
 	class = "rl_standard_stars"
 	flags = { overlord_empire_flag overlord_system_5_flag }
-
 	planet = {
 		count = 1
 		class = star
@@ -2280,7 +2267,6 @@ overlord_system_5_init = {
 overlord_system_6_init = {
 	class = "rl_standard_stars"
 	flags = { overlord_empire_flag overlord_system_6_flag }
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 125
@@ -2512,7 +2498,6 @@ overlord_system_6_init = {
 overlord_system_7_init = {
 	class = "rl_standard_stars"
 	flags = { overlord_empire_flag overlord_system_7_flag }
-
 	planet = {
 		count = 1
 		class = star
@@ -2776,7 +2761,6 @@ overlord_system_7_init = {
 overlord_system_8_init = {
 	class = "rl_standard_stars"
 	flags = { overlord_empire_flag overlord_colony_flag }
-
 	planet = {
 		count = 1
 		class = star

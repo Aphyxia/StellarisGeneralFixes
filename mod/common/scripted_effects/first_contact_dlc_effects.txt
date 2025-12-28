@@ -202,7 +202,6 @@ generate_slaver_bonus = {
 			district = district_mining
 		}
 	}
-
 	add_district_and_planet_size_if_needed_effect = {
 		district = district_generator
 	}
@@ -281,7 +280,6 @@ generate_slaver_bonus = {
 			}
 		}
 	}
-
 	owner = {
 		# Unlocks slave processing facilities
 		give_technology = { message = no tech = tech_neural_implants }
@@ -489,7 +487,6 @@ create_payback_warship_effect = {
 			}
 		}
 	}
-
 	last_created_fleet = {
 		if = {
 			limit = { exists = event_target:flagship_leader }
@@ -1232,7 +1229,6 @@ setup_fear_of_the_dark_pre_ftl = {
 	set_owner = event_target:fotd_seperatist_country
 	set_capital = yes
 	set_timed_planet_flag = { flag = ignore_ai_building_limitations days = 1 }
-
 	owner_species = {
 		switch = {
 			trigger = is_species_class
@@ -1897,7 +1893,6 @@ integrate_country_effect = {
 	else = {
 		every_owned_leader = { set_owner = $OWNER$ }
 	}
-
 	every_owned_planet = {
 		limit = { is_colony = yes }
 		set_owner = $OWNER$
@@ -2217,7 +2212,6 @@ asteroid_impact_pre_ftl_effect = {
 		limit = { pop_amount > 200 }
 		random_owned_pop_group = { remove_pop_amount = 100 }
 	}
-
 	owner = {
 		switch = {
 			trigger = has_pre_ftl_age
@@ -2599,7 +2593,6 @@ infiltrate_government_annexation_effect = {
 		}
 		root = { set_country_flag = reverse_v } # "Payback" achievement
 	}
-
 	capital_scope = {
 		set_timed_planet_flag = { flag = ignore_ai_building_limitations days = 1 }
 		save_event_target_as = annexed_planet

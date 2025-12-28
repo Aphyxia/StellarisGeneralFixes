@@ -887,7 +887,7 @@ country_event = {
 				limit = {
 					is_fallen_empire_spiritualist = yes
 					has_communications = root
-					NOT = { is_same_value = root }
+					NOT = { is_same_empire = root }
 				}
 				country_event = { id = utopia.2557 days = 15 }
 			}
@@ -897,7 +897,7 @@ country_event = {
 				limit = {
 					has_ethic = ethic_fanatic_spiritualist
 					has_communications = root
-					NOT = { is_same_value = root }
+					NOT = { is_same_empire = root }
 				}
 				country_event = { id = utopia.2557 days = 15 }
 			}
@@ -1045,14 +1045,10 @@ country_event = {
 					species = { has_trait = trait_machine_unit }
 					is_gestalt_node = no
 				}
-				has_tradition = tr_synthetics_finish
-			}
-			AND = {
-				from = {
-					species = { has_trait = trait_machine_unit }
-					is_gestalt_node = no
+				OR = { # Vfix opt
+					has_tradition = tr_modularity_finish
+					has_tradition = tr_synthetics_finish
 				}
-				has_tradition = tr_modularity_finish
 			}
 		}
 	}
@@ -2670,7 +2666,7 @@ country_event = {
 			has_country_flag = composer_covenant_rank_3
 			has_country_flag = eater_covenant_rank_3
 			has_country_flag = instrument_covenant_rank_3
-			has_country_flag = cradle_covenant_rank_3 # FIXME never set?
+			# has_country_flag = cradle_covenant_rank_3 # FIXME never set?
 			has_country_flag = whisperers_covenant_rank_3
 			has_country_flag = forging_our_own_path
 		}
@@ -2768,10 +2764,10 @@ country_event = {
 						owner = { has_country_flag = instrument_covenant_rank_3 }
 						leader_class = official
 					}
-					AND = {
-						owner = { has_country_flag = cradle_covenant_rank_3 }
-						leader_class = official
-					}
+					# AND = { # Vfix TODO never set?
+					# 	owner = { has_country_flag = cradle_covenant_rank_3 }
+					# 	leader_class = official
+					# }
 					AND = {
 						owner = { has_country_flag = whisperers_covenant_rank_3 }
 						leader_class = scientist
@@ -2927,11 +2923,11 @@ country_event = {
 							add_trait = { trait = leader_trait_instrument_chosen }
 						}
 					}
-					cradle_covenant_rank_3 = {
-						prev = {
-							add_trait = { trait = leader_trait_cradle_chosen }
-						}
-					}
+					# cradle_covenant_rank_3 = { # Vfix TODO never set?
+					# 	prev = {
+					# 		add_trait = { trait = leader_trait_cradle_chosen }
+					# 	}
+					# }
 					whisperers_covenant_rank_3 = {
 						prev = {
 							add_trait = { trait = leader_trait_whisperers_chosen }

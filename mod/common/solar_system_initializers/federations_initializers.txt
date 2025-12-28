@@ -563,7 +563,6 @@ void_dweller_system = {
 	class = "rl_trinary_stars"
 	usage = origin
 	flags = { empire_home_system }
-
 	init_effect = {
 		every_neighbor_system = {
 			set_star_flag = empire_cluster
@@ -937,7 +936,6 @@ lost_colony_1 = {
 lost_colony_neighbor_t1 = {
 	class = "rl_standard_stars"
 	flags = { neighbor_t1 }
-
 	init_effect = {
 		every_neighbor_system = { set_star_flag = empire_cluster }
 	}
@@ -981,7 +979,6 @@ lost_colony_neighbor_t1 = {
 lost_colony_neighbor_t1_first_colony = {
 	class = "rl_standard_stars"
 	flags = { neighbor_t1_first_colony }
-
 	init_effect = {
 		every_neighbor_system = { set_star_flag = empire_cluster }
 	}
@@ -1044,7 +1041,6 @@ lost_colony_neighbor_t1_first_colony = {
 lost_colony_neighbor_t2_second_colony = {
 	class = "rl_standard_stars"
 	flags = { neighbor_t2_second_colony }
-
 	init_effect = {
 		every_neighbor_system = { set_star_flag = empire_cluster }
 	}
@@ -1113,7 +1109,6 @@ lost_colony_neighbor_t2_second_colony = {
 scion_fallen_1 = {
 	class = "rl_standard_stars"
 	flags = { scion_fe_system }
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 50
@@ -1330,7 +1325,6 @@ scion_fallen_1 = {
 scion_fallen_2 = {
 	class = "rl_standard_stars"
 	flags = { scion_fe_system }
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 50
@@ -1745,7 +1739,6 @@ mega_shipyard_init_01 = {
 	class = "rl_standard_stars"
 	usage = misc_system_init
 	flags = { ruined_mega_shipyard_system }
-
 	usage_odds = {
 		base = 0
 		modifier = { has_federations_dlc = yes add = @spawn_system_extreme }
@@ -1836,7 +1829,6 @@ planet_with_too_many_moons_system = {
 	max_instances = 1
 	scaled_spawn_chance = 3
 	flags = { planet_with_too_many_moons_system hostile_system }
-
 	planet = {
 		count = 1
 		class = star
@@ -2182,7 +2174,6 @@ wenkwort_initializer = {
 
 	max_instances = 1
 	flags = { wenkwort_system }
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 135 # Distance from system centre
@@ -2292,7 +2283,6 @@ sol_system_void_dweller_system = {
 		radius = 290
 	}
 	flags = { empire_home_system sol_system sol }
-
 	init_effect = {
 		every_neighbor_system = {
 			set_star_flag = empire_cluster

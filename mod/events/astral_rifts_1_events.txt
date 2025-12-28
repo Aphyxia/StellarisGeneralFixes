@@ -4891,6 +4891,10 @@ country_event = {
 	picture = GFX_evt_astral_rift
 	is_triggered_only = yes
 
+	trigger = {
+		exists = from # Vfix
+	}
+
 	immediate = {
 		clone_leader = {
 			target = from

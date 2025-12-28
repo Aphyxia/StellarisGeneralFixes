@@ -7909,8 +7909,9 @@ country_event = {
 			}
 			else_if = {
 				limit = {
-					event_target:shroudwalker_enclave_country = {
-						trust = { who = root value >= 100 }
+					# event_target:shroudwalker_enclave_country = { IMHO vanilla mistake
+					event_target:mindwarden_enclave_country = { # Vfix
+						trust = { who = root value > 99 }
 					}
 				}
 				country_event = { id = shroud.4340 }

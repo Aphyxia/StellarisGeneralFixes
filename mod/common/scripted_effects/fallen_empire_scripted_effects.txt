@@ -490,7 +490,6 @@ create_fe_fringe_colony = {
 		count = 5
 		add_district = { district_type = district_city ignore_cap = yes }
 	}
-
 	create_pop_group = {
 		size = 800
 		species = owner_species
@@ -532,7 +531,6 @@ create_fe_spiritualist_fringe_colony = {
 			district = district_farming
 		}
 	}
-
 	create_pop_group = {
 		size = 2000
 		species = owner_species
@@ -1465,7 +1463,6 @@ create_fallen_empire_starting_navy = {
 			}
 		}
 	}
-
 	random = {
 		chance = 25
 		create_fallen_empire_titan_fleet = yes
@@ -1572,7 +1569,6 @@ add_awakened_fallen_empire_resources = {
 # this = country joining league; prev = federation leader
 add_non_aligned_league_opinions = {
 	add_opinion_modifier = { who = prev modifier = opinion_non_aligned_league }
-
 	prev = {
 		add_opinion_modifier = { who = prev modifier = opinion_non_aligned_league }
 	}
@@ -1951,7 +1947,6 @@ increase_fe_influence = {
 			start_terraform_process = pc_hive
 		}
 	}
-
 	ordered_country = {
 		limit = { has_origin = origin_fallen_empire_hive }
 		position = 0
@@ -1962,7 +1957,6 @@ increase_fe_influence = {
 
 decrease_fe_influence = {
 	change_variable = { which = hive_fe_influence value = -1 }
-
 	ordered_country = {
 		limit = { has_origin = origin_fallen_empire_hive }
 		position = 0
@@ -2348,7 +2342,6 @@ grant_fe_building = {
 
 	set_country_flag = $BUILDING$_can_build
 	set_timed_country_flag = { flag = recently_got_$BUILDING$ days = 10 }
-
 	create_message = {
 		type = FALLEN_EMPIRE_BUILDING_GAINED
 		localization = MESSAGE_FALLEN_EMPIRE_BUILDING_GAINED

@@ -4911,9 +4911,7 @@ espionage_operation_event = {
 	}
 
 	immediate = {
-		from = {
-			save_event_target_as = target_country
-		}
+		from = { save_event_target_as = target_country }
 		random_list = {
 			10 = {
 				modifier = {

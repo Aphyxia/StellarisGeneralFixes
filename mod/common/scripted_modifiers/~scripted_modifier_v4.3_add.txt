@@ -4,3 +4,10 @@ job_enforcer_stability_add = {
 	good = yes
 	category = planet
 }
+
+refugee_attraction = {
+	icon = mod_country_emigration_push_mult
+	good = yes
+	percentage = yes
+	category = country
+}

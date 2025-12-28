@@ -45,6 +45,10 @@ situation_event = {
 						pop_group_has_trait = trait_limited_cybernetic
 					}
 				}
+				save_event_target_as = changing_pop_group  # VFIX DEPRECATED (kept for backward compat): just put it in the effect too
+				species = {
+					save_event_target_as = changing_species # VFIX DEPRECATED (kept for backward compat): just put it in the effect too
+				}
 				create_cyber_species_effect = yes
 			}
 			if = {
@@ -152,6 +156,10 @@ situation_event = {
 						pop_group_has_trait = trait_cybernetic
 						pop_group_has_trait = trait_limited_cybernetic
 					}
+				}
+				save_event_target_as = changing_pop_group  # VFIX DEPRECATED (kept for backward compat): just put it in the effect too
+				species = {
+					save_event_target_as = changing_species # VFIX DEPRECATED (kept for backward compat): just put it in the effect too
 				}
 				create_cyber_species_effect = yes
 			}
@@ -271,6 +279,10 @@ situation_event = {
 						pop_group_has_trait = trait_limited_cybernetic
 					}
 				}
+				save_event_target_as = changing_pop_group  # VFIX DEPRECATED (kept for backward compat): just put it in the effect too
+				species = {
+					save_event_target_as = changing_species # VFIX DEPRECATED (kept for backward compat): just put it in the effect too
+				}
 				create_cyber_species_effect = yes
 			}
 			if = {
@@ -359,6 +371,10 @@ situation_event = {
 						pop_group_has_trait = trait_limited_cybernetic
 						# has_pop_group_flag = cyber_hive_defective_pop removed in v4.0
 					}
+				}
+				save_event_target_as = changing_pop_group  # VFIX DEPRECATED (kept for backward compat): just put it in the effect too
+				species = {
+					save_event_target_as = changing_species # VFIX DEPRECATED (kept for backward compat): just put it in the effect too
 				}
 				create_cyber_species_effect = yes
 			}

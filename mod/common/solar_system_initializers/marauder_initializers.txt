@@ -34,7 +34,6 @@ marauder_1_1 = {
 
 	spawn_chance = 100
 	flags = { marauder_system marauder_capital_1 }
-
 	planet = {
 		class = star
 		orbit_distance = 0
@@ -662,7 +661,6 @@ marauder_1_1 = {
 marauder_1_2 = {
 	class = "rl_standard_stars"
 	flags = { marauder_system }
-
 	planet = {
 		count = 1
 		class = star
@@ -802,7 +800,6 @@ marauder_1_3 = {
 		radius = 95
 	}
 	flags = { marauder_system }
-
 	planet = {
 		count = 1
 		class = star
@@ -1040,7 +1037,6 @@ marauder_2_1 = {
 
 	spawn_chance = 100
 	flags = { marauder_system marauder_capital_2 }
-
 	planet = {
 		class = star
 		orbit_distance = 0
@@ -1640,7 +1636,6 @@ marauder_2_1 = {
 marauder_2_2 = {
 	class = "rl_standard_stars"
 	flags = { marauder_system }
-
 	planet = {
 		count = 1
 		class = star
@@ -1776,7 +1771,6 @@ marauder_2_3 = {
 		radius = 95
 	}
 	flags = { marauder_system }
-
 	planet = {
 		count = 1
 		class = star
@@ -2008,7 +2002,6 @@ marauder_3_1 = {
 
 	spawn_chance = 100
 	flags = { marauder_system marauder_capital_3 }
-
 	planet = {
 		class = star
 		orbit_distance = 0
@@ -2491,7 +2484,6 @@ marauder_3_1 = {
 marauder_3_2 = {
 	class = "rl_standard_stars"
 	flags = { marauder_system }
-
 	planet = {
 		count = 1
 		class = star
@@ -2627,7 +2619,6 @@ marauder_3_3 = {
 		radius = 95
 	}
 	flags = { marauder_system }
-
 	planet = {
 		count = 1
 		class = star
