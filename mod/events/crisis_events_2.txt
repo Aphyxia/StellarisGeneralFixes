@@ -189,14 +189,8 @@ country_event = {
 					create_fleet = {
 						effect = {
 							set_owner = prev
-							create_ship = {
-								name = random
-								design = "NAME_Revenant"
-								graphical_culture = "extra_dimensional_01"
-							}
-							assign_leader = last_created_leader
 							while = {
-								count = 20
+								count = 21
 								create_ship = {
 									name = random
 									design = "NAME_Revenant"
@@ -228,6 +222,7 @@ country_event = {
 							set_aggro_range = 500
 							set_aggro_range_measure_from = self
 							set_fleet_bombardment_stance = armageddon
+							assign_leader = last_created_leader
 						}
 					}
 				}
@@ -315,14 +310,8 @@ fleet_event = {
 			create_fleet = {
 				effect = {
 					set_owner = prev
-					create_ship = {
-						name = random
-						design = "NAME_Revenant"
-						graphical_culture = "extra_dimensional_01"
-					}
-					assign_leader = last_created_leader
 					while = {
-						count = 8
+						count = 9
 						create_ship = {
 							name = random
 							design = "NAME_Revenant"
@@ -354,6 +343,7 @@ fleet_event = {
 					set_aggro_range = 500
 					set_aggro_range_measure_from = self
 					set_fleet_bombardment_stance = armageddon
+					assign_leader = last_created_leader
 				}
 			}
 		}
@@ -750,7 +740,7 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	desc = "crisis.1010.desc"
 	diplomatic = yes
-	location = event_target:dimensional_portal
+	location = event_target:extradimensional_system
 
 	picture_event_data = {
 		portrait = exd1
@@ -1044,7 +1034,7 @@ country_event = {
 	}
 
 	diplomatic = yes
-	location = event_target:dimensional_portal
+	location = event_target:extradimensional_system
 	force_open = yes
 
 	picture_event_data = {
@@ -1145,7 +1135,7 @@ country_event = {
 	}
 
 	diplomatic = yes
-	location = event_target:dimensional_portal
+	location = event_target:extradimensional_system
 	force_open = yes
 
 	picture_event_data = {
@@ -1181,7 +1171,7 @@ country_event = {
 	}
 
 	diplomatic = yes
-	location = event_target:dimensional_portal
+	location = event_target:extradimensional_system
 	force_open = yes
 
 	picture_event_data = {
@@ -1321,14 +1311,8 @@ country_event = {
 					create_fleet = {
 						effect = {
 							set_owner = prev
-							create_ship = {
-								name = random
-								design = "NAME_Huntress"
-								graphical_culture = "extra_dimensional_02"
-							}
-							assign_leader = last_created_leader
 							while = {
-								count = 20
+								count = 21
 								create_ship = {
 									name = random
 									design = "NAME_Huntress"
@@ -1360,6 +1344,7 @@ country_event = {
 							set_aggro_range = 500
 							set_aggro_range_measure_from = self
 							set_fleet_bombardment_stance = armageddon
+							assign_leader = last_created_leader
 						}
 					}
 				}
@@ -1418,14 +1403,8 @@ fleet_event = {
 			create_fleet = {
 				effect = {
 					set_owner = prev
-					create_ship = {
-						name = random
-						design = "NAME_Huntress"
-						graphical_culture = "extra_dimensional_02"
-					}
-					assign_leader = last_created_leader
 					while = {
-						count = 8
+						count = 9
 						create_ship = {
 							name = random
 							design = "NAME_Huntress"
@@ -1457,6 +1436,7 @@ fleet_event = {
 					set_aggro_range = 500
 					set_aggro_range_measure_from = self
 					set_fleet_bombardment_stance = armageddon
+					assign_leader = last_created_leader
 				}
 			}
 		}
@@ -1582,7 +1562,7 @@ country_event = {
 	title = "TRANSMISSION"
 	desc = "crisis.1113.desc"
 	diplomatic = yes
-	location = event_target:dimensional_portal
+	location = event_target:extradimensional_system
 
 	picture_event_data = {
 		portrait = exd2
@@ -1825,14 +1805,8 @@ country_event = {
 						create_fleet = {
 							effect = {
 								set_owner = prev
-								create_ship = {
-									name = random
-									design = "NAME_Eradicator"
-									graphical_culture = "extra_dimensional_03"
-								}
-								assign_leader = last_created_leader
 								while = {
-									count = 20
+									count = 21
 									create_ship = {
 										name = random
 										design = "NAME_Eradicator"
@@ -1864,6 +1838,7 @@ country_event = {
 								set_aggro_range = 500
 								set_aggro_range_measure_from = self
 								set_fleet_bombardment_stance = armageddon
+								assign_leader = last_created_leader
 							}
 						}
 					}
@@ -1927,14 +1902,8 @@ fleet_event = {
 			create_fleet = {
 				effect = {
 					set_owner = prev
-					create_ship = {
-						name = random
-						design = "NAME_Eradicator"
-						graphical_culture = "extra_dimensional_03"
-					}
-					assign_leader = last_created_leader
 					while = {
-						count = 8
+						count = 9
 						create_ship = {
 							name = random
 							design = "NAME_Eradicator"
@@ -1966,6 +1935,7 @@ fleet_event = {
 					set_aggro_range = 500
 					set_aggro_range_measure_from = self
 					set_fleet_bombardment_stance = armageddon
+					assign_leader = last_created_leader
 				}
 			}
 		}
@@ -2045,7 +2015,7 @@ country_event = {
 	title = "TRANSMISSION"
 	desc = "crisis.1211.desc"
 	diplomatic = yes
-	location = event_target:dimensional_portal
+	location = event_target:extradimensional_system
 
 	picture_event_data = {
 		portrait = exd3
@@ -2530,6 +2500,7 @@ country_event = {
 			set_aggro_range = 500
 			set_aggro_range_measure_from = self
 			set_fleet_bombardment_stance = armageddon
+			assign_leader = last_created_leader
 		}
 	}
 }
@@ -2680,16 +2651,50 @@ ship_event = {
 			}
 			owner_species = { save_event_target_as = extradimensional_species }
 			# Create Admiral
-			create_leader = {
-				class = commander
-				species = event_target:extradimensional_species
-				name = random
-				skill = 3
-				effect = {
-					random_list = {
-						25 = { add_trait = { trait = leader_trait_ethereal } }
-						25 = { add_trait = { trait = leader_trait_dimensional_stutter } }
-						50 = {  }
+			# Vfix patch: old admirals often survive the fleet kill, so there are more and more idling leaders in the pool
+			if = {
+				limit = {
+					any_owned_leader = {
+						leader_class = commander
+						is_idle = yes
+						NOR = {
+							is_ruler = yes
+							exists = fleet
+						}
+					}
+				}
+				if = {
+					limit = {
+						count_owned_leader = {
+							count < 20
+						}
+					}
+					create_leader = {
+						class = commander
+						species = event_target:extradimensional_species
+						name = random
+						skill = 3
+						effect = {
+							random_list = {
+								25 = { add_trait = { trait = leader_trait_ethereal } }
+								25 = { add_trait = { trait = leader_trait_dimensional_stutter } }
+								50 = {  }
+							}
+							save_event_target_as = exd_leader
+						}
+					}
+				}
+				else = {
+					random_owned_leader = {
+						limit = {
+							leader_class = commander
+							is_idle = yes
+							NOR = {
+								is_ruler = yes
+								exists = fleet
+							}
+						}
+						save_event_target_as = exd_leader
 					}
 				}
 			}
@@ -2802,7 +2807,7 @@ ship_event = {
 				set_aggro_range = 500
 				set_aggro_range_measure_from = self
 				set_fleet_bombardment_stance = armageddon
-				assign_leader = last_created_leader
+				assign_leader = event_target:exd_leader
 			}
 		}
 	}
@@ -3120,39 +3125,27 @@ starbase_event = {
 				limit = {
 					NOT = { any_controlled_fleet = { is_ship_size = starbase_exd } }
 				}
-				switch = { trigger = has_country_flag
-					unbidden = {
-						event_target:portal_holder_1 = { # Vfix opt
-							random_controlled_ship = {
-								limit = {
-									is_ship_size = dimensional_portal_ed
+				# Vfix opt
+				event_target:portal_holder_1 = {
+					random_controlled_ship = {
+						limit = {
+							is_ship_size = dimensional_portal_ed
+							OR = {
+								AND = {
+									prevprev = { has_country_flag = unbidden }
 									has_ship_flag = unbidden_portal
 								}
-								fleet = { set_owner = root set_event_locked = no }
-							}
-						}
-					}
-					aberrant = {
-						event_target:portal_holder_1 = { # Vfix opt
-							random_controlled_ship = {
-								limit = {
-									is_ship_size = dimensional_portal_ed
+								AND = {
+									prevprev = { has_country_flag = aberrant }
 									has_ship_flag = aberrant_portal
 								}
-								fleet = { set_owner = root set_event_locked = no }
-							}
-						}
-					}
-					aberrant = {
-						event_target:portal_holder_1 = { # Vfix opt
-							random_controlled_ship = {
-								limit = {
-									is_ship_size = dimensional_portal_ed
+								AND = {
+									prevprev = { has_country_flag = vehement }
 									has_ship_flag = vehement_portal
 								}
-								fleet = { set_owner = root set_event_locked = no }
 							}
 						}
+						fleet = { set_owner = root set_event_locked = no }
 					}
 				}
 			}

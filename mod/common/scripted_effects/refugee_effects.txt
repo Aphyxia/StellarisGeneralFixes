@@ -277,7 +277,7 @@ refuge_pop_group = {
 			resettle_pop_group = {
 				POP_GROUP = event_target:refugee_pop
 				PLANET = this
-				PERCENTAGE = 1 # 100% vfix Ariphaos
+				AMOUNT = local_pop_amount
 			}
 		}
 		else = {
