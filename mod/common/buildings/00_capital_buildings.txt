@@ -136,14 +136,14 @@ building_capital = {
 
 	potential = {
 		has_owner = yes
-		owner = {
-			NOR = { # Vfix opt
-				is_gestalt = yes
-				is_fallen_empire = yes
-				is_primitive = yes
+		NOR = { # Vfix opt
+			owner = {
+				OR = {
+					is_gestalt = yes
+					is_fallen_empire = yes
+					is_primitive = yes
+				}
 			}
-		}
-		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 			uses_habitat_capitals = yes
@@ -233,14 +233,14 @@ building_major_capital = {
 
 	potential = {
 		has_owner = yes
-		owner = {
-			NOR = { # Vfix opt
-				is_gestalt = yes
-				is_fallen_empire = yes
-				is_primitive = yes
+		NOR = { # Vfix opt
+			owner = {
+				OR = {
+					is_gestalt = yes
+					is_fallen_empire = yes
+					is_primitive = yes
+				}
 			}
-		}
-		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 		}
@@ -327,14 +327,14 @@ building_system_capital = {
 
 	potential = {
 		has_owner = yes
-		owner = {
-			NOR = { # Vfix opt
-				is_gestalt = yes
-				is_fallen_empire = yes
-				is_primitive = yes
+		NOR = { # Vfix opt
+			owner = {
+				OR = {
+					is_gestalt = yes
+					is_fallen_empire = yes
+					is_primitive = yes
+				}
 			}
-		}
-		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 		}

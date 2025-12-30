@@ -2665,9 +2665,7 @@ ship_event = {
 				}
 				if = {
 					limit = {
-						count_owned_leader = {
-							count < 20
-						}
+						count_owned_leader = { count < 20 }
 					}
 					create_leader = {
 						class = commander
@@ -3341,142 +3339,130 @@ event = {
 	}
 }
 
-country_event = {
-	id = crisis.1231
-	hide_window = yes
-	is_test_event = yes
-
-	trigger = {
-		always = no
-		# has_crisis_stage_2 = yes
-		# OR = {
-		# 	is_country_type = extradimensional
-		# 	is_country_type = extradimensional_2
-		# 	is_country_type = extradimensional_3
-		# }
-		# endgame_crisis_large_size_trigger = yes
-		## Vfix: why double check??
-		## any_country = {
-		## 	OR = {
-		## 		is_country_type = extradimensional
-		## 		is_country_type = extradimensional_2
-		## 		is_country_type = extradimensional_3
-		## 	}
-		## 	galaxy_percentage > 0.15
-		## }
-	}
-
-	# mean_time_to_happen = {
-	# 	months = 1
-	# }
-	immediate = {
-		set_crisis_sound = extradimensional_crisis_ambient_stage_3
-		set_crisis_stage_3 = yes
-	}
-}
-
-country_event = {
-	id = crisis.1232
-	hide_window = yes
-	is_test_event = yes
-
-	trigger = {
-		always = no
-		# has_crisis_stage_4 = yes
-		# OR = {
-		# 	is_country_type = extradimensional
-		# 	is_country_type = extradimensional_2
-		# 	is_country_type = extradimensional_3
-		# }
-		# NOT = {
-		# 	any_country = {
-		# 		OR = {
-		# 			is_country_type = extradimensional
-		# 			is_country_type = extradimensional_2
-		# 			is_country_type = extradimensional_3
-		# 		}
-		# 		galaxy_percentage > 0.25
-		# 	}
-		# }
-	}
-
-	# mean_time_to_happen = {
-	# 	months = 1
-	# }
-	immediate = {
-		set_crisis_sound = extradimensional_crisis_ambient_stage_3
-		set_crisis_stage_3 = yes
-	}
-}
-
-country_event = {
-	id = crisis.1233
-	hide_window = yes
-	is_test_event = yes
-
-	trigger = {
-		always = no
-		# has_crisis_stage_3 = yes
-		# OR = {
-		# 	is_country_type = extradimensional
-		# 	is_country_type = extradimensional_2
-		# 	is_country_type = extradimensional_3
-		# }
-		# galaxy_percentage > 0.30
-		# Vfix: why double check??
-		# any_country = {
-		# 	OR = {
-		# 		is_country_type = extradimensional
-		# 		is_country_type = extradimensional_2
-		# 		is_country_type = extradimensional_3
-		# 	}
-		# 	galaxy_percentage > 0.30
-		# }
-	}
-
-	# mean_time_to_happen = {
-	# 	months = 1
-	# }
-	immediate = {
-		set_crisis_sound = extradimensional_crisis_ambient_stage_final
-		set_crisis_stage_4 = yes
-	}
-}
-
-country_event = {
-	id = crisis.1234
-	hide_window = yes
-	is_test_event = yes
-
-	trigger = {
-		always = no
-		# has_crisis_stage_1 = yes
-		# OR = {
-		# 	is_country_type = extradimensional
-		# 	is_country_type = extradimensional_2
-		# 	is_country_type = extradimensional_3
-		# }
-		# galaxy_percentage > 0.05
-		# Vfix: why double check??
-		# any_country = {
-		# 	OR = {
-		# 		is_country_type = extradimensional
-		# 		is_country_type = extradimensional_2
-		# 		is_country_type = extradimensional_3
-		# 	}
-		# 	galaxy_percentage > 0.05
-		# }
-	}
-
-	# mean_time_to_happen = {
-	# 	months = 1
-	# }
-	immediate = {
-		set_crisis_sound = extradimensional_crisis_ambient_stage_2
-		set_crisis_stage_2 = yes
-	}
-}
-
+# country_event = {
+# 	id = crisis.1231
+# 	hide_window = yes
+# 	is_test_event = yes
+# 	trigger = {
+# 		always = no
+# 		# has_crisis_stage_2 = yes
+# 		# OR = {
+# 		# 	is_country_type = extradimensional
+# 		# 	is_country_type = extradimensional_2
+# 		# 	is_country_type = extradimensional_3
+# 		# }
+# 		# endgame_crisis_large_size_trigger = yes
+# 		## Vfix: why double check??
+# 		## any_country = {
+# 		## 	OR = {
+# 		## 		is_country_type = extradimensional
+# 		## 		is_country_type = extradimensional_2
+# 		## 		is_country_type = extradimensional_3
+# 		## 	}
+# 		## 	galaxy_percentage > 0.15
+# 		## }
+# 	}
+# 	# mean_time_to_happen = {
+# 	# 	months = 1
+# 	# }
+# 	immediate = {
+# 		set_crisis_sound = extradimensional_crisis_ambient_stage_3
+# 		set_crisis_stage_3 = yes
+# 	}
+# }
+# country_event = {
+# 	id = crisis.1232
+# 	hide_window = yes
+# 	is_test_event = yes
+# 	trigger = {
+# 		always = no
+# 		# has_crisis_stage_4 = yes
+# 		# OR = {
+# 		# 	is_country_type = extradimensional
+# 		# 	is_country_type = extradimensional_2
+# 		# 	is_country_type = extradimensional_3
+# 		# }
+# 		# NOT = {
+# 		# 	any_country = {
+# 		# 		OR = {
+# 		# 			is_country_type = extradimensional
+# 		# 			is_country_type = extradimensional_2
+# 		# 			is_country_type = extradimensional_3
+# 		# 		}
+# 		# 		galaxy_percentage > 0.25
+# 		# 	}
+# 		# }
+# 	}
+# 	# mean_time_to_happen = {
+# 	# 	months = 1
+# 	# }
+# 	immediate = {
+# 		set_crisis_sound = extradimensional_crisis_ambient_stage_3
+# 		set_crisis_stage_3 = yes
+# 	}
+# }
+# country_event = {
+# 	id = crisis.1233
+# 	hide_window = yes
+# 	is_test_event = yes
+# 	trigger = {
+# 		always = no
+# 		# has_crisis_stage_3 = yes
+# 		# OR = {
+# 		# 	is_country_type = extradimensional
+# 		# 	is_country_type = extradimensional_2
+# 		# 	is_country_type = extradimensional_3
+# 		# }
+# 		# galaxy_percentage > 0.30
+# 		# Vfix: why double check??
+# 		# any_country = {
+# 		# 	OR = {
+# 		# 		is_country_type = extradimensional
+# 		# 		is_country_type = extradimensional_2
+# 		# 		is_country_type = extradimensional_3
+# 		# 	}
+# 		# 	galaxy_percentage > 0.30
+# 		# }
+# 	}
+# 	# mean_time_to_happen = {
+# 	# 	months = 1
+# 	# }
+# 	immediate = {
+# 		set_crisis_sound = extradimensional_crisis_ambient_stage_final
+# 		set_crisis_stage_4 = yes
+# 	}
+# }
+# country_event = {
+# 	id = crisis.1234
+# 	hide_window = yes
+# 	is_test_event = yes
+# 	trigger = {
+# 		always = no
+# 		# has_crisis_stage_1 = yes
+# 		# OR = {
+# 		# 	is_country_type = extradimensional
+# 		# 	is_country_type = extradimensional_2
+# 		# 	is_country_type = extradimensional_3
+# 		# }
+# 		# galaxy_percentage > 0.05
+# 		# Vfix: why double check??
+# 		# any_country = {
+# 		# 	OR = {
+# 		# 		is_country_type = extradimensional
+# 		# 		is_country_type = extradimensional_2
+# 		# 		is_country_type = extradimensional_3
+# 		# 	}
+# 		# 	galaxy_percentage > 0.05
+# 		# }
+# 	}
+# 	# mean_time_to_happen = {
+# 	# 	months = 1
+# 	# }
+# 	immediate = {
+# 		set_crisis_sound = extradimensional_crisis_ambient_stage_2
+# 		set_crisis_stage_2 = yes
+# 	}
+# }
 # Warlock Captured
 country_event = {
 	id = crisis.1250

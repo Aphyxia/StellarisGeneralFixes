@@ -33,7 +33,6 @@ building_hydroponics_farm = {
 			owner = { is_ai = no }
 			AND = {
 				owner = {
-					is_ai = yes
 					has_monthly_income = { resource = food value < 30 }
 				}
 				num_free_districts = { type = district_farming value < 1 }

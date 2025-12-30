@@ -1305,7 +1305,6 @@ tech_mountain_range = {
 		modifier = { factor = 2 }
 		modifier = { factor = 1.25 has_tradition = tr_expansion_adopt }
 		modifier = { factor = 4 has_ascension_perk = ap_mastery_of_nature }
-		# modifier = { factor = 0 num_owned_planets < 2 }
 	}
 
 	ai_weight = {

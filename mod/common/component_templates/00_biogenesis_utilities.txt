@@ -5247,12 +5247,17 @@ utility_component_template = {
 		weight = 5
 		modifier = {
 			factor = 0
+
 			OR = {
-				has_global_flag = ghost_signal_5_flag
-				has_global_flag = ghost_signal_4_flag
-				has_global_flag = ghost_signal_3_flag
-				has_global_flag = ghost_signal_2_flag
-				# has_global_flag = ghost_signal_1_flag Vfix does not exists!?
+				AND = { # Vfix opt
+					has_global_flag = ai_ghost_signal
+					has_event_chain = ai_crisis_chain
+				}
+				# has_global_flag = ghost_signal_5_flag
+				# has_global_flag = ghost_signal_4_flag
+				# has_global_flag = ghost_signal_3_flag
+				# has_global_flag = ghost_signal_2_flag
+				# has_global_flag = ghost_signal_1_flag Vfix: non-existent
 				has_policy_flag = ai_outlawed
 			}
 		}
@@ -5509,11 +5514,15 @@ utility_component_template = {
 		modifier = {
 			factor = 0
 			OR = {
-				has_global_flag = ghost_signal_5_flag
-				has_global_flag = ghost_signal_4_flag
-				has_global_flag = ghost_signal_3_flag
-				has_global_flag = ghost_signal_2_flag
-				# has_global_flag = ghost_signal_1_flag Vfix does not exists!?
+				AND = { # Vfix opt
+					has_global_flag = ai_ghost_signal
+					has_event_chain = ai_crisis_chain
+				}
+				# has_global_flag = ghost_signal_5_flag
+				# has_global_flag = ghost_signal_4_flag
+				# has_global_flag = ghost_signal_3_flag
+				# has_global_flag = ghost_signal_2_flag
+				# has_global_flag = ghost_signal_1_flag Vfix: non-existent
 				has_policy_flag = ai_outlawed
 			}
 		}
@@ -5766,11 +5775,15 @@ utility_component_template = {
 		modifier = {
 			factor = 0
 			OR = {
-				has_global_flag = ghost_signal_5_flag
-				has_global_flag = ghost_signal_4_flag
-				has_global_flag = ghost_signal_3_flag
-				has_global_flag = ghost_signal_2_flag
-				# has_global_flag = ghost_signal_1_flag Vfix does not exists!?
+				AND = { # Vfix opt
+					has_global_flag = ai_ghost_signal
+					has_event_chain = ai_crisis_chain
+				}
+				# has_global_flag = ghost_signal_5_flag
+				# has_global_flag = ghost_signal_4_flag
+				# has_global_flag = ghost_signal_3_flag
+				# has_global_flag = ghost_signal_2_flag
+				# has_global_flag = ghost_signal_1_flag Vfix: non-existent
 				has_policy_flag = ai_outlawed
 			}
 		}
@@ -6014,11 +6027,15 @@ utility_component_template = {
 		modifier = {
 			factor = 0
 			OR = {
-				has_global_flag = ghost_signal_5_flag
-				has_global_flag = ghost_signal_4_flag
-				has_global_flag = ghost_signal_3_flag
-				has_global_flag = ghost_signal_2_flag
-				# has_global_flag = ghost_signal_1_flag Vfix does not exists!?
+				AND = { # Vfix opt
+					has_global_flag = ai_ghost_signal
+					has_event_chain = ai_crisis_chain
+				}
+				# has_global_flag = ghost_signal_5_flag
+				# has_global_flag = ghost_signal_4_flag
+				# has_global_flag = ghost_signal_3_flag
+				# has_global_flag = ghost_signal_2_flag
+				# has_global_flag = ghost_signal_1_flag Vfix: non-existent
 				has_policy_flag = ai_outlawed
 			}
 		}
@@ -6259,11 +6276,15 @@ utility_component_template = {
 		modifier = {
 			factor = 0
 			OR = {
-				has_global_flag = ghost_signal_5_flag
-				has_global_flag = ghost_signal_4_flag
-				has_global_flag = ghost_signal_3_flag
-				has_global_flag = ghost_signal_2_flag
-				# has_global_flag = ghost_signal_1_flag Vfix does not exists!?
+				AND = { # Vfix opt
+					has_global_flag = ai_ghost_signal
+					has_event_chain = ai_crisis_chain
+				}
+				# has_global_flag = ghost_signal_5_flag
+				# has_global_flag = ghost_signal_4_flag
+				# has_global_flag = ghost_signal_3_flag
+				# has_global_flag = ghost_signal_2_flag
+				# has_global_flag = ghost_signal_1_flag Vfix: non-existent
 				has_policy_flag = ai_outlawed
 			}
 		}
@@ -6504,11 +6525,15 @@ utility_component_template = {
 		modifier = {
 			factor = 0
 			OR = {
-				has_global_flag = ghost_signal_5_flag
-				has_global_flag = ghost_signal_4_flag
-				has_global_flag = ghost_signal_3_flag
-				has_global_flag = ghost_signal_2_flag
-				# has_global_flag = ghost_signal_1_flag Vfix does not exists!?
+				AND = { # Vfix opt
+					has_global_flag = ai_ghost_signal
+					has_event_chain = ai_crisis_chain
+				}
+				# has_global_flag = ghost_signal_5_flag
+				# has_global_flag = ghost_signal_4_flag
+				# has_global_flag = ghost_signal_3_flag
+				# has_global_flag = ghost_signal_2_flag
+				# has_global_flag = ghost_signal_1_flag Vfix: non-existent
 				has_policy_flag = ai_outlawed
 			}
 		}
@@ -6738,11 +6763,15 @@ utility_component_template = {
 		modifier = {
 			factor = 0
 			OR = {
-				has_global_flag = ghost_signal_5_flag
-				has_global_flag = ghost_signal_4_flag
-				has_global_flag = ghost_signal_3_flag
-				has_global_flag = ghost_signal_2_flag
-				# has_global_flag = ghost_signal_1_flag Vfix does not exists!?
+				AND = { # Vfix opt
+					has_global_flag = ai_ghost_signal
+					has_event_chain = ai_crisis_chain
+				}
+				# has_global_flag = ghost_signal_5_flag
+				# has_global_flag = ghost_signal_4_flag
+				# has_global_flag = ghost_signal_3_flag
+				# has_global_flag = ghost_signal_2_flag
+				# has_global_flag = ghost_signal_1_flag Vfix: non-existent
 				has_policy_flag = ai_outlawed
 			}
 		}
@@ -7114,11 +7143,15 @@ utility_component_template = {
 		modifier = {
 			factor = 0
 			OR = {
-				has_global_flag = ghost_signal_5_flag
-				has_global_flag = ghost_signal_4_flag
-				has_global_flag = ghost_signal_3_flag
-				has_global_flag = ghost_signal_2_flag
-				# has_global_flag = ghost_signal_1_flag Vfix does not exists!?
+				AND = { # Vfix opt
+					has_global_flag = ai_ghost_signal
+					has_event_chain = ai_crisis_chain
+				}
+				# has_global_flag = ghost_signal_5_flag
+				# has_global_flag = ghost_signal_4_flag
+				# has_global_flag = ghost_signal_3_flag
+				# has_global_flag = ghost_signal_2_flag
+				# has_global_flag = ghost_signal_1_flag Vfix: non-existent
 				has_policy_flag = ai_outlawed
 			}
 		}
@@ -7371,11 +7404,15 @@ utility_component_template = {
 		modifier = {
 			factor = 0
 			OR = {
-				has_global_flag = ghost_signal_5_flag
-				has_global_flag = ghost_signal_4_flag
-				has_global_flag = ghost_signal_3_flag
-				has_global_flag = ghost_signal_2_flag
-				# has_global_flag = ghost_signal_1_flag Vfix does not exists!?
+				AND = { # Vfix opt
+					has_global_flag = ai_ghost_signal
+					has_event_chain = ai_crisis_chain
+				}
+				# has_global_flag = ghost_signal_5_flag
+				# has_global_flag = ghost_signal_4_flag
+				# has_global_flag = ghost_signal_3_flag
+				# has_global_flag = ghost_signal_2_flag
+				# has_global_flag = ghost_signal_1_flag Vfix: non-existent
 				has_policy_flag = ai_outlawed
 			}
 		}

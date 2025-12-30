@@ -441,6 +441,7 @@ utility_component_template = {
 	ai_tags = { gunship gunship_stealth brawler brawler_stealth }
 
 	ai_tag_weight = 0
+	upgrades_to = "COMBAT_COMPUTER_SWARM_PRECOG" # Vfix Ariphaos
 
 	modifier = {
 		ship_evasion_mult = 0.25
@@ -455,11 +456,15 @@ utility_component_template = {
 		modifier = {
 			factor = 0
 			OR = {
-				has_global_flag = ghost_signal_5_flag
-				has_global_flag = ghost_signal_4_flag
-				has_global_flag = ghost_signal_3_flag
-				has_global_flag = ghost_signal_2_flag
-				# has_global_flag = ghost_signal_1_flag Vfix does not exists!?
+				AND = { # Vfix opt
+					has_global_flag = ai_ghost_signal
+					has_event_chain = ai_crisis_chain
+				}
+				# has_global_flag = ghost_signal_5_flag
+				# has_global_flag = ghost_signal_4_flag
+				# has_global_flag = ghost_signal_3_flag
+				# has_global_flag = ghost_signal_2_flag
+				# has_global_flag = ghost_signal_1_flag Vfix: non-existent
 				has_policy_flag = ai_outlawed
 			}
 		}
@@ -695,6 +700,7 @@ utility_component_template = {
 	ai_tags = { explosive explosive_stealth }
 
 	ai_tag_weight = 0
+	upgrades_to = "COMBAT_COMPUTER_TORPEDO_PRECOG" # Vfix Ariphaos
 
 	modifier = {
 		ship_evasion_mult = 0.10
@@ -711,11 +717,15 @@ utility_component_template = {
 		modifier = {
 			factor = 0
 			OR = {
-				has_global_flag = ghost_signal_5_flag
-				has_global_flag = ghost_signal_4_flag
-				has_global_flag = ghost_signal_3_flag
-				has_global_flag = ghost_signal_2_flag
-				# has_global_flag = ghost_signal_1_flag Vfix does not exists!?
+				AND = { # Vfix opt
+					has_global_flag = ai_ghost_signal
+					has_event_chain = ai_crisis_chain
+				}
+				# has_global_flag = ghost_signal_5_flag
+				# has_global_flag = ghost_signal_4_flag
+				# has_global_flag = ghost_signal_3_flag
+				# has_global_flag = ghost_signal_2_flag
+				# has_global_flag = ghost_signal_1_flag Vfix: non-existent
 				has_policy_flag = ai_outlawed
 			}
 		}
@@ -948,6 +958,7 @@ utility_component_template = {
 	ai_tags = { screen screen_stealth }
 
 	ai_tag_weight = 0
+	upgrades_to = "COMBAT_COMPUTER_PICKET_PRECOG" # Vfix Ariphaos
 
 	modifier = {
 		ship_evasion_mult = 0.10
@@ -963,11 +974,15 @@ utility_component_template = {
 		modifier = {
 			factor = 0
 			OR = {
-				has_global_flag = ghost_signal_5_flag
-				has_global_flag = ghost_signal_4_flag
-				has_global_flag = ghost_signal_3_flag
-				has_global_flag = ghost_signal_2_flag
-				# has_global_flag = ghost_signal_1_flag Vfix does not exists!? Vfix does not exists!?
+				AND = { # Vfix opt
+					has_global_flag = ai_ghost_signal
+					has_event_chain = ai_crisis_chain
+				}
+				# has_global_flag = ghost_signal_5_flag
+				# has_global_flag = ghost_signal_4_flag
+				# has_global_flag = ghost_signal_3_flag
+				# has_global_flag = ghost_signal_2_flag
+				# has_global_flag = ghost_signal_1_flag Vfix: non-existent Vfix: non-existent
 				has_policy_flag = ai_outlawed
 			}
 		}
@@ -1206,11 +1221,15 @@ utility_component_template = {
 		modifier = {
 			factor = 0
 			OR = {
-				has_global_flag = ghost_signal_5_flag
-				has_global_flag = ghost_signal_4_flag
-				has_global_flag = ghost_signal_3_flag
-				has_global_flag = ghost_signal_2_flag
-				# has_global_flag = ghost_signal_1_flag Vfix does not exists!?
+				AND = { # Vfix opt
+					has_global_flag = ai_ghost_signal
+					has_event_chain = ai_crisis_chain
+				}
+				# has_global_flag = ghost_signal_5_flag
+				# has_global_flag = ghost_signal_4_flag
+				# has_global_flag = ghost_signal_3_flag
+				# has_global_flag = ghost_signal_2_flag
+				# has_global_flag = ghost_signal_1_flag Vfix: non-existent
 				has_policy_flag = ai_outlawed
 			}
 		}
@@ -1446,11 +1465,15 @@ utility_component_template = {
 		modifier = {
 			factor = 0
 			OR = {
-				has_global_flag = ghost_signal_5_flag
-				has_global_flag = ghost_signal_4_flag
-				has_global_flag = ghost_signal_3_flag
-				has_global_flag = ghost_signal_2_flag
-				# has_global_flag = ghost_signal_1_flag Vfix does not exists!?
+				AND = { # Vfix opt
+					has_global_flag = ai_ghost_signal
+					has_event_chain = ai_crisis_chain
+				}
+				# has_global_flag = ghost_signal_5_flag
+				# has_global_flag = ghost_signal_4_flag
+				# has_global_flag = ghost_signal_3_flag
+				# has_global_flag = ghost_signal_2_flag
+				# has_global_flag = ghost_signal_1_flag Vfix: non-existent
 				has_policy_flag = ai_outlawed
 			}
 		}
@@ -1675,6 +1698,7 @@ utility_component_template = {
 	ai_tags = { carrier }
 
 	ai_tag_weight = 0
+	upgrades_to = "COMBAT_COMPUTER_CARRIER_PRECOG" # Vfix Ariphaos
 
 	ship_modifier = {
 		ship_engagement_range_mult = 1.0
@@ -1686,11 +1710,15 @@ utility_component_template = {
 		modifier = {
 			factor = 0
 			OR = {
-				has_global_flag = ghost_signal_5_flag
-				has_global_flag = ghost_signal_4_flag
-				has_global_flag = ghost_signal_3_flag
-				has_global_flag = ghost_signal_2_flag
-				# has_global_flag = ghost_signal_1_flag Vfix does not exists!?
+				AND = { # Vfix opt
+					has_global_flag = ai_ghost_signal
+					has_event_chain = ai_crisis_chain
+				}
+				# has_global_flag = ghost_signal_5_flag
+				# has_global_flag = ghost_signal_4_flag
+				# has_global_flag = ghost_signal_3_flag
+				# has_global_flag = ghost_signal_2_flag
+				# has_global_flag = ghost_signal_1_flag Vfix: non-existent
 				has_policy_flag = ai_outlawed
 			}
 		}
@@ -1904,6 +1932,8 @@ utility_component_template = {
 		"tech_combat_computers_3"
 	}
 
+	upgrades_to = "COMBAT_COMPUTER_PLATFORM_PRECOG" # Vfix Ariphaos
+
 	ship_modifier = {
 		ship_fire_rate_mult = 0.35
 		ship_tracking_add = 25
@@ -1915,11 +1945,15 @@ utility_component_template = {
 		modifier = {
 			factor = 0
 			OR = {
-				has_global_flag = ghost_signal_5_flag
-				has_global_flag = ghost_signal_4_flag
-				has_global_flag = ghost_signal_3_flag
-				has_global_flag = ghost_signal_2_flag
-				# has_global_flag = ghost_signal_1_flag Vfix does not exists!?
+				AND = { # Vfix opt
+					has_global_flag = ai_ghost_signal
+					has_event_chain = ai_crisis_chain
+				}
+				# has_global_flag = ghost_signal_5_flag
+				# has_global_flag = ghost_signal_4_flag
+				# has_global_flag = ghost_signal_3_flag
+				# has_global_flag = ghost_signal_2_flag
+				# has_global_flag = ghost_signal_1_flag Vfix: non-existent
 				has_policy_flag = ai_outlawed
 			}
 		}

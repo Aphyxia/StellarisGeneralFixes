@@ -2214,8 +2214,8 @@ country_event = {
 			factor = 1
 			modifier = {
 				factor = 0
-				federation = { federation_cohesion >= 0 }
 				is_militarist = yes
+				federation = { federation_cohesion > 0 }
 			}
 		}
 	}

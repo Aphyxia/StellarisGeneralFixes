@@ -12020,9 +12020,18 @@ country_event = {
 			limit = {
 				calc_true_if = { # BUG CWT: says wrongly AND is unnecessary.
 					amount >= 2
-					AND = { exists = event_target:marauder_country_1 any_system_within_border = { has_star_flag = marauder_capital_1 } }
-					AND = { exists = event_target:marauder_country_2 any_system_within_border = { has_star_flag = marauder_capital_2 } }
-					AND = { exists = event_target:marauder_country_3 any_system_within_border = { has_star_flag = marauder_capital_3 } }
+					AND = {
+						exists = event_target:marauder_country_1
+						any_system_within_border = { has_star_flag = marauder_capital_1 }
+					}
+					AND = {
+						exists = event_target:marauder_country_2
+						any_system_within_border = { has_star_flag = marauder_capital_2 }
+					}
+					AND = {
+						exists = event_target:marauder_country_3
+						any_system_within_border = { has_star_flag = marauder_capital_3 }
+					}
 				}
 			}
 			# Get second right country
@@ -12393,9 +12402,18 @@ country_event = {
 				NOT = { exists = event_target:marauder_capital }
 				calc_true_if = { # BUG CWT: says wrongly AND is unnecessary.
 					amount >= 2
-					AND = { exists = event_target:marauder_country_1 any_system_within_border = { has_star_flag = marauder_capital_1 } }
-					AND = { exists = event_target:marauder_country_2 any_system_within_border = { has_star_flag = marauder_capital_2 } }
-					AND = { exists = event_target:marauder_country_3 any_system_within_border = { has_star_flag = marauder_capital_3 } }
+					AND = {
+						exists = event_target:marauder_country_1
+						any_system_within_border = { has_star_flag = marauder_capital_1 }
+					}
+					AND = {
+						exists = event_target:marauder_country_2
+						any_system_within_border = { has_star_flag = marauder_capital_2 }
+					}
+					AND = {
+						exists = event_target:marauder_country_3
+						any_system_within_border = { has_star_flag = marauder_capital_3 }
+					}
 				}
 			}
 			# Get First right country
@@ -12554,9 +12572,18 @@ country_event = {
 					limit = {
 						calc_true_if = { # BUG CWT: says wrongly AND is unnecessary.
 							amount >= 2
-							AND = { exists = event_target:marauder_country_1 any_system_within_border = { has_star_flag = marauder_capital_1 } }
-							AND = { exists = event_target:marauder_country_2 any_system_within_border = { has_star_flag = marauder_capital_2 } }
-							AND = { exists = event_target:marauder_country_3 any_system_within_border = { has_star_flag = marauder_capital_3 } }
+							AND = {
+								exists = event_target:marauder_country_1
+								any_system_within_border = { has_star_flag = marauder_capital_1 }
+							}
+							AND = {
+								exists = event_target:marauder_country_2
+								any_system_within_border = { has_star_flag = marauder_capital_2 }
+							}
+							AND = {
+								exists = event_target:marauder_country_3
+								any_system_within_border = { has_star_flag = marauder_capital_3 }
+							}
 						}
 					}
 					# Get Second right country

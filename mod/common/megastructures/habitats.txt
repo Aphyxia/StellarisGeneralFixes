@@ -222,7 +222,6 @@ habitat_central_complex_ruined = {
 	place_entity_on_planet_plane = no
 	show_in_outliner = no
 	entity_offset = { x = 7 y = -7 }
-
 	potential = {
 		always = no
 	}
