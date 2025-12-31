@@ -1,18 +1,26 @@
 # for use primarily with limited ship types, since this is an expensive check.
 hidden_effect = {
 	solar_system = {
-		every_ship_in_system = {
+		every_fleet_in_system = { # Vfix opt
 			limit = {
+				exists = controller
 				controller = {
-					is_hostile_to = from.controller
-				}
-				distance = {
-					source = root
-					max_distance <= $RANGE$
-					same_solar_system = yes
+					OR = {
+						is_hostile_to = from.controller # checks diplomatic relation
+						is_hostile = from.controller # fix by Alfray Stryke
+					}
 				}
 			}
-			damage_ship = $DAMAGE$
+			every_owned_ship = {
+				limit = {
+					distance = {
+						source = root
+						max_distance <= $RANGE$
+						same_solar_system = yes
+					}
+				}
+				damage_ship = $DAMAGE$
+			}
 		}
 	}
 }

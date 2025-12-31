@@ -1181,12 +1181,10 @@ country_event = {
 									is_loyal_to = prevprev
 								}
 								OR = {
-									is_hostile = prevprev
 									is_hostile_to = prevprev
 									has_attitude_behavior = { target = prevprev behavior = attack }
 									prevprev = {
 										OR = {
-											is_hostile = prev
 											is_hostile_to = prev
 											has_attitude_behavior = { target = prev behavior = attack }
 										}
@@ -1585,10 +1583,7 @@ country_event = {
 						can_generate_trade_value = yes
 						owner = {
 							NOT = { is_same_empire = event_target:raider_khanate }
-							OR = {
-								is_hostile_to = root
-								is_hostile = root
-							}
+							is_hostile_to = root
 						}
 						any_system_colony = {  }
 						prev = { can_access_system = prev }

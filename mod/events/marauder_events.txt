@@ -7612,7 +7612,7 @@ country_event = {
 				limit = {
 					exists = event_target:marauder_country_1
 					NOT = { is_same_empire = event_target:marauder_country_1 }
-					is_hostile_to = event_target:marauder_country_1
+					is_hostile = event_target:marauder_country_1
 				}
 				event_target:marauder_country_1 = {
 					establish_communications_no_message = root
@@ -7641,7 +7641,7 @@ country_event = {
 				limit = {
 					exists = event_target:marauder_country_2
 					NOT = { is_same_empire = event_target:marauder_country_2 }
-					is_hostile_to = event_target:marauder_country_2
+					is_hostile = event_target:marauder_country_2
 				}
 				event_target:marauder_country_2 = {
 					establish_communications_no_message = root
@@ -7670,7 +7670,7 @@ country_event = {
 				limit = {
 					exists = event_target:marauder_country_3
 					NOT = { is_same_empire = event_target:marauder_country_3 }
-					is_hostile_to = event_target:marauder_country_3
+					is_hostile = event_target:marauder_country_3
 				}
 				event_target:marauder_country_3 = {
 					establish_communications_no_message = root
