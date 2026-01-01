@@ -144,7 +144,7 @@ building_food_processing_facility = {
 	}
 
 	planet_modifier = {
-		planet_farmers_food_produces_add = 0.25
+		planet_farmers_produces_mult = 0.20
 	}
 
 	upgrades = {
@@ -231,12 +231,13 @@ building_food_processing_center = {
 	}
 
 	planet_modifier = {
-		planet_farmers_food_produces_add = 0.5
+		planet_farmers_produces_mult = 0.20
+		planet_farmers_food_produces_add = 2
 	}
 
 	triggered_planet_modifier = {
 		potential = { has_ringworld_output_boost = yes }
-		planet_farmers_food_produces_add = 0.25
+		planet_farmers_food_produces_add = 2
 	}
 
 	prerequisites = {
@@ -495,7 +496,7 @@ building_baol_organic_plant = {
 		script = buildings/planet_job_resource_produces_add
 		JOB = farmers
 		RESOURCE = food
-		AMOUNT = 0.25
+		AMOUNT = 1
 	}
 
 	# Additional farmer output (non-Archaeoengineering)
@@ -504,14 +505,14 @@ building_baol_organic_plant = {
 			has_owner = yes
 			owner = { country_uses_consumer_goods = yes }
 		}
-		planet_farmers_consumer_goods_produces_add = 0.10
+		planet_farmers_consumer_goods_produces_add = 0.5
 	}
 	triggered_planet_modifier = {
 		potential = {
 			has_owner = yes
 			owner = { country_uses_consumer_goods = no }
 		}
-		planet_farmers_energy_produces_add = 0.25
+		planet_farmers_energy_produces_add = 1
 	}
 
 	# Additional farmer output (with Archaeoengineering)
@@ -523,7 +524,7 @@ building_baol_organic_plant = {
 				has_ascension_perk = ap_archaeoengineers
 			}
 		}
-		planet_farmers_consumer_goods_produces_add = 0.125
+		planet_farmers_consumer_goods_produces_add = 0.5
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -533,7 +534,7 @@ building_baol_organic_plant = {
 				has_ascension_perk = ap_archaeoengineers
 			}
 		}
-		planet_farmers_energy_produces_add = 0.25
+		planet_farmers_energy_produces_add = 1
 	}
 
 	resources = {
@@ -695,7 +696,7 @@ building_mineral_purification_plant = {
 	}
 
 	planet_modifier = {
-		planet_miners_minerals_produces_add = 0.25
+		planet_miners_produces_mult = 0.20
 	}
 
 	upgrades = {
@@ -793,20 +794,24 @@ building_mineral_purification_hub = {
 		}
 	}
 
+	planet_modifier = {
+		planet_miners_produces_mult = 0.20
+	}
+
 	triggered_planet_modifier = {
 		potential = {
 			NOT = { is_planet_class = pc_shattered_ring_habitable }
 		}
-		planet_miners_minerals_produces_add = 0.5
+		planet_miners_minerals_produces_add = 2
 	}
 	triggered_planet_modifier = {
 		potential = { is_planet_class = pc_shattered_ring_habitable }
-		planet_miners_minerals_produces_add = 0.25
-		planet_miners_alloys_produces_add = 0.1
+		planet_miners_minerals_produces_add = 1
+		planet_miners_alloys_produces_add = 0.5
 	}
 	triggered_planet_modifier = {
 		potential = { has_ringworld_output_boost = yes }
-		planet_miners_minerals_produces_add = 0.25
+		planet_miners_minerals_produces_add = 2
 	}
 
 	prerequisites = {
@@ -1142,7 +1147,7 @@ building_energy_grid = {
 	}
 
 	planet_modifier = {
-		planet_technician_energy_produces_add = 0.25
+		planet_technician_produces_mult = 0.20
 	}
 
 	prerequisites = {
@@ -1224,12 +1229,13 @@ building_energy_nexus = {
 	}
 
 	planet_modifier = {
-		planet_technician_energy_produces_add = 0.5
+		planet_technician_produces_mult = 0.20
+		planet_technician_energy_produces_add = 2
 	}
 
 	triggered_planet_modifier = {
 		potential = { has_ringworld_output_boost = yes }
-		planet_technician_energy_produces_add = 0.25
+		planet_technician_energy_produces_add = 2
 	}
 
 	prerequisites = {
@@ -1518,13 +1524,6 @@ building_resource_silo = {
 		}
 		country_resource_max_add = 5000
 	}
-	triggered_country_modifier = {
-		potential = {
-			has_owner = yes
-			owner = { has_valid_civic = civic_machine_obsessional_directive }
-		}
-		country_resource_max_consumer_goods_add = 5000
-	}
 
 	prerequisites = {
 		"tech_basic_industry"
@@ -1651,7 +1650,7 @@ building_bio_reactor_2 = {
 	planet_modifier = {
 		planet_farmers_food_produces_add = -3
 		planet_farmers_energy_produces_add = 2
-		planet_farmers_exotic_gases_produces_add = 0.05
+		planet_farmers_exotic_gases_produces_add = 0.5
 	}
 
 	prerequisites = {

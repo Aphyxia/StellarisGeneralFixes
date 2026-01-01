@@ -10,6 +10,7 @@ produces = {
 	society_research = 2
 	engineering_research = 2
 }
+
 upkeep = {
 	trigger = {
 		planet = {
@@ -18,3 +19,4 @@ upkeep = {
 	}
 	consumer_goods = 2
 }
+
