@@ -1918,23 +1918,23 @@ zone_urban_food = {
 		urban
 	}
 
-	triggered_district_planet_modifier = {
-		potential = {
-			NOT = {
-				is_planet_class = pc_ringworld_habitable
-			}
-		}
-		planet_farmers_produces_mult = @zone_urban_rural_worker_produces_mult
-		planet_farmers_trade_upkeep_add = 0.5 # @zone_urban_rural_worker_trade_upkeep_add
-	}
-	triggered_district_planet_modifier = {
-		potential = {
-			is_planet_class = pc_ringworld_habitable
-		}
-		planet_farmers_produces_mult = @zone_urban_rural_worker_produces_mult
-		planet_farmers_trade_upkeep_add = 0.5 # @zone_urban_rural_worker_trade_upkeep_add
-		mult = 3 # 5
-	}
+	# triggered_district_planet_modifier = {
+	# 	potential = {
+	# 		NOT = {
+	# 			is_planet_class = pc_ringworld_habitable
+	# 		}
+	# 	}
+	# 	planet_farmers_produces_mult = @zone_urban_rural_worker_produces_mult
+	# 	planet_farmers_trade_upkeep_add = 0.5 # @zone_urban_rural_worker_trade_upkeep_add
+	# }
+	# triggered_district_planet_modifier = {
+	# 	potential = {
+	# 		is_planet_class = pc_ringworld_habitable
+	# 	}
+	# 	planet_farmers_produces_mult = @zone_urban_rural_worker_produces_mult
+	# 	planet_farmers_trade_upkeep_add = 0.5 # @zone_urban_rural_worker_trade_upkeep_add
+	# 	mult = 3 # 5
+	# }
 
 	triggered_desc = {
 		trigger = {

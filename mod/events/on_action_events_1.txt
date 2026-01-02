@@ -7374,14 +7374,11 @@ event = {
 	is_triggered_only = yes
 
 	trigger = {
-		any_country = { is_country_type = swarm }
+		exists = event_target:prethoryn # Vfix opt
+		# any_country = { is_country_type = swarm }
 	}
 
 	immediate = {
-		random_country = {
-			limit = { is_country_type = swarm }
-			save_event_target_as = prethoryn_swarm
-		}
 		every_galaxy_planet = {
 			limit = {
 				has_owner = yes
@@ -7417,7 +7414,7 @@ event = {
 					}
 				}
 				change_pc = pc_infested
-				set_owner = event_target:prethoryn_swarm
+				set_owner = event_target:prethoryn
 			}
 		}
 	}

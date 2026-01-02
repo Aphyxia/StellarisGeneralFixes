@@ -770,13 +770,13 @@ fleet_event = {
 
 	trigger = {
 		exists = owner
-		owner = {
-			is_country_type = default
-			has_technology = tech_doctrine_fleet_size_3
-			is_gestalt = no
-		}
 		is_being_repaired = yes
 		exists = leader
+		owner = {
+			is_country_type = default
+			is_gestalt = no
+			has_technology = tech_doctrine_fleet_size_3
+		}
 		leader = {
 			leader_class = commander
 			NOR = {
@@ -785,7 +785,7 @@ fleet_event = {
 			}
 		}
 	}
-
+	# Vfix TODO DEPRECATE
 	mean_time_to_happen = {
 		years = 20
 	}

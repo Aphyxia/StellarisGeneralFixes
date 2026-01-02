@@ -13,15 +13,23 @@ on_single_player_save_game_load = {
 on_monthly_pulse = {
 	events = {
 		crisis.1230 # Extradimensionals crisis sound
+		crisis.106 # Queen Breeds
 	}
 }
 
 # No scope, like on_game_start
-# on_yearly_pulse = {
+# on_bi_monthly_pulse = {
 # 	events = {
-# 		crisis.1100 # Extradimensionals Second Portal
+# 		crisis.106 # Queen Breeds
 # 	}
 # }
+
+# No scope, like on_game_start
+on_five_year_pulse = {
+	events = {
+		crisis.61 # Sentinel Reinforcements
+	}
+}
 
 # This = owner of fleet 1 (destroyed)
 # From = owner of fleet 2 (combatant)

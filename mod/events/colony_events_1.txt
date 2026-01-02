@@ -248,7 +248,10 @@ country_event = {
 
 	immediate = {
 		remove_country_flag = burned_forests_rampaged_country
-		fromfrom = { remove_planet_flag = burned_forests_rampaged_planet }
+		fromfrom = {
+			remove_planet_flag = burned_forests_rampaged_planet
+			clear_planet_purge_type = yes # Vfix
+		}
 	}
 
 	option = {
@@ -2801,6 +2804,7 @@ country_event = {
 		fromfrom = {
 			set_planet_flag = terraforming_mutants_defeated
 			remove_planet_flag = terraforming_mutants_invade_planet
+			clear_planet_purge_type = yes # Vfix
 		}
 	}
 
@@ -2999,6 +3003,7 @@ country_event = {
 		fromfrom = {
 			set_planet_flag = terraforming_mutants_defeated
 			remove_planet_flag = terraforming_mutants_won
+			clear_planet_purge_type = yes # Vfix
 			set_owner = root
 			create_pop_group = {
 				species = owner_species
@@ -3310,6 +3315,7 @@ country_event = {
 		remove_country_flag = vault_mutants_invade_country
 		fromfrom = {
 			remove_planet_flag = vault_mutants_won
+			clear_planet_purge_type = yes # Vfix
 			set_owner = root
 			create_pop_group = {
 				species = owner_species

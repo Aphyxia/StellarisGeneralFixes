@@ -3695,6 +3695,14 @@ country_event = {
 
 	immediate = {
 		set_country_flag = shroud_3025_happened
+		# Vfix gap: https://forum.paradoxplaza.com/forum/threads/stellaris-bug-with-shroud-event-4-2-4-7a03.1892368/
+		random_planet_within_border = {
+			limit = {
+				is_star = no # Vfix: it looks strange but it seems to be happen (somehow)
+				is_terraforming = yes
+			}
+			save_event_target_as = morphing_landscape_planet
+		}
 	}
 
 	option_clear = yes
@@ -3729,6 +3737,22 @@ country_event = {
 	desc = shroud.3025.a.reply
 	option_clear = yes
 
+	immediate = {
+		# Vfix: it looks strange but it seems to be happen (somehow)
+		if = {
+			limit = {
+				NOT = { exists = event_target:morphing_landscape_planet }
+			}
+			random_planet_within_border = {
+				limit = {
+					is_star = no
+					is_terraforming = yes
+				}
+				save_event_target_as = morphing_landscape_planet
+			}
+		}
+	}
+
 	option = {
 		name = LEAVE
 		add_monthly_resource_mult = {
@@ -3737,8 +3761,7 @@ country_event = {
 			min = @tier1materialmin
 			max = @tier1materialmax
 		}
-		random_planet_within_border = {
-			limit = { is_terraforming = yes }
+		event_target:morphing_landscape_planet = {
 			finish_terraformation = yes
 		}
 		add_attunement = { the_composer_of_strands = @delve_attunement_large_anti }
@@ -3753,6 +3776,24 @@ country_event = {
 	desc = shroud.3025.b.reply
 	option_clear = yes
 
+	immediate = {
+		# Vfix: it looks strange but it seems to be happen (somehow)
+		if = {
+			limit = {
+				NOT = {
+					exists = event_target:morphing_landscape_planet
+				}
+			}
+			random_planet_within_border = {
+				limit = {
+					is_star = no
+					is_terraforming = yes
+				}
+				save_event_target_as = morphing_landscape_planet
+			}
+		}
+	}
+
 	option = {
 		name = LEAVE
 		add_monthly_resource_mult = {
@@ -3761,8 +3802,7 @@ country_event = {
 			min = @tier1materialmin
 			max = @tier1materialmax
 		}
-		random_planet_within_border = {
-			limit = { is_terraforming = yes }
+		event_target:morphing_landscape_planet = {
 			finish_terraformation = yes
 			custom_tooltip = shroud.3025.b.reply.tt
 			hidden_effect = {

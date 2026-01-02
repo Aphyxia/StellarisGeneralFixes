@@ -12,6 +12,30 @@ event = {
 	}
 
 	immediate = {
+		if = {
+			limit = { has_global_flag = prethoryn_main_invasion }
+			if = {
+				limit = {
+					has_global_flag = ongoing_prethoryn_invasion
+					NOT = { exists = event_target:prethoryn }
+					any_country = { is_country_type = swarm }
+				}
+				random_country = {
+					limit = { is_country_type = swarm }
+					save_global_event_target_as = prethoryn # Vfix opt
+				}
+			}
+			random_playable_country = {
+				limit = {
+					is_ai = no
+					has_country_flag = queen_captured
+				}
+				random_owned_fleet = {
+					limit = { has_fleet_flag = pet_queen }
+					save_global_event_target_as = pet_queen
+				}
+			}
+		}
 		random_playable_country = {
 			limit = { is_ai = no }
 			# Fix Shroud engaging for non DLC players, just hack, reason unknown

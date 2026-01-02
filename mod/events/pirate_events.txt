@@ -783,13 +783,13 @@ fleet_event = {
 	hide_window = yes
 
 	trigger = {
-		NOT = { has_global_flag = privateers_destroyed }
 		exists = event_target:young_blood
+		NOT = { has_global_flag = privateers_destroyed }
 		is_same_value = event_target:young_blood
 		exists = solar_system
 		solar_system = { has_star_flag = pirate_home_system }
 	}
-
+	# Vfix TODO DEPRECATE
 	mean_time_to_happen = {
 		years = 50
 	}

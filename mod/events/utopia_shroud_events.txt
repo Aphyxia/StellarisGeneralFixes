@@ -6351,13 +6351,14 @@ fleet_event = {
 
 	trigger = {
 		has_global_flag = end_of_the_cycle_complete
-		NOT = { has_global_flag = end_of_the_cycle_orders_cooldown }
+		exists = owner
 		owner = { is_country_type = the_reckoning }
+		is_fleet_idle = yes
+		NOT = { has_global_flag = end_of_the_cycle_orders_cooldown }
 		any_playable_country = {
 			exists = event_target:the_end_of_the_cycle@this
 			event_target:the_end_of_the_cycle@this = { is_same_value = root }
 		}
-		is_fleet_idle = yes
 		any_system = {
 			any_system_planet = {
 				OR = {
@@ -6377,7 +6378,7 @@ fleet_event = {
 			}
 		}
 	}
-
+	# Vfix TODO DEPRECATE
 	mean_time_to_happen = {
 		months = 3
 	}
