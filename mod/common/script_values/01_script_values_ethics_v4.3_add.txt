@@ -1,6 +1,6 @@
 refugee_attraction_multiplier = {
 	base = 1
-	add = modifier:mod_refugee_attraction
+	add = modifier:refugee_attraction # Vfix!?
 	modifier = {
 		add = 0.3
 		has_valid_civic = civic_selective_kinship

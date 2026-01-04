@@ -349,7 +349,6 @@ first_contact_event = {
 			increase_hunted_fauna_count = yes
 		}
 		custom_tooltip = story.101.aa.amoebahunt
-		finish_first_contact_effect = yes
 		ai_chance = {
 			modifier = {
 				factor = 0

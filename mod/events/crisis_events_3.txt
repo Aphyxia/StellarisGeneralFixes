@@ -866,7 +866,7 @@ planet_event = {
 				civic = civic_machine_terminator
 				civic = civic_machine_warbots
 			}
-			type = "ai_empire"
+			type = ai_empire
 			name_list = "AI"
 			flag = {
 				icon = { category = "special" file = "ai_01.dds" }
@@ -894,6 +894,7 @@ planet_event = {
 				add_ship_design = last_created_design
 				create_ship_design = { design = "NAME_AI_STARBASE" }
 				add_ship_design = last_created_design
+				save_global_event_target_as = AI_crisis # Vfix opt
 				save_event_target_as = AI_crisis
 			}
 		}
@@ -959,9 +960,14 @@ planet_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		random_country = {
-			limit = { is_country_type = ai_empire }
-			save_event_target_as = AI_crisis
+		if = { # Vfix opt
+			limit = {
+				NOT = { exists = event_target:AI_crisis }
+			}
+			random_country = {
+				limit = { is_country_type = ai_empire }
+				save_global_event_target_as = AI_crisis
+			}
 		}
 		change_pc = pc_ai
 		reset_planet = yes
@@ -1047,9 +1053,18 @@ planet_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		random_country = {
-			limit = { is_country_type = ai_empire }
-			save_event_target_as = AI_crisis
+		if = { # Vfix opt
+			limit = {
+				NOT = {
+					exists = event_target:AI_crisis
+				}
+			}
+			random_country = {
+				limit = {
+					is_country_type = ai_empire
+				}
+				save_global_event_target_as = AI_crisis
+			}
 		}
 		change_pc = pc_ai
 		reset_planet = yes
@@ -1105,9 +1120,18 @@ planet_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		random_country = {
-			limit = { is_country_type = ai_empire }
-			save_event_target_as = AI_crisis
+		if = { # Vfix opt
+			limit = {
+				NOT = {
+					exists = event_target:AI_crisis
+				}
+			}
+			random_country = {
+				limit = {
+					is_country_type = ai_empire
+				}
+				save_global_event_target_as = AI_crisis
+			}
 		}
 		change_pc = pc_ai
 		reset_planet = yes
@@ -1612,7 +1636,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_country_type = "ai_empire"
+		is_country_type = ai_empire
 	}
 
 	immediate = {
@@ -1634,7 +1658,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		from = { is_country_type = "ai_empire" }
+		from = { is_country_type = ai_empire }
 	}
 
 	immediate = {
@@ -1675,11 +1699,12 @@ planet_event = {
 			}
 		}
 		exists = controller
-		controller = { is_country_type = "ai_empire" }
+		controller = { is_country_type = ai_empire }
 	}
 
 	immediate = {
-		controller = { save_event_target_as = contingency }
+		controller = { save_event_target_as = AI_crisis }
+
 		set_owner = controller
 		create_pop_group = { species = event_target:custodian_bot size = 300 } # Vfix opt
 		every_owned_pop_group = {
@@ -1690,7 +1715,7 @@ planet_event = {
 		}
 		while = { # Vfix opt minor
 			count = 6
-			create_army = { owner = event_target:contingency type = "robotic_defense_army" }
+			create_army = { owner = event_target:AI_crisis type = "robotic_defense_army" }
 		}
 		every_playable_country = {
 			limit = { has_event_chain = "ai_crisis_chain" }
@@ -1707,11 +1732,11 @@ planet_event = {
 						exists = starbase
 						any_system_colony = {
 							has_owner = yes
-							NOT = { is_owned_by = event_target:contingency }
+							NOT = { is_owned_by = event_target:AI_crisis }
 						}
 					}
 				}
-				create_starbase = { size = starbase_ai owner = event_target:contingency }
+				create_starbase = { size = starbase_ai owner = event_target:AI_crisis }
 				if = {
 					limit = {
 						NOT = { any_system_ambient_object = { has_ambient_object_flag = contingency_system_effect } }
@@ -1776,26 +1801,24 @@ planet_event = {
 
 	immediate = {
 		set_global_flag = ai_invasion_defeated
-		event_target:final_machine_world_destroyer = { set_country_flag = does_not_compute }
-		event_target:final_machine_world_destroyer = { set_country_flag = with_great_power_achievement }
-		if = {
-			limit = {
-				event_target:final_machine_world_destroyer = { is_ai = no }
-			}
-			event_target:final_machine_world_destroyer = {
+		event_target:final_machine_world_destroyer = { # Vfix opt minor
+			set_country_flag = does_not_compute
+			set_country_flag = with_great_power_achievemen
+			if = {
+				limit = { is_ai = no }
 				save_event_target_as = final_machine_world_player_destroyer
 			}
-		}
-		else_if = {
-			limit = {
-				any_playable_country = { is_ai = no has_country_flag = does_not_compute }
-			}
-			random_playable_country = {
+			else_if = {
 				limit = {
-					is_ai = no
-					has_country_flag = does_not_compute
+					any_playable_country = { is_ai = no has_country_flag = does_not_compute }
 				}
-				save_event_target_as = final_machine_world_player_destroyer
+				random_playable_country = {
+					limit = {
+						is_ai = no
+						has_country_flag = does_not_compute
+					}
+					save_event_target_as = final_machine_world_player_destroyer
+				}
 			}
 		}
 		if = {
@@ -1890,8 +1913,7 @@ planet_event = {
 				has_global_flag = cybrex_resurface
 				NOT = { has_global_flag = cybrex_destroyed }
 			}
-			random_country = {
-				limit = { is_country_type = cybrex_empire }
+			event_target:cybrex = { # Vfix opt
 				# Cybrex recall expeditionary fleets
 				every_country = {
 					limit = { has_country_flag = cybrex_donation }
@@ -1901,6 +1923,7 @@ planet_event = {
 				country_event = { id = crisis.2406 days = 360 random = 800 }
 			}
 		}
+		clear_global_event_target = AI_crisis
 	}
 }
 
@@ -1913,7 +1936,7 @@ planet_event = {
 	trigger = {
 		is_planet_class = pc_ai
 		NOT = { has_planet_flag = machine_lair }
-		owner = { is_country_type = "ai_empire" }
+		owner = { is_country_type = ai_empire }
 	}
 
 	immediate = {
@@ -1960,11 +1983,11 @@ planet_event = {
 	trigger = {
 		is_planet_class = pc_ai
 		NOT = { has_planet_flag = machine_lair }
-		owner = { is_country_type = "ai_empire" }
+		owner = { is_country_type = ai_empire }
 	}
 
 	immediate = {
-		owner = { save_event_target_as = AI_crisis }
+		owner = { save_global_event_target_as = AI_crisis }
 		create_ai_fleet = yes
 		create_ai_constructors = yes
 		planet_event = { id = crisis.2050 }
@@ -1980,7 +2003,7 @@ planet_event = {
 	trigger = {
 		is_planet_class = pc_ai
 		NOT = { has_planet_flag = machine_lair }
-		owner = { is_country_type = "ai_empire" }
+		owner = { is_country_type = ai_empire }
 	}
 
 	immediate = {
@@ -2033,11 +2056,11 @@ planet_event = {
 	trigger = {
 		is_planet_class = pc_ai
 		NOT = { has_planet_flag = machine_lair }
-		owner = { is_country_type = "ai_empire" }
+		owner = { is_country_type = ai_empire }
 	}
 
 	immediate = {
-		owner = { save_event_target_as = AI_crisis }
+		owner = { save_global_event_target_as = AI_crisis }
 		create_ai_armies = yes
 		planet_event = { id = crisis.2052 }
 	}
@@ -2494,13 +2517,13 @@ event = {
 	is_triggered_only = yes
 
 	trigger = {
+		has_global_flag = ai_ghost_signal
 		any_country = {
-			has_global_flag = ai_ghost_signal
+			has_country_flag = post_arrival_events_machine
 			OR = {
 				has_notification_modifier = ghost_signal_4_machine
 				has_notification_modifier = ghost_signal_5_machine
 			}
-			has_country_flag = post_arrival_events_machine
 		}
 	}
 
@@ -3368,106 +3391,174 @@ country_event = {
 }
 
 # Events to manage crisis sound loop
-country_event = {
+# Vfix OPT: all MTTH merged into one without
+event = {
 	id = crisis.2230
 	hide_window = yes
+	is_triggered_only = yes
 
 	trigger = {
-		is_country_type = ai_empire
-		has_crisis_stage_3 = yes
-		galaxy_percentage < 0.15
-	}
-
-	mean_time_to_happen = {
-		months = 1
+		has_global_flag = ai_invasion_ongoing
 	}
 
 	immediate = {
-		set_crisis_sound = ai_empire_ambient_stage_2
-		set_crisis_stage_2 = yes
+		event_target:global_event_country = {
+			set_variable = { which = exd_galaxy_percentage value = 0 }
+			if = { # Vfix opt
+				limit = {
+					NOT = {
+						exists = event_target:AI_crisis
+					}
+				}
+				random_country = {
+					limit = {
+						is_country_type = ai_empire
+					}
+					save_global_event_target_as = AI_crisis
+				}
+			}
+			event_target:AI_crisis = {
+				prev = {
+					set_variable = { which = tmp_ai_empire_gal_pct value = prev.trigger:galaxy_percentage }
+					if = {
+						limit = {
+							check_variable = { which = tmp_ai_empire_gal_pct value > exd_galaxy_percentage }
+						}
+						set_variable = { which = exd_galaxy_percentage value = tmp_ai_empire_gal_pct }
+					}
+				}
+			}
+			clear_variable = tmp_ai_empire_gal_pct
+			switch = {
+				trigger = has_global_flag
+				crisis_stage_4 = {
+					if = {
+						limit = {
+							check_variable = { which = exd_galaxy_percentage value < 0.3 }
+						}
+						set_crisis_sound = ai_empire_ambient_stage_3
+						set_crisis_stage_3 = yes
+					}
+				}
+				crisis_stage_3 = {
+					if = {
+						limit = {
+							check_variable = { which = exd_galaxy_percentage value > 0.4 }
+						}
+						set_crisis_sound = ai_empire_ambient_stage_final
+						set_crisis_stage_4 = yes
+					}
+					else_if = {
+						limit = {
+							check_variable = { which = exd_galaxy_percentage value < 0.15 }
+						}
+						set_crisis_sound = ai_empire_ambient_stage_2
+						set_crisis_stage_2 = yes
+					}
+				}
+				crisis_stage_2 = {
+					if = {
+						limit = {
+							check_variable = { which = exd_galaxy_percentage value > 0.2 }
+						}
+						set_crisis_sound = ai_empire_ambient_stage_3
+						set_crisis_stage_3 = yes
+					}
+				}
+				crisis_stage_1 = {
+					if = {
+						limit = {
+							check_variable = { which = exd_galaxy_percentage value > 0.05 }
+						}
+						set_crisis_sound = ai_empire_ambient_stage_2
+						set_crisis_stage_2 = yes
+					}
+				}
+			}
+		}
 	}
 }
 
-country_event = {
-	id = crisis.2231
-	hide_window = yes
-
-	trigger = {
-		is_country_type = ai_empire
-		has_crisis_stage_2 = yes
-		galaxy_percentage > 0.20
-	}
-
-	mean_time_to_happen = {
-		months = 1
-	}
-
-	immediate = {
-		set_crisis_sound = ai_empire_ambient_stage_3
-		set_crisis_stage_3 = yes
-	}
-}
-
-country_event = {
-	id = crisis.2232
-	hide_window = yes
-
-	trigger = {
-		is_country_type = ai_empire
-		has_crisis_stage_4 = yes
-		galaxy_percentage < 0.30
-	}
-
-	mean_time_to_happen = {
-		months = 1
-	}
-
-	immediate = {
-		set_crisis_sound = ai_empire_ambient_stage_3
-		set_crisis_stage_3 = yes
-	}
-}
-
-country_event = {
-	id = crisis.2233
-	hide_window = yes
-
-	trigger = {
-		is_country_type = ai_empire
-		has_crisis_stage_3 = yes
-		galaxy_percentage > 0.40
-	}
-
-	mean_time_to_happen = {
-		months = 1
-	}
-
-	immediate = {
-		set_crisis_sound = ai_empire_ambient_stage_final
-		set_crisis_stage_4 = yes
-	}
-}
-
-country_event = {
-	id = crisis.2234
-	hide_window = yes
-
-	trigger = {
-		is_country_type = ai_empire
-		has_crisis_stage_1 = yes
-		galaxy_percentage > 0.05
-	}
-
-	mean_time_to_happen = {
-		months = 1
-	}
-
-	immediate = {
-		set_crisis_sound = ai_empire_ambient_stage_2
-		set_crisis_stage_2 = yes
-	}
-}
-
+# country_event = {
+# 	id = crisis.2230
+# 	hide_window = yes
+# 	trigger = {
+# 		is_country_type = ai_empire
+# 		has_crisis_stage_3 = yes
+# 		galaxy_percentage < 0.15
+# 	}
+# 	mean_time_to_happen = {
+# 		months = 1
+# 	}
+# 	immediate = {
+# 		set_crisis_sound = ai_empire_ambient_stage_2
+# 		set_crisis_stage_2 = yes
+# 	}
+# }
+# country_event = {
+# 	id = crisis.2231
+# 	hide_window = yes
+# 	trigger = {
+# 		is_country_type = ai_empire
+# 		has_crisis_stage_2 = yes
+# 		galaxy_percentage > 0.20
+# 	}
+# 	mean_time_to_happen = {
+# 		months = 1
+# 	}
+# 	immediate = {
+# 		set_crisis_sound = ai_empire_ambient_stage_3
+# 		set_crisis_stage_3 = yes
+# 	}
+# }
+# country_event = {
+# 	id = crisis.2232
+# 	hide_window = yes
+# 	trigger = {
+# 		is_country_type = ai_empire
+# 		has_crisis_stage_4 = yes
+# 		galaxy_percentage < 0.30
+# 	}
+# 	mean_time_to_happen = {
+# 		months = 1
+# 	}
+# 	immediate = {
+# 		set_crisis_sound = ai_empire_ambient_stage_3
+# 		set_crisis_stage_3 = yes
+# 	}
+# }
+# country_event = {
+# 	id = crisis.2233
+# 	hide_window = yes
+# 	trigger = {
+# 		is_country_type = ai_empire
+# 		has_crisis_stage_3 = yes
+# 		galaxy_percentage > 0.40
+# 	}
+# 	mean_time_to_happen = {
+# 		months = 1
+# 	}
+# 	immediate = {
+# 		set_crisis_sound = ai_empire_ambient_stage_final
+# 		set_crisis_stage_4 = yes
+# 	}
+# }
+# country_event = {
+# 	id = crisis.2234
+# 	hide_window = yes
+# 	trigger = {
+# 		is_country_type = ai_empire
+# 		has_crisis_stage_1 = yes
+# 		galaxy_percentage > 0.05
+# 	}
+# 	mean_time_to_happen = {
+# 		months = 1
+# 	}
+# 	immediate = {
+# 		set_crisis_sound = ai_empire_ambient_stage_2
+# 		set_crisis_stage_2 = yes
+# 	}
+# }
 # Spawn Cybrex
 country_event = {
 	id = crisis.2400
@@ -3501,8 +3592,7 @@ country_event = {
 			# limit = { }
 			country_event = { id = crisis.2401 days = 2 }
 		}
-		random_country = {
-			limit = { is_country_type = cybrex_empire }
+		event_target:cybrex = { # Vfix opt
 			country_event = { id = crisis.2421 days = 4 }
 			country_event = { id = crisis.2421 days = 120 }
 			country_event = { id = crisis.2421 days = 320 }
@@ -3686,8 +3776,8 @@ country_event = {
 			# limit = { }
 			country_event = { id = crisis.2407 }
 		}
-		random_country = { # Triggered this way to avoid game over when testing
-			limit = { is_country_type = cybrex_empire }
+		event_target:cybrex = { # Triggered this way to avoid game over when testing
+			# limit = { is_country_type = cybrex_empire }
 			every_owned_pop_group = { kill_all_pop = yes }
 			every_controlled_fleet = { delete_fleet = this }
 			every_controlled_planet = { remove_all_buildings = yes }
@@ -3696,6 +3786,7 @@ country_event = {
 				change_pc = pc_ringworld_habitable
 				reset_planet = yes
 			}
+			clear_global_event_target = cybrex
 			destroy_country = yes
 		}
 	}
@@ -3754,10 +3845,6 @@ country_event = {
 	}
 
 	immediate = {
-		random_country = {
-			limit = { is_country_type = ai_empire }
-			save_event_target_as = contingency
-		}
 		create_leader = {
 			class = commander
 			species = owner_species
@@ -3772,7 +3859,7 @@ country_event = {
 			save_event_target_as = cybrex_home
 			create_fleet = {
 				effect = {
-					set_owner = event_target:cybrex
+					set_owner = root
 					while = {
 						count = 10
 						create_ship = {
@@ -3817,10 +3904,6 @@ country_event = {
 	}
 
 	immediate = {
-		random_country = {
-			limit = { is_country_type = ai_empire }
-			save_event_target_as = contingency
-		}
 		create_leader = {
 			class = commander
 			species = owner_species
@@ -3835,7 +3918,7 @@ country_event = {
 			save_event_target_as = cybrex_home
 			create_fleet = {
 				effect = {
-					set_owner = event_target:cybrex
+					set_owner = root
 					while = {
 						count = 10
 						create_ship = {
@@ -3908,8 +3991,8 @@ country_event = {
 			has_country_flag = cybrex_donation
 			check_variable = { which = "contingency_fleet_kills" value <= 100 }
 		}
-		any_country = {
-			is_country_type = cybrex_empire
+		exists = event_target:cybrex
+		event_target:cybrex = { # Vfix opt
 			NOR = {
 				count_controlled_ship = { count <= 30 }
 				root = { is_at_war_with = prev }

@@ -269,18 +269,29 @@ planet_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		create_country = {
-			name = "NAME_Titanic_Life"
-			type = faction
-			effect = {
-				establish_communications_no_message = root.owner
-			}
-		}
 		create_species = {
 			name = "NAME_Titans"
 			class = random_non_machine
 			portrait = random
-			traits = random
+			homeworld = root
+			extra_trait_points = 4
+			traits = {
+				trait = "trait_very_strong"
+				trait = "trait_resilient"
+				trait = "trait_repugnant"
+				trait = "trait_noxious"
+				trait = "trait_unruly"
+				trait = "trait_limited_regeneration"
+			}
+		}
+		create_country = {
+			name = "NAME_Titanic_Life"
+			type = faction
+			species = last_created_species
+			effect = {
+				set_country_flag = titanic_life_faction
+				establish_communications_no_message = root.owner
+			}
 		}
 		create_army = {
 			name = "NAME_Enraged_Guardian"
@@ -288,24 +299,63 @@ planet_event = {
 			species = last_created_species
 			type = "titanic_guardian_army"
 		}
-		create_army = {
-			name = "NAME_Enraged_Titan"
-			owner = last_created_country
-			species = last_created_species
-			type = "titanic_guardian_army"
+		while = {
+			count = 3
+			create_army = {
+				name = "NAME_Enraged_Titan"
+				owner = last_created_country
+				species = last_created_species
+				type = "titanic_guardian_army"
+			}
 		}
-		create_army = {
-			name = "NAME_Enraged_Titan"
-			owner = last_created_country
-			species = last_created_species
-			type = "titanic_guardian_army"
-		}
-		set_planet_purge_type = purge_displacement
+		# set_planet_purge_type = purge_displacement # only when won, see colony_mod.103
 	}
 
 	option = {
 		name = TERRIBLE
 		custom_tooltip = titanic_uprising_tooltip
+	}
+}
+
+# Vfix New
+# Victory Titans
+country_event = {
+	id = colony_mod.103
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = faction
+		# has_country_flag = titanic_life_faction # Lets rampage anyway
+		fromfrom = { has_planet_flag = titanic_life_colony_flag }
+	}
+
+	immediate = {
+		fromfrom = {
+			set_planet_purge_type = purge_displacement # Vfix only if won
+			# clear_planet_purge_type = yes # Vfix only if lost, gets applied on general event
+			if = {
+				limit = {
+					NOT = { has_deposit = d_titanic_life_blocker }
+				}
+				add_deposit = d_titanic_life_blocker
+			}
+			remove_modifier = "eat_the_titans"
+			remove_modifier = "eat_the_titans_evopred"
+			remove_planet_flag = nice_titan_study
+			if = {
+				limit = {
+					NOT = { has_modifier = titanic_life }
+				}
+				add_modifier = { modifier = titanic_life }
+			}
+			create_army = {
+				name = "NAME_Enraged_Guardian"
+				owner = root
+				species = root
+				type = "titanic_guardian_army"
+			}
+		}
 	}
 }
 

@@ -880,8 +880,10 @@ building_medical_2 = {
 					NOT = { has_valid_civic = civic_private_healthcare_corporate }
 				}
 				NOR = { # Vfix (dissolved unnecessary prev)
-					has_branch_office = yes
-					branch_office_owner = { has_valid_civic = civic_private_healthcare_corporate }
+					AND = {
+						has_branch_office = yes
+						branch_office_owner = { has_valid_civic = civic_private_healthcare_corporate }
+					}
 					planet_stability <= 70
 					free_amenities <= 2000 # Vfix?
 				}

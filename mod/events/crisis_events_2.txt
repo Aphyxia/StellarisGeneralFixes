@@ -3032,124 +3032,7 @@ country_event = {
 	}
 }
 
-# New Vfix opt by FirePrince
-# Anchor Destroyed (HIDDEN)
-starbase_event = {
-	id = crisis.1284
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		is_ship_size = starbase_exd
-		has_global_flag = extradimensional_invasion_happened
-		exists = owner
-		owner = {
-			OR = {
-				is_country_type = extradimensional
-				is_country_type = extradimensional_2
-				is_country_type = extradimensional_3
-			}
-		}
-	}
-
-	immediate = {
-		log = "anchor destroyed event crisis.1284 triggered"
-		owner = {
-			save_event_target_as = starbase_exd_owner
-			switch = { # Vfix opt
-				trigger = is_country_type
-				extradimensional = {
-					every_playable_country = {
-						limit = { has_event_chain = "extradimensional_invasion_chain" }
-						add_event_chain_counter = { event_chain = "extradimensional_invasion_chain" counter = "dimensional_anchors_1" amount = -1 }
-					}
-					if = {
-						limit = { NOT = { any_controlled_fleet = { is_ship_size = starbase_exd } } }
-						event_target:portal_holder_1 = { # Vfix opt
-							random_controlled_ship = {
-								limit = {
-									is_ship_size = dimensional_portal_ed
-									has_ship_flag = unbidden_portal
-								}
-								fleet = { set_owner = root set_event_locked = no }
-							}
-						}
-					}
-				}
-				extradimensional_2 = {
-					every_playable_country = {
-						limit = { has_event_chain = "extradimensional_invasion_chain_2" }
-						add_event_chain_counter = { event_chain = "extradimensional_invasion_chain_2" counter = "dimensional_anchors_2" amount = -1 }
-					}
-					if = {
-						limit = { NOT = { any_controlled_fleet = { is_ship_size = starbase_exd } } }
-						event_target:portal_holder_1 = { # Vfix opt
-							random_controlled_ship = {
-								limit = {
-									is_ship_size = dimensional_portal_ed
-									has_ship_flag = aberrant_portal
-								}
-								fleet = { set_owner = root set_event_locked = no }
-							}
-						}
-					}
-				}
-				extradimensional_3 = {
-					every_playable_country = {
-						limit = { has_event_chain = "extradimensional_invasion_chain_3" }
-						add_event_chain_counter = { event_chain = "extradimensional_invasion_chain_3" counter = "dimensional_anchors_3" amount = -1 }
-					}
-					if = {
-						limit = { NOT = { any_controlled_fleet = { is_ship_size = starbase_exd } } }
-						event_target:portal_holder_1 = { # Vfix opt
-							random_controlled_ship = {
-								limit = {
-									is_ship_size = dimensional_portal_ed
-									has_ship_flag = vehement_portal
-								}
-								fleet = { set_owner = root set_event_locked = no }
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-
-	# Vfix Double check (as it is too risky for very important event)
-	after = {
-		event_target:starbase_exd_owner = {
-			if = {
-				limit = {
-					NOT = { any_controlled_fleet = { is_ship_size = starbase_exd } }
-				}
-				# Vfix opt
-				event_target:portal_holder_1 = {
-					random_controlled_ship = {
-						limit = {
-							is_ship_size = dimensional_portal_ed
-							OR = {
-								AND = {
-									prevprev = { has_country_flag = unbidden }
-									has_ship_flag = unbidden_portal
-								}
-								AND = {
-									prevprev = { has_country_flag = aberrant }
-									has_ship_flag = aberrant_portal
-								}
-								AND = {
-									prevprev = { has_country_flag = vehement }
-									has_ship_flag = vehement_portal
-								}
-							}
-						}
-						fleet = { set_owner = root set_event_locked = no }
-					}
-				}
-			}
-		}
-	}
-}
+# id = crisis.1281 moved for compatibility
 
 # Extradimensional Kill Count (HIDDEN)
 country_event = {
@@ -3271,6 +3154,7 @@ event = {
 	is_triggered_only = yes
 
 	trigger = {
+		# Vfix: Unfortunately the crisis has no _ongoing flag as the other ones (so we need 2 flag check)
 		has_global_flag = extradimensional_invasion_happened
 		NOT = { has_global_flag = extradimensional_invasion_defeated }
 	}
@@ -3590,44 +3474,11 @@ country_event = {
 	}
 }
 
-# New Vfix opt by FirePrince
-# Extradimensionals Starbase Destroyed: Remove System Effect
-starbase_event = {
-	id = crisis.1312
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		OR = {
-			is_ship_size = starbase_exd_0
-			is_ship_size = starbase_exd
-		}
-		# exists = owner
-		# owner = {
-		# 	OR = {
-		# 		is_country_type = extradimensional
-		# 		is_country_type = extradimensional_2
-		# 		is_country_type = extradimensional_3
-		# 	}
-		# }
-	}
-
-	immediate = {
-		solar_system = {
-			random_system_ambient_object = {
-				limit = { has_ambient_object_flag = extradimensional_system_effect }
-				destroy_ambient_object = this
-			}
-		}
-	}
-}
-
 # Extradimensionals Destroyed Starbase
 starbase_event = {
 	id = crisis.1320
 	hide_window = yes
 	is_triggered_only = yes
-
 	trigger = {
 		has_global_flag = extradimensional_invasion_happened
 		# NOT = { has_global_flag = extradimensional_invasion_defeated }
@@ -3640,15 +3491,23 @@ starbase_event = {
 		}
 		NOT = {
 			solar_system = {
-				any_system_colony = { has_owner = yes } # For populated systems, they need to destroy the colonies
+				any_system_colony = {
+					has_owner = yes
+				}
+				# For populated systems, they need to destroy the colonies
 			}
 		}
 	}
-
 	immediate = {
-		solar_system = { save_event_target_as = starbase_system }
+		solar_system = {
+			save_event_target_as = starbase_system
+		}
 		from.owner = {
-			country_event = { id = crisis.1321 days = 5 } # Delay so that destroyed starbase is properly cleared out
+			country_event = {
+				id = crisis.1321
+				days = 5
+			}
+			# Delay so that destroyed starbase is properly cleared out
 		}
 	}
 }

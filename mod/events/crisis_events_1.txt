@@ -1502,26 +1502,6 @@ fleet_event = {
 	}
 }
 
-# Sentinel Reinforcements (on_five_year_pulse)
-event = {
-	id = crisis.61
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		has_global_flag = ongoing_prethoryn_invasion
-		has_global_flag = sentinels_founded
-		exists = event_target:sentinel_alpha
-		any_country = { is_country_type = sentinels num_ships < 200 }
-	}
-
-	immediate = {
-		event_target:sentinel_alpha = {
-			fleet_event = { id = crisis.60 }
-		}
-	}
-}
-
 # Swarm Kill Count
 country_event = {
 	id = crisis.70
@@ -2552,7 +2532,6 @@ planet_event = {
 			random_country = {
 				limit = { is_country_type = swarm }
 				save_global_event_target_as = prethoryn
-				save_event_target_as = prethoryn
 			}
 		}
 		if = {
@@ -2586,7 +2565,6 @@ event = {
 			random_country = {
 				limit = { is_country_type = swarm }
 				save_global_event_target_as = prethoryn
-				save_event_target_as = prethoryn
 			}
 		}
 		event_target:prethoryn = {
@@ -2642,7 +2620,6 @@ event = {
 			random_country = {
 				limit = { is_country_type = swarm }
 				save_global_event_target_as = prethoryn
-				save_event_target_as = prethoryn
 			}
 		}
 		event_target:prethoryn = {
@@ -2856,7 +2833,10 @@ country_event = {
 		clear_global_event_target = prethoryn
 		stop_crisis_sound = yes
 		end_crisis = yes
-		from = { set_country_flag = with_great_power_achievement }
+		if = {
+			limit = { exists = from } # Vfix
+			from = { set_country_flag = with_great_power_achievement }
+		}
 		remove_global_flag = ongoing_prethoryn_invasion
 		set_global_flag = prethoryn_invasion_defeated
 		observer_event = { id = observer.33 }
@@ -3156,8 +3136,9 @@ event = {
 	immediate = {
 		event_target:global_event_country = {
 			set_variable = { which = exd_galaxy_percentage value = 0 }
-			random_country = {
-				limit = { is_country_type = swarm }
+			# random_country = {
+			# 	limit = { is_country_type = swarm }
+			event_target:prethoryn = {
 				prev = {
 					set_variable = { which = tmp_swarm_gal_pct value = prev.trigger:galaxy_percentage }
 					if = {
@@ -3365,7 +3346,6 @@ event = {
 			random_country = {
 				limit = { is_country_type = swarm }
 				save_global_event_target_as = prethoryn
-				save_event_target_as = prethoryn
 			}
 		}
 		event_target:prethoryn = {

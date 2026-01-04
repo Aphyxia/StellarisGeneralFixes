@@ -18,7 +18,10 @@ ship_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { owner = { has_country_flag = built_observation_post } }
+		exists = owner
+		owner = {
+			NOT = { has_country_flag = built_observation_post }
+		}
 	}
 
 	immediate = {

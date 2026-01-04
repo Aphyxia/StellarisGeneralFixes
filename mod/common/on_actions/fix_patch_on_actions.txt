@@ -12,8 +12,10 @@ on_single_player_save_game_load = {
 # No scope, like on_game_start
 on_monthly_pulse = {
 	events = {
-		crisis.1230 # Extradimensionals crisis sound
 		crisis.106 # Queen Breeds
+		crisis.230 # Prethoryn crisis sound
+		crisis.1230 # Extradimensionals crisis sound
+		crisis.2230 # Contingency crisis sound
 	}
 }
 
@@ -27,7 +29,7 @@ on_monthly_pulse = {
 # No scope, like on_game_start
 on_five_year_pulse = {
 	events = {
-		crisis.61 # Sentinel Reinforcements
+		crisis.233 # Sentinel Reinforcements
 	}
 }
 
@@ -47,5 +49,16 @@ on_starbase_destroyed = {
 	events = {
 		crisis.1312 # Extradimensionals
 		crisis.1284 # Extradimensionals Anchor Destroyed (replaces .1281)
+	}
+}
+
+# Triggers country_event for the attacker upon victory (before controller is switched)
+# This = country, lead attacker
+# From = country, planet owner
+# FromFrom = planet
+# 'Attacker' is the side that __STR_0__ to the planet controller. For example: spawned monster armies are attackers, but if they win and the player attempts to retake the planet, the player is the attacker
+on_planet_attackers_win = {
+	events = {
+		colony_mod.103 # Titanic Life
 	}
 }

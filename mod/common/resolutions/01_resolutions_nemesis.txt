@@ -2595,7 +2595,10 @@ resolution_custodian_disband_gdf = {
 		modifier = {
 			factor = 20
 			OR = {
-				is_rival = from
+				AND = {
+					exists = from # Vfix log?
+					is_rival = from
+				}
 				any_rival_country = { is_galactic_custodian = yes }
 			}
 			desc = gal_com_target_is_rival

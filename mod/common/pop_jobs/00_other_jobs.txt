@@ -172,16 +172,6 @@ slave_processing = {
 		}
 	}
 
-	promotion = { # Vfix TEST
-		time = 0
-		effect = {
-			pop_amount_change_category = {
-				CATEGORY = slave_unemployment
-				AMOUNT = local_pop_amount
-			}
-		}
-	}
-
 	possible_pre_triggers = {
 		has_owner = yes
 		is_being_assimilated = no
@@ -192,8 +182,8 @@ slave_processing = {
 		NOR = {
 			is_pop_category = slave
 			is_pop_category = chip_slave
-			# is_pop_category = criminal
-			# has_slavery_type = { type = slavery_orderly }
+			is_pop_category = criminal
+			has_slavery_type = { type = slavery_orderly }
 			is_pop_category = slave_unemployment
 		}
 		hidden_trigger = { exists = owner }
@@ -298,7 +288,6 @@ presapient_unprocessing = {
 
 	possible_pre_triggers = {
 		has_owner = yes
-		is_sapient = yes # Vfix
 		is_being_assimilated = no
 		is_being_purged = no
 		is_enslaved = no
@@ -306,6 +295,7 @@ presapient_unprocessing = {
 
 	possible = {
 		is_pop_category = pre_sapients
+		is_sapient = yes
 	}
 }
 
@@ -323,7 +313,7 @@ servant = {
 
 	possible_pre_triggers = {
 		has_owner = yes
-		is_sapient = yes # Vfix
+		is_sapient = yes
 		is_being_assimilated = no
 		is_being_purged = no
 	}
@@ -359,7 +349,7 @@ slave_overseer = {
 
 	possible_pre_triggers = {
 		has_planet = yes
-		is_sapient = yes # Vfix
+		is_sapient = yes
 		is_enslaved = yes
 	}
 
@@ -400,7 +390,7 @@ slave_toiler = {
 
 	possible_pre_triggers = {
 		has_planet = yes
-		is_sapient = yes # Vfix
+		is_sapient = yes
 		is_enslaved = yes
 	}
 
@@ -2432,13 +2422,14 @@ presapient_processing = {
 		is_being_purged = no
 	}
 	possible = {
-		NOT = {
+		NOR = {
+			is_sapient = yes
 			is_pop_category = pre_sapients
 		}
 	}
 
 	weight = {
-		weight = 999
+		weight = 9999
 	}
 }
 

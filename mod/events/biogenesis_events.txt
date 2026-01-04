@@ -4861,19 +4861,31 @@ planet_event = {
 
 	trigger = {
 		from = { is_ai = no } # Vfix PATCH|OPT
-		pop_amount > 100 # Vfix opt
+		# pop_amount > 100 # Vfix opt
 		fromfrom = { has_trait = trait_nascent_stage }
 		check_variable = { which = local_pop_amount value > 0 }
 	}
 
 	immediate = {
+		# Vfix: this is somehow very performance intense.
 		fromfrom = {
-			modify_species = {
-				species = species
-				add_trait = trait_presapient_stage
-				inherit_parent_rights = yes
-				sapient = no
+			if = { # Vfix opt
+				limit = {
+					NOT = { exists = event_target:ascent_stage_species@species }
+				}
+				species = { save_event_target_as = nascent_stage_source_species }
+				modify_species = {
+					species = species
+					add_trait = trait_presapient_stage
+					inherit_parent_rights = yes
+					sapient = no
+					change_scoped_species = no
+					effect = {
+						save_global_event_target_as = ascent_stage_species@nascent_stage_source_species
+					}
+				}
 			}
+			change_species = event_target:ascent_stage_species@species
 		}
 	}
 }
@@ -5028,7 +5040,7 @@ espionage_operation_event = {
 	}
 }
 
-# Finalé | from = operation
+# FinalÃ© | from = operation
 country_event = {
 	id = bio.815
 	title = bio.815.name
