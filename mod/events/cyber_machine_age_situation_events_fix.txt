@@ -43,8 +43,10 @@ situation_event = {
 						pop_group_has_ethic = ethic_spiritualist
 						pop_group_has_trait = trait_cybernetic
 						pop_group_has_trait = trait_limited_cybernetic
-						is_pre_sapient = yes # Vfix
-						has_genesis_preserve_trait = yes # Vfix https://forum.paradoxplaza.com/forum/threads/1833451/
+						AND = { # Vfix https://forum.paradoxplaza.com/forum/threads/1833451/
+							is_pre_sapient = yes
+							has_genesis_preserve_trait = yes
+						}
 					}
 				}
 				save_event_target_as = changing_pop_group  # VFIX DEPRECATED (kept for backward compat): just put it in the effect too
@@ -157,8 +159,10 @@ situation_event = {
 					NOR = {
 						pop_group_has_trait = trait_cybernetic
 						pop_group_has_trait = trait_limited_cybernetic
-						is_pre_sapient = yes # Vfix
-						has_genesis_preserve_trait = yes # Vfix https://forum.paradoxplaza.com/forum/threads/1833451/
+						AND = { # Vfix https://forum.paradoxplaza.com/forum/threads/1833451/
+							is_pre_sapient = yes
+							has_genesis_preserve_trait = yes
+						}
 					}
 				}
 				save_event_target_as = changing_pop_group  # VFIX DEPRECATED (kept for backward compat): just put it in the effect too
@@ -281,8 +285,10 @@ situation_event = {
 					NOR = {
 						pop_group_has_trait = trait_cybernetic
 						pop_group_has_trait = trait_limited_cybernetic
-						is_pre_sapient = yes # Vfix
-						has_genesis_preserve_trait = yes # Vfix https://forum.paradoxplaza.com/forum/threads/1833451/
+						AND = { # Vfix https://forum.paradoxplaza.com/forum/threads/1833451/
+							is_pre_sapient = yes
+							has_genesis_preserve_trait = yes
+						}
 					}
 				}
 				save_event_target_as = changing_pop_group  # VFIX DEPRECATED (kept for backward compat): just put it in the effect too
@@ -376,8 +382,10 @@ situation_event = {
 						pop_group_has_trait = trait_cybernetic
 						pop_group_has_trait = trait_limited_cybernetic
 						# has_pop_group_flag = cyber_hive_defective_pop removed in v4.0
-						is_pre_sapient = yes # Vfix
-						has_genesis_preserve_trait = yes # Vfix https://forum.paradoxplaza.com/forum/threads/1833451/
+						AND = { # Vfix https://forum.paradoxplaza.com/forum/threads/1833451/
+							is_pre_sapient = yes
+							has_genesis_preserve_trait = yes
+						}
 					}
 				}
 				save_event_target_as = changing_pop_group  # VFIX DEPRECATED (kept for backward compat): just put it in the effect too

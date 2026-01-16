@@ -1480,7 +1480,7 @@ fleet_event = {
 		from.solar_system = {
 			spawn_megastructure = {
 				type = "habitat_central_complex"
-				name = NAME_Hold_the_line_habitat
+				name = "site_hold_the_line" # Vfix
 				planet = from
 				owner = owner
 			}

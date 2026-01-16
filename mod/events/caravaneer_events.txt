@@ -903,6 +903,7 @@ country_event = {
 				limit = {
 					NOT = { has_country_flag = buying_boxes }
 				}
+				# set_timed_country_flag = { flag = lootboxed_recently days = 500 } TODO TEST
 				set_saved_date = {
 					key = lootboxed_recently
 					days_from_present = 500
@@ -4364,9 +4365,7 @@ country_event = {
 					}
 					country_event = { id = cara.4041 days = 200 random = 140 }
 				}
-				20 = {
-					# no effect
-				}
+				20 = {  }
 			}
 		}
 	}
@@ -4511,24 +4510,25 @@ country_event = {
 	}
 }
 
+# DEPRECATED: replaced by cara.4102
+# Vfix by https://forum.paradoxplaza.com/forum/threads/are-the-caravaneer-neighbor-events-working-these-days.1894052/#post-31040088
 country_event = {
 	id = cara.4101
 	hide_window = yes
 	is_triggered_only = yes
+	is_test_event = yes
+	fire_only_once = yes
 
 	trigger = {
-		is_country_type = caravaneer_home
-		any_neighbor_country = { is_country_type = default is_homicidal = no }
+		is_ai = no
+		exists = event_target:caravaneer_home_country
+		# is_country_type = default
+		is_homicidal = no
+		any_neighbor_country = { is_country_type = caravaneer_home has_communications = root }
 	}
 
 	immediate = {
-		every_neighbor_country = {
-			limit = {
-				is_country_type = default
-				is_homicidal = no
-			}
-			country_event = { id = cara.4100 }
-		}
+		country_event = { id = cara.4100 }
 	}
 }
 
@@ -4539,8 +4539,8 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_country_type = default
-		is_homicidal = no
+		# is_country_type = default
+		# is_homicidal = no
 		any_system_within_border = {
 			closest_system = {
 				min_steps = 0
@@ -4584,9 +4584,7 @@ country_event = {
 			}
 		}
 		random_list = {
-			500 = {
-				# no effect
-			}
+			500 = {  }
 			10 = { country_event = { id = cara.4110 } }
 			10 = { # No factor 0 modifier as I don't want the remaining option to be more common.
 				if = {
@@ -4837,9 +4835,7 @@ planet_event = {
 						}
 					}
 				}
-				20 = {
-					# no effect
-				}
+				20 = {  }
 			}
 		}
 	}

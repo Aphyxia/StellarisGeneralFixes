@@ -1,5 +1,5 @@
-l_english:
-# REMOVEME in v4.4
+﻿l_english:
+# REMOVEME in v4.3
 #  amoeba_encountered:0 "REPLACE_ME"
 #  ap_evolutionary_mastery_desc:0 "REPLACE_ME"
 #  ap_evolutionary_mastery_modifier_desc:0 "REPLACE_ME"
@@ -100,7 +100,7 @@ l_english:
 #  mod_job_ship_weapons_officer_add:0 "REPLACE_ME"
 #  mod_job_special_operations_commander_add:0 "REPLACE_ME"
 #  mod_refugee_attraction:0 "REPLACE_ME"
- NAME_Hold_the_line_habitat:0 "Hold the line"
+ # NAME_Hold_the_line_habitat:0 "$site_hold_the_line$"
 #  personality_galactic_defense_force_desc:0 "REPLACE_ME"
 #  personality_galactic_defense_force:0 "REPLACE_ME"
 #  planetmoon_RULOC_ACC:0 "REPLACE_ME"

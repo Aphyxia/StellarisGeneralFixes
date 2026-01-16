@@ -1,0 +1,123 @@
+# Events are commented out because they are conflicts or redundant
+on_game_start = {
+	events = {
+		ariphaos_patch.1 # Event for version tracking.
+		# Game and galaxy evaluation
+		# ariphaos_patch.10001
+		# ariphaos_patch.3101
+	}
+}
+
+on_game_start_country = {
+	events = {
+		ariphaos_patch.7 # Pacify for caravaneers.
+	}
+}
+
+on_single_player_save_game_load = {
+	events = {
+		ariphaos_patch.1 # Event for version tracking.
+		# ariphaos_patch.10001 # Game and galaxy evaluation
+		# ariphaos_patch.459 # Troop counts
+	}
+}
+
+# No scope, like on_game_start
+# on_monthly_pulse = {
+# 	events = {
+# 		# Accelerated murder if a planet with purging has many pops.
+# 	}
+# }
+
+# No scope, like on_game_start
+# on_yearly_pulse = {
+# 	events = {
+# 		ariphaos_patch.92 # Fix for bugged infested worlds.
+# 		ariphaos_patch.459 # Troop counts
+# 	}
+# }
+
+on_bi_yearly_pulse = {
+	events = {
+		# Game and galaxy evaluation
+		# ariphaos_patch.10001 Galaxy size again?
+		distar.50630 # Get rid of the Enigmatic Cache
+	}
+}
+
+# this = country
+# on_yearly_pulse_country = {
+# 	events = {
+# 		ariphaos_patch.3 # Grant living metal option if appropriate.
+# 		ariphaos_patch.7 # Pacify for caravaneers.
+# 		crisis.1266      # Make sure extradimensionals don't lose their construction ships.
+# 		leviathans.3208  # Replaces variable MTTH event for hiver spawn.
+# 	}
+# }
+
+on_building_starbase_outpost = {
+	events = {
+		anomaly.16001 # Vanilla fix Special Project Study Nanite Swarm
+	}
+}
+
+on_planet_transfer = {
+	events = {
+		# ariphaos_patch.101
+		ariphaos_patch.1330 # artistic_boom
+	 }
+}
+
+# Called when a Starbase changes owner
+# THIS = Ship (Starbase)
+# FROM = Former Owner (Country)
+on_starbase_transfer = {
+	events = {
+		anomaly.16001 # Vanilla fix Special Project Study Nanite Swarm
+	}
+}
+
+
+# A ship has surveyed a planet.
+# Scope = Ship
+# From = Planet
+on_survey_planet = {
+	events = {
+		ariphaos_patch.2 # Triggers first signs of alien life event for certain types of surveyed planets.
+		distar.23100 # Risa fix - ratling planet
+	}
+}
+
+# a new leader is generated for an empire, to be available for recruitment
+# scope: country, from: leader
+# on_leader_spawned = {
+# 	events = {
+# 		ariphaos_patch.2560 # New Leaders get Erudite/Cyborg/Synth/Psionic
+# 	}
+# }
+
+# on_planet_bombarded = {
+# 	events = {
+# 		ariphaos_patch.81 # Tomb world creation fix
+# 	}
+# }
+
+# on_fleet_disbanded = {
+# 	events = {
+# 		ariphaos_patch.456 # Troop counts
+# 	}
+# }
+
+# on_army_killed_in_combat = {
+# 	events = {
+# 		ariphaos_patch.450
+# 		ariphaos_patch.451
+# 	}
+# }
+
+# on_army_killed_no_combat = {
+# 	events = {
+# 		ariphaos_patch.450
+# 		ariphaos_patch.451
+# 	}
+# }

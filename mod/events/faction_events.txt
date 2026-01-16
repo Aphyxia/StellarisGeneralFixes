@@ -269,7 +269,7 @@ country_event = {
 }
 
 # Remove Factions-specific modifiers if the world changes owners
-# via on_planet_transfer = {}
+# Via on_planet_transfer
 planet_event = {
 	id = factions.15
 	hide_window = yes

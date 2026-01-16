@@ -5,11 +5,11 @@ on_single_player_save_game_load = {
 	}
 }
 
-# on_yearly_pulse = {
-# 	events = {
-# 		limited_army_counter_fix.3 # Wasting doublecheck: Ensure accurate army counters
-# 	}
-# }
+on_bi_yearly_pulse = {
+	events = {
+		limited_army_counter_fix.3 # Wasting doublecheck: Ensure accurate army counters TODO find alternative trigger
+	}
+}
 
 # Fired when army construction has been completed
 # Scope = planet

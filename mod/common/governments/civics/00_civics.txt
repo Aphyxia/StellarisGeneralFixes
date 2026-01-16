@@ -122,6 +122,11 @@ civic_imperial_cult = {
 				value = ethic_fanatic_spiritualist
 			}
 		}
+		civics = { # Vfix by MrFunEGUY 
+			NOT = {
+				value = civic_chosen
+			}
+		}
 	}
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {

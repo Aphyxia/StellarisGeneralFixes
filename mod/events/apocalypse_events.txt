@@ -520,7 +520,7 @@ country_event = {
 	}
 	option = {
 		name = PLANET_KILLER_SMELTER
-		custom_tooltip = apoc.110.smelter.tooltip
+		custom_tooltip = "apoc.110.smelter.tooltip" # Vfix: very strange, error log claims missing
 		hidden_effect = {
 			set_country_flag = pk_smelter
 		}

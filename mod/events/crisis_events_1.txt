@@ -2379,7 +2379,7 @@ planet_event = {
 
 	trigger = {
 		NAND = { # Vfix
-			exists = owner
+			has_owner = yes
 			planet_devastation < 100
 		}
 		is_planet_class = pc_infested

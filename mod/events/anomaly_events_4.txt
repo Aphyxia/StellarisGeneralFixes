@@ -4502,7 +4502,14 @@ ship_event = {
 						planet_Glavi = { change_pc = pc_gas_giant add_deposit = d_exotic_gases_1 }
 						planet_Salvold = { change_pc = pc_barren_cold add_deposit = d_minerals_2 }
 						planet_Frince = { change_pc = pc_frozen add_deposit = d_minerals_2 }
-						star_seddom = { set_planet_size = 33 add_deposit = d_energy_5 }
+						star_seddom = {
+							set_planet_size = 33
+							if = { # Vfix
+								limit = { has_deposit_for = shipclass_research_station }
+								clear_deposits = yes
+							}
+							add_deposit = d_energy_5
+						}
 					}
 				}
 				random_ambient_object = {

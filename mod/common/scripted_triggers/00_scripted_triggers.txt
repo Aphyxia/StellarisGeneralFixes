@@ -4517,7 +4517,7 @@ is_preftl_but_not_special = {
 			OR = {
 				has_trait = trait_hive_mind
 				has_trait = trait_pc_habitat_preference
-				#			has_trait = pc_warden_guardian_preference
+				# has_trait = pc_warden_guardian_preference
 			}
 		}
 		capital_scope = {
@@ -4555,6 +4555,7 @@ has_chosen_covenant_trait_non_ruler = {
 	}
 }
 
+# Vfix: is subset of has_genesis_preserve_trait
 has_presapient_trait = {
 	OR = {
 		has_trait = trait_presapient_starborn

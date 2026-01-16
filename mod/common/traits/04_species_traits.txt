@@ -2376,10 +2376,7 @@ trait_void_dweller_2 = {
 	species_potential_add = {
 		exists = from
 		from = {
-			OR = {
-				has_origin = origin_void_machines
-				has_void_dweller_origin = yes
-			}
+			has_void_dweller_origin = yes # Vfix flex
 		}
 	}
 

@@ -24,6 +24,13 @@ on_monthly_pulse = {
 # }
 
 # No scope, like on_game_start
+on_yearly_pulse = {
+	events = {
+		cara.4102 # Fix for Caravaneers
+	}
+}
+
+# No scope, like on_game_start
 on_five_year_pulse = {
 	events = {
 		crisis.233 # Sentinel Reinforcements

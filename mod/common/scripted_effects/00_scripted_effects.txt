@@ -137,6 +137,7 @@ create_pirate_country = {
 			effect = {
 				save_global_event_target_as = pirate_country
 				randomize_flag_symbol = "pirate"
+				make_moderately_hostile = yes # Vfix Patch
 			}
 		}
 	}

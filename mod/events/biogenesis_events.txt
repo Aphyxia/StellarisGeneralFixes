@@ -4778,6 +4778,7 @@ fleet_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		exists = controller # Vfix log
 		OR = {
 			NOT = { exists = from }
 			from = { is_ship_category = bio_ship }

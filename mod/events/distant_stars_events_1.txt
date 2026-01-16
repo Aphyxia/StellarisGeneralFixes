@@ -1234,7 +1234,7 @@ ship_event = {
 		}
 		leader = {
 			add_trait = { trait = leader_trait_paranoid }
-			add_skill = 2
+			add_skill_without_trait_selection = 2 # add_skill = 2 # Vfix SBA replaced
 		}
 	}
 }

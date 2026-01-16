@@ -29,6 +29,7 @@ create_normal_pirate_country = {
 					limit = { is_country_type_with_subjects = yes }
 					establish_communications_no_message = prev
 				}
+				make_moderately_hostile = yes # Vfix Patch
 			}
 		}
 	}

@@ -197,7 +197,7 @@ event = {
 	}
 }
 
-# By on_planet_transfer
+# Via on_planet_transfer
 # from = country, new owner
 # fromfrom = country, previous owner (optional)
 planet_event = {
@@ -206,23 +206,46 @@ planet_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		has_planet_flag = titanic_life_can_build
+		OR = {
+			has_planet_flag = titanic_life_can_build
+			has_modifier = "titanic_life"
+		}
 	}
 
 	immediate = {
 		if = {
-			limit = {
-				exists = from
-				from = { is_scope_type = country has_country_flag = titanic_life_soldiers }
+			limit = { has_planet_flag = titanic_life_can_build }
+			if = {
+				limit = {
+					exists = from
+					from = { is_scope_type = country has_country_flag = titanic_life_soldiers }
+				}
+				from = { increment_titanic_life_soldier_maximum = yes }
 			}
-			from = { increment_titanic_life_soldier_maximum = yes }
+			if = {
+				limit = {
+					exists = fromfrom
+					fromfrom = { is_scope_type = country has_country_flag = titanic_life_soldiers }
+				}
+				fromfrom = { decrement_titanic_life_soldier_maximum = yes }
+			}
 		}
-		if = {
-			limit = {
-				exists = fromfrom
-				fromfrom = { is_scope_type = country has_country_flag = titanic_life_soldiers }
+		else_if = { # Vfix Patch Ariphaos
+			limit = { can_generate_trade_value = yes }
+			if = {
+				limit = { has_planet_flag = titanic_life_colony_flag }
+				remove_planet_flag = titanic_life_colony_flag
 			}
-			fromfrom = { decrement_titanic_life_soldier_maximum = yes }
+			if = {
+				limit = {
+					owner = { has_origin = origin_primal_calling }
+				}
+				planet_event = { id = grand_archive.1010 days = 390 random = 90 }
+			}
+			else_if = {
+				limit = { owner = { is_gestalt = no } }
+				planet_event = { id = colony_mod.2 days = 390 random = 90 }
+			}
 		}
 	}
 }

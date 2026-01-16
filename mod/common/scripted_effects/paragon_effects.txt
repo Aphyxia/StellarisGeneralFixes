@@ -752,6 +752,7 @@ paragon_origin_create_pirates = {
 			set_name = random
 			randomize_flag_symbol = "pirate"
 			every_country = { establish_communications_no_message = prev }
+			make_moderately_hostile = yes # Vfix Patch
 			create_fleet = {
 				name = "NAME_Pirate_Station"
 				effect = {

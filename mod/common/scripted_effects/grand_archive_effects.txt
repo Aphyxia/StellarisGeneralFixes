@@ -1819,7 +1819,10 @@ create_black_needle_country = {
 				save_global_event_target_as = black_needle_country
 			}
 		}
-		event_target:black_needle_country = { randomize_flag_symbol = "pirate" }
+		event_target:black_needle_country = {
+			randomize_flag_symbol = "pirate"
+			make_moderately_hostile = yes # Vfix Patch
+		}
 	}
 }
 

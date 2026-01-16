@@ -5818,8 +5818,22 @@ country_event = {
 					remove_planet_flag = treasure_trove_contested_by_pirates
 					set_planet_flag = treasure_trove_pirates_defeated
 				}
-				owner = {
-					country_event = { id = grand_archive.6031 }
+				if = { # Vfix
+					limit = {
+						exists = owner_or_space_owner
+						owner_or_space_owner = { has_special_project = TREASURE_TROVE_PIRATES }
+					}
+					owner_or_space_owner = {
+						country_event = { id = grand_archive.6031 }
+					}
+				}
+				else_if = { # Vfix
+					limit = {
+						root = { has_special_project = TREASURE_TROVE_PIRATES }
+					}
+					root = {
+						country_event = { id = grand_archive.6031 }
+					}
 				}
 			}
 		}

@@ -11976,6 +11976,15 @@ country_event = {
 					limit = { exists = event_target:marauder_country_1 }
 					event_target:marauder_country_1 = { destroy_country = yes }
 				}
+				else = {
+					random_country = {
+						limit = {
+							is_country_type = dormant_marauders
+							has_country_flag = marauder_1
+						}
+						destroy_country = yes
+					}
+				}
 				event_target:new_khanate = {
 					set_country_flag = marauder_1
 					save_global_event_target_as = marauder_country_1
@@ -11990,6 +11999,15 @@ country_event = {
 					limit = { exists = event_target:marauder_country_2 }
 					event_target:marauder_country_2 = { destroy_country = yes }
 				}
+				else = {
+					random_country = {
+						limit = {
+							is_country_type = dormant_marauders
+							has_country_flag = marauder_2
+						}
+						destroy_country = yes
+					}
+				}
 				event_target:new_khanate = {
 					set_country_flag = marauder_2
 					save_global_event_target_as = marauder_country_2
@@ -12003,6 +12021,15 @@ country_event = {
 				if = {
 					limit = { exists = event_target:marauder_country_3 }
 					event_target:marauder_country_3 = { destroy_country = yes }
+				}
+				else = {
+					random_country = {
+						limit = {
+							is_country_type = dormant_marauders
+							has_country_flag = marauder_3
+						}
+						destroy_country = yes
+					}
 				}
 				event_target:new_khanate = {
 					set_country_flag = marauder_3
